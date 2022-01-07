@@ -1,3 +1,4 @@
-down-the-rabbit-hole
-the-pool-of-tears
-a-caucus-race-and-a-long-tale
+single-country-overall-graphs
+create-a-single-graph
+coming-soon-single-country-demographic-plots
+coming-soon-comparative-overall-graphs

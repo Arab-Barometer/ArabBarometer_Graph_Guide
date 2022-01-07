@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>ArabBarometR Graphing Guide</title>
-  <meta name="description" content="ArabBarometR Graphing Guide" />
+  <title>Chapter 3 Coming Soon: Comparative Overall Graphs | ArabBarometR Graphing Guide</title>
+  <meta name="description" content="Chapter 3 Coming Soon: Comparative Overall Graphs | ArabBarometR Graphing Guide" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="ArabBarometR Graphing Guide" />
+  <meta property="og:title" content="Chapter 3 Coming Soon: Comparative Overall Graphs | ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="ArabBarometR Graphing Guide" />
+  <meta name="twitter:title" content="Chapter 3 Coming Soon: Comparative Overall Graphs | ArabBarometR Graphing Guide" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
+<link rel="prev" href="coming-soon-single-country-demographic-plots.html"/>
 
-<link rel="next" href="single-country-overall-graphs.html"/>
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -166,69 +166,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">ArabBarometR Graphing Guide</h1>
-<p class="author"><em>MaryClare Roche</em></p>
-<p class="date"><em>2022-01-07</em></p>
-</div>
-<div id="introduction" class="section level1 unnumbered">
-<h1>Introduction</h1>
-<div id="purpose" class="section level2 unnumbered">
-<h2>Purpose</h2>
-<p>This guide is meant to give instructions on how to create graphs using the ArabBarometR package.</p>
-<p>This guide does <strong>not</strong> cover everything the ArabBarometR package can do, particularly with respect to cleaning data. For a more extensive guide, please visit the <a href="https://arab-barometer.github.io/ArabBarometR-Guide/">general ArabBarometer Guide</a>. This guide was created using the <strong>bookdown</strong> package, which comes with many fun and useful features. An overview of these features can be found in the <a href="https://arab-barometer.github.io/ArabBarometR-Guide/guide-features.html">Guide Features</a> section in the general ArabBarometR Guide.</p>
-<p>As such, this guide assumes a few things:</p>
-<ul>
-<li>That you have the ArabBarometR package installed on your machine.
-<ul>
-<li>If this is not true, please take a look at <a href="https://arab-barometer.github.io/ArabBarometR-Guide/installation.html">this chapter</a> in the general ArabBarometR Guide.</li>
-</ul></li>
-<li>You have a basic understanding of how to load data and packages in R.
-<ul>
-<li>If this is not true, you can pursue either <a href="http://www.r-tutor.com/r-introduction/data-frame/data-import">this guide</a> or <a href="https://www.google.com/search?q=How+to+load+data+in+R&amp;source=hp&amp;ei=YKrYYb_1LLLH_Qanq6OICA&amp;iflsig=ALs-wAMAAAAAYdi4cEgcmgRSgizOG8Zt8g7jSThX-RHp&amp;ved=0ahUKEwi_pYruxKD1AhWyY98KHafVCIEQ4dUDCAk&amp;uact=5&amp;oq=How+to+load+data+in+R&amp;gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIGCAAQFhAeMgYIABAWEB46DgguEIAEELEDEMcBEKMCOgsIABCABBCxAxCDAToICAAQgAQQsQM6CwguEIAEEMcBEKMCOgUILhCABDoICC4QgAQQsQM6BQgAELEDUKAHWKIdYO4eaAFwAHgAgAFWiAGJCpIBAjIxmAEAoAEBsAEA&amp;sclient=gws-wiz">this website</a>.</li>
-</ul></li>
-</ul>
-</div>
-<div id="general-guide-process" class="section level2 unnumbered">
-<h2>General Guide Process</h2>
-<p>Assuming we are working with clean data, the graphs are created in two steps:</p>
-<ol style="list-style-type: decimal">
-<li>Create a summary of the data you want to graph.</li>
-<li>Graph that summary.</li>
-</ol>
-<p>For each type of graph, the guide will first go through how to create one graph, then how to create many graphs.</p>
-</div>
-<div id="example-data" class="section level2 unnumbered">
-<h2>Example Data</h2>
-<p>The examples in this guide will be created using data from Wave VI. For single survey graphs, it will use data from from Wave VI, Survey I. For trend graphs, it will use data from Wave VI, Survey I, II, and III, where Survey III is the final survey we conducted in Wave VI.</p>
-<p>The Wave VI data can be found on <a href="https://github.com/Arab-Barometer/Final_Data/tree/main/Wave6">the Arab Barometer Github</a> or <a href="https://www.arabbarometer.org/survey-data/data-downloads/">the Arab Barometer website</a>.</p>
-</div>
-<div id="header-code" class="section level2 unnumbered">
-<h2>Header Code</h2>
-<p>The code examples in this guide will <strong>only</strong> focus on how to create graphs. It assumes your R file begins with the following code:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Path/to/Folder/with/Data&quot;</span>)</span>
-<span id="cb1-2"><a href="index.html#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="index.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ArabBarometR)</span>
-<span id="cb1-4"><a href="index.html#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="index.html#cb1-5" aria-hidden="true" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read.dta</span>(<span class="st">&quot;Wave6Survey1.dta&quot;</span>)</span>
-<span id="cb1-6"><a href="index.html#cb1-6" aria-hidden="true" tabindex="-1"></a>survey2 <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read.dta</span>(<span class="st">&quot;Wave6Survey2.dta&quot;</span>)</span>
-<span id="cb1-7"><a href="index.html#cb1-7" aria-hidden="true" tabindex="-1"></a>survey3 <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read.dta</span>(<span class="st">&quot;Wave6Survey3.dta&quot;</span>)</span></code></pre></div>
-<p>In this code example <strong>“/Path/to/Folder/with/Data”</strong> is the path to where you are saving your work that <em>also contains your data</em>. This is best practice. For more on folders/working directories, see <a href="https://arab-barometer.github.io/ArabBarometR-Guide/installation.html">Section 1.1.2</a> in the general Arab Barometer Guide.</p>
-<p><strong>Wave6SurveyX.dta</strong> in the above code example is a placeholder for whatever you have named the survey data for Surveys I, II, and III from Wave VI. If you read in the data (using the <strong>haven::read.dta()</strong> function) and save it as survey1, survey2, and survey3, you should be able to copy and paste the code in this guide exactly as is and run it in your own R session.</p>
-<p>This guide does <strong>not</strong> go over how to clean the data. For more on how to use the ArabBarometR package to clean Arab Barometer data, please see <a href="https://arab-barometer.github.io/ArabBarometR-Guide/preparing-data.html">Chapter 5 Preparing the Data</a> in the general ArabBarometR Guide.</p>
+<div id="coming-soon-comparative-overall-graphs" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Coming Soon: Comparative Overall Graphs</h1>
 
 </div>
-</div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
+<a href="coming-soon-single-country-demographic-plots.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
-<a href="single-country-overall-graphs.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -259,7 +207,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/index.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/03-Ignore4Now2.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -267,7 +215,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/index.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/03-Ignore4Now2.Rmd",
 "text": null
 },
 "download": null,
