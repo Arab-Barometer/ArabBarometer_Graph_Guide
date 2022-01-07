@@ -5,5 +5,33 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Down the rabbit-hole
+# Introduction {-}
 
+## Purpose {-}
+
+This guide is meant to give instructions on how to create graphs using the ArabBarometR package. 
+
+This guide does **not** cover everything the ArabBarometR package can do, particularly with respect to cleaning data. For a more extensive guide, please visit the [general ArabBarometer Guide](https://arab-barometer.github.io/ArabBarometR-Guide/).
+
+As such, this guide assumes a few things:
+
+ * That you have the ArabBarometR package installed on your machine.
+   * If this is not true, please take a look at [this chapter](https://arab-barometer.github.io/ArabBarometR-Guide/installation.html) in the general ArabBarometR Guide.
+ * You have a basic understanding of how to load data and packages in R.
+   * If this is not true, you can pursue either [this guide](http://www.r-tutor.com/r-introduction/data-frame/data-import) or [this website](https://www.google.com/search?q=How+to+load+data+in+R&source=hp&ei=YKrYYb_1LLLH_Qanq6OICA&iflsig=ALs-wAMAAAAAYdi4cEgcmgRSgizOG8Zt8g7jSThX-RHp&ved=0ahUKEwi_pYruxKD1AhWyY98KHafVCIEQ4dUDCAk&uact=5&oq=How+to+load+data+in+R&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIGCAAQFhAeMgYIABAWEB46DgguEIAEELEDEMcBEKMCOgsIABCABBCxAxCDAToICAAQgAQQsQM6CwguEIAEEMcBEKMCOgUILhCABDoICC4QgAQQsQM6BQgAELEDUKAHWKIdYO4eaAFwAHgAgAFWiAGJCpIBAjIxmAEAoAEBsAEA&sclient=gws-wiz).
+
+
+## Example Data {-}
+
+The examples in this guide will be created using data from Wave VI. For single survey graphs, it will use data from from Wave VI, Survey I. For trend graphs, it will use data from Wave VI, Survey I, II, and III.
+
+The Wave VI data can be found on [the Arab Barometer Github](https://github.com/Arab-Barometer/Final_Data/tree/main/Wave6) or [the Arab Barometer website](https://www.arabbarometer.org/survey-data/data-downloads/).
+
+## General Guide Process {-}
+
+Assuming we are working with clean data, the graphs are created in two steps:
+
+1. Create a summary of the data you want to graph.
+2. Graph that summary.
+
+For each type of graph, the guide will first go through how to create one graph, then how to create many graphs.
