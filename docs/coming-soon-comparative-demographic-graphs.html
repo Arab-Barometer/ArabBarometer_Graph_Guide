@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 3 Coming Soon: Comparative Overall Graphs | ArabBarometR Graphing Guide</title>
-  <meta name="description" content="Chapter 3 Coming Soon: Comparative Overall Graphs | ArabBarometR Graphing Guide" />
+  <title>Chapter 4 Coming Soon: Comparative Demographic Graphs | ArabBarometR Graphing Guide</title>
+  <meta name="description" content="Chapter 4 Coming Soon: Comparative Demographic Graphs | ArabBarometR Graphing Guide" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 3 Coming Soon: Comparative Overall Graphs | ArabBarometR Graphing Guide" />
+  <meta property="og:title" content="Chapter 4 Coming Soon: Comparative Demographic Graphs | ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 3 Coming Soon: Comparative Overall Graphs | ArabBarometR Graphing Guide" />
+  <meta name="twitter:title" content="Chapter 4 Coming Soon: Comparative Demographic Graphs | ArabBarometR Graphing Guide" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="coming-soon-single-country-demographic-plots.html"/>
-<link rel="next" href="coming-soon-comparative-demographic-graphs.html"/>
+<link rel="prev" href="coming-soon-comparative-overall-graphs.html"/>
+<link rel="next" href="change-the-font-size.html"/>
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -178,30 +178,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="coming-soon-comparative-overall-graphs" class="section level1" number="3">
-<h1><span class="header-section-number">Chapter 3</span> Coming Soon: Comparative Overall Graphs</h1>
-<p>This chapter will cover how to make a comparative frequency graph for multiple countries.</p>
-<div id="create-a-single-graph-2" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Create a Single Graph</h2>
-<p>This section will go over how to make a one-off comparative frequency graph for a multiple countries.</p>
+<div id="coming-soon-comparative-demographic-graphs" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Coming Soon: Comparative Demographic Graphs</h1>
+<p>This chapter will cover how to make a comparative frequency graph by demographic for multiple countries.</p>
+<div id="create-a-single-graph-3" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Create a Single Graph</h2>
+<p>This section will go over how to make a one-off comparative frequency graph by demographic for a multiple countries.</p>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="coming-soon-comparative-overall-graphs.html#cb4-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb4-2"><a href="coming-soon-comparative-overall-graphs.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-3"><a href="coming-soon-comparative-overall-graphs.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="coming-soon-comparative-demographic-graphs.html#cb6-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="coming-soon-comparative-demographic-graphs.html#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb6-3"><a href="coming-soon-comparative-demographic-graphs.html#cb6-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-4"><a href="coming-soon-comparative-demographic-graphs.html#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
-<pre><code>## Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please use
-## `guide = &quot;none&quot;` instead.</code></pre>
-<p><img src="bookdownproj_files/figure-html/03.2-Complete-Graph-Example-1.png" width="1248" /></p>
+<p><img src="bookdownproj_files/figure-html/04.2-Complete-Graph-Example-1.png" width="1248" /></p>
 
 </div>
 </div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="coming-soon-single-country-demographic-plots.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="coming-soon-comparative-demographic-graphs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="coming-soon-comparative-overall-graphs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="change-the-font-size.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -232,7 +234,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/03-Ignore4Now2.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/04-Ignore4Now3.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -240,7 +242,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/03-Ignore4Now2.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/04-Ignore4Now3.Rmd",
 "text": null
 },
 "download": null,
