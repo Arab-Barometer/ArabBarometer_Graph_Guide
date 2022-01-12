@@ -1,1 +1,31 @@
 # Coming Soon: Comparative Overall Graphs
+
+This chapter will cover how to make a comparative frequency graph for multiple countries.
+
+## Create a Single Graph
+
+This section will go over how to make a one-off comparative frequency graph for a multiple countries.
+
+At the end, your code will look like the following:
+
+```{r 03.1-Complete-Code-Example, eval=FALSE}
+
+survey1 %>%
+  calculate_smry_comp("Q1COVID19") %>%
+  plot_smry_comp(.caption = "Arab Barometer Wave VI, Survey I, Algeria")
+
+
+```
+
+That code will produce the following graph:
+
+
+```{r 03.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
+
+
+survey1 %>%
+  calculate_smry_comp("Q1COVID19") %>%
+  plot_smry_comp(.caption = "Arab Barometer Wave VI, Survey I, Algeria")
+
+```
+

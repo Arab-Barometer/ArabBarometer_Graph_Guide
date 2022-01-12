@@ -1,2 +1,34 @@
 # Coming Soon: Single Country Demographic Plots
 
+This chapter will cover how to make a frequency graph by a demographic for a single country.
+
+## Create a Single Graph
+
+This section will go over how to make a one-off frequency graph by a demographic for a single country.
+
+At the end, your code will look like the following:
+
+```{r 02.1-Complete-Code-Example, eval=FALSE}
+
+survey1 %>%
+  calculate_demographic_smry_individual("Q1COVID19",
+                                        .dem = "gender",
+                                        .country = "Algeria") %>%
+  plot_demographic_smry_individual(.caption = "Arab Barometer Wave VI, Survey I, Algeria")
+
+
+```
+
+That code will produce the following graph:
+
+
+```{r 02.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
+
+survey1 %>%
+  calculate_demographic_smry_individual("Q1COVID19",
+                                        .dem = "gender",
+                                        .country = "Algeria") %>%
+  plot_demographic_smry_individual(.caption = "Arab Barometer Wave VI, Survey I, Algeria")
+
+```
+
