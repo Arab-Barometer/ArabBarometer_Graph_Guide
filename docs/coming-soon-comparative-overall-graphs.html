@@ -143,7 +143,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>I Cross Tabulation Graphs</b></span></li>
 <li class="chapter" data-level="1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html"><i class="fa fa-check"></i><b>1</b> Single Country Overall Graphs</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-a-single-graph"><i class="fa fa-check"></i><b>1.1</b> Create a Single Graph</a></li>
+<li class="chapter" data-level="1.1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-a-single-graph"><i class="fa fa-check"></i><b>1.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-a-summary"><i class="fa fa-check"></i><b>1.1.1</b> Create a Summary</a></li>
+<li class="chapter" data-level="1.1.2" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#plot-the-summary"><i class="fa fa-check"></i><b>1.1.2</b> Plot the Summary</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="coming-soon-single-country-demographic-plots.html"><a href="coming-soon-single-country-demographic-plots.html"><i class="fa fa-check"></i><b>2</b> Coming Soon: Single Country Demographic Plots</a>
 <ul>
@@ -159,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>II How do I …?</b></span></li>
 <li class="chapter" data-level="5" data-path="change-the-font-size.html"><a href="change-the-font-size.html"><i class="fa fa-check"></i><b>5</b> Change the Font Size</a></li>
+<li class="chapter" data-level="6" data-path="change-the-titlesubtitlecaption.html"><a href="change-the-titlesubtitlecaption.html"><i class="fa fa-check"></i><b>6</b> Change the Title/Subtitle/Caption</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -185,9 +190,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.1</span> Create a Single Graph</h2>
 <p>This section will go over how to make a one-off comparative frequency graph for a multiple countries.</p>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="coming-soon-comparative-overall-graphs.html#cb4-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb4-2"><a href="coming-soon-comparative-overall-graphs.html#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb4-3"><a href="coming-soon-comparative-overall-graphs.html#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="coming-soon-comparative-overall-graphs.html#cb13-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="coming-soon-comparative-overall-graphs.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="coming-soon-comparative-overall-graphs.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <pre><code>## Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please use
 ## `guide = &quot;none&quot;` instead.</code></pre>

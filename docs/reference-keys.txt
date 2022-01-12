@@ -1,5 +1,7 @@
 single-country-overall-graphs
 create-a-single-graph
+create-a-summary
+plot-the-summary
 coming-soon-single-country-demographic-plots
 create-a-single-graph-1
 coming-soon-comparative-overall-graphs
@@ -7,3 +9,4 @@ create-a-single-graph-2
 coming-soon-comparative-demographic-graphs
 create-a-single-graph-3
 change-the-font-size
+change-the-titlesubtitlecaption

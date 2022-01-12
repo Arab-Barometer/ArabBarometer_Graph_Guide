@@ -1,0 +1,15 @@
+# Change the Title/Subtitle/Caption
+
+
+```{r How.2-Complete-Code-Example, fig.dim=c(13,12)}
+
+survey1 %>%
+  calculate_smry_individual("Q1COVID19",
+                            .country = "Algeria") %>%
+  plot_smry_individual(.title = "New title",
+                       .subtitle = "New subtitle",
+                       .caption = "New caption")
+
+
+```
+

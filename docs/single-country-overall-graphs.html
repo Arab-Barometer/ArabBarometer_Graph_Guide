@@ -143,7 +143,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>I Cross Tabulation Graphs</b></span></li>
 <li class="chapter" data-level="1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html"><i class="fa fa-check"></i><b>1</b> Single Country Overall Graphs</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-a-single-graph"><i class="fa fa-check"></i><b>1.1</b> Create a Single Graph</a></li>
+<li class="chapter" data-level="1.1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-a-single-graph"><i class="fa fa-check"></i><b>1.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-a-summary"><i class="fa fa-check"></i><b>1.1.1</b> Create a Summary</a></li>
+<li class="chapter" data-level="1.1.2" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#plot-the-summary"><i class="fa fa-check"></i><b>1.1.2</b> Plot the Summary</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="coming-soon-single-country-demographic-plots.html"><a href="coming-soon-single-country-demographic-plots.html"><i class="fa fa-check"></i><b>2</b> Coming Soon: Single Country Demographic Plots</a>
 <ul>
@@ -159,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>II How do I …?</b></span></li>
 <li class="chapter" data-level="5" data-path="change-the-font-size.html"><a href="change-the-font-size.html"><i class="fa fa-check"></i><b>5</b> Change the Font Size</a></li>
+<li class="chapter" data-level="6" data-path="change-the-titlesubtitlecaption.html"><a href="change-the-titlesubtitlecaption.html"><i class="fa fa-check"></i><b>6</b> Change the Title/Subtitle/Caption</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -187,11 +192,76 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>At the end, your code will look like the following:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="single-country-overall-graphs.html#cb2-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
 <span id="cb2-2"><a href="single-country-overall-graphs.html#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb2-3"><a href="single-country-overall-graphs.html#cb2-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="single-country-overall-graphs.html#cb2-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb2-4"><a href="single-country-overall-graphs.html#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/01.2-Complete-Graph-Example-1.png" width="1248" /></p>
+<p>Let’s go!</p>
+<div id="create-a-summary" class="section level3" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Create a Summary</h3>
+<p>The first step in creating a plot is to gather the data you want to display and organize it. You do this with the <strong>create_smry_individual()</strong> function. You can learn more about this function in section <a href="https://arab-barometer.github.io/ArabBarometR-Guide/calculating-summaries.html#calculate_smry_individual">6.1</a> in the larger ArabBarometR guide.</p>
+<p>The three main parameters you need to provide to this function are (1) the data you are using, (2) the variable you want to plot, and (3) the country you want to plot it for. To see all the input parameters for the function, type the code <code>?calculate_smry_individual</code> in your R console.</p>
+<p>In this example, the variable we want to plot is <strong>Q1COVID19</strong> and the country we want to plot it for is <strong>Algeria</strong>.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="single-country-overall-graphs.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_smry_individual</span>(</span>
+<span id="cb3-2"><a href="single-country-overall-graphs.html#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">.data =</span> survey1,          <span class="co"># The data you are using</span></span>
+<span id="cb3-3"><a href="single-country-overall-graphs.html#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">.var =</span> <span class="st">&quot;Q1COVID19&quot;</span>,       <span class="co"># The variable you want to plot</span></span>
+<span id="cb3-4"><a href="single-country-overall-graphs.html#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>      <span class="co"># The country you want to plot it for</span></span>
+<span id="cb3-5"><a href="single-country-overall-graphs.html#cb3-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>The above is the same as:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="single-country-overall-graphs.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_smry_individual</span>(survey1,<span class="st">&quot;Q1COVID19&quot;</span>,<span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
+<p>Which is the same as:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="single-country-overall-graphs.html#cb5-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="single-country-overall-graphs.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb5-3"><a href="single-country-overall-graphs.html#cb5-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
+<p>The last example uses a pipe, <code>%&gt;%</code>, which comes from the package <strong>dplyr</strong>, which is automatically loaded by ArabBarometR. To learn more about piping and using <code>%&gt;%</code> in programming, see <a href="https://arab-barometer.github.io/ArabBarometR-Guide/using-the-package.html#a-note-on-piping">A Note on Piping</a> in the larger ArabBarometR guide.</p>
+<p>The output of any of the above expressions is the same:</p>
+<pre><code>## # A tibble: 5 x 2
+##                      Q1COVID19 Percent
+##                      &lt;dbl+lbl&gt;   &lt;dbl&gt;
+## 1   1 [Very concerned]              28
+## 2   2 [Somewhat concerned]          44
+## 3   3 [Somewhat not concerned]       8
+## 4   4 [Not at all concerned]        20
+## 5 666 [Don&#39;t know/Refuse]            0</code></pre>
+<p>This data frame is what we are ultimately graphing.</p>
+<p>There are few things to note about the summary data frame we just created.</p>
+<p>First, there are two columns. The first column is named for the question we are graphing. The second column is named <strong>Percent</strong>. If you want to use the plotting functions in ArabBarometR to graph a summary data frame that is not created by a calculate function (see <a href="https://arab-barometer.github.io/ArabBarometR-Guide/calculating-summaries.html">complete list of calculate functions</a> in the ArabBarometR Guide), the data frame must be structured as two columns with the second column named <strong>Percent</strong>.</p>
+<p>Second, you can see that the first column is labeled. The labels come from the responses in the data. If the responses in the data are not labeled, this column will not be labeled. In the next step, plotting, the y-axis labels are taken from these labels. So, if the column is not labeled, the y-axis will just be the values of the column.</p>
+<p>Let’s store the summary as an object and move one.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="single-country-overall-graphs.html#cb7-1" aria-hidden="true" tabindex="-1"></a>Q1COVID19_summary <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="single-country-overall-graphs.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb7-3"><a href="single-country-overall-graphs.html#cb7-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
+</div>
+<div id="plot-the-summary" class="section level3" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Plot the Summary</h3>
+<p>The next step is plot the summary we just created. To do this, we use the function <strong>plot_smry_individual()</strong>. You can learn more about this function in section <a href="https://arab-barometer.github.io/ArabBarometR-Guide/standard-plots.html#plot_smry_individual">7.1</a> of the ArabBarometR Guide.</p>
+<p>There is only <em>one</em> necessary parameter to use <strong>plot_smry_individual()</strong>: the summary data frame. For a complete list of acceptable parameters and documentation, you can run <code>?plot_smry_individual</code> in your R console.</p>
+<p>Now, we can plug our summary into the plot function:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="single-country-overall-graphs.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_smry_individual</span>(</span>
+<span id="cb8-2"><a href="single-country-overall-graphs.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">.df =</span> Q1COVID19_summary  <span class="co"># The summary data frame</span></span>
+<span id="cb8-3"><a href="single-country-overall-graphs.html#cb8-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>The above code is the same as:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="single-country-overall-graphs.html#cb9-1" aria-hidden="true" tabindex="-1"></a>Q1COVID19_summary <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="single-country-overall-graphs.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>()</span></code></pre></div>
+<p>Which is the SAME as:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="single-country-overall-graphs.html#cb10-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="single-country-overall-graphs.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb10-3"><a href="single-country-overall-graphs.html#cb10-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="single-country-overall-graphs.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>()</span></code></pre></div>
+<p>We can do this because <code>Q1COVID19_summary</code> is equal to <code>survey1 %&gt;% calculate_smry_individual("Q1COVID19", "Algeria")</code>.</p>
+<p>Any of the above code gives the following graph:</p>
+<p><img src="bookdownproj_files/figure-html/01.11-plot-1.png" width="1248" /></p>
+<p>Almost done! Notice how the caption says <strong>Arab Barometer Wave N (DATE)</strong>? Let’s change that.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="single-country-overall-graphs.html#cb11-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="single-country-overall-graphs.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb11-3"><a href="single-country-overall-graphs.html#cb11-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="single-country-overall-graphs.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(</span>
+<span id="cb11-5"><a href="single-country-overall-graphs.html#cb11-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>  <span class="co"># NEW caption</span></span>
+<span id="cb11-6"><a href="single-country-overall-graphs.html#cb11-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p>Now we have the plot we started with! We’re done!</p>
+<p><img src="bookdownproj_files/figure-html/01.13-plot-1.png" width="1248" /></p>
 
+</div>
 </div>
 </div>
             </section>

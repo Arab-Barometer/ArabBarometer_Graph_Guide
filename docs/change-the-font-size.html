@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="coming-soon-comparative-demographic-graphs.html"/>
-
+<link rel="next" href="change-the-titlesubtitlecaption.html"/>
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -143,7 +143,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>I Cross Tabulation Graphs</b></span></li>
 <li class="chapter" data-level="1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html"><i class="fa fa-check"></i><b>1</b> Single Country Overall Graphs</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-a-single-graph"><i class="fa fa-check"></i><b>1.1</b> Create a Single Graph</a></li>
+<li class="chapter" data-level="1.1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-a-single-graph"><i class="fa fa-check"></i><b>1.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-a-summary"><i class="fa fa-check"></i><b>1.1.1</b> Create a Summary</a></li>
+<li class="chapter" data-level="1.1.2" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#plot-the-summary"><i class="fa fa-check"></i><b>1.1.2</b> Plot the Summary</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="coming-soon-single-country-demographic-plots.html"><a href="coming-soon-single-country-demographic-plots.html"><i class="fa fa-check"></i><b>2</b> Coming Soon: Single Country Demographic Plots</a>
 <ul>
@@ -159,6 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>II How do I …?</b></span></li>
 <li class="chapter" data-level="5" data-path="change-the-font-size.html"><a href="change-the-font-size.html"><i class="fa fa-check"></i><b>5</b> Change the Font Size</a></li>
+<li class="chapter" data-level="6" data-path="change-the-titlesubtitlecaption.html"><a href="change-the-titlesubtitlecaption.html"><i class="fa fa-check"></i><b>6</b> Change the Title/Subtitle/Caption</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -180,15 +185,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="change-the-font-size" class="section level1" number="5">
 <h1><span class="header-section-number">Chapter 5</span> Change the Font Size</h1>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="change-the-font-size.html#cb7-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="change-the-font-size.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb7-3"><a href="change-the-font-size.html#cb7-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb7-4"><a href="change-the-font-size.html#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>,</span>
-<span id="cb7-5"><a href="change-the-font-size.html#cb7-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.title_size =</span> <span class="dv">28</span>,      <span class="co"># Changes title size</span></span>
-<span id="cb7-6"><a href="change-the-font-size.html#cb7-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.subtitle_size =</span> <span class="dv">14</span>,   <span class="co"># Changes subtitle size</span></span>
-<span id="cb7-7"><a href="change-the-font-size.html#cb7-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.caption_size =</span> <span class="dv">20</span>,    <span class="co"># Changes caption size</span></span>
-<span id="cb7-8"><a href="change-the-font-size.html#cb7-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.axis_text_size =</span> <span class="dv">26</span>,  <span class="co"># Changes axis text size</span></span>
-<span id="cb7-9"><a href="change-the-font-size.html#cb7-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.legend_text_size =</span> <span class="dv">8</span>) <span class="co"># Changes legend text size</span></span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="change-the-font-size.html#cb16-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="change-the-font-size.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb16-3"><a href="change-the-font-size.html#cb16-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-4"><a href="change-the-font-size.html#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>,</span>
+<span id="cb16-5"><a href="change-the-font-size.html#cb16-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.title_size =</span> <span class="dv">28</span>,      <span class="co"># Changes title size</span></span>
+<span id="cb16-6"><a href="change-the-font-size.html#cb16-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.subtitle_size =</span> <span class="dv">14</span>,   <span class="co"># Changes subtitle size</span></span>
+<span id="cb16-7"><a href="change-the-font-size.html#cb16-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.caption_size =</span> <span class="dv">20</span>,    <span class="co"># Changes caption size</span></span>
+<span id="cb16-8"><a href="change-the-font-size.html#cb16-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.axis_text_size =</span> <span class="dv">26</span>,  <span class="co"># Changes axis text size</span></span>
+<span id="cb16-9"><a href="change-the-font-size.html#cb16-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.legend_text_size =</span> <span class="dv">8</span>) <span class="co"># Changes legend text size</span></span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.1-Complete-Code-Example-1.png" width="1248" /></p>
 
 </div>
@@ -197,8 +202,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="coming-soon-comparative-demographic-graphs.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="coming-soon-comparative-demographic-graphs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="change-the-titlesubtitlecaption.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -229,7 +234,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/07-TEST.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/101-FontChange.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -237,7 +242,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/07-TEST.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/101-FontChange.Rmd",
 "text": null
 },
 "download": null,

@@ -13,7 +13,7 @@ At the end, your code will look like the following:
 
 survey1 %>%
   calculate_smry_individual("Q1COVID19",
-                            .country = "Algeria") %>%
+                            "Algeria") %>%
   plot_smry_individual(.caption = "Arab Barometer Wave VI, Survey I, Algeria")
 
 
@@ -26,9 +26,169 @@ That code will produce the following graph:
 
 survey1 %>%
   calculate_smry_individual("Q1COVID19",
-                            .country = "Algeria") %>%
+                            "Algeria") %>%
   plot_smry_individual(.country = "Algeria",
                        .caption = "Arab Barometer Wave VI, Survey I")
 
 
 ```
+
+Let's go!
+
+### Create a Summary
+
+The first step in creating a plot is to gather the data you want to display and organize it. You do this with the **create_smry_individual()** function. You can learn more about this function in section [6.1](https://arab-barometer.github.io/ArabBarometR-Guide/calculating-summaries.html#calculate_smry_individual) in the larger ArabBarometR guide.
+
+The three main parameters you need to provide to this function are (1) the data you are using, (2) the variable you want to plot, and (3) the country you want to plot it for. To see all the input parameters for the function, type the code `?calculate_smry_individual` in your R console.
+
+In this example, the variable we want to plot is **Q1COVID19** and the country we want to plot it for is **Algeria**.
+
+```{r 01.3-summary, eval=FALSE}
+
+calculate_smry_individual(
+  .data = survey1,          # The data you are using
+  .var = "Q1COVID19",       # The variable you want to plot
+  .country = "Algeria"      # The country you want to plot it for
+)
+
+```
+
+The above is the same as:
+
+```{r 01.4-summary, eval=FALSE}
+
+calculate_smry_individual(survey1,"Q1COVID19","Algeria")
+
+```
+
+Which is the same as:
+
+
+```{r 01.5-summary, eval=FALSE}
+
+
+survey1 %>%
+  calculate_smry_individual("Q1COVID19",
+                            "Algeria")
+
+```
+
+The last example uses a pipe, `%>%`, which comes from the package **dplyr**, which is automatically loaded by ArabBarometR. To learn more about piping and using `%>%` in programming, see [A Note on Piping](https://arab-barometer.github.io/ArabBarometR-Guide/using-the-package.html#a-note-on-piping) in the larger ArabBarometR guide.
+
+The output of any of the above expressions is the same:
+
+```{r 01.6-summary, echo=FALSE}
+
+
+survey1 %>%
+  calculate_smry_individual("Q1COVID19",
+                            "Algeria")
+
+```
+
+This data frame is what we are ultimately graphing.
+
+There are few things to note about the summary data frame we just created.
+
+First, there are two columns. The first column is named for the question we are graphing. The second column is named **Percent**. If you want to use the plotting functions in ArabBarometR to graph a summary data frame that is not created by a calculate function (see [complete list of calculate functions](https://arab-barometer.github.io/ArabBarometR-Guide/calculating-summaries.html) in the ArabBarometR Guide), the data frame must be structured as two columns with the second column named **Percent**.
+
+Second, you can see that the first column is labeled. The labels come from the responses in the data. If the responses in the data are not labeled, this column will not be labeled. In the next step, plotting, the y-axis labels are taken from these labels. So, if the column is not labeled, the y-axis will just be the values of the column.
+
+Let's store the summary as an object and move one.
+
+```{r 01.7-summary, eval=FALSE}
+
+
+Q1COVID19_summary <- survey1 %>%
+  calculate_smry_individual("Q1COVID19",
+                            "Algeria")
+
+```
+
+### Plot the Summary
+
+The next step is plot the summary we just created. To do this, we use the function **plot_smry_individual()**. You can learn more about this function in section [7.1](https://arab-barometer.github.io/ArabBarometR-Guide/standard-plots.html#plot_smry_individual) of the ArabBarometR Guide.
+
+There is only *one* necessary parameter to use **plot_smry_individual()**: the summary data frame. For a complete list of acceptable parameters and documentation, you can run `?plot_smry_individual` in your R console.
+
+Now, we can plug our summary into the plot function:
+
+```{r 01.8-plot, eval=FALSE}
+
+plot_smry_individual(
+  .df = Q1COVID19_summary  # The summary data frame
+)
+
+```
+
+The above code is the same as:
+
+```{r 01.9-plot, eval=FALSE}
+
+Q1COVID19_summary %>%
+  plot_smry_individual()
+
+```
+
+Which is the SAME as:
+
+```{r 01.10-plot, eval=FALSE}
+
+survey1 %>%
+  calculate_smry_individual("Q1COVID19",
+                            "Algeria") %>%
+  plot_smry_individual()
+
+
+```
+
+We can do this because `Q1COVID19_summary` is equal to `survey1 %>% calculate_smry_individual("Q1COVID19", "Algeria")`.
+
+
+Any of the above code gives the following graph:
+
+
+```{r 01.11-plot, echo=FALSE, fig.dim=c(13,12)}
+
+survey1 %>%
+  calculate_smry_individual("Q1COVID19",
+                            "Algeria") %>%
+  plot_smry_individual()
+
+
+```
+
+
+Almost done! Notice how the caption says **Arab Barometer Wave N (DATE)**? Let's change that.
+
+
+```{r 01.12-plot, eval=FALSE}
+
+survey1 %>%
+  calculate_smry_individual("Q1COVID19",
+                            "Algeria") %>%
+  plot_smry_individual(
+    .caption = "Arab Barometer Wave VI, Survey I, Algeria"  # NEW caption
+  )
+
+
+```
+
+Now we have the plot we started with! We're done!
+
+
+```{r 01.13-plot, echo=FALSE, fig.dim=c(13,12)}
+
+survey1 %>%
+  calculate_smry_individual("Q1COVID19",
+                            "Algeria") %>%
+  plot_smry_individual(
+    .caption = "Arab Barometer Wave VI, Survey I, Algeria"  # NEW caption
+  )
+
+
+```
+
+
+
+## Create Many Graphs
