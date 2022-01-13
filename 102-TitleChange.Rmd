@@ -5,7 +5,7 @@
 
 survey1 %>%
   calculate_smry_individual("Q1COVID19",
-                            .country = "Algeria") %>%
+                            "Algeria") %>%
   plot_smry_individual(.title = "New title",
                        .subtitle = "New subtitle",
                        .caption = "New caption")

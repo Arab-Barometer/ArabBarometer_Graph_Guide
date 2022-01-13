@@ -2,6 +2,10 @@ single-country-overall-graphs
 create-a-single-graph
 create-a-summary
 plot-the-summary
+create-many-graphs
+identify-the-variables
+create-summaries
+plot-the-summaries
 coming-soon-single-country-demographic-plots
 create-a-single-graph-1
 coming-soon-comparative-overall-graphs

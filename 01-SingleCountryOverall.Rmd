@@ -94,7 +94,7 @@ First, there are two columns. The first column is named for the question we are 
 
 Second, you can see that the first column is labeled. The labels come from the responses in the data. If the responses in the data are not labeled, this column will not be labeled. In the next step, plotting, the y-axis labels are taken from these labels. So, if the column is not labeled, the y-axis will just be the values of the column.
 
-Let's store the summary as an object and move one.
+Let's store the summary as an object and move on.
 
 ```{r 01.7-summary, eval=FALSE}
 
@@ -192,3 +192,178 @@ survey1 %>%
 
 
 ## Create Many Graphs
+
+As a rule of thumb in programming, if you can create something one time, you can create it a bajillion times. This is good because for each wave, Arab Barometer needs approximately a bajillion graphs.
+
+To create many graphs at once, there are three steps to follow.
+
+1. First, identify the variables to plot.
+2. Second, create summaries of those variables.
+3. Third, plot those summaries.
+
+At the end of this section, your code will look like the following:
+
+
+```{r 01.14-Complete-Code-Example, eval=FALSE}
+
+     #.....................Identify the variables.....................
+variables_2_plot <- list("Q1COVID19",
+                         "Q2061A",
+                         "Q609")
+
+names(variables_2_plot) <- c("Q1COVID19",
+                             "Q2061A",
+                             "Q609")
+
+     #......................Create the summaries......................
+summaries <- survey1 %>%
+  calculate_smry_individual(variables_2_plot,
+                            "Algeria") 
+
+     #.......................Plot the summaries.......................
+plots <- map(summaries,
+             plot_smry_individual,
+             .caption = "Arab Barometer Wave VI, Survey I")
+
+```
+
+The result is a named list of plots. Each element in the list is a plot. The element is named for the variable it is a plot of.
+
+For example, to see the plot for variable `Q1COVID19`, run the following code:
+
+```{r 01.15-Complete-Code-Example-Results1, fig.dim=c(13,12)}
+
+plots$Q1COVID19
+
+```
+
+To see the plot for variable `Q2061A`, run the following code:
+
+```{r 01.16-Complete-Code-Example-Results2, fig.dim=c(13,12)}
+
+plots$Q2061A
+
+```
+
+Finally, to see the plot for variable `Q609`, run the following code:
+
+```{r 01.17-Complete-Code-Example-Results3, fig.dim=c(13,12)}
+
+plots$Q609
+
+```
+
+That's it! The only limit on the number of graphs you can create at once is the time it will take R to make them. The more graphs you try to create at once, the longer it will take.
+
+Let's begin.
+
+### Identify the Variables
+
+When creating many graphs, you need to tell R which variables you want to make plots of. This is true for when you want to create a single graph as well, but it is much more strongly implied. Plus, the variables must be identified in a specific way.
+
+To create many summaries at once, you need to provide your variables in a named list. To create a named list, first make a list of the variables you want to plot.
+
+```{r 01.18-list, eval=FALSE}
+
+variables_2_plot <- list("Q1COVID19",
+                         "Q2061A",
+                         "Q609")
+
+```
+
+The next step is to name your list.
+
+```{r 01.19-named-list, eval=FALSE}
+
+names(variables_2_plot) <- c("Q1COVID19",
+                             "Q2061A",
+                             "Q609")
+
+```
+
+Now, you have a named list of variables. Time to summarize them.
+
+### Create Summaries
+
+The same function used to create a single summary is used to create many summaries: **calculate_smry_individual()**. Recall it takes three parameters: (1) the data you are using, (2) the variable(s) you want to plot, and (3) the country you are creating the plot for. Now, instead of one variable, you supply the list of variables.
+
+```{r 01.20-summaries, eval=FALSE}
+
+calculate_smry_individual(
+  .data = survey1,               # The data you are using
+  .var = variables_2_plot,       # The variables you want to plot
+  .country = "Algeria"           # The country you want to plot it for
+)
+
+```
+
+The above is the same as:
+
+```{r 01.21-summaries, eval=FALSE}
+
+calculate_smry_individual(survey1,variables_2_plot,"Algeria")
+
+```
+
+Which is the same as:
+
+
+```{r 01.22-summaries, eval=FALSE}
+
+
+survey1 %>%
+  calculate_smry_individual(variables_2_plot,
+                            "Algeria")
+
+```
+
+
+All of the above code in this section produces the same result: a named list. Each element in the list is a summary of a variable. The variable is the name of the list. In long form, it looks like the following:
+
+```{r 01.23-summaries, echo=FALSE}
+
+
+survey1 %>%
+  calculate_smry_individual(variables_2_plot,
+                            "Algeria")
+
+```
+
+Let's save this outcome as an object and move on to plotting.
+
+
+```{r 01.24-summaries, eval=FALSE}
+
+
+summaries <- survey1 %>%
+  calculate_smry_individual(variables_2_plot,
+                            "Algeria")
+
+```
+
+
+### Plot the Summaries
+
+Again, the same function to create one plot is used to create many plots: **plot_smry_individual()**. Unlike last time, a helper function is needed to create multiple plots. 
+
+The helper function is called **map**. The map function takes two inputs: (1) a list of things to pass to a function, and (2) a function. Essentially, **map** takes each item in the list, and passes it to the function very efficiently. 
+
+In this case, you supply the list of summaries you just created, and the **plot_sumry_individual()** function. The code follows:
+
+```{r 01.25-plots, eval=FALSE}
+
+map(
+  summaries,            # List of summaries
+  plot_smry_individual  # Plotting function
+)
+
+```
+The code produces the following output:
+
+```{r, figures-side, fig.show="hold", out.width="50%"}
+map(
+  summaries,            # List of summaries
+  plot_smry_individual  # Plotting function
+)
+
+```
