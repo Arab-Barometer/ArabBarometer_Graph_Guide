@@ -231,6 +231,31 @@ The result is a named list of plots. Each element in the list is a plot. The ele
 
 For example, to see the plot for variable `Q1COVID19`, run the following code:
 
+
+```{r 01.14.5-Complete-Code-Example, echo=FALSE}
+
+     #.....................Identify the variables.....................
+variables_2_plot <- list("Q1COVID19",
+                         "Q2061A",
+                         "Q609")
+
+names(variables_2_plot) <- c("Q1COVID19",
+                             "Q2061A",
+                             "Q609")
+
+     #......................Create the summaries......................
+summaries <- survey1 %>%
+  calculate_smry_individual(variables_2_plot,
+                            "Algeria") 
+
+     #.......................Plot the summaries.......................
+plots <- map(summaries,
+             plot_smry_individual,
+             .caption = "Arab Barometer Wave VI, Survey I")
+
+```
+
+
 ```{r 01.15-Complete-Code-Example-Results1, fig.dim=c(13,12)}
 
 plots$Q1COVID19
@@ -360,10 +385,72 @@ map(
 ```
 The code produces the following output:
 
-```{r, figures-side, fig.show="hold", out.width="50%"}
+```{r 01.26-plots, figures-side, fig.show="hold", out.width="50%"}
 map(
   summaries,            # List of summaries
   plot_smry_individual  # Plotting function
 )
 
 ```
+
+
+Notice, yet again, the caption needs to be changed. To change the caption for all the graphs, just add one line to the map function.
+
+
+```{r 01.27-plots, figures-side, fig.show="hold", out.width="50%"}
+map(
+  summaries,                                     # List of summaries
+  plot_smry_individual,                          # Plotting function
+  .caption = "Arab Barometer Wave VI, Survey I"  # Caption
+)
+
+```
+
+
+Congratulations! You have created three plots at once. You can store them in as a single list and call them one at a time.
+
+```{r 01.28-plots, eval=FALSE}
+plots <- map(
+  summaries,                                     # List of summaries
+  plot_smry_individual,                          # Plotting function
+  .caption = "Arab Barometer Wave VI, Survey I"  # Caption
+)
+
+```
+
+
+```{r 01.28.5-plots, echo=FALSE}
+plots <- map(
+  summaries,                                     # List of summaries
+  plot_smry_individual,                          # Plotting function
+  .caption = "Arab Barometer Wave VI, Survey I"  # Caption
+)
+
+```
+
+Now, all three plots have been stored in a named list named `plots`. To look at the first plot:
+
+```{r 01.29-Complete-Code-Example-Results1, fig.dim=c(13,12)}
+
+plots$Q1COVID19
+
+```
+
+To see the plot for variable `Q2061A`, run the following code:
+
+```{r 01.30-Complete-Code-Example-Results2, fig.dim=c(13,12)}
+
+plots$Q2061A
+
+```
+
+Finally, to see the plot for variable `Q609`, run the following code:
+
+```{r 01.31-Complete-Code-Example-Results3, fig.dim=c(13,12)}
+
+plots$Q609
+
+```
+
+
+You have now completed all steps in the example code. Congrats!

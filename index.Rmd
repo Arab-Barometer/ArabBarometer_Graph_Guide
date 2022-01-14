@@ -61,7 +61,6 @@ This guide does **not** go over how to clean the data. For more on how to use th
 
 
 ```{r index-load-packaged,include=FALSE}
-library(dplyr)
 library(ArabBarometR)
 ```
 

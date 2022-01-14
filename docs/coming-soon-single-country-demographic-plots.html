@@ -24,7 +24,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2022-01-13" />
+<meta name="date" content="2022-01-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -196,11 +196,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.1</span> Create a Single Graph</h2>
 <p>This section will go over how to make a one-off frequency graph by a demographic for a single country.</p>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="coming-soon-single-country-demographic-plots.html#cb28-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb28-2"><a href="coming-soon-single-country-demographic-plots.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb28-3"><a href="coming-soon-single-country-demographic-plots.html#cb28-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>,</span>
-<span id="cb28-4"><a href="coming-soon-single-country-demographic-plots.html#cb28-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb28-5"><a href="coming-soon-single-country-demographic-plots.html#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="coming-soon-single-country-demographic-plots.html#cb32-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="coming-soon-single-country-demographic-plots.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb32-3"><a href="coming-soon-single-country-demographic-plots.html#cb32-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>,</span>
+<span id="cb32-4"><a href="coming-soon-single-country-demographic-plots.html#cb32-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-5"><a href="coming-soon-single-country-demographic-plots.html#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/02.2-Complete-Graph-Example-1.png" width="1248" /></p>
 
