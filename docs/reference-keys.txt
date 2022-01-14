@@ -6,7 +6,7 @@ create-many-graphs
 identify-the-variables
 create-summaries
 plot-the-summaries
-coming-soon-single-country-demographic-plots
+single-country-demographic-plots
 create-a-single-graph-1
 creating-a-summary
 plotting-the-summary

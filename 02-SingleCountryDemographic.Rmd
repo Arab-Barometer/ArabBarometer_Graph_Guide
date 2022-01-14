@@ -1,4 +1,4 @@
-# Coming Soon: Single Country Demographic Plots
+# Single Country Demographic Plots
 
 This chapter will cover how to make a frequency graph by a demographic for a single country.
 
@@ -234,7 +234,7 @@ gender_summaries <- survey1 %>%
                                         .dem = "gender") 
 
      #.......................Plot the summaries.......................
-gender_plots <- map(summaries,
+gender_plots <- map(gender_summaries,
                     plot_demographic_smry_individual,
                     .caption = "Arab Barometer Wave VI, Survey I")
 
