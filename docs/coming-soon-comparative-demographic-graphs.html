@@ -157,7 +157,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="2" data-path="coming-soon-single-country-demographic-plots.html"><a href="coming-soon-single-country-demographic-plots.html"><i class="fa fa-check"></i><b>2</b> Coming Soon: Single Country Demographic Plots</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="coming-soon-single-country-demographic-plots.html"><a href="coming-soon-single-country-demographic-plots.html#create-a-single-graph-1"><i class="fa fa-check"></i><b>2.1</b> Create a Single Graph</a></li>
+<li class="chapter" data-level="2.1" data-path="coming-soon-single-country-demographic-plots.html"><a href="coming-soon-single-country-demographic-plots.html#create-a-single-graph-1"><i class="fa fa-check"></i><b>2.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="coming-soon-single-country-demographic-plots.html"><a href="coming-soon-single-country-demographic-plots.html#creating-a-summary"><i class="fa fa-check"></i><b>2.1.1</b> Creating a Summary</a></li>
+<li class="chapter" data-level="2.1.2" data-path="coming-soon-single-country-demographic-plots.html"><a href="coming-soon-single-country-demographic-plots.html#plotting-the-summary"><i class="fa fa-check"></i><b>2.1.2</b> Plotting the Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="coming-soon-single-country-demographic-plots.html"><a href="coming-soon-single-country-demographic-plots.html#create-many-graphs-1"><i class="fa fa-check"></i><b>2.2</b> Create Many Graphs</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="coming-soon-comparative-overall-graphs.html"><a href="coming-soon-comparative-overall-graphs.html"><i class="fa fa-check"></i><b>3</b> Coming Soon: Comparative Overall Graphs</a>
 <ul>
@@ -196,10 +201,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.1</span> Create a Single Graph</h2>
 <p>This section will go over how to make a one-off comparative frequency graph by demographic for a multiple countries.</p>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="coming-soon-comparative-demographic-graphs.html#cb39-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb39-2"><a href="coming-soon-comparative-demographic-graphs.html#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb39-3"><a href="coming-soon-comparative-demographic-graphs.html#cb39-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb39-4"><a href="coming-soon-comparative-demographic-graphs.html#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="coming-soon-comparative-demographic-graphs.html#cb48-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb48-2"><a href="coming-soon-comparative-demographic-graphs.html#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb48-3"><a href="coming-soon-comparative-demographic-graphs.html#cb48-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb48-4"><a href="coming-soon-comparative-demographic-graphs.html#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/04.2-Complete-Graph-Example-1.png" width="1248" /></p>
 

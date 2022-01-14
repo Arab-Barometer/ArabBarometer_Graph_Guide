@@ -32,3 +32,148 @@ survey1 %>%
 
 ```
 
+
+### Creating a Summary
+
+The first step in creating a plot is to gather the data you want to display and organize it. You do this with the **calculate_demographic_smry_individual()** function. You can learn more about this function in section [6.2](https://arab-barometer.github.io/ArabBarometR-Guide/calculating-summaries.html#calculate_demographic_smry_individual) in the larger ArabBarometR guide.
+
+Just like **calculate_smry_individual()**, the three main parameters you need to provide to this function are (1) the data you are using, (2) the variable you want to plot, and (3) the country you want to plot it for. To see all the input parameters for the function, type the code `?calculate_demographic_smry_individual` in your R console.
+
+In this example, the variable we want to plot is **Q1COVID19**, and the country we want to plot it for is **Algeria**^[If the style of this code is confusing, see [Create a Summary in Chapter 1][Single Country Overall Graphs]].
+
+```{r 02.3-summary, eval=FALSE}
+
+survey1 %>%                                                    # Data
+  calculate_demographic_smry_individual("Q1COVID19",           # Variable to summarize  
+                                        .country = "Algeria")  # Country
+
+```
+
+The above code will produce the following output:
+
+
+```{r 02.4-summary, echo=FALSE}
+
+survey1 %>%
+  calculate_demographic_smry_individual("Q1COVID19",
+                                        .country = "Algeria")
+
+```
+Woah, that's a lot of summaries! By default, **calculate_demographic_smry_individual()** creates summaries for **age**, **gender**, **income**, and **education**. Currently, the function can create summaries by any variable that is **2** categories^[MaryClare is actively working on making this more flexible.]. To specify exactly which demographic we want to group the data by, we include one more parameter.
+
+```{r 02.5-summary, eval=FALSE}
+
+survey1 %>%                                                      # Data
+  calculate_demographic_smry_individual("Q1COVID19",             # Variable to summarize
+                                        .country = "Algeria",    # Country
+                                        .dem = "gender")         # Demographic to group data by
+
+```
+
+By specifying the parameter **.dem**, the function now knows it should only group the data by the variables **gender**. Now the output is as follows:
+
+```{r 02.6-summary, echo=FALSE}
+
+survey1 %>%
+  calculate_demographic_smry_individual("Q1COVID19",
+                                        .country = "Algeria",
+                                        .dem = "gender")
+
+```
+
+The function **calcuate_demographic_smry()** creates a named list. In this list, each item is a summary broken down by a demographic and the name of each item is that demographic.
+
+Let's save our gender demographic summary and move on to plotting it.
+
+```{r 02.7-summary, eval=FALSE}
+
+Q1COVID19_gender <- survey1 %>%
+  calculate_demographic_smry_individual("Q1COVID19",
+                                        .country = "Algeria",
+                                        .dem = "gender")
+
+```
+
+
+```{r 02.8-summary, echo=FALSE}
+
+Q1COVID19_gender <- survey1 %>%
+  calculate_demographic_smry_individual("Q1COVID19",
+                                        .country = "Algeria",
+                                        .dem = "gender")
+
+```
+
+
+### Plotting the Summary
+
+
+The next step is plot the summary we just created. To do this, we use the function **plot_demographic_smry_individual()**. You can learn more about this function in section [7.2](https://arab-barometer.github.io/ArabBarometR-Guide/standard-plots.html#plot_demographic_smry_individual) of the ArabBarometR Guide.
+
+There is only *one* necessary parameter to use **plot_smry_individual()**: the summary data frame. For a complete list of acceptable parameters and documentation, you can run `?plot_demographic_smry_individual` in your R console.
+
+Now, we can plug our summary into the plot function:
+
+```{r 02.9-plot, eval=FALSE}
+
+plot_demographic_smry_individual(Q1COVID19_gender)
+
+```
+
+The above code is the same as:
+
+```{r 02.10-plot, eval=FALSE}
+
+Q1COVID19_gender %>%
+  plot_demographic_smry_individual()
+
+```
+
+Both stylings of code produce the following graph:
+
+```{r 02.11-plot, echo=FALSE, fig.dim=c(13,12)}
+
+plot_demographic_smry_individual(Q1COVID19_gender)
+
+```
+
+Yet again, we see the caption needs to be changed. We can change it the same way we did in Chapter 1.
+
+```{r 02.12-plot, eval=FALSE}
+
+Q1COVID19_gender %>%
+  plot_demographic_smry_individual(
+    .caption = "Arab Barometer Wave VI, Survey I, Algeria"
+  )
+
+```
+
+Now we have the graph:
+
+```{r 02.13-plot, echo=FALSE, fig.dim=c(13,12)}
+
+Q1COVID19_gender %>%
+  plot_demographic_smry_individual(
+    .caption = "Arab Barometer Wave VI, Survey I, Algeria"
+  )
+
+
+```
+
+
+Since `Q1COVID19_gender` is the same as `survey1 %>% calculate_demographic_smry_individual("Q1COVID19", .country = "Algeria", .dem = "gender")`, we can substitute the former with the latter to get the original code in our example. This will give us the same plot that we just created.
+
+```{r 02.14-plot, eval=FALSE}
+
+survey1 %>%
+  calculate_demographic_smry_individual("Q1COVID19",
+                                        .dem = "gender",
+                                        .country = "Algeria") %>%
+  plot_demographic_smry_individual(.caption = "Arab Barometer Wave VI, Survey I, Algeria")
+
+
+
+```
+
+
+## Create Many Graphs
