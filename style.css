@@ -1,14 +1,17 @@
+/* Whole document: */
+body{
+  font-family: Montserrat;
+  font-size: 12pt;
+}
+
+/* Captions */
+<style>
 p.caption {
-  color: #777;
-  margin-top: 10px;
+  font-size: 0.9em;
+  font-style: italic;
+  color: grey;
+  margin-right: 10%;
+  margin-left: 10%;
+  text-align: justify;
 }
-p code {
-  white-space: inherit;
-}
-pre {
-  word-break: normal;
-  word-wrap: normal;
-}
-pre code {
-  white-space: inherit;
-}
+</style>
