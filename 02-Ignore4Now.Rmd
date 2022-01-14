@@ -177,3 +177,263 @@ survey1 %>%
 
 
 ## Create Many Graphs
+
+We will follow the same steps from Chapter one to create many graphs at once.
+
+1. First, identify the variables to plot.
+2. Second, create summaries of those variables.
+3. Third, plot those summaries.
+
+At the end of this section, your code will look like the following:
+
+
+```{r 02.15-Complete-Code-Example, eval=FALSE}
+
+     #.....................Identify the variables.....................
+variables_2_plot <- list("Q1COVID19",
+                         "Q2061A",
+                         "Q609")
+
+names(variables_2_plot) <- c("Q1COVID19",
+                             "Q2061A",
+                             "Q609")
+
+     #......................Create the summaries......................
+gender_summaries <- survey1 %>%
+  calculate_demographic_smry_individual(variables_2_plot,
+                                        "Algeria",
+                                        .dem = "gender") 
+
+     #.......................Plot the summaries.......................
+gender_plots <- map(gender_summaries,
+                    plot_demographic_smry_individual,
+                    .caption = "Arab Barometer Wave VI, Survey I")
+
+```
+
+The result is a named list of plots. Each element in the list is a plot. The element is named for the variable it is a plot of.
+
+For example, to see the plot for variable `Q1COVID19`, run the following code:
+
+
+```{r 02.16-Complete-Code-Example, echo=FALSE}
+
+     #.....................Identify the variables.....................
+variables_2_plot <- list("Q1COVID19",
+                         "Q2061A",
+                         "Q609")
+
+names(variables_2_plot) <- c("Q1COVID19",
+                             "Q2061A",
+                             "Q609")
+
+     #......................Create the summaries......................
+gender_summaries <- survey1 %>%
+  calculate_demographic_smry_individual(variables_2_plot,
+                                        "Algeria",
+                                        .dem = "gender") 
+
+     #.......................Plot the summaries.......................
+gender_plots <- map(summaries,
+                    plot_demographic_smry_individual,
+                    .caption = "Arab Barometer Wave VI, Survey I")
+
+```
+
+
+```{r 02.17-Complete-Code-Example-Results1, fig.dim=c(13,12)}
+
+gender_plots$Q1COVID19
+
+```
+
+To see the plot for variable `Q2061A`, run the following code:
+
+```{r 02.18-Complete-Code-Example-Results2, fig.dim=c(13,12)}
+
+gender_plots$Q2061A
+
+```
+
+Finally, to see the plot for variable `Q609`, run the following code:
+
+```{r 02.19-Complete-Code-Example-Results3, fig.dim=c(13,12)}
+
+gender_plots$Q609
+
+```
+
+That's it! The only limit on the number of graphs you can create at once is the time it will take R to make them. The more graphs you try to create at once, the longer it will take.
+
+The steps to creating a named variable list are exactly the same as the ones we reviewed in Chapter 1; therefore, we will begin by creating summaries. For a refresher on creating named lists, [click here][Identify the Variables]. We will use the same variables as in Chapter 1: `Q1COVID19`, `Q2061A`, and `Q609`.
+
+Let's begin.
+
+### Create Summaries
+
+The same function used to create a single summary is used to create many summaries: **calculate_demographic_smry_individual()**. Recall it takes three parameters: (1) the data you are using, (2) the variable(s) you want to plot, and (3) the country you are creating the plot for. Now, instead of one variable, you supply the list of variables.
+
+```{r 02.20-summaries, eval=FALSE}
+
+survey1 %>%                                               # Data
+  calculate_demographic_smry_individual(variables_2_plot, # Variables to summarize
+                                        "Algeria")        # Country
+
+```
+
+The above code produces a nested named list. Each element in the list is another named list. Each element in the outer list is named for a variable you want to create summaries for. The inner list of each element is a summary with the data grouped by **age**, **gender**, **income**, and **education**. You can think of it like the following bullet point list:
+
+* `calculate_demographic_smry_individual` output
+  * `Q1COVID19`
+    * `age` Q1COVID19 summary grouped by age
+    * `gender` Q1COVID19 summary grouped by gender
+    * `income` Q1COVID19 summary grouped by income
+    * `education` Q1COVID19 summary grouped by education
+  * `Q2061A`
+    * `age` Q2061A summary grouped by age
+    * `gender` Q2061A summary grouped by gender
+    * `income` Q2061A summary grouped by income
+    * `education` Q2061A summary grouped by education
+  * `Q609`
+    * `age` Q609 summary grouped by age
+    * `gender` Q609 summary grouped by gender
+    * `income` Q609 summary grouped by income
+    * `education` Q609 summary grouped by education
+    
+For this example, we will again only be focusing on gender plots. To get only gender summaries, just specify the **.dem** parameter.
+
+```{r 02.21-summaries, eval=FALSE}
+
+survey1 %>%                                               # Data
+  calculate_demographic_smry_individual(variables_2_plot, # Variables to summarize
+                                        "Algeria",        # Country
+                                        .dem = "gender")  # Demographic
+
+```
+
+
+Now, the output of this function looks like this bullet point list:
+
+* `calculate_demographic_smry_individual(.dem="gender")` output
+  * `Q1COVID19`
+    * `gender` Q1COVID19 summary grouped by gender
+  * `Q2061A`
+    * `gender` Q2061A summary grouped by gender
+  * `Q609`
+    * `gender` Q609 summary grouped by gender
+    
+Much more manageable .
+
+Let's save this outcome as an object and move on to plotting.
+
+
+```{r 02.22-summaries, eval=FALSE}
+
+gender_summaries <- survey1 %>%                                               
+  calculate_demographic_smry_individual(variables_2_plot, 
+                                        "Algeria",        
+                                        .dem = "gender")  
+
+```
+
+
+
+```{r 02.23-summaries, echo=FALSE}
+
+gender_summaries <- survey1 %>%                                               
+  calculate_demographic_smry_individual(variables_2_plot, 
+                                        "Algeria",        
+                                        .dem = "gender")  
+
+```
+
+
+### Plot the Summaries
+
+Again, the same function to create one plot is used to create many plots: **plot_demographic_smry_individual()**. Just like in Chapter 1, we need to use the **map** function.
+
+In this case, you supply the list of summaries you just created, and the **plot_demographic_sumry_individual()** function. The code follows:
+
+```{r 02.24-plots, eval=FALSE}
+
+map(
+  gender_summaries,                        # List of summaries
+  plot_demographic_smry_individual         # Plotting function
+)
+
+```
+
+The code produces the following output:
+
+```{r 02.25-plots, figures-side, fig.show="hold", out.width="50%"}
+
+map(
+  gender_summaries,                       # List of summaries
+  plot_demographic_smry_individual         # Plotting function
+)
+
+```
+
+
+Notice, yet again, the caption needs to be changed. To change the caption for all the graphs, just add one line to the map function.
+
+
+```{r 02.26-plots, figures-side, fig.show="hold", out.width="50%"}
+map(
+  gender_summaries,                              # List of summaries
+  plot_demographic_smry_individual,              # Plotting function
+  .caption = "Arab Barometer Wave VI, Survey I"  # Caption
+)
+
+```
+
+
+Congratulations! You have created three plots at once. You can store them in as a single list and call them one at a time.
+
+```{r 02.27-plots, eval=FALSE}
+
+gender_plots <- map(
+  gender_summaries,                              # List of summaries
+  plot_demographic_smry_individual,              # Plotting function
+  .caption = "Arab Barometer Wave VI, Survey I"  # Caption
+)
+
+```
+
+
+```{r 02.28-plots, echo=FALSE}
+
+gender_plots <- map(
+  gender_summaries,                              # List of summaries
+  plot_demographic_smry_individual,              # Plotting function
+  .caption = "Arab Barometer Wave VI, Survey I"  # Caption
+)
+
+```
+
+Now, all three plots have been stored in a named list named `gender_plots`. To look at the first plot:
+
+```{r 02.29-Complete-Code-Example-Results1, fig.dim=c(13,12)}
+
+gender_plots$Q1COVID19
+
+```
+
+To see the plot for variable `Q2061A`, run the following code:
+
+```{r 02.30-Complete-Code-Example-Results2, fig.dim=c(13,12)}
+
+gender_plots$Q2061A
+
+```
+
+Finally, to see the plot for variable `Q609`, run the following code:
+
+```{r 02.31-Complete-Code-Example-Results3, fig.dim=c(13,12)}
+
+gender_plots$Q609
+
+```
+
+
+You have now completed all steps in the example code. Congrats!

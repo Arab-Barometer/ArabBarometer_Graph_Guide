@@ -11,6 +11,8 @@ create-a-single-graph-1
 creating-a-summary
 plotting-the-summary
 create-many-graphs-1
+create-summaries-1
+plot-the-summaries-1
 coming-soon-comparative-overall-graphs
 create-a-single-graph-2
 coming-soon-comparative-demographic-graphs
