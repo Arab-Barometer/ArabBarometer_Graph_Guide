@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Change the Title/Subtitle/Caption | ArabBarometR Graphing Guide</title>
   <meta name="description" content="Chapter 6 Change the Title/Subtitle/Caption | ArabBarometR Graphing Guide" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Change the Title/Subtitle/Caption | ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2022-01-14" />
+<meta name="date" content="2022-01-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,9 +32,10 @@
   
   
 <link rel="prev" href="change-the-font-size.html"/>
-
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link rel="next" href="play-with-colors.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -50,7 +51,8 @@
 
 
 
-
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -117,6 +119,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -179,6 +182,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>II How do I …?</b></span></li>
 <li class="chapter" data-level="5" data-path="change-the-font-size.html"><a href="change-the-font-size.html"><i class="fa fa-check"></i><b>5</b> Change the Font Size</a></li>
 <li class="chapter" data-level="6" data-path="change-the-titlesubtitlecaption.html"><a href="change-the-titlesubtitlecaption.html"><i class="fa fa-check"></i><b>6</b> Change the Title/Subtitle/Caption</a></li>
+<li class="chapter" data-level="7" data-path="play-with-colors.html"><a href="play-with-colors.html"><i class="fa fa-check"></i><b>7</b> Play with Colors</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="play-with-colors.html"><a href="play-with-colors.html#available-colors"><i class="fa fa-check"></i><b>7.1</b> Available Colors</a></li>
+<li class="chapter" data-level="7.2" data-path="play-with-colors.html"><a href="play-with-colors.html#available-palettes"><i class="fa fa-check"></i><b>7.2</b> Available Palettes</a></li>
+<li class="chapter" data-level="7.3" data-path="play-with-colors.html"><a href="play-with-colors.html#change-colors-for-frequency-graphs"><i class="fa fa-check"></i><b>7.3</b> Change Colors for Frequency Graphs</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -200,33 +209,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="change-the-titlesubtitlecaption" class="section level1" number="6">
 <h1><span class="header-section-number">Chapter 6</span> Change the Title/Subtitle/Caption</h1>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="change-the-titlesubtitlecaption.html#cb70-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb70-2"><a href="change-the-titlesubtitlecaption.html#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb70-3"><a href="change-the-titlesubtitlecaption.html#cb70-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb70-4"><a href="change-the-titlesubtitlecaption.html#cb70-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.title =</span> <span class="st">&quot;New title&quot;</span>,</span>
-<span id="cb70-5"><a href="change-the-titlesubtitlecaption.html#cb70-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.subtitle =</span> <span class="st">&quot;New subtitle&quot;</span>,</span>
-<span id="cb70-6"><a href="change-the-titlesubtitlecaption.html#cb70-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.caption =</span> <span class="st">&quot;New caption&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="change-the-titlesubtitlecaption.html#cb69-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb69-2"><a href="change-the-titlesubtitlecaption.html#cb69-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb69-3"><a href="change-the-titlesubtitlecaption.html#cb69-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb69-4"><a href="change-the-titlesubtitlecaption.html#cb69-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.title =</span> <span class="st">&quot;New title&quot;</span>,</span>
+<span id="cb69-5"><a href="change-the-titlesubtitlecaption.html#cb69-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.subtitle =</span> <span class="st">&quot;New subtitle&quot;</span>,</span>
+<span id="cb69-6"><a href="change-the-titlesubtitlecaption.html#cb69-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.caption =</span> <span class="st">&quot;New caption&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.2-Complete-Code-Example-1.png" width="1248" /></p>
 
 </div>
-
-
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="change-the-font-size.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="change-the-font-size.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="play-with-colors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -245,6 +246,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
@@ -265,6 +267,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection"
 }

@@ -19,3 +19,7 @@ coming-soon-comparative-demographic-graphs
 create-a-single-graph-3
 change-the-font-size
 change-the-titlesubtitlecaption
+play-with-colors
+available-colors
+available-palettes
+change-colors-for-frequency-graphs

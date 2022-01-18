@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Coming Soon: Comparative Demographic Graphs | ArabBarometR Graphing Guide</title>
-  <meta name="description" content="Chapter 4 Coming Soon: Comparative Demographic Graphs | ArabBarometR Graphing Guide" />
+  <title>Chapter 7 Play with Colors | ArabBarometR Graphing Guide</title>
+  <meta name="description" content="Chapter 7 Play with Colors | ArabBarometR Graphing Guide" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Coming Soon: Comparative Demographic Graphs | ArabBarometR Graphing Guide" />
+  <meta property="og:title" content="Chapter 7 Play with Colors | ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Coming Soon: Comparative Demographic Graphs | ArabBarometR Graphing Guide" />
+  <meta name="twitter:title" content="Chapter 7 Play with Colors | ArabBarometR Graphing Guide" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="coming-soon-comparative-overall-graphs.html"/>
-<link rel="next" href="change-the-font-size.html"/>
+<link rel="prev" href="change-the-titlesubtitlecaption.html"/>
+
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -207,22 +207,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="coming-soon-comparative-demographic-graphs" class="section level1" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Coming Soon: Comparative Demographic Graphs</h1>
-<p>This chapter will cover how to make a comparative frequency graph by demographic for multiple countries.</p>
-<div id="create-a-single-graph-3" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Create a Single Graph</h2>
-<p>This section will go over how to make a one-off comparative frequency graph by demographic for a multiple countries.</p>
-<p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="coming-soon-comparative-demographic-graphs.html#cb67-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb67-2"><a href="coming-soon-comparative-demographic-graphs.html#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb67-3"><a href="coming-soon-comparative-demographic-graphs.html#cb67-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb67-4"><a href="coming-soon-comparative-demographic-graphs.html#cb67-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
-<p>That code will produce the following graph:</p>
-<p><img src="bookdownproj_files/figure-html/04.2-Complete-Graph-Example-1.png" width="1248" /></p>
+<div id="play-with-colors" class="section level1" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Play with Colors</h1>
+<div id="available-colors" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Available Colors</h2>
+<p>The colors available for graphs come from <a href="https://drive.google.com/drive/u/0/folders/0ANF6dTDxdEyiUk9PVA">the Arab Barometer Color Guide</a>. You can see a list of colors with the command:</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="play-with-colors.html#cb70-1" aria-hidden="true" tabindex="-1"></a>ArabBarometer_clrs</span></code></pre></div>
+<pre><code>##         AB blue       AB orange      AB magenta   AB light blue       AB purple         AB pink 
+##       &quot;#0098BE&quot;       &quot;#DF6E21&quot;       &quot;#AC517F&quot;       &quot;#7CBBC7&quot;       &quot;#796391&quot;       &quot;#CF83A3&quot; 
+##       AB yellow       cool grey            zeke      james bond       dark blue     medium blue 
+##       &quot;#FBA950&quot;       &quot;#B1C2CF&quot;       &quot;#CCEAF2&quot;       &quot;#00718E&quot;       &quot;#003D4E&quot;       &quot;#4B91B8&quot; 
+##      pale green     olive green          copper    light bronze    bright apple dark watermelon 
+##       &quot;#C8C6A2&quot;       &quot;#AAA764&quot;       &quot;#AC5410&quot;       &quot;#DC9C56&quot;       &quot;#FF5E64&quot;       &quot;#E42525&quot; 
+##      mary clare           plumb           lilac          purple          coffee  midnight ocean 
+##       &quot;#EAA4A4&quot;       &quot;#7F375B&quot;       &quot;#B4ADDF&quot;       &quot;#5C1C95&quot;       &quot;#6F3610&quot;       &quot;#004B5E&quot; 
+##           salma     almond meat     army jacket         apricot         mohamed       text grey 
+##       &quot;#C0E5EE&quot;       &quot;#F6DAC7&quot;       &quot;#706E3E&quot;       &quot;#F7B58B&quot;       &quot;#959595&quot;       &quot;#545454&quot; 
+##      bright sky    bright mauve     dark apriot         Algeria           Egypt            Iraq 
+##       &quot;#2CB2CE&quot;       &quot;#AD517F&quot;       &quot;#E28F57&quot;       &quot;#DF6E21&quot;       &quot;#00718E&quot;       &quot;#FBA950&quot; 
+##          Jordan          Kuwait         Lebanon           Libya      Mauritania         Morocco 
+##       &quot;#7F375B&quot;       &quot;#706E3E&quot;       &quot;#CF83A3&quot;       &quot;#003D4E&quot;       &quot;#DC9C56&quot;       &quot;#7CBBC7&quot; 
+##       Palestine    Saudi Arabia           Sudan         Tunisia           Yemen            MENA 
+##       &quot;#AC517F&quot;       &quot;#1B909F&quot;       &quot;#EAA4A4&quot;       &quot;#AAA764&quot;       &quot;#796391&quot;       &quot;#E42525&quot;</code></pre>
+<p>You’ll notice some colors are repeated with different names (particularly when it comes to countries). This makes some parts of graphing easier internally. The unique colors included in the package are shown below with their hex code.</p>
+<p><img src="bookdownproj_files/figure-html/How.All-Colors-Output-1.png" width="672" /></p>
+</div>
+<div id="available-palettes" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Available Palettes</h2>
+<p>The official branding colors have been combined into several color palettes to use with graphs. To see a list of all the (current) palettes, use the following command:</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="play-with-colors.html#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AB_palette_options</span>()</span></code></pre></div>
+<pre><code>##  [1] &quot;blue pair&quot;          &quot;orange pair&quot;        &quot;purple pair&quot;        &quot;AB Default&quot;        
+##  [5] &quot;blue triple&quot;        &quot;orange triple&quot;      &quot;purple triple&quot;      &quot;green triple&quot;      
+##  [9] &quot;mono blue&quot;          &quot;mono orange&quot;        &quot;mono purple&quot;        &quot;mono green&quot;        
+## [13] &quot;dull rainbow&quot;       &quot;cool orange&quot;        &quot;blue-orange&quot;        &quot;cool bright orange&quot;
+## [17] &quot;business man&quot;       &quot;pretty cool&quot;        &quot;soft rainbow&quot;       &quot;warm&quot;              
+## [21] &quot;purple pink&quot;        &quot;stacked&quot;            &quot;age&quot;                &quot;income&quot;            
+## [25] &quot;education&quot;          &quot;gender&quot;             &quot;settlement&quot;         &quot;religion&quot;          
+## [29] &quot;trend colors&quot;</code></pre>
+</div>
+<div id="change-colors-for-frequency-graphs" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Change Colors for Frequency Graphs</h2>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="play-with-colors.html#cb74-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb74-2"><a href="play-with-colors.html#cb74-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb74-3"><a href="play-with-colors.html#cb74-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb74-4"><a href="play-with-colors.html#cb74-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.clr =</span> <span class="st">&quot;zeke&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/How.3-Complete-Code-Example-1.png" width="1248" /></p>
 
 </div>
 </div>
+
+
+
+
 
 
 
@@ -231,8 +267,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="coming-soon-comparative-overall-graphs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="change-the-font-size.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="change-the-titlesubtitlecaption.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -263,7 +299,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/04-Ignore4Now3.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/103-ColorChange.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -271,7 +307,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/04-Ignore4Now3.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/103-ColorChange.Rmd",
 "text": null
 },
 "download": null,

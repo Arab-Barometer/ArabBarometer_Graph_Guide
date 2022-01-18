@@ -17,4 +17,4 @@ usethis::browse_github()
 
 ## Graphing Guide README
 
-This guide focuses only on how to use the ArabBarometR package to make graphs. It does not cover everything the ArabBarometR package can do. To see more of the functions available in ArabBarometR, please visit [this website](https://arab-barometer.github.io/ArabBarometR-Guide/). This guide also assumes so familarity with R and does not go over R fundamentals.
+This guide focuses only on how to use the ArabBarometR package to make graphs. It does not cover everything the ArabBarometR package can do. To see more of the functions available in ArabBarometR, please visit [this website](https://arab-barometer.github.io/ArabBarometR-Guide/). This guide also assumes so familiarity with R and does not go over R fundamentals.
