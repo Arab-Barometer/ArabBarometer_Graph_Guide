@@ -1,39 +1,9 @@
 # Play with Colors
 
 
-## Available Colors
-
-The colors available for graphs come from [the Arab Barometer Color Guide](https://drive.google.com/drive/u/0/folders/0ANF6dTDxdEyiUk9PVA). You can see a list of colors with the command:
-
-```{r How.All-Colors-Code}
-
-ArabBarometer_clrs
-
-```
-
-You'll notice some colors are repeated with different names (particularly when it comes to countries). This makes some parts of graphing easier internally. The unique colors included in the package are shown below with their hex code.
-
-```{r How.All-Colors-Output,echo=FALSE}
-
-scales::show_col(unique(ArabBarometer_clrs))
-
-```
-
-## Available Palettes
-
-The official branding colors have been combined into several color palettes to use with graphs. To see a list of all the (current) palettes, use the following command:
-
-```{r How.3-All-Palettes}
-
-AB_palette_options()
-
-```
-
-
-
 ## Change Colors for Frequency Graphs
 
-```{r How.3-Complete-Code-Example, fig.dim=c(13,12)}
+```{r How.3.1-Complete-Code-Example, fig.dim=c(13,12)}
 
 survey1 %>%
   calculate_smry_individual("Q1COVID19",
@@ -42,3 +12,48 @@ survey1 %>%
 
 
 ```
+
+## Available Colors
+
+The colors available for graphs come from [the Arab Barometer Color Guide](https://drive.google.com/drive/u/0/folders/0ANF6dTDxdEyiUk9PVA). You can see a list of colors with the command:
+
+```{r How.3.2-All-Colors-Code}
+
+ArabBarometer_clrs
+
+```
+
+You'll notice some colors are repeated with different names (particularly when it comes to countries). This makes some parts of graphing easier internally. The unique colors included in the package are shown below with their hex code.
+
+```{r How.3.3-All-Colors-Output,echo=FALSE}
+
+scales::show_col(unique(ArabBarometer_clrs))
+
+```
+
+## Change Color Palette
+
+```{r How.3.4-Complete-Code-Example, fig.dim=c(13,12)}
+
+
+survey1 %>%
+  calculate_demographic_smry_individual("Q1COVID19",
+                                        .dem = "gender",
+                                        .country = "Algeria") %>%
+  plot_demographic_smry_individual(.color_palette = "cool rainbow")
+
+
+```
+
+
+## Available Palettes
+
+The official branding colors have been combined into several color palettes to use with graphs. To see a list of all the (current) palettes, use the following command:
+
+```{r How.3.5-All-Palettes}
+
+AB_palette_options()
+
+```
+
+

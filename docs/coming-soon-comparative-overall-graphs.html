@@ -24,7 +24,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2022-01-18" />
+<meta name="date" content="2022-04-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -173,7 +173,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3" data-path="coming-soon-comparative-overall-graphs.html"><a href="coming-soon-comparative-overall-graphs.html"><i class="fa fa-check"></i><b>3</b> Coming Soon: Comparative Overall Graphs</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="coming-soon-comparative-overall-graphs.html"><a href="coming-soon-comparative-overall-graphs.html#create-a-single-graph-2"><i class="fa fa-check"></i><b>3.1</b> Create a Single Graph</a></li>
+<li class="chapter" data-level="3.1" data-path="coming-soon-comparative-overall-graphs.html"><a href="coming-soon-comparative-overall-graphs.html#create-a-single-graph-2"><i class="fa fa-check"></i><b>3.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="coming-soon-comparative-overall-graphs.html"><a href="coming-soon-comparative-overall-graphs.html#create-a-summary-1"><i class="fa fa-check"></i><b>3.1.1</b> Create a Summary</a></li>
+<li class="chapter" data-level="3.1.2" data-path="coming-soon-comparative-overall-graphs.html"><a href="coming-soon-comparative-overall-graphs.html#plot-the-summary-1"><i class="fa fa-check"></i><b>3.1.2</b> Plot the Summary</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="coming-soon-comparative-demographic-graphs.html"><a href="coming-soon-comparative-demographic-graphs.html"><i class="fa fa-check"></i><b>4</b> Coming Soon: Comparative Demographic Graphs</a>
 <ul>
@@ -184,9 +188,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="change-the-titlesubtitlecaption.html"><a href="change-the-titlesubtitlecaption.html"><i class="fa fa-check"></i><b>6</b> Change the Title/Subtitle/Caption</a></li>
 <li class="chapter" data-level="7" data-path="play-with-colors.html"><a href="play-with-colors.html"><i class="fa fa-check"></i><b>7</b> Play with Colors</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="play-with-colors.html"><a href="play-with-colors.html#available-colors"><i class="fa fa-check"></i><b>7.1</b> Available Colors</a></li>
-<li class="chapter" data-level="7.2" data-path="play-with-colors.html"><a href="play-with-colors.html#available-palettes"><i class="fa fa-check"></i><b>7.2</b> Available Palettes</a></li>
-<li class="chapter" data-level="7.3" data-path="play-with-colors.html"><a href="play-with-colors.html#change-colors-for-frequency-graphs"><i class="fa fa-check"></i><b>7.3</b> Change Colors for Frequency Graphs</a></li>
+<li class="chapter" data-level="7.1" data-path="play-with-colors.html"><a href="play-with-colors.html#change-colors-for-frequency-graphs"><i class="fa fa-check"></i><b>7.1</b> Change Colors for Frequency Graphs</a></li>
+<li class="chapter" data-level="7.2" data-path="play-with-colors.html"><a href="play-with-colors.html#available-colors"><i class="fa fa-check"></i><b>7.2</b> Available Colors</a></li>
+<li class="chapter" data-level="7.3" data-path="play-with-colors.html"><a href="play-with-colors.html#change-color-palette"><i class="fa fa-check"></i><b>7.3</b> Change Color Palette</a></li>
+<li class="chapter" data-level="7.4" data-path="play-with-colors.html"><a href="play-with-colors.html#available-palettes"><i class="fa fa-check"></i><b>7.4</b> Available Palettes</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -214,14 +219,70 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.1</span> Create a Single Graph</h2>
 <p>This section will go over how to make a one-off comparative frequency graph for a multiple countries.</p>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="coming-soon-comparative-overall-graphs.html#cb65-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb65-2"><a href="coming-soon-comparative-overall-graphs.html#cb65-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb65-3"><a href="coming-soon-comparative-overall-graphs.html#cb65-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="coming-soon-comparative-overall-graphs.html#cb66-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb66-2"><a href="coming-soon-comparative-overall-graphs.html#cb66-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb66-3"><a href="coming-soon-comparative-overall-graphs.html#cb66-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
-<pre><code>## Warning: It is deprecated to specify `guide = FALSE` to remove a guide. Please use `guide =
-## &quot;none&quot;` instead.</code></pre>
 <p><img src="bookdownproj_files/figure-html/03.2-Complete-Graph-Example-1.png" width="1248" /></p>
+<div id="create-a-summary-1" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Create a Summary</h3>
+<p>The process of creating an overall comparative graph is intentionally similar to creating a overall individual graph. As always, the first step is to organize the data we want to graph. For this we use the function <strong>calculate_smry_comp()</strong>, which is the comparative version of the individual summary function. The function requires only two parameters: (1) the data you are using, and (2) the variable you want to summarize. There are several other optional parameters. To see all the input parameters for the function, type the code <code>?calculate_smry_comp</code> in your R console.</p>
+<p>For the example in this section, we are using the data set <code>survey1</code> and summarizing the variable <code>Q1COVID19</code>.</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="coming-soon-comparative-overall-graphs.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_smry_comp</span>(</span>
+<span id="cb67-2"><a href="coming-soon-comparative-overall-graphs.html#cb67-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">.data =</span> survey1,          <span class="co"># The data you are using</span></span>
+<span id="cb67-3"><a href="coming-soon-comparative-overall-graphs.html#cb67-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">.var =</span> <span class="st">&quot;Q1COVID19&quot;</span>       <span class="co"># The variable you want to plot</span></span>
+<span id="cb67-4"><a href="coming-soon-comparative-overall-graphs.html#cb67-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>Recall the above code is the same as typing:</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="coming-soon-comparative-overall-graphs.html#cb68-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb68-2"><a href="coming-soon-comparative-overall-graphs.html#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>)</span></code></pre></div>
+<p>Let’s take a look at the output:</p>
+<pre><code>## # A tibble: 6 x 2
+##   Country    Q1COVID19
+##   &lt;labelled&gt;     &lt;dbl&gt;
+## 1 Algeria           72
+## 2 Jordan            61
+## 3 Lebanon           82
+## 4 Libya             75
+## 5 Morocco           65
+## 6 Tunisia           59</code></pre>
+<p>A few things to notice about the output of this function:</p>
+<ol style="list-style-type: decimal">
+<li>The first column is called <code>Country</code>. This will always be the case. The plot function used for comparative summaries will expect this.</li>
+<li>The second column is named after the question being summarized. This will always be the case. The plot function used for comparative summaries will expect this. The title of the graph will depend on the name of this column.</li>
+</ol>
+<p>If you wish to provide the plot function your own summary, it will have to follow these conventions.</p>
+<p>Now we’ll store the summary as an object <code>comparative_summary</code> and move on to plotting it.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="coming-soon-comparative-overall-graphs.html#cb70-1" aria-hidden="true" tabindex="-1"></a>comparative_summary <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb70-2"><a href="coming-soon-comparative-overall-graphs.html#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>)</span></code></pre></div>
+</div>
+<div id="plot-the-summary-1" class="section level3" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Plot the Summary</h3>
+<p>The next step is plot the summary we just created. To do this, we use the function <strong>plot_smry_comp()</strong>. You can learn more about this function in section <a href="https://arab-barometer.github.io/ArabBarometR-Guide/standard-plots.html#plot_smry_comp">7.3</a> of the ArabBarometR Guide.</p>
+<p>There is only <em>one</em> necessary parameter to use <strong>plot_smry_comp()</strong>: the summary data frame. For a complete list of acceptable parameters and documentation, you can run <code>?plot_smry_comp</code> in your R console.</p>
+<p>Now, we can plug our summary into the plot function:</p>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="coming-soon-comparative-overall-graphs.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_smry_comp</span>(</span>
+<span id="cb71-2"><a href="coming-soon-comparative-overall-graphs.html#cb71-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">.df =</span> comparative_summary  <span class="co"># The summary data frame</span></span>
+<span id="cb71-3"><a href="coming-soon-comparative-overall-graphs.html#cb71-3" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>The above code is the same as:</p>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="coming-soon-comparative-overall-graphs.html#cb72-1" aria-hidden="true" tabindex="-1"></a>comparative_summary <span class="sc">%&gt;%</span></span>
+<span id="cb72-2"><a href="coming-soon-comparative-overall-graphs.html#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>()</span></code></pre></div>
+<p>Which is the SAME as:</p>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="coming-soon-comparative-overall-graphs.html#cb73-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb73-2"><a href="coming-soon-comparative-overall-graphs.html#cb73-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb73-3"><a href="coming-soon-comparative-overall-graphs.html#cb73-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>()</span></code></pre></div>
+<p>We can do this because <code>comparative_summary</code> is equal to <code>survey1 %&gt;% calculate_smry_comp("Q1COVID19")</code>.</p>
+<p>Any of the above code gives the following graph:</p>
+<p><img src="bookdownproj_files/figure-html/03.11-plot-1.png" width="1248" /></p>
+<p>Almost done! Notice how the caption says <strong>Arab Barometer Wave N (DATE)</strong>? Let’s change that.</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="coming-soon-comparative-overall-graphs.html#cb74-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb74-2"><a href="coming-soon-comparative-overall-graphs.html#cb74-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb74-3"><a href="coming-soon-comparative-overall-graphs.html#cb74-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(</span>
+<span id="cb74-4"><a href="coming-soon-comparative-overall-graphs.html#cb74-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>  <span class="co"># NEW caption</span></span>
+<span id="cb74-5"><a href="coming-soon-comparative-overall-graphs.html#cb74-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p>Now we have the plot we started with! We’re done!</p>
+<p><img src="bookdownproj_files/figure-html/03.13-plot-1.png" width="1248" /></p>
 
+</div>
 </div>
 </div>
             </section>
