@@ -1,0 +1,78 @@
+# Highlight Certain Countries
+
+## Single Country Highlight
+
+```{r How.4.6.1-Highlight, eval=FALSE}
+
+survey1 %>%
+  calculate_smry_comp("Q1COVID19") %>%
+  plot_smry_comp(.caption = "Arab Barometer Wave VI, Survey I",
+                 .highlight = "Algeria")
+
+
+```
+
+That code will produce the following graph:
+
+
+```{r How.4.6.2-Highlight, echo=FALSE, fig.dim=c(13,12)}
+
+
+survey1 %>%
+  calculate_smry_comp("Q1COVID19") %>%
+  plot_smry_comp(.caption = "Arab Barometer Wave VI, Survey I",
+                 .highlight = "Algeria")
+
+```
+
+## Multiple Country Highlight
+
+```{r How.4.7.1-Highlight, eval=FALSE}
+
+survey1 %>%
+  calculate_smry_comp("Q1COVID19") %>%
+  plot_smry_comp(.caption = "Arab Barometer Wave VI, Survey I",
+                 .highlight = c("Algeria","Jordan"))
+
+
+```
+
+That code will produce the following graph:
+
+
+```{r How.4.7.2-Highlight, echo=FALSE, fig.dim=c(13,12)}
+
+
+survey1 %>%
+  calculate_smry_comp("Q1COVID19") %>%
+  plot_smry_comp(.caption = "Arab Barometer Wave VI, Survey I",
+                 .highlight = c("Algeria","Jordan"))
+
+```
+
+## Change Highlight Color
+
+```{r How.4.8.1-Highlight, eval=FALSE}
+
+survey1 %>%
+  calculate_smry_comp("Q1COVID19") %>%
+  plot_smry_comp(.caption = "Arab Barometer Wave VI, Survey I",
+                 .highlight = "Algeria",
+                 .highlight_clr = "salma")
+
+
+```
+
+That code will produce the following graph:
+
+
+```{r How.4.8.2-Highlight, echo=FALSE, fig.dim=c(13,12)}
+
+
+survey1 %>%
+  calculate_smry_comp("Q1COVID19") %>%
+  plot_smry_comp(.caption = "Arab Barometer Wave VI, Survey I",
+                 .highlight = "Algeria",
+                 .highlight_clr = "salma")
+
+```

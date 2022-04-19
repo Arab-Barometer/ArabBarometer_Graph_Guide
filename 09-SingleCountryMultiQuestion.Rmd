@@ -1,0 +1,38 @@
+# (PART) Multiple Questions {-}
+
+# COMING SOON: Single Country Multi-Question Plots
+
+
+At the end, your code will look like the following:
+
+```{r 09.1-Complete-Code-Example, eval=FALSE}
+
+questions_2_compare <- list("Q210",
+                            "Q211")
+questions_labels <- c("Is there corruption?",
+                      "Is the gov't cracking down?")
+
+plot_multiquestions_ind(survey1,
+                        questions_2_compare,
+                        questions_labels,
+                        "Algeria")
+
+```
+
+That code will produce the following graph:
+
+
+```{r 09.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
+
+questions_2_compare <- list("Q210",
+                            "Q211")
+questions_labels <- c("Is there corruption?",
+                      "Is the gov't cracking down?")
+
+plot_multiquestions_ind(survey1,
+                        questions_2_compare,
+                        questions_labels,
+                        "Algeria")
+```
+
+Let's go!

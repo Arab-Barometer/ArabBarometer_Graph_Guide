@@ -56,4 +56,3 @@ AB_palette_options()
 
 ```
 
-

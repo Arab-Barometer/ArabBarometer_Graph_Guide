@@ -1,0 +1,50 @@
+# (PART) Trend Graphs {-}
+# COMING SOON: Single Country Trend Graphs
+
+This chapter will cover how to create trend graphs for one country. Prior to his, we have only used a single data set, `survey1`. We will now also use the data sets `survey2` and `survey3`. Refer to the assumed [header code](#headercode) to see where `survey1`, `survey2`, and `survey3` came from.
+
+## Create Single Trend Graph
+
+At the end, your code will look like the following:
+
+```{r 05.1-Complete-Code-Example, eval=FALSE}
+
+df_list <- list(
+  survey1,
+  survey2,
+  survey3
+)
+
+survey_dates <- c("Survey 1",
+                  "Suvey 2",
+                  "Survey 3")
+
+plot_trend_individual("Q1COVID19",
+                      df_list,
+                      survey_dates,
+                      "Algeria")
+
+
+```
+
+The code produces this graph:
+
+```{r 05.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
+
+df_list <- list(
+  survey1,
+  survey2,
+  survey3
+)
+
+survey_dates <- c("Survey 1",
+                  "Suvey 2",
+                  "Survey 3")
+
+plot_trend_individual("Q1COVID19",
+                      df_list,
+                      survey_dates,
+                      "Algeria")
+
+
+```

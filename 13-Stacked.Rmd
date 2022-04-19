@@ -1,0 +1,7 @@
+# (PART) Stacked Plots {-}
+# Stacked Plots
+
+This section will go over:
+
+* `plot_stacked_comp()`
+* `plot_stacked_general()`

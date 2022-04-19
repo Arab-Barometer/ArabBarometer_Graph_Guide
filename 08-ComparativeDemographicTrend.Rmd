@@ -1,0 +1,64 @@
+# COMING SOON: Comparative Country Demographic Trend Graphs
+
+## Create Comparative Demographic Trend Graph
+
+At the end, your code will look like the following:
+
+```{r 08.1-Complete-Code-Example, eval=FALSE}
+
+df_list <- list(
+  survey1,
+  survey2,
+  survey3
+)
+
+survey_dates <- c("Survey 1",
+                  "Suvey 2",
+                  "Survey 3")
+
+# One plot per Country
+plot_trend_comp_demographics("Q1COVID19",
+                             df_list,
+                             "gender",
+                             survey_dates,
+                             "Country")
+
+# One plot per demographic
+plot_trend_comp_demographics("Q1COVID19",
+                             df_list,
+                             "gender",
+                             survey_dates,
+                             "demographic")
+
+
+```
+
+The code produces this graphs:
+
+```{r 08.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
+
+
+df_list <- list(
+  survey1,
+  survey2,
+  survey3
+)
+
+survey_dates <- c("Survey 1",
+                  "Suvey 2",
+                  "Survey 3")
+
+# One plot per Country
+plot_trend_comp_demographics("Q1COVID19",
+                             df_list,
+                             "gender",
+                             survey_dates,
+                             "Country")
+
+# One plot per demographic
+plot_trend_comp_demographics("Q1COVID19",
+                             df_list,
+                             "gender",
+                             survey_dates,
+                             "demographic")
+```

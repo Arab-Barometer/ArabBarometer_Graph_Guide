@@ -1,0 +1,23 @@
+# COMING SOON: Comparative Grid Plots
+
+
+At the end, your code will look like the following:
+
+```{r 11.1-Complete-Code-Example, eval=FALSE}
+
+plot_grid_comp(survey1,
+               "Q700B")
+
+```
+
+That code will produce the following graph:
+
+
+```{r 11.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
+
+plot_grid_comp(survey1,
+               "Q700B")
+
+```
+
+Let's go!

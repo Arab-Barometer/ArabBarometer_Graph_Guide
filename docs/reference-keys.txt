@@ -28,6 +28,19 @@ plotting-the-summary-1
 create-many-graphs-3
 create-summaries-3
 plot-the-summaries-3
+coming-soon-single-country-trend-graphs
+create-single-trend-graph
+coming-soon-single-country-demographic-trend-graphs
+create-single-demographic-trend-graph
+coming-soon-comparative-country-trend-graphs
+create-comparative-trend-graph
+coming-soon-comparative-country-demographic-trend-graphs
+create-comparative-demographic-trend-graph
+single-country-multi-question-plots
+comparative-multi-question-plots
+comparative-grid-plots
+single-country-multi-question-trend-plots
+stacked-plots
 change-the-font-size
 change-the-titlesubtitlecaption
 play-with-colors
@@ -35,3 +48,7 @@ change-colors-for-frequency-graphs
 available-colors
 change-color-palette
 available-palettes
+highlight-certain-countries
+single-country-highlight
+multiple-country-highlight
+change-highlight-color

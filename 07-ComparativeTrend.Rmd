@@ -1,0 +1,46 @@
+# COMING SOON: Comparative Country Trend Graphs
+
+## Create Comparative Trend Graph
+
+At the end, your code will look like the following:
+
+```{r 07.1-Complete-Code-Example, eval=FALSE}
+
+df_list <- list(
+  survey1,
+  survey2,
+  survey3
+)
+
+survey_dates <- c("Survey 1",
+                  "Suvey 2",
+                  "Survey 3")
+
+
+plot_trend_comp("Q1COVID19",
+                df_list,
+                survey_dates)
+
+
+```
+
+The code produces this graph:
+
+```{r 07.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
+
+df_list <- list(
+  survey1,
+  survey2,
+  survey3
+)
+
+survey_dates <- c("Survey 1",
+                  "Suvey 2",
+                  "Survey 3")
+
+
+plot_trend_comp("Q1COVID19",
+                df_list,
+                survey_dates)
+
+```

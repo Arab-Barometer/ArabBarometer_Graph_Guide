@@ -36,7 +36,7 @@ The examples in this guide will be created using data from Wave VI. For single s
 
 The Wave VI data can be found on [the Arab Barometer Github](https://github.com/Arab-Barometer/Final_Data/tree/main/Wave6) or [the Arab Barometer website](https://www.arabbarometer.org/survey-data/data-downloads/).
 
-## Header Code {-}
+## Header Code {-#headercode}
 
 The code examples in this guide will **only** focus on how to create graphs. It assumes your R file begins with the following code:
 

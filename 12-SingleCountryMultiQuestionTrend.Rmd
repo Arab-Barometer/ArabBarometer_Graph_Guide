@@ -1,0 +1,51 @@
+# COMING SOON: Single Country Multi-Question Trend Plots
+
+
+At the end, your code will look like the following:
+
+```{r 12.1-Complete-Code-Example, eval=FALSE}
+
+questions_2_compare <- list("Q2061A_1",
+                            "Q2061A_15")
+
+df_list <- list(survey1,
+                survey2,
+                survey3)
+
+survey_dates <- c("Survey 1",
+                  "Survey 2",
+                  "Survey 3")
+
+plot_trend_multiquestion_individual(questions_2_compare,
+                                    df_list,
+                                    survey_dates,
+                                    "Algeria")
+
+
+```
+
+That code will produce the following graph:
+
+
+```{r 12.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
+
+questions_2_compare <- list("Q2061A_1",
+                            "Q2061A_15")
+
+df_list <- list(survey1,
+                survey2,
+                survey3)
+
+survey_dates <- c("Survey 1",
+                  "Survey 2",
+                  "Survey 3")
+
+plot_trend_multiquestion_individual(questions_2_compare,
+                                    df_list,
+                                    survey_dates,
+                                    "Algeria")
+
+
+```
+
+Let's go!
