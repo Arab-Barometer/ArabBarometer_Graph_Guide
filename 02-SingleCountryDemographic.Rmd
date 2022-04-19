@@ -59,7 +59,8 @@ survey1 %>%
                                         .country = "Algeria")
 
 ```
-Woah, that's a lot of summaries! By default, **calculate_demographic_smry_individual()** creates summaries for **age**, **gender**, **income**, and **education**. Currently, the function can create summaries by any variable that is **2** categories^[MaryClare is actively working on making this more flexible.]. To specify exactly which demographic we want to group the data by, we include one more parameter.
+
+Woah, that's a lot of summaries! By default, **calculate_demographic_smry_individual()** creates summaries for **age**, **gender**, **income**, and **education**. To specify exactly which demographic we want to group the data by, we include one more parameter.
 
 ```{r 02.5-summary, eval=FALSE}
 

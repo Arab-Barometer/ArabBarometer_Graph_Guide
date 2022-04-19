@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Comparative Demographic Graphs | ArabBarometR Graphing Guide</title>
+  <meta name="description" content="Chapter 4 Comparative Demographic Graphs | ArabBarometR Graphing Guide" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Comparative Demographic Graphs | ArabBarometR Graphing Guide" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Comparative Demographic Graphs | ArabBarometR Graphing Guide" />
+  
+  
+  
+
+<meta name="author" content="MaryClare Roche" />
+
+
+<meta name="date" content="2022-04-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="comparative-overall-graphs.html"/>
+<link rel="next" href="change-the-font-size.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">GraphGuide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#purpose"><i class="fa fa-check"></i>Purpose</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#general-guide-process"><i class="fa fa-check"></i>General Guide Process</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#example-data"><i class="fa fa-check"></i>Example Data</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#header-code"><i class="fa fa-check"></i>Header Code</a></li>
+</ul></li>
+<li class="part"><span><b>I Cross Tabulation Graphs</b></span></li>
+<li class="chapter" data-level="1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html"><i class="fa fa-check"></i><b>1</b> Single Country Overall Graphs</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-a-single-graph"><i class="fa fa-check"></i><b>1.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-a-summary"><i class="fa fa-check"></i><b>1.1.1</b> Create a Summary</a></li>
+<li class="chapter" data-level="1.1.2" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#plot-the-summary"><i class="fa fa-check"></i><b>1.1.2</b> Plot the Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-many-graphs"><i class="fa fa-check"></i><b>1.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#identify-the-variables"><i class="fa fa-check"></i><b>1.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="1.2.2" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-summaries"><i class="fa fa-check"></i><b>1.2.2</b> Create Summaries</a></li>
+<li class="chapter" data-level="1.2.3" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#plot-the-summaries"><i class="fa fa-check"></i><b>1.2.3</b> Plot the Summaries</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html"><i class="fa fa-check"></i><b>2</b> Single Country Demographic Plots</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#create-a-single-graph-1"><i class="fa fa-check"></i><b>2.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#creating-a-summary"><i class="fa fa-check"></i><b>2.1.1</b> Creating a Summary</a></li>
+<li class="chapter" data-level="2.1.2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#plotting-the-summary"><i class="fa fa-check"></i><b>2.1.2</b> Plotting the Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#create-many-graphs-1"><i class="fa fa-check"></i><b>2.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#create-summaries-1"><i class="fa fa-check"></i><b>2.2.1</b> Create Summaries</a></li>
+<li class="chapter" data-level="2.2.2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#plot-the-summaries-1"><i class="fa fa-check"></i><b>2.2.2</b> Plot the Summaries</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html"><i class="fa fa-check"></i><b>3</b> Comparative Overall Graphs</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-a-single-graph-2"><i class="fa fa-check"></i><b>3.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-a-summary-1"><i class="fa fa-check"></i><b>3.1.1</b> Create a Summary</a></li>
+<li class="chapter" data-level="3.1.2" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#plot-the-summary-1"><i class="fa fa-check"></i><b>3.1.2</b> Plot the Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-many-graphs-2"><i class="fa fa-check"></i><b>3.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#identify-the-variables-1"><i class="fa fa-check"></i><b>3.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="3.2.2" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-summaries-2"><i class="fa fa-check"></i><b>3.2.2</b> Create Summaries</a></li>
+<li class="chapter" data-level="3.2.3" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#plot-the-summaries-2"><i class="fa fa-check"></i><b>3.2.3</b> Plot the Summaries</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html"><i class="fa fa-check"></i><b>4</b> Comparative Demographic Graphs</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-a-single-graph-3"><i class="fa fa-check"></i><b>4.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#creating-a-summary-1"><i class="fa fa-check"></i><b>4.1.1</b> Creating a Summary</a></li>
+<li class="chapter" data-level="4.1.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#plotting-the-summary-1"><i class="fa fa-check"></i><b>4.1.2</b> Plotting the Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-many-graphs-3"><i class="fa fa-check"></i><b>4.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-summaries-3"><i class="fa fa-check"></i><b>4.2.1</b> Create Summaries</a></li>
+<li class="chapter" data-level="4.2.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#plot-the-summaries-3"><i class="fa fa-check"></i><b>4.2.2</b> Plot the Summaries</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II How do I …?</b></span></li>
+<li class="chapter" data-level="5" data-path="change-the-font-size.html"><a href="change-the-font-size.html"><i class="fa fa-check"></i><b>5</b> Change the Font Size</a></li>
+<li class="chapter" data-level="6" data-path="change-the-titlesubtitlecaption.html"><a href="change-the-titlesubtitlecaption.html"><i class="fa fa-check"></i><b>6</b> Change the Title/Subtitle/Caption</a></li>
+<li class="chapter" data-level="7" data-path="play-with-colors.html"><a href="play-with-colors.html"><i class="fa fa-check"></i><b>7</b> Play with Colors</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="play-with-colors.html"><a href="play-with-colors.html#change-colors-for-frequency-graphs"><i class="fa fa-check"></i><b>7.1</b> Change Colors for Frequency Graphs</a></li>
+<li class="chapter" data-level="7.2" data-path="play-with-colors.html"><a href="play-with-colors.html#available-colors"><i class="fa fa-check"></i><b>7.2</b> Available Colors</a></li>
+<li class="chapter" data-level="7.3" data-path="play-with-colors.html"><a href="play-with-colors.html#change-color-palette"><i class="fa fa-check"></i><b>7.3</b> Change Color Palette</a></li>
+<li class="chapter" data-level="7.4" data-path="play-with-colors.html"><a href="play-with-colors.html#available-palettes"><i class="fa fa-check"></i><b>7.4</b> Available Palettes</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ArabBarometR Graphing Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="comparative-demographic-graphs" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Comparative Demographic Graphs</h1>
+<p>This chapter will cover how to make a comparative frequency graph by demographic for multiple countries.</p>
+<div id="create-a-single-graph-3" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Create a Single Graph</h2>
+<p>This section will go over how to make a one-off comparative frequency graph by demographic for a multiple countries.</p>
+<p>At the end, your code will look like the following:</p>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="comparative-demographic-graphs.html#cb99-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb99-2"><a href="comparative-demographic-graphs.html#cb99-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb99-3"><a href="comparative-demographic-graphs.html#cb99-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb99-4"><a href="comparative-demographic-graphs.html#cb99-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>)</span></code></pre></div>
+<p>That code will produce the following graph:</p>
+<p><img src="bookdownproj_files/figure-html/04.2-Complete-Graph-Example-1.png" width="1248" /></p>
+<p>Let’s make it.</p>
+<div id="creating-a-summary-1" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Creating a Summary</h3>
+<p>The first step in creating a plot is to gather the data you want to display and organize it. You do this with the <strong>calculate_demographic_smry_comp()</strong> function. You can learn more about this function in section <a href="https://arab-barometer.github.io/ArabBarometR-Guide/calculating-summaries.html#calculate_demographic_smry_comp">6.4</a> in the larger ArabBarometR guide.</p>
+<p>Just like <strong>calculate_smry_comp()</strong>, the two main parameters you need to provide to this function are (1) the data you are using, and (2) the variable you want to plot. To see all the input parameters for the function, type the code <code>?calculate_demographic_smry_comp</code> in your R console.</p>
+<p>In this example, the variable we want to plot is <strong>Q1COVID19</strong><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="comparative-demographic-graphs.html#cb100-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span>                                     <span class="co"># Data</span></span>
+<span id="cb100-2"><a href="comparative-demographic-graphs.html#cb100-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>)  <span class="co"># Variable to summarize  </span></span></code></pre></div>
+<p>The above code will produce the following output:</p>
+<pre><code>## $age
+## $age$Q1COVID19
+## # A tibble: 12 x 3
+## # Groups:   Country [6]
+##    Country    age   Q1COVID19
+##    &lt;labelled&gt; &lt;fct&gt;     &lt;dbl&gt;
+##  1 Algeria    18-29        79
+##  2 Algeria    30+          69
+##  3 Jordan     18-29        60
+##  4 Jordan     30+          62
+##  5 Lebanon    18-29        80
+##  6 Lebanon    30+          84
+##  7 Libya      18-29        78
+##  8 Libya      30+          74
+##  9 Morocco    18-29        67
+## 10 Morocco    30+          65
+## 11 Tunisia    18-29        59
+## 12 Tunisia    30+          59
+## 
+## 
+## $gender
+## $gender$Q1COVID19
+## # A tibble: 12 x 3
+## # Groups:   Country [6]
+##    Country    gender Q1COVID19
+##    &lt;labelled&gt; &lt;fct&gt;      &lt;dbl&gt;
+##  1 Algeria    Male          66
+##  2 Algeria    Female        77
+##  3 Jordan     Male          54
+##  4 Jordan     Female        68
+##  5 Lebanon    Male          77
+##  6 Lebanon    Female        87
+##  7 Libya      Male          68
+##  8 Libya      Female        83
+##  9 Morocco    Male          56
+## 10 Morocco    Female        75
+## 11 Tunisia    Male          50
+## 12 Tunisia    Female        68
+## 
+## 
+## $education
+## $education$Q1COVID19
+## # A tibble: 12 x 3
+## # Groups:   Country [6]
+##    Country    education     Q1COVID19
+##    &lt;labelled&gt; &lt;fct&gt;             &lt;dbl&gt;
+##  1 Algeria    Higher               73
+##  2 Algeria    Max Secondary        71
+##  3 Jordan     Higher               61
+##  4 Jordan     Max Secondary        62
+##  5 Lebanon    Higher               83
+##  6 Lebanon    Max Secondary        83
+##  7 Libya      Higher               75
+##  8 Libya      Max Secondary        76
+##  9 Morocco    Higher               74
+## 10 Morocco    Max Secondary        62
+## 11 Tunisia    Higher               68
+## 12 Tunisia    Max Secondary        57
+## 
+## 
+## $income
+## $income$Q1COVID19
+## # A tibble: 12 x 3
+## # Groups:   Country [6]
+##    Country    income                Q1COVID19
+##    &lt;labelled&gt; &lt;fct&gt;                     &lt;dbl&gt;
+##  1 Algeria    Can cover expenses           70
+##  2 Algeria    Cannot cover expenses        73
+##  3 Jordan     Can cover expenses           60
+##  4 Jordan     Cannot cover expenses        62
+##  5 Lebanon    Can cover expenses           85
+##  6 Lebanon    Cannot cover expenses        81
+##  7 Libya      Can cover expenses           79
+##  8 Libya      Cannot cover expenses        69
+##  9 Morocco    Can cover expenses           66
+## 10 Morocco    Cannot cover expenses        65
+## 11 Tunisia    Can cover expenses           57
+## 12 Tunisia    Cannot cover expenses        60</code></pre>
+<p>Woah, that’s a lot of summaries! By default, <strong>calculate_demographic_smry_comp()</strong> creates summaries for <strong>age</strong>, <strong>gender</strong>, <strong>income</strong>, and <strong>education</strong>. To specify exactly which demographic we want to group the data by, we include one more parameter.</p>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="comparative-demographic-graphs.html#cb102-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span>                                         <span class="co"># Data</span></span>
+<span id="cb102-2"><a href="comparative-demographic-graphs.html#cb102-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,      <span class="co"># Variable to summarize</span></span>
+<span id="cb102-3"><a href="comparative-demographic-graphs.html#cb102-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>)  <span class="co"># Demographic to group data by</span></span></code></pre></div>
+<p>By specifying the parameter <strong>.dem</strong>, the function now knows it should only group the data by the variables <strong>gender</strong>. Now the output is as follows:</p>
+<pre><code>## # A tibble: 12 x 3
+## # Groups:   Country [6]
+##    Country    gender Q1COVID19
+##    &lt;labelled&gt; &lt;fct&gt;      &lt;dbl&gt;
+##  1 Algeria    Male          66
+##  2 Algeria    Female        77
+##  3 Jordan     Male          54
+##  4 Jordan     Female        68
+##  5 Lebanon    Male          77
+##  6 Lebanon    Female        87
+##  7 Libya      Male          68
+##  8 Libya      Female        83
+##  9 Morocco    Male          56
+## 10 Morocco    Female        75
+## 11 Tunisia    Male          50
+## 12 Tunisia    Female        68</code></pre>
+<p>The function <strong>calcuate_demographic_smry()</strong> creates a named list. In this list, each item is a summary broken down by a demographic and the name of each item is that demographic.</p>
+<p>Let’s save our gender demographic summary and move on to plotting it.</p>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="comparative-demographic-graphs.html#cb104-1" aria-hidden="true" tabindex="-1"></a>comparative_Q1COVID19_gender <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb104-2"><a href="comparative-demographic-graphs.html#cb104-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb104-3"><a href="comparative-demographic-graphs.html#cb104-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>)</span></code></pre></div>
+</div>
+<div id="plotting-the-summary-1" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Plotting the Summary</h3>
+<p>The next step is plot the summary we just created. To do this, we use the function <strong>plot_demographic_smry_comp()</strong>. You can learn more about this function in section <a href="https://arab-barometer.github.io/ArabBarometR-Guide/standard-plots.html#plot_demographic_smry_comp">7.2</a> of the ArabBarometR Guide.</p>
+<p>There is only <em>one</em> necessary parameter to use <strong>plot_smry_comp()</strong>: the summary data frame. For a complete list of acceptable parameters and documentation, you can run <code>?plot_demographic_smry_comp</code> in your R console.</p>
+<p>Now, we can plug our summary into the plot function:</p>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="comparative-demographic-graphs.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_demographic_smry_comp</span>(comparative_Q1COVID19_gender)</span></code></pre></div>
+<p>The above code is the same as:</p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="comparative-demographic-graphs.html#cb106-1" aria-hidden="true" tabindex="-1"></a>comparative_Q1COVID19_gender <span class="sc">%&gt;%</span></span>
+<span id="cb106-2"><a href="comparative-demographic-graphs.html#cb106-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_comp</span>()</span></code></pre></div>
+<p>Both stylings of code produce the following graph:</p>
+<p><img src="bookdownproj_files/figure-html/04.11-plot-1.png" width="1248" /></p>
+<p>Yet again, we see the caption needs to be changed. We can change it the same way we did in Chapter 1.</p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="comparative-demographic-graphs.html#cb107-1" aria-hidden="true" tabindex="-1"></a>comparative_Q1COVID19_gender <span class="sc">%&gt;%</span></span>
+<span id="cb107-2"><a href="comparative-demographic-graphs.html#cb107-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_comp</span>(</span>
+<span id="cb107-3"><a href="comparative-demographic-graphs.html#cb107-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span></span>
+<span id="cb107-4"><a href="comparative-demographic-graphs.html#cb107-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p>Now we have the graph:</p>
+<p><img src="bookdownproj_files/figure-html/04.13-plot-1.png" width="1248" /></p>
+<p>Since <code>comparative_Q1COVID19_gender</code> is the same as <code>survey1 %&gt;% calculate_demographic_smry_comp("Q1COVID19", .dem = "gender")</code>, we can substitute the former with the latter to get the original code in our example. This will give us the same plot that we just created.</p>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="comparative-demographic-graphs.html#cb108-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb108-2"><a href="comparative-demographic-graphs.html#cb108-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb108-3"><a href="comparative-demographic-graphs.html#cb108-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>,) <span class="sc">%&gt;%</span></span>
+<span id="cb108-4"><a href="comparative-demographic-graphs.html#cb108-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>)</span></code></pre></div>
+<p>Tada! You have created the example graph.</p>
+</div>
+</div>
+<div id="create-many-graphs-3" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Create Many Graphs</h2>
+<p>We will follow the same steps from Chapter Three (and Two, and One…) to create many graphs at once.</p>
+<ol style="list-style-type: decimal">
+<li>First, identify the variables to plot.</li>
+<li>Second, create summaries of those variables.</li>
+<li>Third, plot those summaries.</li>
+</ol>
+<p>At the end of this section, your code will look like the following:</p>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="comparative-demographic-graphs.html#cb109-1" aria-hidden="true" tabindex="-1"></a>     <span class="co">#.....................Identify the variables.....................</span></span>
+<span id="cb109-2"><a href="comparative-demographic-graphs.html#cb109-2" aria-hidden="true" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb109-3"><a href="comparative-demographic-graphs.html#cb109-3" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;Q2061A_1&quot;</span>,</span>
+<span id="cb109-4"><a href="comparative-demographic-graphs.html#cb109-4" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;Q609&quot;</span>)</span>
+<span id="cb109-5"><a href="comparative-demographic-graphs.html#cb109-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-6"><a href="comparative-demographic-graphs.html#cb109-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(variables_2_plot) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb109-7"><a href="comparative-demographic-graphs.html#cb109-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Q2061A_1&quot;</span>,</span>
+<span id="cb109-8"><a href="comparative-demographic-graphs.html#cb109-8" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Q609&quot;</span>)</span>
+<span id="cb109-9"><a href="comparative-demographic-graphs.html#cb109-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-10"><a href="comparative-demographic-graphs.html#cb109-10" aria-hidden="true" tabindex="-1"></a>     <span class="co">#......................Create the summaries......................</span></span>
+<span id="cb109-11"><a href="comparative-demographic-graphs.html#cb109-11" aria-hidden="true" tabindex="-1"></a>comparative_gender_summaries <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb109-12"><a href="comparative-demographic-graphs.html#cb109-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(variables_2_plot,</span>
+<span id="cb109-13"><a href="comparative-demographic-graphs.html#cb109-13" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>) </span>
+<span id="cb109-14"><a href="comparative-demographic-graphs.html#cb109-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-15"><a href="comparative-demographic-graphs.html#cb109-15" aria-hidden="true" tabindex="-1"></a>     <span class="co">#.......................Plot the summaries.......................</span></span>
+<span id="cb109-16"><a href="comparative-demographic-graphs.html#cb109-16" aria-hidden="true" tabindex="-1"></a>comparative_gender_plots <span class="ot">&lt;-</span> <span class="fu">map</span>(comparative_gender_summaries,</span>
+<span id="cb109-17"><a href="comparative-demographic-graphs.html#cb109-17" aria-hidden="true" tabindex="-1"></a>                                plot_demographic_smry_comp,</span>
+<span id="cb109-18"><a href="comparative-demographic-graphs.html#cb109-18" aria-hidden="true" tabindex="-1"></a>                                <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>)</span></code></pre></div>
+<p>The result is a named list of plots. Each element in the list is a plot. The element is named for the variable it is a plot of.</p>
+<p>For example, to see the plot for variable <code>Q1COVID19</code>, run the following code:</p>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="comparative-demographic-graphs.html#cb110-1" aria-hidden="true" tabindex="-1"></a>comparative_gender_plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/04.17-Complete-Code-Example-Results1-1.png" width="1248" /></p>
+<p>To see the plot for variable <code>Q2061A</code>, run the following code:</p>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="comparative-demographic-graphs.html#cb111-1" aria-hidden="true" tabindex="-1"></a>comparative_gender_plots<span class="sc">$</span>Q2061A</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/04.18-Complete-Code-Example-Results2-1.png" width="1248" /></p>
+<p>Finally, to see the plot for variable <code>Q609</code>, run the following code:</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="comparative-demographic-graphs.html#cb112-1" aria-hidden="true" tabindex="-1"></a>comparative_gender_plots<span class="sc">$</span>Q609</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/04.19-Complete-Code-Example-Results3-1.png" width="1248" /></p>
+<p>That’s it! The only limit on the number of graphs you can create at once is the time it will take R to make them. The more graphs you try to create at once, the longer it will take.</p>
+<p>The steps to creating a named variable list are exactly the same as the ones we reviewed in Chapter 1; therefore, we will begin by creating summaries. For a refresher on creating named lists, <a href="comparative-overall-graphs.html#identify-the-variables-1">click here</a>. We will use the same variables as in Chapter 3: <code>Q1COVID19</code>, <code>Q2061A</code>, and <code>Q609</code>.</p>
+<p>Let’s begin.</p>
+<div id="create-summaries-3" class="section level3" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Create Summaries</h3>
+<p>The same function used to create a single summary is used to create many summaries: <strong>calculate_demographic_smry_comp()</strong>. Recall it takes three parameters: (1) the data you are using, (2) the variable(s) you want to plot, and (3) the country you are creating the plot for. Now, instead of one variable, you supply the list of variables.</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="comparative-demographic-graphs.html#cb113-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span>                                           <span class="co"># Data</span></span>
+<span id="cb113-2"><a href="comparative-demographic-graphs.html#cb113-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(variables_2_plot)   <span class="co"># Variables to summarize</span></span></code></pre></div>
+<p>The above code produces a nested named list. Each element in the list is another named list. Each element in the outer list is named for a variable you want to create summaries for. The inner list of each element is a summary with the data grouped by <strong>age</strong>, <strong>gender</strong>, <strong>income</strong>, and <strong>education</strong>. You can think of it like the following bullet point list:</p>
+<ul>
+<li><code>calculate_demographic_smry_comp</code> output
+<ul>
+<li><code>Q1COVID19</code>
+<ul>
+<li><code>age</code> Q1COVID19 summary grouped by age</li>
+<li><code>gender</code> Q1COVID19 summary grouped by gender</li>
+<li><code>income</code> Q1COVID19 summary grouped by income</li>
+<li><code>education</code> Q1COVID19 summary grouped by education</li>
+</ul></li>
+<li><code>Q2061A</code>
+<ul>
+<li><code>age</code> Q2061A summary grouped by age</li>
+<li><code>gender</code> Q2061A summary grouped by gender</li>
+<li><code>income</code> Q2061A summary grouped by income</li>
+<li><code>education</code> Q2061A summary grouped by education</li>
+</ul></li>
+<li><code>Q609</code>
+<ul>
+<li><code>age</code> Q609 summary grouped by age</li>
+<li><code>gender</code> Q609 summary grouped by gender</li>
+<li><code>income</code> Q609 summary grouped by income</li>
+<li><code>education</code> Q609 summary grouped by education</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>For this example, we will again only be focusing on gender plots. To get only gender summaries, just specify the <strong>.dem</strong> parameter.</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="comparative-demographic-graphs.html#cb114-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span>                                          <span class="co"># Data</span></span>
+<span id="cb114-2"><a href="comparative-demographic-graphs.html#cb114-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(variables_2_plot,  <span class="co"># Variables to summarize</span></span>
+<span id="cb114-3"><a href="comparative-demographic-graphs.html#cb114-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>)   <span class="co"># Demographic</span></span></code></pre></div>
+<p>Now, the output of this function looks like this bullet point list:</p>
+<ul>
+<li><code>calculate_demographic_smry_comp(.dem="gender")</code> output
+<ul>
+<li><code>Q1COVID19</code>
+<ul>
+<li><code>gender</code> Q1COVID19 summary grouped by gender</li>
+</ul></li>
+<li><code>Q2061A</code>
+<ul>
+<li><code>gender</code> Q2061A summary grouped by gender</li>
+</ul></li>
+<li><code>Q609</code>
+<ul>
+<li><code>gender</code> Q609 summary grouped by gender</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Much more manageable .</p>
+<p>Let’s save this outcome as an object and move on to plotting.</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="comparative-demographic-graphs.html#cb115-1" aria-hidden="true" tabindex="-1"></a>comparative_gender_summaries <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span>                                               </span>
+<span id="cb115-2"><a href="comparative-demographic-graphs.html#cb115-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(variables_2_plot,</span>
+<span id="cb115-3"><a href="comparative-demographic-graphs.html#cb115-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>)  </span></code></pre></div>
+</div>
+<div id="plot-the-summaries-3" class="section level3" number="4.2.2">
+<h3><span class="header-section-number">4.2.2</span> Plot the Summaries</h3>
+<p>Again, the same function to create one plot is used to create many plots: <strong>plot_demographic_smry_comp()</strong>. Just like in Chapter 3, we need to use the <strong>map</strong> function.</p>
+<p>In this case, you supply the list of summaries you just created, and the <strong>plot_demographic_sumry_comp()</strong> function. The code follows:</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="comparative-demographic-graphs.html#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(</span>
+<span id="cb116-2"><a href="comparative-demographic-graphs.html#cb116-2" aria-hidden="true" tabindex="-1"></a>  comparative_gender_summaries,   <span class="co"># List of summaries</span></span>
+<span id="cb116-3"><a href="comparative-demographic-graphs.html#cb116-3" aria-hidden="true" tabindex="-1"></a>  plot_demographic_smry_comp      <span class="co"># Plotting function</span></span>
+<span id="cb116-4"><a href="comparative-demographic-graphs.html#cb116-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>The code produces the following output:</p>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="comparative-demographic-graphs.html#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(</span>
+<span id="cb117-2"><a href="comparative-demographic-graphs.html#cb117-2" aria-hidden="true" tabindex="-1"></a>  comparative_gender_summaries,     <span class="co"># List of summaries</span></span>
+<span id="cb117-3"><a href="comparative-demographic-graphs.html#cb117-3" aria-hidden="true" tabindex="-1"></a>  plot_demographic_smry_comp        <span class="co"># Plotting function</span></span>
+<span id="cb117-4"><a href="comparative-demographic-graphs.html#cb117-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## $Q1COVID19</code></pre>
+<pre><code>## 
+## $Q2061A_1</code></pre>
+<pre><code>## 
+## $Q609</code></pre>
+<p><img src="bookdownproj_files/figure-html/04.25-plots,%20figures-side-1.png" width="50%" /><img src="bookdownproj_files/figure-html/04.25-plots,%20figures-side-2.png" width="50%" /><img src="bookdownproj_files/figure-html/04.25-plots,%20figures-side-3.png" width="50%" /></p>
+<p>Notice, yet again, the caption needs to be changed. To change the caption for all the graphs, just add one line to the map function.</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="comparative-demographic-graphs.html#cb121-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(</span>
+<span id="cb121-2"><a href="comparative-demographic-graphs.html#cb121-2" aria-hidden="true" tabindex="-1"></a>  comparative_gender_summaries,                  <span class="co"># List of summaries</span></span>
+<span id="cb121-3"><a href="comparative-demographic-graphs.html#cb121-3" aria-hidden="true" tabindex="-1"></a>  plot_demographic_smry_comp,                    <span class="co"># Plotting function</span></span>
+<span id="cb121-4"><a href="comparative-demographic-graphs.html#cb121-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>  <span class="co"># Caption</span></span>
+<span id="cb121-5"><a href="comparative-demographic-graphs.html#cb121-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## $Q1COVID19</code></pre>
+<pre><code>## 
+## $Q2061A_1</code></pre>
+<pre><code>## 
+## $Q609</code></pre>
+<p><img src="bookdownproj_files/figure-html/04.26-plots,%20figures-side-1.png" width="50%" /><img src="bookdownproj_files/figure-html/04.26-plots,%20figures-side-2.png" width="50%" /><img src="bookdownproj_files/figure-html/04.26-plots,%20figures-side-3.png" width="50%" /></p>
+<p>Congratulations! You have created three plots at once. You can store them in as a single list and call them one at a time.</p>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="comparative-demographic-graphs.html#cb125-1" aria-hidden="true" tabindex="-1"></a>comparative_gender_plots <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb125-2"><a href="comparative-demographic-graphs.html#cb125-2" aria-hidden="true" tabindex="-1"></a>  comparative_gender_summaries,                  <span class="co"># List of summaries</span></span>
+<span id="cb125-3"><a href="comparative-demographic-graphs.html#cb125-3" aria-hidden="true" tabindex="-1"></a>  plot_demographic_smry_comp,                    <span class="co"># Plotting function</span></span>
+<span id="cb125-4"><a href="comparative-demographic-graphs.html#cb125-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>  <span class="co"># Caption</span></span>
+<span id="cb125-5"><a href="comparative-demographic-graphs.html#cb125-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>Now, all three plots have been stored in a named list named <code>comparative_gender_plots</code>. To look at the first plot:</p>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="comparative-demographic-graphs.html#cb126-1" aria-hidden="true" tabindex="-1"></a>comparative_gender_plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/04.29-Complete-Code-Example-Results1-1.png" width="1248" /></p>
+<p>To see the plot for variable <code>Q2061A</code>, run the following code:</p>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="comparative-demographic-graphs.html#cb127-1" aria-hidden="true" tabindex="-1"></a>comparative_gender_plots<span class="sc">$</span>Q2061A</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/04.30-Complete-Code-Example-Results2-1.png" width="1248" /></p>
+<p>Finally, to see the plot for variable <code>Q609</code>, run the following code:</p>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="comparative-demographic-graphs.html#cb128-1" aria-hidden="true" tabindex="-1"></a>comparative_gender_plots<span class="sc">$</span>Q609</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/04.31-Complete-Code-Example-Results3-1.png" width="1248" /></p>
+<p>You have now completed all steps in the example code. Congrats!</p>
+
+</div>
+</div>
+</div>
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>If the style of this code is confusing, see <a href="single-country-overall-graphs.html#single-country-overall-graphs">Create a Summary in Chapter 1</a><a href="comparative-demographic-graphs.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="comparative-overall-graphs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="change-the-font-size.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/04-Ignore4Now3.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/04-Ignore4Now3.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

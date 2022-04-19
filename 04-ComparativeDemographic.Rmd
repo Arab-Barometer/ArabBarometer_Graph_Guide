@@ -1,0 +1,435 @@
+# Comparative Demographic Graphs
+
+This chapter will cover how to make a comparative frequency graph by demographic for multiple countries.
+
+## Create a Single Graph
+
+This section will go over how to make a one-off comparative frequency graph by demographic for a multiple countries.
+
+At the end, your code will look like the following:
+
+```{r 04.1-Complete-Code-Example, eval=FALSE}
+
+survey1 %>%
+  calculate_demographic_smry_comp("Q1COVID19",
+                                  .dem = "gender") %>%
+  plot_demographic_smry_comp(.caption = "Arab Barometer Wave VI, Survey I")
+
+
+```
+
+That code will produce the following graph:
+
+
+```{r 04.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
+
+
+survey1 %>%
+  calculate_demographic_smry_comp("Q1COVID19",
+                                  .dem = "gender") %>%
+  plot_demographic_smry_comp(.caption = "Arab Barometer Wave VI, Survey I")
+
+
+```
+
+Let's make it.
+
+
+
+### Creating a Summary
+
+The first step in creating a plot is to gather the data you want to display and organize it. You do this with the **calculate_demographic_smry_comp()** function. You can learn more about this function in section [6.4](https://arab-barometer.github.io/ArabBarometR-Guide/calculating-summaries.html#calculate_demographic_smry_comp) in the larger ArabBarometR guide.
+
+Just like **calculate_smry_comp()**, the two main parameters you need to provide to this function are (1) the data you are using, and (2) the variable you want to plot. To see all the input parameters for the function, type the code `?calculate_demographic_smry_comp` in your R console.
+
+In this example, the variable we want to plot is **Q1COVID19**^[If the style of this code is confusing, see [Create a Summary in Chapter 1][Single Country Overall Graphs]].
+
+```{r 04.3-summary, eval=FALSE}
+
+survey1 %>%                                     # Data
+  calculate_demographic_smry_comp("Q1COVID19")  # Variable to summarize  
+                                  
+
+```
+
+The above code will produce the following output:
+
+
+```{r 04.4-summary, echo=FALSE}
+
+survey1 %>%
+  calculate_demographic_smry_comp("Q1COVID19")
+
+```
+
+Woah, that's a lot of summaries! By default, **calculate_demographic_smry_comp()** creates summaries for **age**, **gender**, **income**, and **education**. To specify exactly which demographic we want to group the data by, we include one more parameter.
+
+```{r 04.5-summary, eval=FALSE}
+
+survey1 %>%                                         # Data
+  calculate_demographic_smry_comp("Q1COVID19",      # Variable to summarize
+                                  .dem = "gender")  # Demographic to group data by
+
+```
+
+By specifying the parameter **.dem**, the function now knows it should only group the data by the variables **gender**. Now the output is as follows:
+
+```{r 04.6-summary, echo=FALSE}
+
+survey1 %>%
+  calculate_demographic_smry_comp("Q1COVID19",
+                                  .dem = "gender")
+
+```
+
+The function **calcuate_demographic_smry()** creates a named list. In this list, each item is a summary broken down by a demographic and the name of each item is that demographic.
+
+Let's save our gender demographic summary and move on to plotting it.
+
+```{r 04.7-summary, eval=FALSE}
+
+comparative_Q1COVID19_gender <- survey1 %>%
+  calculate_demographic_smry_comp("Q1COVID19",
+                                  .dem = "gender")
+
+```
+
+
+```{r 04.8-summary, echo=FALSE}
+
+comparative_Q1COVID19_gender <- survey1 %>%
+  calculate_demographic_smry_comp("Q1COVID19",
+                                  .dem = "gender")
+
+```
+
+
+### Plotting the Summary
+
+
+The next step is plot the summary we just created. To do this, we use the function **plot_demographic_smry_comp()**. You can learn more about this function in section [7.2](https://arab-barometer.github.io/ArabBarometR-Guide/standard-plots.html#plot_demographic_smry_comp) of the ArabBarometR Guide.
+
+There is only *one* necessary parameter to use **plot_smry_comp()**: the summary data frame. For a complete list of acceptable parameters and documentation, you can run `?plot_demographic_smry_comp` in your R console.
+
+Now, we can plug our summary into the plot function:
+
+```{r 04.9-plot, eval=FALSE}
+
+plot_demographic_smry_comp(comparative_Q1COVID19_gender)
+
+```
+
+The above code is the same as:
+
+```{r 04.10-plot, eval=FALSE}
+
+comparative_Q1COVID19_gender %>%
+  plot_demographic_smry_comp()
+
+```
+
+Both stylings of code produce the following graph:
+
+```{r 04.11-plot, echo=FALSE, fig.dim=c(13,12)}
+
+plot_demographic_smry_comp(comparative_Q1COVID19_gender)
+
+```
+
+Yet again, we see the caption needs to be changed. We can change it the same way we did in Chapter 1.
+
+```{r 04.12-plot, eval=FALSE}
+
+comparative_Q1COVID19_gender %>%
+  plot_demographic_smry_comp(
+    .caption = "Arab Barometer Wave VI, Survey I"
+  )
+
+```
+
+Now we have the graph:
+
+```{r 04.13-plot, echo=FALSE, fig.dim=c(13,12)}
+
+comparative_Q1COVID19_gender %>%
+  plot_demographic_smry_comp(
+    .caption = "Arab Barometer Wave VI, Survey I"
+  )
+
+
+```
+
+
+Since `comparative_Q1COVID19_gender` is the same as `survey1 %>% calculate_demographic_smry_comp("Q1COVID19", .dem = "gender")`, we can substitute the former with the latter to get the original code in our example. This will give us the same plot that we just created.
+
+```{r 04.14-plot, eval=FALSE}
+
+survey1 %>%
+  calculate_demographic_smry_comp("Q1COVID19",
+                                  .dem = "gender",) %>%
+  plot_demographic_smry_comp(.caption = "Arab Barometer Wave VI, Survey I")
+
+
+
+```
+
+Tada! You have created the example graph.
+
+
+## Create Many Graphs
+
+We will follow the same steps from Chapter Three (and Two, and One...) to create many graphs at once.
+
+1. First, identify the variables to plot.
+2. Second, create summaries of those variables.
+3. Third, plot those summaries.
+
+At the end of this section, your code will look like the following:
+
+
+```{r 04.15-Complete-Code-Example, eval=FALSE}
+
+     #.....................Identify the variables.....................
+variables_2_plot <- list("Q1COVID19",
+                         "Q2061A_1",
+                         "Q609")
+
+names(variables_2_plot) <- c("Q1COVID19",
+                             "Q2061A_1",
+                             "Q609")
+
+     #......................Create the summaries......................
+comparative_gender_summaries <- survey1 %>%
+  calculate_demographic_smry_comp(variables_2_plot,
+                                  .dem = "gender") 
+
+     #.......................Plot the summaries.......................
+comparative_gender_plots <- map(comparative_gender_summaries,
+                                plot_demographic_smry_comp,
+                                .caption = "Arab Barometer Wave VI, Survey I")
+
+```
+
+The result is a named list of plots. Each element in the list is a plot. The element is named for the variable it is a plot of.
+
+For example, to see the plot for variable `Q1COVID19`, run the following code:
+
+
+```{r 04.16-Complete-Code-Example, echo=FALSE}
+
+     #.....................Identify the variables.....................
+variables_2_plot <- list("Q1COVID19",
+                         "Q2061A_1",
+                         "Q609")
+
+names(variables_2_plot) <- c("Q1COVID19",
+                             "Q2061A_1",
+                             "Q609")
+
+      #......................Create the summaries......................
+comparative_gender_summaries <- survey1 %>%
+  calculate_demographic_smry_comp(variables_2_plot,
+                                  .dem = "gender") 
+
+     #.......................Plot the summaries.......................
+comparative_gender_plots <- map(comparative_gender_summaries,
+                                plot_demographic_smry_comp,
+                                .caption = "Arab Barometer Wave VI, Survey I")
+
+
+
+```
+
+
+```{r 04.17-Complete-Code-Example-Results1, fig.dim=c(13,12)}
+
+comparative_gender_plots$Q1COVID19
+
+```
+
+To see the plot for variable `Q2061A`, run the following code:
+
+```{r 04.18-Complete-Code-Example-Results2, fig.dim=c(13,12)}
+
+comparative_gender_plots$Q2061A
+
+```
+
+Finally, to see the plot for variable `Q609`, run the following code:
+
+```{r 04.19-Complete-Code-Example-Results3, fig.dim=c(13,12)}
+
+comparative_gender_plots$Q609
+
+```
+
+That's it! The only limit on the number of graphs you can create at once is the time it will take R to make them. The more graphs you try to create at once, the longer it will take.
+
+The steps to creating a named variable list are exactly the same as the ones we reviewed in Chapter 1; therefore, we will begin by creating summaries. For a refresher on creating named lists, [click here][Identify the Variables]. We will use the same variables as in Chapter 3: `Q1COVID19`, `Q2061A`, and `Q609`.
+
+Let's begin.
+
+### Create Summaries
+
+The same function used to create a single summary is used to create many summaries: **calculate_demographic_smry_comp()**. Recall it takes three parameters: (1) the data you are using, (2) the variable(s) you want to plot, and (3) the country you are creating the plot for. Now, instead of one variable, you supply the list of variables.
+
+```{r 04.20-summaries, eval=FALSE}
+
+survey1 %>%                                           # Data
+  calculate_demographic_smry_comp(variables_2_plot)   # Variables to summarize
+
+```
+
+The above code produces a nested named list. Each element in the list is another named list. Each element in the outer list is named for a variable you want to create summaries for. The inner list of each element is a summary with the data grouped by **age**, **gender**, **income**, and **education**. You can think of it like the following bullet point list:
+
+* `calculate_demographic_smry_comp` output
+  * `Q1COVID19`
+    * `age` Q1COVID19 summary grouped by age
+    * `gender` Q1COVID19 summary grouped by gender
+    * `income` Q1COVID19 summary grouped by income
+    * `education` Q1COVID19 summary grouped by education
+  * `Q2061A`
+    * `age` Q2061A summary grouped by age
+    * `gender` Q2061A summary grouped by gender
+    * `income` Q2061A summary grouped by income
+    * `education` Q2061A summary grouped by education
+  * `Q609`
+    * `age` Q609 summary grouped by age
+    * `gender` Q609 summary grouped by gender
+    * `income` Q609 summary grouped by income
+    * `education` Q609 summary grouped by education
+    
+For this example, we will again only be focusing on gender plots. To get only gender summaries, just specify the **.dem** parameter.
+
+```{r 04.21-summaries, eval=FALSE}
+
+survey1 %>%                                          # Data
+  calculate_demographic_smry_comp(variables_2_plot,  # Variables to summarize
+                                  .dem = "gender")   # Demographic
+
+```
+
+
+Now, the output of this function looks like this bullet point list:
+
+* `calculate_demographic_smry_comp(.dem="gender")` output
+  * `Q1COVID19`
+    * `gender` Q1COVID19 summary grouped by gender
+  * `Q2061A`
+    * `gender` Q2061A summary grouped by gender
+  * `Q609`
+    * `gender` Q609 summary grouped by gender
+    
+Much more manageable .
+
+Let's save this outcome as an object and move on to plotting.
+
+
+```{r 04.22-summaries, eval=FALSE}
+
+comparative_gender_summaries <- survey1 %>%                                               
+  calculate_demographic_smry_comp(variables_2_plot,
+                                  .dem = "gender")  
+
+```
+
+
+
+```{r 04.23-summaries, echo=FALSE}
+
+comparative_gender_summaries <- survey1 %>%                                               
+  calculate_demographic_smry_comp(variables_2_plot, 
+                                  .dem = "gender")  
+
+```
+
+
+### Plot the Summaries
+
+Again, the same function to create one plot is used to create many plots: **plot_demographic_smry_comp()**. Just like in Chapter 3, we need to use the **map** function.
+
+In this case, you supply the list of summaries you just created, and the **plot_demographic_sumry_comp()** function. The code follows:
+
+```{r 04.24-plots, eval=FALSE}
+
+map(
+  comparative_gender_summaries,   # List of summaries
+  plot_demographic_smry_comp      # Plotting function
+)
+
+```
+
+The code produces the following output:
+
+```{r 04.25-plots, figures-side, fig.show="hold", out.width="50%"}
+
+map(
+  comparative_gender_summaries,     # List of summaries
+  plot_demographic_smry_comp        # Plotting function
+)
+
+```
+
+
+Notice, yet again, the caption needs to be changed. To change the caption for all the graphs, just add one line to the map function.
+
+
+```{r 04.26-plots, figures-side, fig.show="hold", out.width="50%"}
+map(
+  comparative_gender_summaries,                  # List of summaries
+  plot_demographic_smry_comp,                    # Plotting function
+  .caption = "Arab Barometer Wave VI, Survey I"  # Caption
+)
+
+```
+
+
+Congratulations! You have created three plots at once. You can store them in as a single list and call them one at a time.
+
+```{r 04.27-plots, eval=FALSE}
+
+comparative_gender_plots <- map(
+  comparative_gender_summaries,                  # List of summaries
+  plot_demographic_smry_comp,                    # Plotting function
+  .caption = "Arab Barometer Wave VI, Survey I"  # Caption
+)
+
+```
+
+
+```{r 04.28-plots, echo=FALSE}
+
+comparative_gender_plots <- map(
+  comparative_gender_summaries,                  # List of summaries
+  plot_demographic_smry_comp,                    # Plotting function
+  .caption = "Arab Barometer Wave VI, Survey I"  # Caption
+)
+
+```
+
+Now, all three plots have been stored in a named list named `comparative_gender_plots`. To look at the first plot:
+
+```{r 04.29-Complete-Code-Example-Results1, fig.dim=c(13,12)}
+
+comparative_gender_plots$Q1COVID19
+
+```
+
+To see the plot for variable `Q2061A`, run the following code:
+
+```{r 04.30-Complete-Code-Example-Results2, fig.dim=c(13,12)}
+
+comparative_gender_plots$Q2061A
+
+```
+
+Finally, to see the plot for variable `Q609`, run the following code:
+
+```{r 04.31-Complete-Code-Example-Results3, fig.dim=c(13,12)}
+
+comparative_gender_plots$Q609
+
+```
+
+
+You have now completed all steps in the example code. Congrats!

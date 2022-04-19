@@ -24,7 +24,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2022-04-07" />
+<meta name="date" content="2022-04-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -185,9 +185,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.3" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#plot-the-summaries-2"><i class="fa fa-check"></i><b>3.2.3</b> Plot the Summaries</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="coming-soon-comparative-demographic-graphs.html"><a href="coming-soon-comparative-demographic-graphs.html"><i class="fa fa-check"></i><b>4</b> Coming Soon: Comparative Demographic Graphs</a>
+<li class="chapter" data-level="4" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html"><i class="fa fa-check"></i><b>4</b> Comparative Demographic Graphs</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="coming-soon-comparative-demographic-graphs.html"><a href="coming-soon-comparative-demographic-graphs.html#create-a-single-graph-3"><i class="fa fa-check"></i><b>4.1</b> Create a Single Graph</a></li>
+<li class="chapter" data-level="4.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-a-single-graph-3"><i class="fa fa-check"></i><b>4.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#creating-a-summary-1"><i class="fa fa-check"></i><b>4.1.1</b> Creating a Summary</a></li>
+<li class="chapter" data-level="4.1.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#plotting-the-summary-1"><i class="fa fa-check"></i><b>4.1.2</b> Plotting the Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-many-graphs-3"><i class="fa fa-check"></i><b>4.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-summaries-3"><i class="fa fa-check"></i><b>4.2.1</b> Create Summaries</a></li>
+<li class="chapter" data-level="4.2.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#plot-the-summaries-3"><i class="fa fa-check"></i><b>4.2.2</b> Plot the Summaries</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>II How do I …?</b></span></li>
 <li class="chapter" data-level="5" data-path="change-the-font-size.html"><a href="change-the-font-size.html"><i class="fa fa-check"></i><b>5</b> Change the Font Size</a></li>
@@ -298,7 +307,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 7 Cannot cover expenses   2 [Somewhat concerned]          48
 ## 8 Cannot cover expenses   3 [Somewhat not concerned]       7
 ## 9 Cannot cover expenses   4 [Not at all concerned]        19</code></pre>
-<p>Woah, that’s a lot of summaries! By default, <strong>calculate_demographic_smry_individual()</strong> creates summaries for <strong>age</strong>, <strong>gender</strong>, <strong>income</strong>, and <strong>education</strong>. Currently, the function can create summaries by any variable that is <strong>2</strong> categories<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>. To specify exactly which demographic we want to group the data by, we include one more parameter.</p>
+<p>Woah, that’s a lot of summaries! By default, <strong>calculate_demographic_smry_individual()</strong> creates summaries for <strong>age</strong>, <strong>gender</strong>, <strong>income</strong>, and <strong>education</strong>. To specify exactly which demographic we want to group the data by, we include one more parameter.</p>
 <div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="single-country-demographic-plots.html#cb39-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span>                                                      <span class="co"># Data</span></span>
 <span id="cb39-2"><a href="single-country-demographic-plots.html#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,             <span class="co"># Variable to summarize</span></span>
 <span id="cb39-3"><a href="single-country-demographic-plots.html#cb39-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>,    <span class="co"># Country</span></span>
@@ -509,7 +518,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <hr />
 <ol start="1">
 <li id="fn1"><p>If the style of this code is confusing, see <a href="single-country-overall-graphs.html#single-country-overall-graphs">Create a Summary in Chapter 1</a><a href="single-country-demographic-plots.html#fnref1" class="footnote-back">↩︎</a></p></li>
-<li id="fn2"><p>MaryClare is actively working on making this more flexible.<a href="single-country-demographic-plots.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

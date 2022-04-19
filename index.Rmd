@@ -61,6 +61,7 @@ This guide does **not** go over how to clean the data. For more on how to use th
 
 
 ```{r index-load-packaged,include=FALSE}
+
 library(ArabBarometR)
 ```
 
@@ -69,57 +70,59 @@ library(ArabBarometR)
 survey1 <- haven::read_dta("../Final_Data/Wave6/Survey_1/Survey1_English.dta")
 
 survey1 <- survey1 %>%
-  sjlabelled::add_labels(starts_with("Q"), labels=c(`Don't know/refuse`=98))%>%
+  sjlabelled::add_labels(starts_with("Q"), labels=c(`Don't know/refuse`=98)) %>%
   age_demographic() %>%
   gender_demographic() %>%
   education_demographic() %>%
   income_demographic() %>%
-
-sjlabelled::add_labels(Q2061A, labels=c(`Economic situation` = 1,
+  
+  sjlabelled::add_labels(Q2061A, labels=c(`Economic situation` = 1,
                             `Corruption` = 2,
                             `Internal instability` = 6,
                             `Foreign interference` = 7,
                             `Public services` = 12,
                             `COVID-19` = 15,
                             `Other` = 16,
-                            `Don't know/refuse` = 98))%>%
+                            `Don't know/refuse` = 98)) %>%
 
-sjlabelled::add_labels(Q5COVID19, labels=c(`Permanent job loss` = 1,
+  sjlabelled::add_labels(Q5COVID19, labels=c(`Permanent job loss` = 1,
                                `Temporarary interruption` = 2,
                                `No serious interruption` = 3,
                                `No effect on job` = 4,
                                `NA` = 97,
-                               `Don't know/refuse` = 98))%>% #Labels in data set too long. Messing up graphs
-
-sjlabelled::add_labels(Q2ACOVID19, labels=c(`Illness or death of family member` = 1,
+                               `Don't know/refuse` = 98)) %>% #Labels in data set too long. Messing up graphs
+  
+  sjlabelled::add_labels(Q2ACOVID19, labels=c(`Illness or death of family member` = 1,
                                 `Household income loss` = 2,
                                 `Negative impacts on economy` = 3,
                                 `Inadequate healthcare infrastructure` = 4,
                                 `Inadequate gov.'t response` = 5,
                                 `Citizens incompliant with rules` = 6,
                                 `Other` = 7,
-                                `Don't know/refuse` = 98))%>% #Labels in data set too long. Messing up graphs
-
-sjlabelled::add_labels(Q2BCOVID19, labels=c(`Health threat is exaggerated` = 1,
+                                `Don't know/refuse` = 98)) %>% #Labels in data set too long. Messing up graphs
+  
+  sjlabelled::add_labels(Q2BCOVID19, labels=c(`Health threat is exaggerated` = 1,
                                 `No household income loss` = 2,
                                 `No negative impacts on economy` = 3,
                                 `Adequate healthcare infrastructure` = 4,
                                 `Adequate gov.'t response` = 5,
                                 `Citizens compliant with rules` = 6,
                                 `Other` = 7,
-                                `Don't know/refuse` = 98))%>% #Labels in data set too long. Messing up graphs
-
-sjlabelled::add_labels(Q516A, labels=c(`Type does not matter` = 1,
+                                `Don't know/refuse` = 98)) %>% #Labels in data set too long. Messing up graphs
+  
+  sjlabelled::add_labels(Q516A, labels=c(`Type does not matter` = 1,
                            `Non-democratic government is sometimes preferable` = 2,
                            `Democracy is always preferable` = 3,
-                           `Don't know/refuse` = 98))%>% #Labels too long
-
-  mutate(Q10COVID19_1=na_if(Q10COVID19_1,97))%>% #Not applicable needs to be taken out here
-  mutate(Q10COVID19_2=na_if(Q10COVID19_2,97))%>%
-  mutate(Q10COVID19_3=na_if(Q10COVID19_3,97))%>%
-  mutate(Q10COVID19_4=na_if(Q10COVID19_4,97))%>%
-  mutate(Q10COVID19_5=na_if(Q10COVID19_5,97))%>%
-  mutate(Q5COVID19=na_if(Q5COVID19,97))#Not applicable needs to be taken out here
+                           `Don't know/refuse` = 98)) %>% #Labels too long
+  
+  mutate(Q10COVID19_1 = na_if(Q10COVID19_1, 97)) %>% #Not applicable needs to be taken out here
+  mutate(Q10COVID19_2 = na_if(Q10COVID19_2, 97)) %>%
+  mutate(Q10COVID19_3 = na_if(Q10COVID19_3, 97)) %>%
+  mutate(Q10COVID19_4 = na_if(Q10COVID19_4, 97)) %>%
+  mutate(Q10COVID19_5 = na_if(Q10COVID19_5, 97)) %>%
+  mutate(Q5COVID19    = na_if(Q5COVID19,97)) %>% #Not applicable needs to be taken out here
+  
+  dummy_all(Q2061A)
 
 
 ```

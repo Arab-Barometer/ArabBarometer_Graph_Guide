@@ -24,7 +24,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2022-04-07" />
+<meta name="date" content="2022-04-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -185,9 +185,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.3" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#plot-the-summaries-2"><i class="fa fa-check"></i><b>3.2.3</b> Plot the Summaries</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="coming-soon-comparative-demographic-graphs.html"><a href="coming-soon-comparative-demographic-graphs.html"><i class="fa fa-check"></i><b>4</b> Coming Soon: Comparative Demographic Graphs</a>
+<li class="chapter" data-level="4" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html"><i class="fa fa-check"></i><b>4</b> Comparative Demographic Graphs</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="coming-soon-comparative-demographic-graphs.html"><a href="coming-soon-comparative-demographic-graphs.html#create-a-single-graph-3"><i class="fa fa-check"></i><b>4.1</b> Create a Single Graph</a></li>
+<li class="chapter" data-level="4.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-a-single-graph-3"><i class="fa fa-check"></i><b>4.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#creating-a-summary-1"><i class="fa fa-check"></i><b>4.1.1</b> Creating a Summary</a></li>
+<li class="chapter" data-level="4.1.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#plotting-the-summary-1"><i class="fa fa-check"></i><b>4.1.2</b> Plotting the Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-many-graphs-3"><i class="fa fa-check"></i><b>4.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-summaries-3"><i class="fa fa-check"></i><b>4.2.1</b> Create Summaries</a></li>
+<li class="chapter" data-level="4.2.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#plot-the-summaries-3"><i class="fa fa-check"></i><b>4.2.2</b> Plot the Summaries</a></li>
+</ul></li>
 </ul></li>
 <li class="part"><span><b>II How do I …?</b></span></li>
 <li class="chapter" data-level="5" data-path="change-the-font-size.html"><a href="change-the-font-size.html"><i class="fa fa-check"></i><b>5</b> Change the Font Size</a></li>
@@ -222,52 +231,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 7</span> Play with Colors</h1>
 <div id="change-colors-for-frequency-graphs" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> Change Colors for Frequency Graphs</h2>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="play-with-colors.html#cb102-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb102-2"><a href="play-with-colors.html#cb102-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb102-3"><a href="play-with-colors.html#cb102-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb102-4"><a href="play-with-colors.html#cb102-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.clr =</span> <span class="st">&quot;zeke&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="play-with-colors.html#cb131-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb131-2"><a href="play-with-colors.html#cb131-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb131-3"><a href="play-with-colors.html#cb131-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb131-4"><a href="play-with-colors.html#cb131-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.clr =</span> <span class="st">&quot;zeke&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.3.1-Complete-Code-Example-1.png" width="1248" /></p>
 </div>
 <div id="available-colors" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> Available Colors</h2>
 <p>The colors available for graphs come from <a href="https://drive.google.com/drive/u/0/folders/0ANF6dTDxdEyiUk9PVA">the Arab Barometer Color Guide</a>. You can see a list of colors with the command:</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="play-with-colors.html#cb103-1" aria-hidden="true" tabindex="-1"></a>ArabBarometer_clrs</span></code></pre></div>
-<pre><code>##         AB blue       AB orange      AB magenta   AB light blue       AB purple         AB pink       AB yellow 
-##       &quot;#0098BE&quot;       &quot;#DF6E21&quot;       &quot;#AC517F&quot;       &quot;#7CBBC7&quot;       &quot;#796391&quot;       &quot;#CF83A3&quot;       &quot;#FBA950&quot; 
-##       cool grey            zeke      james bond       dark blue     medium blue      pale green     olive green 
-##       &quot;#B1C2CF&quot;       &quot;#CCEAF2&quot;       &quot;#00718E&quot;       &quot;#003D4E&quot;       &quot;#4B91B8&quot;       &quot;#C8C6A2&quot;       &quot;#AAA764&quot; 
-##          copper    light bronze    bright apple dark watermelon      mary clare           plumb           lilac 
-##       &quot;#AC5410&quot;       &quot;#DC9C56&quot;       &quot;#FF5E64&quot;       &quot;#E42525&quot;       &quot;#EAA4A4&quot;       &quot;#7F375B&quot;       &quot;#B4ADDF&quot; 
-##          purple          coffee  midnight ocean           salma     almond meat     army jacket         apricot 
-##       &quot;#5C1C95&quot;       &quot;#6F3610&quot;       &quot;#004B5E&quot;       &quot;#C0E5EE&quot;       &quot;#F6DAC7&quot;       &quot;#706E3E&quot;       &quot;#F7B58B&quot; 
-##         mohamed       text grey      bright sky    bright mauve    dark apricot         Algeria           Egypt 
-##       &quot;#959595&quot;       &quot;#545454&quot;       &quot;#2CB2CE&quot;       &quot;#AD517F&quot;       &quot;#E28F57&quot;       &quot;#DF6E21&quot;       &quot;#00718E&quot; 
-##            Iraq          Jordan          Kuwait         Lebanon           Libya      Mauritania         Morocco 
-##       &quot;#FBA950&quot;       &quot;#7F375B&quot;       &quot;#706E3E&quot;       &quot;#CF83A3&quot;       &quot;#003D4E&quot;       &quot;#DC9C56&quot;       &quot;#7CBBC7&quot; 
-##       Palestine    Saudi Arabia           Sudan         Tunisia           Yemen            MENA 
-##       &quot;#AC517F&quot;       &quot;#1B909F&quot;       &quot;#EAA4A4&quot;       &quot;#AAA764&quot;       &quot;#796391&quot;       &quot;#E42525&quot;</code></pre>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="play-with-colors.html#cb132-1" aria-hidden="true" tabindex="-1"></a>ArabBarometer_clrs</span></code></pre></div>
+<pre><code>##         AB blue       AB orange      AB magenta   AB light blue       AB purple 
+##       &quot;#0098BE&quot;       &quot;#DF6E21&quot;       &quot;#AC517F&quot;       &quot;#7CBBC7&quot;       &quot;#796391&quot; 
+##         AB pink       AB yellow       cool grey            zeke      james bond 
+##       &quot;#CF83A3&quot;       &quot;#FBA950&quot;       &quot;#B1C2CF&quot;       &quot;#CCEAF2&quot;       &quot;#00718E&quot; 
+##       dark blue     medium blue      pale green     olive green          copper 
+##       &quot;#003D4E&quot;       &quot;#4B91B8&quot;       &quot;#C8C6A2&quot;       &quot;#AAA764&quot;       &quot;#AC5410&quot; 
+##    light bronze    bright apple dark watermelon      mary clare           plumb 
+##       &quot;#DC9C56&quot;       &quot;#FF5E64&quot;       &quot;#E42525&quot;       &quot;#EAA4A4&quot;       &quot;#7F375B&quot; 
+##           lilac          purple          coffee  midnight ocean           salma 
+##       &quot;#B4ADDF&quot;       &quot;#5C1C95&quot;       &quot;#6F3610&quot;       &quot;#004B5E&quot;       &quot;#C0E5EE&quot; 
+##     almond meat     army jacket         apricot         mohamed       text grey 
+##       &quot;#F6DAC7&quot;       &quot;#706E3E&quot;       &quot;#F7B58B&quot;       &quot;#959595&quot;       &quot;#545454&quot; 
+##      bright sky    bright mauve    dark apricot         Algeria           Egypt 
+##       &quot;#2CB2CE&quot;       &quot;#AD517F&quot;       &quot;#E28F57&quot;       &quot;#DF6E21&quot;       &quot;#00718E&quot; 
+##            Iraq          Jordan          Kuwait         Lebanon           Libya 
+##       &quot;#FBA950&quot;       &quot;#7F375B&quot;       &quot;#706E3E&quot;       &quot;#CF83A3&quot;       &quot;#003D4E&quot; 
+##      Mauritania         Morocco       Palestine    Saudi Arabia           Sudan 
+##       &quot;#DC9C56&quot;       &quot;#7CBBC7&quot;       &quot;#AC517F&quot;       &quot;#1B909F&quot;       &quot;#EAA4A4&quot; 
+##         Tunisia           Yemen            MENA 
+##       &quot;#AAA764&quot;       &quot;#796391&quot;       &quot;#E42525&quot;</code></pre>
 <p>You’ll notice some colors are repeated with different names (particularly when it comes to countries). This makes some parts of graphing easier internally. The unique colors included in the package are shown below with their hex code.</p>
 <p><img src="bookdownproj_files/figure-html/How.3.3-All-Colors-Output-1.png" width="672" /></p>
 </div>
 <div id="change-color-palette" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Change Color Palette</h2>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="play-with-colors.html#cb105-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb105-2"><a href="play-with-colors.html#cb105-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb105-3"><a href="play-with-colors.html#cb105-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>,</span>
-<span id="cb105-4"><a href="play-with-colors.html#cb105-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb105-5"><a href="play-with-colors.html#cb105-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_individual</span>(<span class="at">.color_palette =</span> <span class="st">&quot;cool rainbow&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="play-with-colors.html#cb134-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb134-2"><a href="play-with-colors.html#cb134-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb134-3"><a href="play-with-colors.html#cb134-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>,</span>
+<span id="cb134-4"><a href="play-with-colors.html#cb134-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb134-5"><a href="play-with-colors.html#cb134-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_individual</span>(<span class="at">.color_palette =</span> <span class="st">&quot;cool rainbow&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.3.4-Complete-Code-Example-1.png" width="1248" /></p>
 </div>
 <div id="available-palettes" class="section level2" number="7.4">
 <h2><span class="header-section-number">7.4</span> Available Palettes</h2>
 <p>The official branding colors have been combined into several color palettes to use with graphs. To see a list of all the (current) palettes, use the following command:</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="play-with-colors.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AB_palette_options</span>()</span></code></pre></div>
-<pre><code>##  [1] &quot;blue pair&quot;          &quot;orange pair&quot;        &quot;purple pair&quot;        &quot;AB Default&quot;         &quot;blue triple&quot;       
-##  [6] &quot;orange triple&quot;      &quot;purple triple&quot;      &quot;green triple&quot;       &quot;mono blue&quot;          &quot;mono orange&quot;       
-## [11] &quot;mono purple&quot;        &quot;mono green&quot;         &quot;dull rainbow&quot;       &quot;cool orange&quot;        &quot;blue-orange&quot;       
-## [16] &quot;cool bright orange&quot; &quot;business man&quot;       &quot;pretty cool&quot;        &quot;soft rainbow&quot;       &quot;warm&quot;              
-## [21] &quot;purple pink&quot;        &quot;stacked&quot;            &quot;age&quot;                &quot;income&quot;             &quot;education&quot;         
-## [26] &quot;gender&quot;             &quot;settlement&quot;         &quot;religion&quot;           &quot;sect&quot;               &quot;region&quot;            
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="play-with-colors.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AB_palette_options</span>()</span></code></pre></div>
+<pre><code>##  [1] &quot;blue pair&quot;          &quot;orange pair&quot;        &quot;purple pair&quot;       
+##  [4] &quot;AB Default&quot;         &quot;blue triple&quot;        &quot;orange triple&quot;     
+##  [7] &quot;purple triple&quot;      &quot;green triple&quot;       &quot;mono blue&quot;         
+## [10] &quot;mono orange&quot;        &quot;mono purple&quot;        &quot;mono green&quot;        
+## [13] &quot;dull rainbow&quot;       &quot;cool orange&quot;        &quot;blue-orange&quot;       
+## [16] &quot;cool bright orange&quot; &quot;business man&quot;       &quot;pretty cool&quot;       
+## [19] &quot;soft rainbow&quot;       &quot;warm&quot;               &quot;purple pink&quot;       
+## [22] &quot;stacked&quot;            &quot;age&quot;                &quot;income&quot;            
+## [25] &quot;education&quot;          &quot;gender&quot;             &quot;settlement&quot;        
+## [28] &quot;religion&quot;           &quot;sect&quot;               &quot;region&quot;            
 ## [31] &quot;trend colors&quot;</code></pre>
 
 </div>

@@ -21,8 +21,13 @@ create-many-graphs-2
 identify-the-variables-1
 create-summaries-2
 plot-the-summaries-2
-coming-soon-comparative-demographic-graphs
+comparative-demographic-graphs
 create-a-single-graph-3
+creating-a-summary-1
+plotting-the-summary-1
+create-many-graphs-3
+create-summaries-3
+plot-the-summaries-3
 change-the-font-size
 change-the-titlesubtitlecaption
 play-with-colors
