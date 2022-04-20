@@ -1,0 +1,32 @@
+# Change Default Colors
+
+
+## Change Colors for Frequency Graphs
+
+The parameter is called **`.clr`**.
+
+```{r How.3.1-Complete-Code-Example, fig.dim=c(13,12)}
+
+survey1 %>%
+  calculate_smry_individual("Q1COVID19",
+                            "Algeria") %>%
+  plot_smry_individual(.clr = "zeke")
+
+
+```
+
+
+## Change Color Palette
+
+The parameter is called **`.palette`**.
+
+```{r How.3.4-Complete-Code-Example, fig.dim=c(13,12)}
+
+
+plot_stacked_comp(survey1,
+                  Q2061A,
+                  .caption = "Arab Barometer Wave VI, Survey 1",
+                  .palette = "soft rainbow")
+
+
+```

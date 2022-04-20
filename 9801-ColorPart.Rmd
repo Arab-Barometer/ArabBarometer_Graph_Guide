@@ -1,17 +1,6 @@
-# Play with Colors
+# (PART) All Things Colors {-}
 
-
-## Change Colors for Frequency Graphs
-
-```{r How.3.1-Complete-Code-Example, fig.dim=c(13,12)}
-
-survey1 %>%
-  calculate_smry_individual("Q1COVID19",
-                            "Algeria") %>%
-  plot_smry_individual(.clr = "zeke")
-
-
-```
+# Color Options
 
 ## Available Colors
 
@@ -28,20 +17,6 @@ You'll notice some colors are repeated with different names (particularly when i
 ```{r How.3.3-All-Colors-Output,echo=FALSE}
 
 scales::show_col(unique(ArabBarometer_clrs))
-
-```
-
-## Change Color Palette
-
-```{r How.3.4-Complete-Code-Example, fig.dim=c(13,12)}
-
-
-survey1 %>%
-  calculate_demographic_smry_individual("Q1COVID19",
-                                        .dem = "gender",
-                                        .country = "Algeria") %>%
-  plot_demographic_smry_individual(.color_palette = "cool rainbow")
-
 
 ```
 

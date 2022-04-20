@@ -42,6 +42,7 @@ coming-soon-comparative-grid-plots
 coming-soon-single-country-multi-question-trend-plots
 coming-soon-stacked-plots
 coming-soon-single-country-stacked-plots
+first-color-section
 change-the-font-size
 change-the-titlesubtitlecaption
 play-with-colors
