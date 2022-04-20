@@ -19,7 +19,11 @@ survey_dates <- c("Survey 1",
 plot_trend_multiquestion_individual(questions_2_compare,
                                     df_list,
                                     survey_dates,
-                                    "Algeria")
+                                    "Algeria",
+                                    legend.names = c("Economic situtation","COVID-19"),
+                                    .title = "What is the most important challenge facing Algeria today?",
+                                    .subtitle = "% saying",
+                                    .caption = "Arab Barometer Wave VI, Algeria")
 
 
 ```
@@ -43,7 +47,11 @@ survey_dates <- c("Survey 1",
 plot_trend_multiquestion_individual(questions_2_compare,
                                     df_list,
                                     survey_dates,
-                                    "Algeria")
+                                    "Algeria",
+                                    legend.names = c("Economic situtation","COVID-19"),
+                                    .title = "What is the most important challenge facing Algeria today?",
+                                    .subtitle = "% saying",
+                                    .caption = "Arab Barometer Wave VI, Algeria")
 
 
 ```

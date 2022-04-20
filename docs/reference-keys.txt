@@ -36,11 +36,12 @@ coming-soon-comparative-country-trend-graphs
 create-comparative-trend-graph
 coming-soon-comparative-country-demographic-trend-graphs
 create-comparative-demographic-trend-graph
-single-country-multi-question-plots
-comparative-multi-question-plots
-comparative-grid-plots
-single-country-multi-question-trend-plots
-stacked-plots
+coming-soon-single-country-multi-question-plots
+coming-soon-comparative-multi-question-plots
+coming-soon-comparative-grid-plots
+coming-soon-single-country-multi-question-trend-plots
+coming-soon-stacked-plots
+coming-soon-single-country-stacked-plots
 change-the-font-size
 change-the-titlesubtitlecaption
 play-with-colors

@@ -12,7 +12,10 @@ questions_labels <- c("Is there corruption?",
 
 plot_multiquestions_comp(survey1,
                         questions_2_compare,
-                        questions_labels)
+                        questions_labels,
+                        .title = "Perceptions of Corruption in MENA",
+                        .subtitle = "% saying to a medium or large extent",
+                        .caption = "Arab Barometer Wave VI, Survey 1")
 
 ```
 
@@ -28,7 +31,10 @@ questions_labels <- c("Is there corruption?",
 
 plot_multiquestions_comp(survey1,
                         questions_2_compare,
-                        questions_labels)
+                        questions_labels,
+                        .title = "Perceptions of Corruption in MENA",
+                        .subtitle = "% saying to a medium or large extent",
+                        .caption = "Arab Barometer Wave VI, Survey 1")
 ```
 
 Let's go!

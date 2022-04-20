@@ -70,7 +70,9 @@ library(ArabBarometR)
 survey1 <- haven::read_dta("../Final_Data/Wave6/Survey_1/Survey1_English.dta")
 
 survey1 <- survey1 %>%
+  
   sjlabelled::add_labels(starts_with("Q"), labels=c(`Don't know/refuse`=98)) %>%
+  
   age_demographic() %>%
   gender_demographic() %>%
   education_demographic() %>%

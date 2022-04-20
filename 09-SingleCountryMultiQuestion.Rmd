@@ -15,7 +15,10 @@ questions_labels <- c("Is there corruption?",
 plot_multiquestions_ind(survey1,
                         questions_2_compare,
                         questions_labels,
-                        "Algeria")
+                        "Algeria",
+                        .title = "Perceptions of Corruption in Algeria",
+                        .subtitle = "% saying to a medium or large extent",
+                        .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
 
 ```
 
@@ -32,7 +35,10 @@ questions_labels <- c("Is there corruption?",
 plot_multiquestions_ind(survey1,
                         questions_2_compare,
                         questions_labels,
-                        "Algeria")
+                        "Algeria",
+                        .title = "Perceptions of Corruption in Algeria",
+                        .subtitle = "% saying to a medium or large extent",
+                        .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
 ```
 
 Let's go!
