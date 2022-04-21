@@ -1,0 +1,49 @@
+# Table of Contents {-}
+
+ 
+ <font size="5"> Cross Tabulation Graphs </font>
+ 
+ * <font size="4"> [Overall Graphs][Single Country Overall Graphs] </font> 
+ * <font size="4"> [Overall Demographics Graphs][Single Country Demographic Plots] </font> 
+ * <font size="4"> [Comparative Graphs][Comparative Overall Graphs] </font> 
+ * <font size="4"> [Comparative Demographic Graphs][Comparative Demographic Graphs] </font> 
+ 
+ 
+ 
+ <font size="5"> **COMING SOON** Trend Graphs </font>
+ 
+ * <font size="4"> [Single Country Trend Graphs][COMING SOON: Single Country Trend Graphs] </font> 
+ * <font size="4"> [Single Country Demographic Trend Graphs][COMING SOON: Single Country Demographic Trend Graphs] </font> 
+ * <font size="4"> [Comparative Trend Graphs][COMING SOON: Comparative Country Trend Graphs] </font> 
+ * <font size="4"> [Comparative Demographic Trend Graphs][COMING SOON: Comparative Country Demographic Trend Graphs] </font> 
+
+ 
+ 
+ <font size="5"> **COMING SOON** Multi-Question Graphs </font>
+ 
+ * <font size="4"> [Single Country Multi-Question Plots][COMING SOON: Single Country Multi-Question Plots] </font> 
+ * <font size="4"> [Comparative Multi-Question Plots][COMING SOON: Comparative Multi-Question Plots] </font> 
+ * <font size="4"> [Comparative Gird Graphs][COMING SOON: Comparative Grid Plots] </font> 
+ * <font size="4"> [Single Country Multi-Question Trend Plots][COMING SOON: Single Country Multi-Question Trend Plots] </font> 
+ 
+ 
+ 
+ <font size="5"> **COMING SOON** Stacked Graphs </font>
+ 
+ * <font size="4"> [Comparative Stacked Graphs][COMING SOON: Stacked Plots] </font> 
+ * <font size="4"> [Single Country Stacked Graphs][COMING SOON: Single Country Stacked Plots] </font> 
+ 
+ 
+ <font size="5"> Colors </font>
+ 
+ * <font size="4"> [Color Options][Color Options] </font> 
+ * <font size="4"> [Change Default Colors][Change Default Colors] </font> 
+ * <font size="4"> [Highlight Countries with Color][Highlight Certain Countries] </font> 
+ 
+ 
+ <font size="5"> How Do I...? </font>
+ 
+ * <font size="4"> [Change the Font Size][Change the Font Size] </font> 
+ * <font size="4"> [Change the Title/Subtitle/Caption][Change the Title/Subtitle/Caption] </font>  
+ 
+ 

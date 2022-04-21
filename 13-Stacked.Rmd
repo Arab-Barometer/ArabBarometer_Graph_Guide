@@ -5,9 +5,9 @@ At the end, your code will look like the following:
 
 ```{r 13.1-Complete-Code-Example, eval=FALSE}
 
-plot_stacked_comp(survey1,
-                  Q2061A,
-                  .caption = "Arab Barometer Wave VI, Survey 1")
+calculate_stacked_df(survey1,
+                     Q2061A) %>%
+  plot_stacked_comp(.caption = "Arab Barometer Wave VI, Survey 1")
 
 ```
 
@@ -16,9 +16,9 @@ That code will produce the following graph:
 
 ```{r 13.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
 
-plot_stacked_comp(survey1,
-                  Q2061A,
-                  .caption = "Arab Barometer Wave VI, Survey 1")
+calculate_stacked_df(survey1,
+                     Q2061A) %>%
+  plot_stacked_comp(.caption = "Arab Barometer Wave VI, Survey 1")
 
 ```
 
