@@ -23,10 +23,11 @@ The parameter is called **`.palette`**.
 ```{r How.3.4-Complete-Code-Example, fig.dim=c(13,12)}
 
 
-plot_stacked_comp(survey1,
-                  Q2061A,
-                  .caption = "Arab Barometer Wave VI, Survey 1",
+calculate_stacked_df(survey1,
+                     Q2061A) %>%
+  plot_stacked_comp(.caption = "Arab Barometer Wave VI, Survey 1",
                   .palette = "soft rainbow")
+
 
 
 ```

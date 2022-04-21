@@ -266,9 +266,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="coming-soon-stacked-plots" class="section level1" number="13">
 <h1><span class="header-section-number">Chapter 13</span> COMING SOON: Stacked Plots</h1>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="coming-soon-stacked-plots.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stacked_comp</span>(survey1,</span>
-<span id="cb138-2"><a href="coming-soon-stacked-plots.html#cb138-2" aria-hidden="true" tabindex="-1"></a>                  Q2061A,</span>
-<span id="cb138-3"><a href="coming-soon-stacked-plots.html#cb138-3" aria-hidden="true" tabindex="-1"></a>                  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="coming-soon-stacked-plots.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
+<span id="cb138-2"><a href="coming-soon-stacked-plots.html#cb138-2" aria-hidden="true" tabindex="-1"></a>                     Q2061A) <span class="sc">%&gt;%</span></span>
+<span id="cb138-3"><a href="coming-soon-stacked-plots.html#cb138-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/13.2-Complete-Graph-Example-1.png" width="1248" /></p>
 <p>Let’s go!</p>
