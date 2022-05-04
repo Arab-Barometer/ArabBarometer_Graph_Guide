@@ -24,7 +24,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2022-04-21" />
+<meta name="date" content="2022-04-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -158,6 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.2" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-summaries"><i class="fa fa-check"></i><b>1.2.2</b> Create Summaries</a></li>
 <li class="chapter" data-level="1.2.3" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#plot-the-summaries"><i class="fa fa-check"></i><b>1.2.3</b> Plot the Summaries</a></li>
 </ul></li>
+<li class="chapter" data-level="1.3" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#special-graph-select-all"><i class="fa fa-check"></i><b>1.3</b> Special Graph: Select All</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html"><i class="fa fa-check"></i><b>2</b> Single Country Demographic Plots</a>
 <ul>
@@ -244,6 +245,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>VI How do I …?</b></span></li>
 <li class="chapter" data-level="18" data-path="change-the-font-size.html"><a href="change-the-font-size.html"><i class="fa fa-check"></i><b>18</b> Change the Font Size</a></li>
 <li class="chapter" data-level="19" data-path="change-the-titlesubtitlecaption.html"><a href="change-the-titlesubtitlecaption.html"><i class="fa fa-check"></i><b>19</b> Change the Title/Subtitle/Caption</a></li>
+<li class="chapter" data-level="20" data-path="show-only-certain-countries.html"><a href="show-only-certain-countries.html"><i class="fa fa-check"></i><b>20</b> Show only certain countries?</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="show-only-certain-countries.html"><a href="show-only-certain-countries.html#plots-that-go-with-calculate_-functions"><i class="fa fa-check"></i><b>20.1</b> Plots that go with <code>calculate_</code> functions</a></li>
+<li class="chapter" data-level="20.2" data-path="show-only-certain-countries.html"><a href="show-only-certain-countries.html#plots-with-no-calculate_-functions"><i class="fa fa-check"></i><b>20.2</b> Plots with no <code>calculate_</code> functions</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -268,32 +274,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="create-comparative-demographic-trend-graph" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> Create Comparative Demographic Trend Graph</h2>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb132-2"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-2" aria-hidden="true" tabindex="-1"></a>  survey1,</span>
-<span id="cb132-3"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-3" aria-hidden="true" tabindex="-1"></a>  survey2,</span>
-<span id="cb132-4"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-4" aria-hidden="true" tabindex="-1"></a>  survey3</span>
-<span id="cb132-5"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb132-6"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb132-7"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-7" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
-<span id="cb132-8"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Suvey 2&quot;</span>,</span>
-<span id="cb132-9"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
-<span id="cb132-10"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb132-11"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-11" aria-hidden="true" tabindex="-1"></a><span class="co"># One plot per Country</span></span>
-<span id="cb132-12"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp_demographics</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb132-13"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-13" aria-hidden="true" tabindex="-1"></a>                             df_list,</span>
-<span id="cb132-14"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-14" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;gender&quot;</span>,</span>
-<span id="cb132-15"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-15" aria-hidden="true" tabindex="-1"></a>                             survey_dates,</span>
-<span id="cb132-16"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-16" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Country&quot;</span>)</span>
-<span id="cb132-17"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb132-18"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-18" aria-hidden="true" tabindex="-1"></a><span class="co"># One plot per demographic</span></span>
-<span id="cb132-19"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp_demographics</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb132-20"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-20" aria-hidden="true" tabindex="-1"></a>                             df_list,</span>
-<span id="cb132-21"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-21" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;gender&quot;</span>,</span>
-<span id="cb132-22"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-22" aria-hidden="true" tabindex="-1"></a>                             survey_dates,</span>
-<span id="cb132-23"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb132-23" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;demographic&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb133-2"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-2" aria-hidden="true" tabindex="-1"></a>  survey1,</span>
+<span id="cb133-3"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-3" aria-hidden="true" tabindex="-1"></a>  survey2,</span>
+<span id="cb133-4"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-4" aria-hidden="true" tabindex="-1"></a>  survey3</span>
+<span id="cb133-5"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb133-6"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb133-7"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-7" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
+<span id="cb133-8"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Suvey 2&quot;</span>,</span>
+<span id="cb133-9"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
+<span id="cb133-10"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb133-11"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-11" aria-hidden="true" tabindex="-1"></a><span class="co"># One plot per Country</span></span>
+<span id="cb133-12"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp_demographics</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb133-13"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-13" aria-hidden="true" tabindex="-1"></a>                             df_list,</span>
+<span id="cb133-14"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-14" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;gender&quot;</span>,</span>
+<span id="cb133-15"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-15" aria-hidden="true" tabindex="-1"></a>                             survey_dates,</span>
+<span id="cb133-16"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-16" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Country&quot;</span>)</span>
+<span id="cb133-17"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb133-18"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-18" aria-hidden="true" tabindex="-1"></a><span class="co"># One plot per demographic</span></span>
+<span id="cb133-19"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp_demographics</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb133-20"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-20" aria-hidden="true" tabindex="-1"></a>                             df_list,</span>
+<span id="cb133-21"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-21" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;gender&quot;</span>,</span>
+<span id="cb133-22"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-22" aria-hidden="true" tabindex="-1"></a>                             survey_dates,</span>
+<span id="cb133-23"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#cb133-23" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;demographic&quot;</span>)</span></code></pre></div>
 <p>The code produces this graphs:</p>
-<pre><code>## geom_path: Each group consists of only one observation. Do you need
-## to adjust the group aesthetic?</code></pre>
+<pre><code>## geom_path: Each group consists of only one observation. Do you
+## need to adjust the group aesthetic?</code></pre>
 <p><img src="bookdownproj_files/figure-html/08.2-Complete-Graph-Example-1.png" width="1248" /><img src="bookdownproj_files/figure-html/08.2-Complete-Graph-Example-2.png" width="1248" /></p>
 
 </div>

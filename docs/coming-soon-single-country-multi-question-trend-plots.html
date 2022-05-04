@@ -24,7 +24,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2022-04-21" />
+<meta name="date" content="2022-04-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -158,6 +158,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.2" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-summaries"><i class="fa fa-check"></i><b>1.2.2</b> Create Summaries</a></li>
 <li class="chapter" data-level="1.2.3" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#plot-the-summaries"><i class="fa fa-check"></i><b>1.2.3</b> Plot the Summaries</a></li>
 </ul></li>
+<li class="chapter" data-level="1.3" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#special-graph-select-all"><i class="fa fa-check"></i><b>1.3</b> Special Graph: Select All</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html"><i class="fa fa-check"></i><b>2</b> Single Country Demographic Plots</a>
 <ul>
@@ -244,6 +245,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>VI How do I …?</b></span></li>
 <li class="chapter" data-level="18" data-path="change-the-font-size.html"><a href="change-the-font-size.html"><i class="fa fa-check"></i><b>18</b> Change the Font Size</a></li>
 <li class="chapter" data-level="19" data-path="change-the-titlesubtitlecaption.html"><a href="change-the-titlesubtitlecaption.html"><i class="fa fa-check"></i><b>19</b> Change the Title/Subtitle/Caption</a></li>
+<li class="chapter" data-level="20" data-path="show-only-certain-countries.html"><a href="show-only-certain-countries.html"><i class="fa fa-check"></i><b>20</b> Show only certain countries?</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="show-only-certain-countries.html"><a href="show-only-certain-countries.html#plots-that-go-with-calculate_-functions"><i class="fa fa-check"></i><b>20.1</b> Plots that go with <code>calculate_</code> functions</a></li>
+<li class="chapter" data-level="20.2" data-path="show-only-certain-countries.html"><a href="show-only-certain-countries.html#plots-with-no-calculate_-functions"><i class="fa fa-check"></i><b>20.2</b> Plots with no <code>calculate_</code> functions</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -266,25 +272,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="coming-soon-single-country-multi-question-trend-plots" class="section level1" number="12">
 <h1><span class="header-section-number">Chapter 12</span> COMING SOON: Single Country Multi-Question Trend Plots</h1>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-1" aria-hidden="true" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q2061A_1&quot;</span>,</span>
-<span id="cb137-2"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-2" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Q2061A_15&quot;</span>)</span>
-<span id="cb137-3"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb137-4"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-4" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(survey1,</span>
-<span id="cb137-5"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-5" aria-hidden="true" tabindex="-1"></a>                survey2,</span>
-<span id="cb137-6"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-6" aria-hidden="true" tabindex="-1"></a>                survey3)</span>
-<span id="cb137-7"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb137-8"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-8" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
-<span id="cb137-9"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 2&quot;</span>,</span>
-<span id="cb137-10"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-10" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
-<span id="cb137-11"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb137-12"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_multiquestion_individual</span>(questions_2_compare,</span>
-<span id="cb137-13"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-13" aria-hidden="true" tabindex="-1"></a>                                    df_list,</span>
-<span id="cb137-14"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-14" aria-hidden="true" tabindex="-1"></a>                                    survey_dates,</span>
-<span id="cb137-15"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-15" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb137-16"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-16" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">legend.names =</span> <span class="fu">c</span>(<span class="st">&quot;Economic situtation&quot;</span>,<span class="st">&quot;COVID-19&quot;</span>),</span>
-<span id="cb137-17"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-17" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">.title =</span> <span class="st">&quot;What is the most important challenge facing Algeria today?&quot;</span>,</span>
-<span id="cb137-18"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-18" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">.subtitle =</span> <span class="st">&quot;% saying&quot;</span>,</span>
-<span id="cb137-19"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb137-19" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-1" aria-hidden="true" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q2061A_1&quot;</span>,</span>
+<span id="cb138-2"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-2" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Q2061A_15&quot;</span>)</span>
+<span id="cb138-3"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb138-4"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-4" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(survey1,</span>
+<span id="cb138-5"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-5" aria-hidden="true" tabindex="-1"></a>                survey2,</span>
+<span id="cb138-6"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-6" aria-hidden="true" tabindex="-1"></a>                survey3)</span>
+<span id="cb138-7"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb138-8"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-8" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
+<span id="cb138-9"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 2&quot;</span>,</span>
+<span id="cb138-10"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-10" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
+<span id="cb138-11"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb138-12"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_multiquestion_individual</span>(questions_2_compare,</span>
+<span id="cb138-13"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-13" aria-hidden="true" tabindex="-1"></a>                                    df_list,</span>
+<span id="cb138-14"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-14" aria-hidden="true" tabindex="-1"></a>                                    survey_dates,</span>
+<span id="cb138-15"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-15" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb138-16"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-16" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">legend.names =</span> <span class="fu">c</span>(<span class="st">&quot;Economic situtation&quot;</span>,<span class="st">&quot;COVID-19&quot;</span>),</span>
+<span id="cb138-17"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-17" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">.title =</span> <span class="st">&quot;What is the most important challenge facing Algeria today?&quot;</span>,</span>
+<span id="cb138-18"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-18" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">.subtitle =</span> <span class="st">&quot;% saying&quot;</span>,</span>
+<span id="cb138-19"><a href="coming-soon-single-country-multi-question-trend-plots.html#cb138-19" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/12.2-Complete-Graph-Example-1.png" width="1248" /></p>
 <p>Let’s go!</p>

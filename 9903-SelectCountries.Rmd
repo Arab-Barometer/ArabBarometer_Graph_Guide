@@ -1,0 +1,38 @@
+# Show only certain countries?
+
+## Plots that go with `calculate_` functions
+
+
+```{r How.5.6.1-SelectCountries, fig.dim=c(13,12)}
+
+survey1 %>%
+  calculate_smry_comp("Q1COVID19",
+                      select_countries = c("Morocco","Tunisia")) %>%
+  
+  plot_smry_comp(.caption = "Arab Barometer Wave VI, Survey I")
+
+
+```
+
+## Plots with no `calculate_` functions
+
+```{r How.5.7.1-SelectCountries, fig.dim=c(13,12)}
+
+df_list <- list(
+  survey1,
+  survey2,
+  survey3
+)
+
+survey_dates <- c("Survey 1",
+                  "Suvey 2",
+                  "Survey 3")
+
+
+plot_trend_comp("Q1COVID19",
+                df_list,
+                survey_dates,
+                select_countries = c("Morocco",
+                                     "Lebanon"))
+
+```
