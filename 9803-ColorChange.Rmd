@@ -18,15 +18,15 @@ survey1 %>%
 
 ## Change Color Palette
 
-The parameter is called **`.palette`**.
+The parameter is called **`.color_palette`**.
 
 ```{r How.3.4-Complete-Code-Example, fig.dim=c(13,12)}
 
 
 calculate_stacked_df(survey1,
-                     Q2061A) %>%
+                     "Q2061A") %>%
   plot_stacked_comp(.caption = "Arab Barometer Wave VI, Survey 1",
-                  .palette = "soft rainbow")
+                    .color_palette = "soft rainbow")
 
 
 

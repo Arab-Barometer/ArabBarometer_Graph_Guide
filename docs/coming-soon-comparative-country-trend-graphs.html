@@ -24,7 +24,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2022-04-22" />
+<meta name="date" content="2022-05-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -158,7 +158,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.2" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-summaries"><i class="fa fa-check"></i><b>1.2.2</b> Create Summaries</a></li>
 <li class="chapter" data-level="1.2.3" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#plot-the-summaries"><i class="fa fa-check"></i><b>1.2.3</b> Plot the Summaries</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#special-graph-select-all"><i class="fa fa-check"></i><b>1.3</b> Special Graph: Select All</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html"><i class="fa fa-check"></i><b>2</b> Single Country Demographic Plots</a>
 <ul>
@@ -250,6 +249,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="20.1" data-path="show-only-certain-countries.html"><a href="show-only-certain-countries.html#plots-that-go-with-calculate_-functions"><i class="fa fa-check"></i><b>20.1</b> Plots that go with <code>calculate_</code> functions</a></li>
 <li class="chapter" data-level="20.2" data-path="show-only-certain-countries.html"><a href="show-only-certain-countries.html#plots-with-no-calculate_-functions"><i class="fa fa-check"></i><b>20.2</b> Plots with no <code>calculate_</code> functions</a></li>
 </ul></li>
+<li class="chapter" data-level="21" data-path="change-the-order-of-a-stacked-graph.html"><a href="change-the-order-of-a-stacked-graph.html"><i class="fa fa-check"></i><b>21</b> Change the order of a stacked graph?</a>
+<ul>
+<li class="chapter" data-level="" data-path="change-the-order-of-a-stacked-graph.html"><a href="change-the-order-of-a-stacked-graph.html#move-one-factor"><i class="fa fa-check"></i>Move One Factor</a></li>
+<li class="chapter" data-level="" data-path="change-the-order-of-a-stacked-graph.html"><a href="change-the-order-of-a-stacked-graph.html#swap-factors"><i class="fa fa-check"></i>Swap Factors</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -274,20 +278,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="create-comparative-trend-graph" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> Create Comparative Trend Graph</h2>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="coming-soon-comparative-country-trend-graphs.html#cb132-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb132-2"><a href="coming-soon-comparative-country-trend-graphs.html#cb132-2" aria-hidden="true" tabindex="-1"></a>  survey1,</span>
-<span id="cb132-3"><a href="coming-soon-comparative-country-trend-graphs.html#cb132-3" aria-hidden="true" tabindex="-1"></a>  survey2,</span>
-<span id="cb132-4"><a href="coming-soon-comparative-country-trend-graphs.html#cb132-4" aria-hidden="true" tabindex="-1"></a>  survey3</span>
-<span id="cb132-5"><a href="coming-soon-comparative-country-trend-graphs.html#cb132-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb132-6"><a href="coming-soon-comparative-country-trend-graphs.html#cb132-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb132-7"><a href="coming-soon-comparative-country-trend-graphs.html#cb132-7" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
-<span id="cb132-8"><a href="coming-soon-comparative-country-trend-graphs.html#cb132-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Suvey 2&quot;</span>,</span>
-<span id="cb132-9"><a href="coming-soon-comparative-country-trend-graphs.html#cb132-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
-<span id="cb132-10"><a href="coming-soon-comparative-country-trend-graphs.html#cb132-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb132-11"><a href="coming-soon-comparative-country-trend-graphs.html#cb132-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb132-12"><a href="coming-soon-comparative-country-trend-graphs.html#cb132-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb132-13"><a href="coming-soon-comparative-country-trend-graphs.html#cb132-13" aria-hidden="true" tabindex="-1"></a>                df_list,</span>
-<span id="cb132-14"><a href="coming-soon-comparative-country-trend-graphs.html#cb132-14" aria-hidden="true" tabindex="-1"></a>                survey_dates)</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="coming-soon-comparative-country-trend-graphs.html#cb131-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb131-2"><a href="coming-soon-comparative-country-trend-graphs.html#cb131-2" aria-hidden="true" tabindex="-1"></a>  survey1,</span>
+<span id="cb131-3"><a href="coming-soon-comparative-country-trend-graphs.html#cb131-3" aria-hidden="true" tabindex="-1"></a>  survey2,</span>
+<span id="cb131-4"><a href="coming-soon-comparative-country-trend-graphs.html#cb131-4" aria-hidden="true" tabindex="-1"></a>  survey3</span>
+<span id="cb131-5"><a href="coming-soon-comparative-country-trend-graphs.html#cb131-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb131-6"><a href="coming-soon-comparative-country-trend-graphs.html#cb131-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-7"><a href="coming-soon-comparative-country-trend-graphs.html#cb131-7" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
+<span id="cb131-8"><a href="coming-soon-comparative-country-trend-graphs.html#cb131-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Suvey 2&quot;</span>,</span>
+<span id="cb131-9"><a href="coming-soon-comparative-country-trend-graphs.html#cb131-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
+<span id="cb131-10"><a href="coming-soon-comparative-country-trend-graphs.html#cb131-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-11"><a href="coming-soon-comparative-country-trend-graphs.html#cb131-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb131-12"><a href="coming-soon-comparative-country-trend-graphs.html#cb131-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb131-13"><a href="coming-soon-comparative-country-trend-graphs.html#cb131-13" aria-hidden="true" tabindex="-1"></a>                df_list,</span>
+<span id="cb131-14"><a href="coming-soon-comparative-country-trend-graphs.html#cb131-14" aria-hidden="true" tabindex="-1"></a>                survey_dates)</span></code></pre></div>
 <p>The code produces this graph:</p>
 <p><img src="bookdownproj_files/figure-html/07.2-Complete-Graph-Example-1.png" width="1248" /></p>
 

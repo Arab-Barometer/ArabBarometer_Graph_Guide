@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 15 Color Options | ArabBarometR Graphing Guide</title>
-  <meta name="description" content="Chapter 15 Color Options | ArabBarometR Graphing Guide" />
+  <title>Chapter 21 Change the order of a stacked graph? | ArabBarometR Graphing Guide</title>
+  <meta name="description" content="Chapter 21 Change the order of a stacked graph? | ArabBarometR Graphing Guide" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 15 Color Options | ArabBarometR Graphing Guide" />
+  <meta property="og:title" content="Chapter 21 Change the order of a stacked graph? | ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 15 Color Options | ArabBarometR Graphing Guide" />
+  <meta name="twitter:title" content="Chapter 21 Change the order of a stacked graph? | ArabBarometR Graphing Guide" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="coming-soon-single-country-stacked-plots.html"/>
-<link rel="next" href="change-default-colors.html"/>
+<link rel="prev" href="show-only-certain-countries.html"/>
+
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -273,77 +273,114 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="color-options" class="section level1" number="15">
-<h1><span class="header-section-number">Chapter 15</span> Color Options</h1>
-<div id="available-colors" class="section level2" number="15.1">
-<h2><span class="header-section-number">15.1</span> Available Colors</h2>
-<p>The colors available for graphs come from <a href="https://drive.google.com/drive/u/0/folders/0ANF6dTDxdEyiUk9PVA">the Arab Barometer Color Guide</a>. You can see a list of colors with the command:</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="color-options.html#cb140-1" aria-hidden="true" tabindex="-1"></a>ArabBarometer_clrs</span></code></pre></div>
-<pre><code>##         AB blue       AB orange      AB magenta 
-##       &quot;#0098BE&quot;       &quot;#DF6E21&quot;       &quot;#AC517F&quot; 
-##   AB light blue       AB purple         AB pink 
-##       &quot;#7CBBC7&quot;       &quot;#796391&quot;       &quot;#CF83A3&quot; 
-##       AB yellow       cool grey            zeke 
-##       &quot;#FBA950&quot;       &quot;#B1C2CF&quot;       &quot;#CCEAF2&quot; 
-##      james bond       dark blue     medium blue 
-##       &quot;#00718E&quot;       &quot;#003D4E&quot;       &quot;#4B91B8&quot; 
-##      pale green     olive green          copper 
-##       &quot;#C8C6A2&quot;       &quot;#AAA764&quot;       &quot;#AC5410&quot; 
-##    light bronze    bright apple dark watermelon 
-##       &quot;#DC9C56&quot;       &quot;#FF5E64&quot;       &quot;#E42525&quot; 
-##      mary clare           plumb           lilac 
-##       &quot;#EAA4A4&quot;       &quot;#7F375B&quot;       &quot;#B4ADDF&quot; 
-##          purple          coffee  midnight ocean 
-##       &quot;#5C1C95&quot;       &quot;#6F3610&quot;       &quot;#004B5E&quot; 
-##           salma     almond meat     army jacket 
-##       &quot;#C0E5EE&quot;       &quot;#F6DAC7&quot;       &quot;#706E3E&quot; 
-##         apricot         mohamed       text grey 
-##       &quot;#F7B58B&quot;       &quot;#959595&quot;       &quot;#545454&quot; 
-##      bright sky    bright mauve    dark apricot 
-##       &quot;#2CB2CE&quot;       &quot;#AD517F&quot;       &quot;#E28F57&quot; 
-##         Algeria           Egypt            Iraq 
-##       &quot;#DF6E21&quot;       &quot;#00718E&quot;       &quot;#FBA950&quot; 
-##          Jordan          Kuwait         Lebanon 
-##       &quot;#7F375B&quot;       &quot;#706E3E&quot;       &quot;#CF83A3&quot; 
-##           Libya      Mauritania         Morocco 
-##       &quot;#003D4E&quot;       &quot;#DC9C56&quot;       &quot;#7CBBC7&quot; 
-##       Palestine    Saudi Arabia           Sudan 
-##       &quot;#AC517F&quot;       &quot;#1B909F&quot;       &quot;#EAA4A4&quot; 
-##         Tunisia           Yemen            MENA 
-##       &quot;#AAA764&quot;       &quot;#796391&quot;       &quot;#E42525&quot;</code></pre>
-<p>You’ll notice some colors are repeated with different names (particularly when it comes to countries). This makes some parts of graphing easier internally. The unique colors included in the package are shown below with their hex code.</p>
-<p><img src="bookdownproj_files/figure-html/How.3.3-All-Colors-Output-1.png" width="672" /></p>
+<div id="change-the-order-of-a-stacked-graph" class="section level1" number="21">
+<h1><span class="header-section-number">Chapter 21</span> Change the order of a stacked graph?</h1>
+<p>Changing the order of a stacked graph, like creating many graphs at once, is not done within <code>ArabBarometR</code> per se, but the process is relatively straightforward nonetheless.</p>
+<p>For this example, let’s create a comparative stacked bar chart for <code>Q2ACOVID19</code>.</p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="change-the-order-of-a-stacked-graph.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
+<span id="cb153-2"><a href="change-the-order-of-a-stacked-graph.html#cb153-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;Q2ACOVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb153-3"><a href="change-the-order-of-a-stacked-graph.html#cb153-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Original Order&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/How.4.01-Complete-Code-Example-1.png" width="1248" /></p>
+<p>The order of the bars is determined by the factor level. You can see factor level in the data frame produced by the function <code>calculate_stacked_df</code>. The numbers are the factor levels, the words in brackets are the factor labels. In this example, you can see the factor levels are 1-7 and 666. The factor labels are the question response options.</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="change-the-order-of-a-stacked-graph.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
+<span id="cb154-2"><a href="change-the-order-of-a-stacked-graph.html#cb154-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;Q2ACOVID19&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 48 × 3
+## # Groups:   Country [6]
+##                              Q2ACOVID19 Country Percent
+##                               &lt;dbl+lbl&gt; &lt;chr&gt;     &lt;dbl&gt;
+##  1   1 [Illness or death of family mem… Algeria      32
+##  2   2 [Household income loss]          Algeria       2
+##  3   3 [Negative impacts on economy]    Algeria      10
+##  4   4 [Inadequate healthcare infrastr… Algeria      17
+##  5   5 [Inadequate gov.&#39;t response]     Algeria       6
+##  6   6 [Citizens incompliant with rule… Algeria      30
+##  7   7 [Other]                          Algeria       3
+##  8 666 [Don&#39;t know/Refuse]              Algeria       0
+##  9   1 [Illness or death of family mem… Jordan       31
+## 10   2 [Household income loss]          Jordan        6
+## # … with 38 more rows</code></pre>
+<p>Instead of leading with “Illness or death of a family member”, say we want to lead with “Inadequate gov.t response”. We need to change the factor levels. First, we’ll save the output of <code>calculate_stacked_df</code> to an object we can manipulate.</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="change-the-order-of-a-stacked-graph.html#cb156-1" aria-hidden="true" tabindex="-1"></a>new_df <span class="ot">&lt;-</span> <span class="fu">calculate_stacked_df</span>(survey1,</span>
+<span id="cb156-2"><a href="change-the-order-of-a-stacked-graph.html#cb156-2" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Q2ACOVID19&quot;</span>)</span></code></pre></div>
+<p>To change the factor levels, we’ll use the <code>recode</code> function from the <code>dplyr</code> library. There are several ways you can use the <code>recode</code> function to re-order the factor levels. This guide will review two, and you can explore the rest on your own.</p>
+<div id="move-one-factor" class="section level3 unnumbered">
+<h3>Move One Factor</h3>
+<p>If the goal is to move “Inadequate gov.t response”, whose factor level is <code>5</code>, in front of “Illness or death of a family member”, whose factor level is <code>1</code>, we have to choose a new factor level that comes before <code>1</code>. There are infinite numbers before <code>1</code>, so we’ll just go with <code>0.5</code> here.</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="change-the-order-of-a-stacked-graph.html#cb157-1" aria-hidden="true" tabindex="-1"></a>new_df<span class="sc">$</span>Q2ACOVID19 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">recode</span>(</span>
+<span id="cb157-2"><a href="change-the-order-of-a-stacked-graph.html#cb157-2" aria-hidden="true" tabindex="-1"></a>  new_df<span class="sc">$</span>Q2ACOVID19,                     <span class="co"># The variable getting recoded</span></span>
+<span id="cb157-3"><a href="change-the-order-of-a-stacked-graph.html#cb157-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">5</span><span class="st">`</span> <span class="ot">=</span> .<span class="dv">5</span>,                              <span class="co"># The old value to new value</span></span>
+<span id="cb157-4"><a href="change-the-order-of-a-stacked-graph.html#cb157-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">.default =</span> <span class="fu">levels</span>(new_df<span class="sc">$</span>Q2ACOVID19),  <span class="co"># Use the original levels as a guide</span></span>
+<span id="cb157-5"><a href="change-the-order-of-a-stacked-graph.html#cb157-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">.combine_value_labels =</span> T              <span class="co"># Keep the original levels for all other variables</span></span>
+<span id="cb157-6"><a href="change-the-order-of-a-stacked-graph.html#cb157-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p>We can see the new value of the factor.</p>
+<pre><code>## # A tibble: 48 × 3
+## # Groups:   Country [6]
+##                              Q2ACOVID19 Country Percent
+##                               &lt;dbl+lbl&gt; &lt;chr&gt;     &lt;dbl&gt;
+##  1   1 [Illness or death of family mem… Algeria      32
+##  2   2 [Household income loss]          Algeria       2
+##  3   3 [Negative impacts on economy]    Algeria      10
+##  4   4 [Inadequate healthcare infrastr… Algeria      17
+##  5   0.5 [Inadequate gov.&#39;t response]   Algeria       6
+##  6   6 [Citizens incompliant with rule… Algeria      30
+##  7   7 [Other]                          Algeria       3
+##  8 666 [Don&#39;t know/Refuse]              Algeria       0
+##  9   1 [Illness or death of family mem… Jordan       31
+## 10   2 [Household income loss]          Jordan        6
+## # … with 38 more rows</code></pre>
+<p>And now when we plot the recoded data frame.</p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="change-the-order-of-a-stacked-graph.html#cb159-1" aria-hidden="true" tabindex="-1"></a>new_df <span class="sc">%&gt;%</span></span>
+<span id="cb159-2"><a href="change-the-order-of-a-stacked-graph.html#cb159-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;New Order, Option 1&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/How.04.2-PlotRecode1-1.png" width="1248" /></p>
 </div>
-<div id="available-palettes" class="section level2" number="15.2">
-<h2><span class="header-section-number">15.2</span> Available Palettes</h2>
-<p>The official branding colors have been combined into several color palettes to use with graphs. To see a list of all the (current) palettes, use the following command:</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="color-options.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AB_palette_options</span>()</span></code></pre></div>
-<pre><code>##  [1] &quot;blue pair&quot;          &quot;orange pair&quot;       
-##  [3] &quot;purple pair&quot;        &quot;AB Default&quot;        
-##  [5] &quot;blue triple&quot;        &quot;orange triple&quot;     
-##  [7] &quot;purple triple&quot;      &quot;green triple&quot;      
-##  [9] &quot;mono blue&quot;          &quot;mono orange&quot;       
-## [11] &quot;mono purple&quot;        &quot;mono green&quot;        
-## [13] &quot;dull rainbow&quot;       &quot;cool orange&quot;       
-## [15] &quot;blue-orange&quot;        &quot;cool bright orange&quot;
-## [17] &quot;business man&quot;       &quot;pretty cool&quot;       
-## [19] &quot;soft rainbow&quot;       &quot;warm&quot;              
-## [21] &quot;purple pink&quot;        &quot;stacked&quot;           
-## [23] &quot;age&quot;                &quot;income&quot;            
-## [25] &quot;education&quot;          &quot;gender&quot;            
-## [27] &quot;settlement&quot;         &quot;religion&quot;          
-## [29] &quot;sect&quot;               &quot;region&quot;            
-## [31] &quot;trend colors&quot;</code></pre>
+<div id="swap-factors" class="section level3 unnumbered">
+<h3>Swap Factors</h3>
+<p>An alternative way to move “Inadequate gov.t response” to the front is to swap positions with “Illness or death of a family member”. That is, make “Inadequate gov.t response” factor level <code>1</code> and “Illness or death of a family member” factor level <code>5</code>. Again, we use <code>recode</code> from <code>dplyr</code>.</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="change-the-order-of-a-stacked-graph.html#cb160-1" aria-hidden="true" tabindex="-1"></a>new_df<span class="sc">$</span>Q2ACOVID19 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">recode</span>(</span>
+<span id="cb160-2"><a href="change-the-order-of-a-stacked-graph.html#cb160-2" aria-hidden="true" tabindex="-1"></a>  new_df<span class="sc">$</span>Q2ACOVID19,                     <span class="co"># The variable getting recoded</span></span>
+<span id="cb160-3"><a href="change-the-order-of-a-stacked-graph.html#cb160-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">5</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">1</span>,                               <span class="co"># The old value to new value</span></span>
+<span id="cb160-4"><a href="change-the-order-of-a-stacked-graph.html#cb160-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">5</span>,                               <span class="co"># The old value to new value</span></span>
+<span id="cb160-5"><a href="change-the-order-of-a-stacked-graph.html#cb160-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">.default =</span> <span class="fu">levels</span>(new_df<span class="sc">$</span>Q2ACOVID19),  <span class="co"># Use the original levels as a guide</span></span>
+<span id="cb160-6"><a href="change-the-order-of-a-stacked-graph.html#cb160-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">.combine_value_labels =</span> T              <span class="co"># Keep the original levels for all other variables</span></span>
+<span id="cb160-7"><a href="change-the-order-of-a-stacked-graph.html#cb160-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p>The new factor levels are:</p>
+<pre><code>## # A tibble: 48 × 3
+## # Groups:   Country [6]
+##                              Q2ACOVID19 Country Percent
+##                               &lt;dbl+lbl&gt; &lt;chr&gt;     &lt;dbl&gt;
+##  1   5 [Illness or death of family mem… Algeria      32
+##  2   2 [Household income loss]          Algeria       2
+##  3   3 [Negative impacts on economy]    Algeria      10
+##  4   4 [Inadequate healthcare infrastr… Algeria      17
+##  5   1 [Inadequate gov.&#39;t response]     Algeria       6
+##  6   6 [Citizens incompliant with rule… Algeria      30
+##  7   7 [Other]                          Algeria       3
+##  8 666 [Don&#39;t know/Refuse]              Algeria       0
+##  9   5 [Illness or death of family mem… Jordan       31
+## 10   2 [Household income loss]          Jordan        6
+## # … with 38 more rows</code></pre>
+<p>Finally, we plot the new data frame.</p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="change-the-order-of-a-stacked-graph.html#cb162-1" aria-hidden="true" tabindex="-1"></a>new_df <span class="sc">%&gt;%</span></span>
+<span id="cb162-2"><a href="change-the-order-of-a-stacked-graph.html#cb162-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;New Order, Option 2&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/How.04.2-PlotRecode2-1.png" width="1248" /></p>
+<p>The main take away here is that if you want to play around with the order of a stacked bar graph, it is best to familiarize yourself with <code>recode</code>.</p>
 
 </div>
 </div>
+
+
+
+
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="coming-soon-single-country-stacked-plots.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="change-default-colors.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="show-only-certain-countries.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -374,7 +411,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/9801-ColorPart.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/9904-StackedOrder.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -382,7 +419,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/9801-ColorPart.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/9904-StackedOrder.Rmd",
 "text": null
 },
 "download": null,

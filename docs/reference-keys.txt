@@ -6,7 +6,6 @@ create-many-graphs
 identify-the-variables
 create-summaries
 plot-the-summaries
-special-graph-select-all
 single-country-demographic-plots
 create-a-single-graph-1
 creating-a-summary
@@ -58,3 +57,4 @@ change-the-titlesubtitlecaption
 show-only-certain-countries
 plots-that-go-with-calculate_-functions
 plots-with-no-calculate_-functions
+change-the-order-of-a-stacked-graph
