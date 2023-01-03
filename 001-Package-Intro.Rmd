@@ -1,0 +1,285 @@
+# (PART) Data Prepperation Functions {-}
+# Preparing Data
+
+Before we create create graphs or look at summaries, we often need to tidy up the data a bit. `ArabBarometR` provides a suite of functions to ease this process. In particular, it is useful to create a character columns: with the names of countries rather than their numeric codes; for commonly used demographics (gender, age, income, education, and settlement); and dummied versions of various variables.
+
+<br>
+
+## recode_country
+
+The input of the **`recode_country()`** function is an Arab Barometer data frame. The function takes the `COUNTRY` variable from an Arab Barometer data frame and creates a `Country` variable. The original variable `COUNTRY` should be a labeled numeric value where the numeric value is the country code for the country in which the interview was conducted, and the label is the name of the country. The output variable `Country` will be a character vector of country names. This function was originally created by Patrick, and updated by MaryClare.
+
+### Example:
+```{r recode-country-ex, include=TRUE,eval=FALSE}
+
+table(survey1$COUNTRY)
+survey1 <- recode_country(survey1)
+table(survey1$Country)
+
+```
+
+
+<br>
+
+## Demographic functions
+
+### Basics
+
+There are five functions that can be used to create the standard demographic breakdowns Arab Barometer produces graphs for:
+
+* `gender_demographic()` : Based on `Q1002`, outputs variable `gender`
+* `age_demographic()` : Based on `Q1001`^[An update to the function `age_demographic()` has been requested and is on the docket. The update requests that the function takes account ages missing from `Q1001` if they are supplied by `Q1001YEAR` or `Q1001APPROX`.], outputs variable `age`
+* `income_demographic()` : Based on `Q1016`, outputs variable `income`
+* `education_demographic()` : Based on `Q1003`, outputs variable `education`
+* `settlement_demographic()` : Based on `Q13`, outputs variable `settlement`
+
+Each of the aforementioned functions generates a dichotomous character variable. The input for each function is an Arab Barometer data frame.
+
+
+#### Example:
+```{r demographic-functions-ex, include=TRUE,eval=FALSE}
+
+# gender
+survey1 <- gender_demographic(survey1)
+table(survey1$gender)
+
+# Age
+survey1 <- age_demographic(survey1)
+table(survey1$age)
+
+# Income
+survey1 <- income_demographic(survey1)
+table(suvery1$income)
+
+# Education
+survey1 <- education_demographic(survey1)
+table(survey1$education)
+
+# Settlement
+survey1 <- settlement_demographic(survey1)
+table(survey1$settlement)
+
+```
+
+
+## Advanced
+
+Of the five basic demographic creation functions, the user has the ability to manipulate the output of two of them" `age_demographic()` and `education_demographic()`. This is because, unlike the other demographics, age is a continuous variable and education has multiple levels. Therefore, the point at which the variables bifurcate can be changed.
+
+First let's look at the `age_demographic()` function. As seen above, the default output is either `"18-29"` or `"30+"`. By setting the parameter `.range` to N, the user can change the returned values to `"18-(N-1)"` and `"N+"`. For example, if the user wanted to compare opinions of those over 60 with the opinions of those under 60, the user could set the parameter `.range` to 60, so the function `age_demographic()` returns `"18-59"` and `"60+"`.
+
+```{r age-demographic-adv-ex}
+
+survey1 <- age_demographic(survey1,
+                           .range = 60)
+table(survey1$age)
+
+```
+
+Next, let's look at the `education_demographic()` function. The return values for the newly formed `education` column are `"
+
+<br>
+
+## education_demographic
+
+The **education_demographic** function creates a dichotomous character column in the data frame titled "education". You can enter a cutoff by entering a numeric value between 1 and 7 or a character string from value labels of the column Q1003 for the .edu_lvl parameter. The default for this parameter is "Secondary". The new column "education" has the values "Max Secondary" or "Higher". If you change the .edu_lvl parameter, the "education" column will have the values "Max .edu_lvl" or "Higher". If you enter a numeric value, the function will use the value label associated with that number.
+
+### Examples:
+```{r, echo = TRUE,eval=FALSE}
+# English:
+## Default parameters:
+wave6survey1_en %>%
+  education_demographic() %>% # Creates an "education" column
+  select(education) %>% # Select just the "education" column
+  table() # Create table of the "education" column values
+
+## Changing the cuttoff with a character string:
+wave6survey1_en %>%
+  education_demographic("BA") %>%
+  select(education) %>%
+  table()
+
+## Changing the cuttoff with a numeric:
+wave6survey1_en %>%
+  education_demographic(3) %>%
+  select(education) %>%
+  table()
+
+
+# Arabic:
+## Default parameters:
+wave6survey1_ar %>%
+  education_demographic() %>% # Creates an "education" column
+  select(education) %>% # Select just the "education" column
+  table() # Create table of the "education" column values
+
+## Changing the cuttoff with a character string:
+wave6survey1_ar %>%
+  education_demographic("BA") %>%
+  select(education) %>%
+  table()
+
+## Changing the cuttoff with a numeric:
+wave6survey1_ar %>%
+  education_demographic(3) %>%
+  select(education) %>%
+  table()
+```
+
+<br>
+
+## dummy_all
+
+The **dummy_all** function takes one or more factor variables and creates a dummy column for each factor level. The new columns are given the original variable name then appended with an underscore and the factor level being dummied.
+
+In the example below, you can see when **dummy_all** is used on the variable *b* from the data frame *df*, two new columns are created: *b_1* and *b_2*.
+
+By default, **dummy_all** does not create a dummy column for NA's. The can be changed, however, by specifying **no_NA = FALSE**.
+
+The function **dummy_all** takes as input the data frame variables are being selected from and the variable you want to create dummy columns for. More details can be found by typing **help("dummy_all")** into the R Console.
+
+### Examples:
+```{r, echo=T,eval=FALSE}
+# Sample Data:
+a <- c(1,3,2,4,2,3,4,2,2)
+b <- c(1,2,1,1,2,1,2,2,2)
+c <- c(2,5,1,1,5,NA,2,NA,5)
+df <- data.frame(a,b,c)
+
+# Original data frame:
+df
+
+# Creating dummy columns for one variable:
+dummy_all(df,b)
+
+# Creating dummy columns for multiple variables:
+df %>% 
+  dummy_all(a,b)
+
+# Creating NA dummy column:
+df %>%
+  dummy_all(c,no_NA = FALSE)
+
+
+```
+
+<br>
+
+## dummy_select
+
+For some variables, we want to create dummy columns for all factor levels, but for other we only want to dummy out a specific level. The **dummy_select** variable allows the user to select the factor level to create a dummy column for. The function creates a new variable named in the same style as **dummy_all**; the variable name, underscore, the factor level.
+
+The **dummy_select** column also allows the user to replace the current column with the new dummy column by including the option **inplace = TRUE**.
+
+You can use the function for more than one variable at a time, but *not* more than one factor level at a time. For example, if two columns both have 1 as a factor level and you want to create a dummy for when the factor is 1, you can include both columns in **dummy_select**. However, you can**not** create a dummy for when the factor(s) are 1 *and* 2 in the same command. You would have to run the command once for level 1 and once for level 2.
+
+The following example uses the same sample data as before. More details can be found by typing **help("dummy_select")** into your R Console.
+
+### Examples:
+```{r, echo=T,eval=FALSE}
+
+# Adding new column:
+dummy_select(df,b,dummy_lvl = 1)
+
+# Adding multiple new column:
+df %>%
+  dummy_select(b,c,dummy_lvl = 1)
+
+# Replacing column:
+dummy_select(df,a,dummy_lvl = 4,inplace = TRUE)
+
+
+```
+
+<br>
+
+## In Practice
+
+The functions presented so far can be used in combination to recreate the standard cleaning we use to prep the Arab Barometer data frames for graph creation. **Remember:** You can copy and paste this code exactly.
+
+### Example:
+```{r,echo=TRUE,message=FALSE,eval=FALSE}
+
+# English:
+wave6survey1_en = wave6survey1_en %>%
+  
+  # Adding Demographic Categories:
+  age_demographic() %>%
+  gender_demographic() %>%
+  education_demographic() %>%
+  income_demographic() %>%
+  
+  # Sorting through NA's
+  mutate(Q10COVID19_1=na_if(Q10COVID19_1,97))%>% #Not applicable needs to be taken out here
+  mutate(Q10COVID19_2=na_if(Q10COVID19_2,97))%>%
+  mutate(Q10COVID19_3=na_if(Q10COVID19_2,97))%>%
+  mutate(Q10COVID19_4=na_if(Q10COVID19_4,97))%>%
+  mutate(Q10COVID19_5=na_if(Q10COVID19_5,97))%>%
+  mutate(Q5COVID19=na_if(Q5COVID19,97)) %>%
+  
+  # dummy_select(QX90,
+  #              dummy_lvl = 1) %>%
+  # 
+  # dummy_select(QX90,
+  #              dummy_lvl = 2) %>%
+  
+  dummy_select(Q516A,
+               dummy_lvl = 3) %>%
+  
+  dummy_select(Q421,
+               dummy_lvl = 6,
+               inplace = T) %>%
+  
+  dummy_all(Q2061A,
+            Q2ACOVID19,
+            Q2BCOVID19,
+            Q4COVID19,
+            Q5COVID19,
+            #QXX0A,
+            Q7141A
+            #QX64
+            )
+
+
+# Arabic:
+wave6survey1_ar = wave6survey1_ar %>%
+  
+  # Adding Demographic Categories:
+  age_demographic() %>%
+  gender_demographic() %>%
+  education_demographic() %>%
+  income_demographic() %>%
+  
+  # Sorting through NA's
+  mutate(Q10COVID19_1=na_if(Q10COVID19_1,97))%>% #Not applicable needs to be taken out here
+  mutate(Q10COVID19_2=na_if(Q10COVID19_2,97))%>%
+  mutate(Q10COVID19_3=na_if(Q10COVID19_2,97))%>%
+  mutate(Q10COVID19_4=na_if(Q10COVID19_4,97))%>%
+  mutate(Q10COVID19_5=na_if(Q10COVID19_5,97))%>%
+  mutate(Q5COVID19=na_if(Q5COVID19,97)) %>%
+  
+  # dummy_select(QX90,
+  #              dummy_lvl = 1) %>%
+  # 
+  # dummy_select(QX90,
+  #              dummy_lvl = 2) %>%
+  
+  dummy_select(Q516A,
+               dummy_lvl = 3) %>%
+  
+  dummy_select(Q421,
+               dummy_lvl = 6,
+               inplace = T) %>%
+  
+  dummy_all(Q2061A,
+            Q2ACOVID19,
+            Q2BCOVID19,
+            Q4COVID19,
+            Q5COVID19,
+            #QXX0A,
+            Q7141A
+            #QX64
+            )
+
+```
+
