@@ -1,17 +1,24 @@
-/* Whole document: */
-body{
-  font-family: Montserrat;
-  font-size: 12pt;
+p {
+  font-family: montserrat;
 }
-
-/* Captions */
-<style>
+h1, h2, h3, h4, h5, h6 {
+  font-family: montserrat;
+}
 p.caption {
-  font-size: 0.9em;
-  font-style: italic;
-  color: grey;
-  margin-right: 10%;
-  margin-left: 10%;
-  text-align: justify;
+  color: #777;
+  margin-top: 10px;
 }
-</style>
+p code {
+  white-space: inherit;
+  font-family: monospace;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+pre.numberSource code > span > a:first-child::before {
+  left: -0.3em;
+}
