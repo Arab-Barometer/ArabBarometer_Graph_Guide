@@ -87,7 +87,7 @@ comparative_summary <- survey1 %>%
 
 ### Plot the Summary
 
-The next step is plot the summary we just created. To do this, we use the function **plot_smry_comp()**. You can learn more about this function in section [7.3](https://arab-barometer.github.io/ArabBarometR-Guide/standard-plots.html#plot_smry_comp) of the ArabBarometR Guide.
+The next step is plot the summary we just created. To do this, we use the function **plot_smry_comp()**.
 
 There is only *one* necessary parameter to use **plot_smry_comp()**: the summary data frame. For a complete list of acceptable parameters and documentation, you can run `?plot_smry_comp` in your R console.
 

@@ -1,5 +1,5 @@
 # (PART) Cross Tabulation Graphs {-}
-# Single Country Overall Graphs
+# Single Country Overall Graphs {#chapter-1}
 
 This chapter will cover how to make an overall frequency graph for a single country.
 
@@ -37,7 +37,7 @@ Let's go!
 
 ### Create a Summary
 
-The first step in creating a plot is to gather the data you want to display and organize it. You do this with the **create_smry_individual()** function. You can learn more about this function in section [6.1](https://arab-barometer.github.io/ArabBarometR-Guide/calculating-summaries.html#calculate_smry_individual) in the larger ArabBarometR guide.
+The first step in creating a plot is to gather the data you want to display and organize it. You do this with the **create_smry_individual()** function.
 
 The three main parameters you need to provide to this function are (1) the data you are using, (2) the variable you want to plot, and (3) the country you want to plot it for. To see all the input parameters for the function, type the code `?calculate_smry_individual` in your R console.
 
@@ -107,7 +107,7 @@ Q1COVID19_summary <- survey1 %>%
 
 ### Plot the Summary
 
-The next step is plot the summary we just created. To do this, we use the function **plot_smry_individual()**. You can learn more about this function in section [7.1](https://arab-barometer.github.io/ArabBarometR-Guide/standard-plots.html#plot_smry_individual) of the ArabBarometR Guide.
+The next step is plot the summary we just created. To do this, we use the function **plot_smry_individual()**.
 
 There is only *one* necessary parameter to use **plot_smry_individual()**: the summary data frame. For a complete list of acceptable parameters and documentation, you can run `?plot_smry_individual` in your R console.
 

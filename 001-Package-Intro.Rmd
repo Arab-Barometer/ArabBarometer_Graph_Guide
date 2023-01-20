@@ -88,39 +88,19 @@ The **education_demographic** function creates a dichotomous character column in
 ```{r, echo = TRUE,eval=FALSE}
 # English:
 ## Default parameters:
-wave6survey1_en %>%
+survey1 %>%
   education_demographic() %>% # Creates an "education" column
   select(education) %>% # Select just the "education" column
   table() # Create table of the "education" column values
 
 ## Changing the cuttoff with a character string:
-wave6survey1_en %>%
+survey1 %>%
   education_demographic("BA") %>%
   select(education) %>%
   table()
 
 ## Changing the cuttoff with a numeric:
-wave6survey1_en %>%
-  education_demographic(3) %>%
-  select(education) %>%
-  table()
-
-
-# Arabic:
-## Default parameters:
-wave6survey1_ar %>%
-  education_demographic() %>% # Creates an "education" column
-  select(education) %>% # Select just the "education" column
-  table() # Create table of the "education" column values
-
-## Changing the cuttoff with a character string:
-wave6survey1_ar %>%
-  education_demographic("BA") %>%
-  select(education) %>%
-  table()
-
-## Changing the cuttoff with a numeric:
-wave6survey1_ar %>%
+survey1 %>%
   education_demographic(3) %>%
   select(education) %>%
   table()
@@ -201,7 +181,7 @@ The functions presented so far can be used in combination to recreate the standa
 ```{r,echo=TRUE,message=FALSE,eval=FALSE}
 
 # English:
-wave6survey1_en = wave6survey1_en %>%
+survey1 = survey1 %>%
   
   # Adding Demographic Categories:
   age_demographic() %>%
@@ -209,77 +189,8 @@ wave6survey1_en = wave6survey1_en %>%
   education_demographic() %>%
   income_demographic() %>%
   
-  # Sorting through NA's
-  mutate(Q10COVID19_1=na_if(Q10COVID19_1,97))%>% #Not applicable needs to be taken out here
-  mutate(Q10COVID19_2=na_if(Q10COVID19_2,97))%>%
-  mutate(Q10COVID19_3=na_if(Q10COVID19_2,97))%>%
-  mutate(Q10COVID19_4=na_if(Q10COVID19_4,97))%>%
-  mutate(Q10COVID19_5=na_if(Q10COVID19_5,97))%>%
-  mutate(Q5COVID19=na_if(Q5COVID19,97)) %>%
-  
-  # dummy_select(QX90,
-  #              dummy_lvl = 1) %>%
-  # 
-  # dummy_select(QX90,
-  #              dummy_lvl = 2) %>%
-  
-  dummy_select(Q516A,
-               dummy_lvl = 3) %>%
-  
-  dummy_select(Q421,
-               dummy_lvl = 6,
-               inplace = T) %>%
-  
-  dummy_all(Q2061A,
-            Q2ACOVID19,
-            Q2BCOVID19,
-            Q4COVID19,
-            Q5COVID19,
-            #QXX0A,
-            Q7141A
-            #QX64
-            )
+  dummy_all(Q2061A)
 
-
-# Arabic:
-wave6survey1_ar = wave6survey1_ar %>%
-  
-  # Adding Demographic Categories:
-  age_demographic() %>%
-  gender_demographic() %>%
-  education_demographic() %>%
-  income_demographic() %>%
-  
-  # Sorting through NA's
-  mutate(Q10COVID19_1=na_if(Q10COVID19_1,97))%>% #Not applicable needs to be taken out here
-  mutate(Q10COVID19_2=na_if(Q10COVID19_2,97))%>%
-  mutate(Q10COVID19_3=na_if(Q10COVID19_2,97))%>%
-  mutate(Q10COVID19_4=na_if(Q10COVID19_4,97))%>%
-  mutate(Q10COVID19_5=na_if(Q10COVID19_5,97))%>%
-  mutate(Q5COVID19=na_if(Q5COVID19,97)) %>%
-  
-  # dummy_select(QX90,
-  #              dummy_lvl = 1) %>%
-  # 
-  # dummy_select(QX90,
-  #              dummy_lvl = 2) %>%
-  
-  dummy_select(Q516A,
-               dummy_lvl = 3) %>%
-  
-  dummy_select(Q421,
-               dummy_lvl = 6,
-               inplace = T) %>%
-  
-  dummy_all(Q2061A,
-            Q2ACOVID19,
-            Q2BCOVID19,
-            Q4COVID19,
-            Q5COVID19,
-            #QXX0A,
-            Q7141A
-            #QX64
-            )
 
 ```
 

@@ -9,14 +9,14 @@ site: bookdown::bookdown_site
 
 ## Purpose {.unnumbered}
 
-This guide is meant to give instructions on how to create graphs using the ArabBarometR package.
+This guide is meant to give instructions on how to create graphs using the `ArabBarometR` package.
 
-This guide does **not** cover everything the ArabBarometR package can do, particularly with respect to cleaning data. For a more extensive guide, please visit the [general ArabBarometer Guide](https://arab-barometer.github.io/ArabBarometR-Guide/). This guide was created using the **bookdown** package, which comes with many fun and useful features. An overview of these features can be found in the [Guide Features](https://arab-barometer.github.io/ArabBarometR-Guide/guide-features.html) section in the general ArabBarometR Guide.
+This guide does **not** cover everything the `ArabBarometR` package can do, particularly with respect to cleaning data. For a more extensive guide, please visit the [general ArabBarometer Guide](https://arab-barometer.github.io/ArabBarometR-Guide/). This guide was created using the **bookdown** package, which comes with many fun and useful features. An overview of these features can be found in the [Guide Features](https://arab-barometer.github.io/ArabBarometR-Guide/guide-features.html) section in the general `ArabBarometR` Guide.
 
 As such, this guide assumes a few things:
 
--   That you have the ArabBarometR package installed on your machine.
-    -   If this is not true, please take a look at [this chapter](https://arab-barometer.github.io/ArabBarometR-Guide/installation.html) in the general ArabBarometR Guide.
+-   That you have the `ArabBarometR` package installed on your machine.
+    -   If this is not true, please take a look at [this chapter](https://arab-barometer.github.io/ArabBarometR-Guide/installation.html) in the general `ArabBarometR` Guide.
 -   You have a basic understanding of how to load data and packages in R.
     -   If this is not true, you can pursue either [this guide](http://www.r-tutor.com/r-introduction/data-frame/data-import) or [this website](https://www.google.com/search?q=How+to+load+data+in+R&source=hp&ei=YKrYYb_1LLLH_Qanq6OICA&iflsig=ALs-wAMAAAAAYdi4cEgcmgRSgizOG8Zt8g7jSThX-RHp&ved=0ahUKEwi_pYruxKD1AhWyY98KHafVCIEQ4dUDCAk&uact=5&oq=How+to+load+data+in+R&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIGCAAQFhAeMgYIABAWEB46DgguEIAEELEDEMcBEKMCOgsIABCABBCxAxCDAToICAAQgAQQsQM6CwguEIAEEMcBEKMCOgUILhCABDoICC4QgAQQsQM6BQgAELEDUKAHWKIdYO4eaAFwAHgAgAFWiAGJCpIBAjIxmAEAoAEBsAEA&sclient=gws-wiz).
 
@@ -33,101 +33,109 @@ For each type of graph, the guide will first go through how to create one graph,
 
 The examples in this guide will be created using data from Wave VI. For single survey graphs, it will use data from from Wave VI, Survey I. For trend graphs, it will use data from Wave VI, Survey I, II, and III, where Survey III is the final survey we conducted in Wave VI.
 
-The Wave VI data can be found on [the Arab Barometer Github](https://github.com/Arab-Barometer/Final_Data/tree/main/Wave6) or [the Arab Barometer website](https://www.arabbarometer.org/survey-data/data-downloads/).
+The Wave VI data can be found on [the Arab Barometer website](https://www.arabbarometer.org/survey-data/data-downloads/).
+
+In order to create certain graphs (e.g., demographic graphs, comparative graphs for nominal questions, etc.), the data needs to be prepared correctly. The first chapter in this guide introduces several functions included in the `ArabBarometR` package that allow the user to easily prepare the data.
 
 ## Header Code {#headercode .unnumbered}
 
-The code examples in this guide will **only** focus on how to create graphs. It assumes your R file begins with the following code:
+The code examples in this guide will **only** focus on how to create graphs. That is, the examples will not include loading and preparing the data or loading libraries. As you begin this guide, make sure your header looks something like the following:
 
 ```{r index-example-header,eval=FALSE}
 
 setwd("/Path/to/Folder/with/Data")
 
-library(ArabBarometR)
+library(ArabBarometR) # Our package
+library(dplyr) # Lots of handy functions
+library(purrr) # Mapping functions
 
 survey1 <- haven::read.dta("Wave6Survey1.dta")
 survey2 <- haven::read.dta("Wave6Survey2.dta")
 survey3 <- haven::read.dta("Wave6Survey3.dta")
 
-```
-
-In this code example **"/Path/to/Folder/with/Data"** is the path to where you are saving your work that *also contains your data*. This is best practice. For more on folders/working directories, see [Section 1.1.2](https://arab-barometer.github.io/ArabBarometR-Guide/installation.html) in the general Arab Barometer Guide.
-
-**Wave6SurveyX.dta** in the above code example is a placeholder for whatever you have named the survey data for Surveys I, II, and III from Wave VI. If you read in the data (using the **haven::read.dta()** function) and save it as survey1, survey2, and survey3, you should be able to copy and paste the code in this guide exactly as is and run it in your own R session.
-
-This guide does **not** go over how to clean the data. For more on how to use the ArabBarometR package to clean Arab Barometer data, please see [Chapter 5 Preparing the Data](https://arab-barometer.github.io/ArabBarometR-Guide/preparing-data.html) in the general ArabBarometR Guide.
-
-```{r index-load-packaged,include=FALSE}
-
-library(ArabBarometR)
-library(dplyr)
-```
-
-```{r index-load-w6s1, include=FALSE}
-
-survey1 <- haven::read_dta("/Volumes/GoogleDrive/Shared drives/Arab Barometer/AB6/0. RELEASE FILES/Data Files/ENG Final Data Files FOR RELEASE/Arab_Barometer_Wave_6_Part_1_ENG_RELEASE_NOV_21.dta")
-
+# Preparing Survey 1 data:
 survey1 <- survey1 %>%
-  
-  sjlabelled::add_labels(starts_with("Q"), labels=c(`Don't know/refuse`=98)) %>%
   
   age_demographic() %>%
   gender_demographic() %>%
   education_demographic() %>%
   income_demographic() %>%
   
-  sjlabelled::add_labels(Q2061A, labels=c(`Economic situation` = 1,
-                            `Corruption` = 2,
-                            `Internal instability` = 6,
-                            `Foreign interference` = 7,
-                            `Public services` = 12,
-                            `COVID-19` = 15,
-                            `Other` = 16,
-                            `Don't know/refuse` = 98)) %>%
+  dummy_all(Q2061A)
 
-  sjlabelled::add_labels(Q5COVID19, labels=c(`Permanent job loss` = 1,
-                               `Temporarary interruption` = 2,
-                               `No serious interruption` = 3,
-                               `No effect on job` = 4,
-                               `NA` = 97,
-                               `Don't know/refuse` = 98)) %>% #Labels in data set too long. Messing up graphs
+# Preparing Survey 2 data:
+survey2 <- survey2 %>%
   
-  sjlabelled::add_labels(Q2ACOVID19, labels=c(`Illness or death of family member` = 1,
-                                `Household income loss` = 2,
-                                `Negative impacts on economy` = 3,
-                                `Inadequate healthcare infrastructure` = 4,
-                                `Inadequate gov.'t response` = 5,
-                                `Citizens incompliant with rules` = 6,
-                                `Other` = 7,
-                                `Don't know/refuse` = 98)) %>% #Labels in data set too long. Messing up graphs
+  age_demographic() %>%
+  gender_demographic() %>%
+  education_demographic() %>%
+  income_demographic() %>%
   
-  sjlabelled::add_labels(Q2BCOVID19, labels=c(`Health threat is exaggerated` = 1,
-                                `No household income loss` = 2,
-                                `No negative impacts on economy` = 3,
-                                `Adequate healthcare infrastructure` = 4,
-                                `Adequate gov.'t response` = 5,
-                                `Citizens compliant with rules` = 6,
-                                `Other` = 7,
-                                `Don't know/refuse` = 98)) %>% #Labels in data set too long. Messing up graphs
+  dummy_all(Q2061A) %>%
   
-  sjlabelled::add_labels(Q516A, labels=c(`Type does not matter` = 1,
-                           `Non-democratic government is sometimes preferable` = 2,
-                           `Democracy is always preferable` = 3,
-                           `Don't know/refuse` = 98)) %>% #Labels too long
+  sjlabelled::add_labels(Q2061A, labels=c(`Economic situation` = 1,
+                                          `Corruption` = 2,
+                                          `Internal instability` = 6,
+                                          `Foreign interference` = 7,
+                                          `Public services` = 12,
+                                          `COVID-19` = 15,
+                                          `Other` = 16,
+                                          `Don't know/refuse` = 98))
+
+# Preparing Survey 3 data:
+survey3 <- survey3 %>%
   
-  mutate(Q10COVID19_1 = na_if(Q10COVID19_1, 97)) %>% #Not applicable needs to be taken out here
-  mutate(Q10COVID19_2 = na_if(Q10COVID19_2, 97)) %>%
-  mutate(Q10COVID19_3 = na_if(Q10COVID19_3, 97)) %>%
-  mutate(Q10COVID19_4 = na_if(Q10COVID19_4, 97)) %>%
-  mutate(Q10COVID19_5 = na_if(Q10COVID19_5, 97)) %>%
-  mutate(Q5COVID19    = na_if(Q5COVID19,97)) %>% #Not applicable needs to be taken out here
+  # Adding Demographic Categories:
+  age_demographic() %>%
+  gender_demographic() %>%
+  education_demographic() %>%
+  income_demographic() %>%
+  
+  dummy_all(Q2061A) %>%
+  
+  sjlabelled::add_labels(Q2061A, labels=c(`Economic situation` = 1,
+                                          `Corruption` = 2,
+                                          `Internal instability` = 6,
+                                          `Foreign interference` = 7,
+                                          `Public services` = 12,
+                                          `COVID-19` = 15,
+                                          `Other` = 16,
+                                          `Don't know/refuse` = 98))
+```
+
+In this code example **"/Path/to/Folder/with/Data"** is the path to where you are saving your work that *also contains your data*. This is best practice. For more on folders/working directories, see [Section 1.1.2](https://arab-barometer.github.io/ArabBarometR-Guide/installation.html) in the general Arab Barometer Guide.
+
+**Wave6SurveyX.dta** in the above code example is a placeholder for whatever you have named the survey data for Surveys I, II, and III from Wave VI. If you read in the data (using the **haven::read.dta()** function) and save it as survey1, survey2, and survey3, you should be able to copy and paste the code in this guide exactly as is and run it in your own R session.
+
+[Chapter 2](#chapter-1) introduces the functions used to prepare the data.
+
+
+```{r index-load-packaged,include=FALSE}
+
+library(ArabBarometR)
+library(dplyr)
+library(purrr)
+library(ggplot2)
+
+```
+
+```{r index-load-w6s1, include=FALSE, cache=TRUE}
+
+survey1 <- haven::read_dta("/Volumes/GoogleDrive/Shared drives/Arab Barometer/AB6/0. RELEASE FILES/Data Files/ENG Final Data Files FOR RELEASE/Arab_Barometer_Wave_6_Part_1_ENG_RELEASE_NOV_21.dta")
+
+survey1 <- survey1 %>%
+  
+  age_demographic() %>%
+  gender_demographic() %>%
+  education_demographic() %>%
+  income_demographic() %>%
   
   dummy_all(Q2061A)
 
 
 ```
 
-```{r index-load-w6s2, include=FALSE}
+```{r index-load-w6s2, include=FALSE, cache=TRUE}
 
 survey2 <- haven::read_dta("/Volumes/GoogleDrive/Shared drives/Arab Barometer/AB6/0. RELEASE FILES/Data Files/ENG Final Data Files FOR RELEASE/Arab_Barometer_Wave_6_Part_2_ENG_RELEASE_gov.dta")
 
@@ -148,49 +156,12 @@ survey2 <- survey2 %>%
                                           `Other` = 16,
                                           `Don't know/refuse` = 98)) %>%
   
-  sjlabelled::add_labels(Q2ACOVID19, labels=c(`Illness or death of family member` = 1,
-                                              `Household income loss` = 2,
-                                              `Negative impacts on economy` = 3,
-                                              `Inadequate healthcare infrastructure` = 4,
-                                              `Inadequate gov.'t response` = 5,
-                                              `Citizens incompliant with rules` = 6,
-                                              `Other` = 7,
-                                              `Don't know/refuse` = 98))%>% #Labels in data set too long. Messing up graphs
-  
-  sjlabelled::add_labels(Q2BCOVID19, labels=c(`Health threat is exaggerated` = 1,
-                                              `No household income loss` = 2,
-                                              `No negative impacts on economy` = 3,
-                                              `Adequate healthcare infrastructure` = 4,
-                                              `Adequate gov.'t response` = 5,
-                                              `Citizens compliant with rules` = 6,
-                                              `Other` = 7,
-                                              `Don't know/refuse` = 98))%>%
-  
-  dummy_select(Q733_1,
-               Q733_2,
-               Q733_3,
-               Q733_4,
-               Q733_5,
-               dummy_lvl = 1) %>%
-  
-  dummy_select(Q733_1,
-               Q733_2,
-               Q733_3,
-               Q733_4,
-               Q733_5,
-               dummy_lvl = 2) %>%
-  
-  dummy_all(Q2061A,
-            Q2ACOVID19,
-            Q2BCOVID19,
-            Q118,
-            Q123,
-            Q731)
+  dummy_all(Q2061A)
   
 
 ```
 
-```{r index-load-w6s3, include=FALSE}
+```{r index-load-w6s3, include=FALSE, cache=TRUE}
 
 survey3 <- haven::read_dta("/Volumes/GoogleDrive/Shared drives/Arab Barometer/AB6/0. RELEASE FILES/Data Files/ENG Final Data Files FOR RELEASE/Arab_Barometer_Wave_6_Part_3_ENG_RELEASE_OCT_FIN.dta")
 
@@ -211,38 +182,7 @@ survey3 <- survey3 %>%
                                           `Other` = 16,
                                           `Don't know/refuse` = 98)) %>%
   
-  sjlabelled::add_labels(Q2ACOVID19, labels=c(`Illness or death of family member` = 1,
-                                              `Household income loss` = 2,
-                                              `Negative impacts on economy` = 3,
-                                              `Inadequate healthcare infrastructure` = 4,
-                                              `Inadequate gov.'t response` = 5,
-                                              `Citizens incompliant with rules` = 6,
-                                              `Other` = 7,
-                                              `Don't know/refuse` = 98))%>% #Labels in data set too long. Messing up graphs
   
-  sjlabelled::add_labels(Q2BCOVID19, labels=c(`Health threat is exaggerated` = 1,
-                                              `No household income loss` = 2,
-                                              `No negative impacts on economy` = 3,
-                                              `Adequate healthcare infrastructure` = 4,
-                                              `Adequate gov.'t response` = 5,
-                                              `Citizens compliant with rules` = 6,
-                                              `Other` = 7,
-                                              `Don't know/refuse` = 98))%>%
-  
-  
-  dummy_all(Q2061A,
-            Q2ACOVID19,
-            Q2BCOVID19,
-            Q5COVID19,
-            Q14COVID19,
-            Q15COVID19_1,
-            Q15COVID19_2,
-            Q16COVID19,
-            Q118,
-            Q730B,
-            Q727_1,
-            Q727_4,
-            Q727_5,
-            Q104A)
+  dummy_all(Q2061A)
 
 ```
