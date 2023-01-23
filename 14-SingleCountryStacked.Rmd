@@ -1,4 +1,4 @@
-# COMING SOON: Single Country Stacked Plots
+# BARE BONES: Single Country Stacked Plots
 
 
 At the end, your code will look like the following:

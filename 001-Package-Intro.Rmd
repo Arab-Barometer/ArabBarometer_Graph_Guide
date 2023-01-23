@@ -93,13 +93,13 @@ survey1 %>%
   select(education) %>% # Select just the "education" column
   table() # Create table of the "education" column values
 
-## Changing the cuttoff with a character string:
+## Changing the cutoff with a character string:
 survey1 %>%
   education_demographic("BA") %>%
   select(education) %>%
   table()
 
-## Changing the cuttoff with a numeric:
+## Changing the cutoff with a numeric:
 survey1 %>%
   education_demographic(3) %>%
   select(education) %>%

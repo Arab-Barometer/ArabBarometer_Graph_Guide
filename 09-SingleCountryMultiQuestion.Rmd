@@ -1,6 +1,6 @@
 # (PART) Multiple Questions {-}
 
-# COMING SOON: Single Country Multi-Question Plots
+# BARE BONES: Single Country Multi-Question Plots
 
 
 At the end, your code will look like the following:

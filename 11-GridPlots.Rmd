@@ -1,4 +1,4 @@
-# COMING SOON: Comparative Grid Plots
+# BARE BONES: Comparative Grid Plots
 
 
 At the end, your code will look like the following:

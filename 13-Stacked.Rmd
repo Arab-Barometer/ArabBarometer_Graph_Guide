@@ -1,5 +1,5 @@
 # (PART) Stacked Plots {-}
-# COMING SOON: Stacked Plots
+# BARE BONES: Stacked Plots
 
 At the end, your code will look like the following:
 

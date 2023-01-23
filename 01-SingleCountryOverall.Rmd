@@ -46,7 +46,7 @@ In this example, the variable we want to plot is **Q1COVID19** and the country w
 ```{r 01.3-summary, eval=FALSE}
 
 calculate_smry_individual(
-  .data = survey1,          # The data you are using
+  .ab = survey1,          # The data you are using
   .var = "Q1COVID19",       # The variable you want to plot
   .country = "Algeria"      # The country you want to plot it for
 )
@@ -73,7 +73,7 @@ survey1 %>%
 
 ```
 
-The last example uses a pipe, `%>%`, which comes from the package **dplyr**, which is automatically loaded by ArabBarometR. To learn more about piping and using `%>%` in programming, see [A Note on Piping](https://arab-barometer.github.io/ArabBarometR-Guide/using-the-package.html#a-note-on-piping) in the larger ArabBarometR guide.
+The last example uses a pipe, `%>%`, which comes from the package **dplyr**, which is automatically loaded by `ArabBarometR`. To learn more about piping and using `%>%` in programming, see [A Note on Piping](https://arab-barometer.github.io/ArabBarometR-Guide/using-the-package.html#a-note-on-piping) in the larger `ArabBarometR` guide.
 
 The output of any of the above expressions is the same:
 
@@ -90,7 +90,7 @@ This data frame is what we are ultimately graphing.
 
 There are few things to note about the summary data frame we just created.
 
-First, there are two columns. The first column is named for the question we are graphing. The second column is named **Percent**. If you want to use the plotting functions in ArabBarometR to graph a summary data frame that is not created by a calculate function (see [complete list of calculate functions](https://arab-barometer.github.io/ArabBarometR-Guide/calculating-summaries.html) in the ArabBarometR Guide), the data frame must be structured as two columns with the second column named **Percent**.
+First, there are two columns. The first column is named for the question we are graphing. The second column is named **Percent**. If you want to use the plotting functions in `ArabBarometR` to graph a summary data frame that is not created by a calculate function (see [complete list of calculate functions](https://arab-barometer.github.io/ArabBarometR-Guide/calculating-summaries.html) in the `ArabBarometR` Guide), the data frame must be structured as two columns with the second column named **Percent**.
 
 Second, you can see that the first column is labeled. The labels come from the responses in the data. If the responses in the data are not labeled, this column will not be labeled. In the next step, plotting, the y-axis labels are taken from these labels. So, if the column is not labeled, the y-axis will just be the values of the column.
 
@@ -315,7 +315,7 @@ The same function used to create a single summary is used to create many summari
 ```{r 01.20-summaries, eval=FALSE}
 
 calculate_smry_individual(
-  .data = survey1,               # The data you are using
+  .ab = survey1,               # The data you are using
   .var = variables_2_plot,       # The variables you want to plot
   .country = "Algeria"           # The country you want to plot it for
 )

@@ -6,3 +6,29 @@ view: https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/%s
 language:
   ui:
     chapter_name: "Chapter "
+rmd_files: [
+  "index.rmd",
+  "00-ToC.Rmd",
+  "001-Package-Intro.Rmd",
+  "01-SingleCountryOverall.Rmd",
+  "02-SingleCountryDemographic.Rmd",
+  "03-ComparativeOverall.Rmd",
+  "04-ComparativeDemographic.Rmd",
+  "05-SingleTrend.Rmd",
+  "06-SingleDemographicTrend.Rmd",
+  "07-ComparativeTrend.Rmd",
+  "08-ComparativeDemographicTrend.Rmd",
+  "09-SingleCountryMultiQuestion.Rmd",
+  "10-ComparativeMutliQuestion.Rmd",
+  "11-GridPlots.Rmd",
+  "12-SingleCountryMultiQuestionTrend.Rmd",
+  "13-Stacked.Rmd",
+  "14-SingleCountryStacked.Rmd",
+  "9801-ColorPart.Rmd",
+  "9803-ColorChange.Rmd",
+  "9804-HighlightCountry.Rmd",
+  "9901-FontChange.Rmd",
+  "9902-TitleChange.Rmd",
+  "9903-SelectCountries.Rmd",
+  "9904-StackedOrder.Rmd"
+]

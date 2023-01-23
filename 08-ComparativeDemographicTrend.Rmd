@@ -1,4 +1,4 @@
-# COMING SOON: Comparative Country Demographic Trend Graphs
+# BARE BONES: Comparative Country Demographic Trend Graphs
 
 ## Create Comparative Demographic Trend Graph
 

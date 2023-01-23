@@ -1,4 +1,4 @@
-# COMING SOON: Comparative Country Trend Graphs
+# BARE BONES: Comparative Country Trend Graphs
 
 ## Create Comparative Trend Graph
 

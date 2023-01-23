@@ -1,4 +1,4 @@
-# COMING SOON: Single Country Multi-Question Trend Plots
+# BARE BONES: Single Country Multi-Question Trend Plots
 
 
 At the end, your code will look like the following:

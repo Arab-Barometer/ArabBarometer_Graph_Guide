@@ -1,4 +1,4 @@
-# COMING SOON: Single Country Demographic Trend Graphs
+# BARE BONES: Single Country Demographic Trend Graphs
 
 ## Create Single Demographic Trend Graph
 

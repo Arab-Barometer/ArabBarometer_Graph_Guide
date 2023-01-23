@@ -38,7 +38,7 @@ For the example in this section, we are using the data set `survey1` and summari
 ```{r 03.3-summary, eval=FALSE}
 
 calculate_smry_comp(
-  .data = survey1,          # The data you are using
+  .ab = survey1,          # The data you are using
   .var = "Q1COVID19"       # The variable you want to plot
 )
 
@@ -290,7 +290,7 @@ The same function used to create a single summary is used to create many summari
 ```{r 03.20-summaries, eval=FALSE}
 
 calculate_smry_comp(
-  .data = survey1,               # The data you are using
+  .ab = survey1,               # The data you are using
   .var = variables_2_plot        # The variables you want to plot
 )
 
