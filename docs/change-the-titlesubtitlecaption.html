@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="change-the-font-size.html"/>
-<link rel="next" href="show-only-certain-countries.html"/>
+<link rel="next" href="select-countries-chp.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -142,6 +142,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#general-guide-process"><i class="fa fa-check"></i>General Guide Process</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#example-data"><i class="fa fa-check"></i>Example Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#headercode"><i class="fa fa-check"></i>Header Code</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html"><i class="fa fa-check"></i>Package Workflow and Grammar</a>
+<ul>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html#calculate_-functions"><i class="fa fa-check"></i><code>calculate_</code> functions</a></li>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html#plot_-functions"><i class="fa fa-check"></i><code>plot_</code> functions</a></li>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html#ab_save"><i class="fa fa-check"></i><code>AB_save()</code></a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="table-of-contents.html"><a href="table-of-contents.html"><i class="fa fa-check"></i>Table of Contents</a></li>
 <li class="part"><span><b>I Data Prepperation Functions</b></span></li>
@@ -273,15 +279,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>VII How do I …?</b></span></li>
 <li class="chapter" data-level="19" data-path="change-the-font-size.html"><a href="change-the-font-size.html"><i class="fa fa-check"></i><b>19</b> Change the Font Size</a></li>
 <li class="chapter" data-level="20" data-path="change-the-titlesubtitlecaption.html"><a href="change-the-titlesubtitlecaption.html"><i class="fa fa-check"></i><b>20</b> Change the Title/Subtitle/Caption</a></li>
-<li class="chapter" data-level="21" data-path="show-only-certain-countries.html"><a href="show-only-certain-countries.html"><i class="fa fa-check"></i><b>21</b> Show only certain countries?</a>
+<li class="chapter" data-level="21" data-path="select-countries-chp.html"><a href="select-countries-chp.html"><i class="fa fa-check"></i><b>21</b> Show only certain countries?</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="show-only-certain-countries.html"><a href="show-only-certain-countries.html#plots-that-go-with-calculate_-functions"><i class="fa fa-check"></i><b>21.1</b> Plots that go with <code>calculate_</code> functions</a></li>
-<li class="chapter" data-level="21.2" data-path="show-only-certain-countries.html"><a href="show-only-certain-countries.html#plots-with-no-calculate_-functions"><i class="fa fa-check"></i><b>21.2</b> Plots with no <code>calculate_</code> functions</a></li>
+<li class="chapter" data-level="21.1" data-path="select-countries-chp.html"><a href="select-countries-chp.html#plots-that-go-with-calculate_-functions"><i class="fa fa-check"></i><b>21.1</b> Plots that go with <code>calculate_</code> functions</a></li>
+<li class="chapter" data-level="21.2" data-path="select-countries-chp.html"><a href="select-countries-chp.html#plots-with-no-calculate_-functions"><i class="fa fa-check"></i><b>21.2</b> Plots with no <code>calculate_</code> functions</a></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="change-the-order-of-a-stacked-graph.html"><a href="change-the-order-of-a-stacked-graph.html"><i class="fa fa-check"></i><b>22</b> Change the order of a stacked graph?</a>
+<li class="chapter" data-level="22" data-path="order-change-stacked-graphs.html"><a href="order-change-stacked-graphs.html"><i class="fa fa-check"></i><b>22</b> Change the order of a stacked graph?</a>
 <ul>
-<li class="chapter" data-level="" data-path="change-the-order-of-a-stacked-graph.html"><a href="change-the-order-of-a-stacked-graph.html#move-one-factor"><i class="fa fa-check"></i>Move One Factor</a></li>
-<li class="chapter" data-level="" data-path="change-the-order-of-a-stacked-graph.html"><a href="change-the-order-of-a-stacked-graph.html#swap-factors"><i class="fa fa-check"></i>Swap Factors</a></li>
+<li class="chapter" data-level="" data-path="order-change-stacked-graphs.html"><a href="order-change-stacked-graphs.html#move-one-factor"><i class="fa fa-check"></i>Move One Factor</a></li>
+<li class="chapter" data-level="" data-path="order-change-stacked-graphs.html"><a href="order-change-stacked-graphs.html#swap-factors"><i class="fa fa-check"></i>Swap Factors</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -319,7 +325,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 <a href="change-the-font-size.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="show-only-certain-countries.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="select-countries-chp.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

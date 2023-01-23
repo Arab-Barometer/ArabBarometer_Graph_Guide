@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 19 Change the Font Size | ArabBarometR Graphing Guide</title>
-  <meta name="description" content="Chapter 19 Change the Font Size | ArabBarometR Graphing Guide" />
+  <title>Package Workflow and Grammar | ArabBarometR Graphing Guide</title>
+  <meta name="description" content="Package Workflow and Grammar | ArabBarometR Graphing Guide" />
   <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 19 Change the Font Size | ArabBarometR Graphing Guide" />
+  <meta property="og:title" content="Package Workflow and Grammar | ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 19 Change the Font Size | ArabBarometR Graphing Guide" />
+  <meta name="twitter:title" content="Package Workflow and Grammar | ArabBarometR Graphing Guide" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="highlight-certain-countries.html"/>
-<link rel="next" href="change-the-titlesubtitlecaption.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="table-of-contents.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -308,27 +308,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="change-the-font-size" class="section level1 hasAnchor" number="19">
-<h1><span class="header-section-number">Chapter 19</span> Change the Font Size<a href="change-the-font-size.html#change-the-font-size" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="change-the-font-size.html#cb157-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb157-2"><a href="change-the-font-size.html#cb157-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb157-3"><a href="change-the-font-size.html#cb157-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb157-4"><a href="change-the-font-size.html#cb157-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>,</span>
-<span id="cb157-5"><a href="change-the-font-size.html#cb157-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.title_size =</span> <span class="dv">28</span>,      <span class="co"># Changes title size</span></span>
-<span id="cb157-6"><a href="change-the-font-size.html#cb157-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.subtitle_size =</span> <span class="dv">14</span>,   <span class="co"># Changes subtitle size</span></span>
-<span id="cb157-7"><a href="change-the-font-size.html#cb157-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.caption_size =</span> <span class="dv">20</span>,    <span class="co"># Changes caption size</span></span>
-<span id="cb157-8"><a href="change-the-font-size.html#cb157-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.axis_text_size =</span> <span class="dv">26</span>,  <span class="co"># Changes axis text size</span></span>
-<span id="cb157-9"><a href="change-the-font-size.html#cb157-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.legend_text_size =</span> <span class="dv">8</span>) <span class="co"># Changes legend text size</span></span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/How.1-Complete-Code-Example-1.png" width="1248" /></p>
+<div id="package-workflow" class="section level1 unnumbered hasAnchor">
+<h1>Package Workflow and Grammar<a href="package-workflow.html#package-workflow" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The package is designed with Arab Barometer’s data and workflow in mind. The functions in the package were written with the express purpose of working with Arab Barometer data. Arab Barometer data has certain structures and features that <code>ArabBarometR</code> functions expect; especially the functions for creating Arab Barometer branded graphs. It is of course possible for data from other sources to have the features, but that is not guaranteed. I encourage the use of the functions from <code>ArabBarometR</code> with Arab Barometer data, while encouraging caution for use with non Arab Barometer data.</p>
+<p>In the same vein, there is a natural workflow to creating Arab Barometer brand graphs. You will see this workflow repeated over and over again throughout this guide. The workflow consists of three steps:</p>
+<ol style="list-style-type: decimal">
+<li>Create summaries of the data.</li>
+<li>Plot the summaries.</li>
+<li>Save the plots.</li>
+</ol>
+<p>In each chapter, you will see how to follow these steps to create a specific type of plot. Generally speaking, for each type of graph there is one function per step. The functions follow naming conventions associated with each step. They are:</p>
+<ol style="list-style-type: decimal">
+<li><code>calculate_</code> functions</li>
+<li><code>plot_</code> functions</li>
+<li><code>AB_save()</code></li>
+</ol>
+<p>The <code>calculate_</code> and <code>plot_</code> functions are designed to be chained together for simplicity. That is, you can pipe the output of the <code>calculate_</code> function into the appropriate <code>plot_</code> function using either the <code>dplyr</code> package pipe <code>%&gt;%</code> or the native pipe <code>|&gt;</code> found in R 4.0+.</p>
+<p>Furthermore, the <code>calculate_</code> and <code>plot_</code> functions that are used together have the same suffix. For example, <code>calculate_X</code> works with <code>plot_X</code>, while <code>calculate_Y</code> works with <code>plot_Y</code>.</p>
+<div id="calculate_-functions" class="section level2 unnumbered hasAnchor">
+<h2><code>calculate_</code> functions<a href="package-workflow.html#calculate_-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The first two required inputs for any <code>calculate_</code> function are:</p>
+<ol style="list-style-type: decimal">
+<li><code>.ab</code> : An Arab Barometer data frame</li>
+<li><code>.var</code> : A variable name from the Arab Barometer data frame</li>
+</ol>
+<p>The <code>.ab</code> parameter is specifically referring to Arab Barometer data. The <code>calculate_</code> function will look for certain features in the data frame that are specific to Arab Barometer data.</p>
+<p>All other parameters<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> are set to default values. More details on the specifics of the other parameters and their defaults are provided throughout the guide.</p>
+</div>
+<div id="plot_-functions" class="section level2 unnumbered hasAnchor">
+<h2><code>plot_</code> functions<a href="package-workflow.html#plot_-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The only required input for the (paired) <code>plot_</code> functions is <code>.df</code>. The parameter <code>.df</code> is the data frame output of the paired <code>calculate_</code> function. That is, the <code>plot_</code> function expects its input to be the output of its matching <code>calculate_</code> function. For example, <code>plot_X</code> expects its input to be the output of <code>calculate_X</code> and <code>plot_Y</code> expects its input to be the output of <code>calculate_Y</code>.</p>
+<p><strong>NOTE:</strong> Currently not all <code>plot_</code> functions have matching <code>calculate_</code> functions. As the package continues to develop, most (if not all) <code>plot_</code> functions will be broken up into a matching <code>calculate_</code> and <code>plot_</code> function pair.</p>
+</div>
+<div id="ab_save" class="section level2 unnumbered hasAnchor">
+<h2><code>AB_save()</code><a href="package-workflow.html#ab_save" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The function <code>AB_save()</code> is a simple wrapper function for <code>ggsave()</code> from the <code>ggplot2</code> package. The function sets default saving dimension in accordance with Arab Barometer branding. The only required input is what you would like to name your graph.</p>
 
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>As of 2023-01-23; some of this will likely change in the near future.<a href="package-workflow.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="highlight-certain-countries.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="change-the-titlesubtitlecaption.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="table-of-contents.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -359,7 +389,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/9901-FontChange.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/Workflow_and_Grammar.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -367,7 +397,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/9901-FontChange.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/Workflow_and_Grammar.Rmd",
 "text": null
 },
 "download": null,

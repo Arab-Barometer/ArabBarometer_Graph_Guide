@@ -45,7 +45,7 @@
  
  * <font size="4"> [Change the Font Size][Change the Font Size] </font> 
  * <font size="4"> [Change the Title/Subtitle/Caption][Change the Title/Subtitle/Caption] </font>  
- * <font size="4"> [Only Show Certain Countries][#select-countries-chp] </font> 
- * <font size="4"> [Change the Order for Stacked Graphs][#order-change-stacked-graphs] </font>  
+ * <font size="4"> [Only Show Certain Countries](#select-countries-chp) </font> 
+ * <font size="4"> [Change the Order for Stacked Graphs](#order-change-stacked-graphs) </font>  
  
  

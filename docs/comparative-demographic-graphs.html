@@ -143,6 +143,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#example-data"><i class="fa fa-check"></i>Example Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#headercode"><i class="fa fa-check"></i>Header Code</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html"><i class="fa fa-check"></i>Package Workflow and Grammar</a>
+<ul>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html#calculate_-functions"><i class="fa fa-check"></i><code>calculate_</code> functions</a></li>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html#plot_-functions"><i class="fa fa-check"></i><code>plot_</code> functions</a></li>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html#ab_save"><i class="fa fa-check"></i><code>AB_save()</code></a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="table-of-contents.html"><a href="table-of-contents.html"><i class="fa fa-check"></i>Table of Contents</a></li>
 <li class="part"><span><b>I Data Prepperation Functions</b></span></li>
 <li class="chapter" data-level="1" data-path="preparing-data.html"><a href="preparing-data.html"><i class="fa fa-check"></i><b>1</b> Preparing Data</a>
@@ -273,15 +279,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>VII How do I …?</b></span></li>
 <li class="chapter" data-level="19" data-path="change-the-font-size.html"><a href="change-the-font-size.html"><i class="fa fa-check"></i><b>19</b> Change the Font Size</a></li>
 <li class="chapter" data-level="20" data-path="change-the-titlesubtitlecaption.html"><a href="change-the-titlesubtitlecaption.html"><i class="fa fa-check"></i><b>20</b> Change the Title/Subtitle/Caption</a></li>
-<li class="chapter" data-level="21" data-path="show-only-certain-countries.html"><a href="show-only-certain-countries.html"><i class="fa fa-check"></i><b>21</b> Show only certain countries?</a>
+<li class="chapter" data-level="21" data-path="select-countries-chp.html"><a href="select-countries-chp.html"><i class="fa fa-check"></i><b>21</b> Show only certain countries?</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="show-only-certain-countries.html"><a href="show-only-certain-countries.html#plots-that-go-with-calculate_-functions"><i class="fa fa-check"></i><b>21.1</b> Plots that go with <code>calculate_</code> functions</a></li>
-<li class="chapter" data-level="21.2" data-path="show-only-certain-countries.html"><a href="show-only-certain-countries.html#plots-with-no-calculate_-functions"><i class="fa fa-check"></i><b>21.2</b> Plots with no <code>calculate_</code> functions</a></li>
+<li class="chapter" data-level="21.1" data-path="select-countries-chp.html"><a href="select-countries-chp.html#plots-that-go-with-calculate_-functions"><i class="fa fa-check"></i><b>21.1</b> Plots that go with <code>calculate_</code> functions</a></li>
+<li class="chapter" data-level="21.2" data-path="select-countries-chp.html"><a href="select-countries-chp.html#plots-with-no-calculate_-functions"><i class="fa fa-check"></i><b>21.2</b> Plots with no <code>calculate_</code> functions</a></li>
 </ul></li>
-<li class="chapter" data-level="22" data-path="change-the-order-of-a-stacked-graph.html"><a href="change-the-order-of-a-stacked-graph.html"><i class="fa fa-check"></i><b>22</b> Change the order of a stacked graph?</a>
+<li class="chapter" data-level="22" data-path="order-change-stacked-graphs.html"><a href="order-change-stacked-graphs.html"><i class="fa fa-check"></i><b>22</b> Change the order of a stacked graph?</a>
 <ul>
-<li class="chapter" data-level="" data-path="change-the-order-of-a-stacked-graph.html"><a href="change-the-order-of-a-stacked-graph.html#move-one-factor"><i class="fa fa-check"></i>Move One Factor</a></li>
-<li class="chapter" data-level="" data-path="change-the-order-of-a-stacked-graph.html"><a href="change-the-order-of-a-stacked-graph.html#swap-factors"><i class="fa fa-check"></i>Swap Factors</a></li>
+<li class="chapter" data-level="" data-path="order-change-stacked-graphs.html"><a href="order-change-stacked-graphs.html#move-one-factor"><i class="fa fa-check"></i>Move One Factor</a></li>
+<li class="chapter" data-level="" data-path="order-change-stacked-graphs.html"><a href="order-change-stacked-graphs.html#swap-factors"><i class="fa fa-check"></i>Swap Factors</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -320,7 +326,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">5.1.1</span> Creating a Summary<a href="comparative-demographic-graphs.html#creating-a-summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The first step in creating a plot is to gather the data you want to display and organize it. You do this with the <strong>calculate_demographic_smry_comp()</strong> function.</p>
 <p>Just like <strong>calculate_smry_comp()</strong>, the two main parameters you need to provide to this function are (1) the data you are using, and (2) the variable you want to plot. To see all the input parameters for the function, type the code <code>?calculate_demographic_smry_comp</code> in your R console.</p>
-<p>In this example, the variable we want to plot is <strong>Q1COVID19</strong><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
+<p>In this example, the variable we want to plot is <strong>Q1COVID19</strong><a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>.</p>
 <div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="comparative-demographic-graphs.html#cb108-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span>                                     <span class="co"># Data</span></span>
 <span id="cb108-2"><a href="comparative-demographic-graphs.html#cb108-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>)  <span class="co"># Variable to summarize  </span></span></code></pre></div>
 <p>The above code will produce the following output:</p>
@@ -611,8 +617,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div class="footnotes">
 <hr />
-<ol start="3">
-<li id="fn3"><p>If the style of this code is confusing, see <a href="chapter-1.html#chapter-1">Create a Summary in Chapter 1</a><a href="comparative-demographic-graphs.html#fnref3" class="footnote-back">↩︎</a></p></li>
+<ol start="4">
+<li id="fn4"><p>If the style of this code is confusing, see <a href="chapter-1.html#chapter-1">Create a Summary in Chapter 1</a><a href="comparative-demographic-graphs.html#fnref4" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

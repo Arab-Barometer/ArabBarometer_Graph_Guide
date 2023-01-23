@@ -27,7 +27,7 @@ The first two required inputs for any `calculate_` function are:
 1. `.ab` : An Arab Barometer data frame
 2. `.var` : A variable name from the Arab Barometer data frame
 
-The `.ab` parameter is specifically referring to Arab Barometer data. The `calculate_` function will look for certain features in the data frame that are specific to Arab Barometer data. The section \@ref(#ab-data-description) provides more details on what an Arab Barometer data frame looks like.
+The `.ab` parameter is specifically referring to Arab Barometer data. The `calculate_` function will look for certain features in the data frame that are specific to Arab Barometer data.
 
 All other parameters^[As of 2023-01-23; some of this will likely change in the near future.] are set to default values. More details on the specifics of the other parameters and their defaults are provided throughout the guide.
 

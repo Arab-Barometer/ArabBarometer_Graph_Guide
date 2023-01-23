@@ -69,7 +69,7 @@ multiple-country-highlight
 change-highlight-color
 change-the-font-size
 change-the-titlesubtitlecaption
-show-only-certain-countries
+select-countries-chp
 plots-that-go-with-calculate_-functions
 plots-with-no-calculate_-functions
-change-the-order-of-a-stacked-graph
+order-change-stacked-graphs
