@@ -8,6 +8,7 @@ language:
     chapter_name: "Chapter "
 rmd_files: [
   "index.rmd",
+  "Workflow_and_Grammar.Rmd",
   "00-ToC.Rmd",
   "001-Package-Intro.Rmd",
   "01-SingleCountryOverall.Rmd",
