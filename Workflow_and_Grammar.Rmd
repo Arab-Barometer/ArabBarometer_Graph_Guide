@@ -1,4 +1,4 @@
-# Package Workflow and Grammar
+# Package Workflow and Grammar {- #package-workflow}
 
 The package is designed with Arab Barometer's data and workflow in mind. The functions in the package were written with the express purpose of working with Arab Barometer data. Arab Barometer data has certain structures and features that `ArabBarometR` functions expect; especially the functions for creating Arab Barometer branded graphs. It is of course possible for data from other sources to have the features, but that is not guaranteed. I encourage the use of the functions from `ArabBarometR` with Arab Barometer data, while encouraging caution for use with non Arab Barometer data.
 
