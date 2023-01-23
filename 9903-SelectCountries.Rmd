@@ -1,4 +1,4 @@
-# Show only certain countries?
+# Show only certain countries? {#select-countries-chp}
 
 ## Plots that go with `calculate_` functions
 

@@ -1,4 +1,4 @@
-# Change the order of a stacked graph?
+# Change the order of a stacked graph? {#order-change-stacked-graphs}
 
 Changing the order of a stacked graph, like creating many graphs at once, is not done within `ArabBarometR` per se, but the process is relatively straightforward nonetheless.
 
