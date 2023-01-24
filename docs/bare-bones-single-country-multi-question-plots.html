@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-01-23" />
+<meta name="date" content="2023-01-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -235,9 +235,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Trend Graphs</b></span></li>
-<li class="chapter" data-level="6" data-path="bare-bones-single-country-trend-graphs.html"><a href="bare-bones-single-country-trend-graphs.html"><i class="fa fa-check"></i><b>6</b> BARE BONES: Single Country Trend Graphs</a>
+<li class="chapter" data-level="6" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html"><i class="fa fa-check"></i><b>6</b> Single Country Trend Graphs</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="bare-bones-single-country-trend-graphs.html"><a href="bare-bones-single-country-trend-graphs.html#create-single-trend-graph"><i class="fa fa-check"></i><b>6.1</b> Create Single Trend Graph</a></li>
+<li class="chapter" data-level="6.1" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html#create-single-trend-graph"><i class="fa fa-check"></i><b>6.1</b> Create Single Trend Graph</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html#prep-work"><i class="fa fa-check"></i><b>6.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="6.1.2" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html#plot-a-trend-graph"><i class="fa fa-check"></i><b>6.1.2</b> Plot a Trend Graph</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="bare-bones-single-country-demographic-trend-graphs.html"><a href="bare-bones-single-country-demographic-trend-graphs.html"><i class="fa fa-check"></i><b>7</b> BARE BONES: Single Country Demographic Trend Graphs</a>
 <ul>
@@ -311,18 +315,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="bare-bones-single-country-multi-question-plots" class="section level1 hasAnchor" number="10">
 <h1><span class="header-section-number">Chapter 10</span> BARE BONES: Single Country Multi-Question Plots<a href="bare-bones-single-country-multi-question-plots.html#bare-bones-single-country-multi-question-plots" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="bare-bones-single-country-multi-question-plots.html#cb142-1" aria-hidden="true" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q210&quot;</span>,</span>
-<span id="cb142-2"><a href="bare-bones-single-country-multi-question-plots.html#cb142-2" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Q211&quot;</span>)</span>
-<span id="cb142-3"><a href="bare-bones-single-country-multi-question-plots.html#cb142-3" aria-hidden="true" tabindex="-1"></a>questions_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Is there corruption?&quot;</span>,</span>
-<span id="cb142-4"><a href="bare-bones-single-country-multi-question-plots.html#cb142-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Is the gov&#39;t cracking down?&quot;</span>)</span>
-<span id="cb142-5"><a href="bare-bones-single-country-multi-question-plots.html#cb142-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb142-6"><a href="bare-bones-single-country-multi-question-plots.html#cb142-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_multiquestions_ind</span>(survey1,</span>
-<span id="cb142-7"><a href="bare-bones-single-country-multi-question-plots.html#cb142-7" aria-hidden="true" tabindex="-1"></a>                        questions_2_compare,</span>
-<span id="cb142-8"><a href="bare-bones-single-country-multi-question-plots.html#cb142-8" aria-hidden="true" tabindex="-1"></a>                        questions_labels,</span>
-<span id="cb142-9"><a href="bare-bones-single-country-multi-question-plots.html#cb142-9" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb142-10"><a href="bare-bones-single-country-multi-question-plots.html#cb142-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">.title =</span> <span class="st">&quot;Perceptions of Corruption in Algeria&quot;</span>,</span>
-<span id="cb142-11"><a href="bare-bones-single-country-multi-question-plots.html#cb142-11" aria-hidden="true" tabindex="-1"></a>                        <span class="at">.subtitle =</span> <span class="st">&quot;% saying to a medium or large extent&quot;</span>,</span>
-<span id="cb142-12"><a href="bare-bones-single-country-multi-question-plots.html#cb142-12" aria-hidden="true" tabindex="-1"></a>                        <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="bare-bones-single-country-multi-question-plots.html#cb144-1" aria-hidden="true" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q210&quot;</span>,</span>
+<span id="cb144-2"><a href="bare-bones-single-country-multi-question-plots.html#cb144-2" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Q211&quot;</span>)</span>
+<span id="cb144-3"><a href="bare-bones-single-country-multi-question-plots.html#cb144-3" aria-hidden="true" tabindex="-1"></a>questions_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Is there corruption?&quot;</span>,</span>
+<span id="cb144-4"><a href="bare-bones-single-country-multi-question-plots.html#cb144-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Is the gov&#39;t cracking down?&quot;</span>)</span>
+<span id="cb144-5"><a href="bare-bones-single-country-multi-question-plots.html#cb144-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb144-6"><a href="bare-bones-single-country-multi-question-plots.html#cb144-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_multiquestions_ind</span>(survey1,</span>
+<span id="cb144-7"><a href="bare-bones-single-country-multi-question-plots.html#cb144-7" aria-hidden="true" tabindex="-1"></a>                        questions_2_compare,</span>
+<span id="cb144-8"><a href="bare-bones-single-country-multi-question-plots.html#cb144-8" aria-hidden="true" tabindex="-1"></a>                        questions_labels,</span>
+<span id="cb144-9"><a href="bare-bones-single-country-multi-question-plots.html#cb144-9" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb144-10"><a href="bare-bones-single-country-multi-question-plots.html#cb144-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">.title =</span> <span class="st">&quot;Perceptions of Corruption in Algeria&quot;</span>,</span>
+<span id="cb144-11"><a href="bare-bones-single-country-multi-question-plots.html#cb144-11" aria-hidden="true" tabindex="-1"></a>                        <span class="at">.subtitle =</span> <span class="st">&quot;% saying to a medium or large extent&quot;</span>,</span>
+<span id="cb144-12"><a href="bare-bones-single-country-multi-question-plots.html#cb144-12" aria-hidden="true" tabindex="-1"></a>                        <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1, Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/09.2-Complete-Graph-Example-1.png" width="1248" /></p>
 <p>Let’s go!</p>

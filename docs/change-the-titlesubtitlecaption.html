@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-01-23" />
+<meta name="date" content="2023-01-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -235,9 +235,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Trend Graphs</b></span></li>
-<li class="chapter" data-level="6" data-path="bare-bones-single-country-trend-graphs.html"><a href="bare-bones-single-country-trend-graphs.html"><i class="fa fa-check"></i><b>6</b> BARE BONES: Single Country Trend Graphs</a>
+<li class="chapter" data-level="6" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html"><i class="fa fa-check"></i><b>6</b> Single Country Trend Graphs</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="bare-bones-single-country-trend-graphs.html"><a href="bare-bones-single-country-trend-graphs.html#create-single-trend-graph"><i class="fa fa-check"></i><b>6.1</b> Create Single Trend Graph</a></li>
+<li class="chapter" data-level="6.1" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html#create-single-trend-graph"><i class="fa fa-check"></i><b>6.1</b> Create Single Trend Graph</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html#prep-work"><i class="fa fa-check"></i><b>6.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="6.1.2" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html#plot-a-trend-graph"><i class="fa fa-check"></i><b>6.1.2</b> Plot a Trend Graph</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="bare-bones-single-country-demographic-trend-graphs.html"><a href="bare-bones-single-country-demographic-trend-graphs.html"><i class="fa fa-check"></i><b>7</b> BARE BONES: Single Country Demographic Trend Graphs</a>
 <ul>
@@ -310,12 +314,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="change-the-titlesubtitlecaption" class="section level1 hasAnchor" number="20">
 <h1><span class="header-section-number">Chapter 20</span> Change the Title/Subtitle/Caption<a href="change-the-titlesubtitlecaption.html#change-the-titlesubtitlecaption" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="change-the-titlesubtitlecaption.html#cb158-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb158-2"><a href="change-the-titlesubtitlecaption.html#cb158-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb158-3"><a href="change-the-titlesubtitlecaption.html#cb158-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb158-4"><a href="change-the-titlesubtitlecaption.html#cb158-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.title =</span> <span class="st">&quot;New title&quot;</span>,</span>
-<span id="cb158-5"><a href="change-the-titlesubtitlecaption.html#cb158-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.subtitle =</span> <span class="st">&quot;New subtitle&quot;</span>,</span>
-<span id="cb158-6"><a href="change-the-titlesubtitlecaption.html#cb158-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.caption =</span> <span class="st">&quot;New caption&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="change-the-titlesubtitlecaption.html#cb160-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb160-2"><a href="change-the-titlesubtitlecaption.html#cb160-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb160-3"><a href="change-the-titlesubtitlecaption.html#cb160-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb160-4"><a href="change-the-titlesubtitlecaption.html#cb160-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.title =</span> <span class="st">&quot;New title&quot;</span>,</span>
+<span id="cb160-5"><a href="change-the-titlesubtitlecaption.html#cb160-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.subtitle =</span> <span class="st">&quot;New subtitle&quot;</span>,</span>
+<span id="cb160-6"><a href="change-the-titlesubtitlecaption.html#cb160-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.caption =</span> <span class="st">&quot;New caption&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.2-Complete-Code-Example-1.png" width="1248" /></p>
 
 </div>

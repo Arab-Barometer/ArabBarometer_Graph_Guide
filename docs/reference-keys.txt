@@ -43,8 +43,10 @@ plotting-the-summary-1
 create-many-graphs-3
 create-summaries-3
 plot-the-summaries-3
-bare-bones-single-country-trend-graphs
+single-country-trend-graphs
 create-single-trend-graph
+prep-work
+plot-a-trend-graph
 bare-bones-single-country-demographic-trend-graphs
 create-single-demographic-trend-graph
 bare-bones-comparative-country-trend-graphs

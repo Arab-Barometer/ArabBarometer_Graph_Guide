@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-01-23" />
+<meta name="date" content="2023-01-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -235,9 +235,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Trend Graphs</b></span></li>
-<li class="chapter" data-level="6" data-path="bare-bones-single-country-trend-graphs.html"><a href="bare-bones-single-country-trend-graphs.html"><i class="fa fa-check"></i><b>6</b> BARE BONES: Single Country Trend Graphs</a>
+<li class="chapter" data-level="6" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html"><i class="fa fa-check"></i><b>6</b> Single Country Trend Graphs</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="bare-bones-single-country-trend-graphs.html"><a href="bare-bones-single-country-trend-graphs.html#create-single-trend-graph"><i class="fa fa-check"></i><b>6.1</b> Create Single Trend Graph</a></li>
+<li class="chapter" data-level="6.1" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html#create-single-trend-graph"><i class="fa fa-check"></i><b>6.1</b> Create Single Trend Graph</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html#prep-work"><i class="fa fa-check"></i><b>6.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="6.1.2" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html#plot-a-trend-graph"><i class="fa fa-check"></i><b>6.1.2</b> Plot a Trend Graph</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="bare-bones-single-country-demographic-trend-graphs.html"><a href="bare-bones-single-country-demographic-trend-graphs.html"><i class="fa fa-check"></i><b>7</b> BARE BONES: Single Country Demographic Trend Graphs</a>
 <ul>
@@ -313,29 +317,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="create-comparative-demographic-trend-graph" class="section level2 hasAnchor" number="9.1">
 <h2><span class="header-section-number">9.1</span> Create Comparative Demographic Trend Graph<a href="bare-bones-comparative-country-demographic-trend-graphs.html#create-comparative-demographic-trend-graph" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb140-2"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-2" aria-hidden="true" tabindex="-1"></a>  survey1,</span>
-<span id="cb140-3"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-3" aria-hidden="true" tabindex="-1"></a>  survey2,</span>
-<span id="cb140-4"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-4" aria-hidden="true" tabindex="-1"></a>  survey3</span>
-<span id="cb140-5"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb140-6"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb140-7"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-7" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
-<span id="cb140-8"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Suvey 2&quot;</span>,</span>
-<span id="cb140-9"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
-<span id="cb140-10"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb140-11"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-11" aria-hidden="true" tabindex="-1"></a><span class="co"># One plot per Country</span></span>
-<span id="cb140-12"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp_demographics</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb140-13"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-13" aria-hidden="true" tabindex="-1"></a>                             df_list,</span>
-<span id="cb140-14"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-14" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;gender&quot;</span>,</span>
-<span id="cb140-15"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-15" aria-hidden="true" tabindex="-1"></a>                             survey_dates,</span>
-<span id="cb140-16"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-16" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Country&quot;</span>)</span>
-<span id="cb140-17"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb140-18"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-18" aria-hidden="true" tabindex="-1"></a><span class="co"># One plot per demographic</span></span>
-<span id="cb140-19"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp_demographics</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb140-20"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-20" aria-hidden="true" tabindex="-1"></a>                             df_list,</span>
-<span id="cb140-21"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-21" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;gender&quot;</span>,</span>
-<span id="cb140-22"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-22" aria-hidden="true" tabindex="-1"></a>                             survey_dates,</span>
-<span id="cb140-23"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb140-23" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;demographic&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb142-2"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-2" aria-hidden="true" tabindex="-1"></a>  survey1,</span>
+<span id="cb142-3"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-3" aria-hidden="true" tabindex="-1"></a>  survey2,</span>
+<span id="cb142-4"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-4" aria-hidden="true" tabindex="-1"></a>  survey3</span>
+<span id="cb142-5"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb142-6"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-7"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-7" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
+<span id="cb142-8"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Suvey 2&quot;</span>,</span>
+<span id="cb142-9"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
+<span id="cb142-10"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-11"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-11" aria-hidden="true" tabindex="-1"></a><span class="co"># One plot per Country</span></span>
+<span id="cb142-12"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp_demographics</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb142-13"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-13" aria-hidden="true" tabindex="-1"></a>                             df_list,</span>
+<span id="cb142-14"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-14" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;gender&quot;</span>,</span>
+<span id="cb142-15"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-15" aria-hidden="true" tabindex="-1"></a>                             survey_dates,</span>
+<span id="cb142-16"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-16" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Country&quot;</span>)</span>
+<span id="cb142-17"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb142-18"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-18" aria-hidden="true" tabindex="-1"></a><span class="co"># One plot per demographic</span></span>
+<span id="cb142-19"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp_demographics</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb142-20"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-20" aria-hidden="true" tabindex="-1"></a>                             df_list,</span>
+<span id="cb142-21"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-21" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;gender&quot;</span>,</span>
+<span id="cb142-22"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-22" aria-hidden="true" tabindex="-1"></a>                             survey_dates,</span>
+<span id="cb142-23"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb142-23" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;demographic&quot;</span>)</span></code></pre></div>
 <p>The code produces this graphs:</p>
 <pre><code>## `geom_line()`: Each group consists of only one observation.
 ## ℹ Do you need to adjust the group aesthetic?</code></pre>

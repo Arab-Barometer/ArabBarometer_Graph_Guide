@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 17 Change Default Colors | ArabBarometR Graphing Guide</title>
-  <meta name="description" content="Chapter 17 Change Default Colors | ArabBarometR Graphing Guide" />
+  <title>Chapter 6 Single Country Trend Graphs | ArabBarometR Graphing Guide</title>
+  <meta name="description" content="Chapter 6 Single Country Trend Graphs | ArabBarometR Graphing Guide" />
   <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 17 Change Default Colors | ArabBarometR Graphing Guide" />
+  <meta property="og:title" content="Chapter 6 Single Country Trend Graphs | ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 17 Change Default Colors | ArabBarometR Graphing Guide" />
+  <meta name="twitter:title" content="Chapter 6 Single Country Trend Graphs | ArabBarometR Graphing Guide" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="color-options.html"/>
-<link rel="next" href="highlight-certain-countries.html"/>
+<link rel="prev" href="comparative-demographic-graphs.html"/>
+<link rel="next" href="bare-bones-single-country-demographic-trend-graphs.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -312,26 +312,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="change-default-colors" class="section level1 hasAnchor" number="17">
-<h1><span class="header-section-number">Chapter 17</span> Change Default Colors<a href="change-default-colors.html#change-default-colors" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="change-colors-for-frequency-graphs" class="section level2 hasAnchor" number="17.1">
-<h2><span class="header-section-number">17.1</span> Change Colors for Frequency Graphs<a href="change-default-colors.html#change-colors-for-frequency-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The parameter is called <strong><code>.clr</code></strong>.</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="change-default-colors.html#cb154-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb154-2"><a href="change-default-colors.html#cb154-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb154-3"><a href="change-default-colors.html#cb154-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb154-4"><a href="change-default-colors.html#cb154-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.clr =</span> <span class="st">&quot;zeke&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/How.3.1-Complete-Code-Example-1.png" width="1248" /></p>
+<div id="single-country-trend-graphs" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Chapter 6</span> Single Country Trend Graphs<a href="single-country-trend-graphs.html#single-country-trend-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This chapter will cover how to create trend graphs for one country. Prior to his, we have only used a single data set, <code>survey1</code>. We will now also use the data sets <code>survey2</code> and <code>survey3</code>. Refer to the assumed <a href="index.html#headercode">header code</a> to see where <code>survey1</code>, <code>survey2</code>, and <code>survey3</code> came from.</p>
+<div id="create-single-trend-graph" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Create Single Trend Graph<a href="single-country-trend-graphs.html#create-single-trend-graph" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>At the end, your code will look like the following:</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="single-country-trend-graphs.html#cb137-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb137-2"><a href="single-country-trend-graphs.html#cb137-2" aria-hidden="true" tabindex="-1"></a>  survey1,</span>
+<span id="cb137-3"><a href="single-country-trend-graphs.html#cb137-3" aria-hidden="true" tabindex="-1"></a>  survey2,</span>
+<span id="cb137-4"><a href="single-country-trend-graphs.html#cb137-4" aria-hidden="true" tabindex="-1"></a>  survey3</span>
+<span id="cb137-5"><a href="single-country-trend-graphs.html#cb137-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb137-6"><a href="single-country-trend-graphs.html#cb137-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb137-7"><a href="single-country-trend-graphs.html#cb137-7" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1 Year&quot;</span>,</span>
+<span id="cb137-8"><a href="single-country-trend-graphs.html#cb137-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Suvey 2 Year&quot;</span>,</span>
+<span id="cb137-9"><a href="single-country-trend-graphs.html#cb137-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3 Year&quot;</span>)</span>
+<span id="cb137-10"><a href="single-country-trend-graphs.html#cb137-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb137-11"><a href="single-country-trend-graphs.html#cb137-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb137-12"><a href="single-country-trend-graphs.html#cb137-12" aria-hidden="true" tabindex="-1"></a>                      df_list,</span>
+<span id="cb137-13"><a href="single-country-trend-graphs.html#cb137-13" aria-hidden="true" tabindex="-1"></a>                      survey_dates,</span>
+<span id="cb137-14"><a href="single-country-trend-graphs.html#cb137-14" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
+<p>The code produces this graph:</p>
+<p><img src="bookdownproj_files/figure-html/05.2-Complete-Graph-Example-1.png" width="1248" /></p>
+<p>Let’s go!</p>
+<div id="prep-work" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Prep Work<a href="single-country-trend-graphs.html#prep-work" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Unlike other graphs in other chapters, the user does not create a summary for a trend graph. There is only one function to use: <code>plot_trend_individual()</code>.</p>
+<p>You can create the plot all in one step with the function, but it is prudent to do a little prep work before hand. This makes your work more clear and your life easier down the line.</p>
+<div id="create-a-data-frame-list" class="section level4 unnumbered hasAnchor">
+<h4>Create a Data Frame List<a href="single-country-trend-graphs.html#create-a-data-frame-list" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The first step is to create a list of data frames.</p>
+<p>There should be one data frame for each period you wish to graph. That is, each data frame should be from a different survey you want to include in your graph. In the example for the chapter, we’re using the three surveys from Wave VI, which we call <code>survey1</code>, <code>survey2</code>, and <code>survey3</code>. Each survey is its own data frame.</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="single-country-trend-graphs.html#cb138-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb138-2"><a href="single-country-trend-graphs.html#cb138-2" aria-hidden="true" tabindex="-1"></a>  survey1,</span>
+<span id="cb138-3"><a href="single-country-trend-graphs.html#cb138-3" aria-hidden="true" tabindex="-1"></a>  survey2,</span>
+<span id="cb138-4"><a href="single-country-trend-graphs.html#cb138-4" aria-hidden="true" tabindex="-1"></a>  survey3</span>
+<span id="cb138-5"><a href="single-country-trend-graphs.html#cb138-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>The list of data frames should be in the order you want them to appear (ideally, chronologically). The data on the graph will show up in the order of the list. So if you create a list in the order <code>list(survey2, survey1, survey3)</code>, the data from <code>survey2</code> will show up before the data from <code>survey1</code>.</p>
+<p><strong>Please note: This is ambivalent to language!</strong> The <code>plot_trend_individual()</code> function will assume the order of the list is the correct order, and treat it accordingly. When you enter a list as <code>list(survey1, survey2, surveye3)</code>, the English graph will show the data right to left (survey 1 -&gt; survey 2 -&gt; survey 3), while the Arabic graph will show the data left to right (survey 3 &lt;- survey 2 &lt;- survey 1). You do <strong>not</strong> need to alter your input.</p>
 </div>
-<div id="change-color-palette" class="section level2 hasAnchor" number="17.2">
-<h2><span class="header-section-number">17.2</span> Change Color Palette<a href="change-default-colors.html#change-color-palette" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The parameter is called <strong><code>.color_palette</code></strong>.</p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="change-default-colors.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
-<span id="cb155-2"><a href="change-default-colors.html#cb155-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;Q2061A&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb155-3"><a href="change-default-colors.html#cb155-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>,</span>
-<span id="cb155-4"><a href="change-default-colors.html#cb155-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">.color_palette =</span> <span class="st">&quot;soft rainbow&quot;</span>)</span></code></pre></div>
-<p><img src="bookdownproj_files/figure-html/How.3.4-Complete-Code-Example-1.png" width="1248" /></p>
+<div id="create-a-date-vector" class="section level4 unnumbered hasAnchor">
+<h4>Create a Date Vector<a href="single-country-trend-graphs.html#create-a-date-vector" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The next step is to create a vector of the dates you want to show on the x-axis of your graph. Branding guidelines call for the years in which the survey took place. For simplicity in the example, let’s just say <code>"Survey X Year"</code>.</p>
+<p>You need a date for each data frame in your data frame list. Otherwise, the function won’t know how to label the x-axis.</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="single-country-trend-graphs.html#cb139-1" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1 Year&quot;</span>,</span>
+<span id="cb139-2"><a href="single-country-trend-graphs.html#cb139-2" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Suvey 2 Year&quot;</span>,</span>
+<span id="cb139-3"><a href="single-country-trend-graphs.html#cb139-3" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3 Year&quot;</span>)</span></code></pre></div>
+<p>The dates should also be in the order you want them to appear. The dates should line up with the data frames. In the chapter example, the order of the data frames is survey 1, survey 2, survey 3. Therefore, the survey dates need to have the order survey 1 year, survey 2 year, survey 3 year.</p>
+<p><strong>Please note: This is ambivalent to language!</strong> Just as with the data frame list, the <code>plot_trend_individual()</code> function will put the data in the correct order according to the language of the graph.</p>
+<p>Now that we have defined our data frame list and survey dates, we can create our trend plot.</p>
+</div>
+</div>
+<div id="plot-a-trend-graph" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Plot a Trend Graph<a href="single-country-trend-graphs.html#plot-a-trend-graph" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To create a trend graph plot for an individual country, use the <code>plot_trend_individual()</code> function.</p>
+<p>This function takes a few more parameters, and in a different order, than the functions we have worked with so far. In total, there are <em>four</em> necessary parameters: <code>.var</code>, <code>data_frames</code>, <code>svry_dates</code>, and <code>select_country</code>. To see a complete list of parameters, including optional ones, use <code>?plot_trend_individual()</code> in your <code>R</code> console.</p>
 
+</div>
 </div>
 </div>
             </section>
@@ -339,8 +376,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="color-options.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="highlight-certain-countries.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="comparative-demographic-graphs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bare-bones-single-country-demographic-trend-graphs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -371,7 +408,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/9803-ColorChange.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/05-SingleTrend.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -379,7 +416,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/9803-ColorChange.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/05-SingleTrend.Rmd",
 "text": null
 },
 "download": null,

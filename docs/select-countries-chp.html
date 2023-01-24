@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-01-23" />
+<meta name="date" content="2023-01-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -235,9 +235,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Trend Graphs</b></span></li>
-<li class="chapter" data-level="6" data-path="bare-bones-single-country-trend-graphs.html"><a href="bare-bones-single-country-trend-graphs.html"><i class="fa fa-check"></i><b>6</b> BARE BONES: Single Country Trend Graphs</a>
+<li class="chapter" data-level="6" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html"><i class="fa fa-check"></i><b>6</b> Single Country Trend Graphs</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="bare-bones-single-country-trend-graphs.html"><a href="bare-bones-single-country-trend-graphs.html#create-single-trend-graph"><i class="fa fa-check"></i><b>6.1</b> Create Single Trend Graph</a></li>
+<li class="chapter" data-level="6.1" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html#create-single-trend-graph"><i class="fa fa-check"></i><b>6.1</b> Create Single Trend Graph</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html#prep-work"><i class="fa fa-check"></i><b>6.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="6.1.2" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html#plot-a-trend-graph"><i class="fa fa-check"></i><b>6.1.2</b> Plot a Trend Graph</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="bare-bones-single-country-demographic-trend-graphs.html"><a href="bare-bones-single-country-demographic-trend-graphs.html"><i class="fa fa-check"></i><b>7</b> BARE BONES: Single Country Demographic Trend Graphs</a>
 <ul>
@@ -312,31 +316,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 21</span> Show only certain countries?<a href="select-countries-chp.html#select-countries-chp" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="plots-that-go-with-calculate_-functions" class="section level2 hasAnchor" number="21.1">
 <h2><span class="header-section-number">21.1</span> Plots that go with <code>calculate_</code> functions<a href="select-countries-chp.html#plots-that-go-with-calculate_-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="select-countries-chp.html#cb159-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb159-2"><a href="select-countries-chp.html#cb159-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb159-3"><a href="select-countries-chp.html#cb159-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">select_countries =</span> <span class="fu">c</span>(<span class="st">&quot;Morocco&quot;</span>,<span class="st">&quot;Tunisia&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb159-4"><a href="select-countries-chp.html#cb159-4" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb159-5"><a href="select-countries-chp.html#cb159-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="select-countries-chp.html#cb161-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb161-2"><a href="select-countries-chp.html#cb161-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb161-3"><a href="select-countries-chp.html#cb161-3" aria-hidden="true" tabindex="-1"></a>                      <span class="at">select_countries =</span> <span class="fu">c</span>(<span class="st">&quot;Morocco&quot;</span>,<span class="st">&quot;Tunisia&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb161-4"><a href="select-countries-chp.html#cb161-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb161-5"><a href="select-countries-chp.html#cb161-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.5.6.1-SelectCountries-1.png" width="1248" /></p>
 </div>
 <div id="plots-with-no-calculate_-functions" class="section level2 hasAnchor" number="21.2">
 <h2><span class="header-section-number">21.2</span> Plots with no <code>calculate_</code> functions<a href="select-countries-chp.html#plots-with-no-calculate_-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="select-countries-chp.html#cb160-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb160-2"><a href="select-countries-chp.html#cb160-2" aria-hidden="true" tabindex="-1"></a>  survey1,</span>
-<span id="cb160-3"><a href="select-countries-chp.html#cb160-3" aria-hidden="true" tabindex="-1"></a>  survey2,</span>
-<span id="cb160-4"><a href="select-countries-chp.html#cb160-4" aria-hidden="true" tabindex="-1"></a>  survey3</span>
-<span id="cb160-5"><a href="select-countries-chp.html#cb160-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb160-6"><a href="select-countries-chp.html#cb160-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb160-7"><a href="select-countries-chp.html#cb160-7" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
-<span id="cb160-8"><a href="select-countries-chp.html#cb160-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Suvey 2&quot;</span>,</span>
-<span id="cb160-9"><a href="select-countries-chp.html#cb160-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
-<span id="cb160-10"><a href="select-countries-chp.html#cb160-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb160-11"><a href="select-countries-chp.html#cb160-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb160-12"><a href="select-countries-chp.html#cb160-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb160-13"><a href="select-countries-chp.html#cb160-13" aria-hidden="true" tabindex="-1"></a>                df_list,</span>
-<span id="cb160-14"><a href="select-countries-chp.html#cb160-14" aria-hidden="true" tabindex="-1"></a>                survey_dates,</span>
-<span id="cb160-15"><a href="select-countries-chp.html#cb160-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">select_countries =</span> <span class="fu">c</span>(<span class="st">&quot;Morocco&quot;</span>,</span>
-<span id="cb160-16"><a href="select-countries-chp.html#cb160-16" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">&quot;Lebanon&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="select-countries-chp.html#cb162-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb162-2"><a href="select-countries-chp.html#cb162-2" aria-hidden="true" tabindex="-1"></a>  survey1,</span>
+<span id="cb162-3"><a href="select-countries-chp.html#cb162-3" aria-hidden="true" tabindex="-1"></a>  survey2,</span>
+<span id="cb162-4"><a href="select-countries-chp.html#cb162-4" aria-hidden="true" tabindex="-1"></a>  survey3</span>
+<span id="cb162-5"><a href="select-countries-chp.html#cb162-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb162-6"><a href="select-countries-chp.html#cb162-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb162-7"><a href="select-countries-chp.html#cb162-7" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
+<span id="cb162-8"><a href="select-countries-chp.html#cb162-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Suvey 2&quot;</span>,</span>
+<span id="cb162-9"><a href="select-countries-chp.html#cb162-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
+<span id="cb162-10"><a href="select-countries-chp.html#cb162-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb162-11"><a href="select-countries-chp.html#cb162-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb162-12"><a href="select-countries-chp.html#cb162-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb162-13"><a href="select-countries-chp.html#cb162-13" aria-hidden="true" tabindex="-1"></a>                df_list,</span>
+<span id="cb162-14"><a href="select-countries-chp.html#cb162-14" aria-hidden="true" tabindex="-1"></a>                survey_dates,</span>
+<span id="cb162-15"><a href="select-countries-chp.html#cb162-15" aria-hidden="true" tabindex="-1"></a>                <span class="at">select_countries =</span> <span class="fu">c</span>(<span class="st">&quot;Morocco&quot;</span>,</span>
+<span id="cb162-16"><a href="select-countries-chp.html#cb162-16" aria-hidden="true" tabindex="-1"></a>                                     <span class="st">&quot;Lebanon&quot;</span>))</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.5.7.1-SelectCountries-1.png" width="1248" /></p>
 
 </div>

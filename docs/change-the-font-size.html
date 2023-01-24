@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-01-23" />
+<meta name="date" content="2023-01-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -235,9 +235,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 <li class="part"><span><b>III Trend Graphs</b></span></li>
-<li class="chapter" data-level="6" data-path="bare-bones-single-country-trend-graphs.html"><a href="bare-bones-single-country-trend-graphs.html"><i class="fa fa-check"></i><b>6</b> BARE BONES: Single Country Trend Graphs</a>
+<li class="chapter" data-level="6" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html"><i class="fa fa-check"></i><b>6</b> Single Country Trend Graphs</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="bare-bones-single-country-trend-graphs.html"><a href="bare-bones-single-country-trend-graphs.html#create-single-trend-graph"><i class="fa fa-check"></i><b>6.1</b> Create Single Trend Graph</a></li>
+<li class="chapter" data-level="6.1" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html#create-single-trend-graph"><i class="fa fa-check"></i><b>6.1</b> Create Single Trend Graph</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html#prep-work"><i class="fa fa-check"></i><b>6.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="6.1.2" data-path="single-country-trend-graphs.html"><a href="single-country-trend-graphs.html#plot-a-trend-graph"><i class="fa fa-check"></i><b>6.1.2</b> Plot a Trend Graph</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="bare-bones-single-country-demographic-trend-graphs.html"><a href="bare-bones-single-country-demographic-trend-graphs.html"><i class="fa fa-check"></i><b>7</b> BARE BONES: Single Country Demographic Trend Graphs</a>
 <ul>
@@ -310,15 +314,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="change-the-font-size" class="section level1 hasAnchor" number="19">
 <h1><span class="header-section-number">Chapter 19</span> Change the Font Size<a href="change-the-font-size.html#change-the-font-size" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="change-the-font-size.html#cb157-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb157-2"><a href="change-the-font-size.html#cb157-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb157-3"><a href="change-the-font-size.html#cb157-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb157-4"><a href="change-the-font-size.html#cb157-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>,</span>
-<span id="cb157-5"><a href="change-the-font-size.html#cb157-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.title_size =</span> <span class="dv">28</span>,      <span class="co"># Changes title size</span></span>
-<span id="cb157-6"><a href="change-the-font-size.html#cb157-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.subtitle_size =</span> <span class="dv">14</span>,   <span class="co"># Changes subtitle size</span></span>
-<span id="cb157-7"><a href="change-the-font-size.html#cb157-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.caption_size =</span> <span class="dv">20</span>,    <span class="co"># Changes caption size</span></span>
-<span id="cb157-8"><a href="change-the-font-size.html#cb157-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.axis_text_size =</span> <span class="dv">26</span>,  <span class="co"># Changes axis text size</span></span>
-<span id="cb157-9"><a href="change-the-font-size.html#cb157-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.legend_text_size =</span> <span class="dv">8</span>) <span class="co"># Changes legend text size</span></span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="change-the-font-size.html#cb159-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb159-2"><a href="change-the-font-size.html#cb159-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb159-3"><a href="change-the-font-size.html#cb159-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb159-4"><a href="change-the-font-size.html#cb159-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>,</span>
+<span id="cb159-5"><a href="change-the-font-size.html#cb159-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.title_size =</span> <span class="dv">28</span>,      <span class="co"># Changes title size</span></span>
+<span id="cb159-6"><a href="change-the-font-size.html#cb159-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.subtitle_size =</span> <span class="dv">14</span>,   <span class="co"># Changes subtitle size</span></span>
+<span id="cb159-7"><a href="change-the-font-size.html#cb159-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.caption_size =</span> <span class="dv">20</span>,    <span class="co"># Changes caption size</span></span>
+<span id="cb159-8"><a href="change-the-font-size.html#cb159-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.axis_text_size =</span> <span class="dv">26</span>,  <span class="co"># Changes axis text size</span></span>
+<span id="cb159-9"><a href="change-the-font-size.html#cb159-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.legend_text_size =</span> <span class="dv">8</span>) <span class="co"># Changes legend text size</span></span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.1-Complete-Code-Example-1.png" width="1248" /></p>
 
 </div>
