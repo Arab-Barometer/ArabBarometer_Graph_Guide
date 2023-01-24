@@ -1,5 +1,5 @@
 # (PART) Trend Graphs {-}
-# BARE BONES: Single Country Trend Graphs
+# Single Country Trend Graphs
 
 This chapter will cover how to create trend graphs for one country. Prior to his, we have only used a single data set, `survey1`. We will now also use the data sets `survey2` and `survey3`. Refer to the assumed [header code](#headercode) to see where `survey1`, `survey2`, and `survey3` came from.
 
@@ -15,9 +15,9 @@ df_list <- list(
   survey3
 )
 
-survey_dates <- c("Survey 1",
-                  "Suvey 2",
-                  "Survey 3")
+survey_dates <- c("Survey 1 Year",
+                  "Suvey 2 Year",
+                  "Survey 3 Year")
 
 plot_trend_individual("Q1COVID19",
                       df_list,
@@ -29,7 +29,7 @@ plot_trend_individual("Q1COVID19",
 
 The code produces this graph:
 
-```{r 05.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
+```{r 05.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12),cache=TRUE}
 
 df_list <- list(
   survey1,
@@ -37,9 +37,9 @@ df_list <- list(
   survey3
 )
 
-survey_dates <- c("Survey 1",
-                  "Suvey 2",
-                  "Survey 3")
+survey_dates <- c("Survey 1 Year",
+                  "Suvey 2 Year",
+                  "Survey 3 Year")
 
 plot_trend_individual("Q1COVID19",
                       df_list,
@@ -48,3 +48,59 @@ plot_trend_individual("Q1COVID19",
 
 
 ```
+
+Let's go!
+
+### Prep Work
+
+Unlike other graphs in other chapters, the user does not create a summary for a trend graph. There is only one function to use: `plot_trend_individual()`.
+
+You can create the plot all in one step with the function, but it is prudent to do a little prep work before hand. This makes your work more clear and your life easier down the line.
+
+#### Create a Data Frame List {-}
+
+The first step is to create a list of data frames. 
+
+There should be one data frame for each period you wish to graph. That is, each data frame should be from a different survey you want to include in your graph. In the example for the chapter, we're using the three surveys from Wave VI, which we call `survey1`, `survey2`, and `survey3`. Each survey is its own data frame.
+
+```{r 05.1.1-Single-Trend,echo=T,eval=FALSE}
+
+df_list <- list(
+  survey1,
+  survey2,
+  survey3
+)
+
+```
+
+
+The list of data frames should be in the order you want them to appear (ideally, chronologically). The data on the graph will show up in the order of the list. So if you create a list in the order `list(survey2, survey1, survey3)`, the data from `survey2` will show up before the data from `survey1`. 
+
+**Please note: This is ambivalent to language!** The `plot_trend_individual()` function will assume the order of the list is the correct order, and treat it accordingly. When you enter a list as `list(survey1, survey2, surveye3)`, the English graph will show the data right to left (survey 1 -> survey 2 -> survey 3), while the Arabic graph will show the data left to right (survey 3 <- survey 2 <- survey 1). You do **not** need to alter your input.
+
+#### Create a Date Vector {-}
+
+The next step is to create a vector of the dates you want to show on the x-axis of your graph. Branding guidelines call for the years in which the survey took place. For simplicity in the example, let's just say `"Survey X Year"`. 
+
+You need a date for each data frame in your data frame list. Otherwise, the function won't know how to label the x-axis.
+
+
+```{r 05.1.2-Single-Trend,echo=T,eval=FALSE}
+
+survey_dates <- c("Survey 1 Year",
+                  "Suvey 2 Year",
+                  "Survey 3 Year")
+
+```
+
+The dates should also be in the order you want them to appear. The dates should line up with the data frames. In the chapter example, the order of the data frames is survey 1, survey 2, survey 3. Therefore, the survey dates need to have the order survey 1 year, survey 2 year, survey 3 year.
+
+**Please note: This is ambivalent to language!** Just as with the data frame list, the `plot_trend_individual()` function will put the data in the correct order according to the language of the graph.
+
+Now that we have defined our data frame list and survey dates, we can create our trend plot.
+
+### Plot a Trend Graph
+
+To create a trend graph plot for an individual country, use the `plot_trend_individual()` function.
+
+This function takes a few more parameters, and in a different order, than the functions we have worked with so far. In total, there are *four* necessary parameters: `.var`, `data_frames`, `svry_dates`, and `select_country`. To see a complete list of parameters, including optional ones, use `?plot_trend_individual()` in your `R` console.
