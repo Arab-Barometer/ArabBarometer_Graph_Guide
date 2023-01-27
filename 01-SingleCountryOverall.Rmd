@@ -46,7 +46,7 @@ In this example, the variable we want to plot is **Q1COVID19** and the country w
 ```{r 01.3-summary, eval=FALSE}
 
 calculate_smry_individual(
-  .ab = survey1,          # The data you are using
+  .ab = survey1,            # The data you are using
   .var = "Q1COVID19",       # The variable you want to plot
   .country = "Algeria"      # The country you want to plot it for
 )
