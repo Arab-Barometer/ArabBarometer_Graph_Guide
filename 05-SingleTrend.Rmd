@@ -57,7 +57,7 @@ Unlike other graphs in other chapters, the user does not create a summary for a 
 
 You can create the plot all in one step with the function, but it is prudent to do a little prep work before hand. This makes your work more clear and your life easier down the line.
 
-#### Create a Data Frame List {-}
+#### Create a Data Frame List {- #trend-df-list}
 
 The first step is to create a list of data frames. 
 
@@ -78,7 +78,7 @@ The list of data frames should be in the order you want them to appear (ideally,
 
 **Please note: This is ambivalent to language!** The `plot_trend_individual()` function will assume the order of the list is the correct order, and treat it accordingly. When you enter a list as `list(survey1, survey2, surveye3)`, the English graph will show the data right to left (survey 1 -> survey 2 -> survey 3), while the Arabic graph will show the data left to right (survey 3 <- survey 2 <- survey 1). You do **not** need to alter your input.
 
-#### Create a Date Vector {-}
+#### Create a Date Vector {- #trend-date-vector}
 
 The next step is to create a vector of the dates you want to show on the x-axis of your graph. Branding guidelines call for the years in which the survey took place. For simplicity in the example, let's just say `"Survey X Year"`. 
 
@@ -104,3 +104,24 @@ Now that we have defined our data frame list and survey dates, we can create our
 To create a trend graph plot for an individual country, use the `plot_trend_individual()` function.
 
 This function takes a few more parameters, and in a different order, than the functions we have worked with so far. In total, there are *four* necessary parameters: `.var`, `data_frames`, `svry_dates`, and `select_country`. To see a complete list of parameters, including optional ones, use `?plot_trend_individual()` in your `R` console.
+
+The parameter `.var` is the variable you want to plot. **It must have the same name in every data frame in the data frame list.** If the variable you want to plot is named `"Q101"` in one sure, but `"Q102"` in another, the function will not include `"Q102"` in the plot. Computers can do a lot but as of yet they cannot think critically, so the onus is on you.
+
+The parameter `data_frames` is a list of data frames. This is what we created in \@ref(#trend-df-list). 
+
+The parameter `svry_dates` is a character vector of dates that will show up on the x-axis of the graph. This is what we created in \@ref(#trend-date-vector).
+
+The parameter `select_country` is the name of the country you want to create the graph for.
+
+Now let's fill it in.
+
+
+```{r 05.3-First-Example, echo=FALSE, fig.dim=c(13,12),cache=TRUE}
+
+plot_trend_individual(.var           = "Q1COVID19",    # Variable to graph
+                      data_frames    = df_list,        # List of data frames
+                      svry_dates     = survey_dates,   # Vector of survey dates
+                      select_country = "Algeria").     # Country to graph
+
+
+```
