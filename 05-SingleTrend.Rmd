@@ -210,19 +210,42 @@ Notice that the code produced two graphs, even though `df_list` and `survey_date
 
 You can also you the `map()` function from the `purrr` package. This method is similar to what was done for creating [many single country graphs](#plot-many-graphs-single-country), [many single country demographic graphs](plot-many-graphs-single-country-demographic), [many comparative graphs](#plot-many-comparative), and [many comparative demographic graphs](#plot-many-comparative-demographic).
 
-As a quick review, in earlier chapters the first step was to create a list of summaries by give the summarize function a vector of variable names. Next we would map that list of summaries to the related plot function. In the mapping function, we would hold the caption constant since we wanted the same caption to appear on every graph.
+As a quick review, in earlier chapters the first step was identify the variables to plot. We did that by creating a named list of of the variables we wanted to plot.
 
-The `plot_trend_individual()` function creates summaries internally, so we can "skip" the first step. Here we go right to the mapping step. We map a vector of variable names to the `plot_trend_individual()` function. We want to create a graph for the same country over the same time period, just using different variable, so we hold the data frame list, survey dates, country, *and* caption constant.
+The second step was creating a list of summaries by give the summarize function the named variable list. 
+
+The third and final step was mapping that list of summaries to the related plot function. In the mapping function, we would hold the caption constant since we wanted the same caption to appear on every graph.
+
+The `plot_trend_individual()` function creates summaries internally, so we can "skip" the second step. Once we identify our variables, we go right to the mapping step. We map a named list of variables to the `plot_trend_individual()` function. We want to create a graph for the same country over the same time period, just using different variable, so we hold the data frame list, survey dates, country, *and* caption constant.
+
+### Identify the Variables
+
+We are creating trend graphs for the variables `Q1COVID19`, `Q101`, and `Q609`. 
 
 ```{r 05.6-Many-Graphs-Example2, fig.dim=c(13,12)}
 
-variables_2_plot <- c("Q1COVID19",
-                      "Q101",
-                      "Q609")
+variables_2_plot <- list("Q1COVID19",
+                         "Q101",
+                         "Q609")
 
-map(
+names(variables_2_plot) <- c("Q1COVID19",
+                             "Q101",
+                             "Q609")
+
+```
+
+Now you have a names list of variables. Let's plot them.
+
+### Plot the Variables
+
+Recall we want to hold constant the `data_frames`, `svry_dates`, `select_country` and `.caption` parameters because those will be the same for every graph. The only parameter we want to vary is `.var`.
+
+```{r 05.7-Many-Graphs-Example2, fig.dim=c(13,12)}
+
+plots <- map(
   variables_2_plot, # Vector of variables to plot
   plot_trend_individual, # Map to function `plot_trend_individual()`
+  
   data_frames    = df_list,  # Hold constant the `data_frames` parameter
   svry_dates     = survey_dates, # Hold constant the `svry_dates` parameter
   select_country = "Algeria", # Hold constant the `select_country` parameter
@@ -230,3 +253,22 @@ map(
   )
 
 ```
+
+Excellent!
+
+The plots have been saved to a named list called `plots`. To access the plots for each variable, you can use the `$` and variable name.
+
+```{r 05.8-Many-Graphs-Example2, fig.dim=c(13,12)}
+
+# Trend graph for Q1COVID19
+plots$Q1COVID19
+
+# Trend graph for Q101
+plots$Q101
+
+# Trend graph for Q609
+plots$Q609
+
+```
+
+You've done it! You have created many trend plots at once!
