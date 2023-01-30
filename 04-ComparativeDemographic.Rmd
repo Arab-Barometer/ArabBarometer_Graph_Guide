@@ -344,7 +344,7 @@ comparative_gender_summaries <- survey1 %>%
 ```
 
 
-### Plot the Summaries
+### Plot the Summaries {#plot-many-comparative-demographic}
 
 Again, the same function to create one plot is used to create many plots: **plot_demographic_smry_comp()**. Just like in Chapter 3, we need to use the **map** function.
 

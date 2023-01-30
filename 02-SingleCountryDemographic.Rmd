@@ -349,7 +349,7 @@ gender_summaries <- survey1 %>%
 ```
 
 
-### Plot the Summaries
+### Plot the Summaries {#plot-many-graphs-single-country-demographic}
 
 Again, the same function to create one plot is used to create many plots: **plot_demographic_smry_individual()**. Just like in Chapter 1, we need to use the **map** function.
 

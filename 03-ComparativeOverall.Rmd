@@ -338,7 +338,7 @@ comparative_summaries <- survey1 %>%
 ```
 
 
-### Plot the Summaries
+### Plot the Summaries {#plot-many-comparative}
 
 Again, the same function to create one plot is used to create many plots: **plot_smry_comp()**. Unlike last time, a helper function is needed to create multiple plots. 
 

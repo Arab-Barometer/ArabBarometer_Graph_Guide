@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-01-24" />
+<meta name="date" content="2023-01-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -339,8 +339,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">6.1.1</span> Prep Work<a href="single-country-trend-graphs.html#prep-work" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Unlike other graphs in other chapters, the user does not create a summary for a trend graph. There is only one function to use: <code>plot_trend_individual()</code>.</p>
 <p>You can create the plot all in one step with the function, but it is prudent to do a little prep work before hand. This makes your work more clear and your life easier down the line.</p>
-<div id="create-a-data-frame-list" class="section level4 unnumbered hasAnchor">
-<h4>Create a Data Frame List<a href="single-country-trend-graphs.html#create-a-data-frame-list" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="trend-df-list" class="section level4 unnumbered hasAnchor">
+<h4>Create a Data Frame List<a href="single-country-trend-graphs.html#trend-df-list" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The first step is to create a list of data frames.</p>
 <p>There should be one data frame for each period you wish to graph. That is, each data frame should be from a different survey you want to include in your graph. In the example for the chapter, we’re using the three surveys from Wave VI, which we call <code>survey1</code>, <code>survey2</code>, and <code>survey3</code>. Each survey is its own data frame.</p>
 <div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="single-country-trend-graphs.html#cb138-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
@@ -351,8 +351,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The list of data frames should be in the order you want them to appear (ideally, chronologically). The data on the graph will show up in the order of the list. So if you create a list in the order <code>list(survey2, survey1, survey3)</code>, the data from <code>survey2</code> will show up before the data from <code>survey1</code>.</p>
 <p><strong>Please note: This is ambivalent to language!</strong> The <code>plot_trend_individual()</code> function will assume the order of the list is the correct order, and treat it accordingly. When you enter a list as <code>list(survey1, survey2, surveye3)</code>, the English graph will show the data right to left (survey 1 -&gt; survey 2 -&gt; survey 3), while the Arabic graph will show the data left to right (survey 3 &lt;- survey 2 &lt;- survey 1). You do <strong>not</strong> need to alter your input.</p>
 </div>
-<div id="create-a-date-vector" class="section level4 unnumbered hasAnchor">
-<h4>Create a Date Vector<a href="single-country-trend-graphs.html#create-a-date-vector" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div id="trend-date-vector" class="section level4 unnumbered hasAnchor">
+<h4>Create a Date Vector<a href="single-country-trend-graphs.html#trend-date-vector" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The next step is to create a vector of the dates you want to show on the x-axis of your graph. Branding guidelines call for the years in which the survey took place. For simplicity in the example, let’s just say <code>"Survey X Year"</code>.</p>
 <p>You need a date for each data frame in your data frame list. Otherwise, the function won’t know how to label the x-axis.</p>
 <div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="single-country-trend-graphs.html#cb139-1" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1 Year&quot;</span>,</span>
@@ -367,6 +367,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">6.1.2</span> Plot a Trend Graph<a href="single-country-trend-graphs.html#plot-a-trend-graph" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To create a trend graph plot for an individual country, use the <code>plot_trend_individual()</code> function.</p>
 <p>This function takes a few more parameters, and in a different order, than the functions we have worked with so far. In total, there are <em>four</em> necessary parameters: <code>.var</code>, <code>data_frames</code>, <code>svry_dates</code>, and <code>select_country</code>. To see a complete list of parameters, including optional ones, use <code>?plot_trend_individual()</code> in your <code>R</code> console.</p>
+<p>The parameter <code>.var</code> is the variable you want to plot. <strong>It must have the same name in every data frame in the data frame list.</strong> If the variable you want to plot is named <code>"Q101"</code> in one sure, but <code>"Q102"</code> in another, the function will not include <code>"Q102"</code> in the plot. Computers can do a lot but as of yet they cannot think critically, so the onus is on you.</p>
+<p>The parameter <code>data_frames</code> is a list of data frames. This is what we created in <a href="single-country-trend-graphs.html#trend-df-list"><strong>??</strong></a>.</p>
+<p>The parameter <code>svry_dates</code> is a character vector of dates that will show up on the x-axis of the graph. This is what we created in <a href="single-country-trend-graphs.html#trend-date-vector"><strong>??</strong></a>.</p>
+<p>The parameter <code>select_country</code> is the name of the country you want to create the graph for.</p>
+<p>Now let’s fill it in.</p>
+<p><img src="bookdownproj_files/figure-html/05.3-First-Example-1.png" width="1248" /></p>
+<p>Putting all the steps together, we have the code we originally started with.</p>
 
 </div>
 </div>

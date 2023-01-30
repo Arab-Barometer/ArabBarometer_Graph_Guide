@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-01-24" />
+<meta name="date" content="2023-01-30" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -318,20 +318,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">16.1</span> Available Colors<a href="color-options.html#available-colors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The colors available for graphs come from <a href="https://drive.google.com/drive/u/0/folders/0ANF6dTDxdEyiUk9PVA">the Arab Barometer Color Guide</a>. You can see a list of colors with the command:</p>
 <div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="color-options.html#cb150-1" aria-hidden="true" tabindex="-1"></a>ArabBarometer_clrs</span></code></pre></div>
-<pre><code>##         AB blue       AB orange      AB magenta   AB light blue       AB purple         AB pink 
-##       &quot;#0098BE&quot;       &quot;#DF6E21&quot;       &quot;#AC517F&quot;       &quot;#7CBBC7&quot;       &quot;#796391&quot;       &quot;#CF83A3&quot; 
-##       AB yellow       cool grey            zeke      james bond       dark blue     medium blue 
-##       &quot;#FBA950&quot;       &quot;#B1C2CF&quot;       &quot;#CCEAF2&quot;       &quot;#00718E&quot;       &quot;#003D4E&quot;       &quot;#4B91B8&quot; 
-##      pale green     olive green          copper    light bronze    bright apple dark watermelon 
-##       &quot;#C8C6A2&quot;       &quot;#AAA764&quot;       &quot;#AC5410&quot;       &quot;#DC9C56&quot;       &quot;#FF5E64&quot;       &quot;#E42525&quot; 
-##      mary clare           plumb           lilac          purple          coffee  midnight ocean 
-##       &quot;#EAA4A4&quot;       &quot;#7F375B&quot;       &quot;#B4ADDF&quot;       &quot;#5C1C95&quot;       &quot;#6F3610&quot;       &quot;#004B5E&quot; 
-##           salma     almond meat     army jacket         apricot         mohamed       text grey 
-##       &quot;#C0E5EE&quot;       &quot;#F6DAC7&quot;       &quot;#706E3E&quot;       &quot;#F7B58B&quot;       &quot;#959595&quot;       &quot;#545454&quot; 
-##      bright sky    bright mauve    dark apricot         Algeria           Egypt            Iraq 
-##       &quot;#2CB2CE&quot;       &quot;#AD517F&quot;       &quot;#E28F57&quot;       &quot;#DF6E21&quot;       &quot;#00718E&quot;       &quot;#FBA950&quot; 
-##          Jordan          Kuwait         Lebanon           Libya      Mauritania         Morocco 
-##       &quot;#7F375B&quot;       &quot;#706E3E&quot;       &quot;#CF83A3&quot;       &quot;#003D4E&quot;       &quot;#DC9C56&quot;       &quot;#7CBBC7&quot; 
+<pre><code>##         AB blue       AB orange      AB magenta   AB light blue       AB purple         AB pink       AB yellow 
+##       &quot;#0098BE&quot;       &quot;#DF6E21&quot;       &quot;#AC517F&quot;       &quot;#7CBBC7&quot;       &quot;#796391&quot;       &quot;#CF83A3&quot;       &quot;#FBA950&quot; 
+##       cool grey            zeke      james bond       dark blue     medium blue      pale green     olive green 
+##       &quot;#B1C2CF&quot;       &quot;#CCEAF2&quot;       &quot;#00718E&quot;       &quot;#003D4E&quot;       &quot;#4B91B8&quot;       &quot;#C8C6A2&quot;       &quot;#AAA764&quot; 
+##          copper    light bronze    bright apple dark watermelon      mary clare           plumb           lilac 
+##       &quot;#AC5410&quot;       &quot;#DC9C56&quot;       &quot;#FF5E64&quot;       &quot;#E42525&quot;       &quot;#EAA4A4&quot;       &quot;#7F375B&quot;       &quot;#B4ADDF&quot; 
+##          purple          coffee  midnight ocean           salma     almond meat     army jacket         apricot 
+##       &quot;#5C1C95&quot;       &quot;#6F3610&quot;       &quot;#004B5E&quot;       &quot;#C0E5EE&quot;       &quot;#F6DAC7&quot;       &quot;#706E3E&quot;       &quot;#F7B58B&quot; 
+##         mohamed       text grey      bright sky    bright mauve    dark apricot         Algeria           Egypt 
+##       &quot;#959595&quot;       &quot;#545454&quot;       &quot;#2CB2CE&quot;       &quot;#AD517F&quot;       &quot;#E28F57&quot;       &quot;#DF6E21&quot;       &quot;#00718E&quot; 
+##            Iraq          Jordan          Kuwait         Lebanon           Libya      Mauritania         Morocco 
+##       &quot;#FBA950&quot;       &quot;#7F375B&quot;       &quot;#706E3E&quot;       &quot;#CF83A3&quot;       &quot;#003D4E&quot;       &quot;#DC9C56&quot;       &quot;#7CBBC7&quot; 
 ##       Palestine    Saudi Arabia           Sudan         Tunisia           Yemen            MENA 
 ##       &quot;#AC517F&quot;       &quot;#1B909F&quot;       &quot;#EAA4A4&quot;       &quot;#AAA764&quot;       &quot;#796391&quot;       &quot;#E42525&quot;</code></pre>
 <p>You’ll notice some colors are repeated with different names (particularly when it comes to countries). This makes some parts of graphing easier internally. The unique colors included in the package are shown below with their hex code.</p>
