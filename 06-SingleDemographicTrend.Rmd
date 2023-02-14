@@ -1,4 +1,4 @@
-# BARE BONES: Single Country Demographic Trend Graphs
+# Single Country Demographic Trend Graphs {#chater-6}
 
 ## Create Single Demographic Trend Graph
 
@@ -67,7 +67,7 @@ The first step is to create a list of data frames. This section is exactly the s
 
 There should be one data frame for each period you wish to graph. That is, each data frame should be from a different survey you want to include in your graph. In the example for the chapter, we're using the three surveys from Wave VI, which we call `survey1`, `survey2`, and `survey3`. Each survey is its own data frame.
 
-```{r 06.1.1-Single-Trend,echo=T,eval=FALSE}
+```{r 06.3-Single-Trend,echo=T,eval=FALSE}
 
 df_list <- list(
   survey1,
@@ -91,7 +91,7 @@ The next step is to create a vector of the dates you want to show on the x-axis 
 You need a date for each data frame in your data frame list. Otherwise, the function won't know how to label the x-axis.
 
 
-```{r 06.1.2-Single-Trend,echo=T,eval=FALSE}
+```{r 06.4-Single-Trend,echo=T,eval=FALSE}
 
 survey_dates <- c("Survey 1 Year",
                   "Survey 2 Year",
@@ -124,8 +124,18 @@ The parameter `select_country` is the name of the country you want to create the
 
 Now let's fill it in.
 
+```{r 06.5-First-Example, eval=FALSE}
 
-```{r 06.3-First-Example, echo=FALSE, fig.dim=c(13,12)}
+plot_trend_individual_demographics(.var           = "Q1COVID19",    # Variable to graph
+                                   .dem           = "gender",       # Demographic to see over time
+                                   data_frames    = df_list,        # List of data frames
+                                   svry_dates     = survey_dates,   # Vector of survey dates
+                                   select_country = "Algeria")     # Country to graph
+
+
+```
+
+```{r 06.6-First-Example, echo=FALSE, fig.dim=c(13,12)}
 
 plot_trend_individual_demographics(.var           = "Q1COVID19",    # Variable to graph
                                    .dem           = "gender",       # Demographic to see over time
@@ -139,7 +149,7 @@ Nearly there! What still needs to be changed?
 
 The caption, of course! Just as in all the other `plot_` functions in the `ArabBarometR` package, you can change the caption using the `.caption` parameter.
 
-```{r 06.3.5-First-Example, echo=FALSE, fig.dim=c(13,12)}
+```{r 06.7-First-Example, eval=FALSE}
 
 plot_trend_individual_demographics(.var           = "Q1COVID19",   
                                    .dem           = "gender",      
@@ -151,10 +161,22 @@ plot_trend_individual_demographics(.var           = "Q1COVID19",
 
 ```
 
-Putting all the steps together, we have the code we originally started with.
+```{r 06.8-First-Example, echo=FALSE, fig.dim=c(13,12)}
+
+plot_trend_individual_demographics(.var           = "Q1COVID19",   
+                                   .dem           = "gender",      
+                                   data_frames    = df_list,       
+                                   svry_dates     = survey_dates,  
+                                   select_country = "Algeria",
+                                   .caption = "Arab Barometer Wave VI, Algeria")     
 
 
-```{r 06.4-Complete-Code-Example, eval=FALSE}
+```
+
+Putting all the steps together, we have the code and graph we originally started with.
+
+
+```{r 06.9-Complete-Code-Example, eval=FALSE}
 
 df_list <- list(
   survey1,
@@ -176,6 +198,30 @@ plot_trend_individual_demographics("Q1COVID19",
 
 ```
 
+
+```{r 06.10-Complete-Code-Example, echo=FALSE, fig.dim=c(13,12)}
+
+df_list <- list(
+  survey1,
+  survey2,
+  survey3
+)
+
+survey_dates <- c("Survey 1 Year",
+                  "Survey 2 Year",
+                  "Survey 3 Year")
+
+
+plot_trend_individual_demographics("Q1COVID19",   
+                                   "gender",      
+                                   df_list,       
+                                   survey_dates,  
+                                   "Algeria",
+                                   .caption = "Arab Barometer Wave VI, Algeria")
+
+```
+
+
 ## Create Many Graphs
 
 A nice payoff of creating the [data frame list](#chp6-trend-df-list) and the [date vector](#chp6-trend-date-vector) is that these objects (`df_list` and `survey_dates`) can be re-used any time you want to create a graph over the same time period. 
@@ -183,7 +229,7 @@ A nice payoff of creating the [data frame list](#chp6-trend-df-list) and the [da
 For example, say you wanted to also create a graph tracking Algerian's views of the economy and religiosity. The only parameter in the `plot_trend_individual_demographics()` function that needs updating is `.var`.
 
 
-```{r 06.5-Many-Graphs-Example1, fig.dim=c(13,12)}
+```{r 06.11-Many-Graphs-Example1, fig.dim=c(13,12)}
 
 df_list <- list(
   survey1,
@@ -235,7 +281,7 @@ The `plot_trend_individual_demographics()` function creates summaries internally
 
 We are creating trend graphs for the variables `Q1COVID19`, `Q101`, and `Q609`. 
 
-```{r 06.6-Many-Graphs-Example2, fig.dim=c(13,12)}
+```{r 06.12-Many-Graphs-Example2, fig.dim=c(13,12)}
 
 variables_2_plot <- list("Q1COVID19",
                          "Q101",
@@ -253,13 +299,13 @@ Now you have a names list of variables. Let's plot them.
 
 Recall we want to hold constant the `data_frames`, `svry_dates`, `select_country` and `.caption` parameters because those will be the same for every graph. The only parameter we want to vary is `.var`.
 
-```{r 06.7-Many-Graphs-Example2, fig.dim=c(13,12)}
+```{r 06.13-Many-Graphs-Example2, fig.dim=c(13,12)}
 
 plots <- map(
   variables_2_plot, # Vector of variables to plot
-  plot_trend_individual, # Map to function `plot_trend_individual_demographics()`
+  plot_trend_individual_demographics, # Map to function `plot_trend_individual_demographics()`
   
-  .dem.          = "gender", # Hold constant the `.dem` parameter
+  .dem           = "gender", # Hold constant the `.dem` parameter
   data_frames    = df_list,  # Hold constant the `data_frames` parameter
   svry_dates     = survey_dates, # Hold constant the `svry_dates` parameter
   select_country = "Algeria", # Hold constant the `select_country` parameter
@@ -272,7 +318,7 @@ Excellent!
 
 The plots have been saved to a named list called `plots`. To access the plots for each variable, you can use the `$` and variable name.
 
-```{r 06.8-Many-Graphs-Example2, fig.dim=c(13,12)}
+```{r 06.14-Many-Graphs-Example2, fig.dim=c(13,12)}
 
 # Trend graph for Q1COVID19
 plots$Q1COVID19
