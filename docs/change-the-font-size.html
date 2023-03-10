@@ -285,8 +285,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="17" data-path="change-default-colors.html"><a href="change-default-colors.html"><i class="fa fa-check"></i><b>17</b> Change Default Colors</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="change-default-colors.html"><a href="change-default-colors.html#change-colors-for-frequency-graphs"><i class="fa fa-check"></i><b>17.1</b> Change Colors for Frequency Graphs</a></li>
-<li class="chapter" data-level="17.2" data-path="change-default-colors.html"><a href="change-default-colors.html#change-color-palette"><i class="fa fa-check"></i><b>17.2</b> Change Color Palette</a></li>
+<li class="chapter" data-level="17.1" data-path="change-default-colors.html"><a href="change-default-colors.html#basic-cross-tabs"><i class="fa fa-check"></i><b>17.1</b> Basic Cross Tabs</a></li>
+<li class="chapter" data-level="17.2" data-path="change-default-colors.html"><a href="change-default-colors.html#demographic-cross-tabs"><i class="fa fa-check"></i><b>17.2</b> Demographic Cross Tabs</a></li>
+<li class="chapter" data-level="17.3" data-path="change-default-colors.html"><a href="change-default-colors.html#stacked-graphs"><i class="fa fa-check"></i><b>17.3</b> Stacked Graphs</a></li>
 </ul></li>
 <li class="chapter" data-level="18" data-path="highlight-certain-countries.html"><a href="highlight-certain-countries.html"><i class="fa fa-check"></i><b>18</b> Highlight Certain Countries</a>
 <ul>
@@ -328,15 +329,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="change-the-font-size" class="section level1 hasAnchor" number="19">
 <h1><span class="header-section-number">Chapter 19</span> Change the Font Size<a href="change-the-font-size.html#change-the-font-size" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="change-the-font-size.html#cb183-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb183-2"><a href="change-the-font-size.html#cb183-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb183-3"><a href="change-the-font-size.html#cb183-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb183-4"><a href="change-the-font-size.html#cb183-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>,</span>
-<span id="cb183-5"><a href="change-the-font-size.html#cb183-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.title_size =</span> <span class="dv">28</span>,      <span class="co"># Changes title size</span></span>
-<span id="cb183-6"><a href="change-the-font-size.html#cb183-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.subtitle_size =</span> <span class="dv">14</span>,   <span class="co"># Changes subtitle size</span></span>
-<span id="cb183-7"><a href="change-the-font-size.html#cb183-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.caption_size =</span> <span class="dv">20</span>,    <span class="co"># Changes caption size</span></span>
-<span id="cb183-8"><a href="change-the-font-size.html#cb183-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.axis_text_size =</span> <span class="dv">26</span>,  <span class="co"># Changes axis text size</span></span>
-<span id="cb183-9"><a href="change-the-font-size.html#cb183-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.legend_text_size =</span> <span class="dv">8</span>) <span class="co"># Changes legend text size</span></span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="change-the-font-size.html#cb190-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb190-2"><a href="change-the-font-size.html#cb190-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb190-3"><a href="change-the-font-size.html#cb190-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb190-4"><a href="change-the-font-size.html#cb190-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>,</span>
+<span id="cb190-5"><a href="change-the-font-size.html#cb190-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.title_size =</span> <span class="dv">28</span>,      <span class="co"># Changes title size</span></span>
+<span id="cb190-6"><a href="change-the-font-size.html#cb190-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.subtitle_size =</span> <span class="dv">14</span>,   <span class="co"># Changes subtitle size</span></span>
+<span id="cb190-7"><a href="change-the-font-size.html#cb190-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.caption_size =</span> <span class="dv">20</span>,    <span class="co"># Changes caption size</span></span>
+<span id="cb190-8"><a href="change-the-font-size.html#cb190-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.axis_text_size =</span> <span class="dv">26</span>,  <span class="co"># Changes axis text size</span></span>
+<span id="cb190-9"><a href="change-the-font-size.html#cb190-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.legend_text_size =</span> <span class="dv">8</span>) <span class="co"># Changes legend text size</span></span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.1-Complete-Code-Example-1.png" width="1248" /></p>
 
 </div>

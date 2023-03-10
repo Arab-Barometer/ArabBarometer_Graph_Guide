@@ -285,8 +285,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="17" data-path="change-default-colors.html"><a href="change-default-colors.html"><i class="fa fa-check"></i><b>17</b> Change Default Colors</a>
 <ul>
-<li class="chapter" data-level="17.1" data-path="change-default-colors.html"><a href="change-default-colors.html#change-colors-for-frequency-graphs"><i class="fa fa-check"></i><b>17.1</b> Change Colors for Frequency Graphs</a></li>
-<li class="chapter" data-level="17.2" data-path="change-default-colors.html"><a href="change-default-colors.html#change-color-palette"><i class="fa fa-check"></i><b>17.2</b> Change Color Palette</a></li>
+<li class="chapter" data-level="17.1" data-path="change-default-colors.html"><a href="change-default-colors.html#basic-cross-tabs"><i class="fa fa-check"></i><b>17.1</b> Basic Cross Tabs</a></li>
+<li class="chapter" data-level="17.2" data-path="change-default-colors.html"><a href="change-default-colors.html#demographic-cross-tabs"><i class="fa fa-check"></i><b>17.2</b> Demographic Cross Tabs</a></li>
+<li class="chapter" data-level="17.3" data-path="change-default-colors.html"><a href="change-default-colors.html#stacked-graphs"><i class="fa fa-check"></i><b>17.3</b> Stacked Graphs</a></li>
 </ul></li>
 <li class="chapter" data-level="18" data-path="highlight-certain-countries.html"><a href="highlight-certain-countries.html"><i class="fa fa-check"></i><b>18</b> Highlight Certain Countries</a>
 <ul>
@@ -328,12 +329,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="change-the-titlesubtitlecaption" class="section level1 hasAnchor" number="20">
 <h1><span class="header-section-number">Chapter 20</span> Change the Title/Subtitle/Caption<a href="change-the-titlesubtitlecaption.html#change-the-titlesubtitlecaption" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="change-the-titlesubtitlecaption.html#cb184-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb184-2"><a href="change-the-titlesubtitlecaption.html#cb184-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb184-3"><a href="change-the-titlesubtitlecaption.html#cb184-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb184-4"><a href="change-the-titlesubtitlecaption.html#cb184-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.title =</span> <span class="st">&quot;New title&quot;</span>,</span>
-<span id="cb184-5"><a href="change-the-titlesubtitlecaption.html#cb184-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.subtitle =</span> <span class="st">&quot;New subtitle&quot;</span>,</span>
-<span id="cb184-6"><a href="change-the-titlesubtitlecaption.html#cb184-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.caption =</span> <span class="st">&quot;New caption&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="change-the-titlesubtitlecaption.html#cb191-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb191-2"><a href="change-the-titlesubtitlecaption.html#cb191-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb191-3"><a href="change-the-titlesubtitlecaption.html#cb191-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb191-4"><a href="change-the-titlesubtitlecaption.html#cb191-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.title =</span> <span class="st">&quot;New title&quot;</span>,</span>
+<span id="cb191-5"><a href="change-the-titlesubtitlecaption.html#cb191-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.subtitle =</span> <span class="st">&quot;New subtitle&quot;</span>,</span>
+<span id="cb191-6"><a href="change-the-titlesubtitlecaption.html#cb191-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.caption =</span> <span class="st">&quot;New caption&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.2-Complete-Code-Example-1.png" width="1248" /></p>
 
 </div>

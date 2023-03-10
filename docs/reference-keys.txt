@@ -71,8 +71,9 @@ color-options
 available-colors
 available-palettes
 change-default-colors
-change-colors-for-frequency-graphs
-change-color-palette
+basic-cross-tabs
+demographic-cross-tabs
+stacked-graphs
 highlight-certain-countries
 single-country-highlight
 multiple-country-highlight
