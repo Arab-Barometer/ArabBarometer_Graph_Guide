@@ -1,33 +1,100 @@
 # Change Default Colors
 
 
-## Change Colors for Frequency Graphs
+## Basic Cross Tabs
 
-The parameter is called **`.clr`**.
+The parameter is called **`.clr`**. This parameter accepts either a color name from `ArabBarometR` or a hex code.
 
 ```{r How.3.1-Complete-Code-Example, fig.dim=c(13,12)}
 
-survey1 %>%
+survey1  |> 
   calculate_smry_individual("Q1COVID19",
-                            "Algeria") %>%
+                            "Algeria") |>
   plot_smry_individual(.clr = "zeke")
+
+survey1 |>
+  calculate_smry_comp("Q1COVID19") |>
+  plot_smry_individual(.clr = "#FF5E64")
 
 
 ```
 
 
-## Change Color Palette
+## Demographic Cross Tabs
 
-The parameter is called **`.color_palette`**.
+The parameter to change is called **`.color_palette`**. This parameter accepts any of the following:
+
+  * `"default"` (which it is set to),
+  * the name of an `ArabBarometR` color palette,
+  * a vector of `ArabBarometR` color names, or
+  * a vector of hex codes.
+  
+If you choose to use a vector of either color names or hex codes, it **must** be the same length as the number of demographic categories. For example, the `gender` demographic has two categories, so a vector of custom colors needs to be length two. You can check the number of categories by looking at the data frame you are plotting.
+
+```{r How.3.2-Complete-Code-Example, fig.dim=c(13,12)}
+
+survey1 |>
+  calculate_demographic_smry_individual("Q1COVID19",
+                                        "Algeria",
+                                        .dem = "gender") |> 
+  plot_demographic_smry_individual(.color_palette = "blue pair")
+
+survey1 |>
+  calculate_demographic_smry_comp("Q1COVID19",
+                                  .dem = "gender") |> 
+  plot_demographic_smry_comp(.color_palette = c("salma","mary clare"))
+
+data_frame_2_plot <- survey1 |>
+  calculate_demographic_smry_comp("Q1COVID19",
+                                  .dem = "Q101") 
+
+data_frame_2_plot
+
+
+# 6 categories means 6 colors needed
+data_frame_2_plot |> 
+  plot_demographic_smry_comp(.color_palette = c("#0098BE",
+                                                         "#DF6E21",
+                                                         "#AC517F",
+                                                         "#7CBBC7",
+                                                         "#796391",
+                                                         "#CF83A3"))
+
+
+```
+
+
+## Stacked Graphs
+
+The parameter is called **`.color_palette`**. The parameter accepts any of the following:
+
+  * the name of an `ArabBarometR` color palette,
+  * a vector of `ArabBarometR` color names, or
+  * a vector of hex codes.
+  
+If you choose to use a vector of either color names or hex codes, it **must** be the same length as the number of categories. Recall that the categories "don't know" and "refuse" are combined into a single category unless otherwise specified. When determining the number of colors you need for your vector, only count the "don't know" and "refuse" categories as one category.
+
+Take `Q2061A` as an example. In the first survey of wave six, question `Q2061A` had ten response options including "don't know" and "refuse". The `calculate_stacked_df()` function combines "don't konw" and "refuse" into one category, so the color palette vector only needs to be length nine.
 
 ```{r How.3.4-Complete-Code-Example, fig.dim=c(13,12)}
 
-
 calculate_stacked_df(survey1,
-                     "Q2061A") %>%
+                     "Q2061A") |>
   plot_stacked_comp(.caption = "Arab Barometer Wave VI, Survey 1",
                     .color_palette = "soft rainbow")
 
+calculate_stacked_df(survey1,
+                     "Q2061A") |>
+  plot_stacked_comp(.caption = "Arab Barometer Wave VI, Survey 1",
+                    .color_palette = c("AB blue",
+                                       "AB orange",
+                                       "AB magenta",
+                                       "AB light blue",
+                                       "AB purple",
+                                       "AB pink",
+                                       "AB yellow",
+                                       "zeke",
+                                       "pale green"))
 
 
 ```
