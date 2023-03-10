@@ -14,7 +14,7 @@ survey1  |>
 
 survey1 |>
   calculate_smry_comp("Q1COVID19") |>
-  plot_smry_individual(.clr = "#FF5E64")
+  plot_smry_comp(.clr = "#FF5E64")
 
 
 ```
