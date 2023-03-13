@@ -1,12 +1,14 @@
 # (PART) Stacked Plots {-}
 # BARE BONES: Stacked Plots
 
+Stacked bar graphs are very useful for displaying responses to nominal questions across countries. Unlike the graphs from [Chapter 4](#comparative-overall-graphs), which can only compare one nominal category at a time across countries, a stacked bar graph allows the user to show the breakdown of responses to every category for each country.
+
 At the end, your code will look like the following:
 
 ```{r 13.1-Complete-Code-Example, eval=FALSE}
 
 calculate_stacked_df(survey1,
-                     "Q2061A") %>%
+                     "Q2061A") |>
   plot_stacked_comp(.caption = "Arab Barometer Wave VI, Survey 1")
 
 ```
@@ -17,9 +19,109 @@ That code will produce the following graph:
 ```{r 13.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
 
 calculate_stacked_df(survey1,
-                     "Q2061A") %>%
+                     "Q2061A") |>
   plot_stacked_comp(.caption = "Arab Barometer Wave VI, Survey 1")
 
 ```
 
 Let's go!
+
+## Create a Single Graph
+
+### Create a Summary
+
+As usual, the first step to creating a stacked bar graph is to summarize the data you want to display. To do this you use the **`calculate_stacked_df()`** function. This function requires two arguments: (1) an Arab Barometer data frame, and (2) the name of the variable you want to graph.
+
+For this example, we'll use the first survey of wave six and question `Q2061A`.
+
+
+```{r 13.3-calculate-step}
+
+calculate_stacked_df(
+  .ab = survey1,   # Data Frame
+  .var = "Q2061A"  # Variable Name
+  )
+
+```
+
+The data frame is quite long, as it contains the response of every category for every country. Let's save it to an object we can graph in the next section.
+
+```{r 13.4-calculate-object}
+
+stacked_data_frame <- calculate_stacked_df(
+  .ab = survey1,   
+  .var = "Q2061A"  
+  )
+
+```
+
+### Plot the Summary
+
+Now that we have the data frame, the next step is to plot it. For this step we use the function `**plot_stacked_comp()**`. The only *required* input is a data frame.
+
+```{r 13.5-plot-object, fig.dim=c(13,12)}
+
+plot_stacked_comp(stacked_data_frame)
+
+```
+
+Similar to many other plots in this guide, the caption is not automatically correct. Even though the data frame is the only required input, it is highly advised about correct the caption. Like always, this is done using the `.caption` parameter.
+
+```{r 13.6-plot-object-caption, fig.dim=c(13,12)}
+
+plot_stacked_comp(stacked_data_frame,
+                  .caption = "Arab Barometer Wave VI, Survey 1")
+
+```
+
+We can use the pipe operator^[To learn more about piping and using `%>%` in programming, see [A Note on Piping](https://arab-barometer.github.io/ArabBarometR-Guide/using-the-package.html#a-note-on-piping) in the `ArabBarometR` guide.] to chain everything together.
+
+```{r 13.7-all-together,eval=FALSE, fig.dim=c(13,12)}
+
+calculate_stacked_df(survey1,
+                     "Q2061A") |>
+  plot_stacked_comp(.caption = "Arab Barometer Wave VI, Survey 1")
+```
+
+This code produces the graph we started with!
+
+```{r 13.8-all-together,echo=FALSE, fig.dim=c(13,12)}
+
+calculate_stacked_df(survey1,
+                     "Q2061A") |>
+  plot_stacked_comp(.caption = "Arab Barometer Wave VI, Survey 1")
+```
+
+## Create Many Graphs
+
+Normally, stacked graphs tend to be one-offs, but on the off chance you need to make many of them, you can, with the help of the `purrr` package. The method here is the same as that for creating [many single country cross tab graphs](#chapter-1-2).
+
+To be clear, there are many, **many** different ways to create code to accomplish the goal of creating many graphs at one time. The method suggested here is only one.
+
+### Identify the Variables
+
+The first step to create many graphs is to identify all the variables you want to make graphs for. For this example, we'll use `Q2061A`, `Q118`, and `Q516A`. We will save it to an object we can map to `plot_stacked_comp()`.
+
+
+```{r 13.9-variable-list}
+
+variables_2_plot <- c("Q2061A",
+                      "Q118",
+                      "Q516A")
+
+```
+
+We have save a vector of our three variables to an object called `variables_2_plot`. Next step is creating the summaries.
+
+### Create Many Summaries
+
+The next step is to use the `map()` function from the `purrr` package to create a list of summaries. The `map()` function requires two arguments: (1) an iterable object (e.g., a list or vector), and (2) a function. In the case, our iterable object is `variables_2_plot` and our function is `calculate_stacked_df()`.
+
+```{r 13.10-map-variables}
+
+summary_list <- map(
+  variables_2_plot,     # List of variables
+  calculate_stacked_df  # Function to map onto
+  )
+
+```
