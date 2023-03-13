@@ -3,7 +3,7 @@
 
 This chapter will cover how to make an overall frequency graph for a single country.
 
-## Create a Single Graph
+## Create a Single Graph {#chapter-1-1}
 
 This section will go over how to make a one-off frequency graph for a single country.
 
@@ -35,7 +35,7 @@ survey1 %>%
 
 Let's go!
 
-### Create a Summary
+### Create a Summary {#chapter-1-1-1}
 
 The first step in creating a plot is to gather the data you want to display and organize it. You do this with the **create_smry_individual()** function.
 
@@ -105,7 +105,7 @@ Q1COVID19_summary <- survey1 %>%
 
 ```
 
-### Plot the Summary
+### Plot the Summary {#chapter-1-1-2}
 
 The next step is plot the summary we just created. To do this, we use the function **plot_smry_individual()**.
 
@@ -191,7 +191,7 @@ survey1 %>%
 
 
 
-## Create Many Graphs
+## Create Many Graphs {#chapter-1-2}
 
 As a rule of thumb in programming, if you can create something one time, you can create it a bajillion times. This is good because for each wave, Arab Barometer needs approximately a bajillion graphs.
 
@@ -282,7 +282,7 @@ That's it! The only limit on the number of graphs you can create at once is the 
 
 Let's begin.
 
-### Identify the Variables
+### Identify the Variables {#chapter-1-2-1}
 
 When creating many graphs, you need to tell R which variables you want to make plots of. This is true for when you want to create a single graph as well, but it is much more strongly implied. Plus, the variables must be identified in a specific way.
 
@@ -308,7 +308,7 @@ names(variables_2_plot) <- c("Q1COVID19",
 
 Now, you have a named list of variables. Time to summarize them.
 
-### Create Summaries
+### Create Summaries {#chapter-1-2-2}
 
 The same function used to create a single summary is used to create many summaries: **calculate_smry_individual()**. Recall it takes three parameters: (1) the data you are using, (2) the variable(s) you want to plot, and (3) the country you are creating the plot for. Now, instead of one variable, you supply the list of variables.
 

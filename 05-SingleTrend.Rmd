@@ -3,7 +3,7 @@
 
 This chapter will cover how to create trend graphs for one country. Prior to his, we have only used a single data set, `survey1`. We will now also use the data sets `survey2` and `survey3`. Refer to the assumed [header code](#headercode) to see where `survey1`, `survey2`, and `survey3` came from.
 
-## Create Single Trend Graph
+## Create Single Trend Graph {#chapter-5-1}
 
 At the end, your code will look like the following:
 
@@ -53,7 +53,7 @@ plot_trend_individual("Q1COVID19",
 
 Let's go!
 
-### Prep Work
+### Prep Work {#chapter-5-1-1}
 
 Unlike other graphs in other chapters, the user does not create a summary for a trend graph. There is only one function to use: `plot_trend_individual()`.
 
@@ -101,7 +101,7 @@ The dates should also be in the order you want them to appear. The dates should 
 
 Now that we have defined our data frame list and survey dates, we can create our trend plot.
 
-### Plot a Trend Graph
+### Plot a Trend Graph {#chapter-5-1-2}
 
 To create a trend graph plot for an individual country, use the `plot_trend_individual()` function.
 
@@ -207,7 +207,7 @@ plot_trend_individual("Q1COVID19",
 
 ```
 
-## Create Many Graphs
+## Create Many Graphs {#chapter-5-2}
 
 A nice payoff of creating the [data frame list](#chp5-trend-df-list) and the [date vector](#chp5-trend-date-vector) is that these objects (`df_list` and `survey_dates`) can be re-used any time you want to create a graph over the same time period. 
 
@@ -259,7 +259,7 @@ The third and final step was mapping that list of summaries to the related plot 
 
 The `plot_trend_individual()` function creates summaries internally, so we can "skip" the second step. Once we identify our variables, we go right to the mapping step. We map a named list of variables to the `plot_trend_individual()` function. We want to create a graph for the same country over the same time period, just using different variable, so we hold the data frame list, survey dates, country, *and* caption constant.
 
-### Identify the Variables
+### Identify the Variables {#chapter-5-2-1}
 
 We are creating trend graphs for the variables `Q1COVID19`, `Q101`, and `Q609`. 
 
@@ -277,7 +277,7 @@ names(variables_2_plot) <- c("Q1COVID19",
 
 Now you have a names list of variables. Let's plot them.
 
-### Plot the Variables
+### Plot the Variables {#chapter-5-2-2}
 
 Recall we want to hold constant the `data_frames`, `svry_dates`, `select_country` and `.caption` parameters because those will be the same for every graph. The only parameter we want to vary is `.var`.
 
