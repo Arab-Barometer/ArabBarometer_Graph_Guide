@@ -7,7 +7,7 @@ For this example, let's create a comparative stacked bar chart for `Q2ACOVID19`.
 ```{r How.4.01-Complete-Code-Example,fig.dim=c(13,12)}
 
 calculate_stacked_df(survey1,
-                     "Q2ACOVID19") %>%
+                     "Q2ACOVID19") |>
   plot_stacked_comp(.caption = "Original Order")
 
 
@@ -67,7 +67,7 @@ And now when we plot the recoded data frame.
 
 ```{r How.04.2-PlotRecode1,fig.dim=c(13,12)}
 
-new_df %>%
+new_df |>
   plot_stacked_comp(.caption = "New Order, Option 1")
 
 ```
@@ -111,7 +111,7 @@ Finally, we plot the new data frame.
 
 ```{r How.04.2-PlotRecode2,fig.dim=c(13,12)}
 
-new_df %>%
+new_df |>
   plot_stacked_comp(.caption = "New Order, Option 2")
 
 ```
