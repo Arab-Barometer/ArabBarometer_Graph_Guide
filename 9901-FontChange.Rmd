@@ -1,12 +1,12 @@
 # (PART) How do I ...? {-}
-# Change the Font Size
+# Change the Font Size {#change-font-size}
 
 
 ```{r How.1-Complete-Code-Example, fig.dim=c(13,12)}
 
-survey1 %>%
+survey1 |>
   calculate_smry_individual("Q1COVID19",
-                            .country = "Algeria") %>%
+                            .country = "Algeria") |>
   plot_smry_individual(.caption = "Arab Barometer Wave VI, Survey I, Algeria",
                        theme.title_size = 28,      # Changes title size
                        theme.subtitle_size = 14,   # Changes subtitle size
