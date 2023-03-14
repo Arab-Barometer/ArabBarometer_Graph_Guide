@@ -1,7 +1,7 @@
-# Change Default Colors
+# Change Default Colors {#change-colors}
 
 
-## Basic Cross Tabs
+## Basic Cross Tabs {#change-colors-basic}
 
 The parameter is called **`.clr`**. This parameter accepts either a color name from `ArabBarometR` or a hex code.
 
@@ -20,7 +20,7 @@ survey1 |>
 ```
 
 
-## Demographic Cross Tabs
+## Demographic Cross Tabs {#change-colors-demographic}
 
 The parameter to change is called **`.color_palette`**. This parameter accepts any of the following:
 
@@ -64,7 +64,7 @@ data_frame_2_plot |>
 ```
 
 
-## Stacked Graphs
+## Stacked Graphs {#change-colors-stacked}
 
 The parameter is called **`.color_palette`**. The parameter accepts any of the following:
 
