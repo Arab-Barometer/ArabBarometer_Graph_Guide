@@ -18,6 +18,11 @@
  * <font size="4"> [Comparative Demographic Trend Graphs][BARE BONES: Comparative Country Demographic Trend Graphs] </font> 
 
  
+ <font size="5"> **BARE BONES** Stacked Graphs </font>
+ 
+ * <font size="4"> [Comparative Stacked Graphs][Stacked Plots] </font> 
+ * <font size="4"> [Single Country Stacked Graphs][BARE BONES: Single Country Stacked Plots] </font> 
+ 
  
  <font size="5"> **BARE BONES** Multi-Question Graphs </font>
  
@@ -25,13 +30,6 @@
  * <font size="4"> [Comparative Multi-Question Plots][BARE BONES: Comparative Multi-Question Plots] </font> 
  * <font size="4"> [Comparative Gird Graphs][BARE BONES: Comparative Grid Plots] </font> 
  * <font size="4"> [Single Country Multi-Question Trend Plots][BARE BONES: Single Country Multi-Question Trend Plots] </font> 
- 
- 
- 
- <font size="5"> **BARE BONES** Stacked Graphs </font>
- 
- * <font size="4"> [Comparative Stacked Graphs][BARE BONES: Stacked Plots] </font> 
- * <font size="4"> [Single Country Stacked Graphs][BARE BONES: Single Country Stacked Plots] </font> 
  
  
  <font size="5"> All Things Color </font>
