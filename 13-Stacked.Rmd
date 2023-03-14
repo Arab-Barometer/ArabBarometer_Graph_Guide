@@ -1,5 +1,5 @@
 # (PART) Stacked Plots {-}
-# BARE BONES: Stacked Plots
+# Stacked Plots
 
 Stacked bar graphs are very useful for displaying responses to nominal questions across countries. Unlike the graphs from [Chapter 4](#comparative-overall-graphs), which can only compare one nominal category at a time across countries, a stacked bar graph allows the user to show the breakdown of responses to every category for each country.
 
