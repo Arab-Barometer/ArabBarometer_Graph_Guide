@@ -57,7 +57,7 @@ stacked_data_frame <- calculate_stacked_df(
 
 ### Plot the Summary
 
-Now that we have the data frame, the next step is to plot it. For this step we use the function `**plot_stacked_comp()**`. The only *required* input is a data frame.
+Now that we have the data frame, the next step is to plot it. For this step we use the function **`plot_stacked_comp()`**. The only *required* input is a data frame.
 
 ```{r 13.5-plot-object, fig.dim=c(13,12)}
 
@@ -94,7 +94,11 @@ calculate_stacked_df(survey1,
 
 ## Create Many Graphs
 
-Normally, stacked graphs tend to be one-offs, but on the off chance you need to make many of them, you can, with the help of the `purrr` package. The method here is the same as that for creating [many single country cross tab graphs](#chapter-1-2).
+Normally, stacked graphs tend to be one-offs, but on the off chance you need to make many of them, you can, with the help of the `purrr` package. The steps follow.
+
+1. Create an iterable object (read: list or vector) of variable you want to graph.
+2. Map your object onto the `calculate_stacked_df()` function to create a list of summaries.
+3. Map your list of summaries onto the `plot_stacked_comp()` function to create a list of plots.
 
 To be clear, there are many, **many** different ways to create code to accomplish the goal of creating many graphs at one time. The method suggested here is only one.
 
@@ -117,7 +121,7 @@ We have save a vector of our three variables to an object called `variables_2_pl
 
 The next step is to use the `map()` function from the `purrr` package to create a list of summaries. The `map()` function requires two arguments: (1) an iterable object (e.g., a list or vector), and (2) a function. In the case, our iterable object is `variables_2_plot` and our function is `calculate_stacked_df()`.
 
-```{r 13.10-map-variables}
+```{r 13.10-map-variables-error,error=TRUE}
 
 summary_list <- map(
   variables_2_plot,     # List of variables
@@ -125,3 +129,161 @@ summary_list <- map(
   )
 
 ```
+
+Oops. What went wrong? Take a moment to guess.
+
+Did you guess that `calculate_stacked_df()` takes two arguments and only one is provided here? If so, you are correct!
+
+The above code does not provide the data `calculate_stacked_df()` needs to create the data frame; specially `survey1`.
+
+The data used to create these summaries is the same every time. That means even though we are changing the variables we want to create summaries for, we can hold the input data constant. You can do this in the `map()` function by including the name of the parameter you want to hold constant, and setting it equal to your constant input. The `map()` function knows to use that input for every variable.
+
+
+```{r 13.11-map-variables-correct}
+
+summary_list <- map(
+  variables_2_plot,     # List of variables
+  calculate_stacked_df, # Function to map onto
+  .ab = survey1         # Constant parameter
+  )
+
+```
+
+Unlike the list produced produced when we created [many summaries for single country overall plots](#chapter-1-2-2), this list of summaries is not named. The list has three elements (one for each variable) called `"1"`, `"2"`, and `"3"`. While not strictly necessary, it is useful to provide names for referencing later. Luckily, if you saved the names of the variables as a vector, you can set that vector as the names of the elements in the summary list^[This only works if the variables are in a vector, **not** a list].
+
+```{r 13.12-summary-list-names}
+
+names(summary_list) <- variables_2_plot
+
+```
+
+Now, you can look at each variable's summary by referencing the variable name.
+
+
+```{r 13.13-look-at-summaries}
+
+summary_list$Q2061A
+summary_list$Q118
+summary_list$Q516A
+
+```
+
+Excellent. On to plotting.
+
+### Create Many Plots
+
+Our next step is to take the list of summaries, and map it onto the function `plot_stacked_df()`. This will create a list of plots. We will save it to an object `plot_list`.
+
+```{r 13.14-map-summaries}
+
+plot_list <- map(
+  summary_list,
+  plot_stacked_comp
+  )
+
+```
+
+This mapping worked without any extra inputs because `plot_stacked_comp()` requires only one input.
+
+We can also see that the names of summary list carried through.
+
+```{r 13.15-plot-names}
+
+names(plot_list)
+
+```
+
+To look at each plot, we can simply call them by name.
+
+```{r 13.16-view-plots,fig.dim=c(13,12)}
+
+plot_list$Q2061A
+plot_list$Q118
+plot_list$Q516A
+
+```
+Hopefully you notice that just like when we created our first stacked plot with only the stacked data frame as an input, the caption needs to be set.
+
+The caption should be the same for every graph here. Since the input is constant, we can set that in the `map()` function just as we did with the data frame input in the previous section.
+
+```{r 13.17-second-plot-map}
+
+plot_list <- map(
+  summary_list,
+  plot_stacked_comp,
+  .caption = "Arab Barometer Wave VI, Survey 1"
+  )
+
+```
+
+Now, all plots should have the same caption. We can verify that by calling each of them.
+
+```{r 13.17-second-view-plots,fig.dim=c(13,12)}
+
+plot_list$Q2061A
+plot_list$Q118
+plot_list$Q516A
+
+```
+
+And there you have it! We have created many stacked plots! All together, the code looks like the following:
+
+```{r 13.18-final-code,fig.dim=c(13,12)}
+
+variables_2_plot <- c("Q2061A",
+                      "Q118",
+                      "Q516A")
+
+summary_list <- map(
+  variables_2_plot,     
+  calculate_stacked_df, 
+  .ab = survey1         
+  )
+
+names(summary_list) <- variables_2_plot
+
+
+plot_list <- map(
+  summary_list,
+  plot_stacked_comp,
+  .caption = "Arab Barometer Wave VI, Survey 1"
+  )
+
+```
+
+## Extras
+
+### Long Legends
+
+You may have noticed the legends of many of these plots running off the page. Take the original stacked graph for `Q2061A` for example.
+
+```{r 13.19-legend-example1, fig.dim=c(13,12)}
+
+plot_stacked_comp(stacked_data_frame,
+                  .caption = "Arab Barometer Wave VI, Survey 1")
+
+```
+
+Two rows does not seem to be enough to see all the categories in the legend. You can fix that with the `guides()` function from the `ggplot2` package.
+
+```{r 13.20-legend-example2, fig.dim=c(13,12)}
+
+plot_stacked_comp(stacked_data_frame,
+                  .caption = "Arab Barometer Wave VI, Survey 1") +
+  guides(fill = guide_legend(nrow = 3))
+
+```
+
+The input to the `guides()` function should be thought of as follows: "For the **fill** legend, use **three** rows." You can change the number as you see fit.
+
+### Font Size
+
+Another way to get all the text to be visible is to change the font size. You can read how to do that in [the chapter on changing the font size](#change-font-size).
+
+### Colors
+
+You can learn how to change the colors for the stacked graph in [the chapter on changing graph colors](#change-colors-stacked).
+
+### Order
+
+You can learn how to change the order for a stacked graph in [the chapter on changing the order for a stacked graph](#order-change-stacked-graphs).
