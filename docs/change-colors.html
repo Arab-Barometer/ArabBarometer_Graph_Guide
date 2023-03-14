@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 BARE BONES: Comparative Country Demographic Trend Graphs | ArabBarometR Graphing Guide</title>
-  <meta name="description" content="Chapter 9 BARE BONES: Comparative Country Demographic Trend Graphs | ArabBarometR Graphing Guide" />
+  <title>Chapter 17 Change Default Colors | ArabBarometR Graphing Guide</title>
+  <meta name="description" content="Chapter 17 Change Default Colors | ArabBarometR Graphing Guide" />
   <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 BARE BONES: Comparative Country Demographic Trend Graphs | ArabBarometR Graphing Guide" />
+  <meta property="og:title" content="Chapter 17 Change Default Colors | ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 BARE BONES: Comparative Country Demographic Trend Graphs | ArabBarometR Graphing Guide" />
+  <meta name="twitter:title" content="Chapter 17 Change Default Colors | ArabBarometR Graphing Guide" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="bare-bones-comparative-country-trend-graphs.html"/>
-<link rel="next" href="stacked-plots.html"/>
+<link rel="prev" href="color-options.html"/>
+<link rel="next" href="highlight-certain-countries.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -347,51 +347,110 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bare-bones-comparative-country-demographic-trend-graphs" class="section level1 hasAnchor" number="9">
-<h1><span class="header-section-number">Chapter 9</span> BARE BONES: Comparative Country Demographic Trend Graphs<a href="bare-bones-comparative-country-demographic-trend-graphs.html#bare-bones-comparative-country-demographic-trend-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="create-comparative-demographic-trend-graph" class="section level2 hasAnchor" number="9.1">
-<h2><span class="header-section-number">9.1</span> Create Comparative Demographic Trend Graph<a href="bare-bones-comparative-country-demographic-trend-graphs.html#create-comparative-demographic-trend-graph" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb166-2"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-2" aria-hidden="true" tabindex="-1"></a>  survey1,</span>
-<span id="cb166-3"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-3" aria-hidden="true" tabindex="-1"></a>  survey2,</span>
-<span id="cb166-4"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-4" aria-hidden="true" tabindex="-1"></a>  survey3</span>
-<span id="cb166-5"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-5" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb166-6"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb166-7"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-7" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
-<span id="cb166-8"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Suvey 2&quot;</span>,</span>
-<span id="cb166-9"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
-<span id="cb166-10"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb166-11"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-11" aria-hidden="true" tabindex="-1"></a><span class="co"># One plot per Country</span></span>
-<span id="cb166-12"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp_demographics</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb166-13"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-13" aria-hidden="true" tabindex="-1"></a>                             df_list,</span>
-<span id="cb166-14"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-14" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;gender&quot;</span>,</span>
-<span id="cb166-15"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-15" aria-hidden="true" tabindex="-1"></a>                             survey_dates,</span>
-<span id="cb166-16"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-16" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Country&quot;</span>)</span>
-<span id="cb166-17"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb166-18"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-18" aria-hidden="true" tabindex="-1"></a><span class="co"># One plot per demographic</span></span>
-<span id="cb166-19"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp_demographics</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb166-20"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-20" aria-hidden="true" tabindex="-1"></a>                             df_list,</span>
-<span id="cb166-21"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-21" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;gender&quot;</span>,</span>
-<span id="cb166-22"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-22" aria-hidden="true" tabindex="-1"></a>                             survey_dates,</span>
-<span id="cb166-23"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#cb166-23" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;demographic&quot;</span>)</span></code></pre></div>
-<p>The code produces this graphs:</p>
-<pre><code>## `geom_line()`: Each group consists of only one observation.
-## ℹ Do you need to adjust the group aesthetic?</code></pre>
-<p><img src="bookdownproj_files/figure-html/08.2-Complete-Graph-Example-1.png" width="1248" /><img src="bookdownproj_files/figure-html/08.2-Complete-Graph-Example-2.png" width="1248" /></p>
+<div id="change-colors" class="section level1 hasAnchor" number="17">
+<h1><span class="header-section-number">Chapter 17</span> Change Default Colors<a href="change-colors.html#change-colors" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="change-colors-basic" class="section level2 hasAnchor" number="17.1">
+<h2><span class="header-section-number">17.1</span> Basic Cross Tabs<a href="change-colors.html#change-colors-basic" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The parameter is called <strong><code>.clr</code></strong>. This parameter accepts either a color name from <code>ArabBarometR</code> or a hex code.</p>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="change-colors.html#cb208-1" aria-hidden="true" tabindex="-1"></a>survey1  <span class="sc">|&gt;</span> </span>
+<span id="cb208-2"><a href="change-colors.html#cb208-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb208-3"><a href="change-colors.html#cb208-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb208-4"><a href="change-colors.html#cb208-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.clr =</span> <span class="st">&quot;zeke&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/How.3.1-Complete-Code-Example-1.png" width="1248" /></p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="change-colors.html#cb209-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">|&gt;</span></span>
+<span id="cb209-2"><a href="change-colors.html#cb209-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb209-3"><a href="change-colors.html#cb209-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.clr =</span> <span class="st">&quot;#FF5E64&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/How.3.1-Complete-Code-Example-2.png" width="1248" /></p>
+</div>
+<div id="change-colors-demographic" class="section level2 hasAnchor" number="17.2">
+<h2><span class="header-section-number">17.2</span> Demographic Cross Tabs<a href="change-colors.html#change-colors-demographic" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The parameter to change is called <strong><code>.color_palette</code></strong>. This parameter accepts any of the following:</p>
+<ul>
+<li><code>"default"</code> (which it is set to),</li>
+<li>the name of an <code>ArabBarometR</code> color palette,</li>
+<li>a vector of <code>ArabBarometR</code> color names, or</li>
+<li>a vector of hex codes.</li>
+</ul>
+<p>If you choose to use a vector of either color names or hex codes, it <strong>must</strong> be the same length as the number of demographic categories. For example, the <code>gender</code> demographic has two categories, so a vector of custom colors needs to be length two. You can check the number of categories by looking at the data frame you are plotting.</p>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="change-colors.html#cb210-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">|&gt;</span></span>
+<span id="cb210-2"><a href="change-colors.html#cb210-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb210-3"><a href="change-colors.html#cb210-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb210-4"><a href="change-colors.html#cb210-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb210-5"><a href="change-colors.html#cb210-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_individual</span>(<span class="at">.color_palette =</span> <span class="st">&quot;blue pair&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/How.3.2-Complete-Code-Example-1.png" width="1248" /></p>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="change-colors.html#cb211-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">|&gt;</span></span>
+<span id="cb211-2"><a href="change-colors.html#cb211-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb211-3"><a href="change-colors.html#cb211-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb211-4"><a href="change-colors.html#cb211-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_comp</span>(<span class="at">.color_palette =</span> <span class="fu">c</span>(<span class="st">&quot;salma&quot;</span>,<span class="st">&quot;mary clare&quot;</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/How.3.2-Complete-Code-Example-2.png" width="1248" /></p>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="change-colors.html#cb212-1" aria-hidden="true" tabindex="-1"></a>data_frame_2_plot <span class="ot">&lt;-</span> survey1 <span class="sc">|&gt;</span></span>
+<span id="cb212-2"><a href="change-colors.html#cb212-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb212-3"><a href="change-colors.html#cb212-3" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;Q101&quot;</span>) </span>
+<span id="cb212-4"><a href="change-colors.html#cb212-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb212-5"><a href="change-colors.html#cb212-5" aria-hidden="true" tabindex="-1"></a>data_frame_2_plot</span></code></pre></div>
+<pre><code>## # A tibble: 35 × 3
+## # Groups:   Country [6]
+##    Country Q101              Q1COVID19
+##    &lt;chr&gt;   &lt;fct&gt;                 &lt;dbl&gt;
+##  1 Algeria Very good                54
+##  2 Algeria Good                     73
+##  3 Algeria Bad                      72
+##  4 Algeria Very bad                 80
+##  5 Algeria Don’t know               38
+##  6 Algeria Refused to answer         0
+##  7 Jordan  Very good                70
+##  8 Jordan  Good                     65
+##  9 Jordan  Bad                      70
+## 10 Jordan  Very bad                 52
+## # … with 25 more rows</code></pre>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="change-colors.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 6 categories means 6 colors needed</span></span>
+<span id="cb214-2"><a href="change-colors.html#cb214-2" aria-hidden="true" tabindex="-1"></a>data_frame_2_plot <span class="sc">|&gt;</span> </span>
+<span id="cb214-3"><a href="change-colors.html#cb214-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_comp</span>(<span class="at">.color_palette =</span> <span class="fu">c</span>(<span class="st">&quot;#0098BE&quot;</span>,</span>
+<span id="cb214-4"><a href="change-colors.html#cb214-4" aria-hidden="true" tabindex="-1"></a>                                                         <span class="st">&quot;#DF6E21&quot;</span>,</span>
+<span id="cb214-5"><a href="change-colors.html#cb214-5" aria-hidden="true" tabindex="-1"></a>                                                         <span class="st">&quot;#AC517F&quot;</span>,</span>
+<span id="cb214-6"><a href="change-colors.html#cb214-6" aria-hidden="true" tabindex="-1"></a>                                                         <span class="st">&quot;#7CBBC7&quot;</span>,</span>
+<span id="cb214-7"><a href="change-colors.html#cb214-7" aria-hidden="true" tabindex="-1"></a>                                                         <span class="st">&quot;#796391&quot;</span>,</span>
+<span id="cb214-8"><a href="change-colors.html#cb214-8" aria-hidden="true" tabindex="-1"></a>                                                         <span class="st">&quot;#CF83A3&quot;</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/How.3.2-Complete-Code-Example-3.png" width="1248" /></p>
+</div>
+<div id="change-colors-stacked" class="section level2 hasAnchor" number="17.3">
+<h2><span class="header-section-number">17.3</span> Stacked Graphs<a href="change-colors.html#change-colors-stacked" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The parameter is called <strong><code>.color_palette</code></strong>. The parameter accepts any of the following:</p>
+<ul>
+<li>the name of an <code>ArabBarometR</code> color palette,</li>
+<li>a vector of <code>ArabBarometR</code> color names, or</li>
+<li>a vector of hex codes.</li>
+</ul>
+<p>If you choose to use a vector of either color names or hex codes, it <strong>must</strong> be the same length as the number of categories. Recall that the categories “don’t know” and “refuse” are combined into a single category unless otherwise specified. When determining the number of colors you need for your vector, only count the “don’t know” and “refuse” categories as one category.</p>
+<p>Take <code>Q2061A</code> as an example. In the first survey of wave six, question <code>Q2061A</code> had ten response options including “don’t know” and “refuse”. The <code>calculate_stacked_df()</code> function combines “don’t konw” and “refuse” into one category, so the color palette vector only needs to be length nine.</p>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="change-colors.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
+<span id="cb215-2"><a href="change-colors.html#cb215-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;Q2061A&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb215-3"><a href="change-colors.html#cb215-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>,</span>
+<span id="cb215-4"><a href="change-colors.html#cb215-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">.color_palette =</span> <span class="st">&quot;soft rainbow&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/How.3.4-Complete-Code-Example-1.png" width="1248" /></p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="change-colors.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
+<span id="cb216-2"><a href="change-colors.html#cb216-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;Q2061A&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb216-3"><a href="change-colors.html#cb216-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>,</span>
+<span id="cb216-4"><a href="change-colors.html#cb216-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">.color_palette =</span> <span class="fu">c</span>(<span class="st">&quot;AB blue&quot;</span>,</span>
+<span id="cb216-5"><a href="change-colors.html#cb216-5" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;AB orange&quot;</span>,</span>
+<span id="cb216-6"><a href="change-colors.html#cb216-6" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;AB magenta&quot;</span>,</span>
+<span id="cb216-7"><a href="change-colors.html#cb216-7" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;AB light blue&quot;</span>,</span>
+<span id="cb216-8"><a href="change-colors.html#cb216-8" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;AB purple&quot;</span>,</span>
+<span id="cb216-9"><a href="change-colors.html#cb216-9" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;AB pink&quot;</span>,</span>
+<span id="cb216-10"><a href="change-colors.html#cb216-10" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;AB yellow&quot;</span>,</span>
+<span id="cb216-11"><a href="change-colors.html#cb216-11" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;zeke&quot;</span>,</span>
+<span id="cb216-12"><a href="change-colors.html#cb216-12" aria-hidden="true" tabindex="-1"></a>                                       <span class="st">&quot;pale green&quot;</span>))</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/How.3.4-Complete-Code-Example-2.png" width="1248" /></p>
 
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="bare-bones-comparative-country-trend-graphs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="stacked-plots.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="color-options.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="highlight-certain-countries.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -422,7 +481,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/08-ComparativeDemographicTrend.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/9803-ColorChange.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -430,7 +489,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/08-ComparativeDemographicTrend.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/9803-ColorChange.Rmd",
 "text": null
 },
 "download": null,
