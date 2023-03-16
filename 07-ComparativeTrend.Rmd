@@ -55,7 +55,7 @@ Let's go!
 
 ### Prep Work {#chapter-7-1-1}
 
-Unlike other graphs in other chapters, the user does not create a summary for a trend graph. There is only one function to use: `plot_trend_comp()`.
+Similar to creating a trend graph for an individual country, there is no need to create a summary. There is only one function to use: `plot_trend_comp()`.
 
 You can create the plot all in one step with the function, but it is prudent to do a little prep work before hand. This makes your work more clear and your life easier down the line.
 
@@ -101,7 +101,7 @@ The dates should also be in the order you want them to appear. The dates should 
 
 Now that we have defined our data frame list and survey dates, we can create our trend plot.
 
-### Plot a Trend Graph {#chapter-7-1-2}
+### Plot a Comparative Trend Graph {#chapter-7-1-2}
 
 To create a trend graph plot for an individual country, use the `plot_trend_comp()` function.
 
