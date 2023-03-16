@@ -264,7 +264,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html"><i class="fa fa-check"></i><b>8</b> BARE BONES: Comparative Country Trend Graphs</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html#create-comparative-trend-graph"><i class="fa fa-check"></i><b>8.1</b> Create Comparative Trend Graph</a></li>
+<li class="chapter" data-level="8.1" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html#chapter-7"><i class="fa fa-check"></i><b>8.1</b> Create Comparative Trend Graph</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html#chapter-7-1-1"><i class="fa fa-check"></i><b>8.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="8.1.2" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html#chapter-7-1-2"><i class="fa fa-check"></i><b>8.1.2</b> Plot a Trend Graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html#chapter-7-2"><i class="fa fa-check"></i><b>8.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html#chapter-7-2-1"><i class="fa fa-check"></i><b>8.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="8.2.2" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html#chapter-7-2-2"><i class="fa fa-check"></i><b>8.2.2</b> Plot the Variables</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="bare-bones-comparative-country-demographic-trend-graphs.html"><a href="bare-bones-comparative-country-demographic-trend-graphs.html"><i class="fa fa-check"></i><b>9</b> BARE BONES: Comparative Country Demographic Trend Graphs</a>
 <ul>
@@ -350,8 +359,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="bare-bones-comparative-country-trend-graphs" class="section level1 hasAnchor" number="8">
 <h1><span class="header-section-number">Chapter 8</span> BARE BONES: Comparative Country Trend Graphs<a href="bare-bones-comparative-country-trend-graphs.html#bare-bones-comparative-country-trend-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="create-comparative-trend-graph" class="section level2 hasAnchor" number="8.1">
-<h2><span class="header-section-number">8.1</span> Create Comparative Trend Graph<a href="bare-bones-comparative-country-trend-graphs.html#create-comparative-trend-graph" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="chapter-7" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> Create Comparative Trend Graph<a href="bare-bones-comparative-country-trend-graphs.html#chapter-7" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At the end, your code will look like the following:</p>
 <div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="bare-bones-comparative-country-trend-graphs.html#cb165-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
 <span id="cb165-2"><a href="bare-bones-comparative-country-trend-graphs.html#cb165-2" aria-hidden="true" tabindex="-1"></a>  survey1,</span>
@@ -360,16 +369,155 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb165-5"><a href="bare-bones-comparative-country-trend-graphs.html#cb165-5" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb165-6"><a href="bare-bones-comparative-country-trend-graphs.html#cb165-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb165-7"><a href="bare-bones-comparative-country-trend-graphs.html#cb165-7" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
-<span id="cb165-8"><a href="bare-bones-comparative-country-trend-graphs.html#cb165-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Suvey 2&quot;</span>,</span>
+<span id="cb165-8"><a href="bare-bones-comparative-country-trend-graphs.html#cb165-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 2&quot;</span>,</span>
 <span id="cb165-9"><a href="bare-bones-comparative-country-trend-graphs.html#cb165-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
 <span id="cb165-10"><a href="bare-bones-comparative-country-trend-graphs.html#cb165-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb165-11"><a href="bare-bones-comparative-country-trend-graphs.html#cb165-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb165-12"><a href="bare-bones-comparative-country-trend-graphs.html#cb165-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
 <span id="cb165-13"><a href="bare-bones-comparative-country-trend-graphs.html#cb165-13" aria-hidden="true" tabindex="-1"></a>                df_list,</span>
-<span id="cb165-14"><a href="bare-bones-comparative-country-trend-graphs.html#cb165-14" aria-hidden="true" tabindex="-1"></a>                survey_dates)</span></code></pre></div>
+<span id="cb165-14"><a href="bare-bones-comparative-country-trend-graphs.html#cb165-14" aria-hidden="true" tabindex="-1"></a>                survey_dates,</span>
+<span id="cb165-15"><a href="bare-bones-comparative-country-trend-graphs.html#cb165-15" aria-hidden="true" tabindex="-1"></a>                .caption <span class="st">&quot;Arab Barometer Wave VI&quot;</span>)</span></code></pre></div>
 <p>The code produces this graph:</p>
 <p><img src="bookdownproj_files/figure-html/07.2-Complete-Graph-Example-1.png" width="1248" /></p>
+<p>You may notice that the code here is very similar to that for <a href="chapter-5.html#chapter-5">single country trend graphs</a>. In fact, the only differences are that the user does not have to specify a country and the names of the function.</p>
+<p>Let’s go!</p>
+<div id="chapter-7-1-1" class="section level3 hasAnchor" number="8.1.1">
+<h3><span class="header-section-number">8.1.1</span> Prep Work<a href="bare-bones-comparative-country-trend-graphs.html#chapter-7-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Unlike other graphs in other chapters, the user does not create a summary for a trend graph. There is only one function to use: <code>plot_trend_comp()</code>.</p>
+<p>You can create the plot all in one step with the function, but it is prudent to do a little prep work before hand. This makes your work more clear and your life easier down the line.</p>
+<div id="chp7-trend-df-list" class="section level4 unnumbered hasAnchor">
+<h4>Create a Data Frame List<a href="bare-bones-comparative-country-trend-graphs.html#chp7-trend-df-list" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The first step is to create a list of data frames.</p>
+<p>There should be one data frame for each period you wish to graph. That is, each data frame should be from a different survey you want to include in your graph. In the example for the chapter, we’re using the three surveys from Wave VI, which we call <code>survey1</code>, <code>survey2</code>, and <code>survey3</code>. Each survey is its own data frame.</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="bare-bones-comparative-country-trend-graphs.html#cb166-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb166-2"><a href="bare-bones-comparative-country-trend-graphs.html#cb166-2" aria-hidden="true" tabindex="-1"></a>  survey1,</span>
+<span id="cb166-3"><a href="bare-bones-comparative-country-trend-graphs.html#cb166-3" aria-hidden="true" tabindex="-1"></a>  survey2,</span>
+<span id="cb166-4"><a href="bare-bones-comparative-country-trend-graphs.html#cb166-4" aria-hidden="true" tabindex="-1"></a>  survey3</span>
+<span id="cb166-5"><a href="bare-bones-comparative-country-trend-graphs.html#cb166-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>The list of data frames should be in the order you want them to appear (ideally, chronologically). The data on the graph will show up in the order of the list. So if you create a list in the order <code>list(survey2, survey1, survey3)</code>, the data from <code>survey2</code> will show up before the data from <code>survey1</code>.</p>
+<p><strong>Please note: This is ambivalent to language!</strong> The <code>plot_trend_comp()</code> function will assume the order of the list is the correct order, and treat it accordingly. When you enter a list as <code>list(survey1, survey2, surveye3)</code>, the English graph will show the data right to left (survey 1 -&gt; survey 2 -&gt; survey 3), while the Arabic graph will show the data left to right (survey 3 &lt;- survey 2 &lt;- survey 1). You do <strong>not</strong> need to alter your input.</p>
+</div>
+<div id="chp7-trend-date-vector" class="section level4 unnumbered hasAnchor">
+<h4>Create a Date Vector<a href="bare-bones-comparative-country-trend-graphs.html#chp7-trend-date-vector" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The next step is to create a vector of the dates you want to show on the x-axis of your graph. Branding guidelines call for the years in which the survey took place. For simplicity in the example, let’s just say <code>"Survey X Year"</code>.</p>
+<p>You need a date for each data frame in your data frame list. Otherwise, the function won’t know how to label the x-axis.</p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="bare-bones-comparative-country-trend-graphs.html#cb167-1" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1 Year&quot;</span>,</span>
+<span id="cb167-2"><a href="bare-bones-comparative-country-trend-graphs.html#cb167-2" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 2 Year&quot;</span>,</span>
+<span id="cb167-3"><a href="bare-bones-comparative-country-trend-graphs.html#cb167-3" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3 Year&quot;</span>)</span></code></pre></div>
+<p>The dates should also be in the order you want them to appear. The dates should line up with the data frames. In the chapter example, the order of the data frames is survey 1, survey 2, survey 3. Therefore, the survey dates need to have the order survey 1 year, survey 2 year, survey 3 year.</p>
+<p><strong>Please note: This is ambivalent to language!</strong> Just as with the data frame list, the <code>plot_trend_comp()</code> function will put the data in the correct order according to the language of the graph.</p>
+<p>Now that we have defined our data frame list and survey dates, we can create our trend plot.</p>
+</div>
+</div>
+<div id="chapter-7-1-2" class="section level3 hasAnchor" number="8.1.2">
+<h3><span class="header-section-number">8.1.2</span> Plot a Trend Graph<a href="bare-bones-comparative-country-trend-graphs.html#chapter-7-1-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To create a trend graph plot for an individual country, use the <code>plot_trend_comp()</code> function.</p>
+<p>This function takes a few more parameters, and in a different order, than the functions we have worked with so far. In total, there are <em>three</em> necessary parameters: <code>.var</code>, <code>data_frames</code>, and <code>svry_dates</code>. To see a complete list of parameters, including optional ones, use <code>?plot_trend_comp()</code> in your <code>R</code> console.</p>
+<p>The parameter <code>.var</code> is the variable you want to plot. <strong>It must have the same name in every data frame in the data frame list.</strong> If the variable you want to plot is named <code>"Q101"</code> in one sure, but <code>"Q102"</code> in another, the function will not include <code>"Q102"</code> in the plot. Computers can do a lot but as of yet they cannot think critically, so the onus is on you.</p>
+<p>The parameter <code>data_frames</code> is a list of data frames. This is what we created <a href="chp7-trend-df-list">here</a>.</p>
+<p>The parameter <code>svry_dates</code> is a character vector of dates that will show up on the x-axis of the graph. This is what we created <a href="chp7-trend-date-vector">here</a>.</p>
+<p>Now let’s fill it in.</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="bare-bones-comparative-country-trend-graphs.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="at">.var           =</span> <span class="st">&quot;Q1COVID19&quot;</span>,    <span class="co"># Variable to graph</span></span>
+<span id="cb168-2"><a href="bare-bones-comparative-country-trend-graphs.html#cb168-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data_frames    =</span> df_list,        <span class="co"># List of data frames</span></span>
+<span id="cb168-3"><a href="bare-bones-comparative-country-trend-graphs.html#cb168-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">svry_dates     =</span> survey_dates)   <span class="co"># Vector of survey dates</span></span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/07.6-First-Example-1.png" width="1248" />
+Nearly there! What still needs to be changed?</p>
+<p>The caption, of course! Just as in all the other <code>plot_</code> functions in the <code>ArabBarometR</code> package, you can change the caption using the <code>.caption</code> parameter.</p>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="bare-bones-comparative-country-trend-graphs.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="at">.var           =</span> <span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb169-2"><a href="bare-bones-comparative-country-trend-graphs.html#cb169-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">data_frames    =</span> df_list,        </span>
+<span id="cb169-3"><a href="bare-bones-comparative-country-trend-graphs.html#cb169-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">svry_dates     =</span> survey_dates,   </span>
+<span id="cb169-4"><a href="bare-bones-comparative-country-trend-graphs.html#cb169-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">.caption       =</span> <span class="st">&quot;Arab Barometer Wave VI&quot;</span>)     </span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/07.8-First-Example-1.png" width="1248" /></p>
+<p>Putting all the steps together, we have the code and graph we originally started with.</p>
+<p><img src="bookdownproj_files/figure-html/07.9-Complete-Code-Example-1.png" width="1248" /></p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="bare-bones-comparative-country-trend-graphs.html#cb170-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb170-2"><a href="bare-bones-comparative-country-trend-graphs.html#cb170-2" aria-hidden="true" tabindex="-1"></a>  survey1,</span>
+<span id="cb170-3"><a href="bare-bones-comparative-country-trend-graphs.html#cb170-3" aria-hidden="true" tabindex="-1"></a>  survey2,</span>
+<span id="cb170-4"><a href="bare-bones-comparative-country-trend-graphs.html#cb170-4" aria-hidden="true" tabindex="-1"></a>  survey3</span>
+<span id="cb170-5"><a href="bare-bones-comparative-country-trend-graphs.html#cb170-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb170-6"><a href="bare-bones-comparative-country-trend-graphs.html#cb170-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb170-7"><a href="bare-bones-comparative-country-trend-graphs.html#cb170-7" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1 Year&quot;</span>,</span>
+<span id="cb170-8"><a href="bare-bones-comparative-country-trend-graphs.html#cb170-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 2 Year&quot;</span>,</span>
+<span id="cb170-9"><a href="bare-bones-comparative-country-trend-graphs.html#cb170-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3 Year&quot;</span>)</span>
+<span id="cb170-10"><a href="bare-bones-comparative-country-trend-graphs.html#cb170-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb170-11"><a href="bare-bones-comparative-country-trend-graphs.html#cb170-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb170-12"><a href="bare-bones-comparative-country-trend-graphs.html#cb170-12" aria-hidden="true" tabindex="-1"></a>                df_list,</span>
+<span id="cb170-13"><a href="bare-bones-comparative-country-trend-graphs.html#cb170-13" aria-hidden="true" tabindex="-1"></a>                survey_dates,</span>
+<span id="cb170-14"><a href="bare-bones-comparative-country-trend-graphs.html#cb170-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="chapter-7-2" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> Create Many Graphs<a href="bare-bones-comparative-country-trend-graphs.html#chapter-7-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>A nice payoff of creating the <a href="bare-bones-comparative-country-trend-graphs.html#chp7-trend-df-list">data frame list</a> and the <a href="bare-bones-comparative-country-trend-graphs.html#chp7-trend-date-vector">date vector</a> is that these objects (<code>df_list</code> and <code>survey_dates</code>) can be re-used any time you want to create a graph over the same time period.</p>
+<p>For example, say you wanted to also create a graph tracking Algerian’s views of the economy and religiosity. The only parameter in the <code>plot_trend_comp()</code> function that needs updating is <code>.var</code>.</p>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="bare-bones-comparative-country-trend-graphs.html#cb171-1" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb171-2"><a href="bare-bones-comparative-country-trend-graphs.html#cb171-2" aria-hidden="true" tabindex="-1"></a>  survey1,</span>
+<span id="cb171-3"><a href="bare-bones-comparative-country-trend-graphs.html#cb171-3" aria-hidden="true" tabindex="-1"></a>  survey2,</span>
+<span id="cb171-4"><a href="bare-bones-comparative-country-trend-graphs.html#cb171-4" aria-hidden="true" tabindex="-1"></a>  survey3</span>
+<span id="cb171-5"><a href="bare-bones-comparative-country-trend-graphs.html#cb171-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb171-6"><a href="bare-bones-comparative-country-trend-graphs.html#cb171-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb171-7"><a href="bare-bones-comparative-country-trend-graphs.html#cb171-7" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1 Year&quot;</span>,</span>
+<span id="cb171-8"><a href="bare-bones-comparative-country-trend-graphs.html#cb171-8" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 2 Year&quot;</span>,</span>
+<span id="cb171-9"><a href="bare-bones-comparative-country-trend-graphs.html#cb171-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3 Year&quot;</span>)</span>
+<span id="cb171-10"><a href="bare-bones-comparative-country-trend-graphs.html#cb171-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb171-11"><a href="bare-bones-comparative-country-trend-graphs.html#cb171-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb171-12"><a href="bare-bones-comparative-country-trend-graphs.html#cb171-12" aria-hidden="true" tabindex="-1"></a>                df_list,</span>
+<span id="cb171-13"><a href="bare-bones-comparative-country-trend-graphs.html#cb171-13" aria-hidden="true" tabindex="-1"></a>                survey_dates,</span>
+<span id="cb171-14"><a href="bare-bones-comparative-country-trend-graphs.html#cb171-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/07.10-Many-Graphs-Example1-1.png" width="1248" /></p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="bare-bones-comparative-country-trend-graphs.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q101&quot;</span>,</span>
+<span id="cb172-2"><a href="bare-bones-comparative-country-trend-graphs.html#cb172-2" aria-hidden="true" tabindex="-1"></a>                df_list,</span>
+<span id="cb172-3"><a href="bare-bones-comparative-country-trend-graphs.html#cb172-3" aria-hidden="true" tabindex="-1"></a>                survey_dates,</span>
+<span id="cb172-4"><a href="bare-bones-comparative-country-trend-graphs.html#cb172-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/07.10-Many-Graphs-Example1-2.png" width="1248" /></p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="bare-bones-comparative-country-trend-graphs.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q609&quot;</span>,</span>
+<span id="cb173-2"><a href="bare-bones-comparative-country-trend-graphs.html#cb173-2" aria-hidden="true" tabindex="-1"></a>                df_list,</span>
+<span id="cb173-3"><a href="bare-bones-comparative-country-trend-graphs.html#cb173-3" aria-hidden="true" tabindex="-1"></a>                survey_dates,</span>
+<span id="cb173-4"><a href="bare-bones-comparative-country-trend-graphs.html#cb173-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI&quot;</span>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/07.10-Many-Graphs-Example1-3.png" width="1248" /></p>
+<p>Notice that the code produced two graphs, even though <code>df_list</code> and <code>survey_dates</code> were only defined one time. Once you have created the <code>df_list</code> and <code>survey_dates</code> objects, you can re-use them for any graph that is covering the same time period.</p>
+<p>You can also you the <code>map()</code> function from the <code>purrr</code> package. This method is similar to what was done for creating <a href="chapter-1.html#plot-many-graphs-single-country">many single country graphs</a>, <a href="plot-many-graphs-single-country-demographic">many single country demographic graphs</a>, <a href="comparative-overall-graphs.html#plot-many-comparative">many comparative graphs</a>, and <a href="comparative-demographic-graphs.html#plot-many-comparative-demographic">many comparative demographic graphs</a>.</p>
+<p>As a quick review, in earlier chapters the first step was identify the variables to plot. We did that by creating a named list of of the variables we wanted to plot.</p>
+<p>The second step was creating a list of summaries by give the summarize function the named variable list.</p>
+<p>The third and final step was mapping that list of summaries to the related plot function. In the mapping function, we would hold the caption constant since we wanted the same caption to appear on every graph.</p>
+<p>The <code>plot_trend_comp()</code> function creates summaries internally, so we can “skip” the second step. Once we identify our variables, we go right to the mapping step. We map a named list of variables to the <code>plot_trend_comp()</code> function. We want to create a graph for all countries over the same time period, just using different variable, so we hold the data frame list, survey dates, <em>and</em> caption constant.</p>
+<div id="chapter-7-2-1" class="section level3 hasAnchor" number="8.2.1">
+<h3><span class="header-section-number">8.2.1</span> Identify the Variables<a href="bare-bones-comparative-country-trend-graphs.html#chapter-7-2-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We are creating trend graphs for the variables <code>Q1COVID19</code>, <code>Q101</code>, and <code>Q609</code>.</p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="bare-bones-comparative-country-trend-graphs.html#cb174-1" aria-hidden="true" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb174-2"><a href="bare-bones-comparative-country-trend-graphs.html#cb174-2" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;Q101&quot;</span>,</span>
+<span id="cb174-3"><a href="bare-bones-comparative-country-trend-graphs.html#cb174-3" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;Q609&quot;</span>)</span>
+<span id="cb174-4"><a href="bare-bones-comparative-country-trend-graphs.html#cb174-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-5"><a href="bare-bones-comparative-country-trend-graphs.html#cb174-5" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(variables_2_plot) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb174-6"><a href="bare-bones-comparative-country-trend-graphs.html#cb174-6" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Q101&quot;</span>,</span>
+<span id="cb174-7"><a href="bare-bones-comparative-country-trend-graphs.html#cb174-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Q609&quot;</span>)</span></code></pre></div>
+<p>Now you have a names list of variables. Let’s plot them.</p>
+</div>
+<div id="chapter-7-2-2" class="section level3 hasAnchor" number="8.2.2">
+<h3><span class="header-section-number">8.2.2</span> Plot the Variables<a href="bare-bones-comparative-country-trend-graphs.html#chapter-7-2-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Recall we want to hold constant the <code>data_frames</code>, <code>svry_dates</code>, and <code>.caption</code> parameters because those will be the same for every graph. The only parameter we want to vary is <code>.var</code>.</p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="bare-bones-comparative-country-trend-graphs.html#cb175-1" aria-hidden="true" tabindex="-1"></a>plots <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb175-2"><a href="bare-bones-comparative-country-trend-graphs.html#cb175-2" aria-hidden="true" tabindex="-1"></a>  variables_2_plot, <span class="co"># Vector of variables to plot</span></span>
+<span id="cb175-3"><a href="bare-bones-comparative-country-trend-graphs.html#cb175-3" aria-hidden="true" tabindex="-1"></a>  plot_trend_comp, <span class="co"># Map to function `plot_trend_comp()`</span></span>
+<span id="cb175-4"><a href="bare-bones-comparative-country-trend-graphs.html#cb175-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb175-5"><a href="bare-bones-comparative-country-trend-graphs.html#cb175-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">data_frames    =</span> df_list,  <span class="co"># Hold constant the `data_frames` parameter</span></span>
+<span id="cb175-6"><a href="bare-bones-comparative-country-trend-graphs.html#cb175-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">svry_dates     =</span> survey_dates, <span class="co"># Hold constant the `svry_dates` parameter</span></span>
+<span id="cb175-7"><a href="bare-bones-comparative-country-trend-graphs.html#cb175-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">.caption       =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span></span>
+<span id="cb175-8"><a href="bare-bones-comparative-country-trend-graphs.html#cb175-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p>Excellent!</p>
+<p>The plots have been saved to a named list called <code>plots</code>. To access the plots for each variable, you can use the <code>$</code> and variable name.</p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="bare-bones-comparative-country-trend-graphs.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Trend graph for Q1COVID19</span></span>
+<span id="cb176-2"><a href="bare-bones-comparative-country-trend-graphs.html#cb176-2" aria-hidden="true" tabindex="-1"></a>plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/07.13-Many-Graphs-Example2-1.png" width="1248" /></p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="bare-bones-comparative-country-trend-graphs.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Trend graph for Q101</span></span>
+<span id="cb177-2"><a href="bare-bones-comparative-country-trend-graphs.html#cb177-2" aria-hidden="true" tabindex="-1"></a>plots<span class="sc">$</span>Q101</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/07.13-Many-Graphs-Example2-2.png" width="1248" /></p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="bare-bones-comparative-country-trend-graphs.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Trend graph for Q609</span></span>
+<span id="cb178-2"><a href="bare-bones-comparative-country-trend-graphs.html#cb178-2" aria-hidden="true" tabindex="-1"></a>plots<span class="sc">$</span>Q609</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/07.13-Many-Graphs-Example2-3.png" width="1248" /></p>
+<p>You’ve done it! You have created many trend plots at once!</p>
 
+</div>
 </div>
 </div>
             </section>

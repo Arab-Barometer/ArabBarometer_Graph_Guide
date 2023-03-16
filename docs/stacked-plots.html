@@ -262,9 +262,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.2" data-path="chater-6.html"><a href="chater-6.html#plot-the-variables"><i class="fa fa-check"></i><b>7.2.2</b> Plot the Variables</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html"><i class="fa fa-check"></i><b>8</b> BARE BONES: Comparative Country Trend Graphs</a>
+<li class="chapter" data-level="8" data-path="chapter-7.html"><a href="chapter-7.html"><i class="fa fa-check"></i><b>8</b> Comparative Country Trend Graphs</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html#create-comparative-trend-graph"><i class="fa fa-check"></i><b>8.1</b> Create Comparative Trend Graph</a></li>
+<li class="chapter" data-level="8.1" data-path="chapter-7.html"><a href="chapter-7.html#create-comparative-trend-graph"><i class="fa fa-check"></i><b>8.1</b> Create Comparative Trend Graph</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-1-1"><i class="fa fa-check"></i><b>8.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="8.1.2" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-1-2"><i class="fa fa-check"></i><b>8.1.2</b> Plot a Trend Graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-2"><i class="fa fa-check"></i><b>8.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-2-1"><i class="fa fa-check"></i><b>8.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="8.2.2" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-2-2"><i class="fa fa-check"></i><b>8.2.2</b> Plot the Variables</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="bare-bones-comparative-country-demographic-trend-graphs.html"><a href="bare-bones-comparative-country-demographic-trend-graphs.html"><i class="fa fa-check"></i><b>9</b> BARE BONES: Comparative Country Demographic Trend Graphs</a>
 <ul>
@@ -352,9 +361,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 10</span> Stacked Plots<a href="stacked-plots.html#stacked-plots" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Stacked bar graphs are very useful for displaying responses to nominal questions across countries. Unlike the graphs from <a href="comparative-overall-graphs.html#comparative-overall-graphs">Chapter 4</a>, which can only compare one nominal category at a time across countries, a stacked bar graph allows the user to show the breakdown of responses to every category for each country.</p>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="stacked-plots.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
-<span id="cb168-2"><a href="stacked-plots.html#cb168-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;Q2061A&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb168-3"><a href="stacked-plots.html#cb168-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="stacked-plots.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
+<span id="cb181-2"><a href="stacked-plots.html#cb181-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;Q2061A&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb181-3"><a href="stacked-plots.html#cb181-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/13.2-Complete-Graph-Example-1.png" width="1248" /></p>
 <p>Let’s go!</p>
@@ -364,10 +373,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">10.1.1</span> Create a Summary<a href="stacked-plots.html#create-a-summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>As usual, the first step to creating a stacked bar graph is to summarize the data you want to display. To do this you use the <strong><code>calculate_stacked_df()</code></strong> function. This function requires two arguments: (1) an Arab Barometer data frame, and (2) the name of the variable you want to graph.</p>
 <p>For this example, we’ll use the first survey of wave six and question <code>Q2061A</code>.</p>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="stacked-plots.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(</span>
-<span id="cb169-2"><a href="stacked-plots.html#cb169-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,   <span class="co"># Data Frame</span></span>
-<span id="cb169-3"><a href="stacked-plots.html#cb169-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">.var =</span> <span class="st">&quot;Q2061A&quot;</span>  <span class="co"># Variable Name</span></span>
-<span id="cb169-4"><a href="stacked-plots.html#cb169-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="stacked-plots.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(</span>
+<span id="cb182-2"><a href="stacked-plots.html#cb182-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,   <span class="co"># Data Frame</span></span>
+<span id="cb182-3"><a href="stacked-plots.html#cb182-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">.var =</span> <span class="st">&quot;Q2061A&quot;</span>  <span class="co"># Variable Name</span></span>
+<span id="cb182-4"><a href="stacked-plots.html#cb182-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## # A tibble: 54 × 3
 ## # Groups:   Country [6]
 ##    Q2061A                      Country Percent
@@ -384,24 +393,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 10   1 [Economic situation]    Jordan       41
 ## # … with 44 more rows</code></pre>
 <p>The data frame is quite long, as it contains the response of every category for every country. Let’s save it to an object we can graph in the next section.</p>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="stacked-plots.html#cb171-1" aria-hidden="true" tabindex="-1"></a>stacked_data_frame <span class="ot">&lt;-</span> <span class="fu">calculate_stacked_df</span>(</span>
-<span id="cb171-2"><a href="stacked-plots.html#cb171-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,   </span>
-<span id="cb171-3"><a href="stacked-plots.html#cb171-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">.var =</span> <span class="st">&quot;Q2061A&quot;</span>  </span>
-<span id="cb171-4"><a href="stacked-plots.html#cb171-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="stacked-plots.html#cb184-1" aria-hidden="true" tabindex="-1"></a>stacked_data_frame <span class="ot">&lt;-</span> <span class="fu">calculate_stacked_df</span>(</span>
+<span id="cb184-2"><a href="stacked-plots.html#cb184-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,   </span>
+<span id="cb184-3"><a href="stacked-plots.html#cb184-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">.var =</span> <span class="st">&quot;Q2061A&quot;</span>  </span>
+<span id="cb184-4"><a href="stacked-plots.html#cb184-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 </div>
 <div id="plot-the-summary-1" class="section level3 hasAnchor" number="10.1.2">
 <h3><span class="header-section-number">10.1.2</span> Plot the Summary<a href="stacked-plots.html#plot-the-summary-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Now that we have the data frame, the next step is to plot it. For this step we use the function <strong><code>plot_stacked_comp()</code></strong>. The only <em>required</em> input is a data frame.</p>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="stacked-plots.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stacked_comp</span>(stacked_data_frame)</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="stacked-plots.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stacked_comp</span>(stacked_data_frame)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/13.5-plot-object-1.png" width="1248" /></p>
 <p>Similar to many other plots in this guide, the caption is not automatically correct. Even though the data frame is the only required input, it is highly advised about correct the caption. Like always, this is done using the <code>.caption</code> parameter.</p>
-<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="stacked-plots.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stacked_comp</span>(stacked_data_frame,</span>
-<span id="cb173-2"><a href="stacked-plots.html#cb173-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="stacked-plots.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stacked_comp</span>(stacked_data_frame,</span>
+<span id="cb186-2"><a href="stacked-plots.html#cb186-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/13.6-plot-object-caption-1.png" width="1248" /></p>
 <p>We can use the pipe operator<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> to chain everything together.</p>
-<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="stacked-plots.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
-<span id="cb174-2"><a href="stacked-plots.html#cb174-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;Q2061A&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb174-3"><a href="stacked-plots.html#cb174-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="stacked-plots.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
+<span id="cb187-2"><a href="stacked-plots.html#cb187-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;Q2061A&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb187-3"><a href="stacked-plots.html#cb187-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>)</span></code></pre></div>
 <p>This code produces the graph we started with!</p>
 <p><img src="bookdownproj_files/figure-html/13.8-all-together-1.png" width="1248" /></p>
 </div>
@@ -418,18 +427,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="identify-the-variables-2" class="section level3 hasAnchor" number="10.2.1">
 <h3><span class="header-section-number">10.2.1</span> Identify the Variables<a href="stacked-plots.html#identify-the-variables-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The first step to create many graphs is to identify all the variables you want to make graphs for. For this example, we’ll use <code>Q2061A</code>, <code>Q118</code>, and <code>Q516A</code>. We will save it to an object we can map to <code>plot_stacked_comp()</code>.</p>
-<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="stacked-plots.html#cb175-1" aria-hidden="true" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q2061A&quot;</span>,</span>
-<span id="cb175-2"><a href="stacked-plots.html#cb175-2" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Q118&quot;</span>,</span>
-<span id="cb175-3"><a href="stacked-plots.html#cb175-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Q516A&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="stacked-plots.html#cb188-1" aria-hidden="true" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q2061A&quot;</span>,</span>
+<span id="cb188-2"><a href="stacked-plots.html#cb188-2" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Q118&quot;</span>,</span>
+<span id="cb188-3"><a href="stacked-plots.html#cb188-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Q516A&quot;</span>)</span></code></pre></div>
 <p>We have save a vector of our three variables to an object called <code>variables_2_plot</code>. Next step is creating the summaries.</p>
 </div>
 <div id="create-many-summaries" class="section level3 hasAnchor" number="10.2.2">
 <h3><span class="header-section-number">10.2.2</span> Create Many Summaries<a href="stacked-plots.html#create-many-summaries" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The next step is to use the <code>map()</code> function from the <code>purrr</code> package to create a list of summaries. The <code>map()</code> function requires two arguments: (1) an iterable object (e.g., a list or vector), and (2) a function. In the case, our iterable object is <code>variables_2_plot</code> and our function is <code>calculate_stacked_df()</code>.</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="stacked-plots.html#cb176-1" aria-hidden="true" tabindex="-1"></a>summary_list <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
-<span id="cb176-2"><a href="stacked-plots.html#cb176-2" aria-hidden="true" tabindex="-1"></a>  variables_2_plot,     <span class="co"># List of variables</span></span>
-<span id="cb176-3"><a href="stacked-plots.html#cb176-3" aria-hidden="true" tabindex="-1"></a>  calculate_stacked_df  <span class="co"># Function to map onto</span></span>
-<span id="cb176-4"><a href="stacked-plots.html#cb176-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="stacked-plots.html#cb189-1" aria-hidden="true" tabindex="-1"></a>summary_list <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb189-2"><a href="stacked-plots.html#cb189-2" aria-hidden="true" tabindex="-1"></a>  variables_2_plot,     <span class="co"># List of variables</span></span>
+<span id="cb189-3"><a href="stacked-plots.html#cb189-3" aria-hidden="true" tabindex="-1"></a>  calculate_stacked_df  <span class="co"># Function to map onto</span></span>
+<span id="cb189-4"><a href="stacked-plots.html#cb189-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## Error in `map()`:
 ## ℹ In index: 1.
 ## Caused by error in `.ab[[.var]]`:
@@ -438,15 +447,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Did you guess that <code>calculate_stacked_df()</code> takes two arguments and only one is provided here? If so, you are correct!</p>
 <p>The above code does not provide the data <code>calculate_stacked_df()</code> needs to create the data frame; specially <code>survey1</code>.</p>
 <p>The data used to create these summaries is the same every time. That means even though we are changing the variables we want to create summaries for, we can hold the input data constant. You can do this in the <code>map()</code> function by including the name of the parameter you want to hold constant, and setting it equal to your constant input. The <code>map()</code> function knows to use that input for every variable.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="stacked-plots.html#cb178-1" aria-hidden="true" tabindex="-1"></a>summary_list <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
-<span id="cb178-2"><a href="stacked-plots.html#cb178-2" aria-hidden="true" tabindex="-1"></a>  variables_2_plot,     <span class="co"># List of variables</span></span>
-<span id="cb178-3"><a href="stacked-plots.html#cb178-3" aria-hidden="true" tabindex="-1"></a>  calculate_stacked_df, <span class="co"># Function to map onto</span></span>
-<span id="cb178-4"><a href="stacked-plots.html#cb178-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">.ab =</span> survey1         <span class="co"># Constant parameter</span></span>
-<span id="cb178-5"><a href="stacked-plots.html#cb178-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="stacked-plots.html#cb191-1" aria-hidden="true" tabindex="-1"></a>summary_list <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb191-2"><a href="stacked-plots.html#cb191-2" aria-hidden="true" tabindex="-1"></a>  variables_2_plot,     <span class="co"># List of variables</span></span>
+<span id="cb191-3"><a href="stacked-plots.html#cb191-3" aria-hidden="true" tabindex="-1"></a>  calculate_stacked_df, <span class="co"># Function to map onto</span></span>
+<span id="cb191-4"><a href="stacked-plots.html#cb191-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">.ab =</span> survey1         <span class="co"># Constant parameter</span></span>
+<span id="cb191-5"><a href="stacked-plots.html#cb191-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Unlike the list produced produced when we created <a href="chapter-1.html#chapter-1-2-2">many summaries for single country overall plots</a>, this list of summaries is not named. The list has three elements (one for each variable) called <code>"1"</code>, <code>"2"</code>, and <code>"3"</code>. While not strictly necessary, it is useful to provide names for referencing later. Luckily, if you saved the names of the variables as a vector, you can set that vector as the names of the elements in the summary list<a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>.</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="stacked-plots.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(summary_list) <span class="ot">&lt;-</span> variables_2_plot</span></code></pre></div>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="stacked-plots.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(summary_list) <span class="ot">&lt;-</span> variables_2_plot</span></code></pre></div>
 <p>Now, you can look at each variable’s summary by referencing the variable name.</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="stacked-plots.html#cb180-1" aria-hidden="true" tabindex="-1"></a>summary_list<span class="sc">$</span>Q2061A</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="stacked-plots.html#cb193-1" aria-hidden="true" tabindex="-1"></a>summary_list<span class="sc">$</span>Q2061A</span></code></pre></div>
 <pre><code>## # A tibble: 54 × 3
 ## # Groups:   Country [6]
 ##    Q2061A                      Country Percent
@@ -462,7 +471,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9 666 [Don&#39;t know/Refuse]     Algeria       2
 ## 10   1 [Economic situation]    Jordan       41
 ## # … with 44 more rows</code></pre>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="stacked-plots.html#cb182-1" aria-hidden="true" tabindex="-1"></a>summary_list<span class="sc">$</span>Q118</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="stacked-plots.html#cb195-1" aria-hidden="true" tabindex="-1"></a>summary_list<span class="sc">$</span>Q118</span></code></pre></div>
 <pre><code>## # A tibble: 42 × 3
 ## # Groups:   Country [6]
 ##    Q118                                                Country Percent
@@ -478,7 +487,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  9   2 [Raise wages for existing jobs]                 Jordan       18
 ## 10   3 [Lower the cost of living (limiting inflation)] Jordan       17
 ## # … with 32 more rows</code></pre>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="stacked-plots.html#cb184-1" aria-hidden="true" tabindex="-1"></a>summary_list<span class="sc">$</span>Q516A</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="stacked-plots.html#cb197-1" aria-hidden="true" tabindex="-1"></a>summary_list<span class="sc">$</span>Q516A</span></code></pre></div>
 <pre><code>## # A tibble: 24 × 3
 ## # Groups:   Country [6]
 ##    Q516A                                                                         Country Percent
@@ -499,54 +508,54 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="create-many-plots" class="section level3 hasAnchor" number="10.2.3">
 <h3><span class="header-section-number">10.2.3</span> Create Many Plots<a href="stacked-plots.html#create-many-plots" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Our next step is to take the list of summaries, and map it onto the function <code>plot_stacked_df()</code>. This will create a list of plots. We will save it to an object <code>plot_list</code>.</p>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="stacked-plots.html#cb186-1" aria-hidden="true" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
-<span id="cb186-2"><a href="stacked-plots.html#cb186-2" aria-hidden="true" tabindex="-1"></a>  summary_list,</span>
-<span id="cb186-3"><a href="stacked-plots.html#cb186-3" aria-hidden="true" tabindex="-1"></a>  plot_stacked_comp</span>
-<span id="cb186-4"><a href="stacked-plots.html#cb186-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="stacked-plots.html#cb199-1" aria-hidden="true" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb199-2"><a href="stacked-plots.html#cb199-2" aria-hidden="true" tabindex="-1"></a>  summary_list,</span>
+<span id="cb199-3"><a href="stacked-plots.html#cb199-3" aria-hidden="true" tabindex="-1"></a>  plot_stacked_comp</span>
+<span id="cb199-4"><a href="stacked-plots.html#cb199-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p>This mapping worked without any extra inputs because <code>plot_stacked_comp()</code> requires only one input.</p>
 <p>We can also see that the names of summary list carried through.</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="stacked-plots.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(plot_list)</span></code></pre></div>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="stacked-plots.html#cb200-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(plot_list)</span></code></pre></div>
 <pre><code>## [1] &quot;Q2061A&quot; &quot;Q118&quot;   &quot;Q516A&quot;</code></pre>
 <p>To look at each plot, we can simply call them by name.</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="stacked-plots.html#cb189-1" aria-hidden="true" tabindex="-1"></a>plot_list<span class="sc">$</span>Q2061A</span></code></pre></div>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="stacked-plots.html#cb202-1" aria-hidden="true" tabindex="-1"></a>plot_list<span class="sc">$</span>Q2061A</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/13.16-view-plots-1.png" width="1248" /></p>
-<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="stacked-plots.html#cb190-1" aria-hidden="true" tabindex="-1"></a>plot_list<span class="sc">$</span>Q118</span></code></pre></div>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="stacked-plots.html#cb203-1" aria-hidden="true" tabindex="-1"></a>plot_list<span class="sc">$</span>Q118</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/13.16-view-plots-2.png" width="1248" /></p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="stacked-plots.html#cb191-1" aria-hidden="true" tabindex="-1"></a>plot_list<span class="sc">$</span>Q516A</span></code></pre></div>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="stacked-plots.html#cb204-1" aria-hidden="true" tabindex="-1"></a>plot_list<span class="sc">$</span>Q516A</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/13.16-view-plots-3.png" width="1248" />
 Hopefully you notice that just like when we created our first stacked plot with only the stacked data frame as an input, the caption needs to be set.</p>
 <p>The caption should be the same for every graph here. Since the input is constant, we can set that in the <code>map()</code> function just as we did with the data frame input in the previous section.</p>
-<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="stacked-plots.html#cb192-1" aria-hidden="true" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
-<span id="cb192-2"><a href="stacked-plots.html#cb192-2" aria-hidden="true" tabindex="-1"></a>  summary_list,</span>
-<span id="cb192-3"><a href="stacked-plots.html#cb192-3" aria-hidden="true" tabindex="-1"></a>  plot_stacked_comp,</span>
-<span id="cb192-4"><a href="stacked-plots.html#cb192-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span></span>
-<span id="cb192-5"><a href="stacked-plots.html#cb192-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="stacked-plots.html#cb205-1" aria-hidden="true" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb205-2"><a href="stacked-plots.html#cb205-2" aria-hidden="true" tabindex="-1"></a>  summary_list,</span>
+<span id="cb205-3"><a href="stacked-plots.html#cb205-3" aria-hidden="true" tabindex="-1"></a>  plot_stacked_comp,</span>
+<span id="cb205-4"><a href="stacked-plots.html#cb205-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span></span>
+<span id="cb205-5"><a href="stacked-plots.html#cb205-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Now, all plots should have the same caption. We can verify that by calling each of them.</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="stacked-plots.html#cb193-1" aria-hidden="true" tabindex="-1"></a>plot_list<span class="sc">$</span>Q2061A</span></code></pre></div>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="stacked-plots.html#cb206-1" aria-hidden="true" tabindex="-1"></a>plot_list<span class="sc">$</span>Q2061A</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/13.17-second-view-plots-1.png" width="1248" /></p>
-<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="stacked-plots.html#cb194-1" aria-hidden="true" tabindex="-1"></a>plot_list<span class="sc">$</span>Q118</span></code></pre></div>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="stacked-plots.html#cb207-1" aria-hidden="true" tabindex="-1"></a>plot_list<span class="sc">$</span>Q118</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/13.17-second-view-plots-2.png" width="1248" /></p>
-<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="stacked-plots.html#cb195-1" aria-hidden="true" tabindex="-1"></a>plot_list<span class="sc">$</span>Q516A</span></code></pre></div>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="stacked-plots.html#cb208-1" aria-hidden="true" tabindex="-1"></a>plot_list<span class="sc">$</span>Q516A</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/13.17-second-view-plots-3.png" width="1248" /></p>
 <p>And there you have it! We have created many stacked plots! All together, the code looks like the following:</p>
-<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="stacked-plots.html#cb196-1" aria-hidden="true" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q2061A&quot;</span>,</span>
-<span id="cb196-2"><a href="stacked-plots.html#cb196-2" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Q118&quot;</span>,</span>
-<span id="cb196-3"><a href="stacked-plots.html#cb196-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Q516A&quot;</span>)</span>
-<span id="cb196-4"><a href="stacked-plots.html#cb196-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-5"><a href="stacked-plots.html#cb196-5" aria-hidden="true" tabindex="-1"></a>summary_list <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
-<span id="cb196-6"><a href="stacked-plots.html#cb196-6" aria-hidden="true" tabindex="-1"></a>  variables_2_plot,     </span>
-<span id="cb196-7"><a href="stacked-plots.html#cb196-7" aria-hidden="true" tabindex="-1"></a>  calculate_stacked_df, </span>
-<span id="cb196-8"><a href="stacked-plots.html#cb196-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">.ab =</span> survey1         </span>
-<span id="cb196-9"><a href="stacked-plots.html#cb196-9" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb196-10"><a href="stacked-plots.html#cb196-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-11"><a href="stacked-plots.html#cb196-11" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(summary_list) <span class="ot">&lt;-</span> variables_2_plot</span>
-<span id="cb196-12"><a href="stacked-plots.html#cb196-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-13"><a href="stacked-plots.html#cb196-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb196-14"><a href="stacked-plots.html#cb196-14" aria-hidden="true" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
-<span id="cb196-15"><a href="stacked-plots.html#cb196-15" aria-hidden="true" tabindex="-1"></a>  summary_list,</span>
-<span id="cb196-16"><a href="stacked-plots.html#cb196-16" aria-hidden="true" tabindex="-1"></a>  plot_stacked_comp,</span>
-<span id="cb196-17"><a href="stacked-plots.html#cb196-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span></span>
-<span id="cb196-18"><a href="stacked-plots.html#cb196-18" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="stacked-plots.html#cb209-1" aria-hidden="true" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q2061A&quot;</span>,</span>
+<span id="cb209-2"><a href="stacked-plots.html#cb209-2" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Q118&quot;</span>,</span>
+<span id="cb209-3"><a href="stacked-plots.html#cb209-3" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Q516A&quot;</span>)</span>
+<span id="cb209-4"><a href="stacked-plots.html#cb209-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb209-5"><a href="stacked-plots.html#cb209-5" aria-hidden="true" tabindex="-1"></a>summary_list <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb209-6"><a href="stacked-plots.html#cb209-6" aria-hidden="true" tabindex="-1"></a>  variables_2_plot,     </span>
+<span id="cb209-7"><a href="stacked-plots.html#cb209-7" aria-hidden="true" tabindex="-1"></a>  calculate_stacked_df, </span>
+<span id="cb209-8"><a href="stacked-plots.html#cb209-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">.ab =</span> survey1         </span>
+<span id="cb209-9"><a href="stacked-plots.html#cb209-9" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb209-10"><a href="stacked-plots.html#cb209-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb209-11"><a href="stacked-plots.html#cb209-11" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(summary_list) <span class="ot">&lt;-</span> variables_2_plot</span>
+<span id="cb209-12"><a href="stacked-plots.html#cb209-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb209-13"><a href="stacked-plots.html#cb209-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb209-14"><a href="stacked-plots.html#cb209-14" aria-hidden="true" tabindex="-1"></a>plot_list <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb209-15"><a href="stacked-plots.html#cb209-15" aria-hidden="true" tabindex="-1"></a>  summary_list,</span>
+<span id="cb209-16"><a href="stacked-plots.html#cb209-16" aria-hidden="true" tabindex="-1"></a>  plot_stacked_comp,</span>
+<span id="cb209-17"><a href="stacked-plots.html#cb209-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span></span>
+<span id="cb209-18"><a href="stacked-plots.html#cb209-18" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 </div>
 </div>
 <div id="extras" class="section level2 hasAnchor" number="10.3">
@@ -554,13 +563,13 @@ Hopefully you notice that just like when we created our first stacked plot with 
 <div id="long-legends" class="section level3 hasAnchor" number="10.3.1">
 <h3><span class="header-section-number">10.3.1</span> Long Legends<a href="stacked-plots.html#long-legends" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>You may have noticed the legends of many of these plots running off the page. Take the original stacked graph for <code>Q2061A</code> for example.</p>
-<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="stacked-plots.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stacked_comp</span>(stacked_data_frame,</span>
-<span id="cb197-2"><a href="stacked-plots.html#cb197-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="stacked-plots.html#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stacked_comp</span>(stacked_data_frame,</span>
+<span id="cb210-2"><a href="stacked-plots.html#cb210-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/13.19-legend-example1-1.png" width="1248" /></p>
 <p>Two rows does not seem to be enough to see all the categories in the legend. You can fix that with the <code>guides()</code> function from the <code>ggplot2</code> package.</p>
-<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="stacked-plots.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stacked_comp</span>(stacked_data_frame,</span>
-<span id="cb198-2"><a href="stacked-plots.html#cb198-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>) <span class="sc">+</span></span>
-<span id="cb198-3"><a href="stacked-plots.html#cb198-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">3</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="stacked-plots.html#cb211-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stacked_comp</span>(stacked_data_frame,</span>
+<span id="cb211-2"><a href="stacked-plots.html#cb211-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>) <span class="sc">+</span></span>
+<span id="cb211-3"><a href="stacked-plots.html#cb211-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">guides</span>(<span class="at">fill =</span> <span class="fu">guide_legend</span>(<span class="at">nrow =</span> <span class="dv">3</span>))</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/13.20-legend-example2-1.png" width="1248" /></p>
 <p>The input to the <code>guides()</code> function should be thought of as follows: “For the <strong>fill</strong> legend, use <strong>three</strong> rows.” You can change the number as you see fit.</p>
 </div>

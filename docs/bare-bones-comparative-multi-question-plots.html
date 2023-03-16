@@ -262,9 +262,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.2" data-path="chater-6.html"><a href="chater-6.html#plot-the-variables"><i class="fa fa-check"></i><b>7.2.2</b> Plot the Variables</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html"><i class="fa fa-check"></i><b>8</b> BARE BONES: Comparative Country Trend Graphs</a>
+<li class="chapter" data-level="8" data-path="chapter-7.html"><a href="chapter-7.html"><i class="fa fa-check"></i><b>8</b> Comparative Country Trend Graphs</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html#create-comparative-trend-graph"><i class="fa fa-check"></i><b>8.1</b> Create Comparative Trend Graph</a></li>
+<li class="chapter" data-level="8.1" data-path="chapter-7.html"><a href="chapter-7.html#create-comparative-trend-graph"><i class="fa fa-check"></i><b>8.1</b> Create Comparative Trend Graph</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-1-1"><i class="fa fa-check"></i><b>8.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="8.1.2" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-1-2"><i class="fa fa-check"></i><b>8.1.2</b> Plot a Trend Graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-2"><i class="fa fa-check"></i><b>8.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-2-1"><i class="fa fa-check"></i><b>8.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="8.2.2" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-2-2"><i class="fa fa-check"></i><b>8.2.2</b> Plot the Variables</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="bare-bones-comparative-country-demographic-trend-graphs.html"><a href="bare-bones-comparative-country-demographic-trend-graphs.html"><i class="fa fa-check"></i><b>9</b> BARE BONES: Comparative Country Demographic Trend Graphs</a>
 <ul>
@@ -351,17 +360,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="bare-bones-comparative-multi-question-plots" class="section level1 hasAnchor" number="13">
 <h1><span class="header-section-number">Chapter 13</span> BARE BONES: Comparative Multi-Question Plots<a href="bare-bones-comparative-multi-question-plots.html#bare-bones-comparative-multi-question-plots" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="bare-bones-comparative-multi-question-plots.html#cb201-1" aria-hidden="true" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q210&quot;</span>,</span>
-<span id="cb201-2"><a href="bare-bones-comparative-multi-question-plots.html#cb201-2" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Q211&quot;</span>)</span>
-<span id="cb201-3"><a href="bare-bones-comparative-multi-question-plots.html#cb201-3" aria-hidden="true" tabindex="-1"></a>questions_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Is there corruption?&quot;</span>,</span>
-<span id="cb201-4"><a href="bare-bones-comparative-multi-question-plots.html#cb201-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Is the gov&#39;t cracking down?&quot;</span>)</span>
-<span id="cb201-5"><a href="bare-bones-comparative-multi-question-plots.html#cb201-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb201-6"><a href="bare-bones-comparative-multi-question-plots.html#cb201-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_multiquestions_comp</span>(survey1,</span>
-<span id="cb201-7"><a href="bare-bones-comparative-multi-question-plots.html#cb201-7" aria-hidden="true" tabindex="-1"></a>                        questions_2_compare,</span>
-<span id="cb201-8"><a href="bare-bones-comparative-multi-question-plots.html#cb201-8" aria-hidden="true" tabindex="-1"></a>                        questions_labels,</span>
-<span id="cb201-9"><a href="bare-bones-comparative-multi-question-plots.html#cb201-9" aria-hidden="true" tabindex="-1"></a>                        <span class="at">.title =</span> <span class="st">&quot;Perceptions of Corruption in MENA&quot;</span>,</span>
-<span id="cb201-10"><a href="bare-bones-comparative-multi-question-plots.html#cb201-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">.subtitle =</span> <span class="st">&quot;% saying to a medium or large extent&quot;</span>,</span>
-<span id="cb201-11"><a href="bare-bones-comparative-multi-question-plots.html#cb201-11" aria-hidden="true" tabindex="-1"></a>                        <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="bare-bones-comparative-multi-question-plots.html#cb214-1" aria-hidden="true" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q210&quot;</span>,</span>
+<span id="cb214-2"><a href="bare-bones-comparative-multi-question-plots.html#cb214-2" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Q211&quot;</span>)</span>
+<span id="cb214-3"><a href="bare-bones-comparative-multi-question-plots.html#cb214-3" aria-hidden="true" tabindex="-1"></a>questions_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Is there corruption?&quot;</span>,</span>
+<span id="cb214-4"><a href="bare-bones-comparative-multi-question-plots.html#cb214-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Is the gov&#39;t cracking down?&quot;</span>)</span>
+<span id="cb214-5"><a href="bare-bones-comparative-multi-question-plots.html#cb214-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb214-6"><a href="bare-bones-comparative-multi-question-plots.html#cb214-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_multiquestions_comp</span>(survey1,</span>
+<span id="cb214-7"><a href="bare-bones-comparative-multi-question-plots.html#cb214-7" aria-hidden="true" tabindex="-1"></a>                        questions_2_compare,</span>
+<span id="cb214-8"><a href="bare-bones-comparative-multi-question-plots.html#cb214-8" aria-hidden="true" tabindex="-1"></a>                        questions_labels,</span>
+<span id="cb214-9"><a href="bare-bones-comparative-multi-question-plots.html#cb214-9" aria-hidden="true" tabindex="-1"></a>                        <span class="at">.title =</span> <span class="st">&quot;Perceptions of Corruption in MENA&quot;</span>,</span>
+<span id="cb214-10"><a href="bare-bones-comparative-multi-question-plots.html#cb214-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">.subtitle =</span> <span class="st">&quot;% saying to a medium or large extent&quot;</span>,</span>
+<span id="cb214-11"><a href="bare-bones-comparative-multi-question-plots.html#cb214-11" aria-hidden="true" tabindex="-1"></a>                        <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/10.2-Complete-Graph-Example-1.png" width="1248" /></p>
 <p>Let’s go!</p>

@@ -57,8 +57,13 @@ plot-a-demographic-trend-graph
 create-many-graphs-3
 identify-the-variables-1
 plot-the-variables
-bare-bones-comparative-country-trend-graphs
+chapter-7
 create-comparative-trend-graph
+chapter-7-1-1
+chapter-7-1-2
+chapter-7-2
+chapter-7-2-1
+chapter-7-2-2
 bare-bones-comparative-country-demographic-trend-graphs
 create-comparative-demographic-trend-graph
 stacked-plots

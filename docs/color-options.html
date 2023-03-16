@@ -262,9 +262,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.2" data-path="chater-6.html"><a href="chater-6.html#plot-the-variables"><i class="fa fa-check"></i><b>7.2.2</b> Plot the Variables</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html"><i class="fa fa-check"></i><b>8</b> BARE BONES: Comparative Country Trend Graphs</a>
+<li class="chapter" data-level="8" data-path="chapter-7.html"><a href="chapter-7.html"><i class="fa fa-check"></i><b>8</b> Comparative Country Trend Graphs</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html#create-comparative-trend-graph"><i class="fa fa-check"></i><b>8.1</b> Create Comparative Trend Graph</a></li>
+<li class="chapter" data-level="8.1" data-path="chapter-7.html"><a href="chapter-7.html#create-comparative-trend-graph"><i class="fa fa-check"></i><b>8.1</b> Create Comparative Trend Graph</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-1-1"><i class="fa fa-check"></i><b>8.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="8.1.2" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-1-2"><i class="fa fa-check"></i><b>8.1.2</b> Plot a Trend Graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-2"><i class="fa fa-check"></i><b>8.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-2-1"><i class="fa fa-check"></i><b>8.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="8.2.2" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-2-2"><i class="fa fa-check"></i><b>8.2.2</b> Plot the Variables</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="bare-bones-comparative-country-demographic-trend-graphs.html"><a href="bare-bones-comparative-country-demographic-trend-graphs.html"><i class="fa fa-check"></i><b>9</b> BARE BONES: Comparative Country Demographic Trend Graphs</a>
 <ul>
@@ -353,7 +362,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="available-colors" class="section level2 hasAnchor" number="16.1">
 <h2><span class="header-section-number">16.1</span> Available Colors<a href="color-options.html#available-colors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The colors available for graphs come from <a href="https://drive.google.com/drive/u/0/folders/0ANF6dTDxdEyiUk9PVA">the Arab Barometer Color Guide</a>. You can see a list of colors with the command:</p>
-<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="color-options.html#cb204-1" aria-hidden="true" tabindex="-1"></a>ArabBarometer_clrs</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="color-options.html#cb217-1" aria-hidden="true" tabindex="-1"></a>ArabBarometer_clrs</span></code></pre></div>
 <pre><code>##         AB blue       AB orange      AB magenta   AB light blue       AB purple         AB pink       AB yellow 
 ##       &quot;#0098BE&quot;       &quot;#DF6E21&quot;       &quot;#AC517F&quot;       &quot;#7CBBC7&quot;       &quot;#796391&quot;       &quot;#CF83A3&quot;       &quot;#FBA950&quot; 
 ##       cool grey            zeke      james bond       dark blue     medium blue      pale green     olive green 
@@ -374,7 +383,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="available-palettes" class="section level2 hasAnchor" number="16.2">
 <h2><span class="header-section-number">16.2</span> Available Palettes<a href="color-options.html#available-palettes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The official branding colors have been combined into several color palettes to use with graphs. To see a list of all the (current) palettes, use the following command:</p>
-<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="color-options.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AB_palette_options</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="color-options.html#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AB_palette_options</span>()</span></code></pre></div>
 <pre><code>##  [1] &quot;blue pair&quot;          &quot;orange pair&quot;        &quot;purple pair&quot;        &quot;AB Default&quot;         &quot;blue triple&quot;       
 ##  [6] &quot;orange triple&quot;      &quot;purple triple&quot;      &quot;green triple&quot;       &quot;mono blue&quot;          &quot;mono orange&quot;       
 ## [11] &quot;mono purple&quot;        &quot;mono green&quot;         &quot;dull rainbow&quot;       &quot;cool orange&quot;        &quot;blue-orange&quot;       

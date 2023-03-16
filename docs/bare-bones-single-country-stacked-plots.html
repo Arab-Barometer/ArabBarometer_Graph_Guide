@@ -262,9 +262,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.2.2" data-path="chater-6.html"><a href="chater-6.html#plot-the-variables"><i class="fa fa-check"></i><b>7.2.2</b> Plot the Variables</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html"><i class="fa fa-check"></i><b>8</b> BARE BONES: Comparative Country Trend Graphs</a>
+<li class="chapter" data-level="8" data-path="chapter-7.html"><a href="chapter-7.html"><i class="fa fa-check"></i><b>8</b> Comparative Country Trend Graphs</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html#create-comparative-trend-graph"><i class="fa fa-check"></i><b>8.1</b> Create Comparative Trend Graph</a></li>
+<li class="chapter" data-level="8.1" data-path="chapter-7.html"><a href="chapter-7.html#create-comparative-trend-graph"><i class="fa fa-check"></i><b>8.1</b> Create Comparative Trend Graph</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-1-1"><i class="fa fa-check"></i><b>8.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="8.1.2" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-1-2"><i class="fa fa-check"></i><b>8.1.2</b> Plot a Trend Graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-2"><i class="fa fa-check"></i><b>8.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-2-1"><i class="fa fa-check"></i><b>8.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="8.2.2" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-2-2"><i class="fa fa-check"></i><b>8.2.2</b> Plot the Variables</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="bare-bones-comparative-country-demographic-trend-graphs.html"><a href="bare-bones-comparative-country-demographic-trend-graphs.html"><i class="fa fa-check"></i><b>9</b> BARE BONES: Comparative Country Demographic Trend Graphs</a>
 <ul>
@@ -351,13 +360,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="bare-bones-single-country-stacked-plots" class="section level1 hasAnchor" number="11">
 <h1><span class="header-section-number">Chapter 11</span> BARE BONES: Single Country Stacked Plots<a href="bare-bones-single-country-stacked-plots.html#bare-bones-single-country-stacked-plots" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="bare-bones-single-country-stacked-plots.html#cb199-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stacked_general</span>(survey1,</span>
-<span id="cb199-2"><a href="bare-bones-single-country-stacked-plots.html#cb199-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb199-3"><a href="bare-bones-single-country-stacked-plots.html#cb199-3" aria-hidden="true" tabindex="-1"></a>                     Q2061A,</span>
-<span id="cb199-4"><a href="bare-bones-single-country-stacked-plots.html#cb199-4" aria-hidden="true" tabindex="-1"></a>                     Q609,</span>
-<span id="cb199-5"><a href="bare-bones-single-country-stacked-plots.html#cb199-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">.title =</span> <span class="st">&quot;Most pressing concern in Algeria by religiosity&quot;</span>,</span>
-<span id="cb199-6"><a href="bare-bones-single-country-stacked-plots.html#cb199-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">.subtitle =</span> <span class="st">&quot;% saying&quot;</span>,</span>
-<span id="cb199-7"><a href="bare-bones-single-country-stacked-plots.html#cb199-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="bare-bones-single-country-stacked-plots.html#cb212-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stacked_general</span>(survey1,</span>
+<span id="cb212-2"><a href="bare-bones-single-country-stacked-plots.html#cb212-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb212-3"><a href="bare-bones-single-country-stacked-plots.html#cb212-3" aria-hidden="true" tabindex="-1"></a>                     Q2061A,</span>
+<span id="cb212-4"><a href="bare-bones-single-country-stacked-plots.html#cb212-4" aria-hidden="true" tabindex="-1"></a>                     Q609,</span>
+<span id="cb212-5"><a href="bare-bones-single-country-stacked-plots.html#cb212-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">.title =</span> <span class="st">&quot;Most pressing concern in Algeria by religiosity&quot;</span>,</span>
+<span id="cb212-6"><a href="bare-bones-single-country-stacked-plots.html#cb212-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">.subtitle =</span> <span class="st">&quot;% saying&quot;</span>,</span>
+<span id="cb212-7"><a href="bare-bones-single-country-stacked-plots.html#cb212-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/14.2-Complete-Graph-Example-1.png" width="1248" /></p>
 <p>Let’s go!</p>
