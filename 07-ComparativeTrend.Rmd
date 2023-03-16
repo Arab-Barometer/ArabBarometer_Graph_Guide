@@ -1,6 +1,8 @@
-# BARE BONES: Comparative Country Trend Graphs
+# Comparative Country Trend Graphs {#chapter-7}
 
-## Create Comparative Trend Graph {#chapter-7}
+The chapter covers how to create a trend graph for many countries, not just one.
+
+## Create Comparative Trend Graph 
 
 At the end, your code will look like the following:
 
@@ -202,7 +204,7 @@ plot_trend_comp("Q1COVID19",
 
 A nice payoff of creating the [data frame list](#chp7-trend-df-list) and the [date vector](#chp7-trend-date-vector) is that these objects (`df_list` and `survey_dates`) can be re-used any time you want to create a graph over the same time period. 
 
-For example, say you wanted to also create a graph tracking Algerian's views of the economy and religiosity. The only parameter in the `plot_trend_comp()` function that needs updating is `.var`.
+For example, say you wanted to also create a graph tracking the region's views of the economy and religiosity. The only parameter in the `plot_trend_comp()` function that needs updating is `.var`.
 
 
 ```{r 07.10-Many-Graphs-Example1, fig.dim=c(13,12)}
@@ -277,7 +279,7 @@ plots <- map(
   
   data_frames    = df_list,  # Hold constant the `data_frames` parameter
   svry_dates     = survey_dates, # Hold constant the `svry_dates` parameter
-  .caption       = "Arab Barometer Wave VI, Algeria"
+  .caption       = "Arab Barometer Wave VI"
   )
 
 ```
