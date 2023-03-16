@@ -20,16 +20,16 @@ survey_dates <- c("Survey 1",
 
 # One plot per Country
 plot_trend_comp_demographics("Q1COVID19",
-                             df_list,
                              "gender",
+                             df_list,
                              survey_dates,
                              "Country",
                              .caption = "Arab Barometer Wave VI")
 
 # One plot per demographic
 plot_trend_comp_demographics("Q1COVID19",
-                             df_list,
                              "gender",
+                             df_list,
                              survey_dates,
                              "demographic",
                              .caption = "Arab Barometer Wave VI")
@@ -54,15 +54,15 @@ survey_dates <- c("Survey 1",
 
 # One plot per Country
 plot_trend_comp_demographics("Q1COVID19",
-                             df_list,
                              "gender",
+                             df_list,
                              survey_dates,
                              "Country")
 
 # One plot per demographic
 plot_trend_comp_demographics("Q1COVID19",
-                             df_list,
                              "gender",
+                             df_list,
                              survey_dates,
                              "demographic")
 ```
@@ -358,16 +358,16 @@ survey_dates <- c("Survey 1",
 
 # One plot per Country
 plot_trend_comp_demographics("Q1COVID19",
-                             df_list,
                              "gender",
+                             df_list,
                              survey_dates,
                              "Country",
                              .caption = "Arab Barometer Wave VI")
 
 # One plot per demographic
 plot_trend_comp_demographics("Q1COVID19",
-                             df_list,
                              "gender",
+                             df_list,
                              survey_dates,
                              "demographic",
                              .caption = "Arab Barometer Wave VI")
