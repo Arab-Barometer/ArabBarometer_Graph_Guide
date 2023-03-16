@@ -1,0 +1,7 @@
+# <span style = "font-family: Tajawal;"> العربيه </span>{- #arabic}
+
+This guide is written in English for several reasons. Primarily, MaryClare does not speak Arabic. Secondarily, computers generally and programming languages specifically do not mix well with Arabic. It is best to start learning with the simplest case, and English is the simplest case when it comes to programming.
+
+However just because programming with Arabic is difficult, that does not mean it cannot be done. The functions in the package are designed to work with Arabic data just as they do with English data. Using the Arabic Arab Barometer data set should produce the same outcome as the English Arab Barometer data set, only with Arabic adjustments. For example, using data data to create plots will produce plots with Arabic text.
+
+If everything works perfectly, the package should be able to detect when Arabic or English is being used an adjust accordingly. If the package makes a mistake, you can force it to a specific language by supplying either `"ar"` or `"en"` to the parameter `.language` in the function you are using.
