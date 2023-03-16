@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 العربيه | ArabBarometR Graphing Guide</title>
+  <meta name="description" content="Chapter 1 العربيه | ArabBarometR Graphing Guide" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 العربيه | ArabBarometR Graphing Guide" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 العربيه | ArabBarometR Graphing Guide" />
+  
+  
+  
+
+<meta name="author" content="MaryClare Roche" />
+
+
+<meta name="date" content="2023-03-16" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="package-workflow.html"/>
+<link rel="next" href="table-of-contents.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">GraphGuide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#purpose"><i class="fa fa-check"></i>Purpose</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#general-guide-process"><i class="fa fa-check"></i>General Guide Process</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#example-data"><i class="fa fa-check"></i>Example Data</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#headercode"><i class="fa fa-check"></i>Header Code</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html"><i class="fa fa-check"></i>Package Workflow and Grammar</a>
+<ul>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html#calculate_-functions"><i class="fa fa-check"></i><code>calculate_</code> functions</a></li>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html#plot_-functions"><i class="fa fa-check"></i><code>plot_</code> functions</a></li>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html#ab_save"><i class="fa fa-check"></i><code>AB_save()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="العربيه.html"><a href="العربيه.html"><i class="fa fa-check"></i><b>1</b> العربيه</a></li>
+<li class="chapter" data-level="" data-path="table-of-contents.html"><a href="table-of-contents.html"><i class="fa fa-check"></i>Table of Contents</a></li>
+<li class="part"><span><b>I Data Prepperation Functions</b></span></li>
+<li class="chapter" data-level="2" data-path="preparing-data.html"><a href="preparing-data.html"><i class="fa fa-check"></i><b>2</b> Preparing Data</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="preparing-data.html"><a href="preparing-data.html#recode_country"><i class="fa fa-check"></i><b>2.1</b> recode_country</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="preparing-data.html"><a href="preparing-data.html#example"><i class="fa fa-check"></i><b>2.1.1</b> Example:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="preparing-data.html"><a href="preparing-data.html#demographic-functions"><i class="fa fa-check"></i><b>2.2</b> Demographic functions</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="preparing-data.html"><a href="preparing-data.html#basics"><i class="fa fa-check"></i><b>2.2.1</b> Basics</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="preparing-data.html"><a href="preparing-data.html#advanced"><i class="fa fa-check"></i><b>2.3</b> Advanced</a></li>
+<li class="chapter" data-level="2.4" data-path="preparing-data.html"><a href="preparing-data.html#education_demographic"><i class="fa fa-check"></i><b>2.4</b> education_demographic</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="preparing-data.html"><a href="preparing-data.html#examples"><i class="fa fa-check"></i><b>2.4.1</b> Examples:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="preparing-data.html"><a href="preparing-data.html#dummy_all"><i class="fa fa-check"></i><b>2.5</b> dummy_all</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-1"><i class="fa fa-check"></i><b>2.5.1</b> Examples:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="preparing-data.html"><a href="preparing-data.html#dummy_select"><i class="fa fa-check"></i><b>2.6</b> dummy_select</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-2"><i class="fa fa-check"></i><b>2.6.1</b> Examples:</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="preparing-data.html"><a href="preparing-data.html#in-practice"><i class="fa fa-check"></i><b>2.7</b> In Practice</a>
+<ul>
+<li class="chapter" data-level="2.7.1" data-path="preparing-data.html"><a href="preparing-data.html#example-2"><i class="fa fa-check"></i><b>2.7.1</b> Example:</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II Cross Tabulation Graphs</b></span></li>
+<li class="chapter" data-level="3" data-path="chapter-1.html"><a href="chapter-1.html"><i class="fa fa-check"></i><b>3</b> Single Country Overall Graphs</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="chapter-1.html"><a href="chapter-1.html#chapter-1-1"><i class="fa fa-check"></i><b>3.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="chapter-1.html"><a href="chapter-1.html#chapter-1-1-1"><i class="fa fa-check"></i><b>3.1.1</b> Create a Summary</a></li>
+<li class="chapter" data-level="3.1.2" data-path="chapter-1.html"><a href="chapter-1.html#chapter-1-1-2"><i class="fa fa-check"></i><b>3.1.2</b> Plot the Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="chapter-1.html"><a href="chapter-1.html#chapter-1-2"><i class="fa fa-check"></i><b>3.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="chapter-1.html"><a href="chapter-1.html#chapter-1-2-1"><i class="fa fa-check"></i><b>3.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="3.2.2" data-path="chapter-1.html"><a href="chapter-1.html#chapter-1-2-2"><i class="fa fa-check"></i><b>3.2.2</b> Create Summaries</a></li>
+<li class="chapter" data-level="3.2.3" data-path="chapter-1.html"><a href="chapter-1.html#plot-many-graphs-single-country"><i class="fa fa-check"></i><b>3.2.3</b> Plot the Summaries</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html"><i class="fa fa-check"></i><b>4</b> Single Country Demographic Plots</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#create-a-single-graph"><i class="fa fa-check"></i><b>4.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#creating-a-summary"><i class="fa fa-check"></i><b>4.1.1</b> Creating a Summary</a></li>
+<li class="chapter" data-level="4.1.2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#plotting-the-summary"><i class="fa fa-check"></i><b>4.1.2</b> Plotting the Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#create-many-graphs"><i class="fa fa-check"></i><b>4.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#create-summaries"><i class="fa fa-check"></i><b>4.2.1</b> Create Summaries</a></li>
+<li class="chapter" data-level="4.2.2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#plot-many-graphs-single-country-demographic"><i class="fa fa-check"></i><b>4.2.2</b> Plot the Summaries</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html"><i class="fa fa-check"></i><b>5</b> Comparative Overall Graphs</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-a-single-graph-1"><i class="fa fa-check"></i><b>5.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-a-summary"><i class="fa fa-check"></i><b>5.1.1</b> Create a Summary</a></li>
+<li class="chapter" data-level="5.1.2" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#plot-the-summary"><i class="fa fa-check"></i><b>5.1.2</b> Plot the Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-many-graphs-1"><i class="fa fa-check"></i><b>5.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#identify-the-variables"><i class="fa fa-check"></i><b>5.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="5.2.2" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-summaries-1"><i class="fa fa-check"></i><b>5.2.2</b> Create Summaries</a></li>
+<li class="chapter" data-level="5.2.3" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#plot-many-comparative"><i class="fa fa-check"></i><b>5.2.3</b> Plot the Summaries</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html"><i class="fa fa-check"></i><b>6</b> Comparative Demographic Graphs</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-a-single-graph-2"><i class="fa fa-check"></i><b>6.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#creating-a-summary-1"><i class="fa fa-check"></i><b>6.1.1</b> Creating a Summary</a></li>
+<li class="chapter" data-level="6.1.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#plotting-the-summary-1"><i class="fa fa-check"></i><b>6.1.2</b> Plotting the Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-many-graphs-2"><i class="fa fa-check"></i><b>6.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-summaries-2"><i class="fa fa-check"></i><b>6.2.1</b> Create Summaries</a></li>
+<li class="chapter" data-level="6.2.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#plot-many-comparative-demographic"><i class="fa fa-check"></i><b>6.2.2</b> Plot the Summaries</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III Trend Graphs</b></span></li>
+<li class="chapter" data-level="7" data-path="chapter-5.html"><a href="chapter-5.html"><i class="fa fa-check"></i><b>7</b> Single Country Trend Graphs</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="chapter-5.html"><a href="chapter-5.html#chapter-5-1"><i class="fa fa-check"></i><b>7.1</b> Create Single Trend Graph</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="chapter-5.html"><a href="chapter-5.html#chapter-5-1-1"><i class="fa fa-check"></i><b>7.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="7.1.2" data-path="chapter-5.html"><a href="chapter-5.html#chapter-5-1-2"><i class="fa fa-check"></i><b>7.1.2</b> Plot a Trend Graph</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="chapter-5.html"><a href="chapter-5.html#chapter-5-2"><i class="fa fa-check"></i><b>7.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="chapter-5.html"><a href="chapter-5.html#chapter-5-2-1"><i class="fa fa-check"></i><b>7.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="7.2.2" data-path="chapter-5.html"><a href="chapter-5.html#chapter-5-2-2"><i class="fa fa-check"></i><b>7.2.2</b> Plot the Variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chater-6.html"><a href="chater-6.html"><i class="fa fa-check"></i><b>8</b> Single Country Demographic Trend Graphs</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="chater-6.html"><a href="chater-6.html#create-single-demographic-trend-graph"><i class="fa fa-check"></i><b>8.1</b> Create Single Demographic Trend Graph</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="chater-6.html"><a href="chater-6.html#prep-work"><i class="fa fa-check"></i><b>8.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="8.1.2" data-path="chater-6.html"><a href="chater-6.html#plot-a-demographic-trend-graph"><i class="fa fa-check"></i><b>8.1.2</b> Plot a Demographic Trend Graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="chater-6.html"><a href="chater-6.html#create-many-graphs-3"><i class="fa fa-check"></i><b>8.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="chater-6.html"><a href="chater-6.html#identify-the-variables-1"><i class="fa fa-check"></i><b>8.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="8.2.2" data-path="chater-6.html"><a href="chater-6.html#plot-the-variables"><i class="fa fa-check"></i><b>8.2.2</b> Plot the Variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html"><i class="fa fa-check"></i><b>9</b> BARE BONES: Comparative Country Trend Graphs</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="bare-bones-comparative-country-trend-graphs.html"><a href="bare-bones-comparative-country-trend-graphs.html#create-comparative-trend-graph"><i class="fa fa-check"></i><b>9.1</b> Create Comparative Trend Graph</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="bare-bones-comparative-country-demographic-trend-graphs.html"><a href="bare-bones-comparative-country-demographic-trend-graphs.html"><i class="fa fa-check"></i><b>10</b> BARE BONES: Comparative Country Demographic Trend Graphs</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="bare-bones-comparative-country-demographic-trend-graphs.html"><a href="bare-bones-comparative-country-demographic-trend-graphs.html#create-comparative-demographic-trend-graph"><i class="fa fa-check"></i><b>10.1</b> Create Comparative Demographic Trend Graph</a></li>
+</ul></li>
+<li class="part"><span><b>IV Stacked Plots</b></span></li>
+<li class="chapter" data-level="11" data-path="stacked-plots.html"><a href="stacked-plots.html"><i class="fa fa-check"></i><b>11</b> Stacked Plots</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="stacked-plots.html"><a href="stacked-plots.html#create-a-single-graph-3"><i class="fa fa-check"></i><b>11.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="stacked-plots.html"><a href="stacked-plots.html#create-a-summary-1"><i class="fa fa-check"></i><b>11.1.1</b> Create a Summary</a></li>
+<li class="chapter" data-level="11.1.2" data-path="stacked-plots.html"><a href="stacked-plots.html#plot-the-summary-1"><i class="fa fa-check"></i><b>11.1.2</b> Plot the Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="stacked-plots.html"><a href="stacked-plots.html#create-many-graphs-4"><i class="fa fa-check"></i><b>11.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="stacked-plots.html"><a href="stacked-plots.html#identify-the-variables-2"><i class="fa fa-check"></i><b>11.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="11.2.2" data-path="stacked-plots.html"><a href="stacked-plots.html#create-many-summaries"><i class="fa fa-check"></i><b>11.2.2</b> Create Many Summaries</a></li>
+<li class="chapter" data-level="11.2.3" data-path="stacked-plots.html"><a href="stacked-plots.html#create-many-plots"><i class="fa fa-check"></i><b>11.2.3</b> Create Many Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="stacked-plots.html"><a href="stacked-plots.html#extras"><i class="fa fa-check"></i><b>11.3</b> Extras</a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="stacked-plots.html"><a href="stacked-plots.html#long-legends"><i class="fa fa-check"></i><b>11.3.1</b> Long Legends</a></li>
+<li class="chapter" data-level="11.3.2" data-path="stacked-plots.html"><a href="stacked-plots.html#font-size"><i class="fa fa-check"></i><b>11.3.2</b> Font Size</a></li>
+<li class="chapter" data-level="11.3.3" data-path="stacked-plots.html"><a href="stacked-plots.html#colors"><i class="fa fa-check"></i><b>11.3.3</b> Colors</a></li>
+<li class="chapter" data-level="11.3.4" data-path="stacked-plots.html"><a href="stacked-plots.html#order"><i class="fa fa-check"></i><b>11.3.4</b> Order</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="bare-bones-single-country-stacked-plots.html"><a href="bare-bones-single-country-stacked-plots.html"><i class="fa fa-check"></i><b>12</b> BARE BONES: Single Country Stacked Plots</a></li>
+<li class="part"><span><b>V Multiple Questions</b></span></li>
+<li class="chapter" data-level="13" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html"><i class="fa fa-check"></i><b>13</b> BARE BONES: Single Country Multi-Question Plots</a></li>
+<li class="chapter" data-level="14" data-path="bare-bones-comparative-multi-question-plots.html"><a href="bare-bones-comparative-multi-question-plots.html"><i class="fa fa-check"></i><b>14</b> BARE BONES: Comparative Multi-Question Plots</a></li>
+<li class="chapter" data-level="15" data-path="bare-bones-comparative-grid-plots.html"><a href="bare-bones-comparative-grid-plots.html"><i class="fa fa-check"></i><b>15</b> BARE BONES: Comparative Grid Plots</a></li>
+<li class="chapter" data-level="16" data-path="bare-bones-single-country-multi-question-trend-plots.html"><a href="bare-bones-single-country-multi-question-trend-plots.html"><i class="fa fa-check"></i><b>16</b> BARE BONES: Single Country Multi-Question Trend Plots</a></li>
+<li class="part"><span><b>VI All Things Colors</b></span></li>
+<li class="chapter" data-level="17" data-path="color-options.html"><a href="color-options.html"><i class="fa fa-check"></i><b>17</b> Color Options</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="color-options.html"><a href="color-options.html#available-colors"><i class="fa fa-check"></i><b>17.1</b> Available Colors</a></li>
+<li class="chapter" data-level="17.2" data-path="color-options.html"><a href="color-options.html#available-palettes"><i class="fa fa-check"></i><b>17.2</b> Available Palettes</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="change-colors.html"><a href="change-colors.html"><i class="fa fa-check"></i><b>18</b> Change Default Colors</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="change-colors.html"><a href="change-colors.html#change-colors-basic"><i class="fa fa-check"></i><b>18.1</b> Basic Cross Tabs</a></li>
+<li class="chapter" data-level="18.2" data-path="change-colors.html"><a href="change-colors.html#change-colors-demographic"><i class="fa fa-check"></i><b>18.2</b> Demographic Cross Tabs</a></li>
+<li class="chapter" data-level="18.3" data-path="change-colors.html"><a href="change-colors.html#change-colors-stacked"><i class="fa fa-check"></i><b>18.3</b> Stacked Graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="highlight-certain-countries.html"><a href="highlight-certain-countries.html"><i class="fa fa-check"></i><b>19</b> Highlight Certain Countries</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="highlight-certain-countries.html"><a href="highlight-certain-countries.html#single-country-highlight"><i class="fa fa-check"></i><b>19.1</b> Single Country Highlight</a></li>
+<li class="chapter" data-level="19.2" data-path="highlight-certain-countries.html"><a href="highlight-certain-countries.html#multiple-country-highlight"><i class="fa fa-check"></i><b>19.2</b> Multiple Country Highlight</a></li>
+<li class="chapter" data-level="19.3" data-path="highlight-certain-countries.html"><a href="highlight-certain-countries.html#change-highlight-color"><i class="fa fa-check"></i><b>19.3</b> Change Highlight Color</a></li>
+</ul></li>
+<li class="part"><span><b>VII How do I …?</b></span></li>
+<li class="chapter" data-level="20" data-path="change-font-size.html"><a href="change-font-size.html"><i class="fa fa-check"></i><b>20</b> Change the Font Size</a></li>
+<li class="chapter" data-level="21" data-path="change-the-titlesubtitlecaption.html"><a href="change-the-titlesubtitlecaption.html"><i class="fa fa-check"></i><b>21</b> Change the Title/Subtitle/Caption</a></li>
+<li class="chapter" data-level="22" data-path="select-countries-chp.html"><a href="select-countries-chp.html"><i class="fa fa-check"></i><b>22</b> Show only certain countries?</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="select-countries-chp.html"><a href="select-countries-chp.html#plots-that-go-with-calculate_-functions"><i class="fa fa-check"></i><b>22.1</b> Plots that go with <code>calculate_</code> functions</a></li>
+<li class="chapter" data-level="22.2" data-path="select-countries-chp.html"><a href="select-countries-chp.html#plots-with-no-calculate_-functions"><i class="fa fa-check"></i><b>22.2</b> Plots with no <code>calculate_</code> functions</a></li>
+</ul></li>
+<li class="chapter" data-level="23" data-path="order-change-stacked-graphs.html"><a href="order-change-stacked-graphs.html"><i class="fa fa-check"></i><b>23</b> Change the order of a stacked graph?</a>
+<ul>
+<li class="chapter" data-level="" data-path="order-change-stacked-graphs.html"><a href="order-change-stacked-graphs.html#move-one-factor"><i class="fa fa-check"></i>Move One Factor</a></li>
+<li class="chapter" data-level="" data-path="order-change-stacked-graphs.html"><a href="order-change-stacked-graphs.html#swap-factors"><i class="fa fa-check"></i>Swap Factors</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ArabBarometR Graphing Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="العربيه" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> العربيه<a href="العربيه.html#العربيه" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Testing.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="package-workflow.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="table-of-contents.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/Arabic.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/Arabic.Rmd",
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
