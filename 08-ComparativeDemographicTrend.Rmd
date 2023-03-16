@@ -374,3 +374,112 @@ plot_trend_comp_demographics("Q1COVID19",
 
 
 ```
+
+## Create Many Graphs
+
+On a rare occasion, it is conceivable that you might want to create many comparative demographic trend graphs for a slew of variables. For the sake of simplicity, let's assume you all the graphs to be displayed the same way and set the `.facet_choice` parameter to `"Country"` for the example.
+
+A nice payoff of creating the [data frame list](#chp8-trend-df-list) and the [date vector](#chp8-trend-date-vector) is that these objects (`df_list` and `survey_dates`) can be re-used any time you want to create a graph over the same time period. 
+
+For example, say you wanted to also create a graph tracking Algerian's views of the economy and religiosity. The only parameter in the `plot_trend_comp_demographics()` function that needs updating is `.var`.
+
+
+```{r 08.11-Many-Graphs-Example1, fig.dim=c(13,12)}
+
+df_list <- list(
+  survey1,
+  survey2,
+  survey3
+)
+
+survey_dates <- c("Survey 1 Year",
+                  "Survey 2 Year",
+                  "Survey 3 Year")
+
+plot_trend_comp_demographics("Q1COVID19",
+                             "gender",
+                             df_list,
+                             survey_dates,
+                             "Country",
+                             .caption = "Arab Barometer Wave VI")
+
+plot_trend_comp_demographics("Q101",
+                             "gender",
+                             df_list,
+                             survey_dates,
+                             "Country",
+                             .caption = "Arab Barometer Wave VI")
+
+plot_trend_comp_demographics("Q609",
+                             "gender",
+                             df_list,
+                             survey_dates,
+                             "Algeria",
+                             .caption = "Arab Barometer Wave VI")
+ 
+
+```
+
+Notice that the code produced two graphs, even though `df_list` and `survey_dates` were only defined one time. Once you have created the `df_list` and `survey_dates` objects, you can re-use them for any graph that is covering the same time period.
+
+You can also you the `map()` function from the `purrr` package. This method is essentially the same as what was done for [creating many single country demographic trend graphs](#chapter6-2).
+
+As a quick review, in earlier chapters the first step was identify the variables to plot. We did that by creating a named list of of the variables we wanted to plot.
+
+The `plot_trend_comp_demographics()` function creates summaries internally, so once we identify our variables, we go right to the mapping step. We map a named list of variables to the `plot_trend_comp_demographics()` function. We want to create a graph for the same country over the same time period, just using different variable, so we hold the demographic, data frame list, survey dates, facet choice, *and* caption constant.
+
+### Identify the Variables
+
+We are creating trend graphs for the variables `Q1COVID19`, `Q101`, and `Q609`. 
+
+```{r 08.12-Many-Graphs-Example2, fig.dim=c(13,12)}
+
+variables_2_plot <- list("Q1COVID19",
+                         "Q101",
+                         "Q609")
+
+names(variables_2_plot) <- c("Q1COVID19",
+                             "Q101",
+                             "Q609")
+
+```
+
+Now you have a names list of variables. Let's plot them.
+
+### Plot the Variables
+
+Recall we want to hold constant the `data_frames`, `svry_dates`, `.facet_choice` and `.caption` parameters because those will be the same for every graph. The only parameter we want to vary is `.var`.
+
+```{r 08.13-Many-Graphs-Example2, fig.dim=c(13,12)}
+
+plots <- map(
+  variables_2_plot, # Vector of variables to plot
+  plot_trend_comp_demographics, # Map to function `plot_trend_comp_demographics()`
+  
+  .dem           = "gender", # Hold constant the `.dem` parameter
+  data_frames    = df_list,  # Hold constant the `data_frames` parameter
+  svry_dates     = survey_dates, # Hold constant the `svry_dates` parameter
+  .facet_choice  = "Country", # Hold constant the `select_country` parameter
+  .caption       = "Arab Barometer Wave VI, Algeria"
+  )
+
+```
+
+Excellent!
+
+The plots have been saved to a named list called `plots`. To access the plots for each variable, you can use the `$` and variable name.
+
+```{r 08.14-Many-Graphs-Example2, fig.dim=c(13,12)}
+
+# Trend graph for Q1COVID19
+plots$Q1COVID19
+
+# Trend graph for Q101
+plots$Q101
+
+# Trend graph for Q609
+plots$Q609
+
+```
+
+You've done it! You have created many trend plots at once!
