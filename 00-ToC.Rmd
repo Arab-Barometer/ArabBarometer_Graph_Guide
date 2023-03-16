@@ -10,7 +10,7 @@
  
  
  
- <font size="5"> **BARE BONES** Trend Graphs </font>
+ <font size="5"> Trend Graphs </font>
  
  * <font size="4"> [Single Country Trend Graphs](#chapter-5) </font> 
  * <font size="4"> [Single Country Demographic Trend Graphs](#chapter-6) </font> 

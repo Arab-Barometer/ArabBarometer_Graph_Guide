@@ -1,4 +1,4 @@
-# BARE BONES: Comparative Country Demographic Trend Graphs {#chapter-8}
+# Comparative Country Demographic Trend Graphs {#chapter-8}
 
 This chapter will show you how to compare trend behavior of different demographics across countries. A comparative demographic trend graph can be shown in two different styles: either panels of graphs show the demographic trend by country, or panels of graphs showing the country trends by demographic. This chapter will demostrate how to create both.
 
@@ -384,7 +384,7 @@ A nice payoff of creating the [data frame list](#chp8-trend-df-list) and the [da
 For example, say you wanted to also create a graph tracking Algerian's views of the economy and religiosity. The only parameter in the `plot_trend_comp_demographics()` function that needs updating is `.var`.
 
 
-```{r 08.11-Many-Graphs-Example1, fig.dim=c(13,12)}
+```{r 08.18-Many-Graphs-Example1, fig.dim=c(13,12)}
 
 df_list <- list(
   survey1,
@@ -414,7 +414,7 @@ plot_trend_comp_demographics("Q609",
                              "gender",
                              df_list,
                              survey_dates,
-                             "Algeria",
+                             "Country",
                              .caption = "Arab Barometer Wave VI")
  
 
@@ -432,7 +432,7 @@ The `plot_trend_comp_demographics()` function creates summaries internally, so o
 
 We are creating trend graphs for the variables `Q1COVID19`, `Q101`, and `Q609`. 
 
-```{r 08.12-Many-Graphs-Example2, fig.dim=c(13,12)}
+```{r 08.19-Many-Graphs-Example2, fig.dim=c(13,12)}
 
 variables_2_plot <- list("Q1COVID19",
                          "Q101",
@@ -450,7 +450,7 @@ Now you have a names list of variables. Let's plot them.
 
 Recall we want to hold constant the `data_frames`, `svry_dates`, `.facet_choice` and `.caption` parameters because those will be the same for every graph. The only parameter we want to vary is `.var`.
 
-```{r 08.13-Many-Graphs-Example2, fig.dim=c(13,12)}
+```{r 08.20-Many-Graphs-Example2, fig.dim=c(13,12)}
 
 plots <- map(
   variables_2_plot, # Vector of variables to plot
@@ -469,7 +469,7 @@ Excellent!
 
 The plots have been saved to a named list called `plots`. To access the plots for each variable, you can use the `$` and variable name.
 
-```{r 08.14-Many-Graphs-Example2, fig.dim=c(13,12)}
+```{r 08.21-Many-Graphs-Example2, fig.dim=c(13,12)}
 
 # Trend graph for Q1COVID19
 plots$Q1COVID19
