@@ -9,6 +9,7 @@ language:
 rmd_files: [
   "index.rmd",
   "Workflow_and_Grammar.Rmd",
+  "Arabic.Rmd",
   "00-ToC.Rmd",
   "001-Package-Intro.Rmd",
   "01-SingleCountryOverall.Rmd",
