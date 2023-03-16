@@ -14,8 +14,8 @@
  
  * <font size="4"> [Single Country Trend Graphs](#chapter-5) </font> 
  * <font size="4"> [Single Country Demographic Trend Graphs](#chapter-6) </font> 
- * <font size="4"> [Comparative Trend Graphs][BARE BONES: Comparative Country Trend Graphs] </font> 
- * <font size="4"> [Comparative Demographic Trend Graphs][BARE BONES: Comparative Country Demographic Trend Graphs] </font> 
+ * <font size="4"> [Comparative Trend Graphs][Comparative Country Trend Graphs] </font> 
+ * <font size="4"> [Comparative Demographic Trend Graphs][Comparative Country Demographic Trend Graphs] </font> 
 
  
  <font size="5"> **BARE BONES** Stacked Graphs </font>
