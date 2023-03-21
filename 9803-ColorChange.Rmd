@@ -98,3 +98,6 @@ calculate_stacked_df(survey1,
 
 
 ```
+
+## Trend Graphs {#change-colors-trend}
+
