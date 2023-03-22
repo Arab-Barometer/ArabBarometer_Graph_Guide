@@ -1,5 +1,7 @@
 # Show only certain countries? {#select-countries-chp}
 
+To choose only certain countries to plot, use the parameter `select_countries`. If you are creating a plot with a `calculate_` function, this parameter is in `calculate_` function. If the plot only uses the `plot_` function, this parameter is in the `plot_` function. The parameters is called `select_countries` in both cases.
+
 ## Plots that go with `calculate_` functions {#select-countries-calculate}
 
 
