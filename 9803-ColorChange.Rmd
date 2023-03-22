@@ -76,7 +76,7 @@ If you choose to use a vector of either color names or hex codes, it **must** be
 
 Take `Q2061A` as an example. In the first survey of wave six, question `Q2061A` had ten response options including "don't know" and "refuse". The `calculate_stacked_df()` function combines "don't konw" and "refuse" into one category, so the color palette vector only needs to be length nine.
 
-```{r How.3.4-Complete-Code-Example, fig.dim=c(13,12)}
+```{r How.3.3-Complete-Code-Example, fig.dim=c(13,12)}
 
 calculate_stacked_df(survey1,
                      "Q2061A") |>
@@ -101,3 +101,83 @@ calculate_stacked_df(survey1,
 
 ## Trend Graphs {#change-colors-trend}
 
+By default trend graphs are created in the brand color assigned to them. If you wish to change the color, you can do so by setting the parameter `.trend_colors` to either a hex code or a color from `ArabBarometer_colors()`.
+
+### Single Country Trend Graphs {- #change-colors-trend-single}
+
+Changing the color for single country trend graphs is exactly the same as for [basic cross tabs](#change-colors-basic), only using a different parameter name.
+
+```{r How.3.4-Complete-Code-Example, fig.dim=c(13,12)}
+
+
+plot_trend_individual("Q1COVID19",
+                      df_list,
+                      survey_dates,
+                      "Algeria",
+                      .caption = "Arab Barometer Wave VI, Algeria",
+                      .trend_colors = "bright apple")  # Arab Barometer color name
+
+plot_trend_individual("Q1COVID19",
+                      df_list,
+                      survey_dates,
+                      "Algeria",
+                      .caption = "Arab Barometer Wave VI, Algeria",
+                      .trend_colors = "#C8C6A2") # hex code
+
+```
+
+### Comparative Trend Graphs {- #change-colors-trend-comparative}
+
+There is greater flexibility in colors for comparative trend graphs. The user may supply a named or unnamed vector of hex codes or Arab Barometer brand colors. 
+
+
+```{r How.3.5-Complete-Code-Example, fig.dim=c(13,12)}
+
+df_list <- list(
+  survey1,
+  survey2,
+  survey3
+)
+
+survey_dates <- c("Survey 1",
+                  "Survey 2",
+                  "Survey 3")
+
+# Unnamed color example
+plot_trend_comp("Q1COVID19",
+                df_list,
+                survey_dates,
+                .caption = "Arab Barometer Wave VI",
+                select_countries = c("Lebanon","Morocco"),
+                .trend_colors = c("bright apple","james bond")
+)
+
+
+# Named color example
+trend_colors <- c("bright apple","james bond")
+names(trend_colors) <- c("Morocco","Lebanon")
+
+
+plot_trend_comp("Q1COVID19",
+                df_list,
+                survey_dates,
+                .caption = "Arab Barometer Wave VI",
+                select_countries = c("Morocco","Lebanon"),
+                .trend_colors = trend_colors
+)
+```
+
+The user can also change the color of some but not all countries.
+
+```{r How.3.6-Complete-Code-Example, fig.dim=c(13,12)}
+# Change one color example
+plot_trend_comp("Q1COVID19",
+                df_list,
+                survey_dates,
+                .caption = "Arab Barometer Wave VI",
+                select_countries = c("Morocco","Lebanon"),
+                .trend_colors = c("Lebanon" = "#C8C6A2") 
+) 
+
+
+```
