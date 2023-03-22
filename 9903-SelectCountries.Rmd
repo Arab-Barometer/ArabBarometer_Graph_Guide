@@ -1,6 +1,6 @@
 # Show only certain countries? {#select-countries-chp}
 
-## Plots that go with `calculate_` functions
+## Plots that go with `calculate_` functions {#select-countries-calculate}
 
 
 ```{r How.5.6.1-SelectCountries, fig.dim=c(13,12)}
@@ -14,7 +14,7 @@ survey1 %>%
 
 ```
 
-## Plots with no `calculate_` functions
+## Plots with no `calculate_` functions {#select-countries-no-calculate}
 
 ```{r How.5.7.1-SelectCountries, fig.dim=c(13,12)}
 

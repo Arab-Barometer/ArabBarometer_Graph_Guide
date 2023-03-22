@@ -50,6 +50,9 @@ chapter-5-1-2
 chapter-5-2
 chapter-5-2-1
 chapter-5-2-2
+extras
+font-size
+colors
 chater-6
 chapter-6-1
 chapter-6-1-1
@@ -64,6 +67,10 @@ chapter-7-1-2
 chapter-7-2
 chapter-7-2-1
 chapter-7-2-2
+extras-1
+select-countries
+font-size-1
+colors-1
 chapter-8
 chapter-8-1
 chapter-8-1-1
@@ -79,10 +86,10 @@ create-many-graphs-4
 identify-the-variables-2
 create-many-summaries
 create-many-plots
-extras
+extras-2
 long-legends
-font-size
-colors
+font-size-2
+colors-2
 order
 bare-bones-single-country-stacked-plots
 bare-bones-single-country-multi-question-plots
@@ -96,6 +103,7 @@ change-colors
 change-colors-basic
 change-colors-demographic
 change-colors-stacked
+change-colors-trend
 highlight-certain-countries
 single-country-highlight
 multiple-country-highlight
@@ -103,6 +111,6 @@ change-highlight-color
 change-font-size
 change-the-titlesubtitlecaption
 select-countries-chp
-plots-that-go-with-calculate_-functions
-plots-with-no-calculate_-functions
+select-countries-calculate
+select-countries-no-calculate
 order-change-stacked-graphs
