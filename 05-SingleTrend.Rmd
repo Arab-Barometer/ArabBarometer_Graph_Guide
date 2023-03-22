@@ -313,3 +313,14 @@ plots$Q609
 ```
 
 You've done it! You have created many trend plots at once!
+
+## Extras 
+
+### Font Size
+
+The font size default brand size is used for the graph text. You can learn how to change that in [the chapter on changing the font size](#change-font-size).
+
+### Colors
+
+You can learn how to change the colors for the single country trend graph in [the chapter on changing graph colors](#change-colors-trend-comparative).
+
