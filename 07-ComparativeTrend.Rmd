@@ -302,3 +302,18 @@ plots$Q609
 ```
 
 You've done it! You have created many trend plots at once!
+
+## Extras
+
+### Select Countries
+
+By default, `plot_trend_comp()` plots data for all the countries in the data. To learn how to plot data from select countries, see [the chapter on selecting countries](#select-countries-no-calculate).
+
+### Font Size
+
+The font size default brand size is used for the graph text. You can learn how to change that in [the chapter on changing the font size](#change-font-size).
+
+### Colors
+
+You can learn how to change the colors for the comparative trend graph in [the chapter on changing graph colors](#change-colors-trend-comparative).
+
