@@ -2,7 +2,12 @@
 
 # Single Country Multi-Question Plots
 
-This chapter teaches you how to create a single graph that summarizes responses for multiple variables for a single country.
+This chapter teaches you how to create a single graph that summarizes responses for multiple variables for a single country. 
+
+These types of graphs are especially useful for plotting **grid** questions. Grid questions use the same stem, but have different endings. Technically, while related, they are all unique questions. Therefore, plotting a set of grid questions on the same graph, is the same thing as plotting multiple question on one graph.
+
+**All questions are required to be the same type when using this function.** Comparing the responses to different question types is not advised, so the function does not allow for it.
+
 At the end, your code will look like the following:
 
 ```{r 09.1-Complete-Code-Example, eval=FALSE}
@@ -70,7 +75,7 @@ The next step is to create a vector of labels for the questions. This is the tex
 
 ```{r 09.4-question-labels}
 
-questions_labels <- c(
+question_labels <- c(
   "Is there corruption?",       # Text for Q210
   "Is the gov't cracking down?" # Text for Q211
   )
@@ -96,7 +101,7 @@ Time to fill in our function. The data we are using for the example is `survey1`
 plot_multiquestions_ind(
   .ab = survey1,
   .questions = questions_2_compare,
-  .question_labels = questions_labels,
+  .question_labels = question_labels,
   .country = "Algeria"
 )
 
@@ -111,7 +116,7 @@ The parameters for including a title, subtitle, and caption are the same as they
 plot_multiquestions_ind(
   .ab = survey1,
   .questions = questions_2_compare,
-  .question_labels = questions_labels,
+  .question_labels = question_labels,
   .country = "Algeria",
   .title = "Perceptions of Corruption in Algeria",
   .subtitle = "% saying to a medium or large extent",
@@ -129,3 +134,35 @@ By default, the colors for the graph are randomly selected from `ArabBarometer_c
 ### Data Frame
 
 There is no **calculate_** function that accompanies this function. All calculations are done internally. The parameter `.return_df` allows the user to see the data frame used to create the graph. Setting `.return_df` to `TRUE` will cause the function to return a list containing the graph and the data frame. Setting `.return_df` to `"only"` will cause the function to only return the data frame.
+
+### Explict Grid Example
+
+Remember: plotting a set of grid questions requires exactly the same steps as outlined throughout this chapter. There is **no difference** between plotting 2 (or n) questions that belong to a grid, and 2 (or n) questions that do not.
+
+```{r}
+
+# Identifying two question from a grid set:
+questions_2_compare <- list(
+  "Q201A_1",
+  "Q201A_2"
+)
+
+# Supplying labels:
+question_labels <- c(
+  "Government",
+  "Legal system"
+)
+
+# Plotting the grid questions:
+plot_multiquestions_ind(
+  .ab = survey1,
+  .questions = questions_2_compare,
+  .question_labels = question_labels,
+  .country = "Algeria",
+  .title = "How much trust do you have in...",
+  .subtitle = "% of Algerians saying they have quite a lot or a great deal",
+  .caption = "Arab Barometer Wave VI, Survey 1, Algeria"
+)
+
+```
+
