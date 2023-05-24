@@ -4,19 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 9 Single Country Multi-Question Plots | ArabBarometR Graphing Guide</title>
-  <meta name="description" content="Chapter 9 Single Country Multi-Question Plots | ArabBarometR Graphing Guide" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <title>Chapter 12 Single Country Multi-Question Plots | ArabBarometR Graphing Guide</title>
+  <meta name="description" content="Chapter 12 Single Country Multi-Question Plots | ArabBarometR Graphing Guide" />
+  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 9 Single Country Multi-Question Plots | ArabBarometR Graphing Guide" />
+  <meta property="og:title" content="Chapter 12 Single Country Multi-Question Plots | ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
-  
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 9 Single Country Multi-Question Plots | ArabBarometR Graphing Guide" />
+  <meta name="twitter:title" content="Chapter 12 Single Country Multi-Question Plots | ArabBarometR Graphing Guide" />
   
   
   
@@ -24,16 +23,15 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2022-04-19" />
+<meta name="date" content="2023-05-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="coming-soon-comparative-country-demographic-trend-graphs.html"/>
-<link rel="next" href="comparative-multi-question-plots.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<link rel="prev" href="bare-bones-single-country-stacked-plots.html"/>
+<link rel="next" href="bare-bones-comparative-multi-question-plots.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -51,14 +49,16 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -92,7 +92,7 @@ code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
 code span.at { color: #7d9029; } /* Attribute */
 code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
+code span.bu { color: #008000; } /* BuiltIn */
 code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
 code span.ch { color: #4070a0; } /* Char */
 code span.cn { color: #880000; } /* Constant */
@@ -105,7 +105,7 @@ code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
 code span.fl { color: #40a070; } /* Float */
 code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
+code span.im { color: #008000; font-weight: bold; } /* Import */
 code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 code span.kw { color: #007020; font-weight: bold; } /* Keyword */
 code span.op { color: #666666; } /* Operator */
@@ -143,94 +143,219 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#example-data"><i class="fa fa-check"></i>Example Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#headercode"><i class="fa fa-check"></i>Header Code</a></li>
 </ul></li>
-<li class="part"><span><b>I Cross Tabulation Graphs</b></span></li>
-<li class="chapter" data-level="1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html"><i class="fa fa-check"></i><b>1</b> Single Country Overall Graphs</a>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html"><i class="fa fa-check"></i>Package Workflow and Grammar</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-a-single-graph"><i class="fa fa-check"></i><b>1.1</b> Create a Single Graph</a>
-<ul>
-<li class="chapter" data-level="1.1.1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-a-summary"><i class="fa fa-check"></i><b>1.1.1</b> Create a Summary</a></li>
-<li class="chapter" data-level="1.1.2" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#plot-the-summary"><i class="fa fa-check"></i><b>1.1.2</b> Plot the Summary</a></li>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html#calculate_-functions"><i class="fa fa-check"></i><code>calculate_</code> functions</a></li>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html#plot_-functions"><i class="fa fa-check"></i><code>plot_</code> functions</a></li>
+<li class="chapter" data-level="" data-path="package-workflow.html"><a href="package-workflow.html#ab_save"><i class="fa fa-check"></i><code>AB_save()</code></a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-many-graphs"><i class="fa fa-check"></i><b>1.2</b> Create Many Graphs</a>
+<li class="chapter" data-level="" data-path="arabic.html"><a href="arabic.html"><i class="fa fa-check"></i><span style="font-family: Tajawal;"> العربيه </span></a></li>
+<li class="chapter" data-level="" data-path="table-of-contents.html"><a href="table-of-contents.html"><i class="fa fa-check"></i>Table of Contents</a></li>
+<li class="part"><span><b>I Data Prepperation Functions</b></span></li>
+<li class="chapter" data-level="1" data-path="preparing-data.html"><a href="preparing-data.html"><i class="fa fa-check"></i><b>1</b> Preparing Data</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#identify-the-variables"><i class="fa fa-check"></i><b>1.2.1</b> Identify the Variables</a></li>
-<li class="chapter" data-level="1.2.2" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#create-summaries"><i class="fa fa-check"></i><b>1.2.2</b> Create Summaries</a></li>
-<li class="chapter" data-level="1.2.3" data-path="single-country-overall-graphs.html"><a href="single-country-overall-graphs.html#plot-the-summaries"><i class="fa fa-check"></i><b>1.2.3</b> Plot the Summaries</a></li>
+<li class="chapter" data-level="1.1" data-path="preparing-data.html"><a href="preparing-data.html#recode_country"><i class="fa fa-check"></i><b>1.1</b> recode_country</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="preparing-data.html"><a href="preparing-data.html#example"><i class="fa fa-check"></i><b>1.1.1</b> Example:</a></li>
 </ul></li>
+<li class="chapter" data-level="1.2" data-path="preparing-data.html"><a href="preparing-data.html#demographic-functions"><i class="fa fa-check"></i><b>1.2</b> Demographic functions</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="preparing-data.html"><a href="preparing-data.html#basics"><i class="fa fa-check"></i><b>1.2.1</b> Basics</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html"><i class="fa fa-check"></i><b>2</b> Single Country Demographic Plots</a>
+<li class="chapter" data-level="1.3" data-path="preparing-data.html"><a href="preparing-data.html#advanced"><i class="fa fa-check"></i><b>1.3</b> Advanced</a></li>
+<li class="chapter" data-level="1.4" data-path="preparing-data.html"><a href="preparing-data.html#education_demographic"><i class="fa fa-check"></i><b>1.4</b> education_demographic</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#create-a-single-graph-1"><i class="fa fa-check"></i><b>2.1</b> Create a Single Graph</a>
-<ul>
-<li class="chapter" data-level="2.1.1" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#creating-a-summary"><i class="fa fa-check"></i><b>2.1.1</b> Creating a Summary</a></li>
-<li class="chapter" data-level="2.1.2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#plotting-the-summary"><i class="fa fa-check"></i><b>2.1.2</b> Plotting the Summary</a></li>
+<li class="chapter" data-level="1.4.1" data-path="preparing-data.html"><a href="preparing-data.html#examples"><i class="fa fa-check"></i><b>1.4.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#create-many-graphs-1"><i class="fa fa-check"></i><b>2.2</b> Create Many Graphs</a>
+<li class="chapter" data-level="1.5" data-path="preparing-data.html"><a href="preparing-data.html#dummy_all"><i class="fa fa-check"></i><b>1.5</b> dummy_all</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#create-summaries-1"><i class="fa fa-check"></i><b>2.2.1</b> Create Summaries</a></li>
-<li class="chapter" data-level="2.2.2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#plot-the-summaries-1"><i class="fa fa-check"></i><b>2.2.2</b> Plot the Summaries</a></li>
+<li class="chapter" data-level="1.5.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-1"><i class="fa fa-check"></i><b>1.5.1</b> Examples:</a></li>
 </ul></li>
+<li class="chapter" data-level="1.6" data-path="preparing-data.html"><a href="preparing-data.html#dummy_select"><i class="fa fa-check"></i><b>1.6</b> dummy_select</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-2"><i class="fa fa-check"></i><b>1.6.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html"><i class="fa fa-check"></i><b>3</b> Comparative Overall Graphs</a>
+<li class="chapter" data-level="1.7" data-path="preparing-data.html"><a href="preparing-data.html#in-practice"><i class="fa fa-check"></i><b>1.7</b> In Practice</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-a-single-graph-2"><i class="fa fa-check"></i><b>3.1</b> Create a Single Graph</a>
-<ul>
-<li class="chapter" data-level="3.1.1" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-a-summary-1"><i class="fa fa-check"></i><b>3.1.1</b> Create a Summary</a></li>
-<li class="chapter" data-level="3.1.2" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#plot-the-summary-1"><i class="fa fa-check"></i><b>3.1.2</b> Plot the Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="3.2" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-many-graphs-2"><i class="fa fa-check"></i><b>3.2</b> Create Many Graphs</a>
-<ul>
-<li class="chapter" data-level="3.2.1" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#identify-the-variables-1"><i class="fa fa-check"></i><b>3.2.1</b> Identify the Variables</a></li>
-<li class="chapter" data-level="3.2.2" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-summaries-2"><i class="fa fa-check"></i><b>3.2.2</b> Create Summaries</a></li>
-<li class="chapter" data-level="3.2.3" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#plot-the-summaries-2"><i class="fa fa-check"></i><b>3.2.3</b> Plot the Summaries</a></li>
+<li class="chapter" data-level="1.7.1" data-path="preparing-data.html"><a href="preparing-data.html#example-2"><i class="fa fa-check"></i><b>1.7.1</b> Example:</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html"><i class="fa fa-check"></i><b>4</b> Comparative Demographic Graphs</a>
+<li class="part"><span><b>II Cross Tabulation Graphs</b></span></li>
+<li class="chapter" data-level="2" data-path="chapter-1.html"><a href="chapter-1.html"><i class="fa fa-check"></i><b>2</b> Single Country Overall Graphs</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-a-single-graph-3"><i class="fa fa-check"></i><b>4.1</b> Create a Single Graph</a>
+<li class="chapter" data-level="2.1" data-path="chapter-1.html"><a href="chapter-1.html#chapter-1-1"><i class="fa fa-check"></i><b>2.1</b> Create a Single Graph</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#creating-a-summary-1"><i class="fa fa-check"></i><b>4.1.1</b> Creating a Summary</a></li>
-<li class="chapter" data-level="4.1.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#plotting-the-summary-1"><i class="fa fa-check"></i><b>4.1.2</b> Plotting the Summary</a></li>
+<li class="chapter" data-level="2.1.1" data-path="chapter-1.html"><a href="chapter-1.html#chapter-1-1-1"><i class="fa fa-check"></i><b>2.1.1</b> Create a Summary</a></li>
+<li class="chapter" data-level="2.1.2" data-path="chapter-1.html"><a href="chapter-1.html#chapter-1-1-2"><i class="fa fa-check"></i><b>2.1.2</b> Plot the Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-many-graphs-3"><i class="fa fa-check"></i><b>4.2</b> Create Many Graphs</a>
+<li class="chapter" data-level="2.2" data-path="chapter-1.html"><a href="chapter-1.html#chapter-1-2"><i class="fa fa-check"></i><b>2.2</b> Create Many Graphs</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-summaries-3"><i class="fa fa-check"></i><b>4.2.1</b> Create Summaries</a></li>
-<li class="chapter" data-level="4.2.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#plot-the-summaries-3"><i class="fa fa-check"></i><b>4.2.2</b> Plot the Summaries</a></li>
+<li class="chapter" data-level="2.2.1" data-path="chapter-1.html"><a href="chapter-1.html#chapter-1-2-1"><i class="fa fa-check"></i><b>2.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="2.2.2" data-path="chapter-1.html"><a href="chapter-1.html#chapter-1-2-2"><i class="fa fa-check"></i><b>2.2.2</b> Create Summaries</a></li>
+<li class="chapter" data-level="2.2.3" data-path="chapter-1.html"><a href="chapter-1.html#plot-many-graphs-single-country"><i class="fa fa-check"></i><b>2.2.3</b> Plot the Summaries</a></li>
 </ul></li>
 </ul></li>
-<li class="part"><span><b>II Trend Graphs</b></span></li>
-<li class="chapter" data-level="5" data-path="coming-soon-single-country-trend-graphs.html"><a href="coming-soon-single-country-trend-graphs.html"><i class="fa fa-check"></i><b>5</b> COMING SOON: Single Country Trend Graphs</a>
+<li class="chapter" data-level="3" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html"><i class="fa fa-check"></i><b>3</b> Single Country Demographic Plots</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="coming-soon-single-country-trend-graphs.html"><a href="coming-soon-single-country-trend-graphs.html#create-single-trend-graph"><i class="fa fa-check"></i><b>5.1</b> Create Single Trend Graph</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="coming-soon-single-country-demographic-trend-graphs.html"><a href="coming-soon-single-country-demographic-trend-graphs.html"><i class="fa fa-check"></i><b>6</b> COMING SOON: Single Country Demographic Trend Graphs</a>
+<li class="chapter" data-level="3.1" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#create-a-single-graph"><i class="fa fa-check"></i><b>3.1</b> Create a Single Graph</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="coming-soon-single-country-demographic-trend-graphs.html"><a href="coming-soon-single-country-demographic-trend-graphs.html#create-single-demographic-trend-graph"><i class="fa fa-check"></i><b>6.1</b> Create Single Demographic Trend Graph</a></li>
+<li class="chapter" data-level="3.1.1" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#creating-a-summary"><i class="fa fa-check"></i><b>3.1.1</b> Creating a Summary</a></li>
+<li class="chapter" data-level="3.1.2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#plotting-the-summary"><i class="fa fa-check"></i><b>3.1.2</b> Plotting the Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="coming-soon-comparative-country-trend-graphs.html"><a href="coming-soon-comparative-country-trend-graphs.html"><i class="fa fa-check"></i><b>7</b> COMING SOON: Comparative Country Trend Graphs</a>
+<li class="chapter" data-level="3.2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#create-many-graphs"><i class="fa fa-check"></i><b>3.2</b> Create Many Graphs</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="coming-soon-comparative-country-trend-graphs.html"><a href="coming-soon-comparative-country-trend-graphs.html#create-comparative-trend-graph"><i class="fa fa-check"></i><b>7.1</b> Create Comparative Trend Graph</a></li>
+<li class="chapter" data-level="3.2.1" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#create-summaries"><i class="fa fa-check"></i><b>3.2.1</b> Create Summaries</a></li>
+<li class="chapter" data-level="3.2.2" data-path="single-country-demographic-plots.html"><a href="single-country-demographic-plots.html#plot-many-graphs-single-country-demographic"><i class="fa fa-check"></i><b>3.2.2</b> Plot the Summaries</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="coming-soon-comparative-country-demographic-trend-graphs.html"><a href="coming-soon-comparative-country-demographic-trend-graphs.html"><i class="fa fa-check"></i><b>8</b> COMING SOON: Comparative Country Demographic Trend Graphs</a>
+</ul></li>
+<li class="chapter" data-level="4" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html"><i class="fa fa-check"></i><b>4</b> Comparative Overall Graphs</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="coming-soon-comparative-country-demographic-trend-graphs.html"><a href="coming-soon-comparative-country-demographic-trend-graphs.html#create-comparative-demographic-trend-graph"><i class="fa fa-check"></i><b>8.1</b> Create Comparative Demographic Trend Graph</a></li>
+<li class="chapter" data-level="4.1" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-a-single-graph-1"><i class="fa fa-check"></i><b>4.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-a-summary"><i class="fa fa-check"></i><b>4.1.1</b> Create a Summary</a></li>
+<li class="chapter" data-level="4.1.2" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#plot-the-summary"><i class="fa fa-check"></i><b>4.1.2</b> Plot the Summary</a></li>
 </ul></li>
-<li class="part"><span><b>III Multiple Questions</b></span></li>
-<li class="chapter" data-level="9" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html"><i class="fa fa-check"></i><b>9</b> Single Country Multi-Question Plots</a></li>
-<li class="chapter" data-level="10" data-path="comparative-multi-question-plots.html"><a href="comparative-multi-question-plots.html"><i class="fa fa-check"></i><b>10</b> Comparative Multi-Question Plots</a></li>
-<li class="chapter" data-level="11" data-path="comparative-grid-plots.html"><a href="comparative-grid-plots.html"><i class="fa fa-check"></i><b>11</b> Comparative Grid Plots</a></li>
-<li class="chapter" data-level="12" data-path="single-country-multi-question-trend-plots.html"><a href="single-country-multi-question-trend-plots.html"><i class="fa fa-check"></i><b>12</b> Single Country Multi-Question Trend Plots</a></li>
+<li class="chapter" data-level="4.2" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-many-graphs-1"><i class="fa fa-check"></i><b>4.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#identify-the-variables"><i class="fa fa-check"></i><b>4.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="4.2.2" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#create-summaries-1"><i class="fa fa-check"></i><b>4.2.2</b> Create Summaries</a></li>
+<li class="chapter" data-level="4.2.3" data-path="comparative-overall-graphs.html"><a href="comparative-overall-graphs.html#plot-many-comparative"><i class="fa fa-check"></i><b>4.2.3</b> Plot the Summaries</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html"><i class="fa fa-check"></i><b>5</b> Comparative Demographic Graphs</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-a-single-graph-2"><i class="fa fa-check"></i><b>5.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#creating-a-summary-1"><i class="fa fa-check"></i><b>5.1.1</b> Creating a Summary</a></li>
+<li class="chapter" data-level="5.1.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#plotting-the-summary-1"><i class="fa fa-check"></i><b>5.1.2</b> Plotting the Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-many-graphs-2"><i class="fa fa-check"></i><b>5.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#create-summaries-2"><i class="fa fa-check"></i><b>5.2.1</b> Create Summaries</a></li>
+<li class="chapter" data-level="5.2.2" data-path="comparative-demographic-graphs.html"><a href="comparative-demographic-graphs.html#plot-many-comparative-demographic"><i class="fa fa-check"></i><b>5.2.2</b> Plot the Summaries</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>III Trend Graphs</b></span></li>
+<li class="chapter" data-level="6" data-path="chapter-5.html"><a href="chapter-5.html"><i class="fa fa-check"></i><b>6</b> Single Country Trend Graphs</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="chapter-5.html"><a href="chapter-5.html#chapter-5-1"><i class="fa fa-check"></i><b>6.1</b> Create Single Trend Graph</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="chapter-5.html"><a href="chapter-5.html#chapter-5-1-1"><i class="fa fa-check"></i><b>6.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="6.1.2" data-path="chapter-5.html"><a href="chapter-5.html#chapter-5-1-2"><i class="fa fa-check"></i><b>6.1.2</b> Plot a Trend Graph</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="chapter-5.html"><a href="chapter-5.html#chapter-5-2"><i class="fa fa-check"></i><b>6.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="chapter-5.html"><a href="chapter-5.html#chapter-5-2-1"><i class="fa fa-check"></i><b>6.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="6.2.2" data-path="chapter-5.html"><a href="chapter-5.html#chapter-5-2-2"><i class="fa fa-check"></i><b>6.2.2</b> Plot the Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="chapter-5.html"><a href="chapter-5.html#extras"><i class="fa fa-check"></i><b>6.3</b> Extras</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="chapter-5.html"><a href="chapter-5.html#font-size"><i class="fa fa-check"></i><b>6.3.1</b> Font Size</a></li>
+<li class="chapter" data-level="6.3.2" data-path="chapter-5.html"><a href="chapter-5.html#colors"><i class="fa fa-check"></i><b>6.3.2</b> Colors</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chater-6.html"><a href="chater-6.html"><i class="fa fa-check"></i><b>7</b> Single Country Demographic Trend Graphs</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="chater-6.html"><a href="chater-6.html#chapter-6-1"><i class="fa fa-check"></i><b>7.1</b> Create Single Demographic Trend Graph</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="chater-6.html"><a href="chater-6.html#chapter-6-1-1"><i class="fa fa-check"></i><b>7.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="7.1.2" data-path="chater-6.html"><a href="chater-6.html#chapter-6-1-2"><i class="fa fa-check"></i><b>7.1.2</b> Plot a Demographic Trend Graph</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="chater-6.html"><a href="chater-6.html#chapter-6-2"><i class="fa fa-check"></i><b>7.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="chater-6.html"><a href="chater-6.html#chapter-6-2-1"><i class="fa fa-check"></i><b>7.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="7.2.2" data-path="chater-6.html"><a href="chater-6.html#chapter-6-2-2"><i class="fa fa-check"></i><b>7.2.2</b> Plot the Variables</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chapter-7.html"><a href="chapter-7.html"><i class="fa fa-check"></i><b>8</b> Comparative Country Trend Graphs</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="chapter-7.html"><a href="chapter-7.html#create-comparative-trend-graph"><i class="fa fa-check"></i><b>8.1</b> Create Comparative Trend Graph</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-1-1"><i class="fa fa-check"></i><b>8.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="8.1.2" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-1-2"><i class="fa fa-check"></i><b>8.1.2</b> Plot a Comparative Trend Graph</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-2"><i class="fa fa-check"></i><b>8.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-2-1"><i class="fa fa-check"></i><b>8.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="8.2.2" data-path="chapter-7.html"><a href="chapter-7.html#chapter-7-2-2"><i class="fa fa-check"></i><b>8.2.2</b> Plot the Variables</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="chapter-7.html"><a href="chapter-7.html#extras-1"><i class="fa fa-check"></i><b>8.3</b> Extras</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="chapter-7.html"><a href="chapter-7.html#select-countries"><i class="fa fa-check"></i><b>8.3.1</b> Select Countries</a></li>
+<li class="chapter" data-level="8.3.2" data-path="chapter-7.html"><a href="chapter-7.html#font-size-1"><i class="fa fa-check"></i><b>8.3.2</b> Font Size</a></li>
+<li class="chapter" data-level="8.3.3" data-path="chapter-7.html"><a href="chapter-7.html#colors-1"><i class="fa fa-check"></i><b>8.3.3</b> Colors</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chapter-8.html"><a href="chapter-8.html"><i class="fa fa-check"></i><b>9</b> Comparative Country Demographic Trend Graphs</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="chapter-8.html"><a href="chapter-8.html#chapter-8-1"><i class="fa fa-check"></i><b>9.1</b> Create Comparative Demographic Trend Graph</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="chapter-8.html"><a href="chapter-8.html#chapter-8-1-1"><i class="fa fa-check"></i><b>9.1.1</b> Prep Work</a></li>
+<li class="chapter" data-level="9.1.2" data-path="chapter-8.html"><a href="chapter-8.html#chapter-8-1-2"><i class="fa fa-check"></i><b>9.1.2</b> Plot a Comparative Demographic Trend Graph</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="chapter-8.html"><a href="chapter-8.html#create-many-graphs-3"><i class="fa fa-check"></i><b>9.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="chapter-8.html"><a href="chapter-8.html#identify-the-variables-1"><i class="fa fa-check"></i><b>9.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="9.2.2" data-path="chapter-8.html"><a href="chapter-8.html#plot-the-variables"><i class="fa fa-check"></i><b>9.2.2</b> Plot the Variables</a></li>
+</ul></li>
+</ul></li>
 <li class="part"><span><b>IV Stacked Plots</b></span></li>
-<li class="chapter" data-level="13" data-path="stacked-plots.html"><a href="stacked-plots.html"><i class="fa fa-check"></i><b>13</b> Stacked Plots</a></li>
-<li class="part"><span><b>V How do I …?</b></span></li>
-<li class="chapter" data-level="14" data-path="change-the-font-size.html"><a href="change-the-font-size.html"><i class="fa fa-check"></i><b>14</b> Change the Font Size</a></li>
-<li class="chapter" data-level="15" data-path="change-the-titlesubtitlecaption.html"><a href="change-the-titlesubtitlecaption.html"><i class="fa fa-check"></i><b>15</b> Change the Title/Subtitle/Caption</a></li>
-<li class="chapter" data-level="16" data-path="play-with-colors.html"><a href="play-with-colors.html"><i class="fa fa-check"></i><b>16</b> Play with Colors</a>
+<li class="chapter" data-level="10" data-path="stacked-plots.html"><a href="stacked-plots.html"><i class="fa fa-check"></i><b>10</b> Stacked Plots</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="play-with-colors.html"><a href="play-with-colors.html#change-colors-for-frequency-graphs"><i class="fa fa-check"></i><b>16.1</b> Change Colors for Frequency Graphs</a></li>
-<li class="chapter" data-level="16.2" data-path="play-with-colors.html"><a href="play-with-colors.html#available-colors"><i class="fa fa-check"></i><b>16.2</b> Available Colors</a></li>
-<li class="chapter" data-level="16.3" data-path="play-with-colors.html"><a href="play-with-colors.html#change-color-palette"><i class="fa fa-check"></i><b>16.3</b> Change Color Palette</a></li>
-<li class="chapter" data-level="16.4" data-path="play-with-colors.html"><a href="play-with-colors.html#available-palettes"><i class="fa fa-check"></i><b>16.4</b> Available Palettes</a></li>
+<li class="chapter" data-level="10.1" data-path="stacked-plots.html"><a href="stacked-plots.html#create-a-single-graph-3"><i class="fa fa-check"></i><b>10.1</b> Create a Single Graph</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="stacked-plots.html"><a href="stacked-plots.html#create-a-summary-1"><i class="fa fa-check"></i><b>10.1.1</b> Create a Summary</a></li>
+<li class="chapter" data-level="10.1.2" data-path="stacked-plots.html"><a href="stacked-plots.html#plot-the-summary-1"><i class="fa fa-check"></i><b>10.1.2</b> Plot the Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="stacked-plots.html"><a href="stacked-plots.html#create-many-graphs-4"><i class="fa fa-check"></i><b>10.2</b> Create Many Graphs</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="stacked-plots.html"><a href="stacked-plots.html#identify-the-variables-2"><i class="fa fa-check"></i><b>10.2.1</b> Identify the Variables</a></li>
+<li class="chapter" data-level="10.2.2" data-path="stacked-plots.html"><a href="stacked-plots.html#create-many-summaries"><i class="fa fa-check"></i><b>10.2.2</b> Create Many Summaries</a></li>
+<li class="chapter" data-level="10.2.3" data-path="stacked-plots.html"><a href="stacked-plots.html#create-many-plots"><i class="fa fa-check"></i><b>10.2.3</b> Create Many Plots</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="stacked-plots.html"><a href="stacked-plots.html#extras-2"><i class="fa fa-check"></i><b>10.3</b> Extras</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="stacked-plots.html"><a href="stacked-plots.html#long-legends"><i class="fa fa-check"></i><b>10.3.1</b> Long Legends</a></li>
+<li class="chapter" data-level="10.3.2" data-path="stacked-plots.html"><a href="stacked-plots.html#font-size-2"><i class="fa fa-check"></i><b>10.3.2</b> Font Size</a></li>
+<li class="chapter" data-level="10.3.3" data-path="stacked-plots.html"><a href="stacked-plots.html#colors-2"><i class="fa fa-check"></i><b>10.3.3</b> Colors</a></li>
+<li class="chapter" data-level="10.3.4" data-path="stacked-plots.html"><a href="stacked-plots.html#order"><i class="fa fa-check"></i><b>10.3.4</b> Order</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="bare-bones-single-country-stacked-plots.html"><a href="bare-bones-single-country-stacked-plots.html"><i class="fa fa-check"></i><b>11</b> BARE BONES: Single Country Stacked Plots</a></li>
+<li class="part"><span><b>V Multiple Questions</b></span></li>
+<li class="chapter" data-level="12" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html"><i class="fa fa-check"></i><b>12</b> Single Country Multi-Question Plots</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#prep-work"><i class="fa fa-check"></i><b>12.1</b> Prep Work</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#question-list"><i class="fa fa-check"></i><b>12.1.1</b> Question List</a></li>
+<li class="chapter" data-level="12.1.2" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#question-labels"><i class="fa fa-check"></i><b>12.1.2</b> Question Labels</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#plot-a-multiquestion-graph-for-a-single-country"><i class="fa fa-check"></i><b>12.2</b> Plot a Multiquestion Graph for a Single Country</a></li>
+<li class="chapter" data-level="12.3" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#extras-3"><i class="fa fa-check"></i><b>12.3</b> Extras</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#setting-colors"><i class="fa fa-check"></i><b>12.3.1</b> Setting Colors</a></li>
+<li class="chapter" data-level="12.3.2" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#data-frame"><i class="fa fa-check"></i><b>12.3.2</b> Data Frame</a></li>
+<li class="chapter" data-level="12.3.3" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#explict-grid-example"><i class="fa fa-check"></i><b>12.3.3</b> Explict Grid Example</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="bare-bones-comparative-multi-question-plots.html"><a href="bare-bones-comparative-multi-question-plots.html"><i class="fa fa-check"></i><b>13</b> BARE BONES: Comparative Multi-Question Plots</a></li>
+<li class="chapter" data-level="14" data-path="bare-bones-single-country-multi-question-trend-plots.html"><a href="bare-bones-single-country-multi-question-trend-plots.html"><i class="fa fa-check"></i><b>14</b> BARE BONES: Single Country Multi-Question Trend Plots</a></li>
+<li class="part"><span><b>VI All Things Colors</b></span></li>
+<li class="chapter" data-level="15" data-path="color-options.html"><a href="color-options.html"><i class="fa fa-check"></i><b>15</b> Color Options</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="color-options.html"><a href="color-options.html#available-colors"><i class="fa fa-check"></i><b>15.1</b> Available Colors</a></li>
+<li class="chapter" data-level="15.2" data-path="color-options.html"><a href="color-options.html#available-palettes"><i class="fa fa-check"></i><b>15.2</b> Available Palettes</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="change-colors.html"><a href="change-colors.html"><i class="fa fa-check"></i><b>16</b> Change Default Colors</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="change-colors.html"><a href="change-colors.html#change-colors-basic"><i class="fa fa-check"></i><b>16.1</b> Basic Cross Tabs</a></li>
+<li class="chapter" data-level="16.2" data-path="change-colors.html"><a href="change-colors.html#change-colors-demographic"><i class="fa fa-check"></i><b>16.2</b> Demographic Cross Tabs</a></li>
+<li class="chapter" data-level="16.3" data-path="change-colors.html"><a href="change-colors.html#change-colors-stacked"><i class="fa fa-check"></i><b>16.3</b> Stacked Graphs</a></li>
+<li class="chapter" data-level="16.4" data-path="change-colors.html"><a href="change-colors.html#change-colors-trend"><i class="fa fa-check"></i><b>16.4</b> Trend Graphs</a>
+<ul>
+<li class="chapter" data-level="" data-path="change-colors.html"><a href="change-colors.html#change-colors-trend-single"><i class="fa fa-check"></i>Single Country Trend Graphs</a></li>
+<li class="chapter" data-level="" data-path="change-colors.html"><a href="change-colors.html#change-colors-trend-comparative"><i class="fa fa-check"></i>Comparative Trend Graphs</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="17" data-path="highlight-certain-countries.html"><a href="highlight-certain-countries.html"><i class="fa fa-check"></i><b>17</b> Highlight Certain Countries</a>
 <ul>
@@ -238,6 +363,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="17.2" data-path="highlight-certain-countries.html"><a href="highlight-certain-countries.html#multiple-country-highlight"><i class="fa fa-check"></i><b>17.2</b> Multiple Country Highlight</a></li>
 <li class="chapter" data-level="17.3" data-path="highlight-certain-countries.html"><a href="highlight-certain-countries.html#change-highlight-color"><i class="fa fa-check"></i><b>17.3</b> Change Highlight Color</a></li>
 </ul></li>
+<li class="part"><span><b>VII How do I …?</b></span></li>
+<li class="chapter" data-level="18" data-path="change-font-size.html"><a href="change-font-size.html"><i class="fa fa-check"></i><b>18</b> Change the Font Size</a></li>
+<li class="chapter" data-level="19" data-path="change-the-titlesubtitlecaption.html"><a href="change-the-titlesubtitlecaption.html"><i class="fa fa-check"></i><b>19</b> Change the Title/Subtitle/Caption</a></li>
+<li class="chapter" data-level="20" data-path="select-countries-chp.html"><a href="select-countries-chp.html"><i class="fa fa-check"></i><b>20</b> Show only certain countries?</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="select-countries-chp.html"><a href="select-countries-chp.html#select-countries-calculate"><i class="fa fa-check"></i><b>20.1</b> Plots that go with <code>calculate_</code> functions</a></li>
+<li class="chapter" data-level="20.2" data-path="select-countries-chp.html"><a href="select-countries-chp.html#select-countries-no-calculate"><i class="fa fa-check"></i><b>20.2</b> Plots with no <code>calculate_</code> functions</a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="order-change-stacked-graphs.html"><a href="order-change-stacked-graphs.html"><i class="fa fa-check"></i><b>21</b> Change the order of a stacked graph?</a>
+<ul>
+<li class="chapter" data-level="" data-path="order-change-stacked-graphs.html"><a href="order-change-stacked-graphs.html#move-one-factor"><i class="fa fa-check"></i>Move One Factor</a></li>
+<li class="chapter" data-level="" data-path="order-change-stacked-graphs.html"><a href="order-change-stacked-graphs.html#swap-factors"><i class="fa fa-check"></i>Swap Factors</a></li>
+</ul></li>
+<li class="part"><span><b>VIII Appendix</b></span></li>
+<li class="chapter" data-level="" data-path="guide-features.html"><a href="guide-features.html"><i class="fa fa-check"></i>Guide Features</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -257,30 +397,131 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="single-country-multi-question-plots" class="section level1" number="9">
-<h1><span class="header-section-number">Chapter 9</span> Single Country Multi-Question Plots</h1>
+<div id="single-country-multi-question-plots" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">Chapter 12</span> Single Country Multi-Question Plots<a href="single-country-multi-question-plots.html#single-country-multi-question-plots" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This chapter teaches you how to create a single graph that summarizes responses for multiple variables for a single country.</p>
+<p>These types of graphs are especially useful for plotting <strong>grid</strong> questions. Grid questions use the same stem, but have different endings. Technically, while related, they are all unique questions. Therefore, plotting a set of grid questions on the same graph, is the same thing as plotting multiple question on one graph.</p>
+<p><strong>All questions are required to be the same type when using this function.</strong> Comparing the responses to different question types is not advised, so the function does not allow for it.</p>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="single-country-multi-question-plots.html#cb134-1" aria-hidden="true" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q210&quot;</span>,</span>
-<span id="cb134-2"><a href="single-country-multi-question-plots.html#cb134-2" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Q211&quot;</span>)</span>
-<span id="cb134-3"><a href="single-country-multi-question-plots.html#cb134-3" aria-hidden="true" tabindex="-1"></a>questions_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Is there corruption?&quot;</span>,</span>
-<span id="cb134-4"><a href="single-country-multi-question-plots.html#cb134-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Is the gov&#39;t cracking down?&quot;</span>)</span>
-<span id="cb134-5"><a href="single-country-multi-question-plots.html#cb134-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb134-6"><a href="single-country-multi-question-plots.html#cb134-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_multiquestions_ind</span>(survey1,</span>
-<span id="cb134-7"><a href="single-country-multi-question-plots.html#cb134-7" aria-hidden="true" tabindex="-1"></a>                        questions_2_compare,</span>
-<span id="cb134-8"><a href="single-country-multi-question-plots.html#cb134-8" aria-hidden="true" tabindex="-1"></a>                        questions_labels,</span>
-<span id="cb134-9"><a href="single-country-multi-question-plots.html#cb134-9" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="single-country-multi-question-plots.html#cb239-1" aria-hidden="true" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q210&quot;</span>,</span>
+<span id="cb239-2"><a href="single-country-multi-question-plots.html#cb239-2" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Q211&quot;</span>)</span>
+<span id="cb239-3"><a href="single-country-multi-question-plots.html#cb239-3" aria-hidden="true" tabindex="-1"></a>questions_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Is there corruption?&quot;</span>,</span>
+<span id="cb239-4"><a href="single-country-multi-question-plots.html#cb239-4" aria-hidden="true" tabindex="-1"></a>                      <span class="st">&quot;Is the gov&#39;t cracking down?&quot;</span>)</span>
+<span id="cb239-5"><a href="single-country-multi-question-plots.html#cb239-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb239-6"><a href="single-country-multi-question-plots.html#cb239-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_multiquestions_ind</span>(survey1,</span>
+<span id="cb239-7"><a href="single-country-multi-question-plots.html#cb239-7" aria-hidden="true" tabindex="-1"></a>                        questions_2_compare,</span>
+<span id="cb239-8"><a href="single-country-multi-question-plots.html#cb239-8" aria-hidden="true" tabindex="-1"></a>                        questions_labels,</span>
+<span id="cb239-9"><a href="single-country-multi-question-plots.html#cb239-9" aria-hidden="true" tabindex="-1"></a>                        <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb239-10"><a href="single-country-multi-question-plots.html#cb239-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">.title =</span> <span class="st">&quot;Perceptions of Corruption in Algeria&quot;</span>,</span>
+<span id="cb239-11"><a href="single-country-multi-question-plots.html#cb239-11" aria-hidden="true" tabindex="-1"></a>                        <span class="at">.subtitle =</span> <span class="st">&quot;% saying to a medium or large extent&quot;</span>,</span>
+<span id="cb239-12"><a href="single-country-multi-question-plots.html#cb239-12" aria-hidden="true" tabindex="-1"></a>                        <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1, Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/09.2-Complete-Graph-Example-1.png" width="1248" /></p>
 <p>Let’s go!</p>
+<div id="prep-work" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> Prep Work<a href="single-country-multi-question-plots.html#prep-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>There is no <strong>calculate_</strong> function<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> for this graph. All the computation is done within the <code>plot_multiquestions_ind()</code> function.</p>
+<p>It is useful to do some prep work to keep everything clear.</p>
+<div id="question-list" class="section level3 hasAnchor" number="12.1.1">
+<h3><span class="header-section-number">12.1.1</span> Question List<a href="single-country-multi-question-plots.html#question-list" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First create a list of questions you want to include on your graph. For the example in this chapter we are comparing questions <code>Q210</code> and <code>Q211</code>. We put the names of those variables in a list and save that list as an object.</p>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="single-country-multi-question-plots.html#cb240-1" aria-hidden="true" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb240-2"><a href="single-country-multi-question-plots.html#cb240-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Q210&quot;</span>,</span>
+<span id="cb240-3"><a href="single-country-multi-question-plots.html#cb240-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Q211&quot;</span></span>
+<span id="cb240-4"><a href="single-country-multi-question-plots.html#cb240-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p>Now the variables we want to graph as saved to the object <code>questions_2_compare</code> in a list.</p>
+</div>
+<div id="question-labels" class="section level3 hasAnchor" number="12.1.2">
+<h3><span class="header-section-number">12.1.2</span> Question Labels<a href="single-country-multi-question-plots.html#question-labels" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The next step is to create a vector of labels for the questions. This is the text that will display on the y-axis. The labels should appear in the same order as they variables they are referring to.</p>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="single-country-multi-question-plots.html#cb241-1" aria-hidden="true" tabindex="-1"></a>question_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb241-2"><a href="single-country-multi-question-plots.html#cb241-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Is there corruption?&quot;</span>,       <span class="co"># Text for Q210</span></span>
+<span id="cb241-3"><a href="single-country-multi-question-plots.html#cb241-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Is the gov&#39;t cracking down?&quot;</span> <span class="co"># Text for Q211</span></span>
+<span id="cb241-4"><a href="single-country-multi-question-plots.html#cb241-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p>The object <code>question_labels</code> represents the text that will serve to label the responses on the graph.</p>
+</div>
+</div>
+<div id="plot-a-multiquestion-graph-for-a-single-country" class="section level2 hasAnchor" number="12.2">
+<h2><span class="header-section-number">12.2</span> Plot a Multiquestion Graph for a Single Country<a href="single-country-multi-question-plots.html#plot-a-multiquestion-graph-for-a-single-country" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We are now ready to create our graph. The function <code>plot_multiquestions_ind()</code> is used to create a graph for one country that displays responses to multiple questions. There are <strong>three</strong> required arguments. They are: <code>.ab</code>, <code>.questions</code>, and <code>.question_labels</code>.</p>
+<p>The parameter <code>.ab</code> is the for Arab Barometer data frame. If there is only one country in the data, the function will automatically know which country it is<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a>. If there is more than one country in the data set, you <strong>must</strong> use the <code>.country</code> parameter to specify which country you want to graph.</p>
+<p>The <code>.questions</code> parameter requires a list (or vector) of questions. This is how the function knows which questions to include on the graph. We created a list, <code>questions_2_compare</code>, in the section above.</p>
+<p>The <code>.question_labels</code> parameter requires a vector (or list) of question labels. The labels must appear in the same order as the questions to appear on the graph correctly. We created a vector, <code>questions_labels</code>, in the section above.</p>
+<p>Time to fill in our function. The data we are using for the example is <code>survey1</code>. This data frame includes all the countries surveyed during the first round of surveys in Wave VI. We must use the <code>.country</code> parameter to tell the function which country we wish to plot.</p>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="single-country-multi-question-plots.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_multiquestions_ind</span>(</span>
+<span id="cb242-2"><a href="single-country-multi-question-plots.html#cb242-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,</span>
+<span id="cb242-3"><a href="single-country-multi-question-plots.html#cb242-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">.questions =</span> questions_2_compare,</span>
+<span id="cb242-4"><a href="single-country-multi-question-plots.html#cb242-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">.question_labels =</span> question_labels,</span>
+<span id="cb242-5"><a href="single-country-multi-question-plots.html#cb242-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span></span>
+<span id="cb242-6"><a href="single-country-multi-question-plots.html#cb242-6" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/09.5-first-graph-1.png" width="1248" /></p>
+<p>Notice there are several missing elements in this graph. Namely, an appropriate title, subtitle, and caption. These three aspects are not included in the list of <em>required</em> arguments, because a graph can be created without them. If you want to use the graph publicly, however, it would be prudent to include them.</p>
+<p>The parameters for including a title, subtitle, and caption are the same as they are in any other function: <code>.title</code>, <code>.subtitle</code>, and <code>.caption</code>, respectively. We can fill these in to create our final graph.</p>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="single-country-multi-question-plots.html#cb243-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_multiquestions_ind</span>(</span>
+<span id="cb243-2"><a href="single-country-multi-question-plots.html#cb243-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,</span>
+<span id="cb243-3"><a href="single-country-multi-question-plots.html#cb243-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">.questions =</span> questions_2_compare,</span>
+<span id="cb243-4"><a href="single-country-multi-question-plots.html#cb243-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">.question_labels =</span> question_labels,</span>
+<span id="cb243-5"><a href="single-country-multi-question-plots.html#cb243-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb243-6"><a href="single-country-multi-question-plots.html#cb243-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">.title =</span> <span class="st">&quot;Perceptions of Corruption in Algeria&quot;</span>,</span>
+<span id="cb243-7"><a href="single-country-multi-question-plots.html#cb243-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">.subtitle =</span> <span class="st">&quot;% saying to a medium or large extent&quot;</span>,</span>
+<span id="cb243-8"><a href="single-country-multi-question-plots.html#cb243-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1, Algeria&quot;</span></span>
+<span id="cb243-9"><a href="single-country-multi-question-plots.html#cb243-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/09.6-second-graph-1.png" width="672" /></p>
+</div>
+<div id="extras-3" class="section level2 hasAnchor" number="12.3">
+<h2><span class="header-section-number">12.3</span> Extras<a href="single-country-multi-question-plots.html#extras-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="setting-colors" class="section level3 hasAnchor" number="12.3.1">
+<h3><span class="header-section-number">12.3.1</span> Setting Colors<a href="single-country-multi-question-plots.html#setting-colors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>By default, the colors for the graph are randomly selected from <code>ArabBarometer_clr</code>. To set the colors of the graph, supply a vector of hex codes or named Arab Barometer brand colors to the parameter <code>.clr_choice</code>.</p>
+</div>
+<div id="data-frame" class="section level3 hasAnchor" number="12.3.2">
+<h3><span class="header-section-number">12.3.2</span> Data Frame<a href="single-country-multi-question-plots.html#data-frame" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There is no <strong>calculate_</strong> function that accompanies this function. All calculations are done internally. The parameter <code>.return_df</code> allows the user to see the data frame used to create the graph. Setting <code>.return_df</code> to <code>TRUE</code> will cause the function to return a list containing the graph and the data frame. Setting <code>.return_df</code> to <code>"only"</code> will cause the function to only return the data frame.</p>
+</div>
+<div id="explict-grid-example" class="section level3 hasAnchor" number="12.3.3">
+<h3><span class="header-section-number">12.3.3</span> Explict Grid Example<a href="single-country-multi-question-plots.html#explict-grid-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Remember: plotting a set of grid questions requires exactly the same steps as outlined throughout this chapter. There is <strong>no difference</strong> between plotting 2 (or n) questions that belong to a grid, and 2 (or n) questions that do not.</p>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="single-country-multi-question-plots.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Identifying two question from a grid set:</span></span>
+<span id="cb244-2"><a href="single-country-multi-question-plots.html#cb244-2" aria-hidden="true" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb244-3"><a href="single-country-multi-question-plots.html#cb244-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Q201A_1&quot;</span>,</span>
+<span id="cb244-4"><a href="single-country-multi-question-plots.html#cb244-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Q201A_2&quot;</span></span>
+<span id="cb244-5"><a href="single-country-multi-question-plots.html#cb244-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb244-6"><a href="single-country-multi-question-plots.html#cb244-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb244-7"><a href="single-country-multi-question-plots.html#cb244-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Supplying labels:</span></span>
+<span id="cb244-8"><a href="single-country-multi-question-plots.html#cb244-8" aria-hidden="true" tabindex="-1"></a>question_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb244-9"><a href="single-country-multi-question-plots.html#cb244-9" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Government&quot;</span>,</span>
+<span id="cb244-10"><a href="single-country-multi-question-plots.html#cb244-10" aria-hidden="true" tabindex="-1"></a>  <span class="st">&quot;Legal system&quot;</span></span>
+<span id="cb244-11"><a href="single-country-multi-question-plots.html#cb244-11" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb244-12"><a href="single-country-multi-question-plots.html#cb244-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb244-13"><a href="single-country-multi-question-plots.html#cb244-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the grid questions:</span></span>
+<span id="cb244-14"><a href="single-country-multi-question-plots.html#cb244-14" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_multiquestions_ind</span>(</span>
+<span id="cb244-15"><a href="single-country-multi-question-plots.html#cb244-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,</span>
+<span id="cb244-16"><a href="single-country-multi-question-plots.html#cb244-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">.questions =</span> questions_2_compare,</span>
+<span id="cb244-17"><a href="single-country-multi-question-plots.html#cb244-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">.question_labels =</span> question_labels,</span>
+<span id="cb244-18"><a href="single-country-multi-question-plots.html#cb244-18" aria-hidden="true" tabindex="-1"></a>  <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb244-19"><a href="single-country-multi-question-plots.html#cb244-19" aria-hidden="true" tabindex="-1"></a>  <span class="at">.title =</span> <span class="st">&quot;How much trust do you have in...&quot;</span>,</span>
+<span id="cb244-20"><a href="single-country-multi-question-plots.html#cb244-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">.subtitle =</span> <span class="st">&quot;% of Algerians saying they have quite a lot or a great deal&quot;</span>,</span>
+<span id="cb244-21"><a href="single-country-multi-question-plots.html#cb244-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1, Algeria&quot;</span></span>
+<span id="cb244-22"><a href="single-country-multi-question-plots.html#cb244-22" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p><img src="bookdownproj_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="7">
+<li id="fn7"><p>As off writing this chapter<a href="single-country-multi-question-plots.html#fnref7" class="footnote-back">↩︎</a></p></li>
+<li id="fn8"><p>As long as the data frame is a standard Arab Barometer data frame containing a <code>COUNTRY</code> column.<a href="single-country-multi-question-plots.html#fnref8" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="coming-soon-comparative-country-demographic-trend-graphs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="comparative-multi-question-plots.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="bare-bones-single-country-stacked-plots.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bare-bones-comparative-multi-question-plots.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

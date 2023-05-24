@@ -93,7 +93,7 @@ font-size-2
 colors-2
 order
 bare-bones-single-country-stacked-plots
-bare-bones-single-country-multi-question-plots
+single-country-multi-question-plots
 prep-work
 question-list
 question-labels
@@ -101,6 +101,7 @@ plot-a-multiquestion-graph-for-a-single-country
 extras-3
 setting-colors
 data-frame
+explict-grid-example
 bare-bones-comparative-multi-question-plots
 bare-bones-single-country-multi-question-trend-plots
 color-options

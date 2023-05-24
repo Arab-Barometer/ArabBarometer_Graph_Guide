@@ -323,18 +323,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="bare-bones-single-country-stacked-plots.html"><a href="bare-bones-single-country-stacked-plots.html"><i class="fa fa-check"></i><b>11</b> BARE BONES: Single Country Stacked Plots</a></li>
 <li class="part"><span><b>V Multiple Questions</b></span></li>
-<li class="chapter" data-level="12" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html"><i class="fa fa-check"></i><b>12</b> BARE BONES: Single Country Multi-Question Plots</a>
+<li class="chapter" data-level="12" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html"><i class="fa fa-check"></i><b>12</b> Single Country Multi-Question Plots</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#prep-work"><i class="fa fa-check"></i><b>12.1</b> Prep Work</a>
+<li class="chapter" data-level="12.1" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#prep-work"><i class="fa fa-check"></i><b>12.1</b> Prep Work</a>
 <ul>
-<li class="chapter" data-level="12.1.1" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#question-list"><i class="fa fa-check"></i><b>12.1.1</b> Question List</a></li>
-<li class="chapter" data-level="12.1.2" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#question-labels"><i class="fa fa-check"></i><b>12.1.2</b> Question Labels</a></li>
+<li class="chapter" data-level="12.1.1" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#question-list"><i class="fa fa-check"></i><b>12.1.1</b> Question List</a></li>
+<li class="chapter" data-level="12.1.2" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#question-labels"><i class="fa fa-check"></i><b>12.1.2</b> Question Labels</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#plot-a-multiquestion-graph-for-a-single-country"><i class="fa fa-check"></i><b>12.2</b> Plot a Multiquestion Graph for a Single Country</a></li>
-<li class="chapter" data-level="12.3" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#extras-3"><i class="fa fa-check"></i><b>12.3</b> Extras</a>
+<li class="chapter" data-level="12.2" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#plot-a-multiquestion-graph-for-a-single-country"><i class="fa fa-check"></i><b>12.2</b> Plot a Multiquestion Graph for a Single Country</a></li>
+<li class="chapter" data-level="12.3" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#extras-3"><i class="fa fa-check"></i><b>12.3</b> Extras</a>
 <ul>
-<li class="chapter" data-level="12.3.1" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#setting-colors"><i class="fa fa-check"></i><b>12.3.1</b> Setting Colors</a></li>
-<li class="chapter" data-level="12.3.2" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#data-frame"><i class="fa fa-check"></i><b>12.3.2</b> Data Frame</a></li>
+<li class="chapter" data-level="12.3.1" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#setting-colors"><i class="fa fa-check"></i><b>12.3.1</b> Setting Colors</a></li>
+<li class="chapter" data-level="12.3.2" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#data-frame"><i class="fa fa-check"></i><b>12.3.2</b> Data Frame</a></li>
+<li class="chapter" data-level="12.3.3" data-path="single-country-multi-question-plots.html"><a href="single-country-multi-question-plots.html#explict-grid-example"><i class="fa fa-check"></i><b>12.3.3</b> Explict Grid Example</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="bare-bones-comparative-multi-question-plots.html"><a href="bare-bones-comparative-multi-question-plots.html"><i class="fa fa-check"></i><b>13</b> BARE BONES: Comparative Multi-Question Plots</a></li>
@@ -399,25 +400,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="bare-bones-single-country-multi-question-trend-plots" class="section level1 hasAnchor" number="14">
 <h1><span class="header-section-number">Chapter 14</span> BARE BONES: Single Country Multi-Question Trend Plots<a href="bare-bones-single-country-multi-question-trend-plots.html#bare-bones-single-country-multi-question-trend-plots" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-1" aria-hidden="true" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q2061A_1&quot;</span>,</span>
-<span id="cb245-2"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-2" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Q2061A_15&quot;</span>)</span>
-<span id="cb245-3"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb245-4"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-4" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(survey1,</span>
-<span id="cb245-5"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-5" aria-hidden="true" tabindex="-1"></a>                survey2,</span>
-<span id="cb245-6"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-6" aria-hidden="true" tabindex="-1"></a>                survey3)</span>
-<span id="cb245-7"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb245-8"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-8" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
-<span id="cb245-9"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 2&quot;</span>,</span>
-<span id="cb245-10"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-10" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
-<span id="cb245-11"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb245-12"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_multiquestion_individual</span>(questions_2_compare,</span>
-<span id="cb245-13"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-13" aria-hidden="true" tabindex="-1"></a>                                    df_list,</span>
-<span id="cb245-14"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-14" aria-hidden="true" tabindex="-1"></a>                                    survey_dates,</span>
-<span id="cb245-15"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-15" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb245-16"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-16" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">legend.names =</span> <span class="fu">c</span>(<span class="st">&quot;Economic situtation&quot;</span>,<span class="st">&quot;COVID-19&quot;</span>),</span>
-<span id="cb245-17"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-17" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">.title =</span> <span class="st">&quot;What is the most important challenge facing Algeria today?&quot;</span>,</span>
-<span id="cb245-18"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-18" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">.subtitle =</span> <span class="st">&quot;% saying&quot;</span>,</span>
-<span id="cb245-19"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb245-19" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-1" aria-hidden="true" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q2061A_1&quot;</span>,</span>
+<span id="cb246-2"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-2" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Q2061A_15&quot;</span>)</span>
+<span id="cb246-3"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb246-4"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-4" aria-hidden="true" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(survey1,</span>
+<span id="cb246-5"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-5" aria-hidden="true" tabindex="-1"></a>                survey2,</span>
+<span id="cb246-6"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-6" aria-hidden="true" tabindex="-1"></a>                survey3)</span>
+<span id="cb246-7"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb246-8"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-8" aria-hidden="true" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
+<span id="cb246-9"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-9" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 2&quot;</span>,</span>
+<span id="cb246-10"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-10" aria-hidden="true" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
+<span id="cb246-11"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb246-12"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-12" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_trend_multiquestion_individual</span>(questions_2_compare,</span>
+<span id="cb246-13"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-13" aria-hidden="true" tabindex="-1"></a>                                    df_list,</span>
+<span id="cb246-14"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-14" aria-hidden="true" tabindex="-1"></a>                                    survey_dates,</span>
+<span id="cb246-15"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-15" aria-hidden="true" tabindex="-1"></a>                                    <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb246-16"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-16" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">legend.names =</span> <span class="fu">c</span>(<span class="st">&quot;Economic situtation&quot;</span>,<span class="st">&quot;COVID-19&quot;</span>),</span>
+<span id="cb246-17"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-17" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">.title =</span> <span class="st">&quot;What is the most important challenge facing Algeria today?&quot;</span>,</span>
+<span id="cb246-18"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-18" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">.subtitle =</span> <span class="st">&quot;% saying&quot;</span>,</span>
+<span id="cb246-19"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb246-19" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/12.2-Complete-Graph-Example-1.png" width="1248" /></p>
 <p>Let’s go!</p>
