@@ -1,4 +1,4 @@
-# BARE BONES: Comparative Multi-Question Plots {#chapter-10}
+# Comparative Multi-Question Plots {#chapter-10}
 
 This chapter teaches you how to create a single graph that summarizes responses for multiple variables for many countries. 
 
@@ -81,8 +81,6 @@ The object `question_labels` represents the text that will serve to label the re
 
 ## Plot a Comparative Multiquestion Graph {#chapter-10-2}
 
-## Plot a Multiquestion Graph for a Single Country {#chapter-10-2}
-
 We are now ready to create our graph. The function `plot_multiquestions_comp()` is used to create a graph for one country that displays responses to multiple questions. There are **three** required arguments. They are: `.ab`, `.questions`, and `.question_labels`.
 
 The parameter `.ab` is the for Arab Barometer data frame.
@@ -115,7 +113,7 @@ plot_multiquestions_comp(
   .question_labels = question_labels,
   .title = "Perceptions of Corruption in MENA",
   .subtitle = "% saying to a medium or large extent",
-  .caption = "Arab Barometer Wave VI, Survey 1, Algeria"
+  .caption = "Arab Barometer Wave VI, Survey 1"
 )
 
 ```
@@ -153,7 +151,6 @@ plot_multiquestions_comp(
   .ab = survey1,
   .questions = questions_2_compare,
   .question_labels = question_labels,
-  .country = "Algeria",
   .title = "How much trust do you have in...",
   .subtitle = "% saying they have quite a lot or a great deal",
   .caption = "Arab Barometer Wave VI, Survey 1"
