@@ -1,3 +1,4 @@
+fig:bookdown-features
 preparing-data
 recode_country
 example
@@ -94,7 +95,6 @@ order
 bare-bones-single-country-stacked-plots
 bare-bones-single-country-multi-question-plots
 bare-bones-comparative-multi-question-plots
-bare-bones-comparative-grid-plots
 bare-bones-single-country-multi-question-trend-plots
 color-options
 available-colors

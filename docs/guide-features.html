@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 11 BARE BONES: Single Country Stacked Plots | ArabBarometR Graphing Guide</title>
-  <meta name="description" content="Chapter 11 BARE BONES: Single Country Stacked Plots | ArabBarometR Graphing Guide" />
+  <title>Guide Features | ArabBarometR Graphing Guide</title>
+  <meta name="description" content="Guide Features | ArabBarometR Graphing Guide" />
   <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 11 BARE BONES: Single Country Stacked Plots | ArabBarometR Graphing Guide" />
+  <meta property="og:title" content="Guide Features | ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 11 BARE BONES: Single Country Stacked Plots | ArabBarometR Graphing Guide" />
+  <meta name="twitter:title" content="Guide Features | ArabBarometR Graphing Guide" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="stacked-plots.html"/>
-<link rel="next" href="bare-bones-single-country-multi-question-plots.html"/>
+<link rel="prev" href="order-change-stacked-graphs.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -383,31 +383,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bare-bones-single-country-stacked-plots" class="section level1 hasAnchor" number="11">
-<h1><span class="header-section-number">Chapter 11</span> BARE BONES: Single Country Stacked Plots<a href="bare-bones-single-country-stacked-plots.html#bare-bones-single-country-stacked-plots" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="bare-bones-single-country-stacked-plots.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stacked_general</span>(survey1,</span>
-<span id="cb238-2"><a href="bare-bones-single-country-stacked-plots.html#cb238-2" aria-hidden="true" tabindex="-1"></a>                     <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb238-3"><a href="bare-bones-single-country-stacked-plots.html#cb238-3" aria-hidden="true" tabindex="-1"></a>                     Q2061A,</span>
-<span id="cb238-4"><a href="bare-bones-single-country-stacked-plots.html#cb238-4" aria-hidden="true" tabindex="-1"></a>                     Q609,</span>
-<span id="cb238-5"><a href="bare-bones-single-country-stacked-plots.html#cb238-5" aria-hidden="true" tabindex="-1"></a>                     <span class="at">.title =</span> <span class="st">&quot;Most pressing concern in Algeria by religiosity&quot;</span>,</span>
-<span id="cb238-6"><a href="bare-bones-single-country-stacked-plots.html#cb238-6" aria-hidden="true" tabindex="-1"></a>                     <span class="at">.subtitle =</span> <span class="st">&quot;% saying&quot;</span>,</span>
-<span id="cb238-7"><a href="bare-bones-single-country-stacked-plots.html#cb238-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
-<p>That code will produce the following graph:</p>
-<p><img src="bookdownproj_files/figure-html/14.2-Complete-Graph-Example-1.png" width="1248" /></p>
-<p>Let’s go!</p>
+<div id="guide-features" class="section level1 unnumbered hasAnchor">
+<h1>Guide Features<a href="guide-features.html#guide-features" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>This guide is made with bookdown, an R package that allows for the combination of Rmarkdown files into a book. Bookdown books have some very nifty features.</p>
+<p><br></p>
+<p>To start, all the chunks of code you see in this book can be copy and pasted right into your R. If you hover your mouse over the code chunk<a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a> below, you will see a little copy icon in the upper-right hand corner. Clicking on that icon will copy the code to your clipboard, and you will be able to paste it directly into your R console.</p>
+<div class="sourceCode" id="cb277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb277-1"><a href="guide-features.html#cb277-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Example Code Chunk</span></span>
+<span id="cb277-2"><a href="guide-features.html#cb277-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Try copying-and-pasting this</span></span>
+<span id="cb277-3"><a href="guide-features.html#cb277-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb277-4"><a href="guide-features.html#cb277-4" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div>
+<p>Could you have typed that on your own? Yes. BUT. Now you see how copying and pasting from this guide works.</p>
+<p><strong>Note:</strong> Remember that you must be internally consistent in your own R console. You can copy and paste the following chunk of code into your own R console, but you will receive an error if you do not have the package installed.</p>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="guide-features.html#cb278-1" aria-hidden="true" tabindex="-1"></a>praise<span class="sc">::</span><span class="fu">praise</span>()</span></code></pre></div>
+<p>See if you can install the praise package on your own computer, then try copying and pasting the code.</p>
+<p><br><br></p>
+<p>Some other great features can be found across the top of the Guide. In figure <a href="guide-features.html#fig:bookdown-features">21.1</a>, you’ll see that I’ve highlighted them in different colors.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:bookdown-features"></span>
+<img src="figs/bookdown-features.png" alt="Bookdown Options" width="95%" />
+<p class="caption">
+Figure 21.1: Bookdown Options
+</p>
+</div>
+<ol style="list-style-type: decimal">
+<li>This icon allows you to expand or collapse the table of contents on the left-hand side.</li>
+<li>This icon allows you to search through the book. For example, if you wanted to see where I talk about stacked plots, you can click on the magnifying glass icon and type “stacked” into the search bar. The table of contents will narrow to the sections where “stacked” is mentioned. When you click on the section, “stacked” will be highlighted on the page.</li>
+<li>This icon allows you to vary the display of the book. You can change the font size, select serif or sans-serif font, and the background/text color.</li>
+<li>This icon allows you to edit the book. Yes. You, dear reader, can edit this book. I will need to accept the changes before they are permanent, but still. Please don’t. Unles you seee a typeo.</li>
+<li>This icon allows you to see the source material for the book. It takes you to the github page the .Rmd file is hosted on.</li>
+<li>This little i tells you a few basic keyboard shortcuts.</li>
+<li>These icons allow you to share the book one social media or through a link. Since this package is proprietary, I would advise you to keep the book to yourself unless you are sharing it with someone else on the team.</li>
+</ol>
 
 </div>
 
 
 
+
+
+
+
+
+
+
+
+
+<div class="footnotes">
+<hr />
+<ol start="7">
+<li id="fn7"><p>“Code chunk” is actually, in fact, the technical term.<a href="guide-features.html#fnref7" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="stacked-plots.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="bare-bones-single-country-multi-question-plots.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="order-change-stacked-graphs.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -438,7 +470,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/14-SingleCountryStacked.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/edit/master/Guide_Features.Rmd",
 "text": "Edit"
 },
 "history": {
@@ -446,7 +478,7 @@ gitbook.start({
 "text": null
 },
 "view": {
-"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/14-SingleCountryStacked.Rmd",
+"link": "https://github.com/Arab-Barometer/ArabBarometer_Graph_Guide/blob/master/Guide_Features.Rmd",
 "text": null
 },
 "download": null,
