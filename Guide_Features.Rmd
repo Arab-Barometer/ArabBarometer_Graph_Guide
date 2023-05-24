@@ -1,0 +1,45 @@
+# (PART) Appendix {-}
+# Guide Features {-}
+
+This guide is made with bookdown, an R package that allows for the combination of Rmarkdown files into a book. Bookdown books have some very nifty features.
+
+<br>
+
+To start, all the chunks of code you see in this book can be copy and pasted right into your R. If you hover your mouse over the code chunk^["Code chunk" is actually, in fact, the technical term.] below, you will see a little copy icon in the upper-right hand corner. Clicking on that icon will copy the code to your clipboard, and you will be able to paste it directly into your R console.
+
+```{r, eval=FALSE}
+# Example Code Chunk
+## Try copying-and-pasting this
+
+2 + 2
+
+```
+
+Could you have typed that on your own? Yes. BUT. Now you see how copying and pasting from this guide works.
+
+**Note:** Remember that you must be internally consistent in your own R console. You can copy and paste the following chunk of code into your own R console, but you will receive an error if you do not have the package installed.
+
+```{r praise, eval=FALSE}
+
+praise::praise()
+
+```
+
+See if you can install the praise package on your own computer, then try copying and pasting the code.
+
+<br><br>
+
+Some other great features can be found across the top of the Guide. In figure \@ref(fig:bookdown-features), you'll see that I've highlighted them in different colors.
+
+
+```{r bookdown-features, fig.align = 'center', out.width = "95%", fig.cap = "Bookdown Options",echo=FALSE}
+knitr::include_graphics(here::here("figs", "bookdown-features.png"))
+```
+
+1. This icon allows you to expand or collapse the table of contents on the left-hand side.
+2. This icon allows you to search through the book. For example, if you wanted to see where I talk about stacked plots, you can click on the magnifying glass icon and type "stacked" into the search bar. The table of contents will narrow to the sections where "stacked" is mentioned. When you click on the section, "stacked" will be highlighted on the page.
+3. This icon allows you to vary the display of the book. You can change the font size, select serif or sans-serif font, and the background/text color.
+4. This icon allows you to edit the book. Yes. You, dear reader, can edit this book. I will need to accept the changes before they are permanent, but still. Please don't. Unles you seee a typeo.
+5. This icon allows you to see the source material for the book. It takes you to the github page the .Rmd file is hosted on.
+6. This little i tells you a few basic keyboard shortcuts.
+7. These icons allow you to share the book one social media or through a link. Since this package is proprietary, I would advise you to keep the book to yourself unless you are sharing it with someone else on the team.

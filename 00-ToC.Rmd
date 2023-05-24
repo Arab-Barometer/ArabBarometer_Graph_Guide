@@ -28,7 +28,6 @@
  
  * <font size="4"> [Single Country Multi-Question Plots][BARE BONES: Single Country Multi-Question Plots] </font> 
  * <font size="4"> [Comparative Multi-Question Plots][BARE BONES: Comparative Multi-Question Plots] </font> 
- * <font size="4"> [Comparative Gird Graphs][BARE BONES: Comparative Grid Plots] </font> 
  * <font size="4"> [Single Country Multi-Question Trend Plots][BARE BONES: Single Country Multi-Question Trend Plots] </font> 
  
  
@@ -45,5 +44,11 @@
  * <font size="4"> [Change the Title/Subtitle/Caption][Change the Title/Subtitle/Caption] </font>  
  * <font size="4"> [Only Show Certain Countries](#select-countries-chp) </font> 
  * <font size="4"> [Change the Order for Stacked Graphs](#order-change-stacked-graphs) </font>  
+ 
+ 
+ <font size="5"> Appendix </font>
+ 
+ * <font size="4"> [Guide Features][Guide Features] </font> 
+ 
  
  

@@ -24,7 +24,6 @@ rmd_files: [
   "14-SingleCountryStacked.Rmd",
   "09-SingleCountryMultiQuestion.Rmd",
   "10-ComparativeMutliQuestion.Rmd",
-  "11-GridPlots.Rmd",
   "12-SingleCountryMultiQuestionTrend.Rmd",
   "9801-ColorPart.Rmd",
   "9803-ColorChange.Rmd",
@@ -32,5 +31,6 @@ rmd_files: [
   "9901-FontChange.Rmd",
   "9902-TitleChange.Rmd",
   "9903-SelectCountries.Rmd",
-  "9904-StackedOrder.Rmd"
+  "9904-StackedOrder.Rmd",
+  "Guide_Features.Rmd"
 ]
