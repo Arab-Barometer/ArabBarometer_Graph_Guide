@@ -111,7 +111,7 @@ Notice there are several missing elements in this graph. Namely, an appropriate 
 
 The parameters for including a title, subtitle, and caption are the same as they are in any other function: `.title`, `.subtitle`, and `.caption`, respectively. We can fill these in to create our final graph.
 
-```{r 09.6-second-graph}
+```{r 09.6-second-graph, fig.dim=c(13,12)}
 
 plot_multiquestions_ind(
   .ab = survey1,
@@ -139,7 +139,7 @@ There is no **calculate_** function that accompanies this function. All calculat
 
 Remember: plotting a set of grid questions requires exactly the same steps as outlined throughout this chapter. There is **no difference** between plotting 2 (or n) questions that belong to a grid, and 2 (or n) questions that do not.
 
-```{r}
+```{r 09.7-grid-example, fig.dim=c(13,12)}
 
 # Identifying two question from a grid set:
 questions_2_compare <- list(
