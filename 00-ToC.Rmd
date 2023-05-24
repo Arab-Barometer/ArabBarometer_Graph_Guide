@@ -26,7 +26,7 @@
  
  <font size="5"> **BARE BONES** Multi-Question Graphs </font>
  
- * <font size="4"> [Single Country Multi-Question Plots][BARE BONES: Single Country Multi-Question Plots] </font> 
+ * <font size="4"> [Single Country Multi-Question Plots][Single Country Multi-Question Plots] </font> 
  * <font size="4"> [Comparative Multi-Question Plots][BARE BONES: Comparative Multi-Question Plots] </font> 
  * <font size="4"> [Single Country Multi-Question Trend Plots][BARE BONES: Single Country Multi-Question Trend Plots] </font> 
  

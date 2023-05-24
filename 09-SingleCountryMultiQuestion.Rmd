@@ -1,8 +1,8 @@
 # (PART) Multiple Questions {-}
 
-# BARE BONES: Single Country Multi-Question Plots
+# Single Country Multi-Question Plots
 
-
+This chapter teaches you how to create a single graph that summarizes responses for multiple variables for a single country.
 At the end, your code will look like the following:
 
 ```{r 09.1-Complete-Code-Example, eval=FALSE}
@@ -42,3 +42,90 @@ plot_multiquestions_ind(survey1,
 ```
 
 Let's go!
+
+## Prep Work
+
+There is no **calculate_** function^[As off writing this chapter] for this graph. All the computation is done within the `plot_multiquestions_ind()` function.
+
+It is useful to do some prep work to keep everything clear.
+
+### Question List
+
+First create a list of questions you want to include on your graph. For the example in this chapter we are comparing questions `Q210` and `Q211`. We put the names of those variables in a list and save that list as an object.
+
+```{r 09.3-question-list}
+
+questions_2_compare <- list(
+  "Q210",
+  "Q211"
+  )
+
+```
+
+Now the variables we want to graph as saved to the object `questions_2_compare` in a list.
+
+### Question Labels
+
+The next step is to create a vector of labels for the questions. This is the text that will display on the y-axis. The labels should appear in the same order as they variables they are referring to.
+
+```{r 09.4-question-labels}
+
+questions_labels <- c(
+  "Is there corruption?",       # Text for Q210
+  "Is the gov't cracking down?" # Text for Q211
+  )
+
+```
+
+The object `question_labels` represents the text that will serve to label the responses on the graph.
+
+## Plot a Multiquestion Graph for a Single Country
+
+We are now ready to create our graph. The function `plot_multiquestions_ind()` is used to create a graph for one country that displays responses to multiple questions. There are **three** required arguments. They are: `.ab`, `.questions`, and `.question_labels`.
+
+The parameter `.ab` is the for Arab Barometer data frame. If there is only one country in the data, the function will automatically know which country it is^[As long as the data frame is a standard Arab Barometer data frame containing a `COUNTRY` column.]. If there is more than one country in the data set, you __must__ use the `.country` parameter to specify which country you want to graph.
+
+The `.questions` parameter requires a list (or vector) of questions. This is how the function knows which questions to include on the graph. We created a list, `questions_2_compare`, in the section above.
+
+The `.question_labels` parameter requires a vector (or list) of question labels. The labels must appear in the same order as the questions to appear on the graph correctly. We created a vector, `questions_labels`, in the section above.
+
+Time to fill in our function. The data we are using for the example is `survey1`. This data frame includes all the countries surveyed during the first round of surveys in Wave VI. We must use the `.country` parameter to tell the function which country we wish to plot.
+
+```{r 09.5-first-graph,fig.dim=c(13,12)}
+
+plot_multiquestions_ind(
+  .ab = survey1,
+  .questions = questions_2_compare,
+  .question_labels = questions_labels,
+  .country = "Algeria"
+)
+
+```
+
+Notice there are several missing elements in this graph. Namely, an appropriate title, subtitle, and caption. These three aspects are not included in the list of *required* arguments, because a graph can be created without them. If you want to use the graph publicly, however, it would be prudent to include them.
+
+The parameters for including a title, subtitle, and caption are the same as they are in any other function: `.title`, `.subtitle`, and `.caption`, respectively. We can fill these in to create our final graph.
+
+```{r 09.6-second-graph}
+
+plot_multiquestions_ind(
+  .ab = survey1,
+  .questions = questions_2_compare,
+  .question_labels = questions_labels,
+  .country = "Algeria",
+  .title = "Perceptions of Corruption in Algeria",
+  .subtitle = "% saying to a medium or large extent",
+  .caption = "Arab Barometer Wave VI, Survey 1, Algeria"
+)
+
+```
+
+## Extras
+
+### Setting Colors
+
+By default, the colors for the graph are randomly selected from `ArabBarometer_clr`. To set the colors of the graph, supply a vector of hex codes or named Arab Barometer brand colors to the parameter `.clr_choice`.
+
+### Data Frame
+
+There is no **calculate_** function that accompanies this function. All calculations are done internally. The parameter `.return_df` allows the user to see the data frame used to create the graph. Setting `.return_df` to `TRUE` will cause the function to return a list containing the graph and the data frame. Setting `.return_df` to `"only"` will cause the function to only return the data frame.
