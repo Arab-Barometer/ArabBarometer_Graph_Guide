@@ -323,7 +323,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="bare-bones-single-country-stacked-plots.html"><a href="bare-bones-single-country-stacked-plots.html"><i class="fa fa-check"></i><b>11</b> BARE BONES: Single Country Stacked Plots</a></li>
 <li class="part"><span><b>V Multiple Questions</b></span></li>
-<li class="chapter" data-level="12" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html"><i class="fa fa-check"></i><b>12</b> BARE BONES: Single Country Multi-Question Plots</a></li>
+<li class="chapter" data-level="12" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html"><i class="fa fa-check"></i><b>12</b> BARE BONES: Single Country Multi-Question Plots</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#prep-work"><i class="fa fa-check"></i><b>12.1</b> Prep Work</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#question-list"><i class="fa fa-check"></i><b>12.1.1</b> Question List</a></li>
+<li class="chapter" data-level="12.1.2" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#question-labels"><i class="fa fa-check"></i><b>12.1.2</b> Question Labels</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#plot-a-multiquestion-graph-for-a-single-country"><i class="fa fa-check"></i><b>12.2</b> Plot a Multiquestion Graph for a Single Country</a></li>
+<li class="chapter" data-level="12.3" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#extras-3"><i class="fa fa-check"></i><b>12.3</b> Extras</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#setting-colors"><i class="fa fa-check"></i><b>12.3.1</b> Setting Colors</a></li>
+<li class="chapter" data-level="12.3.2" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#data-frame"><i class="fa fa-check"></i><b>12.3.2</b> Data Frame</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="13" data-path="bare-bones-comparative-multi-question-plots.html"><a href="bare-bones-comparative-multi-question-plots.html"><i class="fa fa-check"></i><b>13</b> BARE BONES: Comparative Multi-Question Plots</a></li>
 <li class="chapter" data-level="14" data-path="bare-bones-single-country-multi-question-trend-plots.html"><a href="bare-bones-single-country-multi-question-trend-plots.html"><i class="fa fa-check"></i><b>14</b> BARE BONES: Single Country Multi-Question Trend Plots</a></li>
 <li class="part"><span><b>VI All Things Colors</b></span></li>
@@ -385,15 +398,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="change-font-size" class="section level1 hasAnchor" number="18">
 <h1><span class="header-section-number">Chapter 18</span> Change the Font Size<a href="change-font-size.html#change-font-size" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="change-font-size.html#cb263-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">|&gt;</span></span>
-<span id="cb263-2"><a href="change-font-size.html#cb263-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb263-3"><a href="change-font-size.html#cb263-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb263-4"><a href="change-font-size.html#cb263-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>,</span>
-<span id="cb263-5"><a href="change-font-size.html#cb263-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.title_size =</span> <span class="dv">28</span>,      <span class="co"># Changes title size</span></span>
-<span id="cb263-6"><a href="change-font-size.html#cb263-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.subtitle_size =</span> <span class="dv">14</span>,   <span class="co"># Changes subtitle size</span></span>
-<span id="cb263-7"><a href="change-font-size.html#cb263-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.caption_size =</span> <span class="dv">20</span>,    <span class="co"># Changes caption size</span></span>
-<span id="cb263-8"><a href="change-font-size.html#cb263-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.axis_text_size =</span> <span class="dv">26</span>,  <span class="co"># Changes axis text size</span></span>
-<span id="cb263-9"><a href="change-font-size.html#cb263-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.legend_text_size =</span> <span class="dv">8</span>) <span class="co"># Changes legend text size</span></span></code></pre></div>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="change-font-size.html#cb267-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">|&gt;</span></span>
+<span id="cb267-2"><a href="change-font-size.html#cb267-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb267-3"><a href="change-font-size.html#cb267-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb267-4"><a href="change-font-size.html#cb267-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>,</span>
+<span id="cb267-5"><a href="change-font-size.html#cb267-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.title_size =</span> <span class="dv">28</span>,      <span class="co"># Changes title size</span></span>
+<span id="cb267-6"><a href="change-font-size.html#cb267-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.subtitle_size =</span> <span class="dv">14</span>,   <span class="co"># Changes subtitle size</span></span>
+<span id="cb267-7"><a href="change-font-size.html#cb267-7" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.caption_size =</span> <span class="dv">20</span>,    <span class="co"># Changes caption size</span></span>
+<span id="cb267-8"><a href="change-font-size.html#cb267-8" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.axis_text_size =</span> <span class="dv">26</span>,  <span class="co"># Changes axis text size</span></span>
+<span id="cb267-9"><a href="change-font-size.html#cb267-9" aria-hidden="true" tabindex="-1"></a>                       <span class="at">theme.legend_text_size =</span> <span class="dv">8</span>) <span class="co"># Changes legend text size</span></span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.1-Complete-Code-Example-1.png" width="1248" /></p>
 
 </div>

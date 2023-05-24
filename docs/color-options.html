@@ -323,7 +323,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="bare-bones-single-country-stacked-plots.html"><a href="bare-bones-single-country-stacked-plots.html"><i class="fa fa-check"></i><b>11</b> BARE BONES: Single Country Stacked Plots</a></li>
 <li class="part"><span><b>V Multiple Questions</b></span></li>
-<li class="chapter" data-level="12" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html"><i class="fa fa-check"></i><b>12</b> BARE BONES: Single Country Multi-Question Plots</a></li>
+<li class="chapter" data-level="12" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html"><i class="fa fa-check"></i><b>12</b> BARE BONES: Single Country Multi-Question Plots</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#prep-work"><i class="fa fa-check"></i><b>12.1</b> Prep Work</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#question-list"><i class="fa fa-check"></i><b>12.1.1</b> Question List</a></li>
+<li class="chapter" data-level="12.1.2" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#question-labels"><i class="fa fa-check"></i><b>12.1.2</b> Question Labels</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#plot-a-multiquestion-graph-for-a-single-country"><i class="fa fa-check"></i><b>12.2</b> Plot a Multiquestion Graph for a Single Country</a></li>
+<li class="chapter" data-level="12.3" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#extras-3"><i class="fa fa-check"></i><b>12.3</b> Extras</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#setting-colors"><i class="fa fa-check"></i><b>12.3.1</b> Setting Colors</a></li>
+<li class="chapter" data-level="12.3.2" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#data-frame"><i class="fa fa-check"></i><b>12.3.2</b> Data Frame</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="13" data-path="bare-bones-comparative-multi-question-plots.html"><a href="bare-bones-comparative-multi-question-plots.html"><i class="fa fa-check"></i><b>13</b> BARE BONES: Comparative Multi-Question Plots</a></li>
 <li class="chapter" data-level="14" data-path="bare-bones-single-country-multi-question-trend-plots.html"><a href="bare-bones-single-country-multi-question-trend-plots.html"><i class="fa fa-check"></i><b>14</b> BARE BONES: Single Country Multi-Question Trend Plots</a></li>
 <li class="part"><span><b>VI All Things Colors</b></span></li>
@@ -388,7 +401,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="available-colors" class="section level2 hasAnchor" number="15.1">
 <h2><span class="header-section-number">15.1</span> Available Colors<a href="color-options.html#available-colors" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The colors available for graphs come from <a href="https://drive.google.com/drive/u/0/folders/0ANF6dTDxdEyiUk9PVA">the Arab Barometer Color Guide</a>. You can see a list of colors with the command:</p>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="color-options.html#cb242-1" aria-hidden="true" tabindex="-1"></a>ArabBarometer_clrs</span></code></pre></div>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="color-options.html#cb246-1" aria-hidden="true" tabindex="-1"></a>ArabBarometer_clrs</span></code></pre></div>
 <pre><code>##         AB blue       AB orange      AB magenta   AB light blue       AB purple 
 ##       &quot;#0098BE&quot;       &quot;#DF6E21&quot;       &quot;#AC517F&quot;       &quot;#7CBBC7&quot;       &quot;#796391&quot; 
 ##         AB pink       AB yellow       cool grey            zeke      james bond 
@@ -415,7 +428,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="available-palettes" class="section level2 hasAnchor" number="15.2">
 <h2><span class="header-section-number">15.2</span> Available Palettes<a href="color-options.html#available-palettes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The official branding colors have been combined into several color palettes to use with graphs. To see a list of all the (current) palettes, use the following command:</p>
-<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="color-options.html#cb244-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AB_palette_options</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="color-options.html#cb248-1" aria-hidden="true" tabindex="-1"></a><span class="fu">AB_palette_options</span>()</span></code></pre></div>
 <pre><code>##  [1] &quot;blue pair&quot;          &quot;orange pair&quot;        &quot;purple pair&quot;       
 ##  [4] &quot;AB Default&quot;         &quot;blue triple&quot;        &quot;orange triple&quot;     
 ##  [7] &quot;purple triple&quot;      &quot;green triple&quot;       &quot;mono blue&quot;         

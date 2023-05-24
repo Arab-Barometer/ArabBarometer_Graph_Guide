@@ -323,7 +323,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="bare-bones-single-country-stacked-plots.html"><a href="bare-bones-single-country-stacked-plots.html"><i class="fa fa-check"></i><b>11</b> BARE BONES: Single Country Stacked Plots</a></li>
 <li class="part"><span><b>V Multiple Questions</b></span></li>
-<li class="chapter" data-level="12" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html"><i class="fa fa-check"></i><b>12</b> BARE BONES: Single Country Multi-Question Plots</a></li>
+<li class="chapter" data-level="12" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html"><i class="fa fa-check"></i><b>12</b> BARE BONES: Single Country Multi-Question Plots</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#prep-work"><i class="fa fa-check"></i><b>12.1</b> Prep Work</a>
+<ul>
+<li class="chapter" data-level="12.1.1" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#question-list"><i class="fa fa-check"></i><b>12.1.1</b> Question List</a></li>
+<li class="chapter" data-level="12.1.2" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#question-labels"><i class="fa fa-check"></i><b>12.1.2</b> Question Labels</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#plot-a-multiquestion-graph-for-a-single-country"><i class="fa fa-check"></i><b>12.2</b> Plot a Multiquestion Graph for a Single Country</a></li>
+<li class="chapter" data-level="12.3" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#extras-3"><i class="fa fa-check"></i><b>12.3</b> Extras</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#setting-colors"><i class="fa fa-check"></i><b>12.3.1</b> Setting Colors</a></li>
+<li class="chapter" data-level="12.3.2" data-path="bare-bones-single-country-multi-question-plots.html"><a href="bare-bones-single-country-multi-question-plots.html#data-frame"><i class="fa fa-check"></i><b>12.3.2</b> Data Frame</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="13" data-path="bare-bones-comparative-multi-question-plots.html"><a href="bare-bones-comparative-multi-question-plots.html"><i class="fa fa-check"></i><b>13</b> BARE BONES: Comparative Multi-Question Plots</a></li>
 <li class="chapter" data-level="14" data-path="bare-bones-single-country-multi-question-trend-plots.html"><a href="bare-bones-single-country-multi-question-trend-plots.html"><i class="fa fa-check"></i><b>14</b> BARE BONES: Single Country Multi-Question Trend Plots</a></li>
 <li class="part"><span><b>VI All Things Colors</b></span></li>
@@ -385,12 +398,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="change-the-titlesubtitlecaption" class="section level1 hasAnchor" number="19">
 <h1><span class="header-section-number">Chapter 19</span> Change the Title/Subtitle/Caption<a href="change-the-titlesubtitlecaption.html#change-the-titlesubtitlecaption" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="change-the-titlesubtitlecaption.html#cb264-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb264-2"><a href="change-the-titlesubtitlecaption.html#cb264-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb264-3"><a href="change-the-titlesubtitlecaption.html#cb264-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb264-4"><a href="change-the-titlesubtitlecaption.html#cb264-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.title =</span> <span class="st">&quot;New title&quot;</span>,</span>
-<span id="cb264-5"><a href="change-the-titlesubtitlecaption.html#cb264-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.subtitle =</span> <span class="st">&quot;New subtitle&quot;</span>,</span>
-<span id="cb264-6"><a href="change-the-titlesubtitlecaption.html#cb264-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.caption =</span> <span class="st">&quot;New caption&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb268"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb268-1"><a href="change-the-titlesubtitlecaption.html#cb268-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb268-2"><a href="change-the-titlesubtitlecaption.html#cb268-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb268-3"><a href="change-the-titlesubtitlecaption.html#cb268-3" aria-hidden="true" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb268-4"><a href="change-the-titlesubtitlecaption.html#cb268-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.title =</span> <span class="st">&quot;New title&quot;</span>,</span>
+<span id="cb268-5"><a href="change-the-titlesubtitlecaption.html#cb268-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.subtitle =</span> <span class="st">&quot;New subtitle&quot;</span>,</span>
+<span id="cb268-6"><a href="change-the-titlesubtitlecaption.html#cb268-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">.caption =</span> <span class="st">&quot;New caption&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.2-Complete-Code-Example-1.png" width="1248" /></p>
 
 </div>
