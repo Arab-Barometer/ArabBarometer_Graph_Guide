@@ -1,6 +1,6 @@
 # (PART) Multiple Questions {-}
 
-# Single Country Multi-Question Plots
+# Single Country Multi-Question Plots {#chapter-9}
 
 This chapter teaches you how to create a single graph that summarizes responses for multiple variables for a single country. 
 
@@ -48,13 +48,13 @@ plot_multiquestions_ind(survey1,
 
 Let's go!
 
-## Prep Work
+## Prep Work {#chapter-9-1}
 
 There is no **calculate_** function^[As off writing this chapter] for this graph. All the computation is done within the `plot_multiquestions_ind()` function.
 
 It is useful to do some prep work to keep everything clear.
 
-### Question List
+### Question List {#chapter-9-1-1}
 
 First create a list of questions you want to include on your graph. For the example in this chapter we are comparing questions `Q210` and `Q211`. We put the names of those variables in a list and save that list as an object.
 
@@ -69,7 +69,7 @@ questions_2_compare <- list(
 
 Now the variables we want to graph as saved to the object `questions_2_compare` in a list.
 
-### Question Labels
+### Question Labels {#chapter-9-1-2}
 
 The next step is to create a vector of labels for the questions. This is the text that will display on the y-axis. The labels should appear in the same order as they variables they are referring to.
 
@@ -84,7 +84,7 @@ question_labels <- c(
 
 The object `question_labels` represents the text that will serve to label the responses on the graph.
 
-## Plot a Multiquestion Graph for a Single Country
+## Plot a Multiquestion Graph for a Single Country {#chapter-9-2}
 
 We are now ready to create our graph. The function `plot_multiquestions_ind()` is used to create a graph for one country that displays responses to multiple questions. There are **three** required arguments. They are: `.ab`, `.questions`, and `.question_labels`.
 
@@ -125,17 +125,17 @@ plot_multiquestions_ind(
 
 ```
 
-## Extras
+## Extras {#chapter-9-3}
 
-### Setting Colors
+### Setting Colors {#chapter-9-3-1}
 
 By default, the colors for the graph are randomly selected from `ArabBarometer_clr`. To set the colors of the graph, supply a vector of hex codes or named Arab Barometer brand colors to the parameter `.clr_choice`.
 
-### Data Frame
+### Data Frame {#chapter-9-3-2}
 
 There is no **calculate_** function that accompanies this function. All calculations are done internally. The parameter `.return_df` allows the user to see the data frame used to create the graph. Setting `.return_df` to `TRUE` will cause the function to return a list containing the graph and the data frame. Setting `.return_df` to `"only"` will cause the function to only return the data frame.
 
-### Explict Grid Example
+### Explict Grid Example {#chapter-9-3-3}
 
 Remember: plotting a set of grid questions requires exactly the same steps as outlined throughout this chapter. There is **no difference** between plotting 2 (or n) questions that belong to a grid, and 2 (or n) questions that do not.
 
