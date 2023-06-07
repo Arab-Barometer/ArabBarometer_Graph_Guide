@@ -1,0 +1,70 @@
+# Installing and Updating `ArabBarometR` {-}
+
+
+## Installing `ArabBaromtR`
+
+If you do not have the `ArabBarometR` package, you can install it on your machine in one of two ways. It is highly recommend you follow the first method.
+
+### Installing from GitHub {-}
+
+This is the recommended way to install `ArabBarometR`.
+
+1. You will need a GitHub Personal Access Token (PAT).  You will only need to do this step once.
+  * GitHub has updated their security measures. Your PAT will generally take the place of your password. To create one, [click here](https://github.com/settings/tokens). Click the button that says **Generate new token**. Select the permissions you want to token to be accountable for. Once you've made your selections, click **Generate token**.
+  * Once you have your PAT, save it somewhere (1) secure and (2) easily accessible (to you). **You cannot recover your PAT if you lose it**. You can make a new one, but then you have to reset everything and it's a big pain. You can save yor PAT (and other sensitive information) in R using the [`keyring` package](https://cran.r-project.org/web/packages/keyring/index.html) if you are so inclined. [Here is a link to a tutorial.](https://ras44.github.io/blog/2019/01/19/keeping-credentials-secret-with-keyrings-in-r.html)
+  * [This bookdown section](https://happygitwithr.com/https-pat.html#tldr) does a great job of explaining PATs in minimal and expansive detail. The book overall is an excellent source for information on Git and R.
+2. Make you have `devtools` installed in R. If not, use `install.packages("devtools")`.
+3. Now, you can install ArabBarometR directly from GitHub! Use the following command: **`devtools::install_github("Arab-Barometer/ArabBarometR", ref = "main", auth_token = "your_PAT", dependencies = T)`**
+  * In this case, `"your_PAT"` is the PAT you created in step 1.
+  * The last parameter specification, `dependencies = T` , installs all the packages that are required to run `ArabBarometR`.
+    * Tip: you can also use this parameter whenever you install any R package the "normal" way with `install.packages()`.
+4. `ArabBarometR` is now installed everywhere on your computer. Using `library(ArabBarometR)` will call the latest version of the package.
+
+
+### Downloading from GitHub {-}
+
+1. To download the latest version of this package, click the green code button towards the top of [the ArabBarometR repo page](https://github.com/Arab-Barometer/ArabBarometR). 
+2. From the list of options, select **Download ZIP**.
+3. Save the zip file somewhere you will not loose it.
+     - **If you are downloading this not for the first time**, I suggest saving it on top of where you saved the old file.
+  That way you will only have one version of the package on your computer and will not become confused as to which package to use.
+4. Unzip the file.
+5. Open `ArabBarometR.Rproj`.
+6. In the top right pane, click on the tab that says **Build**.
+7. In the Build tab, click on **Install and Restart**.
+     - Install any packages that are required.
+8. The latest `ArabBarometR` is now on your computer.
+9. The next time you open R, type `install.packages("ArabBarometR")` into the console.
+10. `ArabBarometR` is now installed everywhere on your computer. Using `library(ArabBarometR)` will call the latest version of the package.
+
+## Updating `ArabBarometR` {-}
+
+To check which version you have, you can use `utils::packageVersion("ArabBarometR")`.
+
+### Updating via `install_github` {-}
+
+This is the recommended way to update your version of `ArabBarometR` when minor revisions and patches occur. It is only accessible if you followed have a PAT from GitHub.
+
+1. You can update ArabBarometR directly from GitHub! Use the following command: **`devtools::install_github("Arab-Barometer/ArabBarometR", ref = "main", auth_token = "your_PAT", dependencies = T, upgrade = "always")`**
+  * In this case, `"your_PAT"` is the PAT you created in step 1.
+  * The last parameter specification, `dependencies = T` , installs all the packages that are required to run `ArabBarometR`.
+
+That's it! Your package is updated.
+
+### Updating via downloads
+
+To update the package via downloading it, follow the exact same steps as installing it.
+
+1. To download the latest version of this package, click the green code button towards the top of [the ArabBarometR repo page](https://github.com/Arab-Barometer/ArabBarometR). 
+2. From the list of options, select **Download ZIP**.
+3. Save the zip file somewhere you will not loose it.
+     - **If you are downloading this not for the first time**, I suggest saving it on top of where you saved the old file.
+  That way you will only have one version of the package on your computer and will not become confused as to which package to use.
+4. Unzip the file.
+5. Open `ArabBarometR.Rproj`.
+6. In the top right pane, click on the tab that says **Build**.
+7. In the Build tab, click on **Install and Restart**.
+     - Install any packages that are required.
+8. The latest `ArabBarometR` is now on your computer.
+9. The next time you open R, type `install.packages("ArabBarometR")` into the console.
+10. `ArabBarometR` is now installed everywhere on your computer. Using `library(ArabBarometR)` will call the latest version of the package.
