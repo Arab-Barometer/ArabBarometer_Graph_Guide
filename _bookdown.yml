@@ -32,5 +32,6 @@ rmd_files: [
   "9902-TitleChange.Rmd",
   "9903-SelectCountries.Rmd",
   "9904-StackedOrder.Rmd",
-  "Guide_Features.Rmd"
+  "Guide_Features.Rmd",
+  "isntall-updated.Rmd"
 ]
