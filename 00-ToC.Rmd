@@ -49,6 +49,7 @@
  <font size="5"> Appendix </font>
  
  * <font size="4"> [Guide Features][Guide Features] </font> 
+ * <font size="4"> [Installing and Updating `ArabBarometR`][Installing and Updating `ArabBarometR`] </font> 
  
  
  
