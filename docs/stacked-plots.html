@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-05-24" />
+<meta name="date" content="2023-06-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -392,6 +392,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>VIII Appendix</b></span></li>
 <li class="chapter" data-level="" data-path="guide-features.html"><a href="guide-features.html"><i class="fa fa-check"></i>Guide Features</a></li>
+<li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html"><i class="fa fa-check"></i>Installing and Updating <code>ArabBarometR</code></a>
+<ul>
+<li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#installing-arabbaromtr"><i class="fa fa-check"></i>Installing <code>ArabBaromtR</code></a>
+<ul>
+<li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#installing-from-github"><i class="fa fa-check"></i>Installing from GitHub</a></li>
+<li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#downloading-from-github"><i class="fa fa-check"></i>Downloading from GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#updating-arabbarometr"><i class="fa fa-check"></i>Updating <code>ArabBarometR</code></a>
+<ul>
+<li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#updating-via-install_github"><i class="fa fa-check"></i>Updating via <code>install_github</code></a></li>
+<li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#updating-via-downloads"><i class="fa fa-check"></i>Updating via downloads</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -445,7 +458,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8  17 [Beirut port explosion] Algeria       0
 ##  9 666 [Don&#39;t know/Refuse]     Algeria       2
 ## 10   1 [Economic situation]    Jordan       41
-## # … with 44 more rows</code></pre>
+## # ℹ 44 more rows</code></pre>
 <p>The data frame is quite long, as it contains the response of every category for every country. Let’s save it to an object we can graph in the next section.</p>
 <div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="stacked-plots.html#cb210-1" aria-hidden="true" tabindex="-1"></a>stacked_data_frame <span class="ot">&lt;-</span> <span class="fu">calculate_stacked_df</span>(</span>
 <span id="cb210-2"><a href="stacked-plots.html#cb210-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,   </span>
@@ -524,7 +537,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8  17 [Beirut port explosion] Algeria       0
 ##  9 666 [Don&#39;t know/Refuse]     Algeria       2
 ## 10   1 [Economic situation]    Jordan       41
-## # … with 44 more rows</code></pre>
+## # ℹ 44 more rows</code></pre>
 <div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="stacked-plots.html#cb221-1" aria-hidden="true" tabindex="-1"></a>summary_list<span class="sc">$</span>Q118</span></code></pre></div>
 <pre><code>## # A tibble: 42 × 3
 ## # Groups:   Country [6]
@@ -540,23 +553,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8   1 [Create more job opportunities]                 Jordan       39
 ##  9   2 [Raise wages for existing jobs]                 Jordan       18
 ## 10   3 [Lower the cost of living (limiting inflation)] Jordan       17
-## # … with 32 more rows</code></pre>
+## # ℹ 32 more rows</code></pre>
 <div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="stacked-plots.html#cb223-1" aria-hidden="true" tabindex="-1"></a>summary_list<span class="sc">$</span>Q516A</span></code></pre></div>
 <pre><code>## # A tibble: 24 × 3
 ## # Groups:   Country [6]
-##    Q516A                                                            Country Percent
-##    &lt;dbl+lbl&gt;                                                        &lt;chr&gt;     &lt;dbl&gt;
-##  1   1 [For people like me, it doesn&#39;t matter what kind of governm… Algeria       9
-##  2   2 [Under some circumstances, a non-democratic government can … Algeria      18
-##  3   3 [Democracy is always preferable to any other kind of govern… Algeria      64
-##  4 666 [Don&#39;t know/Refuse]                                          Algeria       8
-##  5   1 [For people like me, it doesn&#39;t matter what kind of governm… Jordan       16
-##  6   2 [Under some circumstances, a non-democratic government can … Jordan       13
-##  7   3 [Democracy is always preferable to any other kind of govern… Jordan       59
-##  8 666 [Don&#39;t know/Refuse]                                          Jordan       13
-##  9   1 [For people like me, it doesn&#39;t matter what kind of governm… Lebanon      22
-## 10   2 [Under some circumstances, a non-democratic government can … Lebanon      28
-## # … with 14 more rows</code></pre>
+##    Q516A                                                      Country Percent
+##    &lt;dbl+lbl&gt;                                                  &lt;chr&gt;     &lt;dbl&gt;
+##  1   1 [For people like me, it doesn&#39;t matter what kind of g… Algeria       9
+##  2   2 [Under some circumstances, a non-democratic governmen… Algeria      18
+##  3   3 [Democracy is always preferable to any other kind of … Algeria      64
+##  4 666 [Don&#39;t know/Refuse]                                    Algeria       8
+##  5   1 [For people like me, it doesn&#39;t matter what kind of g… Jordan       16
+##  6   2 [Under some circumstances, a non-democratic governmen… Jordan       13
+##  7   3 [Democracy is always preferable to any other kind of … Jordan       59
+##  8 666 [Don&#39;t know/Refuse]                                    Jordan       13
+##  9   1 [For people like me, it doesn&#39;t matter what kind of g… Lebanon      22
+## 10   2 [Under some circumstances, a non-democratic governmen… Lebanon      28
+## # ℹ 14 more rows</code></pre>
 <p>Excellent. On to plotting.</p>
 </div>
 <div id="create-many-plots" class="section level3 hasAnchor" number="10.2.3">

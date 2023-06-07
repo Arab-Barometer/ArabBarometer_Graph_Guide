@@ -1,6 +1,6 @@
 # Installing and Updating `ArabBarometR` {-}
 
-## Installing `ArabBaromtR`
+## Installing `ArabBaromtR` {-}
 
 If you do not have the `ArabBarometR` package, you can install it on your machine in one of two ways. It is highly recommend you follow the first method.
 
@@ -50,7 +50,7 @@ This is the recommended way to update your version of `ArabBarometR` when minor 
 
 That's it! Your package is updated.
 
-### Updating via downloads
+### Updating via downloads {-}
 
 To update the package via downloading it, follow the exact same steps as installing it.
 

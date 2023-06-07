@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-05-24" />
+<meta name="date" content="2023-06-07" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -392,6 +392,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="part"><span><b>VIII Appendix</b></span></li>
 <li class="chapter" data-level="" data-path="guide-features.html"><a href="guide-features.html"><i class="fa fa-check"></i>Guide Features</a></li>
+<li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html"><i class="fa fa-check"></i>Installing and Updating <code>ArabBarometR</code></a>
+<ul>
+<li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#installing-arabbaromtr"><i class="fa fa-check"></i>Installing <code>ArabBaromtR</code></a>
+<ul>
+<li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#installing-from-github"><i class="fa fa-check"></i>Installing from GitHub</a></li>
+<li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#downloading-from-github"><i class="fa fa-check"></i>Downloading from GitHub</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#updating-arabbarometr"><i class="fa fa-check"></i>Updating <code>ArabBarometR</code></a>
+<ul>
+<li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#updating-via-install_github"><i class="fa fa-check"></i>Updating via <code>install_github</code></a></li>
+<li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#updating-via-downloads"><i class="fa fa-check"></i>Updating via downloads</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -436,7 +449,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 666 [Don&#39;t know/Refuse]                      Algeria       0
 ##  9   1 [Family member illness or death]         Jordan       31
 ## 10   2 [Loss of household income]               Jordan        6
-## # … with 38 more rows</code></pre>
+## # ℹ 38 more rows</code></pre>
 <p>Instead of leading with “Illness or death of a family member”, say we want to lead with “Inadequate gov.t response”. We need to change the factor levels. First, we’ll save the output of <code>calculate_stacked_df</code> to an object we can manipulate.</p>
 <div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="order-change-stacked-graphs.html#cb281-1" aria-hidden="true" tabindex="-1"></a>new_df <span class="ot">&lt;-</span> <span class="fu">calculate_stacked_df</span>(survey1,</span>
 <span id="cb281-2"><a href="order-change-stacked-graphs.html#cb281-2" aria-hidden="true" tabindex="-1"></a>                               <span class="st">&quot;Q2ACOVID19&quot;</span>)</span></code></pre></div>
@@ -465,7 +478,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 666 [Don&#39;t know/Refuse]                      Algeria       0
 ##  9   1 [Family member illness or death]         Jordan       31
 ## 10   2 [Loss of household income]               Jordan        6
-## # … with 38 more rows</code></pre>
+## # ℹ 38 more rows</code></pre>
 <p>And now when we plot the recoded data frame.</p>
 <div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="order-change-stacked-graphs.html#cb284-1" aria-hidden="true" tabindex="-1"></a>new_df <span class="sc">|&gt;</span></span>
 <span id="cb284-2"><a href="order-change-stacked-graphs.html#cb284-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;New Order, Option 1&quot;</span>)</span></code></pre></div>
@@ -496,7 +509,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  8 666 [Don&#39;t know/Refuse]                      Algeria       0
 ##  9   5 [Family member illness or death]         Jordan       31
 ## 10   2 [Loss of household income]               Jordan        6
-## # … with 38 more rows</code></pre>
+## # ℹ 38 more rows</code></pre>
 <p>Finally, we plot the new data frame.</p>
 <div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="order-change-stacked-graphs.html#cb287-1" aria-hidden="true" tabindex="-1"></a>new_df <span class="sc">|&gt;</span></span>
 <span id="cb287-2"><a href="order-change-stacked-graphs.html#cb287-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;New Order, Option 2&quot;</span>)</span></code></pre></div>

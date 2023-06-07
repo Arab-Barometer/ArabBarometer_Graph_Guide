@@ -9,7 +9,7 @@ site: bookdown::bookdown_site
 
 ## Purpose {.unnumbered}
 
-This guide is meant to give instructions on how to create graphs using the `ArabBarometR` package. If you do not yet have `ArabBarometR` installed, see either the README file on the package's GitHub repo, or [Installing and Updating `ArabBarometR`][Installing and Updating `ArabBarometR`] in the Appedix.
+This guide is meant to give instructions on how to create graphs using the `ArabBarometR` package. If you do not yet have `ArabBarometR` installed, see either the [README](https://github.com/Arab-Barometer/ArabBarometR#readme) file on the package's GitHub repo, or [Installing and Updating `ArabBarometR`][Installing and Updating `ArabBarometR`] in the Appendix.
 
 This guide was created using the **bookdown** package, which comes with many fun and useful features. An overview of these features can be found in the [Guide Features](https://arab-barometer.github.io/ArabBarometR-Guide/guide-features.html) section in the general `ArabBarometR` Guide.
 
