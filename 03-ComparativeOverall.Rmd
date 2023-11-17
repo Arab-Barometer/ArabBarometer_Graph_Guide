@@ -185,11 +185,11 @@ At the end of this section, your code will look like the following:
 
      #.....................Identify the variables.....................
 variables_2_plot <- list("Q1COVID19",
-                         "Q2061A",
+                         "Q2061A_1",
                          "Q609")
 
 names(variables_2_plot) <- c("Q1COVID19",
-                             "Q2061A",
+                             "Q2061A_1",
                              "Q609")
 
      #......................Create the summaries......................
@@ -212,11 +212,11 @@ For example, to see the plot for variable `Q1COVID19`, run the following code:
 
      #.....................Identify the variables.....................
 variables_2_plot <- list("Q1COVID19",
-                         "Q2061A",
+                         "Q2061A_1",
                          "Q609")
 
 names(variables_2_plot) <- c("Q1COVID19",
-                             "Q2061A",
+                             "Q2061A_1",
                              "Q609")
 
      #......................Create the summaries......................
@@ -241,7 +241,7 @@ To see the plot for variable `Q2061A`, run the following code:
 
 ```{r 03.16-Complete-Code-Example-Results2, fig.dim=c(13,12)}
 
-comparative_plots$Q2061A
+comparative_plots$Q2061A_1
 
 ```
 
@@ -266,7 +266,7 @@ To create many summaries at once, you need to provide your variables in a named 
 ```{r 03.18-list, eval=FALSE}
 
 variables_2_plot <- list("Q1COVID19",
-                         "Q2061A",
+                         "Q2061A_1",
                          "Q609")
 
 ```
@@ -276,7 +276,7 @@ The next step is to name your list.
 ```{r 03.19-named-list, eval=FALSE}
 
 names(variables_2_plot) <- c("Q1COVID19",
-                             "Q2061A",
+                             "Q2061A_1",
                              "Q609")
 
 ```
@@ -411,7 +411,7 @@ To see the plot for variable `Q2061A`, run the following code:
 
 ```{r 03.30-Complete-Code-Example-Results2, fig.dim=c(13,12)}
 
-comparative_plots$Q2061A
+comparative_plots$Q2061A_1
 
 ```
 

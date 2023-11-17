@@ -61,7 +61,9 @@ survey1 <- survey1 %>%
   education_demographic() %>%
   income_demographic() %>%
   
-  dummy_all(Q2061A)
+  dummy_all(Q2061A) %>%
+  
+  rename(Q118_1 = Q118)
 
 # Preparing Survey 2 data:
 survey2 <- survey2 %>%
@@ -100,7 +102,9 @@ survey3 <- survey3 %>%
                                           `Public services` = 12,
                                           `COVID-19` = 15,
                                           `Other` = 16,
-                                          `Don't know/refuse` = 98))
+                                          `Don't know/refuse` = 98)) %>%
+  
+  rename(Q118_1 = Q118)
 ```
 
 In this code example **"/Path/to/Folder/with/Data"** is the path to where you are saving your work that *also contains your data*. This is best practice. For more on folders/working directories, see [Section 1.1.2](https://arab-barometer.github.io/ArabBarometR-Guide/installation.html) in the general Arab Barometer Guide.
@@ -121,7 +125,7 @@ library(ggplot2)
 
 ```{r index-load-w6s1, include=FALSE, cache=TRUE}
 
-survey1 <- haven::read_dta("/Volumes/GoogleDrive/Shared drives/Arab Barometer/AB6/0. RELEASE FILES/Data Files/ENG Final Data Files FOR RELEASE/Arab_Barometer_Wave_6_Part_1_ENG_RELEASE_NOV_21.dta")
+survey1 <- haven::read_dta("~/Library/CloudStorage/GoogleDrive-mcroche@princeton.edu/Shared drives/Arab Barometer/AB6/0. RELEASE FILES/Data Files/ENG Final Data Files FOR RELEASE/Arab_Barometer_Wave_6_Part_1_ENG_RELEASE_NOV_21.dta")
 
 survey1 <- survey1 %>%
   
@@ -130,14 +134,16 @@ survey1 <- survey1 %>%
   education_demographic() %>%
   income_demographic() %>%
   
-  dummy_all(Q2061A)
+  dummy_all(Q2061A) %>%
+  
+  rename(Q118_1 = Q118)
 
 
 ```
 
 ```{r index-load-w6s2, include=FALSE, cache=TRUE}
 
-survey2 <- haven::read_dta("/Volumes/GoogleDrive/Shared drives/Arab Barometer/AB6/0. RELEASE FILES/Data Files/ENG Final Data Files FOR RELEASE/Arab_Barometer_Wave_6_Part_2_ENG_RELEASE_gov.dta")
+survey2 <- haven::read_dta("~/Library/CloudStorage/GoogleDrive-mcroche@princeton.edu/Shared drives/Arab Barometer/AB6/0. RELEASE FILES/Data Files/ENG Final Data Files FOR RELEASE/Arab_Barometer_Wave_6_Part_2_ENG_RELEASE_gov.dta")
 
 survey2 <- survey2 %>%
   
@@ -163,7 +169,7 @@ survey2 <- survey2 %>%
 
 ```{r index-load-w6s3, include=FALSE, cache=TRUE}
 
-survey3 <- haven::read_dta("/Volumes/GoogleDrive/Shared drives/Arab Barometer/AB6/0. RELEASE FILES/Data Files/ENG Final Data Files FOR RELEASE/Arab_Barometer_Wave_6_Part_3_ENG_RELEASE_OCT_FIN.dta")
+survey3 <- haven::read_dta("~/Library/CloudStorage/GoogleDrive-mcroche@princeton.edu/Shared drives/Arab Barometer/AB6/0. RELEASE FILES/Data Files/ENG Final Data Files FOR RELEASE/Arab_Barometer_Wave_6_Part_3_ENG_RELEASE_OCT_FIN.dta")
 
 survey3 <- survey3 %>%
   
@@ -183,6 +189,8 @@ survey3 <- survey3 %>%
                                           `Don't know/refuse` = 98)) %>%
   
   
-  dummy_all(Q2061A)
+  dummy_all(Q2061A) %>%
+  
+  rename(Q118_1 = Q118)
 
 ```

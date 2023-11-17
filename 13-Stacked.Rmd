@@ -104,13 +104,13 @@ To be clear, there are many, **many** different ways to create code to accomplis
 
 ### Identify the Variables
 
-The first step to create many graphs is to identify all the variables you want to make graphs for. For this example, we'll use `Q2061A`, `Q118`, and `Q516A`. We will save it to an object we can map to `plot_stacked_comp()`.
+The first step to create many graphs is to identify all the variables you want to make graphs for. For this example, we'll use `Q2061A`, `Q118_1`, and `Q516A`. We will save it to an object we can map to `plot_stacked_comp()`.
 
 
 ```{r 13.9-variable-list}
 
 variables_2_plot <- c("Q2061A",
-                      "Q118",
+                      "Q118_1",
                       "Q516A")
 
 ```
@@ -163,7 +163,7 @@ Now, you can look at each variable's summary by referencing the variable name.
 ```{r 13.13-look-at-summaries}
 
 summary_list$Q2061A
-summary_list$Q118
+summary_list$Q118_1
 summary_list$Q516A
 
 ```
@@ -198,7 +198,7 @@ To look at each plot, we can simply call them by name.
 ```{r 13.16-view-plots,fig.dim=c(13,12)}
 
 plot_list$Q2061A
-plot_list$Q118
+plot_list$Q118_1
 plot_list$Q516A
 
 ```
@@ -221,7 +221,7 @@ Now, all plots should have the same caption. We can verify that by calling each 
 ```{r 13.17-second-view-plots,fig.dim=c(13,12)}
 
 plot_list$Q2061A
-plot_list$Q118
+plot_list$Q118_1
 plot_list$Q516A
 
 ```
@@ -231,7 +231,7 @@ And there you have it! We have created many stacked plots! All together, the cod
 ```{r 13.18-final-code,fig.dim=c(13,12)}
 
 variables_2_plot <- c("Q2061A",
-                      "Q118",
+                      "Q118_1",
                       "Q516A")
 
 summary_list <- map(

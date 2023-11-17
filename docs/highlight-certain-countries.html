@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-06-07" />
+<meta name="date" content="2023-11-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -428,29 +428,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 17</span> Highlight Certain Countries<a href="highlight-certain-countries.html#highlight-certain-countries" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="single-country-highlight" class="section level2 hasAnchor" number="17.1">
 <h2><span class="header-section-number">17.1</span> Single Country Highlight<a href="highlight-certain-countries.html#single-country-highlight" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="highlight-certain-countries.html#cb271-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb271-2"><a href="highlight-certain-countries.html#cb271-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb271-3"><a href="highlight-certain-countries.html#cb271-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>,</span>
-<span id="cb271-4"><a href="highlight-certain-countries.html#cb271-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.highlight =</span> <span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb271-1"><a href="highlight-certain-countries.html#cb271-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb271-2"><a href="highlight-certain-countries.html#cb271-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb271-3"><a href="highlight-certain-countries.html#cb271-3" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>,</span>
+<span id="cb271-4"><a href="highlight-certain-countries.html#cb271-4" tabindex="-1"></a>                 <span class="at">.highlight =</span> <span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/How.4.6.2-Highlight-1.png" width="1248" /></p>
 </div>
 <div id="multiple-country-highlight" class="section level2 hasAnchor" number="17.2">
 <h2><span class="header-section-number">17.2</span> Multiple Country Highlight<a href="highlight-certain-countries.html#multiple-country-highlight" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="highlight-certain-countries.html#cb272-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb272-2"><a href="highlight-certain-countries.html#cb272-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb272-3"><a href="highlight-certain-countries.html#cb272-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>,</span>
-<span id="cb272-4"><a href="highlight-certain-countries.html#cb272-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.highlight =</span> <span class="fu">c</span>(<span class="st">&quot;Algeria&quot;</span>,<span class="st">&quot;Jordan&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="highlight-certain-countries.html#cb272-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb272-2"><a href="highlight-certain-countries.html#cb272-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb272-3"><a href="highlight-certain-countries.html#cb272-3" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>,</span>
+<span id="cb272-4"><a href="highlight-certain-countries.html#cb272-4" tabindex="-1"></a>                 <span class="at">.highlight =</span> <span class="fu">c</span>(<span class="st">&quot;Algeria&quot;</span>,<span class="st">&quot;Jordan&quot;</span>))</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/How.4.7.2-Highlight-1.png" width="1248" /></p>
 </div>
 <div id="change-highlight-color" class="section level2 hasAnchor" number="17.3">
 <h2><span class="header-section-number">17.3</span> Change Highlight Color<a href="highlight-certain-countries.html#change-highlight-color" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="highlight-certain-countries.html#cb273-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb273-2"><a href="highlight-certain-countries.html#cb273-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb273-3"><a href="highlight-certain-countries.html#cb273-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>,</span>
-<span id="cb273-4"><a href="highlight-certain-countries.html#cb273-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.highlight =</span> <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb273-5"><a href="highlight-certain-countries.html#cb273-5" aria-hidden="true" tabindex="-1"></a>                 <span class="at">.highlight_clr =</span> <span class="st">&quot;salma&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb273-1"><a href="highlight-certain-countries.html#cb273-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb273-2"><a href="highlight-certain-countries.html#cb273-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb273-3"><a href="highlight-certain-countries.html#cb273-3" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>,</span>
+<span id="cb273-4"><a href="highlight-certain-countries.html#cb273-4" tabindex="-1"></a>                 <span class="at">.highlight =</span> <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb273-5"><a href="highlight-certain-countries.html#cb273-5" tabindex="-1"></a>                 <span class="at">.highlight_clr =</span> <span class="st">&quot;salma&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/How.4.8.2-Highlight-1.png" width="1248" /></p>
 

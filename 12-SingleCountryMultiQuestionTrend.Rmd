@@ -21,8 +21,8 @@ plot_trend_multiquestion_individual(questions_2_compare,
                                     survey_dates,
                                     "Algeria",
                                     legend.names = c("Economic situtation","COVID-19"),
-                                    .title = "What is the most important challenge facing Algeria today?",
-                                    .subtitle = "% saying",
+                                    .basic_title = "What is the most important challenge facing Algeria today?",
+                                    .basic_subtitle = "% saying",
                                     .caption = "Arab Barometer Wave VI, Algeria")
 
 
@@ -49,8 +49,8 @@ plot_trend_multiquestion_individual(questions_2_compare,
                                     survey_dates,
                                     "Algeria",
                                     legend.names = c("Economic situtation","COVID-19"),
-                                    .title = "What is the most important challenge facing Algeria today?",
-                                    .subtitle = "% saying",
+                                    .basic_title = "What is the most important challenge facing Algeria today?",
+                                    .basic_subtitle = "% saying",
                                     .caption = "Arab Barometer Wave VI, Algeria")
 
 

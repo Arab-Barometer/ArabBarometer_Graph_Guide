@@ -9,8 +9,8 @@ plot_stacked_general(survey1,
                      "Algeria",
                      Q2061A,
                      Q609,
-                     .title = "Most pressing concern in Algeria by religiosity",
-                     .subtitle = "% saying",
+                     .basic_title = "Most pressing concern in Algeria by religiosity",
+                     .basic_subtitle = "% saying",
                      .caption = "Arab Barometer Wave VI, Survey I, Algeria")
 
 ```
@@ -24,8 +24,8 @@ plot_stacked_general(survey1,
                      "Algeria",
                      Q2061A,
                      Q609,
-                     .title = "Most pressing concern in Algeria by religiosity",
-                     .subtitle = "% saying",
+                     .basic_title = "Most pressing concern in Algeria by religiosity",
+                     .basic_subtitle = "% saying",
                      .caption = "Arab Barometer Wave VI, Survey I, Algeria")
 
 ```

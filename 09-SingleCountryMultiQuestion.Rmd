@@ -21,8 +21,8 @@ plot_multiquestions_ind(survey1,
                         questions_2_compare,
                         questions_labels,
                         "Algeria",
-                        .title = "Perceptions of Corruption in Algeria",
-                        .subtitle = "% saying to a medium or large extent",
+                        .basic_title = "Perceptions of Corruption in Algeria",
+                        .basic_subtitle = "% saying to a medium or large extent",
                         .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
 
 ```
@@ -41,8 +41,8 @@ plot_multiquestions_ind(survey1,
                         questions_2_compare,
                         questions_labels,
                         "Algeria",
-                        .title = "Perceptions of Corruption in Algeria",
-                        .subtitle = "% saying to a medium or large extent",
+                        .basic_title = "Perceptions of Corruption in Algeria",
+                        .basic_subtitle = "% saying to a medium or large extent",
                         .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
 ```
 
@@ -118,8 +118,8 @@ plot_multiquestions_ind(
   .questions = questions_2_compare,
   .question_labels = question_labels,
   .country = "Algeria",
-  .title = "Perceptions of Corruption in Algeria",
-  .subtitle = "% saying to a medium or large extent",
+  .basic_title = "Perceptions of Corruption in Algeria",
+  .basic_subtitle = "% saying to a medium or large extent",
   .caption = "Arab Barometer Wave VI, Survey 1, Algeria"
 )
 
@@ -159,8 +159,8 @@ plot_multiquestions_ind(
   .questions = questions_2_compare,
   .question_labels = question_labels,
   .country = "Algeria",
-  .title = "How much trust do you have in...",
-  .subtitle = "% of Algerians saying they have quite a lot or a great deal",
+  .basic_title = "How much trust do you have in...",
+  .basic_subtitle = "% of Algerians saying they have quite a lot or a great deal",
   .caption = "Arab Barometer Wave VI, Survey 1, Algeria"
 )
 

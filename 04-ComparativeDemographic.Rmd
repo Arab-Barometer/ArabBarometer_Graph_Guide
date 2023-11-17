@@ -247,11 +247,11 @@ comparative_gender_plots$Q1COVID19
 
 ```
 
-To see the plot for variable `Q2061A`, run the following code:
+To see the plot for variable `Q2061A_1`, run the following code:
 
 ```{r 04.18-Complete-Code-Example-Results2, fig.dim=c(13,12)}
 
-comparative_gender_plots$Q2061A
+comparative_gender_plots$Q2061A_1
 
 ```
 
@@ -265,7 +265,7 @@ comparative_gender_plots$Q609
 
 That's it! The only limit on the number of graphs you can create at once is the time it will take R to make them. The more graphs you try to create at once, the longer it will take.
 
-The steps to creating a named variable list are exactly the same as the ones we reviewed in Chapter 1; therefore, we will begin by creating summaries. For a refresher on creating named lists, [click here][Identify the Variables]. We will use the same variables as in Chapter 3: `Q1COVID19`, `Q2061A`, and `Q609`.
+The steps to creating a named variable list are exactly the same as the ones we reviewed in Chapter 1; therefore, we will begin by creating summaries. For a refresher on creating named lists, [click here][Identify the Variables]. We will use the same variables as in Chapter 3: `Q1COVID19`, `Q2061A_1`, and `Q609`.
 
 Let's begin.
 
@@ -288,11 +288,11 @@ The above code produces a nested named list. Each element in the list is another
     * `gender` Q1COVID19 summary grouped by gender
     * `income` Q1COVID19 summary grouped by income
     * `education` Q1COVID19 summary grouped by education
-  * `Q2061A`
-    * `age` Q2061A summary grouped by age
-    * `gender` Q2061A summary grouped by gender
-    * `income` Q2061A summary grouped by income
-    * `education` Q2061A summary grouped by education
+  * `Q2061A_1`
+    * `age` Q2061A_1 summary grouped by age
+    * `gender` Q2061A_1 summary grouped by gender
+    * `income` Q2061A_1 summary grouped by income
+    * `education` Q2061A_1 summary grouped by education
   * `Q609`
     * `age` Q609 summary grouped by age
     * `gender` Q609 summary grouped by gender
@@ -315,8 +315,8 @@ Now, the output of this function looks like this bullet point list:
 * `calculate_demographic_smry_comp(.dem="gender")` output
   * `Q1COVID19`
     * `gender` Q1COVID19 summary grouped by gender
-  * `Q2061A`
-    * `gender` Q2061A summary grouped by gender
+  * `Q2061A_1`
+    * `gender` Q2061A_1 summary grouped by gender
   * `Q609`
     * `gender` Q609 summary grouped by gender
     
@@ -415,11 +415,11 @@ comparative_gender_plots$Q1COVID19
 
 ```
 
-To see the plot for variable `Q2061A`, run the following code:
+To see the plot for variable `Q2061A_1`, run the following code:
 
 ```{r 04.30-Complete-Code-Example-Results2, fig.dim=c(13,12)}
 
-comparative_gender_plots$Q2061A
+comparative_gender_plots$Q2061A_1
 
 ```
 

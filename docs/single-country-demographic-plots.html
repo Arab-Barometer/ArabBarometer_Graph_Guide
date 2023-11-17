@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-06-07" />
+<meta name="date" content="2023-11-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -431,11 +431,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">3.1</span> Create a Single Graph<a href="single-country-demographic-plots.html#create-a-single-graph" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This section will go over how to make a one-off frequency graph by a demographic for a single country.</p>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="single-country-demographic-plots.html#cb44-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb44-2"><a href="single-country-demographic-plots.html#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb44-3"><a href="single-country-demographic-plots.html#cb44-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>,</span>
-<span id="cb44-4"><a href="single-country-demographic-plots.html#cb44-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb44-5"><a href="single-country-demographic-plots.html#cb44-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="single-country-demographic-plots.html#cb44-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb44-2"><a href="single-country-demographic-plots.html#cb44-2" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb44-3"><a href="single-country-demographic-plots.html#cb44-3" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>,</span>
+<span id="cb44-4"><a href="single-country-demographic-plots.html#cb44-4" tabindex="-1"></a>                                        <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb44-5"><a href="single-country-demographic-plots.html#cb44-5" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/02.2-Complete-Graph-Example-1.png" width="1248" /></p>
 <div id="creating-a-summary" class="section level3 hasAnchor" number="3.1.1">
@@ -443,9 +443,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The first step in creating a plot is to gather the data you want to display and organize it. You do this with the <strong>calculate_demographic_smry_individual()</strong> function.</p>
 <p>Just like <strong>calculate_smry_individual()</strong>, the three main parameters you need to provide to this function are (1) the data you are using, (2) the variable you want to plot, and (3) the country you want to plot it for. To see all the input parameters for the function, type the code <code>?calculate_demographic_smry_individual</code> in your R console.</p>
 <p>In this example, the variable we want to plot is <strong>Q1COVID19</strong>, and the country we want to plot it for is <strong>Algeria</strong><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a>.</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="single-country-demographic-plots.html#cb45-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span>                                                    <span class="co"># Data</span></span>
-<span id="cb45-2"><a href="single-country-demographic-plots.html#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,           <span class="co"># Variable to summarize  </span></span>
-<span id="cb45-3"><a href="single-country-demographic-plots.html#cb45-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>)  <span class="co"># Country</span></span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="single-country-demographic-plots.html#cb45-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span>                                                    <span class="co"># Data</span></span>
+<span id="cb45-2"><a href="single-country-demographic-plots.html#cb45-2" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,           <span class="co"># Variable to summarize  </span></span>
+<span id="cb45-3"><a href="single-country-demographic-plots.html#cb45-3" tabindex="-1"></a>                                        <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>)  <span class="co"># Country</span></span></code></pre></div>
 <p>The above code will produce the following output:</p>
 <pre><code>## $age
 ## # A tibble: 10 × 3
@@ -505,10 +505,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 8 Cannot cover expenses   3 [Somewhat not concerned]       7
 ## 9 Cannot cover expenses   4 [Not at all concerned]        19</code></pre>
 <p>Woah, that’s a lot of summaries! By default, <strong>calculate_demographic_smry_individual()</strong> creates summaries for <strong>age</strong>, <strong>gender</strong>, <strong>income</strong>, and <strong>education</strong>. To specify exactly which demographic we want to group the data by, we include one more parameter.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="single-country-demographic-plots.html#cb47-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span>                                                      <span class="co"># Data</span></span>
-<span id="cb47-2"><a href="single-country-demographic-plots.html#cb47-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,             <span class="co"># Variable to summarize</span></span>
-<span id="cb47-3"><a href="single-country-demographic-plots.html#cb47-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>,    <span class="co"># Country</span></span>
-<span id="cb47-4"><a href="single-country-demographic-plots.html#cb47-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>)         <span class="co"># Demographic to group data by</span></span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="single-country-demographic-plots.html#cb47-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span>                                                      <span class="co"># Data</span></span>
+<span id="cb47-2"><a href="single-country-demographic-plots.html#cb47-2" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,             <span class="co"># Variable to summarize</span></span>
+<span id="cb47-3"><a href="single-country-demographic-plots.html#cb47-3" tabindex="-1"></a>                                        <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>,    <span class="co"># Country</span></span>
+<span id="cb47-4"><a href="single-country-demographic-plots.html#cb47-4" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>)         <span class="co"># Demographic to group data by</span></span></code></pre></div>
 <p>By specifying the parameter <strong>.dem</strong>, the function now knows it should only group the data by the variables <strong>gender</strong>. Now the output is as follows:</p>
 <pre><code>## $gender
 ## # A tibble: 9 × 3
@@ -525,35 +525,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 9 Male   666 [Don&#39;t know/Refuse]            0</code></pre>
 <p>The function <strong>calcuate_demographic_smry()</strong> creates a named list. In this list, each item is a summary broken down by a demographic and the name of each item is that demographic.</p>
 <p>Let’s save our gender demographic summary and move on to plotting it.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="single-country-demographic-plots.html#cb49-1" aria-hidden="true" tabindex="-1"></a>Q1COVID19_gender <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb49-2"><a href="single-country-demographic-plots.html#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb49-3"><a href="single-country-demographic-plots.html#cb49-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb49-4"><a href="single-country-demographic-plots.html#cb49-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="single-country-demographic-plots.html#cb49-1" tabindex="-1"></a>Q1COVID19_gender <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb49-2"><a href="single-country-demographic-plots.html#cb49-2" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb49-3"><a href="single-country-demographic-plots.html#cb49-3" tabindex="-1"></a>                                        <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb49-4"><a href="single-country-demographic-plots.html#cb49-4" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>)</span></code></pre></div>
 </div>
 <div id="plotting-the-summary" class="section level3 hasAnchor" number="3.1.2">
 <h3><span class="header-section-number">3.1.2</span> Plotting the Summary<a href="single-country-demographic-plots.html#plotting-the-summary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The next step is plot the summary we just created. To do this, we use the function <strong>plot_demographic_smry_individual()</strong>.</p>
 <p>There is only <em>one</em> necessary parameter to use <strong>plot_smry_individual()</strong>: the summary data frame. For a complete list of acceptable parameters and documentation, you can run <code>?plot_demographic_smry_individual</code> in your R console.</p>
 <p>Now, we can plug our summary into the plot function:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="single-country-demographic-plots.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_demographic_smry_individual</span>(Q1COVID19_gender)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="single-country-demographic-plots.html#cb50-1" tabindex="-1"></a><span class="fu">plot_demographic_smry_individual</span>(Q1COVID19_gender)</span></code></pre></div>
 <p>The above code is the same as:</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="single-country-demographic-plots.html#cb51-1" aria-hidden="true" tabindex="-1"></a>Q1COVID19_gender <span class="sc">%&gt;%</span></span>
-<span id="cb51-2"><a href="single-country-demographic-plots.html#cb51-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_individual</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="single-country-demographic-plots.html#cb51-1" tabindex="-1"></a>Q1COVID19_gender <span class="sc">%&gt;%</span></span>
+<span id="cb51-2"><a href="single-country-demographic-plots.html#cb51-2" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_individual</span>()</span></code></pre></div>
 <p>Both stylings of code produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/02.11-plot-1.png" width="1248" /></p>
 <p>Yet again, we see the caption needs to be changed. We can change it the same way we did in Chapter 1.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="single-country-demographic-plots.html#cb52-1" aria-hidden="true" tabindex="-1"></a>Q1COVID19_gender <span class="sc">%&gt;%</span></span>
-<span id="cb52-2"><a href="single-country-demographic-plots.html#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_individual</span>(</span>
-<span id="cb52-3"><a href="single-country-demographic-plots.html#cb52-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span></span>
-<span id="cb52-4"><a href="single-country-demographic-plots.html#cb52-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="single-country-demographic-plots.html#cb52-1" tabindex="-1"></a>Q1COVID19_gender <span class="sc">%&gt;%</span></span>
+<span id="cb52-2"><a href="single-country-demographic-plots.html#cb52-2" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_individual</span>(</span>
+<span id="cb52-3"><a href="single-country-demographic-plots.html#cb52-3" tabindex="-1"></a>    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span></span>
+<span id="cb52-4"><a href="single-country-demographic-plots.html#cb52-4" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Now we have the graph:</p>
 <p><img src="bookdownproj_files/figure-html/02.13-plot-1.png" width="1248" /></p>
 <p>Since <code>Q1COVID19_gender</code> is the same as <code>survey1 %&gt;% calculate_demographic_smry_individual("Q1COVID19", .country = "Algeria", .dem = "gender")</code>, we can substitute the former with the latter to get the original code in our example. This will give us the same plot that we just created.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="single-country-demographic-plots.html#cb53-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb53-2"><a href="single-country-demographic-plots.html#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb53-3"><a href="single-country-demographic-plots.html#cb53-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>,</span>
-<span id="cb53-4"><a href="single-country-demographic-plots.html#cb53-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb53-5"><a href="single-country-demographic-plots.html#cb53-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="single-country-demographic-plots.html#cb53-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb53-2"><a href="single-country-demographic-plots.html#cb53-2" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb53-3"><a href="single-country-demographic-plots.html#cb53-3" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>,</span>
+<span id="cb53-4"><a href="single-country-demographic-plots.html#cb53-4" tabindex="-1"></a>                                        <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb53-5"><a href="single-country-demographic-plots.html#cb53-5" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="create-many-graphs" class="section level2 hasAnchor" number="3.2">
@@ -565,44 +565,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Third, plot those summaries.</li>
 </ol>
 <p>At the end of this section, your code will look like the following:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="single-country-demographic-plots.html#cb54-1" aria-hidden="true" tabindex="-1"></a>     <span class="co">#.....................Identify the variables.....................</span></span>
-<span id="cb54-2"><a href="single-country-demographic-plots.html#cb54-2" aria-hidden="true" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb54-3"><a href="single-country-demographic-plots.html#cb54-3" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;Q2061A&quot;</span>,</span>
-<span id="cb54-4"><a href="single-country-demographic-plots.html#cb54-4" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;Q609&quot;</span>)</span>
-<span id="cb54-5"><a href="single-country-demographic-plots.html#cb54-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-6"><a href="single-country-demographic-plots.html#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(variables_2_plot) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb54-7"><a href="single-country-demographic-plots.html#cb54-7" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Q2061A&quot;</span>,</span>
-<span id="cb54-8"><a href="single-country-demographic-plots.html#cb54-8" aria-hidden="true" tabindex="-1"></a>                             <span class="st">&quot;Q609&quot;</span>)</span>
-<span id="cb54-9"><a href="single-country-demographic-plots.html#cb54-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-10"><a href="single-country-demographic-plots.html#cb54-10" aria-hidden="true" tabindex="-1"></a>     <span class="co">#......................Create the summaries......................</span></span>
-<span id="cb54-11"><a href="single-country-demographic-plots.html#cb54-11" aria-hidden="true" tabindex="-1"></a>gender_summaries <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb54-12"><a href="single-country-demographic-plots.html#cb54-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(variables_2_plot,</span>
-<span id="cb54-13"><a href="single-country-demographic-plots.html#cb54-13" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb54-14"><a href="single-country-demographic-plots.html#cb54-14" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>) </span>
-<span id="cb54-15"><a href="single-country-demographic-plots.html#cb54-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb54-16"><a href="single-country-demographic-plots.html#cb54-16" aria-hidden="true" tabindex="-1"></a>     <span class="co">#.......................Plot the summaries.......................</span></span>
-<span id="cb54-17"><a href="single-country-demographic-plots.html#cb54-17" aria-hidden="true" tabindex="-1"></a>gender_plots <span class="ot">&lt;-</span> <span class="fu">map</span>(gender_summaries,</span>
-<span id="cb54-18"><a href="single-country-demographic-plots.html#cb54-18" aria-hidden="true" tabindex="-1"></a>                    plot_demographic_smry_individual,</span>
-<span id="cb54-19"><a href="single-country-demographic-plots.html#cb54-19" aria-hidden="true" tabindex="-1"></a>                    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="single-country-demographic-plots.html#cb54-1" tabindex="-1"></a>     <span class="co">#.....................Identify the variables.....................</span></span>
+<span id="cb54-2"><a href="single-country-demographic-plots.html#cb54-2" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb54-3"><a href="single-country-demographic-plots.html#cb54-3" tabindex="-1"></a>                         <span class="st">&quot;Q2061A&quot;</span>,</span>
+<span id="cb54-4"><a href="single-country-demographic-plots.html#cb54-4" tabindex="-1"></a>                         <span class="st">&quot;Q609&quot;</span>)</span>
+<span id="cb54-5"><a href="single-country-demographic-plots.html#cb54-5" tabindex="-1"></a></span>
+<span id="cb54-6"><a href="single-country-demographic-plots.html#cb54-6" tabindex="-1"></a><span class="fu">names</span>(variables_2_plot) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb54-7"><a href="single-country-demographic-plots.html#cb54-7" tabindex="-1"></a>                             <span class="st">&quot;Q2061A&quot;</span>,</span>
+<span id="cb54-8"><a href="single-country-demographic-plots.html#cb54-8" tabindex="-1"></a>                             <span class="st">&quot;Q609&quot;</span>)</span>
+<span id="cb54-9"><a href="single-country-demographic-plots.html#cb54-9" tabindex="-1"></a></span>
+<span id="cb54-10"><a href="single-country-demographic-plots.html#cb54-10" tabindex="-1"></a>     <span class="co">#......................Create the summaries......................</span></span>
+<span id="cb54-11"><a href="single-country-demographic-plots.html#cb54-11" tabindex="-1"></a>gender_summaries <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb54-12"><a href="single-country-demographic-plots.html#cb54-12" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(variables_2_plot,</span>
+<span id="cb54-13"><a href="single-country-demographic-plots.html#cb54-13" tabindex="-1"></a>                                        <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb54-14"><a href="single-country-demographic-plots.html#cb54-14" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>) </span>
+<span id="cb54-15"><a href="single-country-demographic-plots.html#cb54-15" tabindex="-1"></a></span>
+<span id="cb54-16"><a href="single-country-demographic-plots.html#cb54-16" tabindex="-1"></a>     <span class="co">#.......................Plot the summaries.......................</span></span>
+<span id="cb54-17"><a href="single-country-demographic-plots.html#cb54-17" tabindex="-1"></a>gender_plots <span class="ot">&lt;-</span> <span class="fu">map</span>(gender_summaries,</span>
+<span id="cb54-18"><a href="single-country-demographic-plots.html#cb54-18" tabindex="-1"></a>                    plot_demographic_smry_individual,</span>
+<span id="cb54-19"><a href="single-country-demographic-plots.html#cb54-19" tabindex="-1"></a>                    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>)</span></code></pre></div>
 <p>The result is a named list of plots. Each element in the list is a plot. The element is named for the variable it is a plot of.</p>
 <p>For example, to see the plot for variable <code>Q1COVID19</code>, run the following code:</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="single-country-demographic-plots.html#cb55-1" aria-hidden="true" tabindex="-1"></a>gender_plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="single-country-demographic-plots.html#cb55-1" tabindex="-1"></a>gender_plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/02.17-Complete-Code-Example-Results1-1.png" width="1248" /></p>
 <p>To see the plot for variable <code>Q2061A</code>, run the following code:</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="single-country-demographic-plots.html#cb56-1" aria-hidden="true" tabindex="-1"></a>gender_plots<span class="sc">$</span>Q2061A</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="single-country-demographic-plots.html#cb56-1" tabindex="-1"></a>gender_plots<span class="sc">$</span>Q2061A</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/02.18-Complete-Code-Example-Results2-1.png" width="1248" /></p>
 <p>Finally, to see the plot for variable <code>Q609</code>, run the following code:</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="single-country-demographic-plots.html#cb57-1" aria-hidden="true" tabindex="-1"></a>gender_plots<span class="sc">$</span>Q609</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="single-country-demographic-plots.html#cb57-1" tabindex="-1"></a>gender_plots<span class="sc">$</span>Q609</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/02.19-Complete-Code-Example-Results3-1.png" width="1248" /></p>
 <p>That’s it! The only limit on the number of graphs you can create at once is the time it will take R to make them. The more graphs you try to create at once, the longer it will take.</p>
-<p>The steps to creating a named variable list are exactly the same as the ones we reviewed in Chapter 1; therefore, we will begin by creating summaries. For a refresher on creating named lists, <a href="stacked-plots.html#identify-the-variables-2">click here</a>. We will use the same variables as in Chapter 1: <code>Q1COVID19</code>, <code>Q2061A</code>, and <code>Q609</code>.</p>
+<p>The steps to creating a named variable list are exactly the same as the ones we reviewed in Chapter 1; therefore, we will begin by creating summaries. For a refresher on creating named lists, <a href="chapter-1.html#chapter-1-2-1">click here</a>. We will use the same variables as in Chapter 1: <code>Q1COVID19</code>, <code>Q2061A</code>, and <code>Q609</code>.</p>
 <p>Let’s begin.</p>
 <div id="create-summaries" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Create Summaries<a href="single-country-demographic-plots.html#create-summaries" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The same function used to create a single summary is used to create many summaries: <strong>calculate_demographic_smry_individual()</strong>. Recall it takes three parameters: (1) the data you are using, (2) the variable(s) you want to plot, and (3) the country you are creating the plot for. Now, instead of one variable, you supply the list of variables.</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="single-country-demographic-plots.html#cb58-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span>                                               <span class="co"># Data</span></span>
-<span id="cb58-2"><a href="single-country-demographic-plots.html#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(variables_2_plot, <span class="co"># Variables to summarize</span></span>
-<span id="cb58-3"><a href="single-country-demographic-plots.html#cb58-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Algeria&quot;</span>)        <span class="co"># Country</span></span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="single-country-demographic-plots.html#cb58-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span>                                               <span class="co"># Data</span></span>
+<span id="cb58-2"><a href="single-country-demographic-plots.html#cb58-2" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(variables_2_plot, <span class="co"># Variables to summarize</span></span>
+<span id="cb58-3"><a href="single-country-demographic-plots.html#cb58-3" tabindex="-1"></a>                                        <span class="st">&quot;Algeria&quot;</span>)        <span class="co"># Country</span></span></code></pre></div>
 <p>The above code produces a nested named list. Each element in the list is another named list. Each element in the outer list is named for a variable you want to create summaries for. The inner list of each element is a summary with the data grouped by <strong>age</strong>, <strong>gender</strong>, <strong>income</strong>, and <strong>education</strong>. You can think of it like the following bullet point list:</p>
 <ul>
 <li><code>calculate_demographic_smry_individual</code> output
@@ -631,10 +631,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 <p>For this example, we will again only be focusing on gender plots. To get only gender summaries, just specify the <strong>.dem</strong> parameter.</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="single-country-demographic-plots.html#cb59-1" aria-hidden="true" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span>                                               <span class="co"># Data</span></span>
-<span id="cb59-2"><a href="single-country-demographic-plots.html#cb59-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(variables_2_plot, <span class="co"># Variables to summarize</span></span>
-<span id="cb59-3"><a href="single-country-demographic-plots.html#cb59-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Algeria&quot;</span>,        <span class="co"># Country</span></span>
-<span id="cb59-4"><a href="single-country-demographic-plots.html#cb59-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>)  <span class="co"># Demographic</span></span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="single-country-demographic-plots.html#cb59-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span>                                               <span class="co"># Data</span></span>
+<span id="cb59-2"><a href="single-country-demographic-plots.html#cb59-2" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(variables_2_plot, <span class="co"># Variables to summarize</span></span>
+<span id="cb59-3"><a href="single-country-demographic-plots.html#cb59-3" tabindex="-1"></a>                                        <span class="st">&quot;Algeria&quot;</span>,        <span class="co"># Country</span></span>
+<span id="cb59-4"><a href="single-country-demographic-plots.html#cb59-4" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>)  <span class="co"># Demographic</span></span></code></pre></div>
 <p>Now, the output of this function looks like this bullet point list:</p>
 <ul>
 <li><code>calculate_demographic_smry_individual(.dem="gender")</code> output
@@ -655,24 +655,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Much more manageable .</p>
 <p>Let’s save this outcome as an object and move on to plotting.</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="single-country-demographic-plots.html#cb60-1" aria-hidden="true" tabindex="-1"></a>gender_summaries <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span>                                               </span>
-<span id="cb60-2"><a href="single-country-demographic-plots.html#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(variables_2_plot, </span>
-<span id="cb60-3"><a href="single-country-demographic-plots.html#cb60-3" aria-hidden="true" tabindex="-1"></a>                                        <span class="st">&quot;Algeria&quot;</span>,        </span>
-<span id="cb60-4"><a href="single-country-demographic-plots.html#cb60-4" aria-hidden="true" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>)  </span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="single-country-demographic-plots.html#cb60-1" tabindex="-1"></a>gender_summaries <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span>                                               </span>
+<span id="cb60-2"><a href="single-country-demographic-plots.html#cb60-2" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(variables_2_plot, </span>
+<span id="cb60-3"><a href="single-country-demographic-plots.html#cb60-3" tabindex="-1"></a>                                        <span class="st">&quot;Algeria&quot;</span>,        </span>
+<span id="cb60-4"><a href="single-country-demographic-plots.html#cb60-4" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>)  </span></code></pre></div>
 </div>
 <div id="plot-many-graphs-single-country-demographic" class="section level3 hasAnchor" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> Plot the Summaries<a href="single-country-demographic-plots.html#plot-many-graphs-single-country-demographic" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Again, the same function to create one plot is used to create many plots: <strong>plot_demographic_smry_individual()</strong>. Just like in Chapter 1, we need to use the <strong>map</strong> function.</p>
 <p>In this case, you supply the list of summaries you just created, and the <strong>plot_demographic_sumry_individual()</strong> function. The code follows:</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="single-country-demographic-plots.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(</span>
-<span id="cb61-2"><a href="single-country-demographic-plots.html#cb61-2" aria-hidden="true" tabindex="-1"></a>  gender_summaries,                        <span class="co"># List of summaries</span></span>
-<span id="cb61-3"><a href="single-country-demographic-plots.html#cb61-3" aria-hidden="true" tabindex="-1"></a>  plot_demographic_smry_individual         <span class="co"># Plotting function</span></span>
-<span id="cb61-4"><a href="single-country-demographic-plots.html#cb61-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="single-country-demographic-plots.html#cb61-1" tabindex="-1"></a><span class="fu">map</span>(</span>
+<span id="cb61-2"><a href="single-country-demographic-plots.html#cb61-2" tabindex="-1"></a>  gender_summaries,                        <span class="co"># List of summaries</span></span>
+<span id="cb61-3"><a href="single-country-demographic-plots.html#cb61-3" tabindex="-1"></a>  plot_demographic_smry_individual         <span class="co"># Plotting function</span></span>
+<span id="cb61-4"><a href="single-country-demographic-plots.html#cb61-4" tabindex="-1"></a>)</span></code></pre></div>
 <p>The code produces the following output:</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="single-country-demographic-plots.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(</span>
-<span id="cb62-2"><a href="single-country-demographic-plots.html#cb62-2" aria-hidden="true" tabindex="-1"></a>  gender_summaries,                       <span class="co"># List of summaries</span></span>
-<span id="cb62-3"><a href="single-country-demographic-plots.html#cb62-3" aria-hidden="true" tabindex="-1"></a>  plot_demographic_smry_individual         <span class="co"># Plotting function</span></span>
-<span id="cb62-4"><a href="single-country-demographic-plots.html#cb62-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="single-country-demographic-plots.html#cb62-1" tabindex="-1"></a><span class="fu">map</span>(</span>
+<span id="cb62-2"><a href="single-country-demographic-plots.html#cb62-2" tabindex="-1"></a>  gender_summaries,                       <span class="co"># List of summaries</span></span>
+<span id="cb62-3"><a href="single-country-demographic-plots.html#cb62-3" tabindex="-1"></a>  plot_demographic_smry_individual         <span class="co"># Plotting function</span></span>
+<span id="cb62-4"><a href="single-country-demographic-plots.html#cb62-4" tabindex="-1"></a>)</span></code></pre></div>
 <pre><code>## $Q1COVID19</code></pre>
 <pre><code>## 
 ## $Q2061A</code></pre>
@@ -680,11 +680,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $Q609</code></pre>
 <p><img src="bookdownproj_files/figure-html/02.25-plots,%20figures-side-1.png" width="50%" /><img src="bookdownproj_files/figure-html/02.25-plots,%20figures-side-2.png" width="50%" /><img src="bookdownproj_files/figure-html/02.25-plots,%20figures-side-3.png" width="50%" /></p>
 <p>Notice, yet again, the caption needs to be changed. To change the caption for all the graphs, just add one line to the map function.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="single-country-demographic-plots.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map</span>(</span>
-<span id="cb66-2"><a href="single-country-demographic-plots.html#cb66-2" aria-hidden="true" tabindex="-1"></a>  gender_summaries,                              <span class="co"># List of summaries</span></span>
-<span id="cb66-3"><a href="single-country-demographic-plots.html#cb66-3" aria-hidden="true" tabindex="-1"></a>  plot_demographic_smry_individual,              <span class="co"># Plotting function</span></span>
-<span id="cb66-4"><a href="single-country-demographic-plots.html#cb66-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>  <span class="co"># Caption</span></span>
-<span id="cb66-5"><a href="single-country-demographic-plots.html#cb66-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="single-country-demographic-plots.html#cb66-1" tabindex="-1"></a><span class="fu">map</span>(</span>
+<span id="cb66-2"><a href="single-country-demographic-plots.html#cb66-2" tabindex="-1"></a>  gender_summaries,                              <span class="co"># List of summaries</span></span>
+<span id="cb66-3"><a href="single-country-demographic-plots.html#cb66-3" tabindex="-1"></a>  plot_demographic_smry_individual,              <span class="co"># Plotting function</span></span>
+<span id="cb66-4"><a href="single-country-demographic-plots.html#cb66-4" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>  <span class="co"># Caption</span></span>
+<span id="cb66-5"><a href="single-country-demographic-plots.html#cb66-5" tabindex="-1"></a>)</span></code></pre></div>
 <pre><code>## $Q1COVID19</code></pre>
 <pre><code>## 
 ## $Q2061A</code></pre>
@@ -692,19 +692,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $Q609</code></pre>
 <p><img src="bookdownproj_files/figure-html/02.26-plots,%20figures-side-1.png" width="50%" /><img src="bookdownproj_files/figure-html/02.26-plots,%20figures-side-2.png" width="50%" /><img src="bookdownproj_files/figure-html/02.26-plots,%20figures-side-3.png" width="50%" /></p>
 <p>Congratulations! You have created three plots at once. You can store them in as a single list and call them one at a time.</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="single-country-demographic-plots.html#cb70-1" aria-hidden="true" tabindex="-1"></a>gender_plots <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
-<span id="cb70-2"><a href="single-country-demographic-plots.html#cb70-2" aria-hidden="true" tabindex="-1"></a>  gender_summaries,                              <span class="co"># List of summaries</span></span>
-<span id="cb70-3"><a href="single-country-demographic-plots.html#cb70-3" aria-hidden="true" tabindex="-1"></a>  plot_demographic_smry_individual,              <span class="co"># Plotting function</span></span>
-<span id="cb70-4"><a href="single-country-demographic-plots.html#cb70-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>  <span class="co"># Caption</span></span>
-<span id="cb70-5"><a href="single-country-demographic-plots.html#cb70-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="single-country-demographic-plots.html#cb70-1" tabindex="-1"></a>gender_plots <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb70-2"><a href="single-country-demographic-plots.html#cb70-2" tabindex="-1"></a>  gender_summaries,                              <span class="co"># List of summaries</span></span>
+<span id="cb70-3"><a href="single-country-demographic-plots.html#cb70-3" tabindex="-1"></a>  plot_demographic_smry_individual,              <span class="co"># Plotting function</span></span>
+<span id="cb70-4"><a href="single-country-demographic-plots.html#cb70-4" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>  <span class="co"># Caption</span></span>
+<span id="cb70-5"><a href="single-country-demographic-plots.html#cb70-5" tabindex="-1"></a>)</span></code></pre></div>
 <p>Now, all three plots have been stored in a named list named <code>gender_plots</code>. To look at the first plot:</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="single-country-demographic-plots.html#cb71-1" aria-hidden="true" tabindex="-1"></a>gender_plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="single-country-demographic-plots.html#cb71-1" tabindex="-1"></a>gender_plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/02.29-Complete-Code-Example-Results1-1.png" width="1248" /></p>
 <p>To see the plot for variable <code>Q2061A</code>, run the following code:</p>
-<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="single-country-demographic-plots.html#cb72-1" aria-hidden="true" tabindex="-1"></a>gender_plots<span class="sc">$</span>Q2061A</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="single-country-demographic-plots.html#cb72-1" tabindex="-1"></a>gender_plots<span class="sc">$</span>Q2061A</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/02.30-Complete-Code-Example-Results2-1.png" width="1248" /></p>
 <p>Finally, to see the plot for variable <code>Q609</code>, run the following code:</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="single-country-demographic-plots.html#cb73-1" aria-hidden="true" tabindex="-1"></a>gender_plots<span class="sc">$</span>Q609</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="single-country-demographic-plots.html#cb73-1" tabindex="-1"></a>gender_plots<span class="sc">$</span>Q609</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/02.31-Complete-Code-Example-Results3-1.png" width="1248" /></p>
 <p>You have now completed all steps in the example code. Congrats!</p>
 
