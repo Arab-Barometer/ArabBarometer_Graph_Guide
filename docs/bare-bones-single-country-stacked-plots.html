@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 11 BARE BONES: Single Country Stacked Plots | ArabBarometR Graphing Guide</title>
   <meta name="description" content="Chapter 11 BARE BONES: Single Country Stacked Plots | ArabBarometR Graphing Guide" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 11 BARE BONES: Single Country Stacked Plots | ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-11-17" />
+<meta name="date" content="2024-10-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -119,8 +119,12 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="AB-custom.css" type="text/css" />
 </head>
 
 <body>
@@ -139,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#purpose"><i class="fa fa-check"></i>Purpose</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#best-practices"><i class="fa fa-check"></i>Best Practices</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#general-guide-process"><i class="fa fa-check"></i>General Guide Process</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#example-data"><i class="fa fa-check"></i>Example Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#headercode"><i class="fa fa-check"></i>Header Code</a></li>
@@ -154,30 +159,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>I Data Prepperation Functions</b></span></li>
 <li class="chapter" data-level="1" data-path="preparing-data.html"><a href="preparing-data.html"><i class="fa fa-check"></i><b>1</b> Preparing Data</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="preparing-data.html"><a href="preparing-data.html#recode_country"><i class="fa fa-check"></i><b>1.1</b> recode_country</a>
+<li class="chapter" data-level="1.1" data-path="preparing-data.html"><a href="preparing-data.html#tldr"><i class="fa fa-check"></i><b>1.1</b> TL;DR</a></li>
+<li class="chapter" data-level="1.2" data-path="preparing-data.html"><a href="preparing-data.html#recode_country"><i class="fa fa-check"></i><b>1.2</b> <code>recode_country()</code></a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="preparing-data.html"><a href="preparing-data.html#example"><i class="fa fa-check"></i><b>1.1.1</b> Example:</a></li>
+<li class="chapter" data-level="1.2.1" data-path="preparing-data.html"><a href="preparing-data.html#example-1"><i class="fa fa-check"></i><b>1.2.1</b> Example:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="preparing-data.html"><a href="preparing-data.html#demographic-functions"><i class="fa fa-check"></i><b>1.2</b> Demographic functions</a>
+<li class="chapter" data-level="1.3" data-path="preparing-data.html"><a href="preparing-data.html#demographic-functions"><i class="fa fa-check"></i><b>1.3</b> Demographic functions</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="preparing-data.html"><a href="preparing-data.html#basics"><i class="fa fa-check"></i><b>1.2.1</b> Basics</a></li>
+<li class="chapter" data-level="1.3.1" data-path="preparing-data.html"><a href="preparing-data.html#basics"><i class="fa fa-check"></i><b>1.3.1</b> Basics</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="preparing-data.html"><a href="preparing-data.html#advanced"><i class="fa fa-check"></i><b>1.3</b> Advanced</a></li>
-<li class="chapter" data-level="1.4" data-path="preparing-data.html"><a href="preparing-data.html#education_demographic"><i class="fa fa-check"></i><b>1.4</b> education_demographic</a>
+<li class="chapter" data-level="1.4" data-path="preparing-data.html"><a href="preparing-data.html#advanced"><i class="fa fa-check"></i><b>1.4</b> Advanced</a></li>
+<li class="chapter" data-level="1.5" data-path="preparing-data.html"><a href="preparing-data.html#age_demographic"><i class="fa fa-check"></i><b>1.5</b> <code>age_demographic()</code></a></li>
+<li class="chapter" data-level="1.6" data-path="preparing-data.html"><a href="preparing-data.html#education_demographic"><i class="fa fa-check"></i><b>1.6</b> <code>education_demographic()</code></a>
 <ul>
-<li class="chapter" data-level="1.4.1" data-path="preparing-data.html"><a href="preparing-data.html#examples"><i class="fa fa-check"></i><b>1.4.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.6.1" data-path="preparing-data.html"><a href="preparing-data.html#examples"><i class="fa fa-check"></i><b>1.6.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="preparing-data.html"><a href="preparing-data.html#dummy_all"><i class="fa fa-check"></i><b>1.5</b> dummy_all</a>
+<li class="chapter" data-level="1.7" data-path="preparing-data.html"><a href="preparing-data.html#dummy_all"><i class="fa fa-check"></i><b>1.7</b> <code>dummy_all()</code></a>
 <ul>
-<li class="chapter" data-level="1.5.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-1"><i class="fa fa-check"></i><b>1.5.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.7.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-1"><i class="fa fa-check"></i><b>1.7.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="preparing-data.html"><a href="preparing-data.html#dummy_select"><i class="fa fa-check"></i><b>1.6</b> dummy_select</a>
+<li class="chapter" data-level="1.8" data-path="preparing-data.html"><a href="preparing-data.html#dummy_select"><i class="fa fa-check"></i><b>1.8</b> <code>dummy_select()</code></a>
 <ul>
-<li class="chapter" data-level="1.6.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-2"><i class="fa fa-check"></i><b>1.6.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.8.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-2"><i class="fa fa-check"></i><b>1.8.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="preparing-data.html"><a href="preparing-data.html#in-practice"><i class="fa fa-check"></i><b>1.7</b> In Practice</a>
+<li class="chapter" data-level="1.9" data-path="preparing-data.html"><a href="preparing-data.html#in-practice"><i class="fa fa-check"></i><b>1.9</b> In Practice</a>
 <ul>
-<li class="chapter" data-level="1.7.1" data-path="preparing-data.html"><a href="preparing-data.html#example-2"><i class="fa fa-check"></i><b>1.7.1</b> Example:</a></li>
+<li class="chapter" data-level="1.9.1" data-path="preparing-data.html"><a href="preparing-data.html#example-3"><i class="fa fa-check"></i><b>1.9.1</b> Example:</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Cross Tabulation Graphs</b></span></li>
@@ -327,7 +334,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="12.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1"><i class="fa fa-check"></i><b>12.1</b> Prep Work</a>
 <ul>
-<li class="chapter" data-level="12.1.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-1"><i class="fa fa-check"></i><b>12.1.1</b> Question List</a></li>
+<li class="chapter" data-level="12.1.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-1"><i class="fa fa-check"></i><b>12.1.1</b> Question Vector</a></li>
 <li class="chapter" data-level="12.1.2" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-2"><i class="fa fa-check"></i><b>12.1.2</b> Question Labels</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-2"><i class="fa fa-check"></i><b>12.2</b> Plot a Multiquestion Graph for a Single Country</a></li>
@@ -407,6 +414,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
 </ul>
 
       </nav>
@@ -427,13 +435,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="bare-bones-single-country-stacked-plots" class="section level1 hasAnchor" number="11">
 <h1><span class="header-section-number">Chapter 11</span> BARE BONES: Single Country Stacked Plots<a href="bare-bones-single-country-stacked-plots.html#bare-bones-single-country-stacked-plots" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="bare-bones-single-country-stacked-plots.html#cb238-1" tabindex="-1"></a><span class="fu">plot_stacked_general</span>(survey1,</span>
-<span id="cb238-2"><a href="bare-bones-single-country-stacked-plots.html#cb238-2" tabindex="-1"></a>                     <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb238-3"><a href="bare-bones-single-country-stacked-plots.html#cb238-3" tabindex="-1"></a>                     Q2061A,</span>
-<span id="cb238-4"><a href="bare-bones-single-country-stacked-plots.html#cb238-4" tabindex="-1"></a>                     Q609,</span>
-<span id="cb238-5"><a href="bare-bones-single-country-stacked-plots.html#cb238-5" tabindex="-1"></a>                     <span class="at">.basic_title =</span> <span class="st">&quot;Most pressing concern in Algeria by religiosity&quot;</span>,</span>
-<span id="cb238-6"><a href="bare-bones-single-country-stacked-plots.html#cb238-6" tabindex="-1"></a>                     <span class="at">.basic_subtitle =</span> <span class="st">&quot;% saying&quot;</span>,</span>
-<span id="cb238-7"><a href="bare-bones-single-country-stacked-plots.html#cb238-7" tabindex="-1"></a>                     <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb324-1"><a href="bare-bones-single-country-stacked-plots.html#cb324-1" tabindex="-1"></a><span class="fu">plot_stacked_general</span>(survey1,</span>
+<span id="cb324-2"><a href="bare-bones-single-country-stacked-plots.html#cb324-2" tabindex="-1"></a>                     <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb324-3"><a href="bare-bones-single-country-stacked-plots.html#cb324-3" tabindex="-1"></a>                     Q2061A,</span>
+<span id="cb324-4"><a href="bare-bones-single-country-stacked-plots.html#cb324-4" tabindex="-1"></a>                     Q609,</span>
+<span id="cb324-5"><a href="bare-bones-single-country-stacked-plots.html#cb324-5" tabindex="-1"></a>                     <span class="at">.basic_title =</span> <span class="st">&quot;Most pressing concern in Algeria by religiosity&quot;</span>,</span>
+<span id="cb324-6"><a href="bare-bones-single-country-stacked-plots.html#cb324-6" tabindex="-1"></a>                     <span class="at">.basic_subtitle =</span> <span class="st">&quot;% saying&quot;</span>,</span>
+<span id="cb324-7"><a href="bare-bones-single-country-stacked-plots.html#cb324-7" tabindex="-1"></a>                     <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/14.2-Complete-Graph-Example-1.png" width="1248" /></p>
 <p>Let’s go!</p>

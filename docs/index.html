@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>ArabBarometR Graphing Guide</title>
   <meta name="description" content="ArabBarometR Graphing Guide" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-11-17" />
+<meta name="date" content="2024-10-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -119,8 +119,12 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="AB-custom.css" type="text/css" />
 </head>
 
 <body>
@@ -139,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#purpose"><i class="fa fa-check"></i>Purpose</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#best-practices"><i class="fa fa-check"></i>Best Practices</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#general-guide-process"><i class="fa fa-check"></i>General Guide Process</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#example-data"><i class="fa fa-check"></i>Example Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#headercode"><i class="fa fa-check"></i>Header Code</a></li>
@@ -154,30 +159,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>I Data Prepperation Functions</b></span></li>
 <li class="chapter" data-level="1" data-path="preparing-data.html"><a href="preparing-data.html"><i class="fa fa-check"></i><b>1</b> Preparing Data</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="preparing-data.html"><a href="preparing-data.html#recode_country"><i class="fa fa-check"></i><b>1.1</b> recode_country</a>
+<li class="chapter" data-level="1.1" data-path="preparing-data.html"><a href="preparing-data.html#tldr"><i class="fa fa-check"></i><b>1.1</b> TL;DR</a></li>
+<li class="chapter" data-level="1.2" data-path="preparing-data.html"><a href="preparing-data.html#recode_country"><i class="fa fa-check"></i><b>1.2</b> <code>recode_country()</code></a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="preparing-data.html"><a href="preparing-data.html#example"><i class="fa fa-check"></i><b>1.1.1</b> Example:</a></li>
+<li class="chapter" data-level="1.2.1" data-path="preparing-data.html"><a href="preparing-data.html#example-1"><i class="fa fa-check"></i><b>1.2.1</b> Example:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="preparing-data.html"><a href="preparing-data.html#demographic-functions"><i class="fa fa-check"></i><b>1.2</b> Demographic functions</a>
+<li class="chapter" data-level="1.3" data-path="preparing-data.html"><a href="preparing-data.html#demographic-functions"><i class="fa fa-check"></i><b>1.3</b> Demographic functions</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="preparing-data.html"><a href="preparing-data.html#basics"><i class="fa fa-check"></i><b>1.2.1</b> Basics</a></li>
+<li class="chapter" data-level="1.3.1" data-path="preparing-data.html"><a href="preparing-data.html#basics"><i class="fa fa-check"></i><b>1.3.1</b> Basics</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="preparing-data.html"><a href="preparing-data.html#advanced"><i class="fa fa-check"></i><b>1.3</b> Advanced</a></li>
-<li class="chapter" data-level="1.4" data-path="preparing-data.html"><a href="preparing-data.html#education_demographic"><i class="fa fa-check"></i><b>1.4</b> education_demographic</a>
+<li class="chapter" data-level="1.4" data-path="preparing-data.html"><a href="preparing-data.html#advanced"><i class="fa fa-check"></i><b>1.4</b> Advanced</a></li>
+<li class="chapter" data-level="1.5" data-path="preparing-data.html"><a href="preparing-data.html#age_demographic"><i class="fa fa-check"></i><b>1.5</b> <code>age_demographic()</code></a></li>
+<li class="chapter" data-level="1.6" data-path="preparing-data.html"><a href="preparing-data.html#education_demographic"><i class="fa fa-check"></i><b>1.6</b> <code>education_demographic()</code></a>
 <ul>
-<li class="chapter" data-level="1.4.1" data-path="preparing-data.html"><a href="preparing-data.html#examples"><i class="fa fa-check"></i><b>1.4.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.6.1" data-path="preparing-data.html"><a href="preparing-data.html#examples"><i class="fa fa-check"></i><b>1.6.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="preparing-data.html"><a href="preparing-data.html#dummy_all"><i class="fa fa-check"></i><b>1.5</b> dummy_all</a>
+<li class="chapter" data-level="1.7" data-path="preparing-data.html"><a href="preparing-data.html#dummy_all"><i class="fa fa-check"></i><b>1.7</b> <code>dummy_all()</code></a>
 <ul>
-<li class="chapter" data-level="1.5.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-1"><i class="fa fa-check"></i><b>1.5.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.7.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-1"><i class="fa fa-check"></i><b>1.7.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="preparing-data.html"><a href="preparing-data.html#dummy_select"><i class="fa fa-check"></i><b>1.6</b> dummy_select</a>
+<li class="chapter" data-level="1.8" data-path="preparing-data.html"><a href="preparing-data.html#dummy_select"><i class="fa fa-check"></i><b>1.8</b> <code>dummy_select()</code></a>
 <ul>
-<li class="chapter" data-level="1.6.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-2"><i class="fa fa-check"></i><b>1.6.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.8.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-2"><i class="fa fa-check"></i><b>1.8.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="preparing-data.html"><a href="preparing-data.html#in-practice"><i class="fa fa-check"></i><b>1.7</b> In Practice</a>
+<li class="chapter" data-level="1.9" data-path="preparing-data.html"><a href="preparing-data.html#in-practice"><i class="fa fa-check"></i><b>1.9</b> In Practice</a>
 <ul>
-<li class="chapter" data-level="1.7.1" data-path="preparing-data.html"><a href="preparing-data.html#example-2"><i class="fa fa-check"></i><b>1.7.1</b> Example:</a></li>
+<li class="chapter" data-level="1.9.1" data-path="preparing-data.html"><a href="preparing-data.html#example-3"><i class="fa fa-check"></i><b>1.9.1</b> Example:</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Cross Tabulation Graphs</b></span></li>
@@ -327,7 +334,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="12.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1"><i class="fa fa-check"></i><b>12.1</b> Prep Work</a>
 <ul>
-<li class="chapter" data-level="12.1.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-1"><i class="fa fa-check"></i><b>12.1.1</b> Question List</a></li>
+<li class="chapter" data-level="12.1.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-1"><i class="fa fa-check"></i><b>12.1.1</b> Question Vector</a></li>
 <li class="chapter" data-level="12.1.2" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-2"><i class="fa fa-check"></i><b>12.1.2</b> Question Labels</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-2"><i class="fa fa-check"></i><b>12.2</b> Plot a Multiquestion Graph for a Single Country</a></li>
@@ -407,6 +414,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
 </ul>
 
       </nav>
@@ -427,7 +435,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">ArabBarometR Graphing Guide</h1>
 <p class="author"><em>MaryClare Roche</em></p>
-<p class="date"><em>2023-11-17</em></p>
+<p class="date"><em>2024-10-16</em></p>
 </div>
 <div id="introduction" class="section level1 unnumbered hasAnchor">
 <h1>Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -447,6 +455,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </div>
+<div id="best-practices" class="section level2 unnumbered hasAnchor">
+<h2>Best Practices<a href="index.html#best-practices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Before we begin, there are a few best practices that you are <strong>highly</strong> encouraged to adhere to.</p>
+<ol style="list-style-type: decimal">
+<li>Load you data directly from the source.</li>
+</ol>
+<ul>
+<li>Rather than downloading AB data from the Drive and saving it in a folder on your computer, then re-downloading it every time it gets updated, just put in the path from where you are to the latest data on the Drive.</li>
+<li>This will save you a <em>significant</em> amount of space on your machine.</li>
+<li>It is also the best way to guarantee that you are:
+<ol style="list-style-type: lower-alpha">
+<li>Using the latest data.</li>
+<li>Using the original, unedited data each time you start/work on a project.</li>
+</ol></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Save your code in the same place you save your graphs.</li>
+</ol>
+<ul>
+<li>Instead of saving your code in one place and your output in another, save everything in the same spot.</li>
+<li>This way, when you spot an error in your graphs or want to add more, you know exactly where the code used to create the output is.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Load only the packages you need.</li>
+</ol>
+<ul>
+<li>Many packages in R do not necessarily play nicely with each other.</li>
+<li>Often, packages will have functions with the same name that do different things. If you call one of those function in your code, R will use the function from the last package you loaded.</li>
+</ul>
+</div>
 <div id="general-guide-process" class="section level2 unnumbered hasAnchor">
 <h2>General Guide Process<a href="index.html#general-guide-process" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Assuming we are working with clean data, the graphs are created in two steps:</p>
@@ -459,76 +497,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="example-data" class="section level2 unnumbered hasAnchor">
 <h2>Example Data<a href="index.html#example-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The examples in this guide will be created using data from Wave VI. For single survey graphs, it will use data from from Wave VI, Survey I. For trend graphs, it will use data from Wave VI, Survey I, II, and III, where Survey III is the final survey we conducted in Wave VI.</p>
-<p>The Wave VI data can be found on <a href="https://www.arabbarometer.org/survey-data/data-downloads/">the Arab Barometer website</a>.</p>
-<p>In order to create certain graphs (e.g., demographic graphs, comparative graphs for nominal questions, etc.), the data needs to be prepared correctly. The first chapter in this guide introduces several functions included in the <code>ArabBarometR</code> package that allow the user to easily prepare the data.</p>
+<p>As of version <code>1.13.10.9001</code>, the <code>ArabBarometR</code> package includes a sample of this data, so you will not have to download any extra data sets to follow along. If you are using an older version of <code>ArabBarometR</code> (not recommended), the Wave VI data can be found on <a href="https://www.arabbarometer.org/survey-data/data-downloads/">the Arab Barometer website</a>.</p>
 </div>
 <div id="headercode" class="section level2 unnumbered hasAnchor">
 <h2>Header Code<a href="index.html#headercode" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The code examples in this guide will <strong>only</strong> focus on how to create graphs. That is, the examples will not include loading and preparing the data or loading libraries. As you begin this guide, make sure your header looks something like the following:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/Path/to/Folder/with/Data&quot;</span>)</span>
+<p>In order to create certain graphs (e.g., demographic graphs, comparative graphs for nominal questions, etc.), the data needs to be prepared correctly. The first chapter in this guide introduces several functions included in the <code>ArabBarometR</code> package that allow the user to easily prepare the data.</p>
+<p>The code examples in this guide will focus on how to create graphs. That is, the examples will not include loading and preparing the data or loading libraries. As you begin this guide, make sure your header looks something like the following:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;/where/graphs/will/live/&quot;</span>)</span>
 <span id="cb1-2"><a href="index.html#cb1-2" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="index.html#cb1-3" tabindex="-1"></a><span class="fu">library</span>(ArabBarometR) <span class="co"># Our package</span></span>
 <span id="cb1-4"><a href="index.html#cb1-4" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># Lots of handy functions</span></span>
 <span id="cb1-5"><a href="index.html#cb1-5" tabindex="-1"></a><span class="fu">library</span>(purrr) <span class="co"># Mapping functions</span></span>
 <span id="cb1-6"><a href="index.html#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="index.html#cb1-7" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read.dta</span>(<span class="st">&quot;Wave6Survey1.dta&quot;</span>)</span>
-<span id="cb1-8"><a href="index.html#cb1-8" tabindex="-1"></a>survey2 <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read.dta</span>(<span class="st">&quot;Wave6Survey2.dta&quot;</span>)</span>
-<span id="cb1-9"><a href="index.html#cb1-9" tabindex="-1"></a>survey3 <span class="ot">&lt;-</span> haven<span class="sc">::</span><span class="fu">read.dta</span>(<span class="st">&quot;Wave6Survey3.dta&quot;</span>)</span>
-<span id="cb1-10"><a href="index.html#cb1-10" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="index.html#cb1-11" tabindex="-1"></a><span class="co"># Preparing Survey 1 data:</span></span>
-<span id="cb1-12"><a href="index.html#cb1-12" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb1-13"><a href="index.html#cb1-13" tabindex="-1"></a>  </span>
-<span id="cb1-14"><a href="index.html#cb1-14" tabindex="-1"></a>  <span class="fu">age_demographic</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-15"><a href="index.html#cb1-15" tabindex="-1"></a>  <span class="fu">gender_demographic</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-16"><a href="index.html#cb1-16" tabindex="-1"></a>  <span class="fu">education_demographic</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-17"><a href="index.html#cb1-17" tabindex="-1"></a>  <span class="fu">income_demographic</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="index.html#cb1-7" tabindex="-1"></a><span class="co"># Preparing Survey 1 data with no pipes:</span></span>
+<span id="cb1-8"><a href="index.html#cb1-8" tabindex="-1"></a><span class="do">## Adding demographic columns:</span></span>
+<span id="cb1-9"><a href="index.html#cb1-9" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">add_demographics</span>(survey1)</span>
+<span id="cb1-10"><a href="index.html#cb1-10" tabindex="-1"></a><span class="do">## Creating dummies for examples:</span></span>
+<span id="cb1-11"><a href="index.html#cb1-11" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">dummy_all</span>(survey1,</span>
+<span id="cb1-12"><a href="index.html#cb1-12" tabindex="-1"></a>                     Q2061A)</span>
+<span id="cb1-13"><a href="index.html#cb1-13" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="index.html#cb1-14" tabindex="-1"></a><span class="co"># Preparing Survey 2 data with R native pipe:</span></span>
+<span id="cb1-15"><a href="index.html#cb1-15" tabindex="-1"></a>survey2 <span class="ot">&lt;-</span> survey2 <span class="sc">|&gt;</span> </span>
+<span id="cb1-16"><a href="index.html#cb1-16" tabindex="-1"></a>  <span class="fu">add_demographics</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb1-17"><a href="index.html#cb1-17" tabindex="-1"></a>  <span class="fu">dummy_all</span>(Q2061A)</span>
 <span id="cb1-18"><a href="index.html#cb1-18" tabindex="-1"></a>  </span>
-<span id="cb1-19"><a href="index.html#cb1-19" tabindex="-1"></a>  <span class="fu">dummy_all</span>(Q2061A) <span class="sc">%&gt;%</span></span>
-<span id="cb1-20"><a href="index.html#cb1-20" tabindex="-1"></a>  </span>
-<span id="cb1-21"><a href="index.html#cb1-21" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Q118_1 =</span> Q118)</span>
-<span id="cb1-22"><a href="index.html#cb1-22" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="index.html#cb1-23" tabindex="-1"></a><span class="co"># Preparing Survey 2 data:</span></span>
-<span id="cb1-24"><a href="index.html#cb1-24" tabindex="-1"></a>survey2 <span class="ot">&lt;-</span> survey2 <span class="sc">%&gt;%</span></span>
-<span id="cb1-25"><a href="index.html#cb1-25" tabindex="-1"></a>  </span>
-<span id="cb1-26"><a href="index.html#cb1-26" tabindex="-1"></a>  <span class="fu">age_demographic</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-27"><a href="index.html#cb1-27" tabindex="-1"></a>  <span class="fu">gender_demographic</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-28"><a href="index.html#cb1-28" tabindex="-1"></a>  <span class="fu">education_demographic</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-29"><a href="index.html#cb1-29" tabindex="-1"></a>  <span class="fu">income_demographic</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-30"><a href="index.html#cb1-30" tabindex="-1"></a>  </span>
-<span id="cb1-31"><a href="index.html#cb1-31" tabindex="-1"></a>  <span class="fu">dummy_all</span>(Q2061A) <span class="sc">%&gt;%</span></span>
-<span id="cb1-32"><a href="index.html#cb1-32" tabindex="-1"></a>  </span>
-<span id="cb1-33"><a href="index.html#cb1-33" tabindex="-1"></a>  sjlabelled<span class="sc">::</span><span class="fu">add_labels</span>(Q2061A, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">`</span><span class="at">Economic situation</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
-<span id="cb1-34"><a href="index.html#cb1-34" tabindex="-1"></a>                                          <span class="st">`</span><span class="at">Corruption</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">2</span>,</span>
-<span id="cb1-35"><a href="index.html#cb1-35" tabindex="-1"></a>                                          <span class="st">`</span><span class="at">Internal instability</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">6</span>,</span>
-<span id="cb1-36"><a href="index.html#cb1-36" tabindex="-1"></a>                                          <span class="st">`</span><span class="at">Foreign interference</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">7</span>,</span>
-<span id="cb1-37"><a href="index.html#cb1-37" tabindex="-1"></a>                                          <span class="st">`</span><span class="at">Public services</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">12</span>,</span>
-<span id="cb1-38"><a href="index.html#cb1-38" tabindex="-1"></a>                                          <span class="st">`</span><span class="at">COVID-19</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">15</span>,</span>
-<span id="cb1-39"><a href="index.html#cb1-39" tabindex="-1"></a>                                          <span class="st">`</span><span class="at">Other</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">16</span>,</span>
-<span id="cb1-40"><a href="index.html#cb1-40" tabindex="-1"></a>                                          <span class="st">`</span><span class="at">Don&#39;t know/refuse</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">98</span>))</span>
-<span id="cb1-41"><a href="index.html#cb1-41" tabindex="-1"></a></span>
-<span id="cb1-42"><a href="index.html#cb1-42" tabindex="-1"></a><span class="co"># Preparing Survey 3 data:</span></span>
-<span id="cb1-43"><a href="index.html#cb1-43" tabindex="-1"></a>survey3 <span class="ot">&lt;-</span> survey3 <span class="sc">%&gt;%</span></span>
-<span id="cb1-44"><a href="index.html#cb1-44" tabindex="-1"></a>  </span>
-<span id="cb1-45"><a href="index.html#cb1-45" tabindex="-1"></a>  <span class="co"># Adding Demographic Categories:</span></span>
-<span id="cb1-46"><a href="index.html#cb1-46" tabindex="-1"></a>  <span class="fu">age_demographic</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-47"><a href="index.html#cb1-47" tabindex="-1"></a>  <span class="fu">gender_demographic</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-48"><a href="index.html#cb1-48" tabindex="-1"></a>  <span class="fu">education_demographic</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-49"><a href="index.html#cb1-49" tabindex="-1"></a>  <span class="fu">income_demographic</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb1-50"><a href="index.html#cb1-50" tabindex="-1"></a>  </span>
-<span id="cb1-51"><a href="index.html#cb1-51" tabindex="-1"></a>  <span class="fu">dummy_all</span>(Q2061A) <span class="sc">%&gt;%</span></span>
-<span id="cb1-52"><a href="index.html#cb1-52" tabindex="-1"></a>  </span>
-<span id="cb1-53"><a href="index.html#cb1-53" tabindex="-1"></a>  sjlabelled<span class="sc">::</span><span class="fu">add_labels</span>(Q2061A, <span class="at">labels=</span><span class="fu">c</span>(<span class="st">`</span><span class="at">Economic situation</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">1</span>,</span>
-<span id="cb1-54"><a href="index.html#cb1-54" tabindex="-1"></a>                                          <span class="st">`</span><span class="at">Corruption</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">2</span>,</span>
-<span id="cb1-55"><a href="index.html#cb1-55" tabindex="-1"></a>                                          <span class="st">`</span><span class="at">Internal instability</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">6</span>,</span>
-<span id="cb1-56"><a href="index.html#cb1-56" tabindex="-1"></a>                                          <span class="st">`</span><span class="at">Foreign interference</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">7</span>,</span>
-<span id="cb1-57"><a href="index.html#cb1-57" tabindex="-1"></a>                                          <span class="st">`</span><span class="at">Public services</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">12</span>,</span>
-<span id="cb1-58"><a href="index.html#cb1-58" tabindex="-1"></a>                                          <span class="st">`</span><span class="at">COVID-19</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">15</span>,</span>
-<span id="cb1-59"><a href="index.html#cb1-59" tabindex="-1"></a>                                          <span class="st">`</span><span class="at">Other</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">16</span>,</span>
-<span id="cb1-60"><a href="index.html#cb1-60" tabindex="-1"></a>                                          <span class="st">`</span><span class="at">Don&#39;t know/refuse</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">98</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb1-61"><a href="index.html#cb1-61" tabindex="-1"></a>  </span>
-<span id="cb1-62"><a href="index.html#cb1-62" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">Q118_1 =</span> Q118)</span></code></pre></div>
-<p>In this code example <strong>“/Path/to/Folder/with/Data”</strong> is the path to where you are saving your work that <em>also contains your data</em>. This is best practice. For more on folders/working directories, see <a href="https://arab-barometer.github.io/ArabBarometR-Guide/installation.html">Section 1.1.2</a> in the general Arab Barometer Guide.</p>
-<p><strong>Wave6SurveyX.dta</strong> in the above code example is a placeholder for whatever you have named the survey data for Surveys I, II, and III from Wave VI. If you read in the data (using the <strong>haven::read.dta()</strong> function) and save it as survey1, survey2, and survey3, you should be able to copy and paste the code in this guide exactly as is and run it in your own R session.</p>
+<span id="cb1-19"><a href="index.html#cb1-19" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="index.html#cb1-20" tabindex="-1"></a><span class="co"># Preparing Survey 3 data with dplyr pipe:</span></span>
+<span id="cb1-21"><a href="index.html#cb1-21" tabindex="-1"></a>survey3 <span class="ot">&lt;-</span> survey3 <span class="sc">%&gt;%</span></span>
+<span id="cb1-22"><a href="index.html#cb1-22" tabindex="-1"></a>  <span class="fu">add_demographics</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-23"><a href="index.html#cb1-23" tabindex="-1"></a>  <span class="fu">dummy_all</span>(Q2061A)</span></code></pre></div>
+<p>The above code prepares each of our example data sets using the same two functions, but using three different methods.</p>
+<p>When adding demographic variable columns and creating dummy columns from variable <code>Q2061A</code> for <code>survey1</code> (Wave VI Part 1), each step is done on the data independently. When doing the same manipulations on <code>survey2</code> (Wave VI Part 2) and <code>survey3</code> (Wave VI Part 3), the actions are chained together using <strong>pipes</strong>. Data preparation for <code>survey2</code> uses native pipes <code>|&gt;</code>, while data preparation for <code>survey3</code> uses pipes from the <code>dplyr</code> package. <strong>All three operations have the same outcome.</strong> Q: Why use one method over the other? A: Personal preference.</p>
+<p>To learn more about see the section <a href="#piping-note">A Note on Piping</a> in the Appendix.</p>
 <p><a href="chapter-1.html#chapter-1">Chapter 2</a> introduces the functions used to prepare the data.</p>
 
 </div>

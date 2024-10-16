@@ -1,8 +1,9 @@
 bookdown::gitbook:
-  css: style.css
+  css: "AB-custom.css"
   config:
     toc:
       before: |
         <li><a href="./">GraphGuide</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Guide Features | ArabBarometR Graphing Guide</title>
   <meta name="description" content="Guide Features | ArabBarometR Graphing Guide" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Guide Features | ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-11-17" />
+<meta name="date" content="2024-10-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -119,8 +119,12 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="AB-custom.css" type="text/css" />
 </head>
 
 <body>
@@ -139,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#purpose"><i class="fa fa-check"></i>Purpose</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#best-practices"><i class="fa fa-check"></i>Best Practices</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#general-guide-process"><i class="fa fa-check"></i>General Guide Process</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#example-data"><i class="fa fa-check"></i>Example Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#headercode"><i class="fa fa-check"></i>Header Code</a></li>
@@ -154,30 +159,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>I Data Prepperation Functions</b></span></li>
 <li class="chapter" data-level="1" data-path="preparing-data.html"><a href="preparing-data.html"><i class="fa fa-check"></i><b>1</b> Preparing Data</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="preparing-data.html"><a href="preparing-data.html#recode_country"><i class="fa fa-check"></i><b>1.1</b> recode_country</a>
+<li class="chapter" data-level="1.1" data-path="preparing-data.html"><a href="preparing-data.html#tldr"><i class="fa fa-check"></i><b>1.1</b> TL;DR</a></li>
+<li class="chapter" data-level="1.2" data-path="preparing-data.html"><a href="preparing-data.html#recode_country"><i class="fa fa-check"></i><b>1.2</b> <code>recode_country()</code></a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="preparing-data.html"><a href="preparing-data.html#example"><i class="fa fa-check"></i><b>1.1.1</b> Example:</a></li>
+<li class="chapter" data-level="1.2.1" data-path="preparing-data.html"><a href="preparing-data.html#example-1"><i class="fa fa-check"></i><b>1.2.1</b> Example:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="preparing-data.html"><a href="preparing-data.html#demographic-functions"><i class="fa fa-check"></i><b>1.2</b> Demographic functions</a>
+<li class="chapter" data-level="1.3" data-path="preparing-data.html"><a href="preparing-data.html#demographic-functions"><i class="fa fa-check"></i><b>1.3</b> Demographic functions</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="preparing-data.html"><a href="preparing-data.html#basics"><i class="fa fa-check"></i><b>1.2.1</b> Basics</a></li>
+<li class="chapter" data-level="1.3.1" data-path="preparing-data.html"><a href="preparing-data.html#basics"><i class="fa fa-check"></i><b>1.3.1</b> Basics</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="preparing-data.html"><a href="preparing-data.html#advanced"><i class="fa fa-check"></i><b>1.3</b> Advanced</a></li>
-<li class="chapter" data-level="1.4" data-path="preparing-data.html"><a href="preparing-data.html#education_demographic"><i class="fa fa-check"></i><b>1.4</b> education_demographic</a>
+<li class="chapter" data-level="1.4" data-path="preparing-data.html"><a href="preparing-data.html#advanced"><i class="fa fa-check"></i><b>1.4</b> Advanced</a></li>
+<li class="chapter" data-level="1.5" data-path="preparing-data.html"><a href="preparing-data.html#age_demographic"><i class="fa fa-check"></i><b>1.5</b> <code>age_demographic()</code></a></li>
+<li class="chapter" data-level="1.6" data-path="preparing-data.html"><a href="preparing-data.html#education_demographic"><i class="fa fa-check"></i><b>1.6</b> <code>education_demographic()</code></a>
 <ul>
-<li class="chapter" data-level="1.4.1" data-path="preparing-data.html"><a href="preparing-data.html#examples"><i class="fa fa-check"></i><b>1.4.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.6.1" data-path="preparing-data.html"><a href="preparing-data.html#examples"><i class="fa fa-check"></i><b>1.6.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="preparing-data.html"><a href="preparing-data.html#dummy_all"><i class="fa fa-check"></i><b>1.5</b> dummy_all</a>
+<li class="chapter" data-level="1.7" data-path="preparing-data.html"><a href="preparing-data.html#dummy_all"><i class="fa fa-check"></i><b>1.7</b> <code>dummy_all()</code></a>
 <ul>
-<li class="chapter" data-level="1.5.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-1"><i class="fa fa-check"></i><b>1.5.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.7.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-1"><i class="fa fa-check"></i><b>1.7.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="preparing-data.html"><a href="preparing-data.html#dummy_select"><i class="fa fa-check"></i><b>1.6</b> dummy_select</a>
+<li class="chapter" data-level="1.8" data-path="preparing-data.html"><a href="preparing-data.html#dummy_select"><i class="fa fa-check"></i><b>1.8</b> <code>dummy_select()</code></a>
 <ul>
-<li class="chapter" data-level="1.6.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-2"><i class="fa fa-check"></i><b>1.6.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.8.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-2"><i class="fa fa-check"></i><b>1.8.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="preparing-data.html"><a href="preparing-data.html#in-practice"><i class="fa fa-check"></i><b>1.7</b> In Practice</a>
+<li class="chapter" data-level="1.9" data-path="preparing-data.html"><a href="preparing-data.html#in-practice"><i class="fa fa-check"></i><b>1.9</b> In Practice</a>
 <ul>
-<li class="chapter" data-level="1.7.1" data-path="preparing-data.html"><a href="preparing-data.html#example-2"><i class="fa fa-check"></i><b>1.7.1</b> Example:</a></li>
+<li class="chapter" data-level="1.9.1" data-path="preparing-data.html"><a href="preparing-data.html#example-3"><i class="fa fa-check"></i><b>1.9.1</b> Example:</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Cross Tabulation Graphs</b></span></li>
@@ -327,7 +334,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="12.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1"><i class="fa fa-check"></i><b>12.1</b> Prep Work</a>
 <ul>
-<li class="chapter" data-level="12.1.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-1"><i class="fa fa-check"></i><b>12.1.1</b> Question List</a></li>
+<li class="chapter" data-level="12.1.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-1"><i class="fa fa-check"></i><b>12.1.1</b> Question Vector</a></li>
 <li class="chapter" data-level="12.1.2" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-2"><i class="fa fa-check"></i><b>12.1.2</b> Question Labels</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-2"><i class="fa fa-check"></i><b>12.2</b> Plot a Multiquestion Graph for a Single Country</a></li>
@@ -407,6 +414,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
 </ul>
 
       </nav>
@@ -429,13 +437,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This guide is made with bookdown, an R package that allows for the combination of Rmarkdown files into a book. Bookdown books have some very nifty features.</p>
 <p><br></p>
 <p>To start, all the chunks of code you see in this book can be copy and pasted right into your R. If you hover your mouse over the code chunk<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> below, you will see a little copy icon in the upper-right hand corner. Clicking on that icon will copy the code to your clipboard, and you will be able to paste it directly into your R console.</p>
-<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="guide-features.html#cb288-1" tabindex="-1"></a><span class="co"># Example Code Chunk</span></span>
-<span id="cb288-2"><a href="guide-features.html#cb288-2" tabindex="-1"></a><span class="do">## Try copying-and-pasting this</span></span>
-<span id="cb288-3"><a href="guide-features.html#cb288-3" tabindex="-1"></a></span>
-<span id="cb288-4"><a href="guide-features.html#cb288-4" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb383"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb383-1"><a href="guide-features.html#cb383-1" tabindex="-1"></a><span class="co"># Example Code Chunk</span></span>
+<span id="cb383-2"><a href="guide-features.html#cb383-2" tabindex="-1"></a><span class="do">## Try copying-and-pasting this</span></span>
+<span id="cb383-3"><a href="guide-features.html#cb383-3" tabindex="-1"></a></span>
+<span id="cb383-4"><a href="guide-features.html#cb383-4" tabindex="-1"></a><span class="dv">2</span> <span class="sc">+</span> <span class="dv">2</span></span></code></pre></div>
 <p>Could you have typed that on your own? Yes. BUT. Now you see how copying and pasting from this guide works.</p>
 <p><strong>Note:</strong> Remember that you must be internally consistent in your own R console. You can copy and paste the following chunk of code into your own R console, but you will receive an error if you do not have the package installed.</p>
-<div class="sourceCode" id="cb289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb289-1"><a href="guide-features.html#cb289-1" tabindex="-1"></a>praise<span class="sc">::</span><span class="fu">praise</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb384"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb384-1"><a href="guide-features.html#cb384-1" tabindex="-1"></a>praise<span class="sc">::</span><span class="fu">praise</span>()</span></code></pre></div>
 <p>See if you can install the praise package on your own computer, then try copying and pasting the code.</p>
 <p><br><br></p>
 <p>Some other great features can be found across the top of the Guide. In figure <a href="guide-features.html#fig:bookdown-features">21.1</a>, you’ll see that I’ve highlighted them in different colors.</p>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 21 Change the order of a stacked graph? | ArabBarometR Graphing Guide</title>
   <meta name="description" content="Chapter 21 Change the order of a stacked graph? | ArabBarometR Graphing Guide" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 21 Change the order of a stacked graph? | ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-11-17" />
+<meta name="date" content="2024-10-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -119,8 +119,12 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="AB-custom.css" type="text/css" />
 </head>
 
 <body>
@@ -139,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#purpose"><i class="fa fa-check"></i>Purpose</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#best-practices"><i class="fa fa-check"></i>Best Practices</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#general-guide-process"><i class="fa fa-check"></i>General Guide Process</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#example-data"><i class="fa fa-check"></i>Example Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#headercode"><i class="fa fa-check"></i>Header Code</a></li>
@@ -154,30 +159,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>I Data Prepperation Functions</b></span></li>
 <li class="chapter" data-level="1" data-path="preparing-data.html"><a href="preparing-data.html"><i class="fa fa-check"></i><b>1</b> Preparing Data</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="preparing-data.html"><a href="preparing-data.html#recode_country"><i class="fa fa-check"></i><b>1.1</b> recode_country</a>
+<li class="chapter" data-level="1.1" data-path="preparing-data.html"><a href="preparing-data.html#tldr"><i class="fa fa-check"></i><b>1.1</b> TL;DR</a></li>
+<li class="chapter" data-level="1.2" data-path="preparing-data.html"><a href="preparing-data.html#recode_country"><i class="fa fa-check"></i><b>1.2</b> <code>recode_country()</code></a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="preparing-data.html"><a href="preparing-data.html#example"><i class="fa fa-check"></i><b>1.1.1</b> Example:</a></li>
+<li class="chapter" data-level="1.2.1" data-path="preparing-data.html"><a href="preparing-data.html#example-1"><i class="fa fa-check"></i><b>1.2.1</b> Example:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="preparing-data.html"><a href="preparing-data.html#demographic-functions"><i class="fa fa-check"></i><b>1.2</b> Demographic functions</a>
+<li class="chapter" data-level="1.3" data-path="preparing-data.html"><a href="preparing-data.html#demographic-functions"><i class="fa fa-check"></i><b>1.3</b> Demographic functions</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="preparing-data.html"><a href="preparing-data.html#basics"><i class="fa fa-check"></i><b>1.2.1</b> Basics</a></li>
+<li class="chapter" data-level="1.3.1" data-path="preparing-data.html"><a href="preparing-data.html#basics"><i class="fa fa-check"></i><b>1.3.1</b> Basics</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="preparing-data.html"><a href="preparing-data.html#advanced"><i class="fa fa-check"></i><b>1.3</b> Advanced</a></li>
-<li class="chapter" data-level="1.4" data-path="preparing-data.html"><a href="preparing-data.html#education_demographic"><i class="fa fa-check"></i><b>1.4</b> education_demographic</a>
+<li class="chapter" data-level="1.4" data-path="preparing-data.html"><a href="preparing-data.html#advanced"><i class="fa fa-check"></i><b>1.4</b> Advanced</a></li>
+<li class="chapter" data-level="1.5" data-path="preparing-data.html"><a href="preparing-data.html#age_demographic"><i class="fa fa-check"></i><b>1.5</b> <code>age_demographic()</code></a></li>
+<li class="chapter" data-level="1.6" data-path="preparing-data.html"><a href="preparing-data.html#education_demographic"><i class="fa fa-check"></i><b>1.6</b> <code>education_demographic()</code></a>
 <ul>
-<li class="chapter" data-level="1.4.1" data-path="preparing-data.html"><a href="preparing-data.html#examples"><i class="fa fa-check"></i><b>1.4.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.6.1" data-path="preparing-data.html"><a href="preparing-data.html#examples"><i class="fa fa-check"></i><b>1.6.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="preparing-data.html"><a href="preparing-data.html#dummy_all"><i class="fa fa-check"></i><b>1.5</b> dummy_all</a>
+<li class="chapter" data-level="1.7" data-path="preparing-data.html"><a href="preparing-data.html#dummy_all"><i class="fa fa-check"></i><b>1.7</b> <code>dummy_all()</code></a>
 <ul>
-<li class="chapter" data-level="1.5.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-1"><i class="fa fa-check"></i><b>1.5.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.7.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-1"><i class="fa fa-check"></i><b>1.7.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="preparing-data.html"><a href="preparing-data.html#dummy_select"><i class="fa fa-check"></i><b>1.6</b> dummy_select</a>
+<li class="chapter" data-level="1.8" data-path="preparing-data.html"><a href="preparing-data.html#dummy_select"><i class="fa fa-check"></i><b>1.8</b> <code>dummy_select()</code></a>
 <ul>
-<li class="chapter" data-level="1.6.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-2"><i class="fa fa-check"></i><b>1.6.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.8.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-2"><i class="fa fa-check"></i><b>1.8.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="preparing-data.html"><a href="preparing-data.html#in-practice"><i class="fa fa-check"></i><b>1.7</b> In Practice</a>
+<li class="chapter" data-level="1.9" data-path="preparing-data.html"><a href="preparing-data.html#in-practice"><i class="fa fa-check"></i><b>1.9</b> In Practice</a>
 <ul>
-<li class="chapter" data-level="1.7.1" data-path="preparing-data.html"><a href="preparing-data.html#example-2"><i class="fa fa-check"></i><b>1.7.1</b> Example:</a></li>
+<li class="chapter" data-level="1.9.1" data-path="preparing-data.html"><a href="preparing-data.html#example-3"><i class="fa fa-check"></i><b>1.9.1</b> Example:</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Cross Tabulation Graphs</b></span></li>
@@ -327,7 +334,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="12.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1"><i class="fa fa-check"></i><b>12.1</b> Prep Work</a>
 <ul>
-<li class="chapter" data-level="12.1.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-1"><i class="fa fa-check"></i><b>12.1.1</b> Question List</a></li>
+<li class="chapter" data-level="12.1.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-1"><i class="fa fa-check"></i><b>12.1.1</b> Question Vector</a></li>
 <li class="chapter" data-level="12.1.2" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-2"><i class="fa fa-check"></i><b>12.1.2</b> Question Labels</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-2"><i class="fa fa-check"></i><b>12.2</b> Plot a Multiquestion Graph for a Single Country</a></li>
@@ -407,6 +414,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
 </ul>
 
       </nav>
@@ -428,15 +436,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 21</span> Change the order of a stacked graph?<a href="order-change-stacked-graphs.html#order-change-stacked-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>Changing the order of a stacked graph, like creating many graphs at once, is not done within <code>ArabBarometR</code> per se, but the process is relatively straightforward nonetheless.</p>
 <p>For this example, let’s create a comparative stacked bar chart for <code>Q2ACOVID19</code>.</p>
-<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="order-change-stacked-graphs.html#cb278-1" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
-<span id="cb278-2"><a href="order-change-stacked-graphs.html#cb278-2" tabindex="-1"></a>                     <span class="st">&quot;Q2ACOVID19&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb278-3"><a href="order-change-stacked-graphs.html#cb278-3" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Original Order&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="order-change-stacked-graphs.html#cb373-1" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
+<span id="cb373-2"><a href="order-change-stacked-graphs.html#cb373-2" tabindex="-1"></a>                     <span class="st">&quot;Q2ACOVID19&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb373-3"><a href="order-change-stacked-graphs.html#cb373-3" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Original Order&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.4.01-Complete-Code-Example-1.png" width="1248" /></p>
 <p>The order of the bars is determined by the factor level. You can see factor level in the data frame produced by the function <code>calculate_stacked_df</code>. The numbers are the factor levels, the words in brackets are the factor labels. In this example, you can see the factor levels are 1-7 and 666. The factor labels are the question response options.</p>
-<div class="sourceCode" id="cb279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb279-1"><a href="order-change-stacked-graphs.html#cb279-1" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
-<span id="cb279-2"><a href="order-change-stacked-graphs.html#cb279-2" tabindex="-1"></a>                     <span class="st">&quot;Q2ACOVID19&quot;</span>)</span></code></pre></div>
-<pre><code>## # A tibble: 48 × 3
-## # Groups:   Country [6]
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="order-change-stacked-graphs.html#cb374-1" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
+<span id="cb374-2"><a href="order-change-stacked-graphs.html#cb374-2" tabindex="-1"></a>                     <span class="st">&quot;Q2ACOVID19&quot;</span>)</span></code></pre></div>
+<pre><code>## # A tibble: 24 × 3
+## # Groups:   Country [3]
 ##    Q2ACOVID19                                   Country Percent
 ##    &lt;dbl+lbl&gt;                                    &lt;chr&gt;     &lt;dbl&gt;
 ##  1   1 [Family member illness or death]         Algeria      32
@@ -447,25 +455,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  6   6 [Citizens not following recommendations] Algeria      30
 ##  7   7 [Other]                                  Algeria       3
 ##  8 666 [Don&#39;t know/Refuse]                      Algeria       0
-##  9   1 [Family member illness or death]         Jordan       31
-## 10   2 [Loss of household income]               Jordan        6
-## # ℹ 38 more rows</code></pre>
+##  9   1 [Family member illness or death]         Lebanon      67
+## 10   2 [Loss of household income]               Lebanon       2
+## # ℹ 14 more rows</code></pre>
 <p>Instead of leading with “Illness or death of a family member”, say we want to lead with “Inadequate gov.t response”. We need to change the factor levels. First, we’ll save the output of <code>calculate_stacked_df</code> to an object we can manipulate.</p>
-<div class="sourceCode" id="cb281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb281-1"><a href="order-change-stacked-graphs.html#cb281-1" tabindex="-1"></a>new_df <span class="ot">&lt;-</span> <span class="fu">calculate_stacked_df</span>(survey1,</span>
-<span id="cb281-2"><a href="order-change-stacked-graphs.html#cb281-2" tabindex="-1"></a>                               <span class="st">&quot;Q2ACOVID19&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb376"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb376-1"><a href="order-change-stacked-graphs.html#cb376-1" tabindex="-1"></a>new_df <span class="ot">&lt;-</span> <span class="fu">calculate_stacked_df</span>(survey1,</span>
+<span id="cb376-2"><a href="order-change-stacked-graphs.html#cb376-2" tabindex="-1"></a>                               <span class="st">&quot;Q2ACOVID19&quot;</span>)</span></code></pre></div>
 <p>To change the factor levels, we’ll use the <code>recode</code> function from the <code>dplyr</code> library. There are several ways you can use the <code>recode</code> function to re-order the factor levels. This guide will review two, and you can explore the rest on your own.</p>
 <div id="move-one-factor" class="section level3 unnumbered hasAnchor">
 <h3>Move One Factor<a href="order-change-stacked-graphs.html#move-one-factor" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>If the goal is to move “Inadequate gov.t response”, whose factor level is <code>5</code>, in front of “Illness or death of a family member”, whose factor level is <code>1</code>, we have to choose a new factor level that comes before <code>1</code>. There are infinite numbers before <code>1</code>, so we’ll just go with <code>0.5</code> here.</p>
-<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="order-change-stacked-graphs.html#cb282-1" tabindex="-1"></a>new_df<span class="sc">$</span>Q2ACOVID19 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">recode</span>(</span>
-<span id="cb282-2"><a href="order-change-stacked-graphs.html#cb282-2" tabindex="-1"></a>  new_df<span class="sc">$</span>Q2ACOVID19,                     <span class="co"># The variable getting recoded</span></span>
-<span id="cb282-3"><a href="order-change-stacked-graphs.html#cb282-3" tabindex="-1"></a>  <span class="st">`</span><span class="at">5</span><span class="st">`</span> <span class="ot">=</span> .<span class="dv">5</span>,                              <span class="co"># The old value to new value</span></span>
-<span id="cb282-4"><a href="order-change-stacked-graphs.html#cb282-4" tabindex="-1"></a>  <span class="at">.default =</span> <span class="fu">levels</span>(new_df<span class="sc">$</span>Q2ACOVID19),  <span class="co"># Use the original levels as a guide</span></span>
-<span id="cb282-5"><a href="order-change-stacked-graphs.html#cb282-5" tabindex="-1"></a>  <span class="at">.combine_value_labels =</span> T              <span class="co"># Keep the original levels for all other variables</span></span>
-<span id="cb282-6"><a href="order-change-stacked-graphs.html#cb282-6" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb377"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb377-1"><a href="order-change-stacked-graphs.html#cb377-1" tabindex="-1"></a>new_df<span class="sc">$</span>Q2ACOVID19 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">recode</span>(</span>
+<span id="cb377-2"><a href="order-change-stacked-graphs.html#cb377-2" tabindex="-1"></a>  new_df<span class="sc">$</span>Q2ACOVID19,                     <span class="co"># The variable getting recoded</span></span>
+<span id="cb377-3"><a href="order-change-stacked-graphs.html#cb377-3" tabindex="-1"></a>  <span class="st">`</span><span class="at">5</span><span class="st">`</span> <span class="ot">=</span> .<span class="dv">5</span>,                              <span class="co"># The old value to new value</span></span>
+<span id="cb377-4"><a href="order-change-stacked-graphs.html#cb377-4" tabindex="-1"></a>  <span class="at">.default =</span> <span class="fu">levels</span>(new_df<span class="sc">$</span>Q2ACOVID19),  <span class="co"># Use the original levels as a guide</span></span>
+<span id="cb377-5"><a href="order-change-stacked-graphs.html#cb377-5" tabindex="-1"></a>  <span class="at">.combine_value_labels =</span> T              <span class="co"># Keep the original levels for all other variables</span></span>
+<span id="cb377-6"><a href="order-change-stacked-graphs.html#cb377-6" tabindex="-1"></a>  )</span></code></pre></div>
 <p>We can see the new value of the factor.</p>
-<pre><code>## # A tibble: 48 × 3
-## # Groups:   Country [6]
+<pre><code>## # A tibble: 24 × 3
+## # Groups:   Country [3]
 ##    Q2ACOVID19                                   Country Percent
 ##    &lt;dbl+lbl&gt;                                    &lt;chr&gt;     &lt;dbl&gt;
 ##  1   1 [Family member illness or death]         Algeria      32
@@ -476,27 +484,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  6   6 [Citizens not following recommendations] Algeria      30
 ##  7   7 [Other]                                  Algeria       3
 ##  8 666 [Don&#39;t know/Refuse]                      Algeria       0
-##  9   1 [Family member illness or death]         Jordan       31
-## 10   2 [Loss of household income]               Jordan        6
-## # ℹ 38 more rows</code></pre>
+##  9   1 [Family member illness or death]         Lebanon      67
+## 10   2 [Loss of household income]               Lebanon       2
+## # ℹ 14 more rows</code></pre>
 <p>And now when we plot the recoded data frame.</p>
-<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="order-change-stacked-graphs.html#cb284-1" tabindex="-1"></a>new_df <span class="sc">|&gt;</span></span>
-<span id="cb284-2"><a href="order-change-stacked-graphs.html#cb284-2" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;New Order, Option 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb379"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb379-1"><a href="order-change-stacked-graphs.html#cb379-1" tabindex="-1"></a>new_df <span class="sc">|&gt;</span></span>
+<span id="cb379-2"><a href="order-change-stacked-graphs.html#cb379-2" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;New Order, Option 1&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.04.2-PlotRecode1-1.png" width="1248" /></p>
 </div>
 <div id="swap-factors" class="section level3 unnumbered hasAnchor">
 <h3>Swap Factors<a href="order-change-stacked-graphs.html#swap-factors" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>An alternative way to move “Inadequate gov.t response” to the front is to swap positions with “Illness or death of a family member”. That is, make “Inadequate gov.t response” factor level <code>1</code> and “Illness or death of a family member” factor level <code>5</code>. Again, we use <code>recode</code> from <code>dplyr</code>.</p>
-<div class="sourceCode" id="cb285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb285-1"><a href="order-change-stacked-graphs.html#cb285-1" tabindex="-1"></a>new_df<span class="sc">$</span>Q2ACOVID19 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">recode</span>(</span>
-<span id="cb285-2"><a href="order-change-stacked-graphs.html#cb285-2" tabindex="-1"></a>  new_df<span class="sc">$</span>Q2ACOVID19,                     <span class="co"># The variable getting recoded</span></span>
-<span id="cb285-3"><a href="order-change-stacked-graphs.html#cb285-3" tabindex="-1"></a>  <span class="st">`</span><span class="at">5</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">1</span>,                               <span class="co"># The old value to new value</span></span>
-<span id="cb285-4"><a href="order-change-stacked-graphs.html#cb285-4" tabindex="-1"></a>  <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">5</span>,                               <span class="co"># The old value to new value</span></span>
-<span id="cb285-5"><a href="order-change-stacked-graphs.html#cb285-5" tabindex="-1"></a>  <span class="at">.default =</span> <span class="fu">levels</span>(new_df<span class="sc">$</span>Q2ACOVID19),  <span class="co"># Use the original levels as a guide</span></span>
-<span id="cb285-6"><a href="order-change-stacked-graphs.html#cb285-6" tabindex="-1"></a>  <span class="at">.combine_value_labels =</span> T              <span class="co"># Keep the original levels for all other variables</span></span>
-<span id="cb285-7"><a href="order-change-stacked-graphs.html#cb285-7" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="order-change-stacked-graphs.html#cb380-1" tabindex="-1"></a>new_df<span class="sc">$</span>Q2ACOVID19 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">recode</span>(</span>
+<span id="cb380-2"><a href="order-change-stacked-graphs.html#cb380-2" tabindex="-1"></a>  new_df<span class="sc">$</span>Q2ACOVID19,                     <span class="co"># The variable getting recoded</span></span>
+<span id="cb380-3"><a href="order-change-stacked-graphs.html#cb380-3" tabindex="-1"></a>  <span class="st">`</span><span class="at">5</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">1</span>,                               <span class="co"># The old value to new value</span></span>
+<span id="cb380-4"><a href="order-change-stacked-graphs.html#cb380-4" tabindex="-1"></a>  <span class="st">`</span><span class="at">1</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">5</span>,                               <span class="co"># The old value to new value</span></span>
+<span id="cb380-5"><a href="order-change-stacked-graphs.html#cb380-5" tabindex="-1"></a>  <span class="at">.default =</span> <span class="fu">levels</span>(new_df<span class="sc">$</span>Q2ACOVID19),  <span class="co"># Use the original levels as a guide</span></span>
+<span id="cb380-6"><a href="order-change-stacked-graphs.html#cb380-6" tabindex="-1"></a>  <span class="at">.combine_value_labels =</span> T              <span class="co"># Keep the original levels for all other variables</span></span>
+<span id="cb380-7"><a href="order-change-stacked-graphs.html#cb380-7" tabindex="-1"></a>  )</span></code></pre></div>
 <p>The new factor levels are:</p>
-<pre><code>## # A tibble: 48 × 3
-## # Groups:   Country [6]
+<pre><code>## # A tibble: 24 × 3
+## # Groups:   Country [3]
 ##    Q2ACOVID19                                   Country Percent
 ##    &lt;dbl+lbl&gt;                                    &lt;chr&gt;     &lt;dbl&gt;
 ##  1   5 [Family member illness or death]         Algeria      32
@@ -507,12 +515,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##  6   6 [Citizens not following recommendations] Algeria      30
 ##  7   7 [Other]                                  Algeria       3
 ##  8 666 [Don&#39;t know/Refuse]                      Algeria       0
-##  9   5 [Family member illness or death]         Jordan       31
-## 10   2 [Loss of household income]               Jordan        6
-## # ℹ 38 more rows</code></pre>
+##  9   5 [Family member illness or death]         Lebanon      67
+## 10   2 [Loss of household income]               Lebanon       2
+## # ℹ 14 more rows</code></pre>
 <p>Finally, we plot the new data frame.</p>
-<div class="sourceCode" id="cb287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb287-1"><a href="order-change-stacked-graphs.html#cb287-1" tabindex="-1"></a>new_df <span class="sc">|&gt;</span></span>
-<span id="cb287-2"><a href="order-change-stacked-graphs.html#cb287-2" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;New Order, Option 2&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="order-change-stacked-graphs.html#cb382-1" tabindex="-1"></a>new_df <span class="sc">|&gt;</span></span>
+<span id="cb382-2"><a href="order-change-stacked-graphs.html#cb382-2" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;New Order, Option 2&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.04.2-PlotRecode2-1.png" width="1248" /></p>
 <p>The main take away here is that if you want to play around with the order of a stacked bar graph, it is best to familiarize yourself with <code>recode</code>.</p>
 

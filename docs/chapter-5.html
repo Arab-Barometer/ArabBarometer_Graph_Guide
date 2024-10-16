@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Single Country Trend Graphs | ArabBarometR Graphing Guide</title>
   <meta name="description" content="Chapter 6 Single Country Trend Graphs | ArabBarometR Graphing Guide" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Single Country Trend Graphs | ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-11-17" />
+<meta name="date" content="2024-10-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -119,8 +119,12 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="AB-custom.css" type="text/css" />
 </head>
 
 <body>
@@ -139,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#purpose"><i class="fa fa-check"></i>Purpose</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#best-practices"><i class="fa fa-check"></i>Best Practices</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#general-guide-process"><i class="fa fa-check"></i>General Guide Process</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#example-data"><i class="fa fa-check"></i>Example Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#headercode"><i class="fa fa-check"></i>Header Code</a></li>
@@ -154,30 +159,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>I Data Prepperation Functions</b></span></li>
 <li class="chapter" data-level="1" data-path="preparing-data.html"><a href="preparing-data.html"><i class="fa fa-check"></i><b>1</b> Preparing Data</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="preparing-data.html"><a href="preparing-data.html#recode_country"><i class="fa fa-check"></i><b>1.1</b> recode_country</a>
+<li class="chapter" data-level="1.1" data-path="preparing-data.html"><a href="preparing-data.html#tldr"><i class="fa fa-check"></i><b>1.1</b> TL;DR</a></li>
+<li class="chapter" data-level="1.2" data-path="preparing-data.html"><a href="preparing-data.html#recode_country"><i class="fa fa-check"></i><b>1.2</b> <code>recode_country()</code></a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="preparing-data.html"><a href="preparing-data.html#example"><i class="fa fa-check"></i><b>1.1.1</b> Example:</a></li>
+<li class="chapter" data-level="1.2.1" data-path="preparing-data.html"><a href="preparing-data.html#example-1"><i class="fa fa-check"></i><b>1.2.1</b> Example:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="preparing-data.html"><a href="preparing-data.html#demographic-functions"><i class="fa fa-check"></i><b>1.2</b> Demographic functions</a>
+<li class="chapter" data-level="1.3" data-path="preparing-data.html"><a href="preparing-data.html#demographic-functions"><i class="fa fa-check"></i><b>1.3</b> Demographic functions</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="preparing-data.html"><a href="preparing-data.html#basics"><i class="fa fa-check"></i><b>1.2.1</b> Basics</a></li>
+<li class="chapter" data-level="1.3.1" data-path="preparing-data.html"><a href="preparing-data.html#basics"><i class="fa fa-check"></i><b>1.3.1</b> Basics</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="preparing-data.html"><a href="preparing-data.html#advanced"><i class="fa fa-check"></i><b>1.3</b> Advanced</a></li>
-<li class="chapter" data-level="1.4" data-path="preparing-data.html"><a href="preparing-data.html#education_demographic"><i class="fa fa-check"></i><b>1.4</b> education_demographic</a>
+<li class="chapter" data-level="1.4" data-path="preparing-data.html"><a href="preparing-data.html#advanced"><i class="fa fa-check"></i><b>1.4</b> Advanced</a></li>
+<li class="chapter" data-level="1.5" data-path="preparing-data.html"><a href="preparing-data.html#age_demographic"><i class="fa fa-check"></i><b>1.5</b> <code>age_demographic()</code></a></li>
+<li class="chapter" data-level="1.6" data-path="preparing-data.html"><a href="preparing-data.html#education_demographic"><i class="fa fa-check"></i><b>1.6</b> <code>education_demographic()</code></a>
 <ul>
-<li class="chapter" data-level="1.4.1" data-path="preparing-data.html"><a href="preparing-data.html#examples"><i class="fa fa-check"></i><b>1.4.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.6.1" data-path="preparing-data.html"><a href="preparing-data.html#examples"><i class="fa fa-check"></i><b>1.6.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="preparing-data.html"><a href="preparing-data.html#dummy_all"><i class="fa fa-check"></i><b>1.5</b> dummy_all</a>
+<li class="chapter" data-level="1.7" data-path="preparing-data.html"><a href="preparing-data.html#dummy_all"><i class="fa fa-check"></i><b>1.7</b> <code>dummy_all()</code></a>
 <ul>
-<li class="chapter" data-level="1.5.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-1"><i class="fa fa-check"></i><b>1.5.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.7.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-1"><i class="fa fa-check"></i><b>1.7.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="preparing-data.html"><a href="preparing-data.html#dummy_select"><i class="fa fa-check"></i><b>1.6</b> dummy_select</a>
+<li class="chapter" data-level="1.8" data-path="preparing-data.html"><a href="preparing-data.html#dummy_select"><i class="fa fa-check"></i><b>1.8</b> <code>dummy_select()</code></a>
 <ul>
-<li class="chapter" data-level="1.6.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-2"><i class="fa fa-check"></i><b>1.6.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.8.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-2"><i class="fa fa-check"></i><b>1.8.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="preparing-data.html"><a href="preparing-data.html#in-practice"><i class="fa fa-check"></i><b>1.7</b> In Practice</a>
+<li class="chapter" data-level="1.9" data-path="preparing-data.html"><a href="preparing-data.html#in-practice"><i class="fa fa-check"></i><b>1.9</b> In Practice</a>
 <ul>
-<li class="chapter" data-level="1.7.1" data-path="preparing-data.html"><a href="preparing-data.html#example-2"><i class="fa fa-check"></i><b>1.7.1</b> Example:</a></li>
+<li class="chapter" data-level="1.9.1" data-path="preparing-data.html"><a href="preparing-data.html#example-3"><i class="fa fa-check"></i><b>1.9.1</b> Example:</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Cross Tabulation Graphs</b></span></li>
@@ -327,7 +334,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="12.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1"><i class="fa fa-check"></i><b>12.1</b> Prep Work</a>
 <ul>
-<li class="chapter" data-level="12.1.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-1"><i class="fa fa-check"></i><b>12.1.1</b> Question List</a></li>
+<li class="chapter" data-level="12.1.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-1"><i class="fa fa-check"></i><b>12.1.1</b> Question Vector</a></li>
 <li class="chapter" data-level="12.1.2" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-2"><i class="fa fa-check"></i><b>12.1.2</b> Question Labels</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-2"><i class="fa fa-check"></i><b>12.2</b> Plot a Multiquestion Graph for a Single Country</a></li>
@@ -407,6 +414,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
 </ul>
 
       </nav>
@@ -430,21 +438,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="chapter-5-1" class="section level2 hasAnchor" number="6.1">
 <h2><span class="header-section-number">6.1</span> Create Single Trend Graph<a href="chapter-5.html#chapter-5-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="chapter-5.html#cb137-1" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb137-2"><a href="chapter-5.html#cb137-2" tabindex="-1"></a>  survey1,</span>
-<span id="cb137-3"><a href="chapter-5.html#cb137-3" tabindex="-1"></a>  survey2,</span>
-<span id="cb137-4"><a href="chapter-5.html#cb137-4" tabindex="-1"></a>  survey3</span>
-<span id="cb137-5"><a href="chapter-5.html#cb137-5" tabindex="-1"></a>)</span>
-<span id="cb137-6"><a href="chapter-5.html#cb137-6" tabindex="-1"></a></span>
-<span id="cb137-7"><a href="chapter-5.html#cb137-7" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1 Year&quot;</span>,</span>
-<span id="cb137-8"><a href="chapter-5.html#cb137-8" tabindex="-1"></a>                  <span class="st">&quot;Survey 2 Year&quot;</span>,</span>
-<span id="cb137-9"><a href="chapter-5.html#cb137-9" tabindex="-1"></a>                  <span class="st">&quot;Survey 3 Year&quot;</span>)</span>
-<span id="cb137-10"><a href="chapter-5.html#cb137-10" tabindex="-1"></a></span>
-<span id="cb137-11"><a href="chapter-5.html#cb137-11" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb137-12"><a href="chapter-5.html#cb137-12" tabindex="-1"></a>                      df_list,</span>
-<span id="cb137-13"><a href="chapter-5.html#cb137-13" tabindex="-1"></a>                      survey_dates,</span>
-<span id="cb137-14"><a href="chapter-5.html#cb137-14" tabindex="-1"></a>                      <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb137-15"><a href="chapter-5.html#cb137-15" tabindex="-1"></a>                      <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="chapter-5.html#cb209-1" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb209-2"><a href="chapter-5.html#cb209-2" tabindex="-1"></a>  survey1,</span>
+<span id="cb209-3"><a href="chapter-5.html#cb209-3" tabindex="-1"></a>  survey2,</span>
+<span id="cb209-4"><a href="chapter-5.html#cb209-4" tabindex="-1"></a>  survey3</span>
+<span id="cb209-5"><a href="chapter-5.html#cb209-5" tabindex="-1"></a>)</span>
+<span id="cb209-6"><a href="chapter-5.html#cb209-6" tabindex="-1"></a></span>
+<span id="cb209-7"><a href="chapter-5.html#cb209-7" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1 Year&quot;</span>,</span>
+<span id="cb209-8"><a href="chapter-5.html#cb209-8" tabindex="-1"></a>                  <span class="st">&quot;Survey 2 Year&quot;</span>,</span>
+<span id="cb209-9"><a href="chapter-5.html#cb209-9" tabindex="-1"></a>                  <span class="st">&quot;Survey 3 Year&quot;</span>)</span>
+<span id="cb209-10"><a href="chapter-5.html#cb209-10" tabindex="-1"></a></span>
+<span id="cb209-11"><a href="chapter-5.html#cb209-11" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb209-12"><a href="chapter-5.html#cb209-12" tabindex="-1"></a>                      df_list,</span>
+<span id="cb209-13"><a href="chapter-5.html#cb209-13" tabindex="-1"></a>                      survey_dates,</span>
+<span id="cb209-14"><a href="chapter-5.html#cb209-14" tabindex="-1"></a>                      <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb209-15"><a href="chapter-5.html#cb209-15" tabindex="-1"></a>                      <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
 <p>The code produces this graph:</p>
 <p><img src="bookdownproj_files/figure-html/05.2-Complete-Graph-Example-1.png" width="1248" /></p>
 <p>Let’s go!</p>
@@ -456,11 +464,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4>Create a Data Frame List<a href="chapter-5.html#chp5-trend-df-list" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The first step is to create a list of data frames.</p>
 <p>There should be one data frame for each period you wish to graph. That is, each data frame should be from a different survey you want to include in your graph. In the example for the chapter, we’re using the three surveys from Wave VI, which we call <code>survey1</code>, <code>survey2</code>, and <code>survey3</code>. Each survey is its own data frame.</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="chapter-5.html#cb138-1" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb138-2"><a href="chapter-5.html#cb138-2" tabindex="-1"></a>  survey1,</span>
-<span id="cb138-3"><a href="chapter-5.html#cb138-3" tabindex="-1"></a>  survey2,</span>
-<span id="cb138-4"><a href="chapter-5.html#cb138-4" tabindex="-1"></a>  survey3</span>
-<span id="cb138-5"><a href="chapter-5.html#cb138-5" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="chapter-5.html#cb210-1" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb210-2"><a href="chapter-5.html#cb210-2" tabindex="-1"></a>  survey1,</span>
+<span id="cb210-3"><a href="chapter-5.html#cb210-3" tabindex="-1"></a>  survey2,</span>
+<span id="cb210-4"><a href="chapter-5.html#cb210-4" tabindex="-1"></a>  survey3</span>
+<span id="cb210-5"><a href="chapter-5.html#cb210-5" tabindex="-1"></a>)</span></code></pre></div>
 <p>The list of data frames should be in the order you want them to appear (ideally, chronologically). The data on the graph will show up in the order of the list. So if you create a list in the order <code>list(survey2, survey1, survey3)</code>, the data from <code>survey2</code> will show up before the data from <code>survey1</code>.</p>
 <p><strong>Please note: This is ambivalent to language!</strong> The <code>plot_trend_individual()</code> function will assume the order of the list is the correct order, and treat it accordingly. When you enter a list as <code>list(survey1, survey2, surveye3)</code>, the English graph will show the data right to left (survey 1 -&gt; survey 2 -&gt; survey 3), while the Arabic graph will show the data left to right (survey 3 &lt;- survey 2 &lt;- survey 1). You do <strong>not</strong> need to alter your input.</p>
 </div>
@@ -468,9 +476,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h4>Create a Date Vector<a href="chapter-5.html#chp5-trend-date-vector" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <p>The next step is to create a vector of the dates you want to show on the x-axis of your graph. Branding guidelines call for the years in which the survey took place. For simplicity in the example, let’s just say <code>"Survey X Year"</code>.</p>
 <p>You need a date for each data frame in your data frame list. Otherwise, the function won’t know how to label the x-axis.</p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="chapter-5.html#cb139-1" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1 Year&quot;</span>,</span>
-<span id="cb139-2"><a href="chapter-5.html#cb139-2" tabindex="-1"></a>                  <span class="st">&quot;Survey 2 Year&quot;</span>,</span>
-<span id="cb139-3"><a href="chapter-5.html#cb139-3" tabindex="-1"></a>                  <span class="st">&quot;Survey 3 Year&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="chapter-5.html#cb211-1" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1 Year&quot;</span>,</span>
+<span id="cb211-2"><a href="chapter-5.html#cb211-2" tabindex="-1"></a>                  <span class="st">&quot;Survey 2 Year&quot;</span>,</span>
+<span id="cb211-3"><a href="chapter-5.html#cb211-3" tabindex="-1"></a>                  <span class="st">&quot;Survey 3 Year&quot;</span>)</span></code></pre></div>
 <p>The dates should also be in the order you want them to appear. The dates should line up with the data frames. In the chapter example, the order of the data frames is survey 1, survey 2, survey 3. Therefore, the survey dates need to have the order survey 1 year, survey 2 year, survey 3 year.</p>
 <p><strong>Please note: This is ambivalent to language!</strong> Just as with the data frame list, the <code>plot_trend_individual()</code> function will put the data in the correct order according to the language of the graph.</p>
 <p>Now that we have defined our data frame list and survey dates, we can create our trend plot.</p>
@@ -485,69 +493,69 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The parameter <code>svry_dates</code> is a character vector of dates that will show up on the x-axis of the graph. This is what we created <a href="chp5-trend-date-vector">here</a>.</p>
 <p>The parameter <code>select_country</code> is the name of the country you want to create the graph for.</p>
 <p>Now let’s fill it in.</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="chapter-5.html#cb140-1" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="at">.var           =</span> <span class="st">&quot;Q1COVID19&quot;</span>,    <span class="co"># Variable to graph</span></span>
-<span id="cb140-2"><a href="chapter-5.html#cb140-2" tabindex="-1"></a>                      <span class="at">data_frames    =</span> df_list,        <span class="co"># List of data frames</span></span>
-<span id="cb140-3"><a href="chapter-5.html#cb140-3" tabindex="-1"></a>                      <span class="at">svry_dates     =</span> survey_dates,   <span class="co"># Vector of survey dates</span></span>
-<span id="cb140-4"><a href="chapter-5.html#cb140-4" tabindex="-1"></a>                      <span class="at">select_country =</span> <span class="st">&quot;Algeria&quot;</span>)     <span class="co"># Country to graph</span></span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="chapter-5.html#cb212-1" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="at">.var           =</span> <span class="st">&quot;Q1COVID19&quot;</span>,    <span class="co"># Variable to graph</span></span>
+<span id="cb212-2"><a href="chapter-5.html#cb212-2" tabindex="-1"></a>                      <span class="at">data_frames    =</span> df_list,        <span class="co"># List of data frames</span></span>
+<span id="cb212-3"><a href="chapter-5.html#cb212-3" tabindex="-1"></a>                      <span class="at">svry_dates     =</span> survey_dates,   <span class="co"># Vector of survey dates</span></span>
+<span id="cb212-4"><a href="chapter-5.html#cb212-4" tabindex="-1"></a>                      <span class="at">select_country =</span> <span class="st">&quot;Algeria&quot;</span>)     <span class="co"># Country to graph</span></span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/05.6-First-Example-1.png" width="1248" />
 Nearly there! What still needs to be changed?</p>
 <p>The caption, of course! Just as in all the other <code>plot_</code> functions in the <code>ArabBarometR</code> package, you can change the caption using the <code>.caption</code> parameter.</p>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="chapter-5.html#cb141-1" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="at">.var           =</span> <span class="st">&quot;Q1COVID19&quot;</span>,    </span>
-<span id="cb141-2"><a href="chapter-5.html#cb141-2" tabindex="-1"></a>                      <span class="at">data_frames    =</span> df_list,        </span>
-<span id="cb141-3"><a href="chapter-5.html#cb141-3" tabindex="-1"></a>                      <span class="at">svry_dates     =</span> survey_dates,   </span>
-<span id="cb141-4"><a href="chapter-5.html#cb141-4" tabindex="-1"></a>                      <span class="at">select_country =</span> <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb141-5"><a href="chapter-5.html#cb141-5" tabindex="-1"></a>                      <span class="at">.caption       =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)     </span></code></pre></div>
+<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="chapter-5.html#cb213-1" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="at">.var           =</span> <span class="st">&quot;Q1COVID19&quot;</span>,    </span>
+<span id="cb213-2"><a href="chapter-5.html#cb213-2" tabindex="-1"></a>                      <span class="at">data_frames    =</span> df_list,        </span>
+<span id="cb213-3"><a href="chapter-5.html#cb213-3" tabindex="-1"></a>                      <span class="at">svry_dates     =</span> survey_dates,   </span>
+<span id="cb213-4"><a href="chapter-5.html#cb213-4" tabindex="-1"></a>                      <span class="at">select_country =</span> <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb213-5"><a href="chapter-5.html#cb213-5" tabindex="-1"></a>                      <span class="at">.caption       =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)     </span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/05.8-First-Example-1.png" width="1248" /></p>
 <p>Putting all the steps together, we have the code and graph we originally started with.</p>
 <p><img src="bookdownproj_files/figure-html/05.9-Complete-Code-Example-1.png" width="1248" /></p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="chapter-5.html#cb142-1" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb142-2"><a href="chapter-5.html#cb142-2" tabindex="-1"></a>  survey1,</span>
-<span id="cb142-3"><a href="chapter-5.html#cb142-3" tabindex="-1"></a>  survey2,</span>
-<span id="cb142-4"><a href="chapter-5.html#cb142-4" tabindex="-1"></a>  survey3</span>
-<span id="cb142-5"><a href="chapter-5.html#cb142-5" tabindex="-1"></a>)</span>
-<span id="cb142-6"><a href="chapter-5.html#cb142-6" tabindex="-1"></a></span>
-<span id="cb142-7"><a href="chapter-5.html#cb142-7" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1 Year&quot;</span>,</span>
-<span id="cb142-8"><a href="chapter-5.html#cb142-8" tabindex="-1"></a>                  <span class="st">&quot;Survey 2 Year&quot;</span>,</span>
-<span id="cb142-9"><a href="chapter-5.html#cb142-9" tabindex="-1"></a>                  <span class="st">&quot;Survey 3 Year&quot;</span>)</span>
-<span id="cb142-10"><a href="chapter-5.html#cb142-10" tabindex="-1"></a></span>
-<span id="cb142-11"><a href="chapter-5.html#cb142-11" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb142-12"><a href="chapter-5.html#cb142-12" tabindex="-1"></a>                      df_list,</span>
-<span id="cb142-13"><a href="chapter-5.html#cb142-13" tabindex="-1"></a>                      survey_dates,</span>
-<span id="cb142-14"><a href="chapter-5.html#cb142-14" tabindex="-1"></a>                      <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb142-15"><a href="chapter-5.html#cb142-15" tabindex="-1"></a>                      <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="chapter-5.html#cb214-1" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb214-2"><a href="chapter-5.html#cb214-2" tabindex="-1"></a>  survey1,</span>
+<span id="cb214-3"><a href="chapter-5.html#cb214-3" tabindex="-1"></a>  survey2,</span>
+<span id="cb214-4"><a href="chapter-5.html#cb214-4" tabindex="-1"></a>  survey3</span>
+<span id="cb214-5"><a href="chapter-5.html#cb214-5" tabindex="-1"></a>)</span>
+<span id="cb214-6"><a href="chapter-5.html#cb214-6" tabindex="-1"></a></span>
+<span id="cb214-7"><a href="chapter-5.html#cb214-7" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1 Year&quot;</span>,</span>
+<span id="cb214-8"><a href="chapter-5.html#cb214-8" tabindex="-1"></a>                  <span class="st">&quot;Survey 2 Year&quot;</span>,</span>
+<span id="cb214-9"><a href="chapter-5.html#cb214-9" tabindex="-1"></a>                  <span class="st">&quot;Survey 3 Year&quot;</span>)</span>
+<span id="cb214-10"><a href="chapter-5.html#cb214-10" tabindex="-1"></a></span>
+<span id="cb214-11"><a href="chapter-5.html#cb214-11" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb214-12"><a href="chapter-5.html#cb214-12" tabindex="-1"></a>                      df_list,</span>
+<span id="cb214-13"><a href="chapter-5.html#cb214-13" tabindex="-1"></a>                      survey_dates,</span>
+<span id="cb214-14"><a href="chapter-5.html#cb214-14" tabindex="-1"></a>                      <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb214-15"><a href="chapter-5.html#cb214-15" tabindex="-1"></a>                      <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="chapter-5-2" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Create Many Graphs<a href="chapter-5.html#chapter-5-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A nice payoff of creating the <a href="chapter-5.html#chp5-trend-df-list">data frame list</a> and the <a href="chapter-5.html#chp5-trend-date-vector">date vector</a> is that these objects (<code>df_list</code> and <code>survey_dates</code>) can be re-used any time you want to create a graph over the same time period.</p>
 <p>For example, say you wanted to also create a graph tracking Algerian’s views of the economy and religiosity. The only parameter in the <code>plot_trend_individual()</code> function that needs updating is <code>.var</code>.</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="chapter-5.html#cb143-1" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb143-2"><a href="chapter-5.html#cb143-2" tabindex="-1"></a>  survey1,</span>
-<span id="cb143-3"><a href="chapter-5.html#cb143-3" tabindex="-1"></a>  survey2,</span>
-<span id="cb143-4"><a href="chapter-5.html#cb143-4" tabindex="-1"></a>  survey3</span>
-<span id="cb143-5"><a href="chapter-5.html#cb143-5" tabindex="-1"></a>)</span>
-<span id="cb143-6"><a href="chapter-5.html#cb143-6" tabindex="-1"></a></span>
-<span id="cb143-7"><a href="chapter-5.html#cb143-7" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1 Year&quot;</span>,</span>
-<span id="cb143-8"><a href="chapter-5.html#cb143-8" tabindex="-1"></a>                  <span class="st">&quot;Survey 2 Year&quot;</span>,</span>
-<span id="cb143-9"><a href="chapter-5.html#cb143-9" tabindex="-1"></a>                  <span class="st">&quot;Survey 3 Year&quot;</span>)</span>
-<span id="cb143-10"><a href="chapter-5.html#cb143-10" tabindex="-1"></a></span>
-<span id="cb143-11"><a href="chapter-5.html#cb143-11" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb143-12"><a href="chapter-5.html#cb143-12" tabindex="-1"></a>                      df_list,</span>
-<span id="cb143-13"><a href="chapter-5.html#cb143-13" tabindex="-1"></a>                      survey_dates,</span>
-<span id="cb143-14"><a href="chapter-5.html#cb143-14" tabindex="-1"></a>                      <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb143-15"><a href="chapter-5.html#cb143-15" tabindex="-1"></a>                      <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="chapter-5.html#cb215-1" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb215-2"><a href="chapter-5.html#cb215-2" tabindex="-1"></a>  survey1,</span>
+<span id="cb215-3"><a href="chapter-5.html#cb215-3" tabindex="-1"></a>  survey2,</span>
+<span id="cb215-4"><a href="chapter-5.html#cb215-4" tabindex="-1"></a>  survey3</span>
+<span id="cb215-5"><a href="chapter-5.html#cb215-5" tabindex="-1"></a>)</span>
+<span id="cb215-6"><a href="chapter-5.html#cb215-6" tabindex="-1"></a></span>
+<span id="cb215-7"><a href="chapter-5.html#cb215-7" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1 Year&quot;</span>,</span>
+<span id="cb215-8"><a href="chapter-5.html#cb215-8" tabindex="-1"></a>                  <span class="st">&quot;Survey 2 Year&quot;</span>,</span>
+<span id="cb215-9"><a href="chapter-5.html#cb215-9" tabindex="-1"></a>                  <span class="st">&quot;Survey 3 Year&quot;</span>)</span>
+<span id="cb215-10"><a href="chapter-5.html#cb215-10" tabindex="-1"></a></span>
+<span id="cb215-11"><a href="chapter-5.html#cb215-11" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb215-12"><a href="chapter-5.html#cb215-12" tabindex="-1"></a>                      df_list,</span>
+<span id="cb215-13"><a href="chapter-5.html#cb215-13" tabindex="-1"></a>                      survey_dates,</span>
+<span id="cb215-14"><a href="chapter-5.html#cb215-14" tabindex="-1"></a>                      <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb215-15"><a href="chapter-5.html#cb215-15" tabindex="-1"></a>                      <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/05.10-Many-Graphs-Example1-1.png" width="1248" /></p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="chapter-5.html#cb144-1" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="st">&quot;Q101&quot;</span>,</span>
-<span id="cb144-2"><a href="chapter-5.html#cb144-2" tabindex="-1"></a>                      df_list,</span>
-<span id="cb144-3"><a href="chapter-5.html#cb144-3" tabindex="-1"></a>                      survey_dates,</span>
-<span id="cb144-4"><a href="chapter-5.html#cb144-4" tabindex="-1"></a>                      <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb144-5"><a href="chapter-5.html#cb144-5" tabindex="-1"></a>                      <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="chapter-5.html#cb216-1" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="st">&quot;Q101&quot;</span>,</span>
+<span id="cb216-2"><a href="chapter-5.html#cb216-2" tabindex="-1"></a>                      df_list,</span>
+<span id="cb216-3"><a href="chapter-5.html#cb216-3" tabindex="-1"></a>                      survey_dates,</span>
+<span id="cb216-4"><a href="chapter-5.html#cb216-4" tabindex="-1"></a>                      <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb216-5"><a href="chapter-5.html#cb216-5" tabindex="-1"></a>                      <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/05.10-Many-Graphs-Example1-2.png" width="1248" /></p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="chapter-5.html#cb145-1" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="st">&quot;Q609&quot;</span>,</span>
-<span id="cb145-2"><a href="chapter-5.html#cb145-2" tabindex="-1"></a>                      df_list,</span>
-<span id="cb145-3"><a href="chapter-5.html#cb145-3" tabindex="-1"></a>                      survey_dates,</span>
-<span id="cb145-4"><a href="chapter-5.html#cb145-4" tabindex="-1"></a>                      <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb145-5"><a href="chapter-5.html#cb145-5" tabindex="-1"></a>                      <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="chapter-5.html#cb217-1" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="st">&quot;Q609&quot;</span>,</span>
+<span id="cb217-2"><a href="chapter-5.html#cb217-2" tabindex="-1"></a>                      df_list,</span>
+<span id="cb217-3"><a href="chapter-5.html#cb217-3" tabindex="-1"></a>                      survey_dates,</span>
+<span id="cb217-4"><a href="chapter-5.html#cb217-4" tabindex="-1"></a>                      <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb217-5"><a href="chapter-5.html#cb217-5" tabindex="-1"></a>                      <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/05.10-Many-Graphs-Example1-3.png" width="1248" /></p>
 <p>Notice that the code produced two graphs, even though <code>df_list</code> and <code>survey_dates</code> were only defined one time. Once you have created the <code>df_list</code> and <code>survey_dates</code> objects, you can re-use them for any graph that is covering the same time period.</p>
 <p>You can also you the <code>map()</code> function from the <code>purrr</code> package. This method is similar to what was done for creating <a href="chapter-1.html#plot-many-graphs-single-country">many single country graphs</a>, <a href="plot-many-graphs-single-country-demographic">many single country demographic graphs</a>, <a href="comparative-overall-graphs.html#plot-many-comparative">many comparative graphs</a>, and <a href="comparative-demographic-graphs.html#plot-many-comparative-demographic">many comparative demographic graphs</a>.</p>
@@ -558,37 +566,37 @@ Nearly there! What still needs to be changed?</p>
 <div id="chapter-5-2-1" class="section level3 hasAnchor" number="6.2.1">
 <h3><span class="header-section-number">6.2.1</span> Identify the Variables<a href="chapter-5.html#chapter-5-2-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We are creating trend graphs for the variables <code>Q1COVID19</code>, <code>Q101</code>, and <code>Q609</code>.</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="chapter-5.html#cb146-1" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb146-2"><a href="chapter-5.html#cb146-2" tabindex="-1"></a>                         <span class="st">&quot;Q101&quot;</span>,</span>
-<span id="cb146-3"><a href="chapter-5.html#cb146-3" tabindex="-1"></a>                         <span class="st">&quot;Q609&quot;</span>)</span>
-<span id="cb146-4"><a href="chapter-5.html#cb146-4" tabindex="-1"></a></span>
-<span id="cb146-5"><a href="chapter-5.html#cb146-5" tabindex="-1"></a><span class="fu">names</span>(variables_2_plot) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb146-6"><a href="chapter-5.html#cb146-6" tabindex="-1"></a>                             <span class="st">&quot;Q101&quot;</span>,</span>
-<span id="cb146-7"><a href="chapter-5.html#cb146-7" tabindex="-1"></a>                             <span class="st">&quot;Q609&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="chapter-5.html#cb218-1" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb218-2"><a href="chapter-5.html#cb218-2" tabindex="-1"></a>                         <span class="st">&quot;Q101&quot;</span>,</span>
+<span id="cb218-3"><a href="chapter-5.html#cb218-3" tabindex="-1"></a>                         <span class="st">&quot;Q609&quot;</span>)</span>
+<span id="cb218-4"><a href="chapter-5.html#cb218-4" tabindex="-1"></a></span>
+<span id="cb218-5"><a href="chapter-5.html#cb218-5" tabindex="-1"></a><span class="fu">names</span>(variables_2_plot) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb218-6"><a href="chapter-5.html#cb218-6" tabindex="-1"></a>                             <span class="st">&quot;Q101&quot;</span>,</span>
+<span id="cb218-7"><a href="chapter-5.html#cb218-7" tabindex="-1"></a>                             <span class="st">&quot;Q609&quot;</span>)</span></code></pre></div>
 <p>Now you have a names list of variables. Let’s plot them.</p>
 </div>
 <div id="chapter-5-2-2" class="section level3 hasAnchor" number="6.2.2">
 <h3><span class="header-section-number">6.2.2</span> Plot the Variables<a href="chapter-5.html#chapter-5-2-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Recall we want to hold constant the <code>data_frames</code>, <code>svry_dates</code>, <code>select_country</code> and <code>.caption</code> parameters because those will be the same for every graph. The only parameter we want to vary is <code>.var</code>.</p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="chapter-5.html#cb147-1" tabindex="-1"></a>plots <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
-<span id="cb147-2"><a href="chapter-5.html#cb147-2" tabindex="-1"></a>  variables_2_plot, <span class="co"># Vector of variables to plot</span></span>
-<span id="cb147-3"><a href="chapter-5.html#cb147-3" tabindex="-1"></a>  plot_trend_individual, <span class="co"># Map to function `plot_trend_individual()`</span></span>
-<span id="cb147-4"><a href="chapter-5.html#cb147-4" tabindex="-1"></a>  </span>
-<span id="cb147-5"><a href="chapter-5.html#cb147-5" tabindex="-1"></a>  <span class="at">data_frames    =</span> df_list,  <span class="co"># Hold constant the `data_frames` parameter</span></span>
-<span id="cb147-6"><a href="chapter-5.html#cb147-6" tabindex="-1"></a>  <span class="at">svry_dates     =</span> survey_dates, <span class="co"># Hold constant the `svry_dates` parameter</span></span>
-<span id="cb147-7"><a href="chapter-5.html#cb147-7" tabindex="-1"></a>  <span class="at">select_country =</span> <span class="st">&quot;Algeria&quot;</span>, <span class="co"># Hold constant the `select_country` parameter</span></span>
-<span id="cb147-8"><a href="chapter-5.html#cb147-8" tabindex="-1"></a>  <span class="at">.caption       =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span></span>
-<span id="cb147-9"><a href="chapter-5.html#cb147-9" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="chapter-5.html#cb219-1" tabindex="-1"></a>plots <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb219-2"><a href="chapter-5.html#cb219-2" tabindex="-1"></a>  variables_2_plot, <span class="co"># Vector of variables to plot</span></span>
+<span id="cb219-3"><a href="chapter-5.html#cb219-3" tabindex="-1"></a>  plot_trend_individual, <span class="co"># Map to function `plot_trend_individual()`</span></span>
+<span id="cb219-4"><a href="chapter-5.html#cb219-4" tabindex="-1"></a>  </span>
+<span id="cb219-5"><a href="chapter-5.html#cb219-5" tabindex="-1"></a>  <span class="at">data_frames    =</span> df_list,  <span class="co"># Hold constant the `data_frames` parameter</span></span>
+<span id="cb219-6"><a href="chapter-5.html#cb219-6" tabindex="-1"></a>  <span class="at">svry_dates     =</span> survey_dates, <span class="co"># Hold constant the `svry_dates` parameter</span></span>
+<span id="cb219-7"><a href="chapter-5.html#cb219-7" tabindex="-1"></a>  <span class="at">select_country =</span> <span class="st">&quot;Algeria&quot;</span>, <span class="co"># Hold constant the `select_country` parameter</span></span>
+<span id="cb219-8"><a href="chapter-5.html#cb219-8" tabindex="-1"></a>  <span class="at">.caption       =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span></span>
+<span id="cb219-9"><a href="chapter-5.html#cb219-9" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Excellent!</p>
 <p>The plots have been saved to a named list called <code>plots</code>. To access the plots for each variable, you can use the <code>$</code> and variable name.</p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="chapter-5.html#cb148-1" tabindex="-1"></a><span class="co"># Trend graph for Q1COVID19</span></span>
-<span id="cb148-2"><a href="chapter-5.html#cb148-2" tabindex="-1"></a>plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="chapter-5.html#cb220-1" tabindex="-1"></a><span class="co"># Trend graph for Q1COVID19</span></span>
+<span id="cb220-2"><a href="chapter-5.html#cb220-2" tabindex="-1"></a>plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/05.13-Many-Graphs-Example2-1.png" width="1248" /></p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="chapter-5.html#cb149-1" tabindex="-1"></a><span class="co"># Trend graph for Q101</span></span>
-<span id="cb149-2"><a href="chapter-5.html#cb149-2" tabindex="-1"></a>plots<span class="sc">$</span>Q101</span></code></pre></div>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="chapter-5.html#cb221-1" tabindex="-1"></a><span class="co"># Trend graph for Q101</span></span>
+<span id="cb221-2"><a href="chapter-5.html#cb221-2" tabindex="-1"></a>plots<span class="sc">$</span>Q101</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/05.13-Many-Graphs-Example2-2.png" width="1248" /></p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="chapter-5.html#cb150-1" tabindex="-1"></a><span class="co"># Trend graph for Q609</span></span>
-<span id="cb150-2"><a href="chapter-5.html#cb150-2" tabindex="-1"></a>plots<span class="sc">$</span>Q609</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="chapter-5.html#cb222-1" tabindex="-1"></a><span class="co"># Trend graph for Q609</span></span>
+<span id="cb222-2"><a href="chapter-5.html#cb222-2" tabindex="-1"></a>plots<span class="sc">$</span>Q609</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/05.13-Many-Graphs-Example2-3.png" width="1248" /></p>
 <p>You’ve done it! You have created many trend plots at once!</p>
 </div>

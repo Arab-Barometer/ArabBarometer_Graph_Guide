@@ -1,11 +1,14 @@
 fig:bookdown-features
 preparing-data
-recode_country
+tldr
 example
+recode_country
+example-1
 demographic-functions
 basics
-example-1
+example-2
 advanced
+age_demographic
 education_demographic
 examples
 dummy_all
@@ -13,7 +16,7 @@ examples-1
 dummy_select
 examples-2
 in-practice
-example-2
+example-3
 chapter-1
 chapter-1-1
 chapter-1-1-1

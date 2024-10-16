@@ -9,7 +9,7 @@ To choose only certain countries to plot, use the parameter `select_countries`. 
 
 survey1 %>%
   calculate_smry_comp("Q1COVID19",
-                      select_countries = c("Morocco","Tunisia")) %>%
+                      select_countries = c("Morocco","Lebanon")) %>%
   
   plot_smry_comp(.caption = "Arab Barometer Wave VI, Survey I")
 

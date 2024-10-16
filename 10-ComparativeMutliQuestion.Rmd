@@ -19,8 +19,8 @@ question_labels <- c("Is there corruption?",
 plot_multiquestions_comp(survey1,
                         questions_2_compare,
                         question_labels,
-                        .basic_title = "Perceptions of Corruption in MENA",
-                        .basic_subtitle = "% saying to a medium or large extent",
+                        .title = "Perceptions of Corruption in MENA",
+                        .subtitle = "% saying to a medium or large extent",
                         .caption = "Arab Barometer Wave VI, Survey 1")
 
 ```
@@ -38,8 +38,8 @@ question_labels <- c("Is there corruption?",
 plot_multiquestions_comp(survey1,
                         questions_2_compare,
                         question_labels,
-                        .basic_title = "Perceptions of Corruption in MENA",
-                        .basic_subtitle = "% saying to a medium or large extent",
+                        .title = "Perceptions of Corruption in MENA",
+                        .subtitle = "% saying to a medium or large extent",
                         .caption = "Arab Barometer Wave VI, Survey 1")
 ```
 
@@ -111,8 +111,8 @@ plot_multiquestions_comp(
   .ab = survey1,
   .questions = questions_2_compare,
   .question_labels = question_labels,
-  .basic_title = "Perceptions of Corruption in MENA",
-  .basic_subtitle = "% saying to a medium or large extent",
+  .title = "Perceptions of Corruption in MENA",
+  .subtitle = "% saying to a medium or large extent",
   .caption = "Arab Barometer Wave VI, Survey 1"
 )
 
@@ -151,8 +151,8 @@ plot_multiquestions_comp(
   .ab = survey1,
   .questions = questions_2_compare,
   .question_labels = question_labels,
-  .basic_title = "How much trust do you have in...",
-  .basic_subtitle = "% saying they have quite a lot or a great deal",
+  .title = "How much trust do you have in...",
+  .subtitle = "% saying they have quite a lot or a great deal",
   .caption = "Arab Barometer Wave VI, Survey 1"
 )
 

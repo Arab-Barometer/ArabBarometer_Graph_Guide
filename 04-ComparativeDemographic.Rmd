@@ -38,43 +38,25 @@ Let's make it.
 
 ### Creating a Summary
 
-The first step in creating a plot is to gather the data you want to display and organize it. You do this with the **calculate_demographic_smry_comp()** function.
+The first step in creating a plot is to gather the data you want to display and organize it. You do this with the `calculate_demographic_smry_comp()` function.
 
-Just like **calculate_smry_comp()**, the two main parameters you need to provide to this function are (1) the data you are using, and (2) the variable you want to plot. To see all the input parameters for the function, type the code `?calculate_demographic_smry_comp` in your R console.
+Just like `calculate_smry_comp()`, the three main parameters you need to provide to this function are (1) the data you are using, (2) the variable you want to plot, and (3) the demographic you want to organize the variable by. To see all the input parameters for the function, type the code `?calculate_demographic_smry_comp` in your R console.
 
-In this example, the variable we want to plot is **Q1COVID19**^[If the style of this code is confusing, see [Create a Summary in Chapter 1][Single Country Overall Graphs]].
+In this example, the variable we want to plot is `Q1COVID19` and the demographic is `"gender"`^[If the style of this code is confusing, see [Create a Summary in Chapter 1][Single Country Overall Graphs]].
 
 ```{r 04.3-summary, eval=FALSE}
 
-survey1 %>%                                     # Data
-  calculate_demographic_smry_comp("Q1COVID19")  # Variable to summarize  
+survey1 %>%                                       # Data
+  calculate_demographic_smry_comp("Q1COVID19",    # Variable to summarize  
+                                  .dem = "gender" # Demographic
+                                  )  
                                   
 
 ```
 
 The above code will produce the following output:
 
-
 ```{r 04.4-summary, echo=FALSE}
-
-survey1 %>%
-  calculate_demographic_smry_comp("Q1COVID19")
-
-```
-
-Woah, that's a lot of summaries! By default, **calculate_demographic_smry_comp()** creates summaries for **age**, **gender**, **income**, and **education**. To specify exactly which demographic we want to group the data by, we include one more parameter.
-
-```{r 04.5-summary, eval=FALSE}
-
-survey1 %>%                                         # Data
-  calculate_demographic_smry_comp("Q1COVID19",      # Variable to summarize
-                                  .dem = "gender")  # Demographic to group data by
-
-```
-
-By specifying the parameter **.dem**, the function now knows it should only group the data by the variables **gender**. Now the output is as follows:
-
-```{r 04.6-summary, echo=FALSE}
 
 survey1 %>%
   calculate_demographic_smry_comp("Q1COVID19",
@@ -82,7 +64,6 @@ survey1 %>%
 
 ```
 
-The function **calcuate_demographic_smry()** creates a named list. In this list, each item is a summary broken down by a demographic and the name of each item is that demographic.
 
 Let's save our gender demographic summary and move on to plotting it.
 
@@ -107,9 +88,9 @@ comparative_Q1COVID19_gender <- survey1 %>%
 ### Plotting the Summary
 
 
-The next step is plot the summary we just created. To do this, we use the function **plot_demographic_smry_comp()**.
+The next step is plot the summary we just created. To do this, we use the function `plot_demographic_smry_comp()`.
 
-There is only *one* necessary parameter to use **plot_smry_comp()**: the summary data frame. For a complete list of acceptable parameters and documentation, you can run `?plot_demographic_smry_comp` in your R console.
+There is only *one* necessary parameter to use `plot_smry_comp()`: the summary data frame. For a complete list of acceptable parameters and documentation, you can run `?plot_demographic_smry_comp` in your R console.
 
 Now, we can plug our summary into the plot function:
 
@@ -271,57 +252,27 @@ Let's begin.
 
 ### Create Summaries
 
-The same function used to create a single summary is used to create many summaries: **calculate_demographic_smry_comp()**. Recall it takes three parameters: (1) the data you are using, (2) the variable(s) you want to plot, and (3) the country you are creating the plot for. Now, instead of one variable, you supply the list of variables.
+The same function used to create a single summary is used to create many summaries: `calculate_demographic_smry_comp()`. Recall it takes three parameters: (1) the data you are using, (2) the variable(s) you want to plot, and (3) the demographic you are creating the plot for. Now, instead of one variable, you supply the list of variables.
 
 ```{r 04.20-summaries, eval=FALSE}
 
-survey1 %>%                                           # Data
-  calculate_demographic_smry_comp(variables_2_plot)   # Variables to summarize
+survey1 %>%                                         # Data
+  calculate_demographic_smry_comp(variables_2_plot, # Variables to summarize
+                                  .dem = "gender"   # Demographic
+                                  )  
 
 ```
 
-The above code produces a nested named list. Each element in the list is another named list. Each element in the outer list is named for a variable you want to create summaries for. The inner list of each element is a summary with the data grouped by **age**, **gender**, **income**, and **education**. You can think of it like the following bullet point list:
+The above code produces a named list. Each element in the list is a data frame. You can think of it like the following bullet point list:
 
 * `calculate_demographic_smry_comp` output
   * `Q1COVID19`
-    * `age` Q1COVID19 summary grouped by age
-    * `gender` Q1COVID19 summary grouped by gender
-    * `income` Q1COVID19 summary grouped by income
-    * `education` Q1COVID19 summary grouped by education
+    * `Q1COVID19` summary grouped by gender
   * `Q2061A_1`
-    * `age` Q2061A_1 summary grouped by age
-    * `gender` Q2061A_1 summary grouped by gender
-    * `income` Q2061A_1 summary grouped by income
-    * `education` Q2061A_1 summary grouped by education
+    * `Q2061A_1` summary grouped by gender
   * `Q609`
-    * `age` Q609 summary grouped by age
-    * `gender` Q609 summary grouped by gender
-    * `income` Q609 summary grouped by income
-    * `education` Q609 summary grouped by education
+    * `Q609` summary grouped by gender
     
-For this example, we will again only be focusing on gender plots. To get only gender summaries, just specify the **.dem** parameter.
-
-```{r 04.21-summaries, eval=FALSE}
-
-survey1 %>%                                          # Data
-  calculate_demographic_smry_comp(variables_2_plot,  # Variables to summarize
-                                  .dem = "gender")   # Demographic
-
-```
-
-
-Now, the output of this function looks like this bullet point list:
-
-* `calculate_demographic_smry_comp(.dem="gender")` output
-  * `Q1COVID19`
-    * `gender` Q1COVID19 summary grouped by gender
-  * `Q2061A_1`
-    * `gender` Q2061A_1 summary grouped by gender
-  * `Q609`
-    * `gender` Q609 summary grouped by gender
-    
-Much more manageable .
-
 Let's save this outcome as an object and move on to plotting.
 
 
@@ -346,9 +297,9 @@ comparative_gender_summaries <- survey1 %>%
 
 ### Plot the Summaries {#plot-many-comparative-demographic}
 
-Again, the same function to create one plot is used to create many plots: **plot_demographic_smry_comp()**. Just like in Chapter 3, we need to use the **map** function.
+Again, the same function to create one plot is used to create many plots: `plot_demographic_smry_comp()`. Just like in Chapter 3, we need to use the `map()` function from the `purrr` package.
 
-In this case, you supply the list of summaries you just created, and the **plot_demographic_sumry_comp()** function. The code follows:
+In this case, you supply the list of summaries you just created, and the `plot_demographic_sumry_comp()` function. The code follows:
 
 ```{r 04.24-plots, eval=FALSE}
 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Single Country Overall Graphs | ArabBarometR Graphing Guide</title>
   <meta name="description" content="Chapter 2 Single Country Overall Graphs | ArabBarometR Graphing Guide" />
-  <meta name="generator" content="bookdown 0.30 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Single Country Overall Graphs | ArabBarometR Graphing Guide" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2023-11-17" />
+<meta name="date" content="2024-10-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -119,8 +119,12 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="AB-custom.css" type="text/css" />
 </head>
 
 <body>
@@ -139,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Introduction</a>
 <ul>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#purpose"><i class="fa fa-check"></i>Purpose</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#best-practices"><i class="fa fa-check"></i>Best Practices</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#general-guide-process"><i class="fa fa-check"></i>General Guide Process</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#example-data"><i class="fa fa-check"></i>Example Data</a></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#headercode"><i class="fa fa-check"></i>Header Code</a></li>
@@ -154,30 +159,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="part"><span><b>I Data Prepperation Functions</b></span></li>
 <li class="chapter" data-level="1" data-path="preparing-data.html"><a href="preparing-data.html"><i class="fa fa-check"></i><b>1</b> Preparing Data</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="preparing-data.html"><a href="preparing-data.html#recode_country"><i class="fa fa-check"></i><b>1.1</b> recode_country</a>
+<li class="chapter" data-level="1.1" data-path="preparing-data.html"><a href="preparing-data.html#tldr"><i class="fa fa-check"></i><b>1.1</b> TL;DR</a></li>
+<li class="chapter" data-level="1.2" data-path="preparing-data.html"><a href="preparing-data.html#recode_country"><i class="fa fa-check"></i><b>1.2</b> <code>recode_country()</code></a>
 <ul>
-<li class="chapter" data-level="1.1.1" data-path="preparing-data.html"><a href="preparing-data.html#example"><i class="fa fa-check"></i><b>1.1.1</b> Example:</a></li>
+<li class="chapter" data-level="1.2.1" data-path="preparing-data.html"><a href="preparing-data.html#example-1"><i class="fa fa-check"></i><b>1.2.1</b> Example:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.2" data-path="preparing-data.html"><a href="preparing-data.html#demographic-functions"><i class="fa fa-check"></i><b>1.2</b> Demographic functions</a>
+<li class="chapter" data-level="1.3" data-path="preparing-data.html"><a href="preparing-data.html#demographic-functions"><i class="fa fa-check"></i><b>1.3</b> Demographic functions</a>
 <ul>
-<li class="chapter" data-level="1.2.1" data-path="preparing-data.html"><a href="preparing-data.html#basics"><i class="fa fa-check"></i><b>1.2.1</b> Basics</a></li>
+<li class="chapter" data-level="1.3.1" data-path="preparing-data.html"><a href="preparing-data.html#basics"><i class="fa fa-check"></i><b>1.3.1</b> Basics</a></li>
 </ul></li>
-<li class="chapter" data-level="1.3" data-path="preparing-data.html"><a href="preparing-data.html#advanced"><i class="fa fa-check"></i><b>1.3</b> Advanced</a></li>
-<li class="chapter" data-level="1.4" data-path="preparing-data.html"><a href="preparing-data.html#education_demographic"><i class="fa fa-check"></i><b>1.4</b> education_demographic</a>
+<li class="chapter" data-level="1.4" data-path="preparing-data.html"><a href="preparing-data.html#advanced"><i class="fa fa-check"></i><b>1.4</b> Advanced</a></li>
+<li class="chapter" data-level="1.5" data-path="preparing-data.html"><a href="preparing-data.html#age_demographic"><i class="fa fa-check"></i><b>1.5</b> <code>age_demographic()</code></a></li>
+<li class="chapter" data-level="1.6" data-path="preparing-data.html"><a href="preparing-data.html#education_demographic"><i class="fa fa-check"></i><b>1.6</b> <code>education_demographic()</code></a>
 <ul>
-<li class="chapter" data-level="1.4.1" data-path="preparing-data.html"><a href="preparing-data.html#examples"><i class="fa fa-check"></i><b>1.4.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.6.1" data-path="preparing-data.html"><a href="preparing-data.html#examples"><i class="fa fa-check"></i><b>1.6.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.5" data-path="preparing-data.html"><a href="preparing-data.html#dummy_all"><i class="fa fa-check"></i><b>1.5</b> dummy_all</a>
+<li class="chapter" data-level="1.7" data-path="preparing-data.html"><a href="preparing-data.html#dummy_all"><i class="fa fa-check"></i><b>1.7</b> <code>dummy_all()</code></a>
 <ul>
-<li class="chapter" data-level="1.5.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-1"><i class="fa fa-check"></i><b>1.5.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.7.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-1"><i class="fa fa-check"></i><b>1.7.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.6" data-path="preparing-data.html"><a href="preparing-data.html#dummy_select"><i class="fa fa-check"></i><b>1.6</b> dummy_select</a>
+<li class="chapter" data-level="1.8" data-path="preparing-data.html"><a href="preparing-data.html#dummy_select"><i class="fa fa-check"></i><b>1.8</b> <code>dummy_select()</code></a>
 <ul>
-<li class="chapter" data-level="1.6.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-2"><i class="fa fa-check"></i><b>1.6.1</b> Examples:</a></li>
+<li class="chapter" data-level="1.8.1" data-path="preparing-data.html"><a href="preparing-data.html#examples-2"><i class="fa fa-check"></i><b>1.8.1</b> Examples:</a></li>
 </ul></li>
-<li class="chapter" data-level="1.7" data-path="preparing-data.html"><a href="preparing-data.html#in-practice"><i class="fa fa-check"></i><b>1.7</b> In Practice</a>
+<li class="chapter" data-level="1.9" data-path="preparing-data.html"><a href="preparing-data.html#in-practice"><i class="fa fa-check"></i><b>1.9</b> In Practice</a>
 <ul>
-<li class="chapter" data-level="1.7.1" data-path="preparing-data.html"><a href="preparing-data.html#example-2"><i class="fa fa-check"></i><b>1.7.1</b> Example:</a></li>
+<li class="chapter" data-level="1.9.1" data-path="preparing-data.html"><a href="preparing-data.html#example-3"><i class="fa fa-check"></i><b>1.9.1</b> Example:</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>II Cross Tabulation Graphs</b></span></li>
@@ -327,7 +334,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="12.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1"><i class="fa fa-check"></i><b>12.1</b> Prep Work</a>
 <ul>
-<li class="chapter" data-level="12.1.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-1"><i class="fa fa-check"></i><b>12.1.1</b> Question List</a></li>
+<li class="chapter" data-level="12.1.1" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-1"><i class="fa fa-check"></i><b>12.1.1</b> Question Vector</a></li>
 <li class="chapter" data-level="12.1.2" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-1-2"><i class="fa fa-check"></i><b>12.1.2</b> Question Labels</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="chapter-9.html"><a href="chapter-9.html#chapter-9-2"><i class="fa fa-check"></i><b>12.2</b> Plot a Multiquestion Graph for a Single Country</a></li>
@@ -407,6 +414,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
 </ul>
 
       </nav>
@@ -431,10 +439,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.1</span> Create a Single Graph<a href="chapter-1.html#chapter-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This section will go over how to make a one-off frequency graph for a single country.</p>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="chapter-1.html#cb10-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb10-2"><a href="chapter-1.html#cb10-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb10-3"><a href="chapter-1.html#cb10-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb10-4"><a href="chapter-1.html#cb10-4" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="chapter-1.html#cb54-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb54-2"><a href="chapter-1.html#cb54-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb54-3"><a href="chapter-1.html#cb54-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb54-4"><a href="chapter-1.html#cb54-4" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/01.2-Complete-Graph-Example-1.png" width="1248" /></p>
 <p>Let’s go!</p>
@@ -443,18 +451,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The first step in creating a plot is to gather the data you want to display and organize it. You do this with the <strong>create_smry_individual()</strong> function.</p>
 <p>The three main parameters you need to provide to this function are (1) the data you are using, (2) the variable you want to plot, and (3) the country you want to plot it for. To see all the input parameters for the function, type the code <code>?calculate_smry_individual</code> in your R console.</p>
 <p>In this example, the variable we want to plot is <strong>Q1COVID19</strong> and the country we want to plot it for is <strong>Algeria</strong>.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="chapter-1.html#cb11-1" tabindex="-1"></a><span class="fu">calculate_smry_individual</span>(</span>
-<span id="cb11-2"><a href="chapter-1.html#cb11-2" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,            <span class="co"># The data you are using</span></span>
-<span id="cb11-3"><a href="chapter-1.html#cb11-3" tabindex="-1"></a>  <span class="at">.var =</span> <span class="st">&quot;Q1COVID19&quot;</span>,       <span class="co"># The variable you want to plot</span></span>
-<span id="cb11-4"><a href="chapter-1.html#cb11-4" tabindex="-1"></a>  <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>      <span class="co"># The country you want to plot it for</span></span>
-<span id="cb11-5"><a href="chapter-1.html#cb11-5" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="chapter-1.html#cb55-1" tabindex="-1"></a><span class="fu">calculate_smry_individual</span>(</span>
+<span id="cb55-2"><a href="chapter-1.html#cb55-2" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,            <span class="co"># The data you are using</span></span>
+<span id="cb55-3"><a href="chapter-1.html#cb55-3" tabindex="-1"></a>  <span class="at">.var =</span> <span class="st">&quot;Q1COVID19&quot;</span>,       <span class="co"># The variable you want to plot</span></span>
+<span id="cb55-4"><a href="chapter-1.html#cb55-4" tabindex="-1"></a>  <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>      <span class="co"># The country you want to plot it for</span></span>
+<span id="cb55-5"><a href="chapter-1.html#cb55-5" tabindex="-1"></a>)</span></code></pre></div>
 <p>The above is the same as:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="chapter-1.html#cb12-1" tabindex="-1"></a><span class="fu">calculate_smry_individual</span>(survey1,<span class="st">&quot;Q1COVID19&quot;</span>,<span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="chapter-1.html#cb56-1" tabindex="-1"></a><span class="fu">calculate_smry_individual</span>(survey1,<span class="st">&quot;Q1COVID19&quot;</span>,<span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
 <p>Which is the same as:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="chapter-1.html#cb13-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb13-2"><a href="chapter-1.html#cb13-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb13-3"><a href="chapter-1.html#cb13-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
-<p>The last example uses a pipe, <code>%&gt;%</code>, which comes from the package <strong>dplyr</strong>. To learn more about piping and using <code>%&gt;%</code> in programming, see <a href="https://arab-barometer.github.io/ArabBarometR-Guide/using-the-package.html#a-note-on-piping">A Note on Piping</a> in the <code>ArabBarometR</code> guide.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="chapter-1.html#cb57-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb57-2"><a href="chapter-1.html#cb57-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb57-3"><a href="chapter-1.html#cb57-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
+<p>The last example uses a pipe, <code>%&gt;%</code>, which comes from the package <strong>dplyr</strong>. To learn more about piping and using <code>%&gt;%</code> in programming, see <a href="#piping-note">A Note on Piping</a> in the Appendix.</p>
 <p>The output of any of the above expressions is the same:</p>
 <pre><code>## # A tibble: 5 × 2
 ##   Q1COVID19                    Percent
@@ -469,36 +477,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>First, there are two columns. The first column is named for the question we are graphing. The second column is named <strong>Percent</strong>. If you want to use the plotting functions in <code>ArabBarometR</code> to graph a summary data frame that is not created by a calculate function, the data frame must be structured as two columns with the second column named <strong>Percent</strong>.</p>
 <p>Second, you can see that the first column is labeled. The labels come from the responses in the data. If the responses in the data are not labeled, this column will not be labeled. In the next step, plotting, the y-axis labels are taken from these labels. So, if the column is not labeled, the y-axis will just be the values of the column.</p>
 <p>Let’s store the summary as an object and move on.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="chapter-1.html#cb15-1" tabindex="-1"></a>Q1COVID19_summary <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb15-2"><a href="chapter-1.html#cb15-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb15-3"><a href="chapter-1.html#cb15-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="chapter-1.html#cb59-1" tabindex="-1"></a>Q1COVID19_summary <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb59-2"><a href="chapter-1.html#cb59-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb59-3"><a href="chapter-1.html#cb59-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
 </div>
 <div id="chapter-1-1-2" class="section level3 hasAnchor" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> Plot the Summary<a href="chapter-1.html#chapter-1-1-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The next step is plot the summary we just created. To do this, we use the function <strong>plot_smry_individual()</strong>.</p>
 <p>There is only <em>one</em> necessary parameter to use <strong>plot_smry_individual()</strong>: the summary data frame. For a complete list of acceptable parameters and documentation, you can run <code>?plot_smry_individual</code> in your R console.</p>
 <p>Now, we can plug our summary into the plot function:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="chapter-1.html#cb16-1" tabindex="-1"></a><span class="fu">plot_smry_individual</span>(</span>
-<span id="cb16-2"><a href="chapter-1.html#cb16-2" tabindex="-1"></a>  <span class="at">.df =</span> Q1COVID19_summary  <span class="co"># The summary data frame</span></span>
-<span id="cb16-3"><a href="chapter-1.html#cb16-3" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="chapter-1.html#cb60-1" tabindex="-1"></a><span class="fu">plot_smry_individual</span>(</span>
+<span id="cb60-2"><a href="chapter-1.html#cb60-2" tabindex="-1"></a>  <span class="at">.df =</span> Q1COVID19_summary  <span class="co"># The summary data frame</span></span>
+<span id="cb60-3"><a href="chapter-1.html#cb60-3" tabindex="-1"></a>)</span></code></pre></div>
 <p>The above code is the same as:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="chapter-1.html#cb17-1" tabindex="-1"></a>Q1COVID19_summary <span class="sc">%&gt;%</span></span>
-<span id="cb17-2"><a href="chapter-1.html#cb17-2" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="chapter-1.html#cb61-1" tabindex="-1"></a>Q1COVID19_summary <span class="sc">%&gt;%</span></span>
+<span id="cb61-2"><a href="chapter-1.html#cb61-2" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>()</span></code></pre></div>
 <p>Which is the SAME as:</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="chapter-1.html#cb18-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb18-2"><a href="chapter-1.html#cb18-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb18-3"><a href="chapter-1.html#cb18-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb18-4"><a href="chapter-1.html#cb18-4" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="chapter-1.html#cb62-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb62-2"><a href="chapter-1.html#cb62-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb62-3"><a href="chapter-1.html#cb62-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb62-4"><a href="chapter-1.html#cb62-4" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>()</span></code></pre></div>
 <p>We can do this because <code>Q1COVID19_summary</code> is equal to <code>survey1 %&gt;% calculate_smry_individual("Q1COVID19", "Algeria")</code>.</p>
 <p>Any of the above code gives the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/01.11-plot-1.png" width="1248" /></p>
 <p>Almost done! Notice how the caption says <strong>Arab Barometer Wave N (DATE)</strong>? Let’s change that.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="chapter-1.html#cb19-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb19-2"><a href="chapter-1.html#cb19-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb19-3"><a href="chapter-1.html#cb19-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb19-4"><a href="chapter-1.html#cb19-4" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(</span>
-<span id="cb19-5"><a href="chapter-1.html#cb19-5" tabindex="-1"></a>    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>  <span class="co"># NEW caption</span></span>
-<span id="cb19-6"><a href="chapter-1.html#cb19-6" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="chapter-1.html#cb63-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb63-2"><a href="chapter-1.html#cb63-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb63-3"><a href="chapter-1.html#cb63-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb63-4"><a href="chapter-1.html#cb63-4" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(</span>
+<span id="cb63-5"><a href="chapter-1.html#cb63-5" tabindex="-1"></a>    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I, Algeria&quot;</span>  <span class="co"># NEW caption</span></span>
+<span id="cb63-6"><a href="chapter-1.html#cb63-6" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Now we have the plot we started with! We’re done!</p>
 <p><img src="bookdownproj_files/figure-html/01.13-plot-1.png" width="1248" /></p>
 </div>
@@ -513,33 +521,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Third, plot those summaries.</li>
 </ol>
 <p>At the end of this section, your code will look like the following:</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="chapter-1.html#cb20-1" tabindex="-1"></a>     <span class="co">#.....................Identify the variables.....................</span></span>
-<span id="cb20-2"><a href="chapter-1.html#cb20-2" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb20-3"><a href="chapter-1.html#cb20-3" tabindex="-1"></a>                         <span class="st">&quot;Q2061A&quot;</span>,</span>
-<span id="cb20-4"><a href="chapter-1.html#cb20-4" tabindex="-1"></a>                         <span class="st">&quot;Q609&quot;</span>)</span>
-<span id="cb20-5"><a href="chapter-1.html#cb20-5" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="chapter-1.html#cb20-6" tabindex="-1"></a><span class="fu">names</span>(variables_2_plot) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb20-7"><a href="chapter-1.html#cb20-7" tabindex="-1"></a>                             <span class="st">&quot;Q2061A&quot;</span>,</span>
-<span id="cb20-8"><a href="chapter-1.html#cb20-8" tabindex="-1"></a>                             <span class="st">&quot;Q609&quot;</span>)</span>
-<span id="cb20-9"><a href="chapter-1.html#cb20-9" tabindex="-1"></a></span>
-<span id="cb20-10"><a href="chapter-1.html#cb20-10" tabindex="-1"></a>     <span class="co">#......................Create the summaries......................</span></span>
-<span id="cb20-11"><a href="chapter-1.html#cb20-11" tabindex="-1"></a>summaries <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb20-12"><a href="chapter-1.html#cb20-12" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(variables_2_plot,</span>
-<span id="cb20-13"><a href="chapter-1.html#cb20-13" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) </span>
-<span id="cb20-14"><a href="chapter-1.html#cb20-14" tabindex="-1"></a></span>
-<span id="cb20-15"><a href="chapter-1.html#cb20-15" tabindex="-1"></a>     <span class="co">#.......................Plot the summaries.......................</span></span>
-<span id="cb20-16"><a href="chapter-1.html#cb20-16" tabindex="-1"></a>plots <span class="ot">&lt;-</span> <span class="fu">map</span>(summaries,</span>
-<span id="cb20-17"><a href="chapter-1.html#cb20-17" tabindex="-1"></a>             plot_smry_individual,</span>
-<span id="cb20-18"><a href="chapter-1.html#cb20-18" tabindex="-1"></a>             <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="chapter-1.html#cb64-1" tabindex="-1"></a>     <span class="co">#.....................Identify the variables.....................</span></span>
+<span id="cb64-2"><a href="chapter-1.html#cb64-2" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb64-3"><a href="chapter-1.html#cb64-3" tabindex="-1"></a>                         <span class="st">&quot;Q2061A&quot;</span>,</span>
+<span id="cb64-4"><a href="chapter-1.html#cb64-4" tabindex="-1"></a>                         <span class="st">&quot;Q609&quot;</span>)</span>
+<span id="cb64-5"><a href="chapter-1.html#cb64-5" tabindex="-1"></a></span>
+<span id="cb64-6"><a href="chapter-1.html#cb64-6" tabindex="-1"></a><span class="fu">names</span>(variables_2_plot) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb64-7"><a href="chapter-1.html#cb64-7" tabindex="-1"></a>                             <span class="st">&quot;Q2061A&quot;</span>,</span>
+<span id="cb64-8"><a href="chapter-1.html#cb64-8" tabindex="-1"></a>                             <span class="st">&quot;Q609&quot;</span>)</span>
+<span id="cb64-9"><a href="chapter-1.html#cb64-9" tabindex="-1"></a></span>
+<span id="cb64-10"><a href="chapter-1.html#cb64-10" tabindex="-1"></a>     <span class="co">#......................Create the summaries......................</span></span>
+<span id="cb64-11"><a href="chapter-1.html#cb64-11" tabindex="-1"></a>summaries <span class="ot">&lt;-</span> <span class="fu">map</span>(variables_2_plot,</span>
+<span id="cb64-12"><a href="chapter-1.html#cb64-12" tabindex="-1"></a>                 calculate_smry_individual,</span>
+<span id="cb64-13"><a href="chapter-1.html#cb64-13" tabindex="-1"></a>                 <span class="at">.ab =</span> survey1,</span>
+<span id="cb64-14"><a href="chapter-1.html#cb64-14" tabindex="-1"></a>                 <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>)</span>
+<span id="cb64-15"><a href="chapter-1.html#cb64-15" tabindex="-1"></a></span>
+<span id="cb64-16"><a href="chapter-1.html#cb64-16" tabindex="-1"></a>     <span class="co">#.......................Plot the summaries.......................</span></span>
+<span id="cb64-17"><a href="chapter-1.html#cb64-17" tabindex="-1"></a>plots <span class="ot">&lt;-</span> <span class="fu">map</span>(summaries,</span>
+<span id="cb64-18"><a href="chapter-1.html#cb64-18" tabindex="-1"></a>             plot_smry_individual,</span>
+<span id="cb64-19"><a href="chapter-1.html#cb64-19" tabindex="-1"></a>             <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>)</span></code></pre></div>
 <p>The result is a named list of plots. Each element in the list is a plot. The element is named for the variable it is a plot of.</p>
 <p>For example, to see the plot for variable <code>Q1COVID19</code>, run the following code:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="chapter-1.html#cb21-1" tabindex="-1"></a>plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="chapter-1.html#cb65-1" tabindex="-1"></a>plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/01.15-Complete-Code-Example-Results1-1.png" width="1248" /></p>
 <p>To see the plot for variable <code>Q2061A</code>, run the following code:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="chapter-1.html#cb22-1" tabindex="-1"></a>plots<span class="sc">$</span>Q2061A</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="chapter-1.html#cb66-1" tabindex="-1"></a>plots<span class="sc">$</span>Q2061A</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/01.16-Complete-Code-Example-Results2-1.png" width="1248" /></p>
 <p>Finally, to see the plot for variable <code>Q609</code>, run the following code:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="chapter-1.html#cb23-1" tabindex="-1"></a>plots<span class="sc">$</span>Q609</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="chapter-1.html#cb67-1" tabindex="-1"></a>plots<span class="sc">$</span>Q609</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/01.17-Complete-Code-Example-Results3-1.png" width="1248" /></p>
 <p>That’s it! The only limit on the number of graphs you can create at once is the time it will take R to make them. The more graphs you try to create at once, the longer it will take.</p>
 <p>Let’s begin.</p>
@@ -547,30 +556,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">2.2.1</span> Identify the Variables<a href="chapter-1.html#chapter-1-2-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When creating many graphs, you need to tell R which variables you want to make plots of. This is true for when you want to create a single graph as well, but it is much more strongly implied. Plus, the variables must be identified in a specific way.</p>
 <p>To create many summaries at once, you need to provide your variables in a named list. To create a named list, first make a list of the variables you want to plot.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="chapter-1.html#cb24-1" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb24-2"><a href="chapter-1.html#cb24-2" tabindex="-1"></a>                         <span class="st">&quot;Q2061A&quot;</span>,</span>
-<span id="cb24-3"><a href="chapter-1.html#cb24-3" tabindex="-1"></a>                         <span class="st">&quot;Q609&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="chapter-1.html#cb68-1" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb68-2"><a href="chapter-1.html#cb68-2" tabindex="-1"></a>                      <span class="st">&quot;Q2061A&quot;</span>,</span>
+<span id="cb68-3"><a href="chapter-1.html#cb68-3" tabindex="-1"></a>                      <span class="st">&quot;Q609&quot;</span>)</span></code></pre></div>
 <p>The next step is to name your list.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="chapter-1.html#cb25-1" tabindex="-1"></a><span class="fu">names</span>(variables_2_plot) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb25-2"><a href="chapter-1.html#cb25-2" tabindex="-1"></a>                             <span class="st">&quot;Q2061A&quot;</span>,</span>
-<span id="cb25-3"><a href="chapter-1.html#cb25-3" tabindex="-1"></a>                             <span class="st">&quot;Q609&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="chapter-1.html#cb69-1" tabindex="-1"></a><span class="fu">names</span>(variables_2_plot) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb69-2"><a href="chapter-1.html#cb69-2" tabindex="-1"></a>                             <span class="st">&quot;Q2061A&quot;</span>,</span>
+<span id="cb69-3"><a href="chapter-1.html#cb69-3" tabindex="-1"></a>                             <span class="st">&quot;Q609&quot;</span>)</span></code></pre></div>
 <p>Now, you have a named list of variables. Time to summarize them.</p>
 </div>
 <div id="chapter-1-2-2" class="section level3 hasAnchor" number="2.2.2">
 <h3><span class="header-section-number">2.2.2</span> Create Summaries<a href="chapter-1.html#chapter-1-2-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The same function used to create a single summary is used to create many summaries: <strong>calculate_smry_individual()</strong>. Recall it takes three parameters: (1) the data you are using, (2) the variable(s) you want to plot, and (3) the country you are creating the plot for. Now, instead of one variable, you supply the list of variables.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="chapter-1.html#cb26-1" tabindex="-1"></a><span class="fu">calculate_smry_individual</span>(</span>
-<span id="cb26-2"><a href="chapter-1.html#cb26-2" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,               <span class="co"># The data you are using</span></span>
-<span id="cb26-3"><a href="chapter-1.html#cb26-3" tabindex="-1"></a>  <span class="at">.var =</span> variables_2_plot,       <span class="co"># The variables you want to plot</span></span>
-<span id="cb26-4"><a href="chapter-1.html#cb26-4" tabindex="-1"></a>  <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>           <span class="co"># The country you want to plot it for</span></span>
-<span id="cb26-5"><a href="chapter-1.html#cb26-5" tabindex="-1"></a>)</span></code></pre></div>
-<p>The above is the same as:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="chapter-1.html#cb27-1" tabindex="-1"></a><span class="fu">calculate_smry_individual</span>(survey1,variables_2_plot,<span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
-<p>Which is the same as:</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="chapter-1.html#cb28-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb28-2"><a href="chapter-1.html#cb28-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(variables_2_plot,</span>
-<span id="cb28-3"><a href="chapter-1.html#cb28-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
-<p>All of the above code in this section produces the same result: a named list. Each element in the list is a summary of a variable. The variable is the name of the list. In long form, it looks like the following:</p>
+<p>When you want to do something many times, the <code>purrr</code> package comes in extremely handy. That is why it is one of the two (non-<code>ArabBarometR</code>) packages loaded in the <a href="index.html#headercode">Header Code</a> in the <a href="index.html#introduction">Introduction</a> of this guide.</p>
+<p>In particular, the <code>map()</code> function from the <code>purrr</code> package allows the user to feed a vector or list into a function and returns a list of the output. More information can be found in the Appendix section called <a href="#using-map">Using a <code>map()</code></a>.</p>
+<p>In the previous section we created a list of variables. Now, with the help of the <code>map()</code> function, we feed them to <code>calculate_smry_individual()</code>.</p>
+<p>Recall it takes three parameters: (1) the data you are using, (2) the variable you want to plot, and (3) the country you are creating the plot for. We need to tell the <code>map()</code> function which parameter to iterate over and which parameters to hold constant. In this case, the data we are supplying and the country we are doing the calculations for are constant, while the list of variables is what we will iterate over. The data parameter is called <code>.ab</code> and the country parameter is called <code>.country</code>.</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="chapter-1.html#cb70-1" tabindex="-1"></a><span class="fu">map</span>(</span>
+<span id="cb70-2"><a href="chapter-1.html#cb70-2" tabindex="-1"></a>  variables_2_plot,          <span class="co"># List (our named list of variables)</span></span>
+<span id="cb70-3"><a href="chapter-1.html#cb70-3" tabindex="-1"></a>  calculate_smry_individual, <span class="co"># Function (calculate function)</span></span>
+<span id="cb70-4"><a href="chapter-1.html#cb70-4" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,             <span class="co"># Constant argument 1 (data)</span></span>
+<span id="cb70-5"><a href="chapter-1.html#cb70-5" tabindex="-1"></a>  <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>       <span class="co"># Constant argument 2 (country)</span></span>
+<span id="cb70-6"><a href="chapter-1.html#cb70-6" tabindex="-1"></a>)</span></code></pre></div>
+<p>The code above produces a named list. Each element in the list is a summary of a variable. The variable is the name of the list. In long form, it looks like the following:</p>
 <pre><code>## $Q1COVID19
 ## # A tibble: 5 × 2
 ##   Q1COVID19                    Percent
@@ -603,36 +610,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 3   3 [Not religious]            2
 ## 4 666 [Don&#39;t know/Refuse]        1</code></pre>
 <p>Let’s save this outcome as an object and move on to plotting.</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="chapter-1.html#cb30-1" tabindex="-1"></a>summaries <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb30-2"><a href="chapter-1.html#cb30-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(variables_2_plot,</span>
-<span id="cb30-3"><a href="chapter-1.html#cb30-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="chapter-1.html#cb72-1" tabindex="-1"></a>summaries <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb72-2"><a href="chapter-1.html#cb72-2" tabindex="-1"></a>  variables_2_plot,          </span>
+<span id="cb72-3"><a href="chapter-1.html#cb72-3" tabindex="-1"></a>  calculate_smry_individual, </span>
+<span id="cb72-4"><a href="chapter-1.html#cb72-4" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,             </span>
+<span id="cb72-5"><a href="chapter-1.html#cb72-5" tabindex="-1"></a>  <span class="at">.country =</span> <span class="st">&quot;Algeria&quot;</span>       </span>
+<span id="cb72-6"><a href="chapter-1.html#cb72-6" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 <div id="plot-many-graphs-single-country" class="section level3 hasAnchor" number="2.2.3">
 <h3><span class="header-section-number">2.2.3</span> Plot the Summaries<a href="chapter-1.html#plot-many-graphs-single-country" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Again, the same function to create one plot is used to create many plots: <strong>plot_smry_individual()</strong>. Unlike last time, a helper function is needed to create multiple plots.</p>
-<p>The helper function is called <strong>map</strong>. The map function takes two inputs: (1) a list of things to pass to a function, and (2) a function. Essentially, <strong>map</strong> takes each item in the list, and passes it to the function very efficiently.</p>
+<p>Again, the same function to create one plot is used to create many plots: <strong>plot_smry_individual()</strong>. Again, we are using the <code>map()</code> function.</p>
 <p>In this case, you supply the list of summaries you just created, and the <strong>plot_sumry_individual()</strong> function. The code follows:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="chapter-1.html#cb31-1" tabindex="-1"></a><span class="fu">map</span>(</span>
-<span id="cb31-2"><a href="chapter-1.html#cb31-2" tabindex="-1"></a>  summaries,            <span class="co"># List of summaries</span></span>
-<span id="cb31-3"><a href="chapter-1.html#cb31-3" tabindex="-1"></a>  plot_smry_individual  <span class="co"># Plotting function</span></span>
-<span id="cb31-4"><a href="chapter-1.html#cb31-4" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="chapter-1.html#cb73-1" tabindex="-1"></a><span class="fu">map</span>(</span>
+<span id="cb73-2"><a href="chapter-1.html#cb73-2" tabindex="-1"></a>  summaries,            <span class="co"># List (our summaries)</span></span>
+<span id="cb73-3"><a href="chapter-1.html#cb73-3" tabindex="-1"></a>  plot_smry_individual  <span class="co"># Function (plotting function)</span></span>
+<span id="cb73-4"><a href="chapter-1.html#cb73-4" tabindex="-1"></a>)</span></code></pre></div>
 <p>The code produces the following output:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="chapter-1.html#cb32-1" tabindex="-1"></a><span class="fu">map</span>(</span>
-<span id="cb32-2"><a href="chapter-1.html#cb32-2" tabindex="-1"></a>  summaries,            <span class="co"># List of summaries</span></span>
-<span id="cb32-3"><a href="chapter-1.html#cb32-3" tabindex="-1"></a>  plot_smry_individual  <span class="co"># Plotting function</span></span>
-<span id="cb32-4"><a href="chapter-1.html#cb32-4" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="chapter-1.html#cb74-1" tabindex="-1"></a><span class="fu">map</span>(</span>
+<span id="cb74-2"><a href="chapter-1.html#cb74-2" tabindex="-1"></a>  summaries,            <span class="co"># List of summaries</span></span>
+<span id="cb74-3"><a href="chapter-1.html#cb74-3" tabindex="-1"></a>  plot_smry_individual  <span class="co"># Plotting function</span></span>
+<span id="cb74-4"><a href="chapter-1.html#cb74-4" tabindex="-1"></a>)</span></code></pre></div>
 <pre><code>## $Q1COVID19</code></pre>
 <pre><code>## 
 ## $Q2061A</code></pre>
 <pre><code>## 
 ## $Q609</code></pre>
 <p><img src="bookdownproj_files/figure-html/01.26-plots,%20figures-side-1.png" width="50%" /><img src="bookdownproj_files/figure-html/01.26-plots,%20figures-side-2.png" width="50%" /><img src="bookdownproj_files/figure-html/01.26-plots,%20figures-side-3.png" width="50%" /></p>
-<p>Notice, yet again, the caption needs to be changed. To change the caption for all the graphs, just add one line to the map function.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="chapter-1.html#cb36-1" tabindex="-1"></a><span class="fu">map</span>(</span>
-<span id="cb36-2"><a href="chapter-1.html#cb36-2" tabindex="-1"></a>  summaries,                                     <span class="co"># List of summaries</span></span>
-<span id="cb36-3"><a href="chapter-1.html#cb36-3" tabindex="-1"></a>  plot_smry_individual,                          <span class="co"># Plotting function</span></span>
-<span id="cb36-4"><a href="chapter-1.html#cb36-4" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>  <span class="co"># Caption</span></span>
-<span id="cb36-5"><a href="chapter-1.html#cb36-5" tabindex="-1"></a>)</span></code></pre></div>
+<p>Notice, yet again, the caption needs to be changed. To change the caption for all the graphs, just add one line to the <code>map()</code> function, holding it constant just as we did with the data and country when creating the list of summaries.</p>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="chapter-1.html#cb78-1" tabindex="-1"></a><span class="fu">map</span>(</span>
+<span id="cb78-2"><a href="chapter-1.html#cb78-2" tabindex="-1"></a>  summaries,                                     <span class="co"># List (our summaries)</span></span>
+<span id="cb78-3"><a href="chapter-1.html#cb78-3" tabindex="-1"></a>  plot_smry_individual,                          <span class="co"># Function (plotting function)</span></span>
+<span id="cb78-4"><a href="chapter-1.html#cb78-4" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>  <span class="co"># Constant argument (caption)</span></span>
+<span id="cb78-5"><a href="chapter-1.html#cb78-5" tabindex="-1"></a>)</span></code></pre></div>
 <pre><code>## $Q1COVID19</code></pre>
 <pre><code>## 
 ## $Q2061A</code></pre>
@@ -640,19 +649,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $Q609</code></pre>
 <p><img src="bookdownproj_files/figure-html/01.27-plots,%20figures-side-1.png" width="50%" /><img src="bookdownproj_files/figure-html/01.27-plots,%20figures-side-2.png" width="50%" /><img src="bookdownproj_files/figure-html/01.27-plots,%20figures-side-3.png" width="50%" /></p>
 <p>Congratulations! You have created three plots at once. You can store them in as a single list and call them one at a time.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="chapter-1.html#cb40-1" tabindex="-1"></a>plots <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
-<span id="cb40-2"><a href="chapter-1.html#cb40-2" tabindex="-1"></a>  summaries,                                     <span class="co"># List of summaries</span></span>
-<span id="cb40-3"><a href="chapter-1.html#cb40-3" tabindex="-1"></a>  plot_smry_individual,                          <span class="co"># Plotting function</span></span>
-<span id="cb40-4"><a href="chapter-1.html#cb40-4" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>  <span class="co"># Caption</span></span>
-<span id="cb40-5"><a href="chapter-1.html#cb40-5" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="chapter-1.html#cb82-1" tabindex="-1"></a>plots <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb82-2"><a href="chapter-1.html#cb82-2" tabindex="-1"></a>  summaries,                                     </span>
+<span id="cb82-3"><a href="chapter-1.html#cb82-3" tabindex="-1"></a>  plot_smry_individual,                          </span>
+<span id="cb82-4"><a href="chapter-1.html#cb82-4" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>  </span>
+<span id="cb82-5"><a href="chapter-1.html#cb82-5" tabindex="-1"></a>)</span></code></pre></div>
 <p>Now, all three plots have been stored in a named list named <code>plots</code>. To look at the first plot:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="chapter-1.html#cb41-1" tabindex="-1"></a>plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="chapter-1.html#cb83-1" tabindex="-1"></a>plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/01.29-Complete-Code-Example-Results1-1.png" width="1248" /></p>
 <p>To see the plot for variable <code>Q2061A</code>, run the following code:</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="chapter-1.html#cb42-1" tabindex="-1"></a>plots<span class="sc">$</span>Q2061A</span></code></pre></div>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="chapter-1.html#cb84-1" tabindex="-1"></a>plots<span class="sc">$</span>Q2061A</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/01.30-Complete-Code-Example-Results2-1.png" width="1248" /></p>
 <p>Finally, to see the plot for variable <code>Q609</code>, run the following code:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="chapter-1.html#cb43-1" tabindex="-1"></a>plots<span class="sc">$</span>Q609</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="chapter-1.html#cb85-1" tabindex="-1"></a>plots<span class="sc">$</span>Q609</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/01.31-Complete-Code-Example-Results3-1.png" width="1248" /></p>
 <p>You have now completed all steps in the example code. Congrats!</p>
 

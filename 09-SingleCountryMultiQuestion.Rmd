@@ -12,8 +12,8 @@ At the end, your code will look like the following:
 
 ```{r 09.1-Complete-Code-Example, eval=FALSE}
 
-questions_2_compare <- list("Q210",
-                            "Q211")
+questions_2_compare <- c("Q210",
+                         "Q211")
 questions_labels <- c("Is there corruption?",
                       "Is the gov't cracking down?")
 
@@ -21,8 +21,8 @@ plot_multiquestions_ind(survey1,
                         questions_2_compare,
                         questions_labels,
                         "Algeria",
-                        .basic_title = "Perceptions of Corruption in Algeria",
-                        .basic_subtitle = "% saying to a medium or large extent",
+                        .title = "Perceptions of Corruption in Algeria",
+                        .subtitle = "% saying to a medium or large extent",
                         .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
 
 ```
@@ -32,8 +32,8 @@ That code will produce the following graph:
 
 ```{r 09.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
 
-questions_2_compare <- list("Q210",
-                            "Q211")
+questions_2_compare <- c("Q210",
+                         "Q211")
 questions_labels <- c("Is there corruption?",
                       "Is the gov't cracking down?")
 
@@ -41,8 +41,8 @@ plot_multiquestions_ind(survey1,
                         questions_2_compare,
                         questions_labels,
                         "Algeria",
-                        .basic_title = "Perceptions of Corruption in Algeria",
-                        .basic_subtitle = "% saying to a medium or large extent",
+                        .title = "Perceptions of Corruption in Algeria",
+                        .subtitle = "% saying to a medium or large extent",
                         .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
 ```
 
@@ -50,24 +50,24 @@ Let's go!
 
 ## Prep Work {#chapter-9-1}
 
-There is no **calculate_** function^[As off writing this chapter] for this graph. All the computation is done within the `plot_multiquestions_ind()` function.
+There is no `calculate_` function^[As off writing this chapter] for this graph. All the computation is done within the `plot_multiquestions_ind()` function.
 
 It is useful to do some prep work to keep everything clear.
 
-### Question List {#chapter-9-1-1}
+### Question Vector {#chapter-9-1-1}
 
-First create a list of questions you want to include on your graph. For the example in this chapter we are comparing questions `Q210` and `Q211`. We put the names of those variables in a list and save that list as an object.
+First create a vector of questions you want to include on your graph. For the example in this chapter we are comparing questions `Q210` and `Q211`. We put the names of those variables in a vector and save that vector as an object.
 
 ```{r 09.3-question-list}
 
-questions_2_compare <- list(
+questions_2_compare <- c(
   "Q210",
   "Q211"
   )
 
 ```
 
-Now the variables we want to graph as saved to the object `questions_2_compare` in a list.
+Now the variables we want to graph as saved to the object `questions_2_compare` in a vector.
 
 ### Question Labels {#chapter-9-1-2}
 
@@ -90,9 +90,9 @@ We are now ready to create our graph. The function `plot_multiquestions_ind()` i
 
 The parameter `.ab` is the for Arab Barometer data frame. If there is only one country in the data, the function will automatically know which country it is^[As long as the data frame is a standard Arab Barometer data frame containing a `COUNTRY` column.]. If there is more than one country in the data set, you __must__ use the `.country` parameter to specify which country you want to graph.
 
-The `.questions` parameter requires a list (or vector) of questions. This is how the function knows which questions to include on the graph. We created a list, `questions_2_compare`, in the section above.
+The `.questions` parameter requires a vector (**not** a list) of questions. This is how the function knows which questions to include on the graph. We created a vector, `questions_2_compare`, in the section above.
 
-The `.question_labels` parameter requires a vector (or list) of question labels. The labels must appear in the same order as the questions to appear on the graph correctly. We created a vector, `questions_labels`, in the section above.
+The `.question_labels` parameter requires a vector (**not** a list) of question labels. The labels must appear in the same order as the questions to appear on the graph correctly. We created a vector, `questions_labels`, in the section above.
 
 Time to fill in our function. The data we are using for the example is `survey1`. This data frame includes all the countries surveyed during the first round of surveys in Wave VI. We must use the `.country` parameter to tell the function which country we wish to plot.
 
@@ -118,8 +118,8 @@ plot_multiquestions_ind(
   .questions = questions_2_compare,
   .question_labels = question_labels,
   .country = "Algeria",
-  .basic_title = "Perceptions of Corruption in Algeria",
-  .basic_subtitle = "% saying to a medium or large extent",
+  .title = "Perceptions of Corruption in Algeria",
+  .subtitle = "% saying to a medium or large extent",
   .caption = "Arab Barometer Wave VI, Survey 1, Algeria"
 )
 
@@ -133,7 +133,7 @@ By default, the colors for the graph are randomly selected from `ArabBarometer_c
 
 ### Data Frame {#chapter-9-3-2}
 
-There is no **calculate_** function that accompanies this function. All calculations are done internally. The parameter `.return_df` allows the user to see the data frame used to create the graph. Setting `.return_df` to `TRUE` will cause the function to return a list containing the graph and the data frame. Setting `.return_df` to `"only"` will cause the function to only return the data frame.
+There is no `calculate_` function that accompanies this function. All calculations are done internally. The parameter `.return_df` allows the user to see the data frame used to create the graph. Setting `.return_df` to `TRUE` will cause the function to return a list containing the graph and the data frame. Setting `.return_df` to `"only"` will cause the function to only return the data frame.
 
 ### Explict Grid Example {#chapter-9-3-3}
 
@@ -142,7 +142,7 @@ Remember: plotting a set of grid questions requires exactly the same steps as ou
 ```{r 09.7-grid-example, fig.dim=c(13,12)}
 
 # Identifying two question from a grid set:
-questions_2_compare <- list(
+questions_2_compare <- c(
   "Q201A_1",
   "Q201A_2"
 )
@@ -159,8 +159,8 @@ plot_multiquestions_ind(
   .questions = questions_2_compare,
   .question_labels = question_labels,
   .country = "Algeria",
-  .basic_title = "How much trust do you have in...",
-  .basic_subtitle = "% of Algerians saying they have quite a lot or a great deal",
+  .title = "How much trust do you have in...",
+  .subtitle = "% of Algerians saying they have quite a lot or a great deal",
   .caption = "Arab Barometer Wave VI, Survey 1, Algeria"
 )
 

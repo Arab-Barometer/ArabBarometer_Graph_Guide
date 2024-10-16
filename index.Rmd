@@ -7,6 +7,26 @@ site: bookdown::bookdown_site
 
 # Introduction {#introduction .unnumbered}
 
+```{r index-load-packaged,include=FALSE}
+
+library(ArabBarometR)
+library(dplyr)
+library(purrr)
+library(ggplot2)
+
+x <- c(1,2)
+names(x) <- c("Urban","Rural")
+
+survey1$Q13 <- sample(x,nrow(survey1),replace = T)
+survey2$Q13 <- sample(x,nrow(survey2),replace = T)
+survey3$Q13 <- sample(x,nrow(survey3),replace = T)
+
+survey1$Q13 <- haven::labelled(survey1$Q13,x)
+survey2$Q13 <- haven::labelled(survey2$Q13,x)
+survey3$Q13 <- haven::labelled(survey3$Q13,x)
+
+```
+
 ## Purpose {.unnumbered}
 
 This guide is meant to give instructions on how to create graphs using the `ArabBarometR` package. If you do not yet have `ArabBarometR` installed, see either the [README](https://github.com/Arab-Barometer/ArabBarometR#readme) file on the package's GitHub repo, or [Installing and Updating `ArabBarometR`][Installing and Updating `ArabBarometR`] in the Appendix.
@@ -95,15 +115,6 @@ To learn more about see the section [A Note on Piping](#piping-note) in the Appe
 
 [Chapter 2](#chapter-1) introduces the functions used to prepare the data.
 
-
-```{r index-load-packaged,include=FALSE}
-
-library(ArabBarometR)
-library(dplyr)
-library(purrr)
-library(ggplot2)
-
-```
 
 ```{r index-prep-ex-data, include=FALSE, cache=TRUE}
 

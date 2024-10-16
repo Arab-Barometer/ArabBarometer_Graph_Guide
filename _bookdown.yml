@@ -33,5 +33,6 @@ rmd_files: [
   "9903-SelectCountries.Rmd",
   "9904-StackedOrder.Rmd",
   "Guide_Features.Rmd",
-  "install-update.Rmd"
+  "install-update.Rmd",
+  "piping_note.Rmd"
 ]

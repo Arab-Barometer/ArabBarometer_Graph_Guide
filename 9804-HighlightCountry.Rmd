@@ -32,7 +32,7 @@ survey1 %>%
 survey1 %>%
   calculate_smry_comp("Q1COVID19") %>%
   plot_smry_comp(.caption = "Arab Barometer Wave VI, Survey I",
-                 .highlight = c("Algeria","Jordan"))
+                 .highlight = c("Algeria","Lebanon"))
 
 
 ```
@@ -46,7 +46,7 @@ That code will produce the following graph:
 survey1 %>%
   calculate_smry_comp("Q1COVID19") %>%
   plot_smry_comp(.caption = "Arab Barometer Wave VI, Survey I",
-                 .highlight = c("Algeria","Jordan"))
+                 .highlight = c("Algeria","Lebanon"))
 
 ```
 
