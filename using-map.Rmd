@@ -1,0 +1,9 @@
+# Using a `map()` {#using-map -}
+
+Quite often in coding, you want to do the same thing only slightly differently many times. For example, make a graph for every variable in a data set.
+
+The package `purrr` is full of functions designed to help you do just that.
+
+In particular, the `map()` function is extremely handy. It is used in all examples related to making multiple graphs.
+
+The map function takes two inputs: (1) a list of things to pass to a function, and (2) a function. Essentially, **map** takes each item in the list, and passes it to the function very efficiently. 

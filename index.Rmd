@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Introduction {.unnumbered}
+# Introduction {#introduction .unnumbered}
 
 ## Purpose {.unnumbered}
 
@@ -20,6 +20,23 @@ As such, this guide assumes a few things:
 -   You have a basic understanding of how to load data and packages in R.
     -   If this is not true, you can pursue either [this guide](http://www.r-tutor.com/r-introduction/data-frame/data-import) or [this website](https://www.google.com/search?q=How+to+load+data+in+R&source=hp&ei=YKrYYb_1LLLH_Qanq6OICA&iflsig=ALs-wAMAAAAAYdi4cEgcmgRSgizOG8Zt8g7jSThX-RHp&ved=0ahUKEwi_pYruxKD1AhWyY98KHafVCIEQ4dUDCAk&uact=5&oq=How+to+load+data+in+R&gs_lcp=Cgdnd3Mtd2l6EAMyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDIGCAAQFhAeMgYIABAWEB46DgguEIAEELEDEMcBEKMCOgsIABCABBCxAxCDAToICAAQgAQQsQM6CwguEIAEEMcBEKMCOgUILhCABDoICC4QgAQQsQM6BQgAELEDUKAHWKIdYO4eaAFwAHgAgAFWiAGJCpIBAjIxmAEAoAEBsAEA&sclient=gws-wiz).
 
+## Best Practices {.unnumbered}
+
+Before we begin, there are a few best practices that you are **highly** encouraged to adhere to.
+
+1. Load you data directly from the source.
+  - Rather than downloading AB data from the Drive and saving it in a folder on your computer, then re-downloading it every time it gets updated, just put in the path from where you are to the latest data on the Drive.
+  - This will save you a *significant* amount of space on your machine.
+  - It is also the best way to guarantee that you are:
+    a. Using the latest data.
+    b. Using the original, unedited data each time you start/work on a project.
+2. Save your code in the same place you save your graphs.
+  - Instead of saving your code in one place and your output in another, save everything in the same spot.
+  - This way, when you spot an error in your graphs or want to add more, you know exactly where the code used to create the output is.
+3. Load only the packages you need.
+  - Many packages in R do not necessarily play nicely with each other.
+  - Often, packages will have functions with the same name that do different things. If you call one of those function in your code, R will use the function from the last package you loaded.
+  
 ## General Guide Process {.unnumbered}
 
 Assuming we are working with clean data, the graphs are created in two steps:
@@ -33,83 +50,48 @@ For each type of graph, the guide will first go through how to create one graph,
 
 The examples in this guide will be created using data from Wave VI. For single survey graphs, it will use data from from Wave VI, Survey I. For trend graphs, it will use data from Wave VI, Survey I, II, and III, where Survey III is the final survey we conducted in Wave VI.
 
-The Wave VI data can be found on [the Arab Barometer website](https://www.arabbarometer.org/survey-data/data-downloads/).
-
-In order to create certain graphs (e.g., demographic graphs, comparative graphs for nominal questions, etc.), the data needs to be prepared correctly. The first chapter in this guide introduces several functions included in the `ArabBarometR` package that allow the user to easily prepare the data.
+As of version `1.13.10.9001`, the `ArabBarometR` package includes a sample of this data, so you will not have to download any extra data sets to follow along. If you are using an older version of `ArabBarometR` (not recommended), the Wave VI data can be found on [the Arab Barometer website](https://www.arabbarometer.org/survey-data/data-downloads/).
 
 ## Header Code {#headercode .unnumbered}
 
-The code examples in this guide will **only** focus on how to create graphs. That is, the examples will not include loading and preparing the data or loading libraries. As you begin this guide, make sure your header looks something like the following:
+In order to create certain graphs (e.g., demographic graphs, comparative graphs for nominal questions, etc.), the data needs to be prepared correctly. The first chapter in this guide introduces several functions included in the `ArabBarometR` package that allow the user to easily prepare the data.
+
+The code examples in this guide will focus on how to create graphs. That is, the examples will not include loading and preparing the data or loading libraries. As you begin this guide, make sure your header looks something like the following:
 
 ```{r index-example-header,eval=FALSE}
 
-setwd("/Path/to/Folder/with/Data")
+setwd("/where/graphs/will/live/")
 
 library(ArabBarometR) # Our package
 library(dplyr) # Lots of handy functions
 library(purrr) # Mapping functions
 
-survey1 <- haven::read.dta("Wave6Survey1.dta")
-survey2 <- haven::read.dta("Wave6Survey2.dta")
-survey3 <- haven::read.dta("Wave6Survey3.dta")
+# Preparing Survey 1 data with no pipes:
+## Adding demographic columns:
+survey1 <- add_demographics(survey1)
+## Creating dummies for examples:
+survey1 <- dummy_all(survey1,
+                     Q2061A)
 
-# Preparing Survey 1 data:
-survey1 <- survey1 %>%
+# Preparing Survey 2 data with R native pipe:
+survey2 <- survey2 |> 
+  add_demographics() |> 
+  dummy_all(Q2061A)
   
-  age_demographic() %>%
-  gender_demographic() %>%
-  education_demographic() %>%
-  income_demographic() %>%
-  
-  dummy_all(Q2061A) %>%
-  
-  rename(Q118_1 = Q118)
 
-# Preparing Survey 2 data:
-survey2 <- survey2 %>%
-  
-  age_demographic() %>%
-  gender_demographic() %>%
-  education_demographic() %>%
-  income_demographic() %>%
-  
-  dummy_all(Q2061A) %>%
-  
-  sjlabelled::add_labels(Q2061A, labels=c(`Economic situation` = 1,
-                                          `Corruption` = 2,
-                                          `Internal instability` = 6,
-                                          `Foreign interference` = 7,
-                                          `Public services` = 12,
-                                          `COVID-19` = 15,
-                                          `Other` = 16,
-                                          `Don't know/refuse` = 98))
-
-# Preparing Survey 3 data:
+# Preparing Survey 3 data with dplyr pipe:
 survey3 <- survey3 %>%
+  add_demographics() %>%
+  dummy_all(Q2061A)
   
-  # Adding Demographic Categories:
-  age_demographic() %>%
-  gender_demographic() %>%
-  education_demographic() %>%
-  income_demographic() %>%
-  
-  dummy_all(Q2061A) %>%
-  
-  sjlabelled::add_labels(Q2061A, labels=c(`Economic situation` = 1,
-                                          `Corruption` = 2,
-                                          `Internal instability` = 6,
-                                          `Foreign interference` = 7,
-                                          `Public services` = 12,
-                                          `COVID-19` = 15,
-                                          `Other` = 16,
-                                          `Don't know/refuse` = 98)) %>%
-  
-  rename(Q118_1 = Q118)
 ```
 
-In this code example **"/Path/to/Folder/with/Data"** is the path to where you are saving your work that *also contains your data*. This is best practice. For more on folders/working directories, see [Section 1.1.2](https://arab-barometer.github.io/ArabBarometR-Guide/installation.html) in the general Arab Barometer Guide.
+The above code prepares each of our example data sets using the same two functions, but using three different methods.
 
-**Wave6SurveyX.dta** in the above code example is a placeholder for whatever you have named the survey data for Surveys I, II, and III from Wave VI. If you read in the data (using the **haven::read.dta()** function) and save it as survey1, survey2, and survey3, you should be able to copy and paste the code in this guide exactly as is and run it in your own R session.
+When adding demographic variable columns and creating dummy columns from variable `Q2061A` for `survey1` (Wave VI Part 1), each step is done on the data independently. When doing the same manipulations on `survey2` (Wave VI Part 2) and `survey3` (Wave VI Part 3), the actions are chained together using **pipes**. Data preparation for `survey2` uses native pipes `|>`, while data preparation for `survey3` uses pipes from the `dplyr` package. **All three operations have the same outcome.** Q: Why use one method over the other? A: Personal preference.
+
+To learn more about see the section [A Note on Piping](#piping-note) in the Appendix.
+
 
 [Chapter 2](#chapter-1) introduces the functions used to prepare the data.
 
@@ -123,74 +105,27 @@ library(ggplot2)
 
 ```
 
-```{r index-load-w6s1, include=FALSE, cache=TRUE}
+```{r index-prep-ex-data, include=FALSE, cache=TRUE}
 
-survey1 <- haven::read_dta("~/Library/CloudStorage/GoogleDrive-mcroche@princeton.edu/Shared drives/Arab Barometer/AB6/0. RELEASE FILES/Data Files/ENG Final Data Files FOR RELEASE/Arab_Barometer_Wave_6_Part_1_ENG_RELEASE_NOV_21.dta")
+# Preparing Survey 1 data with no pipes:
+## Adding demographic columns:
+survey1 <- add_demographics(survey1)
+## Creating dummies for examples:
+survey1 <- dummy_all(survey1,
+                     Q2061A)
 
-survey1 <- survey1 %>%
-  
-  age_demographic() %>%
-  gender_demographic() %>%
-  education_demographic() %>%
-  income_demographic() %>%
-  
-  dummy_all(Q2061A) %>%
-  
-  rename(Q118_1 = Q118)
-
-
-```
-
-```{r index-load-w6s2, include=FALSE, cache=TRUE}
-
-survey2 <- haven::read_dta("~/Library/CloudStorage/GoogleDrive-mcroche@princeton.edu/Shared drives/Arab Barometer/AB6/0. RELEASE FILES/Data Files/ENG Final Data Files FOR RELEASE/Arab_Barometer_Wave_6_Part_2_ENG_RELEASE_gov.dta")
-
-survey2 <- survey2 %>%
-  
-  # Adding Demographic Categories:
-  age_demographic() %>%
-  gender_demographic() %>%
-  education_demographic() %>%
-  income_demographic() %>%
-  
-  sjlabelled::add_labels(Q2061A, labels=c(`Economic situation` = 1,
-                                          `Corruption` = 2,
-                                          `Internal instability` = 6,
-                                          `Foreign interference` = 7,
-                                          `Public services` = 12,
-                                          `COVID-19` = 15,
-                                          `Other` = 16,
-                                          `Don't know/refuse` = 98)) %>%
-  
+# Preparing Survey 2 data with R native pipe:
+survey2 <- survey2 |> 
+  add_demographics() |> 
   dummy_all(Q2061A)
   
 
-```
-
-```{r index-load-w6s3, include=FALSE, cache=TRUE}
-
-survey3 <- haven::read_dta("~/Library/CloudStorage/GoogleDrive-mcroche@princeton.edu/Shared drives/Arab Barometer/AB6/0. RELEASE FILES/Data Files/ENG Final Data Files FOR RELEASE/Arab_Barometer_Wave_6_Part_3_ENG_RELEASE_OCT_FIN.dta")
-
+# Preparing Survey 3 data with dplyr pipe:
 survey3 <- survey3 %>%
+  add_demographics() %>%
+  dummy_all(Q2061A)
   
-  # Adding Demographic Categories:
-  age_demographic() %>%
-  gender_demographic() %>%
-  education_demographic() %>%
-  income_demographic() %>%
-  
-  sjlabelled::add_labels(Q2061A, labels=c(`Economic situation` = 1,
-                                          `Corruption` = 2,
-                                          `Internal instability` = 6,
-                                          `Foreign interference` = 7,
-                                          `Public services` = 12,
-                                          `COVID-19` = 15,
-                                          `Other` = 16,
-                                          `Don't know/refuse` = 98)) %>%
-  
-  
-  dummy_all(Q2061A) %>%
-  
-  rename(Q118_1 = Q118)
+
 
 ```
+

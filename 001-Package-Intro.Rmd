@@ -61,6 +61,25 @@ table(survey1$settlement)
 
 ```
 
+## add_demographics()
+
+The function `add_demographics()` preforms all the functions above: `recode_country()`, `gender_demographic()`, `age_demographic()`, `income_demographic()`, `education_demographic()`, and `settlement_demographic()`. You do **not** need to use the above functions if you use `add_demographics()`.
+
+The input for `add_demographics` is an Arab Barometer data frame. The output is an Arab Barometer data frame with the additional columns `Country`, `gender`, `age`, `income`, `education`, and `settlement`.
+
+#### Example:
+
+```{r add-demographics-ex, include=TRUE,eval=FALSE}
+
+survey1 <- add_demographics(survey1)
+table(survey1$Country)
+table(survey1$gender)
+table(survey1$age)
+table(survey1$income)
+table(survey1$education)
+table(survey1$settlement)
+
+```
 
 ## Advanced
 
@@ -127,18 +146,26 @@ c <- c(2,5,1,1,5,NA,2,NA,5)
 df <- data.frame(a,b,c)
 
 # Original data frame:
-df
+names(df)
 
 # Creating dummy columns for one variable:
-dummy_all(df,b)
+df_1 <- dummy_all(df, # Data frame
+                  b   # Variable to dummy
+                  )
+names(df_1)
 
 # Creating dummy columns for multiple variables:
-df %>% 
-  dummy_all(a,b)
+df_2 <- df %>% # Data frame
+  dummy_all(a, # Variable 1 to dummy
+            b  # Variable 2 to dummy
+            )
+names(df_2)
 
 # Creating NA dummy column:
-df %>%
-  dummy_all(c,no_NA = FALSE)
+df_3 <- df %>%            # Data frame
+  dummy_all(c,            # Variable to dummy
+            no_NA = FALSE # Include dummy for NA occurances
+            )
 
 
 ```
@@ -157,17 +184,37 @@ The following example uses the same sample data as before. More details can be f
 
 ### Examples:
 ```{r, echo=T,eval=FALSE}
+# Sample Data:
+a <- c(1,3,2,4,2,3,4,2,2)
+b <- c(1,2,1,1,2,1,2,2,2)
+c <- c(2,5,1,1,5,NA,2,NA,5)
+df <- data.frame(a,b,c)
+
+names(df)
 
 # Adding new column:
-dummy_select(df,b,dummy_lvl = 1)
+df_1 <- dummy_select(df,           # Data frame
+                     b,            # Variable to dummy
+                     dummy_lvl = 1 # Level to dummy
+                     )
+names(df_1)
 
 # Adding multiple new column:
-df %>%
-  dummy_select(b,c,dummy_lvl = 1)
+df_2 <- df %>%               # Data frame
+  dummy_select(b,            # Variable 1 to dummy
+               c,            # Variable 2 to dummy
+               dummy_lvl = 1 # Level to dummy
+               )
+names(df_2)
 
 # Replacing column:
-dummy_select(df,a,dummy_lvl = 4,inplace = TRUE)
-
+df_3 <- dummy_select(df,           # Data frame
+                     a,            # Variable to dummy
+                    dummy_lvl = 4, # Level to dummy
+                    inplace = TRUE # Replace old variable
+                    )
+table(df$a)
+table(df_3$a)
 
 ```
 
@@ -181,13 +228,10 @@ The functions presented so far can be used in combination to recreate the standa
 ```{r,echo=TRUE,message=FALSE,eval=FALSE}
 
 # English:
-survey1 = survey1 %>%
+survey1 = survey1 |> 
   
   # Adding Demographic Categories:
-  age_demographic() %>%
-  gender_demographic() %>%
-  education_demographic() %>%
-  income_demographic() %>%
+  add_demographics() |> 
   
   dummy_all(Q2061A)
 

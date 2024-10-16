@@ -73,7 +73,7 @@ survey1 %>%
 
 ```
 
-The last example uses a pipe, `%>%`, which comes from the package **dplyr**. To learn more about piping and using `%>%` in programming, see [A Note on Piping](https://arab-barometer.github.io/ArabBarometR-Guide/using-the-package.html#a-note-on-piping) in the `ArabBarometR` guide.
+The last example uses a pipe, `%>%`, which comes from the package **dplyr**. To learn more about piping and using `%>%` in programming, see [A Note on Piping](#piping-note) in the Appendix.
 
 The output of any of the above expressions is the same:
 
@@ -216,9 +216,10 @@ names(variables_2_plot) <- c("Q1COVID19",
                              "Q609")
 
      #......................Create the summaries......................
-summaries <- survey1 %>%
-  calculate_smry_individual(variables_2_plot,
-                            "Algeria") 
+summaries <- map(variables_2_plot,
+                 calculate_smry_individual,
+                 .ab = survey1,
+                 .country = "Algeria")
 
      #.......................Plot the summaries.......................
 plots <- map(summaries,
@@ -244,15 +245,15 @@ names(variables_2_plot) <- c("Q1COVID19",
                              "Q609")
 
      #......................Create the summaries......................
-summaries <- survey1 %>%
-  calculate_smry_individual(variables_2_plot,
-                            "Algeria") 
+summaries <- map(variables_2_plot,
+                 calculate_smry_individual,
+                 .ab = survey1,
+                 .country = "Algeria")
 
      #.......................Plot the summaries.......................
 plots <- map(summaries,
              plot_smry_individual,
              .caption = "Arab Barometer Wave VI, Survey I")
-
 ```
 
 
@@ -290,9 +291,9 @@ To create many summaries at once, you need to provide your variables in a named 
 
 ```{r 01.18-list, eval=FALSE}
 
-variables_2_plot <- list("Q1COVID19",
-                         "Q2061A",
-                         "Q609")
+variables_2_plot <- c("Q1COVID19",
+                      "Q2061A",
+                      "Q609")
 
 ```
 
@@ -310,47 +311,36 @@ Now, you have a named list of variables. Time to summarize them.
 
 ### Create Summaries {#chapter-1-2-2}
 
-The same function used to create a single summary is used to create many summaries: **calculate_smry_individual()**. Recall it takes three parameters: (1) the data you are using, (2) the variable(s) you want to plot, and (3) the country you are creating the plot for. Now, instead of one variable, you supply the list of variables.
+When you want to do something many times, the `purrr` package comes in extremely handy. That is why it is one of the two (non-`ArabBarometR`) packages loaded in the [Header Code](#headercode) in the [Introduction](#introduction) of this guide. 
+
+In particular, the `map()` function from the `purrr` package allows the user to feed a vector or list into a function and returns a list of the output. More information can be found in the Appendix section called [Using a `map()`](#using-map).
+
+In the previous section we created a list of variables. Now, with the help of the `map()` function, we feed them to `calculate_smry_individual()`.
+
+Recall it takes three parameters: (1) the data you are using, (2) the variable you want to plot, and (3) the country you are creating the plot for. We need to tell the `map()` function which parameter to iterate over and which parameters to hold constant. In this case, the data we are supplying and the country we are doing the calculations for are constant, while the list of variables is what we will iterate over. The data parameter is called `.ab` and the country parameter is called `.country`.
 
 ```{r 01.20-summaries, eval=FALSE}
 
-calculate_smry_individual(
-  .ab = survey1,               # The data you are using
-  .var = variables_2_plot,       # The variables you want to plot
-  .country = "Algeria"           # The country you want to plot it for
+map(
+  variables_2_plot,          # List (our named list of variables)
+  calculate_smry_individual, # Function (calculate function)
+  .ab = survey1,             # Constant argument 1 (data)
+  .country = "Algeria"       # Constant argument 2 (country)
 )
 
-```
-
-The above is the same as:
-
-```{r 01.21-summaries, eval=FALSE}
-
-calculate_smry_individual(survey1,variables_2_plot,"Algeria")
 
 ```
 
-Which is the same as:
-
-
-```{r 01.22-summaries, eval=FALSE}
-
-
-survey1 %>%
-  calculate_smry_individual(variables_2_plot,
-                            "Algeria")
-
-```
-
-
-All of the above code in this section produces the same result: a named list. Each element in the list is a summary of a variable. The variable is the name of the list. In long form, it looks like the following:
+The code above produces a named list. Each element in the list is a summary of a variable. The variable is the name of the list. In long form, it looks like the following:
 
 ```{r 01.23-summaries, echo=FALSE,cache=TRUE}
 
-
-survey1 %>%
-  calculate_smry_individual(variables_2_plot,
-                            "Algeria")
+map(
+  variables_2_plot,          
+  calculate_smry_individual, 
+  .ab = survey1,             
+  .country = "Algeria"       
+)
 
 ```
 
@@ -360,29 +350,30 @@ Let's save this outcome as an object and move on to plotting.
 ```{r 01.24-summaries, eval=FALSE}
 
 
-summaries <- survey1 %>%
-  calculate_smry_individual(variables_2_plot,
-                            "Algeria")
-
+summaries <- map(
+  variables_2_plot,          
+  calculate_smry_individual, 
+  .ab = survey1,             
+  .country = "Algeria"       
+)
 ```
 
 
 ### Plot the Summaries {#plot-many-graphs-single-country}
 
-Again, the same function to create one plot is used to create many plots: **plot_smry_individual()**. Unlike last time, a helper function is needed to create multiple plots. 
-
-The helper function is called **map**. The map function takes two inputs: (1) a list of things to pass to a function, and (2) a function. Essentially, **map** takes each item in the list, and passes it to the function very efficiently. 
+Again, the same function to create one plot is used to create many plots: **plot_smry_individual()**. Again, we are using the `map()` function.
 
 In this case, you supply the list of summaries you just created, and the **plot_sumry_individual()** function. The code follows:
 
 ```{r 01.25-plots, eval=FALSE}
 
 map(
-  summaries,            # List of summaries
-  plot_smry_individual  # Plotting function
+  summaries,            # List (our summaries)
+  plot_smry_individual  # Function (plotting function)
 )
 
 ```
+
 The code produces the following output:
 
 ```{r 01.26-plots, figures-side, fig.show="hold", out.width="50%",cache=TRUE}
@@ -394,14 +385,14 @@ map(
 ```
 
 
-Notice, yet again, the caption needs to be changed. To change the caption for all the graphs, just add one line to the map function.
+Notice, yet again, the caption needs to be changed. To change the caption for all the graphs, just add one line to the `map()` function, holding it constant just as we did with the data and country when creating the list of summaries.
 
 
 ```{r 01.27-plots, figures-side, fig.show="hold", out.width="50%",cache=TRUE}
 map(
-  summaries,                                     # List of summaries
-  plot_smry_individual,                          # Plotting function
-  .caption = "Arab Barometer Wave VI, Survey I"  # Caption
+  summaries,                                     # List (our summaries)
+  plot_smry_individual,                          # Function (plotting function)
+  .caption = "Arab Barometer Wave VI, Survey I"  # Constant argument (caption)
 )
 
 ```
@@ -411,9 +402,9 @@ Congratulations! You have created three plots at once. You can store them in as 
 
 ```{r 01.28-plots, eval=FALSE}
 plots <- map(
-  summaries,                                     # List of summaries
-  plot_smry_individual,                          # Plotting function
-  .caption = "Arab Barometer Wave VI, Survey I"  # Caption
+  summaries,                                     
+  plot_smry_individual,                          
+  .caption = "Arab Barometer Wave VI, Survey I"  
 )
 
 ```

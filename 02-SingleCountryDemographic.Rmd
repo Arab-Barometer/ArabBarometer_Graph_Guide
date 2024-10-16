@@ -2,6 +2,8 @@
 
 This chapter will cover how to make a frequency graph by a demographic for a single country.
 
+**This code assumes you have already added the demographic variables to your code.** See the section [Header Code](#headercode) in the introduction.
+
 ## Create a Single Graph
 
 This section will go over how to make a one-off frequency graph by a demographic for a single country.
@@ -12,8 +14,8 @@ At the end, your code will look like the following:
 
 survey1 %>%
   calculate_demographic_smry_individual("Q1COVID19",
-                                        .dem = "gender",
-                                        .country = "Algeria") %>%
+                                        "gender",
+                                        "Algeria") %>%
   plot_demographic_smry_individual(.caption = "Arab Barometer Wave VI, Survey I, Algeria")
 
 
@@ -37,14 +39,15 @@ survey1 %>%
 
 The first step in creating a plot is to gather the data you want to display and organize it. You do this with the **calculate_demographic_smry_individual()** function.
 
-Just like **calculate_smry_individual()**, the three main parameters you need to provide to this function are (1) the data you are using, (2) the variable you want to plot, and (3) the country you want to plot it for. To see all the input parameters for the function, type the code `?calculate_demographic_smry_individual` in your R console.
+Just like **calculate_smry_individual()**, the four main parameters you need to provide to this function are (1) the data you are using, (2) the variable you want to plot, (3) the demographic you want to divide the variable by, and (4) the country you want to plot it for. To see all the input parameters for the function, type the code `?calculate_demographic_smry_individual` in your R console.
 
-In this example, the variable we want to plot is **Q1COVID19**, and the country we want to plot it for is **Algeria**^[If the style of this code is confusing, see [Create a Summary in Chapter 1][Single Country Overall Graphs]].
+In this example, the variable we want to plot is **Q1COVID19**, the demographic we want to compare is **gender**, and the country we want to plot it for is **Algeria**^[If the style of this code is confusing, see [Create a Summary in Chapter 1][Single Country Overall Graphs]].
 
 ```{r 02.3-summary, eval=FALSE}
 
 survey1 %>%                                                    # Data
   calculate_demographic_smry_individual("Q1COVID19",           # Variable to summarize  
+                                        .dem = "gender",       # Demographic
                                         .country = "Algeria")  # Country
 
 ```
@@ -54,31 +57,10 @@ The above code will produce the following output:
 
 ```{r 02.4-summary, echo=FALSE}
 
-survey1 %>%
-  calculate_demographic_smry_individual("Q1COVID19",
-                                        .country = "Algeria")
-
-```
-
-Woah, that's a lot of summaries! By default, **calculate_demographic_smry_individual()** creates summaries for **age**, **gender**, **income**, and **education**. To specify exactly which demographic we want to group the data by, we include one more parameter.
-
-```{r 02.5-summary, eval=FALSE}
-
-survey1 %>%                                                      # Data
-  calculate_demographic_smry_individual("Q1COVID19",             # Variable to summarize
-                                        .country = "Algeria",    # Country
-                                        .dem = "gender")         # Demographic to group data by
-
-```
-
-By specifying the parameter **.dem**, the function now knows it should only group the data by the variables **gender**. Now the output is as follows:
-
-```{r 02.6-summary, echo=FALSE}
-
-survey1 %>%
-  calculate_demographic_smry_individual("Q1COVID19",
-                                        .country = "Algeria",
-                                        .dem = "gender")
+survey1 %>%                                                    # Data
+  calculate_demographic_smry_individual("Q1COVID19",           # Variable to summarize  
+                                        .dem = "gender",       # Demographic
+                                        .country = "Algeria")  # Country
 
 ```
 
@@ -90,8 +72,8 @@ Let's save our gender demographic summary and move on to plotting it.
 
 Q1COVID19_gender <- survey1 %>%
   calculate_demographic_smry_individual("Q1COVID19",
-                                        .country = "Algeria",
-                                        .dem = "gender")
+                                        .dem = "gender",
+                                        .country = "Algeria")
 
 ```
 
@@ -162,14 +144,14 @@ Q1COVID19_gender %>%
 ```
 
 
-Since `Q1COVID19_gender` is the same as `survey1 %>% calculate_demographic_smry_individual("Q1COVID19", .country = "Algeria", .dem = "gender")`, we can substitute the former with the latter to get the original code in our example. This will give us the same plot that we just created.
+Since `Q1COVID19_gender` is the same as `survey1 %>% calculate_demographic_smry_individual("Q1COVID19","gender","Algeria")`, we can substitute the former with the latter to get the original code in our example. This will give us the same plot that we just created.
 
 ```{r 02.14-plot, eval=FALSE}
 
 survey1 %>%
   calculate_demographic_smry_individual("Q1COVID19",
-                                        .dem = "gender",
-                                        .country = "Algeria") %>%
+                                        "gender",
+                                        "Algeria") %>%
   plot_demographic_smry_individual(.caption = "Arab Barometer Wave VI, Survey I, Algeria")
 
 
