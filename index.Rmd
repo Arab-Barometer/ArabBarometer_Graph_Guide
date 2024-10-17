@@ -14,17 +14,6 @@ library(dplyr)
 library(purrr)
 library(ggplot2)
 
-x <- c(1,2)
-names(x) <- c("Urban","Rural")
-
-survey1$Q13 <- sample(x,nrow(survey1),replace = T)
-survey2$Q13 <- sample(x,nrow(survey2),replace = T)
-survey3$Q13 <- sample(x,nrow(survey3),replace = T)
-
-survey1$Q13 <- haven::labelled(survey1$Q13,x)
-survey2$Q13 <- haven::labelled(survey2$Q13,x)
-survey3$Q13 <- haven::labelled(survey3$Q13,x)
-
 ```
 
 ## Purpose {.unnumbered}
@@ -45,17 +34,17 @@ As such, this guide assumes a few things:
 Before we begin, there are a few best practices that you are **highly** encouraged to adhere to.
 
 1. Load you data directly from the source.
-  - Rather than downloading AB data from the Drive and saving it in a folder on your computer, then re-downloading it every time it gets updated, just put in the path from where you are to the latest data on the Drive.
-  - This will save you a *significant* amount of space on your machine.
-  - It is also the best way to guarantee that you are:
-    a. Using the latest data.
-    b. Using the original, unedited data each time you start/work on a project.
+    - Rather than downloading AB data from the Drive and saving it in a folder on your computer, then re-downloading it every time it gets updated, just put in the path from where you are to the latest data on the Drive.
+    - This will save you a *significant* amount of space on your machine.
+    - It is also the best way to guarantee that you are:
+      a. Using the latest data.
+      b. Using the original, unedited data each time you start/work on a project.
 2. Save your code in the same place you save your graphs.
-  - Instead of saving your code in one place and your output in another, save everything in the same spot.
-  - This way, when you spot an error in your graphs or want to add more, you know exactly where the code used to create the output is.
+    - Instead of saving your code in one place and your output in another, save everything in the same spot.
+    - This way, when you spot an error in your graphs or want to add more, you know exactly where the code used to create the output is.
 3. Load only the packages you need.
-  - Many packages in R do not necessarily play nicely with each other.
-  - Often, packages will have functions with the same name that do different things. If you call one of those function in your code, R will use the function from the last package you loaded.
+    - Many packages in R do not necessarily play nicely with each other.
+    - Often, packages will have functions with the same name that do different things. If you call one of those function in your code, R will use the function from the last package you loaded.
   
 ## General Guide Process {.unnumbered}
 
@@ -71,6 +60,8 @@ For each type of graph, the guide will first go through how to create one graph,
 The examples in this guide will be created using data from Wave VI. For single survey graphs, it will use data from from Wave VI, Survey I. For trend graphs, it will use data from Wave VI, Survey I, II, and III, where Survey III is the final survey we conducted in Wave VI.
 
 As of version `1.13.10.9001`, the `ArabBarometR` package includes a sample of this data, so you will not have to download any extra data sets to follow along. If you are using an older version of `ArabBarometR` (not recommended), the Wave VI data can be found on [the Arab Barometer website](https://www.arabbarometer.org/survey-data/data-downloads/).
+
+The sample data has an artificial `Q13` column. The variable was not collected during Wave VI since this is usually filled out by an enumerator in the survey area and Wave VI was conducted over the phone. For demonstration purposes, a `Q13` column was randomly generated and added to the data.
 
 ## Header Code {#headercode .unnumbered}
 

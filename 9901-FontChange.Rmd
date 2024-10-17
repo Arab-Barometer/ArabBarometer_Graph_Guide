@@ -2,17 +2,18 @@
 # Change the Font Size {#change-font-size}
 
 
-```{r How.1-Complete-Code-Example, fig.dim=c(13,12)}
+```{r How.Change-Font-Size-Complete-Code-Example, fig.dim=c(13,12)}
 
 survey1 |>
   calculate_smry_individual("Q1COVID19",
                             .country = "Algeria") |>
   plot_smry_individual(.caption = "Arab Barometer Wave VI, Survey I, Algeria",
-                       theme.title_size = 28,      # Changes title size
-                       theme.subtitle_size = 14,   # Changes subtitle size
-                       theme.caption_size = 20,    # Changes caption size
-                       theme.axis_text_size = 26,  # Changes axis text size
-                       theme.legend_text_size = 8) # Changes legend text size
+                       theme.title_size = 28,        # Changes title size
+                       theme.subtitle_size = 14,     # Changes subtitle size
+                       theme.caption_size = 20,      # Changes caption size
+                       theme.axis_x_text_size = 26,  # Changes x-axis text size
+                       theme.axis_y_text_size = 16,  # Changes y-axis text size
+                       theme.legend_text_size = 8)   # Changes legend text size
 
 
 ```
