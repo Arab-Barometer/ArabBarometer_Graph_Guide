@@ -34,17 +34,17 @@ As such, this guide assumes a few things:
 Before we begin, there are a few best practices that you are **highly** encouraged to adhere to.
 
 1. Load you data directly from the source.
-    - Rather than downloading AB data from the Drive and saving it in a folder on your computer, then re-downloading it every time it gets updated, just put in the path from where you are to the latest data on the Drive.
-    - This will save you a *significant* amount of space on your machine.
-    - It is also the best way to guarantee that you are:
+    + Rather than downloading AB data from the Drive and saving it in a folder on your computer, then re-downloading it every time it gets updated, just put in the path from where you are to the latest data on the Drive.
+    + This will save you a *significant* amount of space on your machine.
+    + It is also the best way to guarantee that you are:
       a. Using the latest data.
       b. Using the original, unedited data each time you start/work on a project.
 2. Save your code in the same place you save your graphs.
-    - Instead of saving your code in one place and your output in another, save everything in the same spot.
-    - This way, when you spot an error in your graphs or want to add more, you know exactly where the code used to create the output is.
+    + Instead of saving your code in one place and your output in another, save everything in the same spot.
+    + This way, when you spot an error in your graphs or want to add more, you know exactly where the code used to create the output is.
 3. Load only the packages you need.
-    - Many packages in R do not necessarily play nicely with each other.
-    - Often, packages will have functions with the same name that do different things. If you call one of those function in your code, R will use the function from the last package you loaded.
+    + Many packages in R do not necessarily play nicely with each other.
+    + Often, packages will have functions with the same name that do different things. If you call one of those function in your code, R will use the function from the last package you loaded.
   
 ## General Guide Process {.unnumbered}
 
@@ -104,7 +104,7 @@ When adding demographic variable columns and creating dummy columns from variabl
 To learn more about see the section [A Note on Piping](#piping-note) in the Appendix.
 
 
-[Chapter 2](#chapter-1) introduces the functions used to prepare the data.
+[Chapter 1](#chapter-1) introduces the functions used to prepare the data.
 
 
 ```{r index-prep-ex-data, include=FALSE, cache=TRUE}
