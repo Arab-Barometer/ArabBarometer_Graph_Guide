@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2024-10-16" />
+<meta name="date" content="2024-10-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -412,6 +412,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#updating-via-downloads"><i class="fa fa-check"></i>Updating via downloads</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="22" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html"><i class="fa fa-check"></i><b>22</b> A Note On Piping {-} {piping-note}</a>
+<ul>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#piping-puts-the-object-on-the-left-into-the-function-on-the-right."><i class="fa fa-check"></i>Piping puts the object on the left into the function on the right.</a></li>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#piping-operators-can-chain-code-together."><i class="fa fa-check"></i>Piping operators can chain code together.</a></li>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#the-order-matters."><i class="fa fa-check"></i>The order matters.</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -439,22 +445,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">4.1</span> Create a Single Graph<a href="comparative-overall-graphs.html#create-a-single-graph-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>This section will go over how to make a one-off comparative frequency graph for a multiple countries.</p>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="comparative-overall-graphs.html#cb134-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb134-2"><a href="comparative-overall-graphs.html#cb134-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb134-3"><a href="comparative-overall-graphs.html#cb134-3" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="comparative-overall-graphs.html#cb143-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb143-2"><a href="comparative-overall-graphs.html#cb143-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb143-3"><a href="comparative-overall-graphs.html#cb143-3" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/03.2-Complete-Graph-Example-1.png" width="1248" /></p>
 <div id="create-a-summary" class="section level3 hasAnchor" number="4.1.1">
 <h3><span class="header-section-number">4.1.1</span> Create a Summary<a href="comparative-overall-graphs.html#create-a-summary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The process of creating an overall comparative graph is intentionally similar to creating a overall individual graph. As always, the first step is to organize the data we want to graph. For this we use the function <strong>calculate_smry_comp()</strong>, which is the comparative version of the individual summary function. The function requires only two parameters: (1) the data you are using, and (2) the variable you want to summarize. There are several other optional parameters. To see all the input parameters for the function, type the code <code>?calculate_smry_comp</code> in your R console.</p>
 <p>For the example in this section, we are using the data set <code>survey1</code> and summarizing the variable <code>Q1COVID19</code>.</p>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="comparative-overall-graphs.html#cb135-1" tabindex="-1"></a><span class="fu">calculate_smry_comp</span>(</span>
-<span id="cb135-2"><a href="comparative-overall-graphs.html#cb135-2" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,          <span class="co"># The data you are using</span></span>
-<span id="cb135-3"><a href="comparative-overall-graphs.html#cb135-3" tabindex="-1"></a>  <span class="at">.var =</span> <span class="st">&quot;Q1COVID19&quot;</span>       <span class="co"># The variable you want to plot</span></span>
-<span id="cb135-4"><a href="comparative-overall-graphs.html#cb135-4" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="comparative-overall-graphs.html#cb144-1" tabindex="-1"></a><span class="fu">calculate_smry_comp</span>(</span>
+<span id="cb144-2"><a href="comparative-overall-graphs.html#cb144-2" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,          <span class="co"># The data you are using</span></span>
+<span id="cb144-3"><a href="comparative-overall-graphs.html#cb144-3" tabindex="-1"></a>  <span class="at">.var =</span> <span class="st">&quot;Q1COVID19&quot;</span>       <span class="co"># The variable you want to plot</span></span>
+<span id="cb144-4"><a href="comparative-overall-graphs.html#cb144-4" tabindex="-1"></a>)</span></code></pre></div>
 <p>Recall the above code is the same as typing:</p>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="comparative-overall-graphs.html#cb136-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb136-2"><a href="comparative-overall-graphs.html#cb136-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="comparative-overall-graphs.html#cb145-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb145-2"><a href="comparative-overall-graphs.html#cb145-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>)</span></code></pre></div>
 <p>Let’s take a look at the output:</p>
 <pre><code>## # A tibble: 3 × 2
 ##   Country Q1COVID19
@@ -469,33 +475,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p>If you wish to provide the plot function your own summary, it will have to follow these conventions.</p>
 <p>Now we’ll store the summary as an object <code>comparative_summary</code> and move on to plotting it.</p>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="comparative-overall-graphs.html#cb138-1" tabindex="-1"></a>comparative_summary <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb138-2"><a href="comparative-overall-graphs.html#cb138-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="comparative-overall-graphs.html#cb147-1" tabindex="-1"></a>comparative_summary <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb147-2"><a href="comparative-overall-graphs.html#cb147-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>)</span></code></pre></div>
 </div>
 <div id="plot-the-summary" class="section level3 hasAnchor" number="4.1.2">
 <h3><span class="header-section-number">4.1.2</span> Plot the Summary<a href="comparative-overall-graphs.html#plot-the-summary" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The next step is plot the summary we just created. To do this, we use the function <strong>plot_smry_comp()</strong>.</p>
 <p>There is only <em>one</em> necessary parameter to use <strong>plot_smry_comp()</strong>: the summary data frame. For a complete list of acceptable parameters and documentation, you can run <code>?plot_smry_comp</code> in your R console.</p>
 <p>Now, we can plug our summary into the plot function:</p>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="comparative-overall-graphs.html#cb139-1" tabindex="-1"></a><span class="fu">plot_smry_comp</span>(</span>
-<span id="cb139-2"><a href="comparative-overall-graphs.html#cb139-2" tabindex="-1"></a>  <span class="at">.df =</span> comparative_summary  <span class="co"># The summary data frame</span></span>
-<span id="cb139-3"><a href="comparative-overall-graphs.html#cb139-3" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="comparative-overall-graphs.html#cb148-1" tabindex="-1"></a><span class="fu">plot_smry_comp</span>(</span>
+<span id="cb148-2"><a href="comparative-overall-graphs.html#cb148-2" tabindex="-1"></a>  <span class="at">.df =</span> comparative_summary  <span class="co"># The summary data frame</span></span>
+<span id="cb148-3"><a href="comparative-overall-graphs.html#cb148-3" tabindex="-1"></a>)</span></code></pre></div>
 <p>The above code is the same as:</p>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="comparative-overall-graphs.html#cb140-1" tabindex="-1"></a>comparative_summary <span class="sc">%&gt;%</span></span>
-<span id="cb140-2"><a href="comparative-overall-graphs.html#cb140-2" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="comparative-overall-graphs.html#cb149-1" tabindex="-1"></a>comparative_summary <span class="sc">%&gt;%</span></span>
+<span id="cb149-2"><a href="comparative-overall-graphs.html#cb149-2" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>()</span></code></pre></div>
 <p>Which is the SAME as:</p>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="comparative-overall-graphs.html#cb141-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb141-2"><a href="comparative-overall-graphs.html#cb141-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb141-3"><a href="comparative-overall-graphs.html#cb141-3" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="comparative-overall-graphs.html#cb150-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb150-2"><a href="comparative-overall-graphs.html#cb150-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb150-3"><a href="comparative-overall-graphs.html#cb150-3" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>()</span></code></pre></div>
 <p>We can do this because <code>comparative_summary</code> is equal to <code>survey1 %&gt;% calculate_smry_comp("Q1COVID19")</code>.</p>
 <p>Any of the above code gives the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/03.11-plot-1.png" width="1248" /></p>
 <p>Almost done! Notice how the caption says <strong>Arab Barometer Wave N (DATE)</strong>? Let’s change that.</p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="comparative-overall-graphs.html#cb142-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb142-2"><a href="comparative-overall-graphs.html#cb142-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb142-3"><a href="comparative-overall-graphs.html#cb142-3" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(</span>
-<span id="cb142-4"><a href="comparative-overall-graphs.html#cb142-4" tabindex="-1"></a>    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>  <span class="co"># NEW caption</span></span>
-<span id="cb142-5"><a href="comparative-overall-graphs.html#cb142-5" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="comparative-overall-graphs.html#cb151-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb151-2"><a href="comparative-overall-graphs.html#cb151-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb151-3"><a href="comparative-overall-graphs.html#cb151-3" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(</span>
+<span id="cb151-4"><a href="comparative-overall-graphs.html#cb151-4" tabindex="-1"></a>    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>  <span class="co"># NEW caption</span></span>
+<span id="cb151-5"><a href="comparative-overall-graphs.html#cb151-5" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Now we have the plot we started with! We’re done!</p>
 <p><img src="bookdownproj_files/figure-html/03.13-plot-1.png" width="1248" /></p>
 </div>
@@ -510,32 +516,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Third, plot those summaries.</li>
 </ol>
 <p>At the end of this section, your code will look like the following:</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="comparative-overall-graphs.html#cb143-1" tabindex="-1"></a>     <span class="co">#.....................Identify the variables.....................</span></span>
-<span id="cb143-2"><a href="comparative-overall-graphs.html#cb143-2" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb143-3"><a href="comparative-overall-graphs.html#cb143-3" tabindex="-1"></a>                         <span class="st">&quot;Q2061A_1&quot;</span>,</span>
-<span id="cb143-4"><a href="comparative-overall-graphs.html#cb143-4" tabindex="-1"></a>                         <span class="st">&quot;Q609&quot;</span>)</span>
-<span id="cb143-5"><a href="comparative-overall-graphs.html#cb143-5" tabindex="-1"></a></span>
-<span id="cb143-6"><a href="comparative-overall-graphs.html#cb143-6" tabindex="-1"></a><span class="fu">names</span>(variables_2_plot) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb143-7"><a href="comparative-overall-graphs.html#cb143-7" tabindex="-1"></a>                             <span class="st">&quot;Q2061A_1&quot;</span>,</span>
-<span id="cb143-8"><a href="comparative-overall-graphs.html#cb143-8" tabindex="-1"></a>                             <span class="st">&quot;Q609&quot;</span>)</span>
-<span id="cb143-9"><a href="comparative-overall-graphs.html#cb143-9" tabindex="-1"></a></span>
-<span id="cb143-10"><a href="comparative-overall-graphs.html#cb143-10" tabindex="-1"></a>     <span class="co">#......................Create the summaries......................</span></span>
-<span id="cb143-11"><a href="comparative-overall-graphs.html#cb143-11" tabindex="-1"></a>summaries <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb143-12"><a href="comparative-overall-graphs.html#cb143-12" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(variables_2_plot) </span>
-<span id="cb143-13"><a href="comparative-overall-graphs.html#cb143-13" tabindex="-1"></a></span>
-<span id="cb143-14"><a href="comparative-overall-graphs.html#cb143-14" tabindex="-1"></a>     <span class="co">#.......................Plot the summaries.......................</span></span>
-<span id="cb143-15"><a href="comparative-overall-graphs.html#cb143-15" tabindex="-1"></a>plots <span class="ot">&lt;-</span> <span class="fu">map</span>(summaries,</span>
-<span id="cb143-16"><a href="comparative-overall-graphs.html#cb143-16" tabindex="-1"></a>             plot_smry_comp,</span>
-<span id="cb143-17"><a href="comparative-overall-graphs.html#cb143-17" tabindex="-1"></a>             <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="comparative-overall-graphs.html#cb152-1" tabindex="-1"></a>     <span class="co">#.....................Identify the variables.....................</span></span>
+<span id="cb152-2"><a href="comparative-overall-graphs.html#cb152-2" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb152-3"><a href="comparative-overall-graphs.html#cb152-3" tabindex="-1"></a>                         <span class="st">&quot;Q2061A_1&quot;</span>,</span>
+<span id="cb152-4"><a href="comparative-overall-graphs.html#cb152-4" tabindex="-1"></a>                         <span class="st">&quot;Q609&quot;</span>)</span>
+<span id="cb152-5"><a href="comparative-overall-graphs.html#cb152-5" tabindex="-1"></a></span>
+<span id="cb152-6"><a href="comparative-overall-graphs.html#cb152-6" tabindex="-1"></a><span class="fu">names</span>(variables_2_plot) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb152-7"><a href="comparative-overall-graphs.html#cb152-7" tabindex="-1"></a>                             <span class="st">&quot;Q2061A_1&quot;</span>,</span>
+<span id="cb152-8"><a href="comparative-overall-graphs.html#cb152-8" tabindex="-1"></a>                             <span class="st">&quot;Q609&quot;</span>)</span>
+<span id="cb152-9"><a href="comparative-overall-graphs.html#cb152-9" tabindex="-1"></a></span>
+<span id="cb152-10"><a href="comparative-overall-graphs.html#cb152-10" tabindex="-1"></a>     <span class="co">#......................Create the summaries......................</span></span>
+<span id="cb152-11"><a href="comparative-overall-graphs.html#cb152-11" tabindex="-1"></a>summaries <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb152-12"><a href="comparative-overall-graphs.html#cb152-12" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(variables_2_plot) </span>
+<span id="cb152-13"><a href="comparative-overall-graphs.html#cb152-13" tabindex="-1"></a></span>
+<span id="cb152-14"><a href="comparative-overall-graphs.html#cb152-14" tabindex="-1"></a>     <span class="co">#.......................Plot the summaries.......................</span></span>
+<span id="cb152-15"><a href="comparative-overall-graphs.html#cb152-15" tabindex="-1"></a>plots <span class="ot">&lt;-</span> <span class="fu">map</span>(summaries,</span>
+<span id="cb152-16"><a href="comparative-overall-graphs.html#cb152-16" tabindex="-1"></a>             plot_smry_comp,</span>
+<span id="cb152-17"><a href="comparative-overall-graphs.html#cb152-17" tabindex="-1"></a>             <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>)</span></code></pre></div>
 <p>The result is a named list of plots. Each element in the list is a plot. The element is named for the variable it is a plot of.</p>
 <p>For example, to see the plot for variable <code>Q1COVID19</code>, run the following code:</p>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="comparative-overall-graphs.html#cb144-1" tabindex="-1"></a>comparative_plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="comparative-overall-graphs.html#cb153-1" tabindex="-1"></a>comparative_plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/03.15-Complete-Code-Example-Results1-1.png" width="1248" /></p>
 <p>To see the plot for variable <code>Q2061A</code>, run the following code:</p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="comparative-overall-graphs.html#cb145-1" tabindex="-1"></a>comparative_plots<span class="sc">$</span>Q2061A_1</span></code></pre></div>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="comparative-overall-graphs.html#cb154-1" tabindex="-1"></a>comparative_plots<span class="sc">$</span>Q2061A_1</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/03.16-Complete-Code-Example-Results2-1.png" width="1248" /></p>
 <p>Finally, to see the plot for variable <code>Q609</code>, run the following code:</p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="comparative-overall-graphs.html#cb146-1" tabindex="-1"></a>comparative_plots<span class="sc">$</span>Q609</span></code></pre></div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="comparative-overall-graphs.html#cb155-1" tabindex="-1"></a>comparative_plots<span class="sc">$</span>Q609</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/03.17-Complete-Code-Example-Results3-1.png" width="1248" /></p>
 <p>That’s it! The only limit on the number of graphs you can create at once is the time it will take R to make them. The more graphs you try to create at once, the longer it will take.</p>
 <p>Let’s begin.</p>
@@ -543,27 +549,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">4.2.1</span> Identify the Variables<a href="comparative-overall-graphs.html#identify-the-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When creating many graphs, you need to tell R which variables you want to make plots of. This is true for when you want to create a single graph as well, but it is much more strongly implied. Plus, the variables must be identified in a specific way.</p>
 <p>To create many summaries at once, you need to provide your variables in a named list. To create a named list, first make a list of the variables you want to plot.</p>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="comparative-overall-graphs.html#cb147-1" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb147-2"><a href="comparative-overall-graphs.html#cb147-2" tabindex="-1"></a>                         <span class="st">&quot;Q2061A_1&quot;</span>,</span>
-<span id="cb147-3"><a href="comparative-overall-graphs.html#cb147-3" tabindex="-1"></a>                         <span class="st">&quot;Q609&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="comparative-overall-graphs.html#cb156-1" tabindex="-1"></a>variables_2_plot <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb156-2"><a href="comparative-overall-graphs.html#cb156-2" tabindex="-1"></a>                         <span class="st">&quot;Q2061A_1&quot;</span>,</span>
+<span id="cb156-3"><a href="comparative-overall-graphs.html#cb156-3" tabindex="-1"></a>                         <span class="st">&quot;Q609&quot;</span>)</span></code></pre></div>
 <p>The next step is to name your list.</p>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="comparative-overall-graphs.html#cb148-1" tabindex="-1"></a><span class="fu">names</span>(variables_2_plot) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb148-2"><a href="comparative-overall-graphs.html#cb148-2" tabindex="-1"></a>                             <span class="st">&quot;Q2061A_1&quot;</span>,</span>
-<span id="cb148-3"><a href="comparative-overall-graphs.html#cb148-3" tabindex="-1"></a>                             <span class="st">&quot;Q609&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="comparative-overall-graphs.html#cb157-1" tabindex="-1"></a><span class="fu">names</span>(variables_2_plot) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb157-2"><a href="comparative-overall-graphs.html#cb157-2" tabindex="-1"></a>                             <span class="st">&quot;Q2061A_1&quot;</span>,</span>
+<span id="cb157-3"><a href="comparative-overall-graphs.html#cb157-3" tabindex="-1"></a>                             <span class="st">&quot;Q609&quot;</span>)</span></code></pre></div>
 <p>Now, you have a named list of variables. Time to summarize them.</p>
 </div>
 <div id="create-summaries-1" class="section level3 hasAnchor" number="4.2.2">
 <h3><span class="header-section-number">4.2.2</span> Create Summaries<a href="comparative-overall-graphs.html#create-summaries-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The same function used to create a single summary is used to create many summaries: <strong>calculate_smry_comp()</strong>. Recall it takes three parameters: (1) the data you are using, and (2) the variable(s) you want to plot. Now, instead of one variable, you supply the list of variables.</p>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="comparative-overall-graphs.html#cb149-1" tabindex="-1"></a><span class="fu">calculate_smry_comp</span>(</span>
-<span id="cb149-2"><a href="comparative-overall-graphs.html#cb149-2" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,               <span class="co"># The data you are using</span></span>
-<span id="cb149-3"><a href="comparative-overall-graphs.html#cb149-3" tabindex="-1"></a>  <span class="at">.var =</span> variables_2_plot        <span class="co"># The variables you want to plot</span></span>
-<span id="cb149-4"><a href="comparative-overall-graphs.html#cb149-4" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="comparative-overall-graphs.html#cb158-1" tabindex="-1"></a><span class="fu">calculate_smry_comp</span>(</span>
+<span id="cb158-2"><a href="comparative-overall-graphs.html#cb158-2" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,               <span class="co"># The data you are using</span></span>
+<span id="cb158-3"><a href="comparative-overall-graphs.html#cb158-3" tabindex="-1"></a>  <span class="at">.var =</span> variables_2_plot        <span class="co"># The variables you want to plot</span></span>
+<span id="cb158-4"><a href="comparative-overall-graphs.html#cb158-4" tabindex="-1"></a>)</span></code></pre></div>
 <p>The above is the same as:</p>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="comparative-overall-graphs.html#cb150-1" tabindex="-1"></a><span class="fu">calculate_smry_comp</span>(survey1,variables_2_plot)</span></code></pre></div>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="comparative-overall-graphs.html#cb159-1" tabindex="-1"></a><span class="fu">calculate_smry_comp</span>(survey1,variables_2_plot)</span></code></pre></div>
 <p>Which is the same as:</p>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="comparative-overall-graphs.html#cb151-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb151-2"><a href="comparative-overall-graphs.html#cb151-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(variables_2_plot)</span></code></pre></div>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="comparative-overall-graphs.html#cb160-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb160-2"><a href="comparative-overall-graphs.html#cb160-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(variables_2_plot)</span></code></pre></div>
 <p>All of the above code in this section produces the same result: a named list. Each element in the list is a summary of a variable. The variable is the name of the list. In long form, it looks like the following:</p>
 <pre><code>## $Q1COVID19
 ## # A tibble: 3 × 2
@@ -589,23 +595,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 2 Lebanon    30
 ## 3 Morocco    62</code></pre>
 <p>Let’s save this outcome as an object and move on to plotting. We will save the list of comparative summaries as an object called <code>comparative_summaries</code>.</p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="comparative-overall-graphs.html#cb153-1" tabindex="-1"></a>comparative_summaries <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb153-2"><a href="comparative-overall-graphs.html#cb153-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(variables_2_plot)</span></code></pre></div>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="comparative-overall-graphs.html#cb162-1" tabindex="-1"></a>comparative_summaries <span class="ot">&lt;-</span> survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb162-2"><a href="comparative-overall-graphs.html#cb162-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(variables_2_plot)</span></code></pre></div>
 </div>
 <div id="plot-many-comparative" class="section level3 hasAnchor" number="4.2.3">
 <h3><span class="header-section-number">4.2.3</span> Plot the Summaries<a href="comparative-overall-graphs.html#plot-many-comparative" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Again, the same function to create one plot is used to create many plots: <strong>plot_smry_comp()</strong>. Unlike last time, a helper function is needed to create multiple plots.</p>
 <p>The helper function is called <strong>map</strong>. The map function takes two inputs: (1) a list of things to pass to a function, and (2) a function. Essentially, <strong>map</strong> takes each item in the list, and passes it to the function very efficiently.</p>
 <p>In this case, you supply the list of summaries you just created, and the <strong>plot_sumry_comp()</strong> function. The code follows:</p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="comparative-overall-graphs.html#cb154-1" tabindex="-1"></a><span class="fu">map</span>(</span>
-<span id="cb154-2"><a href="comparative-overall-graphs.html#cb154-2" tabindex="-1"></a>  comparative_summaries, <span class="co"># List of summaries</span></span>
-<span id="cb154-3"><a href="comparative-overall-graphs.html#cb154-3" tabindex="-1"></a>  plot_smry_comp         <span class="co"># Plotting function</span></span>
-<span id="cb154-4"><a href="comparative-overall-graphs.html#cb154-4" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="comparative-overall-graphs.html#cb163-1" tabindex="-1"></a><span class="fu">map</span>(</span>
+<span id="cb163-2"><a href="comparative-overall-graphs.html#cb163-2" tabindex="-1"></a>  comparative_summaries, <span class="co"># List of summaries</span></span>
+<span id="cb163-3"><a href="comparative-overall-graphs.html#cb163-3" tabindex="-1"></a>  plot_smry_comp         <span class="co"># Plotting function</span></span>
+<span id="cb163-4"><a href="comparative-overall-graphs.html#cb163-4" tabindex="-1"></a>)</span></code></pre></div>
 <p>The code produces the following output:</p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="comparative-overall-graphs.html#cb155-1" tabindex="-1"></a><span class="fu">map</span>(</span>
-<span id="cb155-2"><a href="comparative-overall-graphs.html#cb155-2" tabindex="-1"></a>  comparative_summaries, <span class="co"># List of summaries</span></span>
-<span id="cb155-3"><a href="comparative-overall-graphs.html#cb155-3" tabindex="-1"></a>  plot_smry_comp         <span class="co"># Plotting function</span></span>
-<span id="cb155-4"><a href="comparative-overall-graphs.html#cb155-4" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="comparative-overall-graphs.html#cb164-1" tabindex="-1"></a><span class="fu">map</span>(</span>
+<span id="cb164-2"><a href="comparative-overall-graphs.html#cb164-2" tabindex="-1"></a>  comparative_summaries, <span class="co"># List of summaries</span></span>
+<span id="cb164-3"><a href="comparative-overall-graphs.html#cb164-3" tabindex="-1"></a>  plot_smry_comp         <span class="co"># Plotting function</span></span>
+<span id="cb164-4"><a href="comparative-overall-graphs.html#cb164-4" tabindex="-1"></a>)</span></code></pre></div>
 <pre><code>## $Q1COVID19</code></pre>
 <pre><code>## 
 ## $Q2061A_1</code></pre>
@@ -613,11 +619,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $Q609</code></pre>
 <p><img src="bookdownproj_files/figure-html/03.26-plots,%20figures-side-1.png" width="50%" /><img src="bookdownproj_files/figure-html/03.26-plots,%20figures-side-2.png" width="50%" /><img src="bookdownproj_files/figure-html/03.26-plots,%20figures-side-3.png" width="50%" /></p>
 <p>Notice, yet again, the caption needs to be changed. To change the caption for all the graphs, just add one line to the map function.</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="comparative-overall-graphs.html#cb159-1" tabindex="-1"></a><span class="fu">map</span>(</span>
-<span id="cb159-2"><a href="comparative-overall-graphs.html#cb159-2" tabindex="-1"></a>  comparative_summaries,                          <span class="co"># List of summaries</span></span>
-<span id="cb159-3"><a href="comparative-overall-graphs.html#cb159-3" tabindex="-1"></a>  plot_smry_comp,                                 <span class="co"># Plotting function</span></span>
-<span id="cb159-4"><a href="comparative-overall-graphs.html#cb159-4" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>   <span class="co"># Caption</span></span>
-<span id="cb159-5"><a href="comparative-overall-graphs.html#cb159-5" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="comparative-overall-graphs.html#cb168-1" tabindex="-1"></a><span class="fu">map</span>(</span>
+<span id="cb168-2"><a href="comparative-overall-graphs.html#cb168-2" tabindex="-1"></a>  comparative_summaries,                          <span class="co"># List of summaries</span></span>
+<span id="cb168-3"><a href="comparative-overall-graphs.html#cb168-3" tabindex="-1"></a>  plot_smry_comp,                                 <span class="co"># Plotting function</span></span>
+<span id="cb168-4"><a href="comparative-overall-graphs.html#cb168-4" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>   <span class="co"># Caption</span></span>
+<span id="cb168-5"><a href="comparative-overall-graphs.html#cb168-5" tabindex="-1"></a>)</span></code></pre></div>
 <pre><code>## $Q1COVID19</code></pre>
 <pre><code>## 
 ## $Q2061A_1</code></pre>
@@ -625,19 +631,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## $Q609</code></pre>
 <p><img src="bookdownproj_files/figure-html/03.27-plots,%20figures-side-1.png" width="50%" /><img src="bookdownproj_files/figure-html/03.27-plots,%20figures-side-2.png" width="50%" /><img src="bookdownproj_files/figure-html/03.27-plots,%20figures-side-3.png" width="50%" /></p>
 <p>Congratulations! You have created three plots at once. You can store them in as a single list and call them one at a time.</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="comparative-overall-graphs.html#cb163-1" tabindex="-1"></a>comparative_plots <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
-<span id="cb163-2"><a href="comparative-overall-graphs.html#cb163-2" tabindex="-1"></a>  comparative_summaries,                          <span class="co"># List of summaries</span></span>
-<span id="cb163-3"><a href="comparative-overall-graphs.html#cb163-3" tabindex="-1"></a>  plot_smry_comp,                                 <span class="co"># Plotting function</span></span>
-<span id="cb163-4"><a href="comparative-overall-graphs.html#cb163-4" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>   <span class="co"># Caption</span></span>
-<span id="cb163-5"><a href="comparative-overall-graphs.html#cb163-5" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="comparative-overall-graphs.html#cb172-1" tabindex="-1"></a>comparative_plots <span class="ot">&lt;-</span> <span class="fu">map</span>(</span>
+<span id="cb172-2"><a href="comparative-overall-graphs.html#cb172-2" tabindex="-1"></a>  comparative_summaries,                          <span class="co"># List of summaries</span></span>
+<span id="cb172-3"><a href="comparative-overall-graphs.html#cb172-3" tabindex="-1"></a>  plot_smry_comp,                                 <span class="co"># Plotting function</span></span>
+<span id="cb172-4"><a href="comparative-overall-graphs.html#cb172-4" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>   <span class="co"># Caption</span></span>
+<span id="cb172-5"><a href="comparative-overall-graphs.html#cb172-5" tabindex="-1"></a>)</span></code></pre></div>
 <p>Now, all three plots have been stored in a named list named <code>comparative_summaries</code>. To look at the first plot:</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="comparative-overall-graphs.html#cb164-1" tabindex="-1"></a>comparative_plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="comparative-overall-graphs.html#cb173-1" tabindex="-1"></a>comparative_plots<span class="sc">$</span>Q1COVID19</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/03.29-Complete-Code-Example-Results1-1.png" width="1248" /></p>
 <p>To see the plot for variable <code>Q2061A</code>, run the following code:</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="comparative-overall-graphs.html#cb165-1" tabindex="-1"></a>comparative_plots<span class="sc">$</span>Q2061A_1</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="comparative-overall-graphs.html#cb174-1" tabindex="-1"></a>comparative_plots<span class="sc">$</span>Q2061A_1</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/03.30-Complete-Code-Example-Results2-1.png" width="1248" /></p>
 <p>Finally, to see the plot for variable <code>Q609</code>, run the following code:</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="comparative-overall-graphs.html#cb166-1" tabindex="-1"></a>comparative_plots<span class="sc">$</span>Q609</span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="comparative-overall-graphs.html#cb175-1" tabindex="-1"></a>comparative_plots<span class="sc">$</span>Q609</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/03.31-Complete-Code-Example-Results3-1.png" width="1248" /></p>
 <p>You have now completed all steps in the example code. Congrats!</p>
 

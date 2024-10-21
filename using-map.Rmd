@@ -6,4 +6,158 @@ The package `purrr` is full of functions designed to help you do just that.
 
 In particular, the `map()` function is extremely handy. It is used in all examples related to making multiple graphs.
 
-The map function takes two inputs: (1) a list of things to pass to a function, and (2) a function. Essentially, **map** takes each item in the list, and passes it to the function very efficiently. 
+The map function takes two inputs: (1) a list of things to pass to a function, and (2) a function. Essentially, `map()` takes each item in the list, and passes it to the function very efficiently. 
+
+## Functions with One Argument {#map-basics -}
+
+Let's start with the basics.
+
+Say we have a list of letters we want to capitalize, `"a","b","c","d"`. 
+
+The function `toupper()` takes a string and capitalizes each letter in that string. Before learning about mapping, you might pass one string in at a time, like in the following code.
+
+```{r map.1}
+
+toupper("a")
+toupper("b")
+toupper("c")
+toupper("d")
+
+```
+
+This is tedious and inefficient. Instead, with the map function, we can save our letters in a list and pass that list and the `toupper()` function to the `map()` function. Let's call our list of letters `L` and do just that.
+
+```{r map.2}
+
+L <- c("a","b","c","d") # List of letters
+
+map(
+  L,        # List object
+  toupper   # Function
+  )
+
+```
+
+Not only does this take fewer lines of code (which generally makes your code more legible), but at a large scale the `map()` function preforms *much* faster than running each line individually or even using a `for` loop.
+
+## Functions with Multiple Arguments {#advanced-map - }
+
+The basic example gives the basic idea of how `map()` works. In the context of using `map()` in combination with functions from the `ArabBarometR` package, however, you'll rarely have a function that takes only one argument. For example, `calculate_smry_individual()` *requires* at least two arguments: the data frame and the variable to calculate a summary for. If you are using the comparative data, you'll want to specify the country you're interested in as well.
+
+Let's say we want to calculate summaries for every ordinal question in our data set for Algeria.
+
+So how does `map()` know you want to feed `calculate_smry_individual()` a long list of questions while using the same data and country?
+
+**It doesn't.**
+
+**The user must tell `map()` which arguments to hold constant.**
+
+If you look at the help page for `calculate_smry_individual()`^[Type `?ArabBarometR::calculate_smry_individual()` into your R console then hit enter.], under the section **Usage** you will see the following:
+
+```{r map.3, eval=FALSE}
+
+calculate_smry_individual(
+  .ab,
+  .var,
+  .country = T,
+  .weights = "WT",
+  .language = "auto",
+  .dkr = c(98, 99)
+)
+
+```
+
+This is a list of all the arguments `calculate_smry_individual()` takes: `.ab`, `.var`, `.country`, `.weights`, `.language`, and `.dkr`. 
+
+The `map()` function will try pass the items from the list as the first argument in the supplied function unless you tell it otherwise. In this case, the first argument is `.ab`, which should be the data frame. The following code will give you an error.
+
+```{r map.4,error=TRUE}
+
+# Pre-work to get ordinal questions:
+ordinal_questions <- individual_titles$qname[individual_titles$qname %in% names(survey1) & individual_titles$type == "ordinal"]
+
+# Using the mapping function:
+map(
+  ordinal_questions,         # List object
+  calculate_smry_individual  # Function
+)
+
+```
+
+The error says it occurs at `index 1`, the error was caused by `.f()`, and that "`argument ".var" is missing, with no default`." 
+
+...What?
+
+The first three lines of this error tell you **when**, **where**, and **why** the error occurred.
+
+Index 1 tells us that that the very first item in `ordinal_questions` caused the error. You can see which variable that is with simple indexing as follows.
+
+```{r map.5}
+
+ordinal_questions[1]
+
+```
+
+Index 1 is telling us that the very first time a variable was passed to `calculate_smry_individual()`, an error occurred. 
+
+Next, we know the error was caused by `.f()`. What's `.f()`? That is the second argument `map()` takes: the function. You can verify this by looking at the help page of `map()`. In our case, `.f()` is `calculate_smry_individual()`.
+
+Now we know that the first time a variable was passed to `calculate_smry_individual()`, the function `calculate_smry_individual()` has an error.
+
+Why? The error says `calculate_smry_individual()` needs a value for the argument `.var`, but none was provided.
+
+Huh? We just passed a whole bunch of variables to `calculate_smry_individual()`, right?
+
+**Wrong.**
+
+Well. Kind of wrong.
+
+We did pass a whole bunch of variables to `calculate_smry_individual()`, but the `map()` function thought we were passing a whole bunch of data frames. Since `.ab` is the first variable, `map()` tried to pass each item in `ordinal_questions` to `calculate_smry_individual()` as `.ab` while holding every other argument in `calculate_smry_individual()` constant. To `map()`, the function looks like `calculate_smry_individual(oridinal_questions, .var, T, "WT", "auto", c(98,99))`.
+
+There are two problems with this.
+
+1. Each item in `ordinal_questions` is not a data frame.
+2. There is no default for `.var`, so there is nothing to hold constant.
+
+Since `.var` has no default, R could not even attempt `calculate_smry_individual()`. That is why it is yelling at us saying there are no variables.
+
+So how do we tell `map()` that `ordinal_questions` is a list of variables and that it needs to use `survey1` to give us summaries for Algeria? We need to tell `map()` that the argument `.ab` should always be `survey1` and the argument `.country` should always be `"Algeria"`.
+
+```{r map.6, eval=FALSE}
+
+map(
+  ordinal_questions,         # List object
+  calculate_smry_individual, # Function
+  .ab = survey1,             # Constant argument 1
+  .country = "Algeria"       # Constant argument 2
+)
+
+```
+
+To `map()`, the function `calculate_smry_individual()` looks like `calculate_smry_individual(survey1, ordinal_questions, "Algeria", "WT", "auto", c(98,99))`. Much better.
+
+As an exercise to the reader, how would we calculate these summaries if we wanted to include the value `100` in our "don't know/refuse" category?
+
+The output of `map()` is list. Lists can be cumbersome. It is best to save this list as an object. You do that using the `<-` or `=`.
+
+```{r map.7}
+
+ordinal_summaries_list <- map(
+  ordinal_questions,         
+  calculate_smry_individual, 
+  .ab = survey1,             
+  .country = "Algeria"       
+)
+
+```
+
+Now, you could reference an entry of `ordinal_summaries_list` one at a time, or feed it into another `map()`. For example, maybe you wanted to make a graph for each of these summaries.
+
+## Conclusion
+
+This concludes the brief "how-to" on `map()` from the `purrr` package. The `purrr` package contains many powerful variations on `map()`. To learn more about those variations, here are some more in-depth resources.
+
+  - [A video by Hadley Wickham introducing `purrr`](https://www.youtube.com/watch?v=EGAs7zuRutY)
+  - [Rebecca Barter's tutorial `purrr`](https://rebeccabarter.com/blog/2019-08-19_purrr) (this is very good and accessible)
+  - [The main webpage for the `purrr` package](https://purrr.tidyverse.org/) (a bit technical)
+  - [The `purrr` package cheat sheet](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_purrr.pdf) (helpful once you know what you're doing)

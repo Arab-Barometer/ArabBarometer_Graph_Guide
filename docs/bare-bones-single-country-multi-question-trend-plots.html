@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2024-10-16" />
+<meta name="date" content="2024-10-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -412,6 +412,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#updating-via-downloads"><i class="fa fa-check"></i>Updating via downloads</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="22" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html"><i class="fa fa-check"></i><b>22</b> A Note On Piping {-} {piping-note}</a>
+<ul>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#piping-puts-the-object-on-the-left-into-the-function-on-the-right."><i class="fa fa-check"></i>Piping puts the object on the left into the function on the right.</a></li>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#piping-operators-can-chain-code-together."><i class="fa fa-check"></i>Piping operators can chain code together.</a></li>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#the-order-matters."><i class="fa fa-check"></i>The order matters.</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -435,25 +441,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="bare-bones-single-country-multi-question-trend-plots" class="section level1 hasAnchor" number="14">
 <h1><span class="header-section-number">Chapter 14</span> BARE BONES: Single Country Multi-Question Trend Plots<a href="bare-bones-single-country-multi-question-trend-plots.html#bare-bones-single-country-multi-question-trend-plots" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb343"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb343-1"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-1" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q2061A_1&quot;</span>,</span>
-<span id="cb343-2"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-2" tabindex="-1"></a>                            <span class="st">&quot;Q2061A_15&quot;</span>)</span>
-<span id="cb343-3"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-3" tabindex="-1"></a></span>
-<span id="cb343-4"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-4" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(survey1,</span>
-<span id="cb343-5"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-5" tabindex="-1"></a>                survey2,</span>
-<span id="cb343-6"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-6" tabindex="-1"></a>                survey3)</span>
-<span id="cb343-7"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-7" tabindex="-1"></a></span>
-<span id="cb343-8"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-8" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
-<span id="cb343-9"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-9" tabindex="-1"></a>                  <span class="st">&quot;Survey 2&quot;</span>,</span>
-<span id="cb343-10"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-10" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
-<span id="cb343-11"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-11" tabindex="-1"></a></span>
-<span id="cb343-12"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-12" tabindex="-1"></a><span class="fu">plot_trend_multiquestion_individual</span>(questions_2_compare,</span>
-<span id="cb343-13"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-13" tabindex="-1"></a>                                    df_list,</span>
-<span id="cb343-14"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-14" tabindex="-1"></a>                                    survey_dates,</span>
-<span id="cb343-15"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-15" tabindex="-1"></a>                                    <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb343-16"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-16" tabindex="-1"></a>                                    <span class="at">legend.names =</span> <span class="fu">c</span>(<span class="st">&quot;Economic situtation&quot;</span>,<span class="st">&quot;COVID-19&quot;</span>),</span>
-<span id="cb343-17"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-17" tabindex="-1"></a>                                    <span class="at">.title =</span> <span class="st">&quot;What is the most important challenge facing Algeria today?&quot;</span>,</span>
-<span id="cb343-18"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-18" tabindex="-1"></a>                                    <span class="at">.subtitle =</span> <span class="st">&quot;% saying&quot;</span>,</span>
-<span id="cb343-19"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb343-19" tabindex="-1"></a>                                    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-1" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q2061A_1&quot;</span>,</span>
+<span id="cb353-2"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-2" tabindex="-1"></a>                            <span class="st">&quot;Q2061A_15&quot;</span>)</span>
+<span id="cb353-3"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-3" tabindex="-1"></a></span>
+<span id="cb353-4"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-4" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(survey1,</span>
+<span id="cb353-5"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-5" tabindex="-1"></a>                survey2,</span>
+<span id="cb353-6"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-6" tabindex="-1"></a>                survey3)</span>
+<span id="cb353-7"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-7" tabindex="-1"></a></span>
+<span id="cb353-8"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-8" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
+<span id="cb353-9"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-9" tabindex="-1"></a>                  <span class="st">&quot;Survey 2&quot;</span>,</span>
+<span id="cb353-10"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-10" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
+<span id="cb353-11"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-11" tabindex="-1"></a></span>
+<span id="cb353-12"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-12" tabindex="-1"></a><span class="fu">plot_trend_multiquestion_individual</span>(questions_2_compare,</span>
+<span id="cb353-13"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-13" tabindex="-1"></a>                                    df_list,</span>
+<span id="cb353-14"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-14" tabindex="-1"></a>                                    survey_dates,</span>
+<span id="cb353-15"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-15" tabindex="-1"></a>                                    <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb353-16"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-16" tabindex="-1"></a>                                    <span class="at">legend.names =</span> <span class="fu">c</span>(<span class="st">&quot;Economic situtation&quot;</span>,<span class="st">&quot;COVID-19&quot;</span>),</span>
+<span id="cb353-17"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-17" tabindex="-1"></a>                                    <span class="at">.title =</span> <span class="st">&quot;What is the most important challenge facing Algeria today?&quot;</span>,</span>
+<span id="cb353-18"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-18" tabindex="-1"></a>                                    <span class="at">.subtitle =</span> <span class="st">&quot;% saying&quot;</span>,</span>
+<span id="cb353-19"><a href="bare-bones-single-country-multi-question-trend-plots.html#cb353-19" tabindex="-1"></a>                                    <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/12.2-Complete-Graph-Example-1.png" width="1248" /></p>
 <p>Let’s go!</p>

@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2024-10-16" />
+<meta name="date" content="2024-10-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -412,6 +412,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#updating-via-downloads"><i class="fa fa-check"></i>Updating via downloads</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="22" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html"><i class="fa fa-check"></i><b>22</b> A Note On Piping {-} {piping-note}</a>
+<ul>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#piping-puts-the-object-on-the-left-into-the-function-on-the-right."><i class="fa fa-check"></i>Piping puts the object on the left into the function on the right.</a></li>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#piping-operators-can-chain-code-together."><i class="fa fa-check"></i>Piping operators can chain code together.</a></li>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#the-order-matters."><i class="fa fa-check"></i>The order matters.</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -437,14 +443,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="change-colors-basic" class="section level2 hasAnchor" number="16.1">
 <h2><span class="header-section-number">16.1</span> Basic Cross Tabs<a href="change-colors.html#change-colors-basic" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The parameter is called <strong><code>.clr</code></strong>. This parameter accepts either a color name from <code>ArabBarometR</code> or a hex code.</p>
-<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="change-colors.html#cb348-1" tabindex="-1"></a>survey1  <span class="sc">|&gt;</span> </span>
-<span id="cb348-2"><a href="change-colors.html#cb348-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb348-3"><a href="change-colors.html#cb348-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb348-4"><a href="change-colors.html#cb348-4" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.clr =</span> <span class="st">&quot;zeke&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb358"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb358-1"><a href="change-colors.html#cb358-1" tabindex="-1"></a>survey1  <span class="sc">|&gt;</span> </span>
+<span id="cb358-2"><a href="change-colors.html#cb358-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb358-3"><a href="change-colors.html#cb358-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb358-4"><a href="change-colors.html#cb358-4" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.clr =</span> <span class="st">&quot;zeke&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.3.1-Complete-Code-Example-1.png" width="1248" /></p>
-<div class="sourceCode" id="cb349"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb349-1"><a href="change-colors.html#cb349-1" tabindex="-1"></a>survey1 <span class="sc">|&gt;</span></span>
-<span id="cb349-2"><a href="change-colors.html#cb349-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb349-3"><a href="change-colors.html#cb349-3" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.clr =</span> <span class="st">&quot;#FF5E64&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="change-colors.html#cb359-1" tabindex="-1"></a>survey1 <span class="sc">|&gt;</span></span>
+<span id="cb359-2"><a href="change-colors.html#cb359-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb359-3"><a href="change-colors.html#cb359-3" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.clr =</span> <span class="st">&quot;#FF5E64&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.3.1-Complete-Code-Example-2.png" width="1248" /></p>
 </div>
 <div id="change-colors-demographic" class="section level2 hasAnchor" number="16.2">
@@ -457,26 +463,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>a vector of hex codes.</li>
 </ul>
 <p>If you choose to use a vector of either color names or hex codes, it <strong>must</strong> be the same length as the number of demographic categories. For example, the <code>gender</code> demographic has two categories, so a vector of custom colors needs to be length two. You can check the number of categories by looking at the data frame you are plotting.</p>
-<div class="sourceCode" id="cb350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb350-1"><a href="change-colors.html#cb350-1" tabindex="-1"></a>survey1 <span class="sc">|&gt;</span></span>
-<span id="cb350-2"><a href="change-colors.html#cb350-2" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb350-3"><a href="change-colors.html#cb350-3" tabindex="-1"></a>                                        <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb350-4"><a href="change-colors.html#cb350-4" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb350-5"><a href="change-colors.html#cb350-5" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_individual</span>(<span class="at">.color_palette =</span> <span class="st">&quot;blue pair&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="change-colors.html#cb360-1" tabindex="-1"></a>survey1 <span class="sc">|&gt;</span></span>
+<span id="cb360-2"><a href="change-colors.html#cb360-2" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb360-3"><a href="change-colors.html#cb360-3" tabindex="-1"></a>                                        <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb360-4"><a href="change-colors.html#cb360-4" tabindex="-1"></a>                                        <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb360-5"><a href="change-colors.html#cb360-5" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_individual</span>(<span class="at">.color_palette =</span> <span class="st">&quot;blue pair&quot;</span>)</span></code></pre></div>
 <pre><code>## Joining with `by = join_by(Q1COVID19)`
 ## Joining with `by = join_by(Q1COVID19)`</code></pre>
 <pre><code>## Warning: `position_dodge()` requires non-overlapping x intervals.</code></pre>
 <p><img src="bookdownproj_files/figure-html/How.3.2-Complete-Code-Example-1.png" width="1248" /></p>
-<div class="sourceCode" id="cb353"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb353-1"><a href="change-colors.html#cb353-1" tabindex="-1"></a>survey1 <span class="sc">|&gt;</span></span>
-<span id="cb353-2"><a href="change-colors.html#cb353-2" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb353-3"><a href="change-colors.html#cb353-3" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb353-4"><a href="change-colors.html#cb353-4" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_comp</span>(<span class="at">.color_palette =</span> <span class="fu">c</span>(<span class="st">&quot;salma&quot;</span>,<span class="st">&quot;mary clare&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="change-colors.html#cb363-1" tabindex="-1"></a>survey1 <span class="sc">|&gt;</span></span>
+<span id="cb363-2"><a href="change-colors.html#cb363-2" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb363-3"><a href="change-colors.html#cb363-3" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;gender&quot;</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb363-4"><a href="change-colors.html#cb363-4" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_comp</span>(<span class="at">.color_palette =</span> <span class="fu">c</span>(<span class="st">&quot;salma&quot;</span>,<span class="st">&quot;mary clare&quot;</span>))</span></code></pre></div>
 <pre><code>## Warning: `position_dodge()` requires non-overlapping x intervals.</code></pre>
 <p><img src="bookdownproj_files/figure-html/How.3.2-Complete-Code-Example-2.png" width="1248" /></p>
-<div class="sourceCode" id="cb355"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb355-1"><a href="change-colors.html#cb355-1" tabindex="-1"></a>data_frame_2_plot <span class="ot">&lt;-</span> survey1 <span class="sc">|&gt;</span></span>
-<span id="cb355-2"><a href="change-colors.html#cb355-2" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb355-3"><a href="change-colors.html#cb355-3" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;Q101&quot;</span>) </span>
-<span id="cb355-4"><a href="change-colors.html#cb355-4" tabindex="-1"></a></span>
-<span id="cb355-5"><a href="change-colors.html#cb355-5" tabindex="-1"></a>data_frame_2_plot</span></code></pre></div>
+<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="change-colors.html#cb365-1" tabindex="-1"></a>data_frame_2_plot <span class="ot">&lt;-</span> survey1 <span class="sc">|&gt;</span></span>
+<span id="cb365-2"><a href="change-colors.html#cb365-2" tabindex="-1"></a>  <span class="fu">calculate_demographic_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb365-3"><a href="change-colors.html#cb365-3" tabindex="-1"></a>                                  <span class="at">.dem =</span> <span class="st">&quot;Q101&quot;</span>) </span>
+<span id="cb365-4"><a href="change-colors.html#cb365-4" tabindex="-1"></a></span>
+<span id="cb365-5"><a href="change-colors.html#cb365-5" tabindex="-1"></a>data_frame_2_plot</span></code></pre></div>
 <pre><code>## # A tibble: 17 × 3
 ## # Groups:   Country [3]
 ##    Country Q101              Q1COVID19
@@ -498,14 +504,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 15 Morocco Very bad                 51
 ## 16 Morocco Don’t know               54
 ## 17 Morocco Refused to answer        84</code></pre>
-<div class="sourceCode" id="cb357"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb357-1"><a href="change-colors.html#cb357-1" tabindex="-1"></a><span class="co"># 6 categories means 6 colors needed</span></span>
-<span id="cb357-2"><a href="change-colors.html#cb357-2" tabindex="-1"></a>data_frame_2_plot <span class="sc">|&gt;</span> </span>
-<span id="cb357-3"><a href="change-colors.html#cb357-3" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_comp</span>(<span class="at">.color_palette =</span> <span class="fu">c</span>(<span class="st">&quot;#0098BE&quot;</span>,</span>
-<span id="cb357-4"><a href="change-colors.html#cb357-4" tabindex="-1"></a>                                                         <span class="st">&quot;#DF6E21&quot;</span>,</span>
-<span id="cb357-5"><a href="change-colors.html#cb357-5" tabindex="-1"></a>                                                         <span class="st">&quot;#AC517F&quot;</span>,</span>
-<span id="cb357-6"><a href="change-colors.html#cb357-6" tabindex="-1"></a>                                                         <span class="st">&quot;#7CBBC7&quot;</span>,</span>
-<span id="cb357-7"><a href="change-colors.html#cb357-7" tabindex="-1"></a>                                                         <span class="st">&quot;#796391&quot;</span>,</span>
-<span id="cb357-8"><a href="change-colors.html#cb357-8" tabindex="-1"></a>                                                         <span class="st">&quot;#CF83A3&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb367"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb367-1"><a href="change-colors.html#cb367-1" tabindex="-1"></a><span class="co"># 6 categories means 6 colors needed</span></span>
+<span id="cb367-2"><a href="change-colors.html#cb367-2" tabindex="-1"></a>data_frame_2_plot <span class="sc">|&gt;</span> </span>
+<span id="cb367-3"><a href="change-colors.html#cb367-3" tabindex="-1"></a>  <span class="fu">plot_demographic_smry_comp</span>(<span class="at">.color_palette =</span> <span class="fu">c</span>(<span class="st">&quot;#0098BE&quot;</span>,</span>
+<span id="cb367-4"><a href="change-colors.html#cb367-4" tabindex="-1"></a>                                                         <span class="st">&quot;#DF6E21&quot;</span>,</span>
+<span id="cb367-5"><a href="change-colors.html#cb367-5" tabindex="-1"></a>                                                         <span class="st">&quot;#AC517F&quot;</span>,</span>
+<span id="cb367-6"><a href="change-colors.html#cb367-6" tabindex="-1"></a>                                                         <span class="st">&quot;#7CBBC7&quot;</span>,</span>
+<span id="cb367-7"><a href="change-colors.html#cb367-7" tabindex="-1"></a>                                                         <span class="st">&quot;#796391&quot;</span>,</span>
+<span id="cb367-8"><a href="change-colors.html#cb367-8" tabindex="-1"></a>                                                         <span class="st">&quot;#CF83A3&quot;</span>))</span></code></pre></div>
 <pre><code>## Warning: `position_dodge()` requires non-overlapping x intervals.</code></pre>
 <p><img src="bookdownproj_files/figure-html/How.3.2-Complete-Code-Example-3.png" width="1248" /></p>
 </div>
@@ -519,23 +525,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>If you choose to use a vector of either color names or hex codes, it <strong>must</strong> be the same length as the number of categories. Recall that the categories “don’t know” and “refuse” are combined into a single category unless otherwise specified. When determining the number of colors you need for your vector, only count the “don’t know” and “refuse” categories as one category.</p>
 <p>Take <code>Q2061A</code> as an example. In the first survey of wave six, question <code>Q2061A</code> had ten response options including “don’t know” and “refuse”. The <code>calculate_stacked_df()</code> function combines “don’t konw” and “refuse” into one category, so the color palette vector only needs to be length nine.</p>
-<div class="sourceCode" id="cb359"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb359-1"><a href="change-colors.html#cb359-1" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
-<span id="cb359-2"><a href="change-colors.html#cb359-2" tabindex="-1"></a>                     <span class="st">&quot;Q2061A&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb359-3"><a href="change-colors.html#cb359-3" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>,</span>
-<span id="cb359-4"><a href="change-colors.html#cb359-4" tabindex="-1"></a>                    <span class="at">.color_palette =</span> <span class="st">&quot;soft rainbow&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb369"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb369-1"><a href="change-colors.html#cb369-1" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
+<span id="cb369-2"><a href="change-colors.html#cb369-2" tabindex="-1"></a>                     <span class="st">&quot;Q2061A&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb369-3"><a href="change-colors.html#cb369-3" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>,</span>
+<span id="cb369-4"><a href="change-colors.html#cb369-4" tabindex="-1"></a>                    <span class="at">.color_palette =</span> <span class="st">&quot;soft rainbow&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.3.3-Complete-Code-Example-1.png" width="1248" /></p>
-<div class="sourceCode" id="cb360"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb360-1"><a href="change-colors.html#cb360-1" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
-<span id="cb360-2"><a href="change-colors.html#cb360-2" tabindex="-1"></a>                     <span class="st">&quot;Q2061A&quot;</span>) <span class="sc">|&gt;</span></span>
-<span id="cb360-3"><a href="change-colors.html#cb360-3" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>,</span>
-<span id="cb360-4"><a href="change-colors.html#cb360-4" tabindex="-1"></a>                    <span class="at">.color_palette =</span> <span class="fu">c</span>(<span class="st">&quot;AB blue&quot;</span>,</span>
-<span id="cb360-5"><a href="change-colors.html#cb360-5" tabindex="-1"></a>                                       <span class="st">&quot;AB orange&quot;</span>,</span>
-<span id="cb360-6"><a href="change-colors.html#cb360-6" tabindex="-1"></a>                                       <span class="st">&quot;AB magenta&quot;</span>,</span>
-<span id="cb360-7"><a href="change-colors.html#cb360-7" tabindex="-1"></a>                                       <span class="st">&quot;AB light blue&quot;</span>,</span>
-<span id="cb360-8"><a href="change-colors.html#cb360-8" tabindex="-1"></a>                                       <span class="st">&quot;AB purple&quot;</span>,</span>
-<span id="cb360-9"><a href="change-colors.html#cb360-9" tabindex="-1"></a>                                       <span class="st">&quot;AB pink&quot;</span>,</span>
-<span id="cb360-10"><a href="change-colors.html#cb360-10" tabindex="-1"></a>                                       <span class="st">&quot;AB yellow&quot;</span>,</span>
-<span id="cb360-11"><a href="change-colors.html#cb360-11" tabindex="-1"></a>                                       <span class="st">&quot;zeke&quot;</span>,</span>
-<span id="cb360-12"><a href="change-colors.html#cb360-12" tabindex="-1"></a>                                       <span class="st">&quot;pale green&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="change-colors.html#cb370-1" tabindex="-1"></a><span class="fu">calculate_stacked_df</span>(survey1,</span>
+<span id="cb370-2"><a href="change-colors.html#cb370-2" tabindex="-1"></a>                     <span class="st">&quot;Q2061A&quot;</span>) <span class="sc">|&gt;</span></span>
+<span id="cb370-3"><a href="change-colors.html#cb370-3" tabindex="-1"></a>  <span class="fu">plot_stacked_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>,</span>
+<span id="cb370-4"><a href="change-colors.html#cb370-4" tabindex="-1"></a>                    <span class="at">.color_palette =</span> <span class="fu">c</span>(<span class="st">&quot;AB blue&quot;</span>,</span>
+<span id="cb370-5"><a href="change-colors.html#cb370-5" tabindex="-1"></a>                                       <span class="st">&quot;AB orange&quot;</span>,</span>
+<span id="cb370-6"><a href="change-colors.html#cb370-6" tabindex="-1"></a>                                       <span class="st">&quot;AB magenta&quot;</span>,</span>
+<span id="cb370-7"><a href="change-colors.html#cb370-7" tabindex="-1"></a>                                       <span class="st">&quot;AB light blue&quot;</span>,</span>
+<span id="cb370-8"><a href="change-colors.html#cb370-8" tabindex="-1"></a>                                       <span class="st">&quot;AB purple&quot;</span>,</span>
+<span id="cb370-9"><a href="change-colors.html#cb370-9" tabindex="-1"></a>                                       <span class="st">&quot;AB pink&quot;</span>,</span>
+<span id="cb370-10"><a href="change-colors.html#cb370-10" tabindex="-1"></a>                                       <span class="st">&quot;AB yellow&quot;</span>,</span>
+<span id="cb370-11"><a href="change-colors.html#cb370-11" tabindex="-1"></a>                                       <span class="st">&quot;zeke&quot;</span>,</span>
+<span id="cb370-12"><a href="change-colors.html#cb370-12" tabindex="-1"></a>                                       <span class="st">&quot;pale green&quot;</span>))</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.3.3-Complete-Code-Example-2.png" width="1248" /></p>
 </div>
 <div id="change-colors-trend" class="section level2 hasAnchor" number="16.4">
@@ -544,65 +550,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="change-colors-trend-single" class="section level3 unnumbered hasAnchor">
 <h3>Single Country Trend Graphs<a href="change-colors.html#change-colors-trend-single" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Changing the color for single country trend graphs is exactly the same as for <a href="change-colors.html#change-colors-basic">basic cross tabs</a>, only using a different parameter name.</p>
-<div class="sourceCode" id="cb361"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb361-1"><a href="change-colors.html#cb361-1" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb361-2"><a href="change-colors.html#cb361-2" tabindex="-1"></a>                      df_list,</span>
-<span id="cb361-3"><a href="change-colors.html#cb361-3" tabindex="-1"></a>                      survey_dates,</span>
-<span id="cb361-4"><a href="change-colors.html#cb361-4" tabindex="-1"></a>                      <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb361-5"><a href="change-colors.html#cb361-5" tabindex="-1"></a>                      <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>,</span>
-<span id="cb361-6"><a href="change-colors.html#cb361-6" tabindex="-1"></a>                      <span class="at">.trend_colors =</span> <span class="st">&quot;bright apple&quot;</span>)  <span class="co"># Arab Barometer color name</span></span></code></pre></div>
+<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="change-colors.html#cb371-1" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb371-2"><a href="change-colors.html#cb371-2" tabindex="-1"></a>                      df_list,</span>
+<span id="cb371-3"><a href="change-colors.html#cb371-3" tabindex="-1"></a>                      survey_dates,</span>
+<span id="cb371-4"><a href="change-colors.html#cb371-4" tabindex="-1"></a>                      <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb371-5"><a href="change-colors.html#cb371-5" tabindex="-1"></a>                      <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>,</span>
+<span id="cb371-6"><a href="change-colors.html#cb371-6" tabindex="-1"></a>                      <span class="at">.trend_colors =</span> <span class="st">&quot;bright apple&quot;</span>)  <span class="co"># Arab Barometer color name</span></span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.3.4-Complete-Code-Example-1.png" width="1248" /></p>
-<div class="sourceCode" id="cb362"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb362-1"><a href="change-colors.html#cb362-1" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb362-2"><a href="change-colors.html#cb362-2" tabindex="-1"></a>                      df_list,</span>
-<span id="cb362-3"><a href="change-colors.html#cb362-3" tabindex="-1"></a>                      survey_dates,</span>
-<span id="cb362-4"><a href="change-colors.html#cb362-4" tabindex="-1"></a>                      <span class="st">&quot;Algeria&quot;</span>,</span>
-<span id="cb362-5"><a href="change-colors.html#cb362-5" tabindex="-1"></a>                      <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>,</span>
-<span id="cb362-6"><a href="change-colors.html#cb362-6" tabindex="-1"></a>                      <span class="at">.trend_colors =</span> <span class="st">&quot;#C8C6A2&quot;</span>) <span class="co"># hex code</span></span></code></pre></div>
+<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="change-colors.html#cb372-1" tabindex="-1"></a><span class="fu">plot_trend_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb372-2"><a href="change-colors.html#cb372-2" tabindex="-1"></a>                      df_list,</span>
+<span id="cb372-3"><a href="change-colors.html#cb372-3" tabindex="-1"></a>                      survey_dates,</span>
+<span id="cb372-4"><a href="change-colors.html#cb372-4" tabindex="-1"></a>                      <span class="st">&quot;Algeria&quot;</span>,</span>
+<span id="cb372-5"><a href="change-colors.html#cb372-5" tabindex="-1"></a>                      <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Algeria&quot;</span>,</span>
+<span id="cb372-6"><a href="change-colors.html#cb372-6" tabindex="-1"></a>                      <span class="at">.trend_colors =</span> <span class="st">&quot;#C8C6A2&quot;</span>) <span class="co"># hex code</span></span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.3.4-Complete-Code-Example-2.png" width="1248" /></p>
 </div>
 <div id="change-colors-trend-comparative" class="section level3 unnumbered hasAnchor">
 <h3>Comparative Trend Graphs<a href="change-colors.html#change-colors-trend-comparative" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There is greater flexibility in colors for comparative trend graphs. The user may supply a named or unnamed vector of hex codes or Arab Barometer brand colors.</p>
-<div class="sourceCode" id="cb363"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb363-1"><a href="change-colors.html#cb363-1" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb363-2"><a href="change-colors.html#cb363-2" tabindex="-1"></a>  survey1,</span>
-<span id="cb363-3"><a href="change-colors.html#cb363-3" tabindex="-1"></a>  survey2,</span>
-<span id="cb363-4"><a href="change-colors.html#cb363-4" tabindex="-1"></a>  survey3</span>
-<span id="cb363-5"><a href="change-colors.html#cb363-5" tabindex="-1"></a>)</span>
-<span id="cb363-6"><a href="change-colors.html#cb363-6" tabindex="-1"></a></span>
-<span id="cb363-7"><a href="change-colors.html#cb363-7" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
-<span id="cb363-8"><a href="change-colors.html#cb363-8" tabindex="-1"></a>                  <span class="st">&quot;Survey 2&quot;</span>,</span>
-<span id="cb363-9"><a href="change-colors.html#cb363-9" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
-<span id="cb363-10"><a href="change-colors.html#cb363-10" tabindex="-1"></a></span>
-<span id="cb363-11"><a href="change-colors.html#cb363-11" tabindex="-1"></a><span class="co"># Unnamed color example</span></span>
-<span id="cb363-12"><a href="change-colors.html#cb363-12" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb363-13"><a href="change-colors.html#cb363-13" tabindex="-1"></a>                df_list,</span>
-<span id="cb363-14"><a href="change-colors.html#cb363-14" tabindex="-1"></a>                survey_dates,</span>
-<span id="cb363-15"><a href="change-colors.html#cb363-15" tabindex="-1"></a>                <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI&quot;</span>,</span>
-<span id="cb363-16"><a href="change-colors.html#cb363-16" tabindex="-1"></a>                <span class="at">select_countries =</span> <span class="fu">c</span>(<span class="st">&quot;Lebanon&quot;</span>,<span class="st">&quot;Morocco&quot;</span>),</span>
-<span id="cb363-17"><a href="change-colors.html#cb363-17" tabindex="-1"></a>                <span class="at">.trend_colors =</span> <span class="fu">c</span>(<span class="st">&quot;bright apple&quot;</span>,<span class="st">&quot;james bond&quot;</span>)</span>
-<span id="cb363-18"><a href="change-colors.html#cb363-18" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb373"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb373-1"><a href="change-colors.html#cb373-1" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb373-2"><a href="change-colors.html#cb373-2" tabindex="-1"></a>  survey1,</span>
+<span id="cb373-3"><a href="change-colors.html#cb373-3" tabindex="-1"></a>  survey2,</span>
+<span id="cb373-4"><a href="change-colors.html#cb373-4" tabindex="-1"></a>  survey3</span>
+<span id="cb373-5"><a href="change-colors.html#cb373-5" tabindex="-1"></a>)</span>
+<span id="cb373-6"><a href="change-colors.html#cb373-6" tabindex="-1"></a></span>
+<span id="cb373-7"><a href="change-colors.html#cb373-7" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
+<span id="cb373-8"><a href="change-colors.html#cb373-8" tabindex="-1"></a>                  <span class="st">&quot;Survey 2&quot;</span>,</span>
+<span id="cb373-9"><a href="change-colors.html#cb373-9" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
+<span id="cb373-10"><a href="change-colors.html#cb373-10" tabindex="-1"></a></span>
+<span id="cb373-11"><a href="change-colors.html#cb373-11" tabindex="-1"></a><span class="co"># Unnamed color example</span></span>
+<span id="cb373-12"><a href="change-colors.html#cb373-12" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb373-13"><a href="change-colors.html#cb373-13" tabindex="-1"></a>                df_list,</span>
+<span id="cb373-14"><a href="change-colors.html#cb373-14" tabindex="-1"></a>                survey_dates,</span>
+<span id="cb373-15"><a href="change-colors.html#cb373-15" tabindex="-1"></a>                <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI&quot;</span>,</span>
+<span id="cb373-16"><a href="change-colors.html#cb373-16" tabindex="-1"></a>                <span class="at">select_countries =</span> <span class="fu">c</span>(<span class="st">&quot;Lebanon&quot;</span>,<span class="st">&quot;Morocco&quot;</span>),</span>
+<span id="cb373-17"><a href="change-colors.html#cb373-17" tabindex="-1"></a>                <span class="at">.trend_colors =</span> <span class="fu">c</span>(<span class="st">&quot;bright apple&quot;</span>,<span class="st">&quot;james bond&quot;</span>)</span>
+<span id="cb373-18"><a href="change-colors.html#cb373-18" tabindex="-1"></a>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.3.5-Complete-Code-Example-1.png" width="1248" /></p>
-<div class="sourceCode" id="cb364"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb364-1"><a href="change-colors.html#cb364-1" tabindex="-1"></a><span class="co"># Named color example</span></span>
-<span id="cb364-2"><a href="change-colors.html#cb364-2" tabindex="-1"></a>trend_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;bright apple&quot;</span>,<span class="st">&quot;james bond&quot;</span>)</span>
-<span id="cb364-3"><a href="change-colors.html#cb364-3" tabindex="-1"></a><span class="fu">names</span>(trend_colors) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Morocco&quot;</span>,<span class="st">&quot;Lebanon&quot;</span>)</span>
-<span id="cb364-4"><a href="change-colors.html#cb364-4" tabindex="-1"></a></span>
-<span id="cb364-5"><a href="change-colors.html#cb364-5" tabindex="-1"></a></span>
-<span id="cb364-6"><a href="change-colors.html#cb364-6" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb364-7"><a href="change-colors.html#cb364-7" tabindex="-1"></a>                df_list,</span>
-<span id="cb364-8"><a href="change-colors.html#cb364-8" tabindex="-1"></a>                survey_dates,</span>
-<span id="cb364-9"><a href="change-colors.html#cb364-9" tabindex="-1"></a>                <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI&quot;</span>,</span>
-<span id="cb364-10"><a href="change-colors.html#cb364-10" tabindex="-1"></a>                <span class="at">select_countries =</span> <span class="fu">c</span>(<span class="st">&quot;Morocco&quot;</span>,<span class="st">&quot;Lebanon&quot;</span>),</span>
-<span id="cb364-11"><a href="change-colors.html#cb364-11" tabindex="-1"></a>                <span class="at">.trend_colors =</span> trend_colors</span>
-<span id="cb364-12"><a href="change-colors.html#cb364-12" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb374"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb374-1"><a href="change-colors.html#cb374-1" tabindex="-1"></a><span class="co"># Named color example</span></span>
+<span id="cb374-2"><a href="change-colors.html#cb374-2" tabindex="-1"></a>trend_colors <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;bright apple&quot;</span>,<span class="st">&quot;james bond&quot;</span>)</span>
+<span id="cb374-3"><a href="change-colors.html#cb374-3" tabindex="-1"></a><span class="fu">names</span>(trend_colors) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Morocco&quot;</span>,<span class="st">&quot;Lebanon&quot;</span>)</span>
+<span id="cb374-4"><a href="change-colors.html#cb374-4" tabindex="-1"></a></span>
+<span id="cb374-5"><a href="change-colors.html#cb374-5" tabindex="-1"></a></span>
+<span id="cb374-6"><a href="change-colors.html#cb374-6" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb374-7"><a href="change-colors.html#cb374-7" tabindex="-1"></a>                df_list,</span>
+<span id="cb374-8"><a href="change-colors.html#cb374-8" tabindex="-1"></a>                survey_dates,</span>
+<span id="cb374-9"><a href="change-colors.html#cb374-9" tabindex="-1"></a>                <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI&quot;</span>,</span>
+<span id="cb374-10"><a href="change-colors.html#cb374-10" tabindex="-1"></a>                <span class="at">select_countries =</span> <span class="fu">c</span>(<span class="st">&quot;Morocco&quot;</span>,<span class="st">&quot;Lebanon&quot;</span>),</span>
+<span id="cb374-11"><a href="change-colors.html#cb374-11" tabindex="-1"></a>                <span class="at">.trend_colors =</span> trend_colors</span>
+<span id="cb374-12"><a href="change-colors.html#cb374-12" tabindex="-1"></a>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.3.5-Complete-Code-Example-2.png" width="1248" /></p>
 <p>The user can also change the color of some but not all countries.</p>
-<div class="sourceCode" id="cb365"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb365-1"><a href="change-colors.html#cb365-1" tabindex="-1"></a><span class="co"># Change one color example</span></span>
-<span id="cb365-2"><a href="change-colors.html#cb365-2" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb365-3"><a href="change-colors.html#cb365-3" tabindex="-1"></a>                df_list,</span>
-<span id="cb365-4"><a href="change-colors.html#cb365-4" tabindex="-1"></a>                survey_dates,</span>
-<span id="cb365-5"><a href="change-colors.html#cb365-5" tabindex="-1"></a>                <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI&quot;</span>,</span>
-<span id="cb365-6"><a href="change-colors.html#cb365-6" tabindex="-1"></a>                <span class="at">select_countries =</span> <span class="fu">c</span>(<span class="st">&quot;Morocco&quot;</span>,<span class="st">&quot;Lebanon&quot;</span>),</span>
-<span id="cb365-7"><a href="change-colors.html#cb365-7" tabindex="-1"></a>                <span class="at">.trend_colors =</span> <span class="fu">c</span>(<span class="st">&quot;Lebanon&quot;</span> <span class="ot">=</span> <span class="st">&quot;#C8C6A2&quot;</span>) </span>
-<span id="cb365-8"><a href="change-colors.html#cb365-8" tabindex="-1"></a>) </span></code></pre></div>
+<div class="sourceCode" id="cb375"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb375-1"><a href="change-colors.html#cb375-1" tabindex="-1"></a><span class="co"># Change one color example</span></span>
+<span id="cb375-2"><a href="change-colors.html#cb375-2" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb375-3"><a href="change-colors.html#cb375-3" tabindex="-1"></a>                df_list,</span>
+<span id="cb375-4"><a href="change-colors.html#cb375-4" tabindex="-1"></a>                survey_dates,</span>
+<span id="cb375-5"><a href="change-colors.html#cb375-5" tabindex="-1"></a>                <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI&quot;</span>,</span>
+<span id="cb375-6"><a href="change-colors.html#cb375-6" tabindex="-1"></a>                <span class="at">select_countries =</span> <span class="fu">c</span>(<span class="st">&quot;Morocco&quot;</span>,<span class="st">&quot;Lebanon&quot;</span>),</span>
+<span id="cb375-7"><a href="change-colors.html#cb375-7" tabindex="-1"></a>                <span class="at">.trend_colors =</span> <span class="fu">c</span>(<span class="st">&quot;Lebanon&quot;</span> <span class="ot">=</span> <span class="st">&quot;#C8C6A2&quot;</span>) </span>
+<span id="cb375-8"><a href="change-colors.html#cb375-8" tabindex="-1"></a>) </span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.3.6-Complete-Code-Example-1.png" width="1248" /></p>
 
 </div>

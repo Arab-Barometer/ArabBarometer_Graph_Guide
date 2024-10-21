@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2024-10-16" />
+<meta name="date" content="2024-10-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -412,6 +412,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#updating-via-downloads"><i class="fa fa-check"></i>Updating via downloads</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="22" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html"><i class="fa fa-check"></i><b>22</b> A Note On Piping {-} {piping-note}</a>
+<ul>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#piping-puts-the-object-on-the-left-into-the-function-on-the-right."><i class="fa fa-check"></i>Piping puts the object on the left into the function on the right.</a></li>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#piping-operators-can-chain-code-together."><i class="fa fa-check"></i>Piping operators can chain code together.</a></li>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#the-order-matters."><i class="fa fa-check"></i>The order matters.</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -435,7 +441,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">ArabBarometR Graphing Guide</h1>
 <p class="author"><em>MaryClare Roche</em></p>
-<p class="date"><em>2024-10-16</em></p>
+<p class="date"><em>2024-10-18</em></p>
 </div>
 <div id="introduction" class="section level1 unnumbered hasAnchor">
 <h1>Introduction<a href="index.html#introduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
@@ -459,8 +465,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Best Practices<a href="index.html#best-practices" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Before we begin, there are a few best practices that you are <strong>highly</strong> encouraged to adhere to.</p>
 <ol style="list-style-type: decimal">
-<li>Load you data directly from the source.</li>
-</ol>
+<li>Load you data directly from the source.
 <ul>
 <li>Rather than downloading AB data from the Drive and saving it in a folder on your computer, then re-downloading it every time it gets updated, just put in the path from where you are to the latest data on the Drive.</li>
 <li>This will save you a <em>significant</em> amount of space on your machine.</li>
@@ -469,21 +474,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Using the latest data.</li>
 <li>Using the original, unedited data each time you start/work on a project.</li>
 </ol></li>
-</ul>
-<ol start="2" style="list-style-type: decimal">
-<li>Save your code in the same place you save your graphs.</li>
-</ol>
+</ul></li>
+<li>Save your code in the same place you save your graphs.
 <ul>
 <li>Instead of saving your code in one place and your output in another, save everything in the same spot.</li>
 <li>This way, when you spot an error in your graphs or want to add more, you know exactly where the code used to create the output is.</li>
-</ul>
-<ol start="3" style="list-style-type: decimal">
-<li>Load only the packages you need.</li>
-</ol>
+</ul></li>
+<li>Load only the packages you need.
 <ul>
 <li>Many packages in R do not necessarily play nicely with each other.</li>
 <li>Often, packages will have functions with the same name that do different things. If you call one of those function in your code, R will use the function from the last package you loaded.</li>
-</ul>
+</ul></li>
+</ol>
 </div>
 <div id="general-guide-process" class="section level2 unnumbered hasAnchor">
 <h2>General Guide Process<a href="index.html#general-guide-process" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -498,6 +500,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2>Example Data<a href="index.html#example-data" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The examples in this guide will be created using data from Wave VI. For single survey graphs, it will use data from from Wave VI, Survey I. For trend graphs, it will use data from Wave VI, Survey I, II, and III, where Survey III is the final survey we conducted in Wave VI.</p>
 <p>As of version <code>1.13.10.9001</code>, the <code>ArabBarometR</code> package includes a sample of this data, so you will not have to download any extra data sets to follow along. If you are using an older version of <code>ArabBarometR</code> (not recommended), the Wave VI data can be found on <a href="https://www.arabbarometer.org/survey-data/data-downloads/">the Arab Barometer website</a>.</p>
+<p>The sample data has an artificial <code>Q13</code> column. The variable was not collected during Wave VI since this is usually filled out by an enumerator in the survey area and Wave VI was conducted over the phone. For demonstration purposes, a <code>Q13</code> column was randomly generated and added to the data.</p>
 </div>
 <div id="headercode" class="section level2 unnumbered hasAnchor">
 <h2>Header Code<a href="index.html#headercode" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -529,7 +532,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The above code prepares each of our example data sets using the same two functions, but using three different methods.</p>
 <p>When adding demographic variable columns and creating dummy columns from variable <code>Q2061A</code> for <code>survey1</code> (Wave VI Part 1), each step is done on the data independently. When doing the same manipulations on <code>survey2</code> (Wave VI Part 2) and <code>survey3</code> (Wave VI Part 3), the actions are chained together using <strong>pipes</strong>. Data preparation for <code>survey2</code> uses native pipes <code>|&gt;</code>, while data preparation for <code>survey3</code> uses pipes from the <code>dplyr</code> package. <strong>All three operations have the same outcome.</strong> Q: Why use one method over the other? A: Personal preference.</p>
 <p>To learn more about see the section <a href="#piping-note">A Note on Piping</a> in the Appendix.</p>
-<p><a href="chapter-1.html#chapter-1">Chapter 2</a> introduces the functions used to prepare the data.</p>
+<p><a href="chapter-1.html#chapter-1">Chapter 1</a> introduces the functions used to prepare the data.</p>
 
 </div>
 </div>

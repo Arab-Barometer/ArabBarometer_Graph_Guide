@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2024-10-16" />
+<meta name="date" content="2024-10-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -412,6 +412,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#updating-via-downloads"><i class="fa fa-check"></i>Updating via downloads</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="22" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html"><i class="fa fa-check"></i><b>22</b> A Note On Piping {-} {piping-note}</a>
+<ul>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#piping-puts-the-object-on-the-left-into-the-function-on-the-right."><i class="fa fa-check"></i>Piping puts the object on the left into the function on the right.</a></li>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#piping-operators-can-chain-code-together."><i class="fa fa-check"></i>Piping operators can chain code together.</a></li>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#the-order-matters."><i class="fa fa-check"></i>The order matters.</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -438,18 +444,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>These types of graphs are especially useful for plotting <strong>grid</strong> questions. Grid questions use the same stem, but have different endings. Technically, while related, they are all unique questions. Therefore, plotting a set of grid questions on the same graph, is the same thing as plotting multiple question on one graph.</p>
 <p><strong>All questions are required to be the same type when using this function.</strong> Comparing the responses to different question types is not advised, so the function does not allow for it.</p>
 <p>At the end, your code will look like the following:</p>
-<div class="sourceCode" id="cb335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb335-1"><a href="chapter-10.html#cb335-1" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q210&quot;</span>,</span>
-<span id="cb335-2"><a href="chapter-10.html#cb335-2" tabindex="-1"></a>                            <span class="st">&quot;Q211&quot;</span>)</span>
-<span id="cb335-3"><a href="chapter-10.html#cb335-3" tabindex="-1"></a></span>
-<span id="cb335-4"><a href="chapter-10.html#cb335-4" tabindex="-1"></a>question_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Is there corruption?&quot;</span>,</span>
-<span id="cb335-5"><a href="chapter-10.html#cb335-5" tabindex="-1"></a>                      <span class="st">&quot;Is the gov&#39;t cracking down?&quot;</span>)</span>
-<span id="cb335-6"><a href="chapter-10.html#cb335-6" tabindex="-1"></a></span>
-<span id="cb335-7"><a href="chapter-10.html#cb335-7" tabindex="-1"></a><span class="fu">plot_multiquestions_comp</span>(survey1,</span>
-<span id="cb335-8"><a href="chapter-10.html#cb335-8" tabindex="-1"></a>                        questions_2_compare,</span>
-<span id="cb335-9"><a href="chapter-10.html#cb335-9" tabindex="-1"></a>                        question_labels,</span>
-<span id="cb335-10"><a href="chapter-10.html#cb335-10" tabindex="-1"></a>                        <span class="at">.title =</span> <span class="st">&quot;Perceptions of Corruption in MENA&quot;</span>,</span>
-<span id="cb335-11"><a href="chapter-10.html#cb335-11" tabindex="-1"></a>                        <span class="at">.subtitle =</span> <span class="st">&quot;% saying to a medium or large extent&quot;</span>,</span>
-<span id="cb335-12"><a href="chapter-10.html#cb335-12" tabindex="-1"></a>                        <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb345-1"><a href="chapter-10.html#cb345-1" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;Q210&quot;</span>,</span>
+<span id="cb345-2"><a href="chapter-10.html#cb345-2" tabindex="-1"></a>                            <span class="st">&quot;Q211&quot;</span>)</span>
+<span id="cb345-3"><a href="chapter-10.html#cb345-3" tabindex="-1"></a></span>
+<span id="cb345-4"><a href="chapter-10.html#cb345-4" tabindex="-1"></a>question_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Is there corruption?&quot;</span>,</span>
+<span id="cb345-5"><a href="chapter-10.html#cb345-5" tabindex="-1"></a>                      <span class="st">&quot;Is the gov&#39;t cracking down?&quot;</span>)</span>
+<span id="cb345-6"><a href="chapter-10.html#cb345-6" tabindex="-1"></a></span>
+<span id="cb345-7"><a href="chapter-10.html#cb345-7" tabindex="-1"></a><span class="fu">plot_multiquestions_comp</span>(survey1,</span>
+<span id="cb345-8"><a href="chapter-10.html#cb345-8" tabindex="-1"></a>                        questions_2_compare,</span>
+<span id="cb345-9"><a href="chapter-10.html#cb345-9" tabindex="-1"></a>                        question_labels,</span>
+<span id="cb345-10"><a href="chapter-10.html#cb345-10" tabindex="-1"></a>                        <span class="at">.title =</span> <span class="st">&quot;Perceptions of Corruption in MENA&quot;</span>,</span>
+<span id="cb345-11"><a href="chapter-10.html#cb345-11" tabindex="-1"></a>                        <span class="at">.subtitle =</span> <span class="st">&quot;% saying to a medium or large extent&quot;</span>,</span>
+<span id="cb345-12"><a href="chapter-10.html#cb345-12" tabindex="-1"></a>                        <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span>)</span></code></pre></div>
 <p>That code will produce the following graph:</p>
 <p><img src="bookdownproj_files/figure-html/10.2-Complete-Graph-Example-1.png" width="1248" /></p>
 <p>Let’s go!</p>
@@ -459,19 +465,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="chapter-10-1-1" class="section level3 hasAnchor" number="13.1.1">
 <h3><span class="header-section-number">13.1.1</span> Question List<a href="chapter-10.html#chapter-10-1-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>First create a list of questions you want to include on your graph. For the example in this chapter we are comparing questions <code>Q210</code> and <code>Q211</code>. We put the names of those variables in a list and save that list as an object.</p>
-<div class="sourceCode" id="cb336"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb336-1"><a href="chapter-10.html#cb336-1" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb336-2"><a href="chapter-10.html#cb336-2" tabindex="-1"></a>  <span class="st">&quot;Q210&quot;</span>,</span>
-<span id="cb336-3"><a href="chapter-10.html#cb336-3" tabindex="-1"></a>  <span class="st">&quot;Q211&quot;</span></span>
-<span id="cb336-4"><a href="chapter-10.html#cb336-4" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb346-1"><a href="chapter-10.html#cb346-1" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb346-2"><a href="chapter-10.html#cb346-2" tabindex="-1"></a>  <span class="st">&quot;Q210&quot;</span>,</span>
+<span id="cb346-3"><a href="chapter-10.html#cb346-3" tabindex="-1"></a>  <span class="st">&quot;Q211&quot;</span></span>
+<span id="cb346-4"><a href="chapter-10.html#cb346-4" tabindex="-1"></a>  )</span></code></pre></div>
 <p>Now the variables we want to graph as saved to the object <code>questions_2_compare</code> in a list.</p>
 </div>
 <div id="chapter-10-1-2" class="section level3 hasAnchor" number="13.1.2">
 <h3><span class="header-section-number">13.1.2</span> Question Labels<a href="chapter-10.html#chapter-10-1-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The next step is to create a vector of labels for the questions. This is the text that will display on the y-axis. The labels should appear in the same order as they variables they are referring to.</p>
-<div class="sourceCode" id="cb337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb337-1"><a href="chapter-10.html#cb337-1" tabindex="-1"></a>question_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb337-2"><a href="chapter-10.html#cb337-2" tabindex="-1"></a>  <span class="st">&quot;Is there corruption?&quot;</span>,       <span class="co"># Text for Q210</span></span>
-<span id="cb337-3"><a href="chapter-10.html#cb337-3" tabindex="-1"></a>  <span class="st">&quot;Is the gov&#39;t cracking down?&quot;</span> <span class="co"># Text for Q211</span></span>
-<span id="cb337-4"><a href="chapter-10.html#cb337-4" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb347"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb347-1"><a href="chapter-10.html#cb347-1" tabindex="-1"></a>question_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb347-2"><a href="chapter-10.html#cb347-2" tabindex="-1"></a>  <span class="st">&quot;Is there corruption?&quot;</span>,       <span class="co"># Text for Q210</span></span>
+<span id="cb347-3"><a href="chapter-10.html#cb347-3" tabindex="-1"></a>  <span class="st">&quot;Is the gov&#39;t cracking down?&quot;</span> <span class="co"># Text for Q211</span></span>
+<span id="cb347-4"><a href="chapter-10.html#cb347-4" tabindex="-1"></a>  )</span></code></pre></div>
 <p>The object <code>question_labels</code> represents the text that will serve to label the responses on the graph.</p>
 </div>
 </div>
@@ -482,11 +488,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The <code>.questions</code> parameter requires a list (or vector) of questions. This is how the function knows which questions to include on the graph. We created a list, <code>questions_2_compare</code>, in the section above.</p>
 <p>The <code>.question_labels</code> parameter requires a vector (or list) of question labels. The labels must appear in the same order as the questions to appear on the graph correctly. We created a vector, <code>questions_labels</code>, in the section above.</p>
 <p>Time to fill in our function. The data we are using for the example is <code>survey1</code>.</p>
-<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="chapter-10.html#cb338-1" tabindex="-1"></a><span class="fu">plot_multiquestions_comp</span>(</span>
-<span id="cb338-2"><a href="chapter-10.html#cb338-2" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,</span>
-<span id="cb338-3"><a href="chapter-10.html#cb338-3" tabindex="-1"></a>  <span class="at">.questions =</span> questions_2_compare,</span>
-<span id="cb338-4"><a href="chapter-10.html#cb338-4" tabindex="-1"></a>  <span class="at">.question_labels =</span> question_labels</span>
-<span id="cb338-5"><a href="chapter-10.html#cb338-5" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb348-1"><a href="chapter-10.html#cb348-1" tabindex="-1"></a><span class="fu">plot_multiquestions_comp</span>(</span>
+<span id="cb348-2"><a href="chapter-10.html#cb348-2" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,</span>
+<span id="cb348-3"><a href="chapter-10.html#cb348-3" tabindex="-1"></a>  <span class="at">.questions =</span> questions_2_compare,</span>
+<span id="cb348-4"><a href="chapter-10.html#cb348-4" tabindex="-1"></a>  <span class="at">.question_labels =</span> question_labels</span>
+<span id="cb348-5"><a href="chapter-10.html#cb348-5" tabindex="-1"></a>)</span></code></pre></div>
 <pre><code>## Warning in title_function(.var = &quot;multiquestion graphs&quot;, .title = .title, : There is currently no title for `multiquestion graphs`.
 ## ℹ Please specify your own until this has been corrected.</code></pre>
 <pre><code>## Warning in subtitle_function(.var = &quot;multiquestion graphs&quot;, .subtitle = .subtitle, : There is currently no subtitle for `multiquestion graphs`.
@@ -494,14 +500,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><img src="bookdownproj_files/figure-html/10.5-first-graph-1.png" width="1248" /></p>
 <p>Notice there are several missing elements in this graph. Namely, an appropriate title, subtitle, and caption. These three aspects are not included in the list of <em>required</em> arguments, because a graph can be created without them. If you want to use the graph publicly, however, it would be prudent to include them.</p>
 <p>The parameters for including a title, subtitle, and caption are the same as they are in any other function: <code>.title</code>, <code>.subtitle</code>, and <code>.caption</code>, respectively. We can fill these in to create our final graph.</p>
-<div class="sourceCode" id="cb341"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb341-1"><a href="chapter-10.html#cb341-1" tabindex="-1"></a><span class="fu">plot_multiquestions_comp</span>(</span>
-<span id="cb341-2"><a href="chapter-10.html#cb341-2" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,</span>
-<span id="cb341-3"><a href="chapter-10.html#cb341-3" tabindex="-1"></a>  <span class="at">.questions =</span> questions_2_compare,</span>
-<span id="cb341-4"><a href="chapter-10.html#cb341-4" tabindex="-1"></a>  <span class="at">.question_labels =</span> question_labels,</span>
-<span id="cb341-5"><a href="chapter-10.html#cb341-5" tabindex="-1"></a>  <span class="at">.title =</span> <span class="st">&quot;Perceptions of Corruption in MENA&quot;</span>,</span>
-<span id="cb341-6"><a href="chapter-10.html#cb341-6" tabindex="-1"></a>  <span class="at">.subtitle =</span> <span class="st">&quot;% saying to a medium or large extent&quot;</span>,</span>
-<span id="cb341-7"><a href="chapter-10.html#cb341-7" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span></span>
-<span id="cb341-8"><a href="chapter-10.html#cb341-8" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb351"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb351-1"><a href="chapter-10.html#cb351-1" tabindex="-1"></a><span class="fu">plot_multiquestions_comp</span>(</span>
+<span id="cb351-2"><a href="chapter-10.html#cb351-2" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,</span>
+<span id="cb351-3"><a href="chapter-10.html#cb351-3" tabindex="-1"></a>  <span class="at">.questions =</span> questions_2_compare,</span>
+<span id="cb351-4"><a href="chapter-10.html#cb351-4" tabindex="-1"></a>  <span class="at">.question_labels =</span> question_labels,</span>
+<span id="cb351-5"><a href="chapter-10.html#cb351-5" tabindex="-1"></a>  <span class="at">.title =</span> <span class="st">&quot;Perceptions of Corruption in MENA&quot;</span>,</span>
+<span id="cb351-6"><a href="chapter-10.html#cb351-6" tabindex="-1"></a>  <span class="at">.subtitle =</span> <span class="st">&quot;% saying to a medium or large extent&quot;</span>,</span>
+<span id="cb351-7"><a href="chapter-10.html#cb351-7" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span></span>
+<span id="cb351-8"><a href="chapter-10.html#cb351-8" tabindex="-1"></a>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/10.6-second-graph-1.png" width="1248" /></p>
 </div>
 <div id="chapter-10-3" class="section level2 hasAnchor" number="13.3">
@@ -517,27 +523,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="chapter-10-3-3" class="section level3 hasAnchor" number="13.3.3">
 <h3><span class="header-section-number">13.3.3</span> Explict Grid Example<a href="chapter-10.html#chapter-10-3-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Remember: plotting a set of grid questions requires exactly the same steps as outlined throughout this chapter. There is <strong>no difference</strong> between plotting 2 (or n) questions that belong to a grid, and 2 (or n) questions that do not.</p>
-<div class="sourceCode" id="cb342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb342-1"><a href="chapter-10.html#cb342-1" tabindex="-1"></a><span class="co"># Identifying two question from a grid set:</span></span>
-<span id="cb342-2"><a href="chapter-10.html#cb342-2" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb342-3"><a href="chapter-10.html#cb342-3" tabindex="-1"></a>  <span class="st">&quot;Q201A_1&quot;</span>,</span>
-<span id="cb342-4"><a href="chapter-10.html#cb342-4" tabindex="-1"></a>  <span class="st">&quot;Q201A_2&quot;</span></span>
-<span id="cb342-5"><a href="chapter-10.html#cb342-5" tabindex="-1"></a>)</span>
-<span id="cb342-6"><a href="chapter-10.html#cb342-6" tabindex="-1"></a></span>
-<span id="cb342-7"><a href="chapter-10.html#cb342-7" tabindex="-1"></a><span class="co"># Supplying labels:</span></span>
-<span id="cb342-8"><a href="chapter-10.html#cb342-8" tabindex="-1"></a>question_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb342-9"><a href="chapter-10.html#cb342-9" tabindex="-1"></a>  <span class="st">&quot;Government&quot;</span>,</span>
-<span id="cb342-10"><a href="chapter-10.html#cb342-10" tabindex="-1"></a>  <span class="st">&quot;Legal system&quot;</span></span>
-<span id="cb342-11"><a href="chapter-10.html#cb342-11" tabindex="-1"></a>)</span>
-<span id="cb342-12"><a href="chapter-10.html#cb342-12" tabindex="-1"></a></span>
-<span id="cb342-13"><a href="chapter-10.html#cb342-13" tabindex="-1"></a><span class="co"># Plotting the grid questions:</span></span>
-<span id="cb342-14"><a href="chapter-10.html#cb342-14" tabindex="-1"></a><span class="fu">plot_multiquestions_comp</span>(</span>
-<span id="cb342-15"><a href="chapter-10.html#cb342-15" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,</span>
-<span id="cb342-16"><a href="chapter-10.html#cb342-16" tabindex="-1"></a>  <span class="at">.questions =</span> questions_2_compare,</span>
-<span id="cb342-17"><a href="chapter-10.html#cb342-17" tabindex="-1"></a>  <span class="at">.question_labels =</span> question_labels,</span>
-<span id="cb342-18"><a href="chapter-10.html#cb342-18" tabindex="-1"></a>  <span class="at">.title =</span> <span class="st">&quot;How much trust do you have in...&quot;</span>,</span>
-<span id="cb342-19"><a href="chapter-10.html#cb342-19" tabindex="-1"></a>  <span class="at">.subtitle =</span> <span class="st">&quot;% saying they have quite a lot or a great deal&quot;</span>,</span>
-<span id="cb342-20"><a href="chapter-10.html#cb342-20" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span></span>
-<span id="cb342-21"><a href="chapter-10.html#cb342-21" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb352-1"><a href="chapter-10.html#cb352-1" tabindex="-1"></a><span class="co"># Identifying two question from a grid set:</span></span>
+<span id="cb352-2"><a href="chapter-10.html#cb352-2" tabindex="-1"></a>questions_2_compare <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb352-3"><a href="chapter-10.html#cb352-3" tabindex="-1"></a>  <span class="st">&quot;Q201A_1&quot;</span>,</span>
+<span id="cb352-4"><a href="chapter-10.html#cb352-4" tabindex="-1"></a>  <span class="st">&quot;Q201A_2&quot;</span></span>
+<span id="cb352-5"><a href="chapter-10.html#cb352-5" tabindex="-1"></a>)</span>
+<span id="cb352-6"><a href="chapter-10.html#cb352-6" tabindex="-1"></a></span>
+<span id="cb352-7"><a href="chapter-10.html#cb352-7" tabindex="-1"></a><span class="co"># Supplying labels:</span></span>
+<span id="cb352-8"><a href="chapter-10.html#cb352-8" tabindex="-1"></a>question_labels <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb352-9"><a href="chapter-10.html#cb352-9" tabindex="-1"></a>  <span class="st">&quot;Government&quot;</span>,</span>
+<span id="cb352-10"><a href="chapter-10.html#cb352-10" tabindex="-1"></a>  <span class="st">&quot;Legal system&quot;</span></span>
+<span id="cb352-11"><a href="chapter-10.html#cb352-11" tabindex="-1"></a>)</span>
+<span id="cb352-12"><a href="chapter-10.html#cb352-12" tabindex="-1"></a></span>
+<span id="cb352-13"><a href="chapter-10.html#cb352-13" tabindex="-1"></a><span class="co"># Plotting the grid questions:</span></span>
+<span id="cb352-14"><a href="chapter-10.html#cb352-14" tabindex="-1"></a><span class="fu">plot_multiquestions_comp</span>(</span>
+<span id="cb352-15"><a href="chapter-10.html#cb352-15" tabindex="-1"></a>  <span class="at">.ab =</span> survey1,</span>
+<span id="cb352-16"><a href="chapter-10.html#cb352-16" tabindex="-1"></a>  <span class="at">.questions =</span> questions_2_compare,</span>
+<span id="cb352-17"><a href="chapter-10.html#cb352-17" tabindex="-1"></a>  <span class="at">.question_labels =</span> question_labels,</span>
+<span id="cb352-18"><a href="chapter-10.html#cb352-18" tabindex="-1"></a>  <span class="at">.title =</span> <span class="st">&quot;How much trust do you have in...&quot;</span>,</span>
+<span id="cb352-19"><a href="chapter-10.html#cb352-19" tabindex="-1"></a>  <span class="at">.subtitle =</span> <span class="st">&quot;% saying they have quite a lot or a great deal&quot;</span>,</span>
+<span id="cb352-20"><a href="chapter-10.html#cb352-20" tabindex="-1"></a>  <span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey 1&quot;</span></span>
+<span id="cb352-21"><a href="chapter-10.html#cb352-21" tabindex="-1"></a>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/10.7-grid-example-1.png" width="1248" /></p>
 
 </div>

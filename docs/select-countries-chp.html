@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2024-10-16" />
+<meta name="date" content="2024-10-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -412,6 +412,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#updating-via-downloads"><i class="fa fa-check"></i>Updating via downloads</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="22" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html"><i class="fa fa-check"></i><b>22</b> A Note On Piping {-} {piping-note}</a>
+<ul>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#piping-puts-the-object-on-the-left-into-the-function-on-the-right."><i class="fa fa-check"></i>Piping puts the object on the left into the function on the right.</a></li>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#piping-operators-can-chain-code-together."><i class="fa fa-check"></i>Piping operators can chain code together.</a></li>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#the-order-matters."><i class="fa fa-check"></i>The order matters.</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -437,31 +443,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>To choose only certain countries to plot, use the parameter <code>select_countries</code>. If you are creating a plot with a <code>calculate_</code> function, this parameter is in <code>calculate_</code> function. If the plot only uses the <code>plot_</code> function, this parameter is in the <code>plot_</code> function. The parameters is called <code>select_countries</code> in both cases.</p>
 <div id="select-countries-calculate" class="section level2 hasAnchor" number="20.1">
 <h2><span class="header-section-number">20.1</span> Plots that go with <code>calculate_</code> functions<a href="select-countries-chp.html#select-countries-calculate" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb371"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb371-1"><a href="select-countries-chp.html#cb371-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb371-2"><a href="select-countries-chp.html#cb371-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb371-3"><a href="select-countries-chp.html#cb371-3" tabindex="-1"></a>                      <span class="at">select_countries =</span> <span class="fu">c</span>(<span class="st">&quot;Morocco&quot;</span>,<span class="st">&quot;Lebanon&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb371-4"><a href="select-countries-chp.html#cb371-4" tabindex="-1"></a>  </span>
-<span id="cb371-5"><a href="select-countries-chp.html#cb371-5" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb381"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb381-1"><a href="select-countries-chp.html#cb381-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb381-2"><a href="select-countries-chp.html#cb381-2" tabindex="-1"></a>  <span class="fu">calculate_smry_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb381-3"><a href="select-countries-chp.html#cb381-3" tabindex="-1"></a>                      <span class="at">select_countries =</span> <span class="fu">c</span>(<span class="st">&quot;Morocco&quot;</span>,<span class="st">&quot;Lebanon&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb381-4"><a href="select-countries-chp.html#cb381-4" tabindex="-1"></a>  </span>
+<span id="cb381-5"><a href="select-countries-chp.html#cb381-5" tabindex="-1"></a>  <span class="fu">plot_smry_comp</span>(<span class="at">.caption =</span> <span class="st">&quot;Arab Barometer Wave VI, Survey I&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.5.6.1-SelectCountries-1.png" width="1248" /></p>
 </div>
 <div id="select-countries-no-calculate" class="section level2 hasAnchor" number="20.2">
 <h2><span class="header-section-number">20.2</span> Plots with no <code>calculate_</code> functions<a href="select-countries-chp.html#select-countries-no-calculate" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb372"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb372-1"><a href="select-countries-chp.html#cb372-1" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
-<span id="cb372-2"><a href="select-countries-chp.html#cb372-2" tabindex="-1"></a>  survey1,</span>
-<span id="cb372-3"><a href="select-countries-chp.html#cb372-3" tabindex="-1"></a>  survey2,</span>
-<span id="cb372-4"><a href="select-countries-chp.html#cb372-4" tabindex="-1"></a>  survey3</span>
-<span id="cb372-5"><a href="select-countries-chp.html#cb372-5" tabindex="-1"></a>)</span>
-<span id="cb372-6"><a href="select-countries-chp.html#cb372-6" tabindex="-1"></a></span>
-<span id="cb372-7"><a href="select-countries-chp.html#cb372-7" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
-<span id="cb372-8"><a href="select-countries-chp.html#cb372-8" tabindex="-1"></a>                  <span class="st">&quot;Suvey 2&quot;</span>,</span>
-<span id="cb372-9"><a href="select-countries-chp.html#cb372-9" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
-<span id="cb372-10"><a href="select-countries-chp.html#cb372-10" tabindex="-1"></a></span>
-<span id="cb372-11"><a href="select-countries-chp.html#cb372-11" tabindex="-1"></a></span>
-<span id="cb372-12"><a href="select-countries-chp.html#cb372-12" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb372-13"><a href="select-countries-chp.html#cb372-13" tabindex="-1"></a>                df_list,</span>
-<span id="cb372-14"><a href="select-countries-chp.html#cb372-14" tabindex="-1"></a>                survey_dates,</span>
-<span id="cb372-15"><a href="select-countries-chp.html#cb372-15" tabindex="-1"></a>                <span class="at">select_countries =</span> <span class="fu">c</span>(<span class="st">&quot;Morocco&quot;</span>,</span>
-<span id="cb372-16"><a href="select-countries-chp.html#cb372-16" tabindex="-1"></a>                                     <span class="st">&quot;Lebanon&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb382"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb382-1"><a href="select-countries-chp.html#cb382-1" tabindex="-1"></a>df_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb382-2"><a href="select-countries-chp.html#cb382-2" tabindex="-1"></a>  survey1,</span>
+<span id="cb382-3"><a href="select-countries-chp.html#cb382-3" tabindex="-1"></a>  survey2,</span>
+<span id="cb382-4"><a href="select-countries-chp.html#cb382-4" tabindex="-1"></a>  survey3</span>
+<span id="cb382-5"><a href="select-countries-chp.html#cb382-5" tabindex="-1"></a>)</span>
+<span id="cb382-6"><a href="select-countries-chp.html#cb382-6" tabindex="-1"></a></span>
+<span id="cb382-7"><a href="select-countries-chp.html#cb382-7" tabindex="-1"></a>survey_dates <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Survey 1&quot;</span>,</span>
+<span id="cb382-8"><a href="select-countries-chp.html#cb382-8" tabindex="-1"></a>                  <span class="st">&quot;Suvey 2&quot;</span>,</span>
+<span id="cb382-9"><a href="select-countries-chp.html#cb382-9" tabindex="-1"></a>                  <span class="st">&quot;Survey 3&quot;</span>)</span>
+<span id="cb382-10"><a href="select-countries-chp.html#cb382-10" tabindex="-1"></a></span>
+<span id="cb382-11"><a href="select-countries-chp.html#cb382-11" tabindex="-1"></a></span>
+<span id="cb382-12"><a href="select-countries-chp.html#cb382-12" tabindex="-1"></a><span class="fu">plot_trend_comp</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb382-13"><a href="select-countries-chp.html#cb382-13" tabindex="-1"></a>                df_list,</span>
+<span id="cb382-14"><a href="select-countries-chp.html#cb382-14" tabindex="-1"></a>                survey_dates,</span>
+<span id="cb382-15"><a href="select-countries-chp.html#cb382-15" tabindex="-1"></a>                <span class="at">select_countries =</span> <span class="fu">c</span>(<span class="st">&quot;Morocco&quot;</span>,</span>
+<span id="cb382-16"><a href="select-countries-chp.html#cb382-16" tabindex="-1"></a>                                     <span class="st">&quot;Lebanon&quot;</span>))</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.5.7.1-SelectCountries-1.png" width="1248" /></p>
 
 </div>

@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2024-10-17" />
+<meta name="date" content="2024-10-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -449,31 +449,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The input for <code>add_demographics()</code> is an Arab Barometer data frame. The output is an Arab Barometer data frame with the additional columns <code>Country</code>, <code>gender</code>, <code>age</code>, <code>income</code>, <code>education</code>, and <code>settlement</code>.</p>
 <div id="example" class="section level4 hasAnchor" number="1.1.0.1">
 <h4><span class="header-section-number">1.1.0.1</span> Example:<a href="preparing-data.html#example" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="preparing-data.html#cb1-1" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">add_demographics</span>(survey1)</span>
-<span id="cb1-2"><a href="preparing-data.html#cb1-2" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>Country)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="preparing-data.html#cb2-1" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">add_demographics</span>(survey1)</span>
+<span id="cb2-2"><a href="preparing-data.html#cb2-2" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>Country)</span></code></pre></div>
 <pre><code>## 
 ## Algeria Lebanon Morocco 
 ##     998    1000    1002</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="preparing-data.html#cb3-1" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>gender)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="preparing-data.html#cb4-1" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>gender)</span></code></pre></div>
 <pre><code>## 
 ## Female   Male 
 ##   1495   1505</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="preparing-data.html#cb5-1" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>age)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="preparing-data.html#cb6-1" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>age)</span></code></pre></div>
 <pre><code>## 
 ## 18-29   30+ 
 ##  1161  1837</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="preparing-data.html#cb7-1" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>income)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="preparing-data.html#cb8-1" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>income)</span></code></pre></div>
 <pre><code>## 
 ##    Can cover expenses Cannot cover expenses 
 ##                  1565                  1406</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="preparing-data.html#cb9-1" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>education)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="preparing-data.html#cb10-1" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>education)</span></code></pre></div>
 <pre><code>## 
 ## Above Secondary   Max Secondary 
 ##            1666            1328</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="preparing-data.html#cb11-1" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>settlement)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="preparing-data.html#cb12-1" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>settlement)</span></code></pre></div>
 <pre><code>## 
 ## Rural Urban 
-##  1526  1474</code></pre>
+##  1492  1508</code></pre>
 </div>
 </div>
 <div id="recode_country" class="section level2 hasAnchor" number="1.2">
@@ -481,12 +481,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The input of the <code>recode_country()</code> function is an Arab Barometer data frame. The function takes the <code>COUNTRY</code> variable from an Arab Barometer data frame and creates a <code>Country</code> variable. The original variable <code>COUNTRY</code> should be a labeled numeric value where the numeric value is the country code for the country in which the interview was conducted, and the label is the name of the country. The output variable <code>Country</code> will be a character vector of country names. This function was originally created by Patrick, and updated by MaryClare.</p>
 <div id="example-1" class="section level3 hasAnchor" number="1.2.1">
 <h3><span class="header-section-number">1.2.1</span> Example:<a href="preparing-data.html#example-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="preparing-data.html#cb13-1" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>COUNTRY)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="preparing-data.html#cb14-1" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>COUNTRY)</span></code></pre></div>
 <pre><code>## 
 ##    1   10   13 
 ##  998 1000 1002</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="preparing-data.html#cb15-1" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">recode_country</span>(survey1)</span>
-<span id="cb15-2"><a href="preparing-data.html#cb15-2" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>Country)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="preparing-data.html#cb16-1" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">recode_country</span>(survey1)</span>
+<span id="cb16-2"><a href="preparing-data.html#cb16-2" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>Country)</span></code></pre></div>
 <pre><code>## 
 ## Algeria Lebanon Morocco 
 ##     998    1000    1002</code></pre>
@@ -500,7 +500,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>There are five functions that can be used to create the standard demographic breakdowns Arab Barometer produces graphs for:</p>
 <ul>
 <li><code>gender_demographic()</code> : Based on <code>Q1002</code>, outputs variable <code>gender</code></li>
-<li><code>age_demographic()</code> : Based on <code>Q1001</code><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>, outputs variable <code>age</code></li>
+<li><code>age_demographic()</code> : Based on <code>Q1001</code><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>, outputs variable <code>age</code></li>
 <li><code>income_demographic()</code> : Based on <code>Q1016</code>, outputs variable <code>income</code></li>
 <li><code>education_demographic()</code> : Based on <code>Q1003</code>, outputs variable <code>education</code></li>
 <li><code>settlement_demographic()</code> : Based on <code>Q13</code>, outputs variable <code>settlement</code></li>
@@ -508,36 +508,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Each of the aforementioned functions generates a dichotomous character variable. The input for each function is an Arab Barometer data frame.</p>
 <div id="example-2" class="section level4 hasAnchor" number="1.3.1.1">
 <h4><span class="header-section-number">1.3.1.1</span> Example:<a href="preparing-data.html#example-2" class="anchor-section" aria-label="Anchor link to header"></a></h4>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="preparing-data.html#cb17-1" tabindex="-1"></a><span class="co"># Gender</span></span>
-<span id="cb17-2"><a href="preparing-data.html#cb17-2" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">gender_demographic</span>(survey1)</span>
-<span id="cb17-3"><a href="preparing-data.html#cb17-3" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>gender)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="preparing-data.html#cb18-1" tabindex="-1"></a><span class="co"># Gender</span></span>
+<span id="cb18-2"><a href="preparing-data.html#cb18-2" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">gender_demographic</span>(survey1)</span>
+<span id="cb18-3"><a href="preparing-data.html#cb18-3" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>gender)</span></code></pre></div>
 <pre><code>## 
 ## Female   Male 
 ##   1495   1505</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="preparing-data.html#cb19-1" tabindex="-1"></a><span class="co"># Age</span></span>
-<span id="cb19-2"><a href="preparing-data.html#cb19-2" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">age_demographic</span>(survey1)</span>
-<span id="cb19-3"><a href="preparing-data.html#cb19-3" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>age)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="preparing-data.html#cb20-1" tabindex="-1"></a><span class="co"># Age</span></span>
+<span id="cb20-2"><a href="preparing-data.html#cb20-2" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">age_demographic</span>(survey1)</span>
+<span id="cb20-3"><a href="preparing-data.html#cb20-3" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>age)</span></code></pre></div>
 <pre><code>## 
 ## 18-29   30+ 
 ##  1161  1837</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="preparing-data.html#cb21-1" tabindex="-1"></a><span class="co"># Income</span></span>
-<span id="cb21-2"><a href="preparing-data.html#cb21-2" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">income_demographic</span>(survey1)</span>
-<span id="cb21-3"><a href="preparing-data.html#cb21-3" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>income)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="preparing-data.html#cb22-1" tabindex="-1"></a><span class="co"># Income</span></span>
+<span id="cb22-2"><a href="preparing-data.html#cb22-2" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">income_demographic</span>(survey1)</span>
+<span id="cb22-3"><a href="preparing-data.html#cb22-3" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>income)</span></code></pre></div>
 <pre><code>## 
 ##    Can cover expenses Cannot cover expenses 
 ##                  1565                  1406</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="preparing-data.html#cb23-1" tabindex="-1"></a><span class="co"># Education</span></span>
-<span id="cb23-2"><a href="preparing-data.html#cb23-2" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">education_demographic</span>(survey1)</span>
-<span id="cb23-3"><a href="preparing-data.html#cb23-3" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>education)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="preparing-data.html#cb24-1" tabindex="-1"></a><span class="co"># Education</span></span>
+<span id="cb24-2"><a href="preparing-data.html#cb24-2" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">education_demographic</span>(survey1)</span>
+<span id="cb24-3"><a href="preparing-data.html#cb24-3" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>education)</span></code></pre></div>
 <pre><code>## 
 ## Above Secondary   Max Secondary 
 ##            1666            1328</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="preparing-data.html#cb25-1" tabindex="-1"></a><span class="co"># Settlement</span></span>
-<span id="cb25-2"><a href="preparing-data.html#cb25-2" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">settlement_demographic</span>(survey1)</span>
-<span id="cb25-3"><a href="preparing-data.html#cb25-3" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>settlement)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="preparing-data.html#cb26-1" tabindex="-1"></a><span class="co"># Settlement</span></span>
+<span id="cb26-2"><a href="preparing-data.html#cb26-2" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">settlement_demographic</span>(survey1)</span>
+<span id="cb26-3"><a href="preparing-data.html#cb26-3" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>settlement)</span></code></pre></div>
 <pre><code>## 
 ## Rural Urban 
-##  1526  1474</code></pre>
+##  1492  1508</code></pre>
 </div>
 </div>
 </div>
@@ -548,9 +548,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="age_demographic" class="section level2 hasAnchor" number="1.5">
 <h2><span class="header-section-number">1.5</span> <code>age_demographic()</code><a href="preparing-data.html#age_demographic" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>First let’s look at the <code>age_demographic()</code> function. As seen above, the default output is either <code>"18-29"</code> or <code>"30+"</code>. By setting the parameter <code>.range</code> to N, the user can change the returned values to <code>"18-(N-1)"</code> and <code>"N+"</code>. For example, if the user wanted to compare opinions of those over 60 with the opinions of those under 60, the user could set the parameter <code>.range</code> to 60, so the function <code>age_demographic()</code> returns <code>"18-59"</code> and <code>"60+"</code>.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="preparing-data.html#cb27-1" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">age_demographic</span>(survey1,</span>
-<span id="cb27-2"><a href="preparing-data.html#cb27-2" tabindex="-1"></a>                           <span class="at">.range =</span> <span class="dv">60</span>)</span>
-<span id="cb27-3"><a href="preparing-data.html#cb27-3" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>age)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="preparing-data.html#cb28-1" tabindex="-1"></a>survey1 <span class="ot">&lt;-</span> <span class="fu">age_demographic</span>(survey1,</span>
+<span id="cb28-2"><a href="preparing-data.html#cb28-2" tabindex="-1"></a>                           <span class="at">.range =</span> <span class="dv">60</span>)</span>
+<span id="cb28-3"><a href="preparing-data.html#cb28-3" tabindex="-1"></a><span class="fu">table</span>(survey1<span class="sc">$</span>age)</span></code></pre></div>
 <pre><code>## 
 ## 18-59   60+ 
 ##  2702   296</code></pre>
@@ -561,28 +561,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The <code>education_demographic()</code> function creates a dichotomous character column in the data frame titled <code>education</code>. You can enter a cutoff by entering a numeric value between 1 and 7 or a character string from value labels of the column Q1003 for the <code>.edu_lvl</code> parameter. The default for this parameter is <code>"Secondary"</code>. The new column <code>education</code> has the values <code>"Max Secondary"</code> or <code>"Higher"</code>. If you change the <code>.edu_lvl</code> parameter, the “education” column will have the values <code>"Max .edu_lvl"</code> or <code>"Higher"</code>. If you enter a numeric value, the function will use the value label associated with that number.</p>
 <div id="examples" class="section level3 hasAnchor" number="1.6.1">
 <h3><span class="header-section-number">1.6.1</span> Examples:<a href="preparing-data.html#examples" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="preparing-data.html#cb29-1" tabindex="-1"></a><span class="co"># English:</span></span>
-<span id="cb29-2"><a href="preparing-data.html#cb29-2" tabindex="-1"></a><span class="do">## Default parameters:</span></span>
-<span id="cb29-3"><a href="preparing-data.html#cb29-3" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb29-4"><a href="preparing-data.html#cb29-4" tabindex="-1"></a>  <span class="fu">education_demographic</span>() <span class="sc">%&gt;%</span> <span class="co"># Creates an &quot;education&quot; column</span></span>
-<span id="cb29-5"><a href="preparing-data.html#cb29-5" tabindex="-1"></a>  <span class="fu">select</span>(education) <span class="sc">%&gt;%</span> <span class="co"># Select just the &quot;education&quot; column</span></span>
-<span id="cb29-6"><a href="preparing-data.html#cb29-6" tabindex="-1"></a>  <span class="fu">table</span>() <span class="co"># Create table of the &quot;education&quot; column values</span></span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="preparing-data.html#cb30-1" tabindex="-1"></a><span class="co"># English:</span></span>
+<span id="cb30-2"><a href="preparing-data.html#cb30-2" tabindex="-1"></a><span class="do">## Default parameters:</span></span>
+<span id="cb30-3"><a href="preparing-data.html#cb30-3" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb30-4"><a href="preparing-data.html#cb30-4" tabindex="-1"></a>  <span class="fu">education_demographic</span>() <span class="sc">%&gt;%</span> <span class="co"># Creates an &quot;education&quot; column</span></span>
+<span id="cb30-5"><a href="preparing-data.html#cb30-5" tabindex="-1"></a>  <span class="fu">select</span>(education) <span class="sc">%&gt;%</span> <span class="co"># Select just the &quot;education&quot; column</span></span>
+<span id="cb30-6"><a href="preparing-data.html#cb30-6" tabindex="-1"></a>  <span class="fu">table</span>() <span class="co"># Create table of the &quot;education&quot; column values</span></span></code></pre></div>
 <pre><code>## education
 ## Above Secondary   Max Secondary 
 ##            1666            1328</code></pre>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="preparing-data.html#cb31-1" tabindex="-1"></a><span class="do">## Changing the cutoff with a character string:</span></span>
-<span id="cb31-2"><a href="preparing-data.html#cb31-2" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb31-3"><a href="preparing-data.html#cb31-3" tabindex="-1"></a>  <span class="fu">education_demographic</span>(<span class="st">&quot;BA&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb31-4"><a href="preparing-data.html#cb31-4" tabindex="-1"></a>  <span class="fu">select</span>(education) <span class="sc">%&gt;%</span></span>
-<span id="cb31-5"><a href="preparing-data.html#cb31-5" tabindex="-1"></a>  <span class="fu">table</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="preparing-data.html#cb32-1" tabindex="-1"></a><span class="do">## Changing the cutoff with a character string:</span></span>
+<span id="cb32-2"><a href="preparing-data.html#cb32-2" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb32-3"><a href="preparing-data.html#cb32-3" tabindex="-1"></a>  <span class="fu">education_demographic</span>(<span class="st">&quot;BA&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb32-4"><a href="preparing-data.html#cb32-4" tabindex="-1"></a>  <span class="fu">select</span>(education) <span class="sc">%&gt;%</span></span>
+<span id="cb32-5"><a href="preparing-data.html#cb32-5" tabindex="-1"></a>  <span class="fu">table</span>()</span></code></pre></div>
 <pre><code>## education
 ## Above BA   Max BA 
 ##      324     2670</code></pre>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="preparing-data.html#cb33-1" tabindex="-1"></a><span class="do">## Changing the cutoff with a numeric:</span></span>
-<span id="cb33-2"><a href="preparing-data.html#cb33-2" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb33-3"><a href="preparing-data.html#cb33-3" tabindex="-1"></a>  <span class="fu">education_demographic</span>(<span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb33-4"><a href="preparing-data.html#cb33-4" tabindex="-1"></a>  <span class="fu">select</span>(education) <span class="sc">%&gt;%</span></span>
-<span id="cb33-5"><a href="preparing-data.html#cb33-5" tabindex="-1"></a>  <span class="fu">table</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="preparing-data.html#cb34-1" tabindex="-1"></a><span class="do">## Changing the cutoff with a numeric:</span></span>
+<span id="cb34-2"><a href="preparing-data.html#cb34-2" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb34-3"><a href="preparing-data.html#cb34-3" tabindex="-1"></a>  <span class="fu">education_demographic</span>(<span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb34-4"><a href="preparing-data.html#cb34-4" tabindex="-1"></a>  <span class="fu">select</span>(education) <span class="sc">%&gt;%</span></span>
+<span id="cb34-5"><a href="preparing-data.html#cb34-5" tabindex="-1"></a>  <span class="fu">table</span>()</span></code></pre></div>
 <pre><code>## education
 ## Above Preparatory/Basic   Max Preparatory/Basic 
 ##                    2423                     571</code></pre>
@@ -597,33 +597,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The function <code>dummy_all()</code> takes as input the data frame variables are being selected from and the variable you want to create dummy columns for. More details can be found by typing <code>help("dummy_all")</code> into the R Console.</p>
 <div id="examples-1" class="section level3 hasAnchor" number="1.7.1">
 <h3><span class="header-section-number">1.7.1</span> Examples:<a href="preparing-data.html#examples-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="preparing-data.html#cb35-1" tabindex="-1"></a><span class="co"># Sample Data:</span></span>
-<span id="cb35-2"><a href="preparing-data.html#cb35-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb35-3"><a href="preparing-data.html#cb35-3" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb35-4"><a href="preparing-data.html#cb35-4" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="cn">NA</span>,<span class="dv">2</span>,<span class="cn">NA</span>,<span class="dv">5</span>)</span>
-<span id="cb35-5"><a href="preparing-data.html#cb35-5" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(a,b,c)</span>
-<span id="cb35-6"><a href="preparing-data.html#cb35-6" tabindex="-1"></a></span>
-<span id="cb35-7"><a href="preparing-data.html#cb35-7" tabindex="-1"></a><span class="co"># Original data frame:</span></span>
-<span id="cb35-8"><a href="preparing-data.html#cb35-8" tabindex="-1"></a><span class="fu">names</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="preparing-data.html#cb36-1" tabindex="-1"></a><span class="co"># Sample Data:</span></span>
+<span id="cb36-2"><a href="preparing-data.html#cb36-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb36-3"><a href="preparing-data.html#cb36-3" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb36-4"><a href="preparing-data.html#cb36-4" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="cn">NA</span>,<span class="dv">2</span>,<span class="cn">NA</span>,<span class="dv">5</span>)</span>
+<span id="cb36-5"><a href="preparing-data.html#cb36-5" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(a,b,c)</span>
+<span id="cb36-6"><a href="preparing-data.html#cb36-6" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="preparing-data.html#cb36-7" tabindex="-1"></a><span class="co"># Original data frame:</span></span>
+<span id="cb36-8"><a href="preparing-data.html#cb36-8" tabindex="-1"></a><span class="fu">names</span>(df)</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
-<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="preparing-data.html#cb37-1" tabindex="-1"></a><span class="co"># Creating dummy columns for one variable:</span></span>
-<span id="cb37-2"><a href="preparing-data.html#cb37-2" tabindex="-1"></a>df_1 <span class="ot">&lt;-</span> <span class="fu">dummy_all</span>(df, <span class="co"># Data frame</span></span>
-<span id="cb37-3"><a href="preparing-data.html#cb37-3" tabindex="-1"></a>                  b   <span class="co"># Variable to dummy</span></span>
-<span id="cb37-4"><a href="preparing-data.html#cb37-4" tabindex="-1"></a>                  )</span>
-<span id="cb37-5"><a href="preparing-data.html#cb37-5" tabindex="-1"></a><span class="fu">names</span>(df_1)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="preparing-data.html#cb38-1" tabindex="-1"></a><span class="co"># Creating dummy columns for one variable:</span></span>
+<span id="cb38-2"><a href="preparing-data.html#cb38-2" tabindex="-1"></a>df_1 <span class="ot">&lt;-</span> <span class="fu">dummy_all</span>(df, <span class="co"># Data frame</span></span>
+<span id="cb38-3"><a href="preparing-data.html#cb38-3" tabindex="-1"></a>                  b   <span class="co"># Variable to dummy</span></span>
+<span id="cb38-4"><a href="preparing-data.html#cb38-4" tabindex="-1"></a>                  )</span>
+<span id="cb38-5"><a href="preparing-data.html#cb38-5" tabindex="-1"></a><span class="fu">names</span>(df_1)</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot;   &quot;b&quot;   &quot;c&quot;   &quot;b_1&quot; &quot;b_2&quot;</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="preparing-data.html#cb39-1" tabindex="-1"></a><span class="co"># Creating dummy columns for multiple variables:</span></span>
-<span id="cb39-2"><a href="preparing-data.html#cb39-2" tabindex="-1"></a>df_2 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="co"># Data frame</span></span>
-<span id="cb39-3"><a href="preparing-data.html#cb39-3" tabindex="-1"></a>  <span class="fu">dummy_all</span>(a, <span class="co"># Variable 1 to dummy</span></span>
-<span id="cb39-4"><a href="preparing-data.html#cb39-4" tabindex="-1"></a>            b  <span class="co"># Variable 2 to dummy</span></span>
-<span id="cb39-5"><a href="preparing-data.html#cb39-5" tabindex="-1"></a>            )</span>
-<span id="cb39-6"><a href="preparing-data.html#cb39-6" tabindex="-1"></a><span class="fu">names</span>(df_2)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="preparing-data.html#cb40-1" tabindex="-1"></a><span class="co"># Creating dummy columns for multiple variables:</span></span>
+<span id="cb40-2"><a href="preparing-data.html#cb40-2" tabindex="-1"></a>df_2 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="co"># Data frame</span></span>
+<span id="cb40-3"><a href="preparing-data.html#cb40-3" tabindex="-1"></a>  <span class="fu">dummy_all</span>(a, <span class="co"># Variable 1 to dummy</span></span>
+<span id="cb40-4"><a href="preparing-data.html#cb40-4" tabindex="-1"></a>            b  <span class="co"># Variable 2 to dummy</span></span>
+<span id="cb40-5"><a href="preparing-data.html#cb40-5" tabindex="-1"></a>            )</span>
+<span id="cb40-6"><a href="preparing-data.html#cb40-6" tabindex="-1"></a><span class="fu">names</span>(df_2)</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot;   &quot;b&quot;   &quot;c&quot;   &quot;a_1&quot; &quot;a_2&quot; &quot;a_3&quot; &quot;a_4&quot; &quot;b_1&quot; &quot;b_2&quot;</code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="preparing-data.html#cb41-1" tabindex="-1"></a><span class="co"># Creating NA dummy column:</span></span>
-<span id="cb41-2"><a href="preparing-data.html#cb41-2" tabindex="-1"></a>df_3 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span>            <span class="co"># Data frame</span></span>
-<span id="cb41-3"><a href="preparing-data.html#cb41-3" tabindex="-1"></a>  <span class="fu">dummy_all</span>(c,            <span class="co"># Variable to dummy</span></span>
-<span id="cb41-4"><a href="preparing-data.html#cb41-4" tabindex="-1"></a>            <span class="at">no_NA =</span> <span class="cn">FALSE</span> <span class="co"># Include dummy for NA occurrences</span></span>
-<span id="cb41-5"><a href="preparing-data.html#cb41-5" tabindex="-1"></a>            )</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="preparing-data.html#cb42-1" tabindex="-1"></a><span class="co"># Creating NA dummy column:</span></span>
+<span id="cb42-2"><a href="preparing-data.html#cb42-2" tabindex="-1"></a>df_3 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span>            <span class="co"># Data frame</span></span>
+<span id="cb42-3"><a href="preparing-data.html#cb42-3" tabindex="-1"></a>  <span class="fu">dummy_all</span>(c,            <span class="co"># Variable to dummy</span></span>
+<span id="cb42-4"><a href="preparing-data.html#cb42-4" tabindex="-1"></a>            <span class="at">no_NA =</span> <span class="cn">FALSE</span> <span class="co"># Include dummy for NA occurrences</span></span>
+<span id="cb42-5"><a href="preparing-data.html#cb42-5" tabindex="-1"></a>            )</span></code></pre></div>
 <p><br></p>
 </div>
 </div>
@@ -635,40 +635,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The following example uses the same sample data as before. More details can be found by typing <code>help("dummy_select")</code> into your R Console.</p>
 <div id="examples-2" class="section level3 hasAnchor" number="1.8.1">
 <h3><span class="header-section-number">1.8.1</span> Examples:<a href="preparing-data.html#examples-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="preparing-data.html#cb42-1" tabindex="-1"></a><span class="co"># Sample Data:</span></span>
-<span id="cb42-2"><a href="preparing-data.html#cb42-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb42-3"><a href="preparing-data.html#cb42-3" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
-<span id="cb42-4"><a href="preparing-data.html#cb42-4" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="cn">NA</span>,<span class="dv">2</span>,<span class="cn">NA</span>,<span class="dv">5</span>)</span>
-<span id="cb42-5"><a href="preparing-data.html#cb42-5" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(a,b,c)</span>
-<span id="cb42-6"><a href="preparing-data.html#cb42-6" tabindex="-1"></a></span>
-<span id="cb42-7"><a href="preparing-data.html#cb42-7" tabindex="-1"></a><span class="fu">names</span>(df)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="preparing-data.html#cb43-1" tabindex="-1"></a><span class="co"># Sample Data:</span></span>
+<span id="cb43-2"><a href="preparing-data.html#cb43-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb43-3"><a href="preparing-data.html#cb43-3" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>)</span>
+<span id="cb43-4"><a href="preparing-data.html#cb43-4" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">5</span>,<span class="cn">NA</span>,<span class="dv">2</span>,<span class="cn">NA</span>,<span class="dv">5</span>)</span>
+<span id="cb43-5"><a href="preparing-data.html#cb43-5" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(a,b,c)</span>
+<span id="cb43-6"><a href="preparing-data.html#cb43-6" tabindex="-1"></a></span>
+<span id="cb43-7"><a href="preparing-data.html#cb43-7" tabindex="-1"></a><span class="fu">names</span>(df)</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot; &quot;b&quot; &quot;c&quot;</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="preparing-data.html#cb44-1" tabindex="-1"></a><span class="co"># Adding new column:</span></span>
-<span id="cb44-2"><a href="preparing-data.html#cb44-2" tabindex="-1"></a>df_1 <span class="ot">&lt;-</span> <span class="fu">dummy_select</span>(df,           <span class="co"># Data frame</span></span>
-<span id="cb44-3"><a href="preparing-data.html#cb44-3" tabindex="-1"></a>                     b,            <span class="co"># Variable to dummy</span></span>
-<span id="cb44-4"><a href="preparing-data.html#cb44-4" tabindex="-1"></a>                     <span class="at">dummy_lvl =</span> <span class="dv">1</span> <span class="co"># Level to dummy</span></span>
-<span id="cb44-5"><a href="preparing-data.html#cb44-5" tabindex="-1"></a>                     )</span>
-<span id="cb44-6"><a href="preparing-data.html#cb44-6" tabindex="-1"></a><span class="fu">names</span>(df_1)</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="preparing-data.html#cb45-1" tabindex="-1"></a><span class="co"># Adding new column:</span></span>
+<span id="cb45-2"><a href="preparing-data.html#cb45-2" tabindex="-1"></a>df_1 <span class="ot">&lt;-</span> <span class="fu">dummy_select</span>(df,           <span class="co"># Data frame</span></span>
+<span id="cb45-3"><a href="preparing-data.html#cb45-3" tabindex="-1"></a>                     b,            <span class="co"># Variable to dummy</span></span>
+<span id="cb45-4"><a href="preparing-data.html#cb45-4" tabindex="-1"></a>                     <span class="at">dummy_lvl =</span> <span class="dv">1</span> <span class="co"># Level to dummy</span></span>
+<span id="cb45-5"><a href="preparing-data.html#cb45-5" tabindex="-1"></a>                     )</span>
+<span id="cb45-6"><a href="preparing-data.html#cb45-6" tabindex="-1"></a><span class="fu">names</span>(df_1)</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot;   &quot;b&quot;   &quot;c&quot;   &quot;b_1&quot;</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="preparing-data.html#cb46-1" tabindex="-1"></a><span class="co"># Adding multiple new column:</span></span>
-<span id="cb46-2"><a href="preparing-data.html#cb46-2" tabindex="-1"></a>df_2 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span>               <span class="co"># Data frame</span></span>
-<span id="cb46-3"><a href="preparing-data.html#cb46-3" tabindex="-1"></a>  <span class="fu">dummy_select</span>(b,            <span class="co"># Variable 1 to dummy</span></span>
-<span id="cb46-4"><a href="preparing-data.html#cb46-4" tabindex="-1"></a>               c,            <span class="co"># Variable 2 to dummy</span></span>
-<span id="cb46-5"><a href="preparing-data.html#cb46-5" tabindex="-1"></a>               <span class="at">dummy_lvl =</span> <span class="dv">1</span> <span class="co"># Level to dummy</span></span>
-<span id="cb46-6"><a href="preparing-data.html#cb46-6" tabindex="-1"></a>               )</span>
-<span id="cb46-7"><a href="preparing-data.html#cb46-7" tabindex="-1"></a><span class="fu">names</span>(df_2)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="preparing-data.html#cb47-1" tabindex="-1"></a><span class="co"># Adding multiple new column:</span></span>
+<span id="cb47-2"><a href="preparing-data.html#cb47-2" tabindex="-1"></a>df_2 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span>               <span class="co"># Data frame</span></span>
+<span id="cb47-3"><a href="preparing-data.html#cb47-3" tabindex="-1"></a>  <span class="fu">dummy_select</span>(b,            <span class="co"># Variable 1 to dummy</span></span>
+<span id="cb47-4"><a href="preparing-data.html#cb47-4" tabindex="-1"></a>               c,            <span class="co"># Variable 2 to dummy</span></span>
+<span id="cb47-5"><a href="preparing-data.html#cb47-5" tabindex="-1"></a>               <span class="at">dummy_lvl =</span> <span class="dv">1</span> <span class="co"># Level to dummy</span></span>
+<span id="cb47-6"><a href="preparing-data.html#cb47-6" tabindex="-1"></a>               )</span>
+<span id="cb47-7"><a href="preparing-data.html#cb47-7" tabindex="-1"></a><span class="fu">names</span>(df_2)</span></code></pre></div>
 <pre><code>## [1] &quot;a&quot;   &quot;b&quot;   &quot;c&quot;   &quot;b_1&quot; &quot;c_1&quot;</code></pre>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="preparing-data.html#cb48-1" tabindex="-1"></a><span class="co"># Replacing column:</span></span>
-<span id="cb48-2"><a href="preparing-data.html#cb48-2" tabindex="-1"></a>df_3 <span class="ot">&lt;-</span> <span class="fu">dummy_select</span>(df,           <span class="co"># Data frame</span></span>
-<span id="cb48-3"><a href="preparing-data.html#cb48-3" tabindex="-1"></a>                     a,            <span class="co"># Variable to dummy</span></span>
-<span id="cb48-4"><a href="preparing-data.html#cb48-4" tabindex="-1"></a>                    <span class="at">dummy_lvl =</span> <span class="dv">4</span>, <span class="co"># Level to dummy</span></span>
-<span id="cb48-5"><a href="preparing-data.html#cb48-5" tabindex="-1"></a>                    <span class="at">inplace =</span> <span class="cn">TRUE</span> <span class="co"># Replace old variable</span></span>
-<span id="cb48-6"><a href="preparing-data.html#cb48-6" tabindex="-1"></a>                    )</span>
-<span id="cb48-7"><a href="preparing-data.html#cb48-7" tabindex="-1"></a><span class="fu">table</span>(df<span class="sc">$</span>a)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="preparing-data.html#cb49-1" tabindex="-1"></a><span class="co"># Replacing column:</span></span>
+<span id="cb49-2"><a href="preparing-data.html#cb49-2" tabindex="-1"></a>df_3 <span class="ot">&lt;-</span> <span class="fu">dummy_select</span>(df,           <span class="co"># Data frame</span></span>
+<span id="cb49-3"><a href="preparing-data.html#cb49-3" tabindex="-1"></a>                     a,            <span class="co"># Variable to dummy</span></span>
+<span id="cb49-4"><a href="preparing-data.html#cb49-4" tabindex="-1"></a>                    <span class="at">dummy_lvl =</span> <span class="dv">4</span>, <span class="co"># Level to dummy</span></span>
+<span id="cb49-5"><a href="preparing-data.html#cb49-5" tabindex="-1"></a>                    <span class="at">inplace =</span> <span class="cn">TRUE</span> <span class="co"># Replace old variable</span></span>
+<span id="cb49-6"><a href="preparing-data.html#cb49-6" tabindex="-1"></a>                    )</span>
+<span id="cb49-7"><a href="preparing-data.html#cb49-7" tabindex="-1"></a><span class="fu">table</span>(df<span class="sc">$</span>a)</span></code></pre></div>
 <pre><code>## 
 ## 1 2 3 4 
 ## 1 4 2 2</code></pre>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="preparing-data.html#cb50-1" tabindex="-1"></a><span class="fu">table</span>(df_3<span class="sc">$</span>a)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="preparing-data.html#cb51-1" tabindex="-1"></a><span class="fu">table</span>(df_3<span class="sc">$</span>a)</span></code></pre></div>
 <pre><code>## 
 ## 0 1 
 ## 7 2</code></pre>
@@ -680,13 +680,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The functions presented so far can be used in combination to recreate the standard cleaning we use to prep the Arab Barometer data frames for graph creation. <strong>Remember:</strong> You can copy and paste this code exactly.</p>
 <div id="example-3" class="section level3 hasAnchor" number="1.9.1">
 <h3><span class="header-section-number">1.9.1</span> Example:<a href="preparing-data.html#example-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="preparing-data.html#cb52-1" tabindex="-1"></a><span class="co"># English:</span></span>
-<span id="cb52-2"><a href="preparing-data.html#cb52-2" tabindex="-1"></a>survey1 <span class="ot">=</span> survey1 <span class="sc">|&gt;</span> </span>
-<span id="cb52-3"><a href="preparing-data.html#cb52-3" tabindex="-1"></a>  </span>
-<span id="cb52-4"><a href="preparing-data.html#cb52-4" tabindex="-1"></a>  <span class="co"># Adding Demographic Categories:</span></span>
-<span id="cb52-5"><a href="preparing-data.html#cb52-5" tabindex="-1"></a>  <span class="fu">add_demographics</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb52-6"><a href="preparing-data.html#cb52-6" tabindex="-1"></a>  <span class="co"># Creating dummy variables for all levels of Q2061A:</span></span>
-<span id="cb52-7"><a href="preparing-data.html#cb52-7" tabindex="-1"></a>  <span class="fu">dummy_all</span>(Q2061A)</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="preparing-data.html#cb53-1" tabindex="-1"></a><span class="co"># English:</span></span>
+<span id="cb53-2"><a href="preparing-data.html#cb53-2" tabindex="-1"></a>survey1 <span class="ot">=</span> survey1 <span class="sc">|&gt;</span> </span>
+<span id="cb53-3"><a href="preparing-data.html#cb53-3" tabindex="-1"></a>  </span>
+<span id="cb53-4"><a href="preparing-data.html#cb53-4" tabindex="-1"></a>  <span class="co"># Adding Demographic Categories:</span></span>
+<span id="cb53-5"><a href="preparing-data.html#cb53-5" tabindex="-1"></a>  <span class="fu">add_demographics</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb53-6"><a href="preparing-data.html#cb53-6" tabindex="-1"></a>  <span class="co"># Creating dummy variables for all levels of Q2061A:</span></span>
+<span id="cb53-7"><a href="preparing-data.html#cb53-7" tabindex="-1"></a>  <span class="fu">dummy_all</span>(Q2061A)</span></code></pre></div>
 
 </div>
 </div>
@@ -696,8 +696,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>An update to the function <code>age_demographic()</code> has been requested and is on the docket. The update requests that the function takes account ages missing from <code>Q1001</code> if they are supplied by <code>Q1001YEAR</code> or <code>Q1001APPROX</code>.<a href="preparing-data.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<ol start="2">
+<li id="fn2"><p>An update to the function <code>age_demographic()</code> has been requested and is on the docket. The update requests that the function takes account ages missing from <code>Q1001</code> if they are supplied by <code>Q1001YEAR</code> or <code>Q1001APPROX</code>.<a href="preparing-data.html#fnref2" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>

@@ -23,7 +23,7 @@
 <meta name="author" content="MaryClare Roche" />
 
 
-<meta name="date" content="2024-10-16" />
+<meta name="date" content="2024-10-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -412,6 +412,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="installing-and-updating-arabbarometr.html"><a href="installing-and-updating-arabbarometr.html#updating-via-downloads"><i class="fa fa-check"></i>Updating via downloads</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="22" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html"><i class="fa fa-check"></i><b>22</b> A Note On Piping {-} {piping-note}</a>
+<ul>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#piping-puts-the-object-on-the-left-into-the-function-on-the-right."><i class="fa fa-check"></i>Piping puts the object on the left into the function on the right.</a></li>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#piping-operators-can-chain-code-together."><i class="fa fa-check"></i>Piping operators can chain code together.</a></li>
+<li class="chapter" data-level="" data-path="a-note-on-piping---piping-note.html"><a href="a-note-on-piping---piping-note.html#the-order-matters."><i class="fa fa-check"></i>The order matters.</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -434,12 +440,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="change-the-titlesubtitlecaption" class="section level1 hasAnchor" number="19">
 <h1><span class="header-section-number">Chapter 19</span> Change the Title/Subtitle/Caption<a href="change-the-titlesubtitlecaption.html#change-the-titlesubtitlecaption" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb370"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb370-1"><a href="change-the-titlesubtitlecaption.html#cb370-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
-<span id="cb370-2"><a href="change-the-titlesubtitlecaption.html#cb370-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
-<span id="cb370-3"><a href="change-the-titlesubtitlecaption.html#cb370-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb370-4"><a href="change-the-titlesubtitlecaption.html#cb370-4" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.title =</span> <span class="st">&quot;New title&quot;</span>,</span>
-<span id="cb370-5"><a href="change-the-titlesubtitlecaption.html#cb370-5" tabindex="-1"></a>                       <span class="at">.subtitle =</span> <span class="st">&quot;New subtitle&quot;</span>,</span>
-<span id="cb370-6"><a href="change-the-titlesubtitlecaption.html#cb370-6" tabindex="-1"></a>                       <span class="at">.caption =</span> <span class="st">&quot;New caption&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb380"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb380-1"><a href="change-the-titlesubtitlecaption.html#cb380-1" tabindex="-1"></a>survey1 <span class="sc">%&gt;%</span></span>
+<span id="cb380-2"><a href="change-the-titlesubtitlecaption.html#cb380-2" tabindex="-1"></a>  <span class="fu">calculate_smry_individual</span>(<span class="st">&quot;Q1COVID19&quot;</span>,</span>
+<span id="cb380-3"><a href="change-the-titlesubtitlecaption.html#cb380-3" tabindex="-1"></a>                            <span class="st">&quot;Algeria&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb380-4"><a href="change-the-titlesubtitlecaption.html#cb380-4" tabindex="-1"></a>  <span class="fu">plot_smry_individual</span>(<span class="at">.title =</span> <span class="st">&quot;New title&quot;</span>,</span>
+<span id="cb380-5"><a href="change-the-titlesubtitlecaption.html#cb380-5" tabindex="-1"></a>                       <span class="at">.subtitle =</span> <span class="st">&quot;New subtitle&quot;</span>,</span>
+<span id="cb380-6"><a href="change-the-titlesubtitlecaption.html#cb380-6" tabindex="-1"></a>                       <span class="at">.caption =</span> <span class="st">&quot;New caption&quot;</span>)</span></code></pre></div>
 <p><img src="bookdownproj_files/figure-html/How.2-Complete-Code-Example-1.png" width="1248" /></p>
 
 </div>

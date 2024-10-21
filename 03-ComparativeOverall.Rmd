@@ -31,7 +31,7 @@ survey1 %>%
 
 ### Create a Summary
 
-The process of creating an overall comparative graph is intentionally similar to creating a overall individual graph. As always, the first step is to organize the data we want to graph. For this we use the function **calculate_smry_comp()**, which is the comparative version of the individual summary function. The function requires only two parameters: (1) the data you are using, and (2) the variable you want to summarize. There are several other optional parameters. To see all the input parameters for the function, type the code `?calculate_smry_comp` in your R console.
+The process of creating an overall comparative graph is intentionally similar to creating a overall individual graph. As always, the first step is to organize the data we want to graph. For this we use the function `calculate_smry_comp()`, which is the comparative version of the individual summary function. The function requires only two parameters: (1) the data you are using, and (2) the variable you want to summarize. There are several other optional parameters. To see all the input parameters for the function, type the code `?calculate_smry_comp` in your R console.
 
 For the example in this section, we are using the data set `survey1` and summarizing the variable `Q1COVID19`.
 
@@ -87,9 +87,9 @@ comparative_summary <- survey1 %>%
 
 ### Plot the Summary
 
-The next step is plot the summary we just created. To do this, we use the function **plot_smry_comp()**.
+The next step is plot the summary we just created. To do this, we use the function `plot_smry_comp()`.
 
-There is only *one* necessary parameter to use **plot_smry_comp()**: the summary data frame. For a complete list of acceptable parameters and documentation, you can run `?plot_smry_comp` in your R console.
+There is only *one* necessary parameter to use `plot_smry_comp()`: the summary data frame. For a complete list of acceptable parameters and documentation, you can run `?plot_smry_comp` in your R console.
 
 Now, we can plug our summary into the plot function:
 
@@ -285,7 +285,7 @@ Now, you have a named list of variables. Time to summarize them.
 
 ### Create Summaries
 
-The same function used to create a single summary is used to create many summaries: **calculate_smry_comp()**. Recall it takes three parameters: (1) the data you are using, and (2) the variable(s) you want to plot. Now, instead of one variable, you supply the list of variables.
+The same function used to create a single summary is used to create many summaries: `calculate_smry_comp()`. Recall it takes three parameters: (1) the data you are using, and (2) the variable(s) you want to plot. Now, instead of one variable, you supply the list of variables.
 
 ```{r 03.20-summaries, eval=FALSE}
 
@@ -340,11 +340,11 @@ comparative_summaries <- survey1 %>%
 
 ### Plot the Summaries {#plot-many-comparative}
 
-Again, the same function to create one plot is used to create many plots: **plot_smry_comp()**. Unlike last time, a helper function is needed to create multiple plots. 
+Again, the same function to create one plot is used to create many plots: `plot_smry_comp()`. Unlike last time, a helper function is needed to create multiple plots. 
 
-The helper function is called **map**. The map function takes two inputs: (1) a list of things to pass to a function, and (2) a function. Essentially, **map** takes each item in the list, and passes it to the function very efficiently. 
+The helper function is called `map()`. The map function takes two inputs: (1) a list of things to pass to a function, and (2) a function. Essentially, `map()` takes each item in the list, and passes it to the function very efficiently. 
 
-In this case, you supply the list of summaries you just created, and the **plot_sumry_comp()** function. The code follows:
+In this case, you supply the list of summaries you just created, and the `plot_sumry_comp()` function. The code follows:
 
 ```{r 03.25-plots, eval=FALSE}
 
