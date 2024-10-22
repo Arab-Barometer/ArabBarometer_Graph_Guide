@@ -34,5 +34,6 @@ rmd_files: [
   "9904-StackedOrder.Rmd",
   "Guide_Features.Rmd",
   "install-update.Rmd",
-  "piping_note.Rmd"
+  "piping_note.Rmd",
+  "using-map.Rmd"
 ]

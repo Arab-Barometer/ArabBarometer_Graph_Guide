@@ -215,10 +215,11 @@ names(variables_2_plot) <- c("Q1COVID19",
                              "Q609")
 
      #......................Create the summaries......................
-summaries <- map(variables_2_plot,
-                 calculate_smry_individual,
-                 .ab = survey1,
-                 .country = "Algeria")
+summaries <- calculate_smry_individual(
+  survey1,
+  variables_2_plot,
+  "Algeria"
+)
 
      #.......................Plot the summaries.......................
 plots <- map(summaries,
@@ -244,10 +245,11 @@ names(variables_2_plot) <- c("Q1COVID19",
                              "Q609")
 
      #......................Create the summaries......................
-summaries <- map(variables_2_plot,
-                 calculate_smry_individual,
-                 .ab = survey1,
-                 .country = "Algeria")
+summaries <- calculate_smry_individual(
+  survey1,
+  variables_2_plot,
+  "Algeria"
+)
 
      #.......................Plot the summaries.......................
 plots <- map(summaries,
@@ -310,23 +312,17 @@ Now, you have a named list of variables. Time to summarize them.
 
 ### Create Summaries {#chapter-1-2-2}
 
-When you want to do something many times, the `purrr` package comes in extremely handy. That is why it is one of the two (non-`ArabBarometR`) packages loaded in the [Header Code](#headercode) in the [Introduction](#introduction) of this guide. 
+A nice thing about `calculate_smry_individual()` is that the user can create many summaries just as easily as creating a single summary.
 
-In particular, the `map()` function from the `purrr` package allows the user to feed a vector or list into a function and returns a list of the output. More information can be found in the Appendix section called [Using a `map()`](#using-map).
-
-In the previous section we created a list of variables. Now, with the help of the `map()` function, we feed them to `calculate_smry_individual()`.
-
-Recall it takes three parameters: (1) the data you are using, (2) the variable you want to plot, and (3) the country you are creating the plot for. We need to tell the `map()` function which parameter to iterate over and which parameters to hold constant. In this case, the data we are supplying and the country we are doing the calculations for are constant, while the list of variables is what we will iterate over. The data parameter is called `.ab` and the country parameter is called `.country`.
+Recall it takes three parameters: (1) the data you are using, (2) the variable you want to plot, and (3) the country you are creating the plot for. Now, instead of just one variable we want to plot, we can feed it our list of variables.
 
 ```{r 01.20-summaries, eval=FALSE}
 
-map(
-  variables_2_plot,          # List (our named list of variables)
-  calculate_smry_individual, # Function (calculate function)
-  .ab = survey1,             # Constant argument 1 (data)
-  .country = "Algeria"       # Constant argument 2 (country)
+summaries <- calculate_smry_individual(
+  survey1,          # Data we are using
+  variables_2_plot, # List of variables to plot
+  "Algeria"         # Country we want to focus on
 )
-
 
 ```
 
@@ -334,11 +330,10 @@ The code above produces a named list. Each element in the list is a summary of a
 
 ```{r 01.23-summaries, echo=FALSE,cache=TRUE,warning=FALSE,message=FALSE}
 
-map(
-  variables_2_plot,          
-  calculate_smry_individual, 
-  .ab = survey1,             
-  .country = "Algeria"       
+summaries <- calculate_smry_individual(
+  survey1,          # Data we are using
+  variables_2_plot, # List of variables to plot
+  "Algeria"         # Country we want to focus on
 )
 
 ```
@@ -349,20 +344,24 @@ Let's save this outcome as an object and move on to plotting.
 ```{r 01.24-summaries, eval=FALSE}
 
 
-summaries <- map(
-  variables_2_plot,          
-  calculate_smry_individual, 
-  .ab = survey1,             
-  .country = "Algeria"       
+summaries <- calculate_smry_individual(
+  survey1,          
+  variables_2_plot, 
+  "Algeria"         
 )
+
 ```
 
 
 ### Plot the Summaries {#plot-many-graphs-single-country}
 
-Again, the same function to create one plot is used to create many plots: `plot_smry_individual()`. Again, we are using the `map()` function.
+When you want to do something many times, the `purrr` package comes in extremely handy. That is why it is one of the two (non-`ArabBarometR`) packages loaded in the [Header Code](#headercode) in the [Introduction](#introduction) of this guide. 
 
-In this case, you supply the list of summaries you just created, and the `plot_sumry_individual()` function. The code follows:
+In particular, the `map()` function from the `purrr` package allows the user to feed a vector or list into a function and returns a list of the output. More information can be found in the Appendix section called [Using a `map()`](#using-map).
+
+In the previous section we created a list of variables. Now, with the help of the `map()` function, we feed them to `plot_smry_individual()`.
+
+The code follows:
 
 ```{r 01.25-plots, eval=FALSE}
 

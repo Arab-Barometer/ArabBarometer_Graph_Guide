@@ -1,4 +1,4 @@
-# Using a `map()` {#using-map -}
+# Using a `map()` {#using-map .unnumbered}
 
 Quite often in coding, you want to do the same thing only slightly differently many times. For example, make a graph for every variable in a data set.
 

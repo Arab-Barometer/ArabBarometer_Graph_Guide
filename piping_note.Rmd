@@ -1,4 +1,4 @@
-# A Note On Piping {-} {piping-note}
+# A Note On Piping {#piping-note .unnumbered}
 
 As mentioned, throughout this guide the examples will be using the piping operator, which you will see as either `**|>**` (native R) or `**%>%**` (`dplyr` package). If you are unfamiliar with it, a little more detail may be helpful.
 
