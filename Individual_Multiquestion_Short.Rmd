@@ -1,0 +1,270 @@
+# Single Country Multi-Question Plots {#chapter-9}
+
+This chapter introduces two different ways to compare multiple questions in one country. One graphs summarizes questions like comparative graphs and plots those summaries. The other plots questions with the same value labels together in the style of individual graphs. The former is called a "short" summary, while the latter is called a "long" summary.
+
+These types of graphs are especially useful for plotting **grid** questions. Grid questions use the same stem, but have different endings. Technically, while related, they are all unique questions. Therefore, plotting a set of grid questions on the same graph, is the same thing as plotting multiple question on one graph.
+
+**All questions are required to be the same type when using this function.** Comparing the responses to different question types is not advised, so the function does not allow for it.
+
+
+## TL;DR {-}
+
+### "Short" Summary {-}
+
+At the end, your code will look like the following:
+
+```{r 09.1-Complete-Code-Example, eval=FALSE}
+
+questions_2_compare <- c("Q210",
+                         "Q211")
+questions_labels <- c("Is there corruption?",
+                      "Is the gov't cracking down?")
+
+# "Short" Summary:
+calculate_ind_multiq_smry_short(survey1,
+                                questions_2_compare,
+                                questions_labels,
+                                "Algeria") |> 
+  plot_ind_multiq_smry_short(.title = "Perceptions of Corruption in Algeria",
+                             .subtitle = "% saying to a medium or large extent",
+                             .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
+
+
+```
+
+That code will produce the following graph:
+
+```{r 09.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
+
+questions_2_compare <- c("Q210",
+                         "Q211")
+questions_labels <- c("Is there corruption?",
+                      "Is the gov't cracking down?")
+
+calculate_ind_multiq_smry_short(survey1,
+                                questions_2_compare,
+                                questions_labels,
+                                "Algeria") |> 
+  plot_ind_multiq_smry_short(.title = "Perceptions of Corruption in Algeria",
+                             .subtitle = "% saying to a medium or large extent",
+                             .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
+```
+
+### "Long" Summary {-}
+
+At the end, your code will look like the following:
+
+```{r 09.1-Complete-Code-Example, eval=FALSE}
+
+questions_2_compare <- c("Q210",
+                         "Q211")
+questions_labels <- c("Is there corruption?",
+                      "Is the gov't cracking down?")
+
+# "Long" Summary:
+calculate_ind_multiq_smry_long(survey1,
+                               questions_2_compare,
+                               questions_labels,
+                               "Algeria") |> 
+  plot_ind_multiq_smry_long(.title = "Perceptions of Corruption in Algeria",
+                            .subtitle = "% saying",
+                            .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
+
+
+```
+
+That code will produce the following graph:
+
+```{r 09.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
+
+questions_2_compare <- c("Q210",
+                         "Q211")
+questions_labels <- c("Is there corruption?",
+                      "Is the gov't cracking down?")
+
+calculate_ind_multiq_smry_long(survey1,
+                               questions_2_compare,
+                               questions_labels,
+                               "Algeria") |> 
+  plot_ind_multiq_smry_long(.title = "Perceptions of Corruption in Algeria",
+                            .subtitle = "% saying",
+                            .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
+```
+
+Let's go!
+
+## Prep Work {#chapter-9-1}
+
+It is useful to do some prep work to keep everything clear.
+
+### Question Vector {#chapter-9-1-1}
+
+First create a vector of questions you want to include on your graph. For the example in this chapter we are comparing questions `Q210` and `Q211`. We put the names of those variables in a vector and save that vector as an object.
+
+```{r 09.3-question-list}
+
+questions_2_compare <- c(
+  "Q210",
+  "Q211"
+  )
+
+```
+
+Now the variables we want to graph as saved to the object `questions_2_compare` in a vector.
+
+### Question Labels {#chapter-9-1-2}
+
+The next step is to create a vector of labels for the questions. This is the text that will display on the y-axis. The labels should appear in the same order as they variables they are referring to.
+
+```{r 09.4-question-labels}
+
+question_labels <- c(
+  "Is there corruption?",       # Text for Q210
+  "Is the gov't cracking down?" # Text for Q211
+  )
+
+```
+
+The object `question_labels` represents the text that will serve to label the responses on the graph.
+
+
+## Create a Multiquestion Summary
+
+Just like with the basic overall and demographic graphs, we begin by creating a data frame that summarizes our questions.
+
+The "short" and "long" summary functions require the same four main parameters: (1) the data you are using, (2) a vector of the variables you want to plot (**not** a list), (3) how you want the variables to be labeled in the legend, and (4) the country you want to plot it for. 
+
+In the example for this chapter, the data we are using is `survey1`; the variables we want to plot are in the vector `questions_2_compare`; the labels we want to give them are in `questions_labels`; and the country we want to plot the data for is `"Algeria"`.
+
+Both `calculate_ind_multiq_smry_short()` and `calculate_ind_multiq_smry_long()` take the same required arguments. We can see the different outputs below.
+
+### "Short" Summary
+
+The "short" summary version summarizes the variables in question like a comparative graph. That is, we see the results of who selected options `1` or `2` for ordinal variables and who selected option `1` for dichotomous or nominal variables.
+
+```{r 09.05-short-summary}
+
+calculate_ind_multiq_smry_short(survey1,              # Data
+                                questions_2_compare,  # Question vector
+                                questions_labels,     # Label vector
+                                "Algeria"             # Country
+                                )
+
+```
+
+Let's save this output to an object we can graph.
+
+```{r 09.06-short-summary-save}
+
+ind_multiq_smry_short <- calculate_ind_multiq_smry_short(survey1,
+                                                         questions_2_compare,
+                                                         questions_labels,
+                                                         "Algeria"
+                                                         )
+
+```
+
+### "Long" Summary
+
+The "long" summary version summarizes the variables in question like an individual country graph. That is, in this case we see each the percent of citizens choosing each response option.
+
+```{r 09.07-long-summary}
+
+
+calculate_ind_multiq_smry_long(survey1,              # Data
+                               questions_2_compare,  # Question vector
+                               questions_labels,     # Label vector
+                               "Algeria"             # Country
+                               )
+
+```
+
+Let's save this output to an object we can graph.
+
+```{r 09.08-long-summary-save}
+
+ind_multiq_smry_long <- calculate_ind_multiq_smry_long(survey1,
+                                                       questions_2_compare,
+                                                       questions_labels,
+                                                       "Algeria"
+                                                       )
+
+```
+
+
+## Plot a Multiquestion Graph for a Single Country {#chapter-9-2}
+
+We are now ready to create our graphs.
+
+Each `calculate_` function has its own `plot_` function. If you try to plot a long summary with the short plot function or vise versa, your graph will look bad. The `plot_` functions assume the data they are given is in a certain format. They do not adapt.
+
+### "Short" Plots
+
+To plot a "short" summary, use the function `plot_ind_multiq_smry_short()`. The function only requires one input: a data frame created by `calculate_ind_multiq_smry_short()`.
+
+
+```{r 09.9-short-first-graph,fig.dim=c(13,12)}
+
+plot_ind_multiq_smry_short(ind_multiq_smry_short)
+
+```
+
+Notice there are several missing elements in this graph. Namely, an appropriate title, subtitle, and caption. These three aspects are not included in the list of *required* arguments, because a graph can be created without them. If you want to use the graph publicly, however, it would be prudent to include them.
+
+The parameters for including a title, subtitle, and caption are the same as they are in any other function: `.title`, `.subtitle`, and `.caption`, respectively. We can fill these in to create our final graph.
+
+```{r 09.6-second-graph, fig.dim=c(13,12)}
+
+plot_multiquestions_ind(
+  .ab = survey1,
+  .questions = questions_2_compare,
+  .question_labels = question_labels,
+  .country = "Algeria",
+  .title = "Perceptions of Corruption in Algeria",
+  .subtitle = "% saying to a medium or large extent",
+  .caption = "Arab Barometer Wave VI, Survey 1, Algeria"
+)
+
+```
+
+## Extras {#chapter-9-3}
+
+### Setting Colors {#chapter-9-3-1}
+
+By default, the colors for the graph are randomly selected from `ArabBarometer_clr`. To set the colors of the graph, supply a vector of hex codes or named Arab Barometer brand colors to the parameter `.clr_choice`.
+
+### Data Frame {#chapter-9-3-2}
+
+There is no `calculate_` function that accompanies this function. All calculations are done internally. The parameter `.return_df` allows the user to see the data frame used to create the graph. Setting `.return_df` to `TRUE` will cause the function to return a list containing the graph and the data frame. Setting `.return_df` to `"only"` will cause the function to only return the data frame.
+
+### Explict Grid Example {#chapter-9-3-3}
+
+Remember: plotting a set of grid questions requires exactly the same steps as outlined throughout this chapter. There is **no difference** between plotting 2 (or n) questions that belong to a grid, and 2 (or n) questions that do not.
+
+```{r 09.7-grid-example, fig.dim=c(13,12)}
+
+# Identifying two question from a grid set:
+questions_2_compare <- c(
+  "Q201A_1",
+  "Q201A_2"
+)
+
+# Supplying labels:
+question_labels <- c(
+  "Government",
+  "Legal system"
+)
+
+# Plotting the grid questions:
+plot_multiquestions_ind(
+  .ab = survey1,
+  .questions = questions_2_compare,
+  .question_labels = question_labels,
+  .country = "Algeria",
+  .title = "How much trust do you have in...",
+  .subtitle = "% of Algerians saying they have quite a lot or a great deal",
+  .caption = "Arab Barometer Wave VI, Survey 1, Algeria"
+)
+
+```
+
