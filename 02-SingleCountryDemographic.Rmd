@@ -8,6 +8,10 @@ This chapter will cover how to make a frequency graph by a demographic for a sin
 
 This section will go over how to make a one-off frequency graph by a demographic for a single country.
 
+**You will get a warning when you use the `plot_demographic_smry_individual()` function. Do not be afraid.** The warning is a result of the function forcing the order of the bars. You can safely ignore it. It is displayed in the example code at the top of this tutorial to demonstrate everything is ok, but suppressed for the rest of the chapter.
+
+### TL;DR {#tldr-chapter2-single -}
+
 At the end, your code will look like the following:
 
 ```{r 02.1-Complete-Code-Example, eval=FALSE}
@@ -161,6 +165,9 @@ survey1 %>%
 
 
 ## Create Many Graphs
+
+
+### TL;DR {#tldr-chapter2-mnay -}
 
 We will follow the same steps from Chapter one to create many graphs at once.
 

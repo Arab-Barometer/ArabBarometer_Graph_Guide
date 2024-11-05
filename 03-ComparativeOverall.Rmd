@@ -1,10 +1,12 @@
-# Comparative Overall Graphs
+# Comparative Overall Graphs {#chapter-3}
 
 This chapter will cover how to make a comparative frequency graph for multiple countries.
 
 ## Create a Single Graph
 
 This section will go over how to make a one-off comparative frequency graph for a multiple countries.
+
+### TL;DR {#tildr-chapter3-single -}
 
 At the end, your code will look like the following:
 
@@ -171,6 +173,8 @@ survey1 %>%
 ## Create Many Graphs
 
 As a rule of thumb in programming, if you can create something one time, you can create it a bajillion times. This is good because for each wave, Arab Barometer needs approximately a bajillion graphs.
+
+### TL;DR {#tildr-chapter3-mnay -}
 
 To create many graphs at once, there are three steps to follow.
 

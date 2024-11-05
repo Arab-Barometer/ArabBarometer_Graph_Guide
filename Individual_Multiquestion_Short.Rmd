@@ -211,18 +211,26 @@ plot_ind_multiq_smry_short(ind_multiq_smry_short)
 
 Notice there are several missing elements in this graph. Namely, an appropriate title, subtitle, and caption. These three aspects are not included in the list of *required* arguments, because a graph can be created without them. If you want to use the graph publicly, however, it would be prudent to include them.
 
-The parameters for including a title, subtitle, and caption are the same as they are in any other function: `.title`, `.subtitle`, and `.caption`, respectively. We can fill these in to create our final graph.
+The parameters for including a title, subtitle, and caption are the same as they are in any other function: `.title`, `.subtitle`, and `.caption`, respectively. We can fill these in to create our final graphs.
 
-```{r 09.6-second-graph, fig.dim=c(13,12)}
+```{r 09.10-second-graph-short, fig.dim=c(13,12)}
 
-plot_multiquestions_ind(
-  .ab = survey1,
-  .questions = questions_2_compare,
-  .question_labels = question_labels,
-  .country = "Algeria",
-  .title = "Perceptions of Corruption in Algeria",
-  .subtitle = "% saying to a medium or large extent",
-  .caption = "Arab Barometer Wave VI, Survey 1, Algeria"
+plot_ind_multiq_smry_short(
+  ind_multiq_smry_short,                                  # Data frame
+  .title = "Perceptions of Corruption in Algeria",        # Title
+  .subtitle = "% saying to a medium or large extent",     # Subtitle
+  .caption = "Arab Barometer Wave VI, Survey 1, Algeria"  # Caption
+)
+
+```
+
+```{r 09.11-second-graph-long, fig.dim=c(13,12)}
+
+plot_ind_multiq_smry_long(
+  ind_multiq_smry_long,                                   # Data frame
+  .title = "Perceptions of Corruption in Algeria",        # Title
+  .subtitle = "% saying to a medium or large extent",     # Subtitle
+  .caption = "Arab Barometer Wave VI, Survey 1, Algeria"  # Caption
 )
 
 ```
@@ -240,31 +248,4 @@ There is no `calculate_` function that accompanies this function. All calculatio
 ### Explict Grid Example {#chapter-9-3-3}
 
 Remember: plotting a set of grid questions requires exactly the same steps as outlined throughout this chapter. There is **no difference** between plotting 2 (or n) questions that belong to a grid, and 2 (or n) questions that do not.
-
-```{r 09.7-grid-example, fig.dim=c(13,12)}
-
-# Identifying two question from a grid set:
-questions_2_compare <- c(
-  "Q201A_1",
-  "Q201A_2"
-)
-
-# Supplying labels:
-question_labels <- c(
-  "Government",
-  "Legal system"
-)
-
-# Plotting the grid questions:
-plot_multiquestions_ind(
-  .ab = survey1,
-  .questions = questions_2_compare,
-  .question_labels = question_labels,
-  .country = "Algeria",
-  .title = "How much trust do you have in...",
-  .subtitle = "% of Algerians saying they have quite a lot or a great deal",
-  .caption = "Arab Barometer Wave VI, Survey 1, Algeria"
-)
-
-```
 

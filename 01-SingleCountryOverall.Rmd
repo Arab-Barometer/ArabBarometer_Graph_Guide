@@ -5,6 +5,8 @@ This chapter will cover how to make an overall frequency graph for a single coun
 
 ## Create a Single Graph {#chapter-1-1}
 
+### TL;DR {#tldr-chapter1-single -}
+
 This section will go over how to make a one-off frequency graph for a single country.
 
 At the end, your code will look like the following:
@@ -22,7 +24,7 @@ survey1 %>%
 That code will produce the following graph:
 
 
-```{r 01.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12),cache=TRUE,warning=FALSE,message=FALSE}
+```{r 01.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12),warning=FALSE,message=FALSE}
 
 survey1 %>%
   calculate_smry_individual("Q1COVID19",
@@ -147,7 +149,7 @@ We can do this because `Q1COVID19_summary` is equal to `survey1 %>% calculate_sm
 Any of the above code gives the following graph:
 
 
-```{r 01.11-plot, echo=FALSE, fig.dim=c(13,12),cache=TRUE,warning=FALSE,message=FALSE}
+```{r 01.11-plot, echo=FALSE, fig.dim=c(13,12),warning=FALSE,message=FALSE}
 
 survey1 %>%
   calculate_smry_individual("Q1COVID19",
@@ -176,7 +178,7 @@ survey1 %>%
 Now we have the plot we started with! We're done!
 
 
-```{r 01.13-plot, echo=FALSE, fig.dim=c(13,12),cache=TRUE,warning=FALSE,message=FALSE}
+```{r 01.13-plot, echo=FALSE, fig.dim=c(13,12),warning=FALSE,message=FALSE}
 
 survey1 %>%
   calculate_smry_individual("Q1COVID19",
@@ -193,6 +195,8 @@ survey1 %>%
 ## Create Many Graphs {#chapter-1-2}
 
 As a rule of thumb in programming, if you can create something one time, you can create it a bajillion times. This is good because for each wave, Arab Barometer needs approximately a bajillion graphs.
+
+### TL;DR {#tldr-chapter1-many -}
 
 To create many graphs at once, there are three steps to follow.
 
@@ -233,7 +237,7 @@ The result is a named list of plots. Each element in the list is a plot. The ele
 For example, to see the plot for variable `Q1COVID19`, run the following code:
 
 
-```{r 01.14.5-Complete-Code-Example, echo=FALSE,cache=TRUE,warning=FALSE,message=FALSE}
+```{r 01.14.5-Complete-Code-Example, echo=FALSE,warning=FALSE,message=FALSE}
 
      #.....................Identify the variables.....................
 variables_2_plot <- list("Q1COVID19",
@@ -258,7 +262,7 @@ plots <- map(summaries,
 ```
 
 
-```{r 01.15-Complete-Code-Example-Results1, fig.dim=c(13,12),cache=TRUE,warning=FALSE}
+```{r 01.15-Complete-Code-Example-Results1, fig.dim=c(13,12),warning=FALSE}
 
 plots$Q1COVID19
 
@@ -266,7 +270,7 @@ plots$Q1COVID19
 
 To see the plot for variable `Q2061A`, run the following code:
 
-```{r 01.16-Complete-Code-Example-Results2, fig.dim=c(13,12),cache=TRUE,warning=FALSE}
+```{r 01.16-Complete-Code-Example-Results2, fig.dim=c(13,12),warning=FALSE}
 
 plots$Q2061A
 
@@ -274,7 +278,7 @@ plots$Q2061A
 
 Finally, to see the plot for variable `Q609`, run the following code:
 
-```{r 01.17-Complete-Code-Example-Results3, fig.dim=c(13,12),cache=TRUE,warning=FALSE}
+```{r 01.17-Complete-Code-Example-Results3, fig.dim=c(13,12),warning=FALSE}
 
 plots$Q609
 
@@ -328,7 +332,7 @@ summaries <- calculate_smry_individual(
 
 The code above produces a named list. Each element in the list is a summary of a variable. The variable is the name of the list. In long form, it looks like the following:
 
-```{r 01.23-summaries, echo=FALSE,cache=TRUE,warning=FALSE,message=FALSE}
+```{r 01.23-summaries, echo=FALSE,warning=FALSE,message=FALSE}
 
 summaries <- calculate_smry_individual(
   survey1,          # Data we are using
@@ -374,7 +378,7 @@ map(
 
 The code produces the following output:
 
-```{r 01.26-plots, figures-side, fig.show="hold", out.width="50%",cache=TRUE,message=FALSE}
+```{r 01.26-plots, figures-side, fig.show="hold", out.width="50%",message=FALSE}
 map(
   summaries,            # List of summaries
   plot_smry_individual  # Plotting function
@@ -386,7 +390,7 @@ map(
 Notice, yet again, the caption needs to be changed. To change the caption for all the graphs, just add one line to the `map()` function, holding it constant just as we did with the data and country when creating the list of summaries.
 
 
-```{r 01.27-plots, figures-side, fig.show="hold", out.width="50%",cache=TRUE}
+```{r 01.27-plots, figures-side, fig.show="hold", out.width="50%"}
 map(
   summaries,                                     # List (our summaries)
   plot_smry_individual,                          # Function (plotting function)
@@ -408,7 +412,7 @@ plots <- map(
 ```
 
 
-```{r 01.28.5-plots, echo=FALSE,cache=TRUE,message=FALSE,warning=FALSE}
+```{r 01.28.5-plots, echo=FALSE,message=FALSE,warning=FALSE}
 plots <- map(
   summaries,                                     # List of summaries
   plot_smry_individual,                          # Plotting function
@@ -419,7 +423,7 @@ plots <- map(
 
 Now, all three plots have been stored in a named list named `plots`. To look at the first plot:
 
-```{r 01.29-Complete-Code-Example-Results1, fig.dim=c(13,12),cache=TRUE,warning=FALSE}
+```{r 01.29-Complete-Code-Example-Results1, fig.dim=c(13,12),warning=FALSE}
 
 plots$Q1COVID19
 
@@ -427,7 +431,7 @@ plots$Q1COVID19
 
 To see the plot for variable `Q2061A`, run the following code:
 
-```{r 01.30-Complete-Code-Example-Results2, fig.dim=c(13,12),cache=TRUE,warning=FALSE}
+```{r 01.30-Complete-Code-Example-Results2, fig.dim=c(13,12),warning=FALSE}
 
 plots$Q2061A
 
@@ -435,7 +439,7 @@ plots$Q2061A
 
 Finally, to see the plot for variable `Q609`, run the following code:
 
-```{r 01.31-Complete-Code-Example-Results3, fig.dim=c(13,12),cache=TRUE,warning=FALSE}
+```{r 01.31-Complete-Code-Example-Results3, fig.dim=c(13,12),warning=FALSE}
 
 plots$Q609
 

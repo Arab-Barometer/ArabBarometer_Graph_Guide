@@ -75,6 +75,8 @@ The `map()` function will try pass the items from the list as the first argument
 
 # Pre-work to get ordinal questions:
 ordinal_questions <- individual_titles$qname[individual_titles$qname %in% names(survey1) & individual_titles$type == "ordinal"]
+ordinal_questions <- ordinal_questions[!ordinal_questions %in% c("Q201A_6A_LIB",
+                                                                 "Q201A_6B_LIB")]
 
 # Using the mapping function:
 map(

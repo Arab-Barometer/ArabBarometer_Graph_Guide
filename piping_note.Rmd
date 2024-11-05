@@ -1,6 +1,6 @@
 # A Note On Piping {#piping-note .unnumbered}
 
-As mentioned, throughout this guide the examples will be using the piping operator, which you will see as either `**|>**` (native R) or `**%>%**` (`dplyr` package). If you are unfamiliar with it, a little more detail may be helpful.
+As mentioned, throughout this guide the examples will be using the piping operator, which you will see as either **`|>`** (native R) or **`%>%`** (`dplyr` package). If you are unfamiliar with it, a little more detail may be helpful.
 
 What is the difference between the native R pipe and the `dplyr` pipe? [Not much.](https://www.tidyverse.org/blog/2023/04/base-vs-magrittr-pipe/). For the purposes of using `ArabBarometR`, they are essentially identical. This guide will use them interchangeably. 
 
@@ -40,7 +40,7 @@ Often that's the correct thought process. Computers are tricky enough on their o
 
 Instead of saving object after object, you can use a piping operator to get straight to the point.
 
-Say you want to change that 2 into a character and make sure that it changed. In base R, this is done in two steps. First, use the as.character() function with 2 as the input and save the output as something. Second, use the output from the first step as the input for the function is.character().
+Say you want to change that 2 into a character and make sure that it changed. In base R, this is done in two steps. First, use the `as.character()` function with 2 as the input and save the output as something. Second, use the output from the first step as the input for the function `is.character()`.
 
 ```{r}
 
@@ -68,7 +68,7 @@ Using the piping function, you can combine these two steps.
 
 ```
 
-Here, the piping operator tells R to put 2 into the as.character() function and then put the output of that into the is.character() function.
+Here, the piping operator tells R to put 2 into the `as.character()` function and then put the output of that into the `is.character()` function.
 
 Writing out all the operations in a single line can be visually confusing. Luckily, R can (usually) tell when you are or are not finished with an operation. It is convention to start a new line after using the piping operator. Visually, this makes the code much more clear.
 
@@ -129,8 +129,8 @@ First, R adds 2 to 3. Second, R adds 7 to 5. In traditional order of operations 
 
 The piping operator takes *everything* that has already been calculated on its left and uses that as the first input on its right. To put this as explicitly as possible while using work-appropriate language:
 
-  1. The 2 on the left of the first `**|>**`/`**%>%**` is used as the x input for `**add_this()**` and 3 is the y input.
-  2. The outcome of 2 as the x input and 3 as the y input in `**add_this()**` is used as the x input for the next `**add_this()**` and 7 is the y input.
+  1. The 2 on the left of the first **`|>`**/**`%>%`** is used as the x input for **`add_this()`** and 3 is the y input.
+  2. The outcome of 2 as the x input and 3 as the y input in **`add_this()`** is used as the x input for the next **`add_this()`** and 7 is the y input.
   
 That means we could also write the following to get the same answer:  
   
@@ -141,13 +141,13 @@ add_this(add_this(2,3),7)
 
 ```
 
-Even though *Chain Ex. 4* is fewer lines than *Chain Ex. 3*, visually it is much more confusing.
+Even though **Chain Ex. 4** is fewer lines than **Chain Ex. 3**, visually it is much more confusing.
 
-The most important take away from this section, however, is that *Chain Ex. 3* and *Chain Ex. 4* are **exactly the same.** The piping operator transforms *Chain Ex. 4* into *Chain Ex. 3.*
+The most important take away from this section, however, is that **Chain Ex. 3** and **Chain Ex. 4** are *exactly the same.* The piping operator transforms **Chain Ex. 4** into **Chain Ex. 3.**
 
 ## The order matters. {-}
 
-The object you are piping is the first variable in the function. In the `**add_this()**` function, the 2 we piped in was `**x**` and the 3 used in the function was `**y**`. Another example with a subtraction function will emphasize this.
+The object you are piping is the first variable in the function. In the **`add_this()`** function, the 2 we piped in was `x` and the 3 used in the function was `y`. Another example with a subtraction function will emphasize this.
 
 ```{r}
 
