@@ -1,4 +1,4 @@
-# Single Country Demographic Plots
+# Single Country Demographic Plots {#chapter-2}
 
 This chapter will cover how to make a frequency graph by a demographic for a single country.
 
@@ -27,7 +27,6 @@ survey1 %>%
 
 That code will produce the following graph:
 
-
 ```{r 02.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
 
 survey1 %>%
@@ -39,6 +38,7 @@ survey1 %>%
 ```
 
 Notice these messages and warnings? That's ok! You can ignore them. In the rest of this chapter, the messages and warning will be silenced. They are shown here to make sure the reader knows nothing is wrong if you see them.
+
 
 ### Creating a Summary
 
@@ -398,3 +398,21 @@ gender_plots$Q609
 
 
 You have now completed all steps in the example code. Congrats!
+
+## Extras
+
+### Font Size
+
+The font size default brand size is used for the graph text. You can learn how to change that in [the chapter on changing the font size](#change-font-size).
+
+### Colors
+
+You can learn how to change the colors for the comparative trend graph in [the chapter on changing graph colors](#change-colors-trend-comparative).
+
+### Warnings
+
+There are several points in this code when warnings or messages will appear **even if you are using the code correctly.** No need to panic. You can read about all of the messages and warnings that may appear *even when the code is correct* in the section [How do I Understand (some) Messages, Warnings, and Errors](#standard-warnings).
+
+The function `calculate_demographic_smry_individual()` will produce a join message. You can read a bit about that in the section (#messages-join).
+
+The function `plot_demographic_smry_individual()` will produce a `position_dodge()` warning. You can read a bit about that in the section (#warning-dodge).
