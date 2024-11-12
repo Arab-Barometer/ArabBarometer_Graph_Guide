@@ -1,0 +1,88 @@
+# Understand (some) Messages, Warnings, and Errors {#standard-warnings}
+
+There are cases where even if your code is correct, you may see a message or warning in your R console. This chapter covers common instances and notes when you should except a message or warning.
+
+## Messages {#messages}
+
+Messages are text output in your R console that are meant to be informative. They do not indicate anything is wrong.
+
+### Joining {#messages-join}
+
+Any function that internally uses a `join` function from the `dplyr` function produces a message in your R console telling you which variables are being used to join data frames.
+
+The `calculate_demographic_smry_individual()` function produces this message. We can see it as a result of our example in [Chapter 3](#chapter-3).
+
+
+```{r how-warnings-1, collapse=TRUE,echo=FALSE}
+
+x <- survey1 %>%
+  calculate_demographic_smry_individual("Q1COVID19",
+                                        "gender",
+                                        "Algeria")
+
+```
+
+Inside `calculate_demographic_smry_individual()`, two data frames are being joined by the variable `Q1COVID19`. That is all the message is saying. Nothing is wrong with the code.
+
+## Warnings
+
+A warning is very different from an error. A warning says your code ran, but you might want to double check something. If you know the code you run will produce a warning, you can safely ignore it. Warnings do **not** necessarily mean something is wrong with your code.
+
+### `position_dodge()` {#warning-dodge}
+
+A common warning you will when creating a bar graph that uses two or more colors is the following:
+
+```{r how-warnings-2, echo=FALSE, message=FALSE, warning=TRUE, fig.keep="none"}
+
+survey1 %>%
+  calculate_demographic_smry_individual("Q1COVID19",
+                                        "gender",
+                                        "Algeria") |> 
+  plot_demographic_smry_individual()
+
+```
+
+TL;DR: ignore this.
+
+In short, this warning comes from the `ggplot2` package and is referring to how the bars are ordered. The internal code of any `plot_` function in `ArabBarometR` prevents overlapping x intervals, so there is no need to worry about this.
+
+### No Default Title/Subtitle {#warning-title}
+
+By default, the `plot_` functions will do their best to provide a default title and subtitle. However, if there is no default title or subtitle, the `plot_` functions will use `"TITLE"` or `"SUBTITLE"` instead. In this case, you will also receive a warning telling you that there is no title and/or subtitle for your graph. You can still create the graph, but you should add your own title and/or subtitle before you share that graph with the public.
+
+There are a few specific instances where you will see this warning.
+
+#### Variable is Missing a Title/Subtitle {- #missing-title}
+
+If the variable you are trying to plot is missing from titles data frames, you will see this error. For example, say Arab Barometer adds a question to a new survey under the variable `QXX` but the titles have not yet been updated. You can still create a graph, but you will receive the following warnings:
+
+```{r how-warnings-3,echo=FALSE,warning=TRUE}
+
+x <- title_function("QXX")
+y <- subtitle_function("QXX")
+
+```
+
+To make these warnings go away, you will have to supply your own title and subtitle until the package is updated.
+
+#### Multiquestion Graphs {- #multiquestion-titles}
+
+When you are creating a graph that displays more than one question, there is no default title or subtitle. You must always supply your own. If you do not supply your own title and subtitle, you will see the following warnings:
+
+```{r how-warnings-4, echo=FALSE, warning=TRUE, fig.keep="none"}
+
+questions_2_compare <- c("Q210",
+                         "Q211")
+questions_labels <- c("Is there corruption?",
+                      "Is the gov't cracking down?")
+
+calculate_ind_multiq_smry_short(survey1,
+                               questions_2_compare,
+                               questions_labels,
+                               "Algeria") |> 
+  plot_ind_multiq_smry_short(.caption = "Arab Barometer Wave VI, Survey 1, Algeria")
+
+
+```
+
+We see the `position_dodge()` warning, the title warning, and the subtitle warning. The title and subtitle warnings will disappear once you provide a title and subtitle.
