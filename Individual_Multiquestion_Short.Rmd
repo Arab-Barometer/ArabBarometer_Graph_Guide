@@ -1,4 +1,4 @@
-# Single Country Multi-Question Plots {#chapter-9}
+# Single Country Multi-Question Plots {#new-chapter-9}
 
 This chapter introduces two different ways to compare multiple questions in one country. One graphs summarizes questions like comparative graphs and plots those summaries. The other plots questions with the same value labels together in the style of individual graphs. The former is called a "short" summary, while the latter is called a "long" summary.
 
@@ -13,7 +13,7 @@ These types of graphs are especially useful for plotting **grid** questions. Gri
 
 At the end, your code will look like the following:
 
-```{r 09.1-Complete-Code-Example, eval=FALSE}
+```{r 09.1-Complete-Code-Example, eval=FALSE,warning=FALSE,message=FALSE}
 
 questions_2_compare <- c("Q210",
                          "Q211")
@@ -138,7 +138,7 @@ In the example for this chapter, the data we are using is `survey1`; the variabl
 
 Both `calculate_ind_multiq_smry_short()` and `calculate_ind_multiq_smry_long()` take the same required arguments. We can see the different outputs below.
 
-### "Short" Summary
+### "Short" Summary {#short-summary-calc}
 
 The "short" summary version summarizes the variables in question like a comparative graph. That is, we see the results of who selected options `1` or `2` for ordinal variables and who selected option `1` for dichotomous or nominal variables.
 
@@ -164,7 +164,7 @@ ind_multiq_smry_short <- calculate_ind_multiq_smry_short(survey1,
 
 ```
 
-### "Long" Summary
+### "Long" Summary {#long-summary-calc}
 
 The "long" summary version summarizes the variables in question like an individual country graph. That is, in this case we see each the percent of citizens choosing each response option.
 
@@ -181,7 +181,7 @@ calculate_ind_multiq_smry_long(survey1,              # Data
 
 Let's save this output to an object we can graph.
 
-```{r 09.08-long-summary-save}
+```{r 09.08-long-summary-save,message=FALSE}
 
 ind_multiq_smry_long <- calculate_ind_multiq_smry_long(survey1,
                                                        questions_2_compare,
@@ -200,10 +200,10 @@ Each `calculate_` function has its own `plot_` function. If you try to plot a lo
 
 ### "Short" Plots
 
-To plot a "short" summary, use the function `plot_ind_multiq_smry_short()`. The function only requires one input: a data frame created by `calculate_ind_multiq_smry_short()`.
+To plot a "short" summary, use the function `plot_ind_multiq_smry_short()`. The function only requires one input: a data frame created by `calculate_ind_multiq_smry_short()`. In our example, we saved this data frame as `ind_multiq_smry_short`.
 
 
-```{r 09.9-short-first-graph,fig.dim=c(13,12)}
+```{r 09.9-short-first-graph,fig.dim=c(13,12),warning=FALSE}
 
 plot_ind_multiq_smry_short(ind_multiq_smry_short)
 
@@ -211,9 +211,11 @@ plot_ind_multiq_smry_short(ind_multiq_smry_short)
 
 Notice there are several missing elements in this graph. Namely, an appropriate title, subtitle, and caption. These three aspects are not included in the list of *required* arguments, because a graph can be created without them. If you want to use the graph publicly, however, it would be prudent to include them.
 
-The parameters for including a title, subtitle, and caption are the same as they are in any other function: `.title`, `.subtitle`, and `.caption`, respectively. We can fill these in to create our final graphs.
+The parameters for including a title, subtitle, and caption are the same as they are in any other function: `.title`, `.subtitle`, and `.caption`, respectively. If you do not supply a title or subtitle, you **will** get a warning, like we see above. The graph is still created, but you are reminded that there is no title or subtitle.
 
-```{r 09.10-second-graph-short, fig.dim=c(13,12)}
+We can fill these in to create our final graph.
+
+```{r 09.10-second-graph-short, fig.dim=c(13,12),warning=FALSE}
 
 plot_ind_multiq_smry_short(
   ind_multiq_smry_short,                                  # Data frame
@@ -224,28 +226,137 @@ plot_ind_multiq_smry_short(
 
 ```
 
-```{r 09.11-second-graph-long, fig.dim=c(13,12)}
+Recall the object `ind_multiq_smry_short` is just the name we gave the output of `calculate_ind_multiq_smry_short()` from section (#short-summary-calc). We can substitute the calculation code back in here to produce the code (and graph) from the initial example.
+
+
+```{r 09.11-final-graph-short, fig.dim=c(13,12),warning=FALSE}
+
+
+calculate_ind_multiq_smry_short(survey1,
+                                questions_2_compare,
+                                questions_labels,
+                                "Algeria") |> 
+  plot_ind_multiq_smry_short(.title = "Perceptions of Corruption in Algeria",
+                             .subtitle = "% saying to a medium or large extent",
+                             .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
+
+```
+
+
+
+## "Long" Plots
+
+To plot a "long" summary, use the function `plot_ind_multiq_smry_long()`. The function only requires one input: a data frame created by `calculate_ind_multiq_smry_long()`. In our example, we saved this data frame as `ind_multiq_smry_long`.
+
+
+```{r 09.12-short-first-graph,fig.dim=c(13,12),warning=FALSE}
+
+plot_ind_multiq_smry_short(ind_multiq_smry_short)
+
+```
+
+Notice there are several missing elements in this graph. Namely, an appropriate title, subtitle, and caption. These three aspects are not included in the list of *required* arguments, because a graph can be created without them. If you want to use the graph publicly, however, it would be prudent to include them.
+
+The parameters for including a title, subtitle, and caption are the same as they are in any other function: `.title`, `.subtitle`, and `.caption`, respectively. If you do not supply a title or subtitle, you **will** get a warning, like we see above. The graph is still created, but you are reminded that there is no title or subtitle.
+
+Note: you'll probably want to use a different title or subtitle from a short summary graph.
+
+We can fill these in to create our final graph.
+
+```{r 09.13-second-graph-long, fig.dim=c(13,12),warning=FALSE}
 
 plot_ind_multiq_smry_long(
   ind_multiq_smry_long,                                   # Data frame
   .title = "Perceptions of Corruption in Algeria",        # Title
-  .subtitle = "% saying to a medium or large extent",     # Subtitle
+  .subtitle = "% saying",                                 # Subtitle
   .caption = "Arab Barometer Wave VI, Survey 1, Algeria"  # Caption
 )
 
 ```
 
+Recall the object `ind_multiq_smry_long` is just the name we gave the output of `calculate_ind_multiq_smry_long()` from section (#long-summary-calc). We can substitute the calculation code back in here to produce the code (and graph) from the initial example.
+
+
+```{r 09.14-final-graph-long, fig.dim=c(13,12),warning=FALSE}
+
+
+calculate_ind_multiq_smry_long(survey1,
+                                questions_2_compare,
+                                questions_labels,
+                                "Algeria") |> 
+  plot_ind_multiq_smry_long(.title = "Perceptions of Corruption in Algeria",
+                             .subtitle = "% saying",
+                             .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
+
+```
+
+
+
 ## Extras {#chapter-9-3}
-
-### Setting Colors {#chapter-9-3-1}
-
-By default, the colors for the graph are randomly selected from `ArabBarometer_clr`. To set the colors of the graph, supply a vector of hex codes or named Arab Barometer brand colors to the parameter `.clr_choice`.
-
-### Data Frame {#chapter-9-3-2}
-
-There is no `calculate_` function that accompanies this function. All calculations are done internally. The parameter `.return_df` allows the user to see the data frame used to create the graph. Setting `.return_df` to `TRUE` will cause the function to return a list containing the graph and the data frame. Setting `.return_df` to `"only"` will cause the function to only return the data frame.
 
 ### Explict Grid Example {#chapter-9-3-3}
 
 Remember: plotting a set of grid questions requires exactly the same steps as outlined throughout this chapter. There is **no difference** between plotting 2 (or n) questions that belong to a grid, and 2 (or n) questions that do not.
 
+
+#### "Short" Summary {-}
+
+```{r 09.15-short-grid, echo=FALSE, fig.dim=c(13,12), warning=FALSE,message=FALSE}
+
+questions_2_compare <- c("Q725_1",
+                         "Q725_4",
+                         "Q725_5",
+                         "Q725_6")
+questions_labels <- c("Joseph Biden",
+                      "Xi Jingpin",
+                      "Ali Khameni",
+                      "Mohammed bin Salman")
+
+calculate_ind_multiq_smry_short(survey1,
+                                questions_2_compare,
+                                questions_labels,
+                                "Algeria") |> 
+  plot_ind_multiq_smry_short(.title = "Perceptions of world leader's foreign policies towards MENA",
+                             .subtitle = "% saying it is very good or good",
+                             .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
+```
+
+#### "Long" Summary {-}
+
+```{r 09.16-long-grid, echo=FALSE, fig.dim=c(13,12), warning=FALSE,message=FALSE}
+
+questions_2_compare <- c("Q725_1",
+                         "Q725_4",
+                         "Q725_5",
+                         "Q725_6")
+questions_labels <- c("Joseph Biden",
+                      "Xi Jingpin",
+                      "Ali Khameni",
+                      "Mohammed bin Salman")
+
+
+# "Long" Summary:
+calculate_ind_multiq_smry_long(survey1,
+                               questions_2_compare,
+                               questions_labels,
+                               "Algeria") |> 
+  plot_ind_multiq_smry_long(.title = "Perceptions world leader's foreign policies towards MENA",
+                            .subtitle = "% saying",
+                            .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
+
+
+```
+
+### Setting Colors {#chapter-9-3-1}
+
+By default, the colors for the graph are randomly selected from `ArabBarometer_clr`. To set the colors of the graph, supply a vector of hex codes or named Arab Barometer brand colors to the parameter `.color_choice`.
+
+**Order matters.** If you want certain questions to have certain colors, you must put the colors you want in the same order of the questions. For example, if you want `Q210` to be `"AB purple"` (`r #796391`) and `Q211` to be `"AB yellow"` (`r #FBA950`), you must provide the color vector as `c("AB purple","AB yellow")`, since the questions are in the order `c("Q210","Q211")`.
+
+## Warnings {#chapter-9-warnings}
+
+There are several points in this code when warnings or messages will appear **even if you are using the code correctly.** No need to panic. You can read about all of the messages and warnings that may appear *even when the code is correct* in the section [How do I Understand (some) Messages, Warnings, and Errors](#standard-warnings).
+
+The function `plot_demographic_smry_individual()` will produce a `position_dodge()` warning. You can read a bit about that in the section (#warning-dodge).
+
+If you do not supply a title or subtitle, a plot will still be created but you will receive a missing title and/or subtitle warning. You can read more about this in section (#warning-title).
