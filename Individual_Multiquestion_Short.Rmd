@@ -1,3 +1,4 @@
+# (PART) Multiquestion Graphs {-}
 # Single Country Multi-Question Plots {#new-chapter-9}
 
 This chapter introduces two different ways to compare multiple questions in one country. One graphs summarizes questions like comparative graphs and plots those summaries. The other plots questions with the same value labels together in the style of individual graphs. The former is called a "short" summary, while the latter is called a "long" summary.
@@ -9,7 +10,7 @@ These types of graphs are especially useful for plotting **grid** questions. Gri
 
 ## TL;DR {-}
 
-### "Short" Summary {-}
+### "Short" Summary {- #tldr-short-smry-multiq}
 
 At the end, your code will look like the following:
 
@@ -50,11 +51,11 @@ calculate_ind_multiq_smry_short(survey1,
                              .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
 ```
 
-### "Long" Summary {-}
+### "Long" Summary {- #tldr-long-smry-multiq}
 
 At the end, your code will look like the following:
 
-```{r 09.1-Complete-Code-Example, eval=FALSE}
+```{r 09.3-Complete-Code-Example, eval=FALSE}
 
 questions_2_compare <- c("Q210",
                          "Q211")
@@ -75,7 +76,7 @@ calculate_ind_multiq_smry_long(survey1,
 
 That code will produce the following graph:
 
-```{r 09.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
+```{r 09.4-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
 
 questions_2_compare <- c("Q210",
                          "Q211")
@@ -244,7 +245,7 @@ calculate_ind_multiq_smry_short(survey1,
 
 
 
-## "Long" Plots
+### "Long" Plots
 
 To plot a "long" summary, use the function `plot_ind_multiq_smry_long()`. The function only requires one input: a data frame created by `calculate_ind_multiq_smry_long()`. In our example, we saved this data frame as `ind_multiq_smry_long`.
 
@@ -301,7 +302,7 @@ Remember: plotting a set of grid questions requires exactly the same steps as ou
 
 #### "Short" Summary {-}
 
-```{r 09.15-short-grid, echo=FALSE, fig.dim=c(13,12), warning=FALSE,message=FALSE}
+```{r 09.15-short-grid, collapse=TRUE, fig.dim=c(13,12), warning=FALSE,message=FALSE}
 
 questions_2_compare <- c("Q725_1",
                          "Q725_4",
@@ -323,7 +324,7 @@ calculate_ind_multiq_smry_short(survey1,
 
 #### "Long" Summary {-}
 
-```{r 09.16-long-grid, echo=FALSE, fig.dim=c(13,12), warning=FALSE,message=FALSE}
+```{r 09.16-long-grid, fig.dim=c(13,12), warning=FALSE,message=FALSE,collapse=TRUE}
 
 questions_2_compare <- c("Q725_1",
                          "Q725_4",
@@ -351,12 +352,12 @@ calculate_ind_multiq_smry_long(survey1,
 
 By default, the colors for the graph are randomly selected from `ArabBarometer_clr`. To set the colors of the graph, supply a vector of hex codes or named Arab Barometer brand colors to the parameter `.color_choice`.
 
-**Order matters.** If you want certain questions to have certain colors, you must put the colors you want in the same order of the questions. For example, if you want `Q210` to be `"AB purple"` (`r #796391`) and `Q211` to be `"AB yellow"` (`r #FBA950`), you must provide the color vector as `c("AB purple","AB yellow")`, since the questions are in the order `c("Q210","Q211")`.
+**Order matters.** If you want certain questions to have certain colors, you must put the colors you want in the same order of the questions. For example, if you want `Q210` to be `"AB purple"` (`#796391`) and `Q211` to be `"AB yellow"` (`#FBA950`), you must provide the color vector as `c("AB purple","AB yellow")`, since the questions are in the order `c("Q210","Q211")`.
 
-## Warnings {#chapter-9-warnings}
+### Warnings {#chapter-9-warnings}
 
 There are several points in this code when warnings or messages will appear **even if you are using the code correctly.** No need to panic. You can read about all of the messages and warnings that may appear *even when the code is correct* in the section [How do I Understand (some) Messages, Warnings, and Errors](#standard-warnings).
 
-The function `plot_demographic_smry_individual()` will produce a `position_dodge()` warning. You can read a bit about that in the section (#warning-dodge).
+The function `plot_demographic_smry_individual()` will produce a `position_dodge()` warning. You can read a bit about that [here](#warning-dodge).
 
-If you do not supply a title or subtitle, a plot will still be created but you will receive a missing title and/or subtitle warning. You can read more about this in section (#warning-title).
+If you do not supply a title or subtitle, a plot will still be created but you will receive a missing title and/or subtitle warning. You can read more about this [here](#warning-title).
