@@ -1,0 +1,47 @@
+# (Part) Trend Graphs {-}
+
+# Introducing Trend Graphs {-}
+
+This section will cover how to create trend graphs. Prior to this, we have only used a single data set, `survey1`. We will now also use the data sets `survey2` and `survey3`. Refer to the assumed [header code](#headercode) to see where `survey1`, `survey2`, and `survey3` came from. Each of these surveys were done at a different point during the overall sixth wave, so they can be used as an example for a trend graph.
+
+# `Wave8TrendData` package
+
+This section will also discuss how to use the `Wave8TrendData` package in conjuction with the functions provided in the `ArabBarometR` package, but not right away.
+
+Hopefully, learning how to use the `calculate_` and `plot_` functions associated with creating trend graphs will provide a foundation that helps the user appreciate but not depend on the `Wave8TrendData` package.
+
+**`Wave8TrendData` was created for the express purpose of creating trend graphs for Wave VIII.** This means:
+
+  - Variables that do not occur in Wave VIII (aka questions that were not asked) are unlabeled. This affects the graph display.
+  - Variables that do not occur in Wave VIII have not been checked for consistency. There may be coding errors.
+  - `Wave8TrendData` is **not** forward-looking at this point. It may (very likely) **not** be appropriate for Wave IX.
+  
+The `Wave8TrendData` package has many helpful features, but it is highly recommended that `ArabBarometR` package users understand how to make trend graphs without `Wave8TrendData`.
+
+## `Wave8TrendData` Provisions
+
+The `Wave8TrendData` package does not create trend plots on its own. Rather, it provides data structures that allows the users to skip some of the grunt-work necessary for creating trend plots. 
+
+Just as in the chapters on creating multivariable graphs, there is a certain amount of prep work recommended for trend graphs. Namely, creating a list of data frames and creating a vector of dates for each of those data frames. This must be done for both individual and comparative trend graphs.
+
+The `Wave8TrendData` package provides lists of data frames, survey date vectors, and a few functions.
+
+### `Wave8TrendData` List of Data Frames
+
+The `Wave8TrendData` list provides two named lists of data frames:
+
+  - `trend_data_arabic_list`
+  - `trend_data_english_list`
+
+Each list contains **six** individual data frames. These data frames are the data collected from Waves I, II, III, IV, V, and VII. The English list contains the data labeled in English. The Arabic list contains the same data labeled in Arabic.
+
+Note data from Waves VI and VIII are missing. Wave VI is missing because it was (mostly) done over the phone and should not be compared to in-person waves. Wave VIII is missing the package was constructed before the completion of Wave VIII.
+
+The lists are named according to Wave. 
+
+When we call an element in either `trend_data_arabic_list` or `trend_data_english_list` by name, we can see the data for that Wave. For example, `trend_data_english_list$WaveV` is the Wave V English data. Likewise, `trend_data_arabic_list$WaveII` is the Wave II Arabic data.
+
+Remember in Chapter \@ref(#plot-many-graphs-single-country), when we saved our plots in a list, and then called them by name to look at each one? We also did this in Chapters \@ref(#plot-many-graphs-single-country-demographic), \@ref(#plot-many-comparative), and \@ref(#plot-many-comparative-demographic). The point is, we've worked with (and created!) our own named lists before, and they are nothing to be afraid of.
+
+### `Wave8TrendData` Survey Data Vectors
+
