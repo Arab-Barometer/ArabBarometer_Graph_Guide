@@ -1,12 +1,17 @@
-# BARE BONES: Single Country Multi-Question Trend Plots
+# Single Country Multi-Question Trend Plots {#chapter-12}
 
+
+## TL;DR {-}
 
 At the end, your code will look like the following:
 
 ```{r 12.1-Complete-Code-Example, eval=FALSE}
 
-questions_2_compare <- list("Q2061A_1",
-                            "Q2061A_15")
+questions_2_compare <- c("Q2061A_1",
+                         "Q2061A_15")
+
+question_labels <- c("Economic situtation",
+                     "COVID-19")
 
 df_list <- list(survey1,
                 survey2,
@@ -16,14 +21,14 @@ survey_dates <- c("Survey 1",
                   "Survey 2",
                   "Survey 3")
 
-plot_trend_multiquestion_individual(questions_2_compare,
-                                    df_list,
-                                    survey_dates,
-                                    "Algeria",
-                                    legend.names = c("Economic situtation","COVID-19"),
-                                    .title = "What is the most important challenge facing Algeria today?",
-                                    .subtitle = "% saying",
-                                    .caption = "Arab Barometer Wave VI, Algeria")
+calculate_ind_trend_multiq(questions_2_compare,
+                           df_list,
+                           survey_dates,
+                           "Algeria") |> 
+plot_ind_trend_multiq(.title = "What is the most important challenge facing Algeria today?",
+                      .subtitle = "% saying",
+                      .caption = "Arab Barometer Wave VI, Algeria",
+                      legend_names = question_labels)
 
 
 ```
@@ -33,8 +38,10 @@ That code will produce the following graph:
 
 ```{r 12.2-Complete-Graph-Example, echo=FALSE, fig.dim=c(13,12)}
 
-questions_2_compare <- list("Q2061A_1",
-                            "Q2061A_15")
+questions_2_compare <- c("Q2061A_1",
+                         "Q2061A_15")
+question_labels <- c("Economic situtation",
+                     "COVID-19")
 
 df_list <- list(survey1,
                 survey2,
@@ -44,16 +51,392 @@ survey_dates <- c("Survey 1",
                   "Survey 2",
                   "Survey 3")
 
-plot_trend_multiquestion_individual(questions_2_compare,
-                                    df_list,
-                                    survey_dates,
-                                    "Algeria",
-                                    legend.names = c("Economic situtation","COVID-19"),
-                                    .title = "What is the most important challenge facing Algeria today?",
-                                    .subtitle = "% saying",
-                                    .caption = "Arab Barometer Wave VI, Algeria")
+calculate_ind_trend_multiq(questions_2_compare,
+                           df_list,
+                           survey_dates,
+                           "Algeria",
+                           legend_names = question_labels) |> 
+plot_ind_trend_multiq(.title = "What is the most important challenge facing Algeria today?",
+                      .subtitle = "% saying",
+                      .caption = "Arab Barometer Wave VI, Algeria")
 
 
 ```
 
 Let's go!
+
+## Prep Work {#chapter-12-1}
+
+Since we are creating both a trend graph and a graph that displays multiple questions, it should hopefully make sense that the suggested prep work is a combination of the [suggested prep work for multi-question graphs](new-chapter-9-1) and  the [prep work suggested for creating a trend graph for a single country](#chapter-5-1-1).
+
+### Question Vector {#chapter-12-1-1}
+
+First create a vector of questions you want to include on your graph. For the example in this chapter we are comparing questions `Q2061A_1` and `Q2061A_15`. We put the names of those variables in a vector and save that vector as an object.
+
+```{r 12.3-question-list}
+
+questions_2_compare <- c(
+  "Q2061A_1",
+  "Q2061A_15"
+  )
+
+```
+
+Now the variables we want to graph as saved to the object `questions_2_compare` in a vector.
+
+### Question Labels {#chapter-12-1-2}
+
+The next step is to create a vector of labels for the questions. This is the text that will display on the y-axis. The labels should appear in the same order as they variables they are referring to.
+
+```{r 12.4-question-labels}
+
+question_labels <- c(
+  "Economic situation",  # Text for Q2061A_1
+  "COVID-19"             # Text for Q2061A_15
+  )
+
+```
+
+The object `question_labels` represents the text that will serve to label the responses on the graph.
+
+### Create a Data Frame List {#chapter-12-1-3}
+
+The first step is to create a list of data frames. This section is exactly the same as the one from [here](#chp5-trend-df-list).
+
+There should be one data frame for each period you wish to graph. That is, each data frame should be from a different survey you want to include in your graph. In the example for the chapter, we're using the three surveys from Wave VI, which we call `survey1`, `survey2`, and `survey3`. Each survey is its own data frame.
+
+```{r 12.5-Single-Trend,echo=T,eval=FALSE}
+
+df_list <- list(
+  survey1,
+  survey2,
+  survey3
+)
+
+```
+
+
+The list of data frames should be in the order you want them to appear (ideally, chronologically). The data on the graph will show up in the order of the list. So if you create a list in the order `list(survey2, survey1, survey3)`, the data from `survey2` will show up before the data from `survey1`. 
+
+**Please note: This is ambivalent to language!** The `plot_ind_trend_multiq()` function will assume the order of the list is the correct order, and treat it accordingly. When you enter a list as `list(survey1, survey2, surveye3)`, the English graph will show the data right to left (survey 1 -> survey 2 -> survey 3), while the Arabic graph will show the data left to right (survey 3 <- survey 2 <- survey 1). You do **not** need to alter your input.
+
+> The data frame lists in the `Wave8TrendData` package do this step for you.
+
+### Create a Date Vector {#chapter-12-1-4}
+
+This section is exactly the same as the one from [here](#chp5-trend-date-vector).
+
+The next step is to create a vector of the dates you want to show on the x-axis of your graph. Branding guidelines call for the years in which the survey took place. For simplicity in the example, let's just say `"Survey X Year"`. 
+
+You need a date for each data frame in your data frame list. Otherwise, the function won't know how to label the x-axis.
+
+
+```{r 12.4-Single-Trend,echo=T,eval=FALSE}
+
+survey_dates <- c("Survey 1 Year",
+                  "Survey 2 Year",
+                  "Survey 3 Year")
+
+```
+
+The dates should also be in the order you want them to appear. The dates should line up with the data frames. In the chapter example, the order of the data frames is survey 1, survey 2, survey 3. Therefore, the survey dates need to have the order survey 1 year, survey 2 year, survey 3 year.
+
+**Please note: This is ambivalent to language!** Just as with the data frame list, the `plot_ind_trend_multiq()` function will put the data in the correct order according to the language of the graph.
+
+Now that we have defined our data frame list and survey dates, we can create our multi-question trend plot.
+
+> The date vectors in the `Wave8TrendData` package do this step for you.
+
+## Create a Summary {#chapter-12-2-1}
+
+To create a multiquestion trend summary for an individual country, use the `calculate_ind_trend_multiq()` function.
+
+This function takes a few more parameters, and in a different order, than the functions we have worked with so far. In total, there are *four* necessary parameters: `ab_questions`, `data_frames`, `survey_dates`, and `select_country`. To see a complete list of parameters, including optional ones, use `?calculate_ind_trend_multiq()` in your `R` console.
+
+The parameter `ab_questions` are the variables you want to plot. This is what we created [here](chapter-12-1-1). **They must have the same name in every data frame in the data frame list.** If one of the variables you want to plot is named `"Q101"` in one sure, but `"Q102"` in another, the function will not include `"Q102"` in the plot. Computers can do a lot but as of yet they cannot think critically, so the onus is on you.
+
+> The trend data lists from the `Wave8TrendData` package ensure this is true for Wave VIII variables.
+
+The parameter `data_frames` is a list of data frames. This is what we created [here](chapter-12-1-3). 
+
+The parameter `survey_dates` is a character vector of dates that will show up on the x-axis of the graph. This is what we created [here](chapter-12-1-4).
+
+The parameter `select_country` is the name of the country you want to create the graph for.
+
+Now let's fill it in.
+
+```{r 12.5-First-Example, eval=FALSE}
+
+calculate_ind_trend_multiq(
+  ab_questions   = questions_2_compare, # Variable to graph
+  data_frames    = df_list,             # List of data frames
+  survey_dates   = survey_dates,        # Vector of survey dates
+  select_country = "Algeria"            # Country to graph
+  )
+
+
+```
+
+The output should look like the following, with the `Survey` column labeled.
+
+```{r 12.12-First-Example, echo=FALSE}
+individual_multiq_trend_summary <- calculate_ind_trend_multiq(
+  ab_questions   = questions_2_compare, # Variable to graph
+  data_frames    = df_list,             # List of data frames
+  survey_dates   = survey_dates,        # Vector of survey dates
+  select_country = "Algeria"            # Country to graph
+  )
+
+
+
+knitr::kable(
+  individual_multiq_trend_summary,
+  booktabs = TRUE,
+  label = NA
+)
+
+
+```
+
+We can see the resulting data frame has six rows; one for each question in each survey we are plotting. Let's save the output as an object so we can plot that object in the next section.
+
+```{r 12.7-First-Example}
+individual_multiq_trend_summary <- calculate_ind_trend_multiq(
+  questions_2_compare,
+  df_list,        
+  survey_dates,   
+  "Algeria"       
+  )
+
+```
+
+## Plot the Summary {#chapter-12-3-1}
+
+The next step is to plot the summary we just created. To do that, we use the function `plot_ind_trend_multiq()`.
+
+This function only *requires* one argument: `ab_summary`. Like many other graphs, we'll want to add a bit later on. To see a complete list of parameters, including optional ones, use `?plot_ind_trend_multiq()` in your `R` console. For now, let's see what happens when we just supply our summary we saved as `individual_multiq_trend_summary`.
+
+
+```{r 12.8,collapse=TRUE,fig.dim=c(13,12)}
+
+plot_ind_trend_multiq(
+  ab_summary = individual_multiq_trend_summary
+)
+
+```
+
+Nearly there! What still needs to be changed?
+
+...Quite a lot, actually.
+
+Glaringly, we need a title, subtitle, caption, and legend labels.
+
+To provide the title, subtitle, and caption, we'll use the same parameters that are present in all `plot_` functions: `.title`, `.subtitle`, and `.caption`.
+
+```{r 12.9,collapse=TRUE,fig.dim=c(13,12)}
+
+plot_ind_trend_multiq(
+  ab_summary = individual_trend_summary,
+  .title     = "What is the most important challenge facing Algeria today?",
+  .subtitle  = "% saying",
+  .caption   = "Arab Barometer Wave VI, Algeria"
+)
+
+```
+
+This might be enough for internal AB use, but if we plan on sharing our graphs, it is prudent to add widely understandable labels to the legend.
+
+Luckily, [we prepped for this earlier](chapter-12-1-2) when we created the object `question_labels`. Now we just need to tell `plot_ind_trend_multiq()` to use these labels for the legend. We do that with the parameter `legend_names`.
+
+```{r 12.10,collapse=TRUE,fig.dim=c(13,12)}
+
+plot_ind_trend_multiq(
+  ab_summary   = individual_trend_summary,
+  .title       = "What is the most important challenge facing Algeria today?",
+  .subtitle    = "% saying",
+  .caption     = "Arab Barometer Wave VI, Algeria",
+  legend_names = question_labels
+)
+
+```
+
+Ta-da! Putting this all together, we have our original code and graph.
+
+```{r 12.11-Complete-Code-Example, eval=FALSE}
+
+
+questions_2_compare <- c("Q2061A_1",
+                         "Q2061A_15")
+
+question_labels <- c("Economic situtation",
+                     "COVID-19")
+
+df_list <- list(survey1,
+                survey2,
+                survey3)
+
+survey_dates <- c("Survey 1",
+                  "Survey 2",
+                  "Survey 3")
+
+calculate_ind_trend_multiq(questions_2_compare,
+                           df_list,
+                           survey_dates,
+                           "Algeria") |> 
+plot_ind_trend_multiq(.title = "What is the most important challenge facing Algeria today?",
+                      .subtitle = "% saying",
+                      .caption = "Arab Barometer Wave VI, Algeria",
+                      legend_names = question_labels)
+
+
+
+```
+
+
+```{r 12.12-Complete-Code-Example, echo=FALSE, fig.dim=c(13,12)}
+
+
+questions_2_compare <- c("Q2061A_1",
+                         "Q2061A_15")
+
+question_labels <- c("Economic situtation",
+                     "COVID-19")
+
+df_list <- list(survey1,
+                survey2,
+                survey3)
+
+survey_dates <- c("Survey 1",
+                  "Survey 2",
+                  "Survey 3")
+
+calculate_ind_trend_multiq(questions_2_compare,
+                           df_list,
+                           survey_dates,
+                           "Algeria") |> 
+plot_ind_trend_multiq(.title = "What is the most important challenge facing Algeria today?",
+                      .subtitle = "% saying",
+                      .caption = "Arab Barometer Wave VI, Algeria",
+                      legend_names = question_labels)
+
+
+```
+
+
+## Extras 
+
+### Human Readable
+
+If you just want to look at the summaries and not necessarily create a plot, the output of `calculate_ind_trend_multiq()` might not be the easiest to understand from a glance. There is a parameter called `human_readable` that is designed to help with that.
+
+By default, `human_readable` is set to `FALSE` and each row is unique to the survey-question. If `human_readable` is set to `TRUE`, each is unique to a survey and there are columns for each question.
+
+```{r 12.13-human-readable-f, eval=FALSE}
+
+calculate_ind_trend_multiq(
+  ab_questions   = questions_2_compare,     
+  data_frames    = df_list,        
+  survey_dates   = survey_dates,   
+  select_country = "Algeria",
+  human_readable = FALSE       # This is the default
+  )
+
+
+```
+
+```{r 12.14-human-readable-f, echo=FALSE}
+individual_multiq_trend_summary_f <- calculate_ind_trend_multiq(
+  ab_questions   = questions_2_compare,     
+  data_frames    = df_list,        
+  survey_dates   = survey_dates,   
+  select_country = "Algeria",  
+  )
+
+knitr::kable(
+  individual_multiq_trend_summary_f,
+  booktabs = TRUE,
+  label = NA,
+  caption = "Default setting with `human_readable = FALSE`."
+)
+
+```
+
+
+```{r 12.15-human-readable-3, eval=FALSE}
+
+calculate_ind_trend_multiq(
+  ab_questions   = questions_2_compare,     
+  data_frames    = df_list,        
+  survey_dates   = survey_dates,   
+  select_country = "Algeria",
+  human_readable = TRUE       # This is NOT the default
+  )
+
+
+```
+
+```{r 12.16-human-readable-t, echo=FALSE}
+individual_multiq_trend_summary_t <- calculate_ind_trend_multiq(
+  ab_questions   = questions_2_compare,     
+  data_frames    = df_list,        
+  survey_dates   = survey_dates,   
+  select_country = "Algeria",
+  human_readable = T
+  )
+
+knitr::kable(
+  individual_multiq_trend_summary_t,
+  booktabs = TRUE,
+  label = NA,
+  caption = "Default setting with `human_readable = TRUE`."
+)
+
+```
+
+
+The default is set to `FALSE` because that is the structure `plot_ind_trend_multiq()` expects. If you set `human_readable` to `TRUE` and use that output in `plot_ind_trend_multiq()`, you will get an error.
+
+### Legend Names
+
+Legend names can be included either in `calculate_ind_trend_multiq()` or `plot_ind_trend_multiq()`. The parameter in both functions is called `legend_names`. If you include `legend_names` in `calculate_ind_trend_multiq()`, you do not need to include `legend_names` in `plot_ind_trend_multiq()`. This chapter presents adding `legend_names` with the plotting function because the author thought readers would find that more intuitive.
+
+The code below shows that setting the parameter `legend_names` in either the `calculate_ind_trend_multiq()` or `plot_ind_trend_multiq()` produces the same result.
+
+```{r 12.17,collapse=TRUE}
+
+calculate_ind_trend_multiq(
+  questions_2_compare,
+  df_list,
+  survey_dates,
+  "Algeria"
+  ) |> 
+plot_ind_trend_multiq(
+  .title = "What is the most important challenge facing Algeria today?",
+  .subtitle = "% saying",
+  .caption = "Arab Barometer Wave VI, Algeria",
+  legend_names = question_labels # Adding labels during the plotting phase
+  )
+
+calculate_ind_trend_multiq(
+  questions_2_compare,
+  df_list,
+  survey_dates,
+  "Algeria",
+  legend_names = question_labels # Adding labels during the calculate phase
+  ) |> 
+plot_ind_trend_multiq(
+  .title = "What is the most important challenge facing Algeria today?",
+  .subtitle = "% saying",
+  .caption = "Arab Barometer Wave VI, Algeria"
+  )
+
+```
+
+### Font Size
+
+The font size default brand size is used for the graph text. You can learn how to change that in [the chapter on changing the font size](#change-font-size).
+
+### Colors
+
+You can learn how to change the colors for the single country trend graph in [the chapter on changing graph colors](#change-colors-trend-comparative).
+

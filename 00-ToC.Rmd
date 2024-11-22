@@ -8,27 +8,24 @@
  * <font size="4"> [Comparative Graphs][Comparative Overall Graphs] </font> 
  * <font size="4"> [Comparative Demographic Graphs][Comparative Demographic Graphs] </font> 
  
+ <font size="5"> Stacked Graphs </font>
+ 
+ * <font size="4"> [Comparative Stacked Graphs][Stacked Plots] </font> 
+ 
+ <font size="5"> Multi-Question Graphs </font>
+ 
+ * <font size="4"> [Single Country Multi-Question Plots][Single Country Multi-Question Plots] </font> 
+ * <font size="4"> [Comparative Multi-Question Plots][Comparative Multi-Question Plots] </font> 
  
  
  <font size="5"> Trend Graphs </font>
  
  * <font size="4"> [Single Country Trend Graphs](#chapter-5) </font> 
  * <font size="4"> [Single Country Demographic Trend Graphs](#chapter-6) </font> 
+ * <font size="4"> [Single Country Multi-Question Trend Plots][Single Country Multi-Question Trend Plots] </font> 
  * <font size="4"> [Comparative Trend Graphs][Comparative Country Trend Graphs] </font> 
  * <font size="4"> [Comparative Demographic Trend Graphs][Comparative Country Demographic Trend Graphs] </font> 
 
- 
- <font size="5"> **BARE BONES** Stacked Graphs </font>
- 
- * <font size="4"> [Comparative Stacked Graphs][Stacked Plots] </font> 
- * <font size="4"> [Single Country Stacked Graphs][BARE BONES: Single Country Stacked Plots] </font> 
- 
- 
- <font size="5"> **BARE BONES** Multi-Question Graphs </font>
- 
- * <font size="4"> [Single Country Multi-Question Plots][Single Country Multi-Question Plots] </font> 
- * <font size="4"> [Comparative Multi-Question Plots][Comparative Multi-Question Plots] </font> 
- * <font size="4"> [Single Country Multi-Question Trend Plots][BARE BONES: Single Country Multi-Question Trend Plots] </font> 
  
  
  <font size="5"> All Things Color </font>

@@ -155,7 +155,7 @@ ordinal_summaries_list <- map(
 
 Now, you could reference an entry of `ordinal_summaries_list` one at a time, or feed it into another `map()`. For example, maybe you wanted to make a graph for each of these summaries.
 
-## Conclusion
+## Conclusion {-}
 
 This concludes the brief "how-to" on `map()` from the `purrr` package. The `purrr` package contains many powerful variations on `map()`. To learn more about those variations, here are some more in-depth resources.
 

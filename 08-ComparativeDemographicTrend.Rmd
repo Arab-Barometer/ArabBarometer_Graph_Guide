@@ -1,8 +1,8 @@
 # Comparative Country Demographic Trend Graphs {#chapter-8}
 
-This chapter will show you how to compare trend behavior of different demographics across countries. A comparative demographic trend graph can be shown in two different styles: either panels of graphs show the demographic trend by country, or panels of graphs showing the country trends by demographic. This chapter will demostrate how to create both.
+This chapter will show you how to compare trend behavior of different demographics across countries. A comparative demographic trend graph can be shown in two different styles: either panels of graphs show the demographic trend by country, or panels of graphs showing the country trends by demographic. This chapter will demonstrate how to create both.
 
-## Create Comparative Demographic Trend Graph {#chapter-8-1}
+## TL;DR {-}
 
 At the end, your code will look like the following:
 
@@ -18,22 +18,21 @@ survey_dates <- c("Survey 1",
                   "Survey 2",
                   "Survey 3")
 
+
 # One plot per Country
-plot_trend_comp_demographics("Q1COVID19",
+calculate_comp_trend_dem("Q1COVID19",
                              "gender",
                              df_list,
-                             survey_dates,
-                             "Country",
-                             .caption = "Arab Barometer Wave VI")
+                             survey_dates) |> 
+  plot_comp_trend_dem(.caption = "Arab Barometer Wave VI")
 
 # One plot per demographic
-plot_trend_comp_demographics("Q1COVID19",
+calculate_comp_trend_dem("Q1COVID19",
                              "gender",
                              df_list,
-                             survey_dates,
-                             "demographic",
-                             .caption = "Arab Barometer Wave VI")
-
+                             survey_dates) |> 
+  plot_comp_trend_dem(.facet_choice = "demographic",
+                      .caption = "Arab Barometer Wave VI")
 
 ```
 
@@ -52,31 +51,33 @@ survey_dates <- c("Survey 1",
                   "Suvey 2",
                   "Survey 3")
 
+
 # One plot per Country
-plot_trend_comp_demographics("Q1COVID19",
-                             "gender",
-                             df_list,
-                             survey_dates,
-                             "Country")
+calculate_comp_trend_dem("Q1COVID19",
+                         "gender",
+                         df_list,
+                         survey_dates) |> 
+  plot_comp_trend_dem(.caption = "Arab Barometer Wave VI")
 
 # One plot per demographic
-plot_trend_comp_demographics("Q1COVID19",
-                             "gender",
-                             df_list,
-                             survey_dates,
-                             "demographic")
+calculate_comp_trend_dem("Q1COVID19",
+                         "gender",
+                         df_list,
+                         survey_dates) |> 
+  plot_comp_trend_dem(.caption = "Arab Barometer Wave VI",
+                      .facet_choice = "demographic")
+
 ```
 
-The code should look similar to that in the [previous chapter](#chapter-7). The main differences are the inclusion of the demographic variable and a line containing either `"Country"` or `"demographic"`.
+The code should look similar to that in the [previous chapter](#chapter-7). The main difference is the inclusion of the demographic variable.
 
+## Prep Work {#chapter-8-1-1}
 
-### Prep Work {#chapter-8-1-1}
+Just like in Chapter \@ref(chapter-7) (and all the other trend plot chapters), it is useful to do some prep work before hand. This makes your work more clear and your life easier down the line.
 
-Similar to creating a demographic trend graph for an individual country, there is no need to create a summary. There is only one function to use: `plot_trend_comp_demographics()`.
+The prep work for creating a demographic comparative trend graph is _exactly_ the same as the [prep work suggested for creating a trend graph for a single country](#chapter-5-1-1).
 
-You can create the plot all in one step with the function, but it is prudent to do a little prep work before hand. This makes your work more clear and your life easier down the line.
-
-#### Create a Data Frame List {- #chp8-trend-df-list}
+### Create a Data Frame List {- #chp8-trend-df-list}
 
 The first step is to create a list of data frames. This section is exactly the same as the one from [here](#chp7-trend-df-list).
 
@@ -95,9 +96,11 @@ df_list <- list(
 
 The list of data frames should be in the order you want them to appear (ideally, chronologically). The data on the graph will show up in the order of the list. So if you create a list in the order `list(survey2, survey1, survey3)`, the data from `survey2` will show up before the data from `survey1`. 
 
-**Please note: This is ambivalent to language!** The `plot_trend_comp_demographics()` function will assume the order of the list is the correct order, and treat it accordingly. When you enter a list as `list(survey1, survey2, surveye3)`, the English graph will show the data right to left (survey 1 -> survey 2 -> survey 3), while the Arabic graph will show the data left to right (survey 3 <- survey 2 <- survey 1). You do **not** need to alter your input.
+**Please note: This is ambivalent to language!** The `plot_comp_trend_dem()` function will assume the order of the list is the correct order, and treat it accordingly. When you enter a list as `list(survey1, survey2, surveye3)`, the English graph will show the data right to left (survey 1 -> survey 2 -> survey 3), while the Arabic graph will show the data left to right (survey 3 <- survey 2 <- survey 1). You do **not** need to alter your input.
 
-#### Create a Date Vector {- #chp8-trend-date-vector}
+> The data frame lists in the `Wave8TrendData` package do this step for you.
+
+### Create a Date Vector {- #chp8-trend-date-vector}
 
 This section is exactly the same as the one from [here](#chp7-trend-date-vector).
 
@@ -116,84 +119,138 @@ survey_dates <- c("Survey 1 Year",
 
 The dates should also be in the order you want them to appear. The dates should line up with the data frames. In the chapter example, the order of the data frames is survey 1, survey 2, survey 3. Therefore, the survey dates need to have the order survey 1 year, survey 2 year, survey 3 year.
 
-**Please note: This is ambivalent to language!** Just as with the data frame list, the `plot_trend_comp_demographics()` function will put the data in the correct order according to the language of the graph.
+**Please note: This is ambivalent to language!** Just as with the data frame list, the `plot_comp_trend_dem()` function will put the data in the correct order according to the language of the graph.
+
+> The data frame lists in the `Wave8TrendData` package do this step for you.
 
 Now that we have defined our data frame list and survey dates, we can create our demographic trend plot.
 
-### Plot a Comparative Demographic Trend Graph {#chapter-8-1-2}
+## Create a Summary {#chapter-8-2}
 
-To create a trend graph plot for an individual country, use the `plot_trend_comp_demographics()` function.
+To create a demographic trend summary for multiple countries, use the `calculate_comp_trend_dem()` function.
 
-This function takes a few more parameters, and in a different order, than the functions we have worked with so far. In total, there are *five* necessary parameters: `.var`, `.dem`, `data_frames`, `svry_dates`, and `.facet_choice`. To see a complete list of parameters, including optional ones, use `?plot_trend_comp_demographics()` in your `R` console.
+In total, there are *four* necessary parameters: `.var`, `.dem`, `data_frames`, and `survey_dates`. To see a complete list of parameters, including optional ones, use `?calculate_comp_trend_dem()` in your `R` console.
 
 The parameter `.var` is the variable you want to plot. **It must have the same name in every data frame in the data frame list.** If the variable you want to plot is named `"Q101"` in one sure, but `"Q102"` in another, the function will not include `"Q102"` in the plot. Computers can do a lot but as of yet they cannot think critically, so the onus is on you.
 
+> The trend data lists from the `Wave8TrendData` package ensure this is true for Wave VIII variables.
+
 The parameter `.dem` is the demographic you want to see the variable trends for. Much like the `.var` parameter, **it must have the same name in every data frame in the data frame list.** If the demographic you want to plot is named `"gender"` in one sure, but `"GENDER"` in another, the function will break.
+
+> The trend data lists from the `Wave8TrendData` package ensure this is true for Wave VIII variables.
 
 The parameter `data_frames` is a list of data frames. This is what we created [here](chp8-trend-df-list). 
 
-The parameter `svry_dates` is a character vector of dates that will show up on the x-axis of the graph. This is what we created [here](chp8-trend-date-vector).
+> The data frame lists in the `Wave8TrendData` package do this step for you.
 
-The parameter `.facet_choice` determines how your plot will be displayed. You may choose either `"Country"` or `"demographic"`. If you choose `"Country"`, the plot will contain a graph for each country showing the demographic trend for that country. If you choose `"demographic"`, the plot will contain a graph for each demographic category showing the trend of each country for that demographic category.
+The parameter `survey_dates` is a character vector of dates that will show up on the x-axis of the graph. This is what we created [here](chp8-trend-date-vector).
+
+> The data frame lists in the `Wave8TrendData` package do this step for you.
 
 Now let's fill it in.
 
-#### Option 1: Facet choice is `"Country"` {-}
-
-Let's start with wrapping the graph by country, as that is likely the most common setting. Using this setting will produce a graph that has one title and subtitle, but multiple plots. Each plot will show a demographic trend plot for a single country.
-
 ```{r 08.5-First-Example, eval=FALSE}
 
-plot_trend_comp_demographics(.var           = "Q1COVID19",    # Variable to graph
-                             .dem           = "gender",       # Demographic to see over time
-                             data_frames    = df_list,        # List of data frames
-                             svry_dates     = survey_dates,   # Vector of survey dates
-                             .facet_choice = "Country")       # Facet choice to wrap by
+calculate_comp_trend_dem(
+  .var           = "Q1COVID19",    # Variable to graph
+  .dem           = "gender",       # Demographic to see over time
+  data_frames    = df_list,        # List of data frames
+  survey_dates   = survey_dates    # Vector of survey dates
+)
 
 
 ```
 
 ```{r 08.6-First-Example, echo=FALSE, fig.dim=c(13,12)}
+comparative_dem_trend_summary <- calculate_comp_trend_dem(
+  .var           = "Q1COVID19",    # Variable to graph
+  .dem           = "gender",       # Demographic to see over time
+  data_frames    = df_list,        # List of data frames
+  survey_dates   = survey_dates    # Vector of survey dates
+)
 
-plot_trend_comp_demographics(.var           = "Q1COVID19",    # Variable to graph
-                             .dem           = "gender",       # Demographic to see over time
-                             data_frames    = df_list,        # List of data frames
-                             svry_dates     = survey_dates,   # Vector of survey dates
-                             .facet_choice = "Country")       # Facet choice to wrap by
+knitr::kable(
+  comparative_dem_trend_summary,
+  booktabs = TRUE,
+  label = NA
+)
 
 ```
+We can see the output has 18 rows; one for each demographic for country for each survey. Let's save the output as an object so we can plot that object in the next section.
+
+```{r 08.7-object,eval=FALSE}
+comparative_dem_trend_summary <- calculate_comp_trend_dem(
+  "Q1COVID19", 
+  "gender",
+  df_list,        
+  survey_dates    
+  )
+
+```
+
+
+## Plot the Summary {#chapter-8-3}
+
+To plot the summary we just created, we use the function `plot_comp_trend_dem()`. This one takes one *and a half* parameters.
+
+...What?
+
+Well, the only required parameter is `ab_summary`, which is the output of `calculate_comp_trend_dem()`, our summary. The "half" parameter is the `.facet_choice` parameter.
+
+There is a lot of information we are trying to include in one plot here. In order to effectively communicate the trend, we need to decide whether to group the data by country or by demographic. You do this by setting `.facet_choice` to either `"Country"` or `"demographic"`.
+
+By default, `.facet_choice` is set to `"Country"`. If the user does not enter anything for the `.facet_choice`, the graph produced will display results by country. If the user wants to display the results by demographic, they will need to set `.facet_choice` to `"demographic"`. Hence, "half" a parameter. The function will still work without the user explicitly changing the `.facet_choice` parameter, but it is still an important parameter to be aware of.
+
+The next two sections will go through the each case of `.facet_choice`.
+
+
+### Option 1: Facet choice is `"Country"` (default)
+
+Let's start with wrapping the graph by country, as that is likely the most common setting and the default.
+
+Since `.facet_choice = "Country"` is the default setting, the user does not need to explicitly include it.
+
+```{r 08.8-First-Example, eval=FALSE}
+
+plot_comp_trend_dem(
+  ab_summary = comparative_dem_trend_summary
+  )
+
+```
+
+```{r 08.9-First-Example, echo=FALSE, fig.dim=c(13,12)}
+
+plot_comp_trend_dem(
+  ab_summary = comparative_dem_trend_summary
+  )
+```
+
 Nearly there! What still needs to be changed?
 
 The caption, of course! Just as in all the other `plot_` functions in the `ArabBarometR` package, you can change the caption using the `.caption` parameter.
 
-```{r 08.7-First-Example, eval=FALSE}
+```{r 08.10-First-Example, eval=FALSE}
 
-plot_trend_comp_demographics(.var           = "Q1COVID19",   
-                             .dem           = "gender",      
-                             data_frames    = df_list,       
-                             svry_dates     = survey_dates,  
-                             .facet_choice  = "Country",
-                             .caption       = "Arab Barometer Wave VI")     
-
+plot_comp_trend_dem(
+  comparative_dem_trend_summary,
+  .caption = "Arab Barometer Wave VI"
+  )
 
 ```
 
-```{r 08.8-First-Example, echo=FALSE, fig.dim=c(13,12)}
+```{r 08.11-First-Example, echo=FALSE, fig.dim=c(13,12)}
 
-
-plot_trend_comp_demographics(.var           = "Q1COVID19",   
-                             .dem           = "gender",      
-                             data_frames    = df_list,       
-                             svry_dates     = survey_dates,  
-                             .facet_choice = "Country",
-                             .caption      = "Arab Barometer Wave VI")     
+plot_comp_trend_dem(
+  comparative_dem_trend_summary,
+  .caption = "Arab Barometer Wave VI"
+  )
 
 ```
 
 Putting all the steps together, we get the first half of the code we started with.
 
 
-```{r 08.9-Complete-Code-Example, eval=FALSE}
+```{r 08.12-Complete-Code-Example, eval=FALSE}
 
 df_list <- list(
   survey1,
@@ -205,18 +262,17 @@ survey_dates <- c("Survey 1 Year",
                   "Survey 2 Year",
                   "Survey 3 Year")
 
+calculate_comp_trend_dem("Q1COVID19",
+                             "gender",
+                             df_list,
+                             survey_dates) |> 
+  plot_comp_trend_dem(.caption = "Arab Barometer Wave VI")
 
-plot_trend_comp_demographics("Q1COVID19",   
-                             "gender",      
-                             df_list,       
-                             survey_dates,  
-                             "Country",
-                             .caption = "Arab Barometer Wave VI")
 
 ```
 
 
-```{r 08.10-Complete-Code-Example, echo=FALSE, fig.dim=c(13,12)}
+```{r 08.13-Complete-Code-Example, echo=FALSE, fig.dim=c(13,12)}
 
 df_list <- list(
   survey1,
@@ -228,75 +284,66 @@ survey_dates <- c("Survey 1 Year",
                   "Survey 2 Year",
                   "Survey 3 Year")
 
+calculate_comp_trend_dem("Q1COVID19",
+                             "gender",
+                             df_list,
+                             survey_dates) |> 
+  plot_comp_trend_dem(.caption = "Arab Barometer Wave VI")
 
-plot_trend_comp_demographics("Q1COVID19",   
-                             "gender",      
-                             df_list,       
-                             survey_dates,  
-                             "Country",
-                             .caption = "Arab Barometer Wave VI")
 
 ```
 
-#### Option 2: Facet choice is `"demographic"` {-}
+### Option 2: Facet choice is `"demographic"` {-}
 
 Now we will go through how to wrap the graph by demographic. Using this setting will produce a graph that has one title and subtitle, but multiple plots, just as in the previous section. Now, each plot will show trend lines for each country, but only for a single demographic category.
 
 In this example, we use "gender". That means when we wrap by demographic, there will be one comparative trend graph just showing the trends of men and one comparative trend graph just showing the trends of women.
 
+```{r 08.14-First-Example, eval=FALSE}
 
-```{r 08.11-First-Example, eval=FALSE}
-
-plot_trend_comp_demographics(.var           = "Q1COVID19",    # Variable to graph
-                             .dem           = "gender",       # Demographic to see over time
-                             data_frames    = df_list,        # List of data frames
-                             svry_dates     = survey_dates,   # Vector of survey dates
-                             .facet_choice  = "demographic")  # Facet choice to wrap by
-
+plot_comp_trend_dem(
+  comparative_dem_trend_summary,
+  .facet_choice = "demographic"
+  )
 
 ```
 
-```{r 08.12-First-Example, echo=FALSE, fig.dim=c(13,12)}
+```{r 08.15-First-Example, echo=FALSE, fig.dim=c(13,12)}
 
-plot_trend_comp_demographics(.var           = "Q1COVID19",    # Variable to graph
-                             .dem           = "gender",       # Demographic to see over time
-                             data_frames    = df_list,        # List of data frames
-                             svry_dates     = survey_dates,   # Vector of survey dates
-                             .facet_choice  = "demographic")  # Facet choice to wrap by
+plot_comp_trend_dem(
+  comparative_dem_trend_summary,
+  .facet_choice = "demographic"
+  )
 
 ```
 Nearly there! What still needs to be changed?
 
 The caption, of course! Just as in all the other `plot_` functions in the `ArabBarometR` package, you can change the caption using the `.caption` parameter.
 
-```{r 08.13-First-Example, eval=FALSE}
+```{r 08.16-First-Example, eval=FALSE}
 
-plot_trend_comp_demographics(.var           = "Q1COVID19",   
-                             .dem           = "gender",      
-                             data_frames    = df_list,       
-                             svry_dates     = survey_dates,  
-                             .facet_choice  = "demographic",
-                             .caption       = "Arab Barometer Wave VI")     
-
+plot_comp_trend_dem(
+  comparative_dem_trend_summary,
+  .facet_choice = "demographic",
+  .caption = "Arab Barometer Wave VI"
+  )
 
 ```
 
-```{r 08.24-First-Example, echo=FALSE, fig.dim=c(13,12)}
+```{r 08.17-First-Example, echo=FALSE, fig.dim=c(13,12)}
 
-
-plot_trend_comp_demographics(.var           = "Q1COVID19",   
-                             .dem           = "gender",      
-                             data_frames    = df_list,       
-                             svry_dates     = survey_dates,  
-                             .facet_choice = "demographic",
-                             .caption      = "Arab Barometer Wave VI")     
+plot_comp_trend_dem(
+  comparative_dem_trend_summary,
+  .facet_choice = "demographic",
+  .caption = "Arab Barometer Wave VI"
+  )
 
 ```
 
 Putting all the steps together, we get the second half of the code we started with.
 
 
-```{r 08.15-Complete-Code-Example, eval=FALSE}
+```{r 08.18-Complete-Code-Example, eval=FALSE}
 
 df_list <- list(
   survey1,
@@ -309,7 +356,7 @@ survey_dates <- c("Survey 1 Year",
                   "Survey 3 Year")
 
 
-plot_trend_comp_demographics("Q1COVID19",   
+plot_comp_trend_dem("Q1COVID19",   
                              "gender",      
                              df_list,       
                              survey_dates,  
@@ -319,7 +366,7 @@ plot_trend_comp_demographics("Q1COVID19",
 ```
 
 
-```{r 08.16-Complete-Code-Example, echo=FALSE, fig.dim=c(13,12)}
+```{r 08.19-Complete-Code-Example, echo=FALSE, fig.dim=c(13,12)}
 
 df_list <- list(
   survey1,
@@ -331,20 +378,20 @@ survey_dates <- c("Survey 1 Year",
                   "Survey 2 Year",
                   "Survey 3 Year")
 
+calculate_comp_trend_dem("Q1COVID19",
+                             "gender",
+                             df_list,
+                             survey_dates) |> 
+  plot_comp_trend_dem(.facet_choice = "demographic",
+                      .caption = "Arab Barometer Wave VI")
 
-plot_trend_comp_demographics("Q1COVID19",   
-                             "gender",      
-                             df_list,       
-                             survey_dates,  
-                             "demographic",
-                             .caption = "Arab Barometer Wave VI")
 
 ```
 
 
 With both options demonstrated, we have the complete original code.
 
-```{r 08.17-Complete-Code-Example, eval=FALSE}
+```{r 08.20-Complete-Code-Example, eval=FALSE}
 
 df_list <- list(
   survey1,
@@ -356,130 +403,107 @@ survey_dates <- c("Survey 1",
                   "Survey 2",
                   "Survey 3")
 
+
 # One plot per Country
-plot_trend_comp_demographics("Q1COVID19",
+calculate_comp_trend_dem("Q1COVID19",
                              "gender",
                              df_list,
-                             survey_dates,
-                             "Country",
-                             .caption = "Arab Barometer Wave VI")
+                             survey_dates) |> 
+  plot_comp_trend_dem(.caption = "Arab Barometer Wave VI")
 
 # One plot per demographic
-plot_trend_comp_demographics("Q1COVID19",
+calculate_comp_trend_dem("Q1COVID19",
                              "gender",
                              df_list,
-                             survey_dates,
-                             "demographic",
-                             .caption = "Arab Barometer Wave VI")
+                             survey_dates) |> 
+  plot_comp_trend_dem(.facet_choice = "demographic",
+                      .caption = "Arab Barometer Wave VI")
 
 
 ```
 
-## Create Many Graphs
+## Extras
 
-On a rare occasion, it is conceivable that you might want to create many comparative demographic trend graphs for a slew of variables. For the sake of simplicity, let's assume you all the graphs to be displayed the same way and set the `.facet_choice` parameter to `"Country"` for the example.
+### Human Readable
 
-A nice payoff of creating the [data frame list](#chp8-trend-df-list) and the [date vector](#chp8-trend-date-vector) is that these objects (`df_list` and `survey_dates`) can be re-used any time you want to create a graph over the same time period. 
+If you just want to look at the summaries and not necessarily create a plot, the output of `calculate_comp_trend_dem()` might not be the easiest to understand from a glance. There is a parameter called `human_readable` that is designed to help with that.
 
-For example, say you wanted to also create a graph tracking Algerian's views of the economy and religiosity. The only parameter in the `plot_trend_comp_demographics()` function that needs updating is `.var`.
+By default, `human_readable` is set to `FALSE` and each row is unique to the survey-country-demographic. If `human_readable` is set to `TRUE`, each is unique to a country-demographic and there are columns for each survey.
 
+```{r 08.21-human-readable-f, eval=FALSE}
 
-```{r 08.18-Many-Graphs-Example1, fig.dim=c(13,12)}
-
-df_list <- list(
-  survey1,
-  survey2,
-  survey3
-)
-
-survey_dates <- c("Survey 1 Year",
-                  "Survey 2 Year",
-                  "Survey 3 Year")
-
-plot_trend_comp_demographics("Q1COVID19",
-                             "gender",
-                             df_list,
-                             survey_dates,
-                             "Country",
-                             .caption = "Arab Barometer Wave VI")
-
-plot_trend_comp_demographics("Q101",
-                             "gender",
-                             df_list,
-                             survey_dates,
-                             "Country",
-                             .caption = "Arab Barometer Wave VI")
-
-plot_trend_comp_demographics("Q609",
-                             "gender",
-                             df_list,
-                             survey_dates,
-                             "Country",
-                             .caption = "Arab Barometer Wave VI")
- 
-
-```
-
-Notice that the code produced two graphs, even though `df_list` and `survey_dates` were only defined one time. Once you have created the `df_list` and `survey_dates` objects, you can re-use them for any graph that is covering the same time period.
-
-You can also you the `map()` function from the `purrr` package. This method is essentially the same as what was done for [creating many single country demographic trend graphs](#chapter6-2).
-
-As a quick review, in earlier chapters the first step was identify the variables to plot. We did that by creating a named list of of the variables we wanted to plot.
-
-The `plot_trend_comp_demographics()` function creates summaries internally, so once we identify our variables, we go right to the mapping step. We map a named list of variables to the `plot_trend_comp_demographics()` function. We want to create a graph for the same country over the same time period, just using different variable, so we hold the demographic, data frame list, survey dates, facet choice, *and* caption constant.
-
-### Identify the Variables
-
-We are creating trend graphs for the variables `Q1COVID19`, `Q101`, and `Q609`. 
-
-```{r 08.19-Many-Graphs-Example2, fig.dim=c(13,12)}
-
-variables_2_plot <- list("Q1COVID19",
-                         "Q101",
-                         "Q609")
-
-names(variables_2_plot) <- c("Q1COVID19",
-                             "Q101",
-                             "Q609")
-
-```
-
-Now you have a names list of variables. Let's plot them.
-
-### Plot the Variables
-
-Recall we want to hold constant the `data_frames`, `svry_dates`, `.facet_choice` and `.caption` parameters because those will be the same for every graph. The only parameter we want to vary is `.var`.
-
-```{r 08.20-Many-Graphs-Example2, fig.dim=c(13,12)}
-
-plots <- map(
-  variables_2_plot, # Vector of variables to plot
-  plot_trend_comp_demographics, # Map to function `plot_trend_comp_demographics()`
-  
-  .dem           = "gender", # Hold constant the `.dem` parameter
-  data_frames    = df_list,  # Hold constant the `data_frames` parameter
-  svry_dates     = survey_dates, # Hold constant the `svry_dates` parameter
-  .facet_choice  = "Country", # Hold constant the `select_country` parameter
-  .caption       = "Arab Barometer Wave VI, Algeria"
+calculate_comp_trend_dem(
+  .var           = "Q1COVID19",   
+  .dem           = "gender",
+  data_frames    = df_list,        
+  survey_dates   = survey_dates,   
+  human_readable = FALSE       # This is the default
   )
 
-```
-
-Excellent!
-
-The plots have been saved to a named list called `plots`. To access the plots for each variable, you can use the `$` and variable name.
-
-```{r 08.21-Many-Graphs-Example2, fig.dim=c(13,12)}
-
-# Trend graph for Q1COVID19
-plots$Q1COVID19
-
-# Trend graph for Q101
-plots$Q101
-
-# Trend graph for Q609
-plots$Q609
 
 ```
 
-You've done it! You have created many trend plots at once!
+```{r 08.22-human-readable-f, echo=FALSE}
+comparative_demographic_trend_summary_f <- calculate_comp_trend_dem(
+  "Q1COVID19",
+  "gender",
+  df_list,        
+  survey_dates  
+  )
+
+knitr::kable(
+  comparative_demographic_trend_summary_f,
+  booktabs = TRUE,
+  label = NA,
+  caption = "Default setting with `human_readable = FALSE`."
+)
+
+```
+
+
+```{r 08.23-human-readable-3, eval=FALSE}
+
+calculate_comp_trend_dem(
+  .var           = "Q1COVID19",    
+  .dem           = "gender",
+  data_frames    = df_list,        
+  survey_dates   = survey_dates,   
+  human_readable = TRUE       # This is NOT the default
+  )
+
+
+```
+
+```{r 08.24-human-readable-t, echo=FALSE}
+comparative_demographic_trend_summary_t <- calculate_comp_trend_dem(
+  "Q1COVID19",  
+  "gender",
+  df_list,        
+  survey_dates,
+  human_readable = T
+  )
+
+knitr::kable(
+  comparative_demographic_trend_summary_t,
+  booktabs = TRUE,
+  label = NA,
+  caption = "Default setting with `human_readable = TRUE`."
+)
+
+```
+
+
+The default is set to `FALSE` because that is the structure `plot_comp_trend_dem()` expects. If you set `human_readable` to `TRUE` and use that output in `plot_comp_trend_dem()`, you will get an error.
+
+### Select Countries
+
+By default, `calculate_comp_trend_dem()` plots data for all the countries in the data. To learn how to plot data from select countries, see [the chapter on selecting countries](#select-countries-no-calculate).
+
+### Font Size
+
+The font size default brand size is used for the graph text. You can learn how to change that in [the chapter on changing the font size](#change-font-size).
+
+### Colors
+
+You can learn how to change the colors for the comparative trend graph in [the chapter on changing graph colors](#change-colors-trend-comparative).
+

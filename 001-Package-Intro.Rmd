@@ -15,7 +15,7 @@ The input for `add_demographics()` is an Arab Barometer data frame. The output i
 
 #### Example:
 
-```{r add-demographics-ex, include=TRUE,eval=T}
+```{r add-demographics-ex, include=TRUE,eval=T,collapse=TRUE}
 
 survey1 <- add_demographics(survey1)
 table(survey1$Country)
@@ -32,7 +32,7 @@ table(survey1$settlement)
 The input of the `recode_country()` function is an Arab Barometer data frame. The function takes the `COUNTRY` variable from an Arab Barometer data frame and creates a `Country` variable. The original variable `COUNTRY` should be a labeled numeric value where the numeric value is the country code for the country in which the interview was conducted, and the label is the name of the country. The output variable `Country` will be a character vector of country names. This function was originally created by Patrick, and updated by MaryClare.
 
 ### Example:
-```{r recode-country-ex, include=TRUE,eval=T}
+```{r recode-country-ex, include=TRUE,eval=T,collapse=TRUE}
 
 table(survey1$COUNTRY)
 survey1 <- recode_country(survey1)
@@ -59,7 +59,7 @@ Each of the aforementioned functions generates a dichotomous character variable.
 
 
 #### Example:
-```{r demographic-functions-ex, include=TRUE,eval=TRUE}
+```{r demographic-functions-ex, include=TRUE,eval=TRUE,collapse=TRUE}
 
 # Gender
 survey1 <- gender_demographic(survey1)
@@ -107,7 +107,7 @@ table(survey1$age)
 The `education_demographic()` function creates a dichotomous character column in the data frame titled `education`. You can enter a cutoff by entering a numeric value between 1 and 7 or a character string from value labels of the column Q1003 for the `.edu_lvl` parameter. The default for this parameter is `"Secondary"`. The new column `education` has the values `"Max Secondary"` or `"Higher"`. If you change the `.edu_lvl` parameter, the "education" column will have the values `"Max .edu_lvl"` or `"Higher"`. If you enter a numeric value, the function will use the value label associated with that number.
 
 ### Examples:
-```{r, echo = TRUE,eval=T}
+```{r, echo = TRUE,eval=T,collapse=TRUE}
 # English:
 ## Default parameters:
 survey1 %>%
@@ -130,7 +130,7 @@ survey1 %>%
 
 <br>
 
-## `dummy_all()`
+## `dummy_all()` {#dummy-all}
 
 The `dummy_all()` function takes one or more factor variables and creates a dummy column for each factor level. The new columns are given the original variable name then appended with an underscore and the factor level being dummied.
 
@@ -141,7 +141,7 @@ By default, `dummy_all()` does not create a dummy column for NA's. The can be ch
 The function `dummy_all()` takes as input the data frame variables are being selected from and the variable you want to create dummy columns for. More details can be found by typing `help("dummy_all")` into the R Console.
 
 ### Examples:
-```{r, echo=T,eval=T}
+```{r, echo=T,eval=T,collapse=TRUE}
 # Sample Data:
 a <- c(1,3,2,4,2,3,4,2,2)
 b <- c(1,2,1,1,2,1,2,2,2)
@@ -186,7 +186,7 @@ You can use the function for more than one variable at a time, but *not* more th
 The following example uses the same sample data as before. More details can be found by typing `help("dummy_select")` into your R Console.
 
 ### Examples:
-```{r, echo=T,eval=T}
+```{r, echo=T,eval=T,collapse=TRUE}
 # Sample Data:
 a <- c(1,3,2,4,2,3,4,2,2)
 b <- c(1,2,1,1,2,1,2,2,2)
@@ -228,7 +228,7 @@ table(df_3$a)
 The functions presented so far can be used in combination to recreate the standard cleaning we use to prep the Arab Barometer data frames for graph creation. **Remember:** You can copy and paste this code exactly.
 
 ### Example:
-```{r,echo=TRUE,message=FALSE,eval=FALSE}
+```{r,echo=TRUE,message=FALSE,eval=FALSE,collapse=TRUE}
 
 # English:
 survey1 = survey1 |> 

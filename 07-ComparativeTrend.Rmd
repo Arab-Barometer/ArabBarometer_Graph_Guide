@@ -2,7 +2,7 @@
 
 The chapter covers how to create a trend graph for many countries, not just one.
 
-## Create Comparative Trend Graph 
+## TL;DR {-}
 
 At the end, your code will look like the following:
 
@@ -18,11 +18,10 @@ survey_dates <- c("Survey 1",
                   "Survey 2",
                   "Survey 3")
 
-
-plot_trend_comp("Q1COVID19",
+calculate_comp_trend("Q1COVID19",
                 df_list,
-                survey_dates,
-                .caption "Arab Barometer Wave VI")
+                survey_dates) |> 
+  plot_comp_trend(.caption = "Arab Barometer Wave VI")
 
 
 ```
@@ -41,11 +40,11 @@ survey_dates <- c("Survey 1",
                   "Survey 2",
                   "Survey 3")
 
+calculate_comp_trend("Q1COVID19",
+                     df_list,
+                     survey_dates) |> 
+  plot_comp_trend(.caption = "Arab Barometer Wave VI")
 
-plot_trend_comp("Q1COVID19",
-                df_list,
-                survey_dates,
-                .caption = "Arab Barometer Wave VI")
 
 ```
 
@@ -53,13 +52,13 @@ You may notice that the code here is very similar to that for [single country tr
 
 Let's go!
 
-### Prep Work {#chapter-7-1-1}
+## Prep Work {#chapter-7-1-1}
 
-Similar to creating a trend graph for an individual country, there is no need to create a summary. There is only one function to use: `plot_trend_comp()`.
+Just like in Chapter \@ref(chapter-5) (and all the other trend plot chapters), it is useful to do some prep work before hand. This makes your work more clear and your life easier down the line.
 
-You can create the plot all in one step with the function, but it is prudent to do a little prep work before hand. This makes your work more clear and your life easier down the line.
+The prep work for creating a comparative trend graph is _exactly_ the same as the [prep work suggested for creating a trend graph for a single country](#chapter-5-1-1).
 
-#### Create a Data Frame List {- #chp7-trend-df-list}
+### Create a Data Frame List {#chp7-trend-df-list}
 
 The first step is to create a list of data frames. 
 
@@ -78,9 +77,11 @@ df_list <- list(
 
 The list of data frames should be in the order you want them to appear (ideally, chronologically). The data on the graph will show up in the order of the list. So if you create a list in the order `list(survey2, survey1, survey3)`, the data from `survey2` will show up before the data from `survey1`. 
 
-**Please note: This is ambivalent to language!** The `plot_trend_comp()` function will assume the order of the list is the correct order, and treat it accordingly. When you enter a list as `list(survey1, survey2, surveye3)`, the English graph will show the data right to left (survey 1 -> survey 2 -> survey 3), while the Arabic graph will show the data left to right (survey 3 <- survey 2 <- survey 1). You do **not** need to alter your input.
+**Please note: This is ambivalent to language!** The `plot_comp_trend()` function will assume the order of the list is the correct order, and treat it accordingly. When you enter a list as `list(survey1, survey2, surveye3)`, the English graph will show the data right to left (survey 1 -> survey 2 -> survey 3), while the Arabic graph will show the data left to right (survey 3 <- survey 2 <- survey 1). You do **not** need to alter your input.
 
-#### Create a Date Vector {- #chp7-trend-date-vector}
+> The data frame lists in the `Wave8TrendData` package do this step for you.
+
+### Create a Date Vector {#chp7-trend-date-vector}
 
 The next step is to create a vector of the dates you want to show on the x-axis of your graph. Branding guidelines call for the years in which the survey took place. For simplicity in the example, let's just say `"Survey X Year"`. 
 
@@ -97,63 +98,96 @@ survey_dates <- c("Survey 1 Year",
 
 The dates should also be in the order you want them to appear. The dates should line up with the data frames. In the chapter example, the order of the data frames is survey 1, survey 2, survey 3. Therefore, the survey dates need to have the order survey 1 year, survey 2 year, survey 3 year.
 
-**Please note: This is ambivalent to language!** Just as with the data frame list, the `plot_trend_comp()` function will put the data in the correct order according to the language of the graph.
+**Please note: This is ambivalent to language!** Just as with the data frame list, the `plot_comp_trend()` function will put the data in the correct order according to the language of the graph.
+
+> The date vectors in the `Wave8TrendData` package do this step for you.
 
 Now that we have defined our data frame list and survey dates, we can create our trend plot.
 
-### Plot a Comparative Trend Graph {#chapter-7-1-2}
+## Create a Summary {#chapter-7-2-1}
 
-To create a trend graph plot for an individual country, use the `plot_trend_comp()` function.
+To calculate a trend summary for multiple countries, use the `calculate_comp_trend()` function.
 
-This function takes a few more parameters, and in a different order, than the functions we have worked with so far. In total, there are *three* necessary parameters: `.var`, `data_frames`, and `svry_dates`. To see a complete list of parameters, including optional ones, use `?plot_trend_comp()` in your `R` console.
+This function takes a few more parameters, and in a different order, than the functions we have worked with so far. In total, there are *three* necessary parameters: `.var`, `data_frames`, and `survey_dates`. To see a complete list of parameters, including optional ones, use `?calculate_comp_trend()` in your `R` console.
 
 The parameter `.var` is the variable you want to plot. **It must have the same name in every data frame in the data frame list.** If the variable you want to plot is named `"Q101"` in one sure, but `"Q102"` in another, the function will not include `"Q102"` in the plot. Computers can do a lot but as of yet they cannot think critically, so the onus is on you.
 
+> The trend data lists from the `Wave8TrendData` package ensure this is true for Wave VIII variables.
+
 The parameter `data_frames` is a list of data frames. This is what we created [here](chp7-trend-df-list). 
 
-The parameter `svry_dates` is a character vector of dates that will show up on the x-axis of the graph. This is what we created [here](chp7-trend-date-vector).
-
+The parameter `survey_dates` is a character vector of dates that will show up on the x-axis of the graph. This is what we created [here](chp7-trend-date-vector).
 
 Now let's fill it in.
 
-```{r 07.5-First-Example, eval=FALSE, fig.dim=c(13,12)}
+```{r 07.5, collapse=TRUE, eval=FALSE}
 
-plot_trend_comp(.var           = "Q1COVID19",    # Variable to graph
-                data_frames    = df_list,        # List of data frames
-                svry_dates     = survey_dates)   # Vector of survey dates
+calculate_comp_trend(
+  .var           = "Q1COVID19",    # Variable to graph
+  data_frames    = df_list,        # List of data frames
+  survey_dates   = survey_dates    # Vector of survey dates
+  )
+
+
+
+```
+The output should look like the following, with the `Survey` column labeled.
+
+```{r 07.5-output, collapse=TRUE, echo=FALSE}
+comparative_trend_summary <- calculate_comp_trend(
+  .var           = "Q1COVID19",    # Variable to graph
+  data_frames    = df_list,        # List of data frames
+  survey_dates   = survey_dates    # Vector of survey dates
+  )
+
+
+
+knitr::kable(
+  comparative_trend_summary,
+  booktabs = TRUE,
+  label = NA
+)
 
 
 ```
 
-```{r 07.6-First-Example, echo=FALSE, fig.dim=c(13,12)}
+We can see the output has nine rows; one for each country for each survey. Let's save the output as an object so we can plot that object in the next section.
 
-plot_trend_comp(.var           = "Q1COVID19",    # Variable to graph
-                data_frames    = df_list,        # List of data frames
-                svry_dates     = survey_dates)   # Vector of survey dates
-
+```{r 07.5-object,eval=FALSE}
+comparative_trend_summary <- calculate_comp_trend(
+  "Q1COVID19",    
+  df_list,        
+  survey_dates    
+  )
 
 ```
+
+
+## Plot the Summary {#chapter-7-3-1}
+
+The next step is to plot the summary we just created. To do that, we use the function `plot_comp_trend()`.
+
+This function only *requires* one argument: `ab_summary`. Like many other graphs, we'll want to add a bit later on. To see a complete list of parameters, including optional ones, use `?plot_comp_trend()` in your `R` console. For now, let's see what happens when we just supply our summary we saved as `comparative_trend_summary`.
+
+
+```{r 07.6,collapse=TRUE,fig.dim=c(13,12)}
+
+plot_comp_trend(
+  ab_summary = comparative_trend_summary
+)
+
+```
+
 Nearly there! What still needs to be changed?
 
 The caption, of course! Just as in all the other `plot_` functions in the `ArabBarometR` package, you can change the caption using the `.caption` parameter.
 
-```{r 07.7-First-Example, eval=FALSE, fig.dim=c(13,12)}
+```{r 07.7,collapse=TRUE,fig.dim=c(13,12)}
 
-plot_trend_comp(.var           = "Q1COVID19",
-                data_frames    = df_list,        
-                svry_dates     = survey_dates,   
-                .caption       = "Arab Barometer Wave VI")     
-
-
-```
-
-```{r 07.8-First-Example, echo=FALSE, fig.dim=c(13,12)}
-
-plot_trend_comp(.var           = "Q1COVID19",    
-                data_frames    = df_list,        
-                svry_dates     = survey_dates,
-                .caption       = "Arab Barometer Wave VI")     
-
+plot_comp_trend(
+  ab_summary = comparative_trend_summary,
+  .caption = "Arab Barometer Wave VI"
+)
 
 ```
 
@@ -168,15 +202,14 @@ df_list <- list(
   survey3
 )
 
-survey_dates <- c("Survey 1 Year",
-                  "Survey 2 Year",
-                  "Survey 3 Year")
+survey_dates <- c("Survey 1",
+                  "Survey 2",
+                  "Survey 3")
 
-plot_trend_comp("Q1COVID19",
+calculate_comp_trend("Q1COVID19",
                 df_list,
-                survey_dates,
-                .caption = "Arab Barometer Wave VI")
-
+                survey_dates) |> 
+  plot_comp_trend(.caption = "Arab Barometer Wave VI")
 
 ```
 
@@ -188,126 +221,107 @@ df_list <- list(
   survey3
 )
 
-survey_dates <- c("Survey 1 Year",
-                  "Survey 2 Year",
-                  "Survey 3 Year")
+survey_dates <- c("Survey 1",
+                  "Survey 2",
+                  "Survey 3")
 
-plot_trend_comp("Q1COVID19",
+calculate_comp_trend("Q1COVID19",
                 df_list,
-                survey_dates,
-                .caption = "Arab Barometer Wave VI")
+                survey_dates) |> 
+  plot_comp_trend(.caption = "Arab Barometer Wave VI")
 
 
 ```
 
-## Create Many Graphs {#chapter-7-2}
-
-A nice payoff of creating the [data frame list](#chp7-trend-df-list) and the [date vector](#chp7-trend-date-vector) is that these objects (`df_list` and `survey_dates`) can be re-used any time you want to create a graph over the same time period. 
-
-For example, say you wanted to also create a graph tracking the region's views of the economy and religiosity. The only parameter in the `plot_trend_comp()` function that needs updating is `.var`.
-
-
-```{r 07.10-Many-Graphs-Example1, fig.dim=c(13,12)}
-
-df_list <- list(
-  survey1,
-  survey2,
-  survey3
-)
-
-survey_dates <- c("Survey 1 Year",
-                  "Survey 2 Year",
-                  "Survey 3 Year")
-
-plot_trend_comp("Q1COVID19",
-                df_list,
-                survey_dates,
-                .caption = "Arab Barometer Wave VI")
-
-plot_trend_comp("Q101",
-                df_list,
-                survey_dates,
-                .caption = "Arab Barometer Wave VI")
-
-plot_trend_comp("Q609",
-                df_list,
-                survey_dates,
-                .caption = "Arab Barometer Wave VI")
- 
-
-```
-
-Notice that the code produced two graphs, even though `df_list` and `survey_dates` were only defined one time. Once you have created the `df_list` and `survey_dates` objects, you can re-use them for any graph that is covering the same time period.
-
-You can also you the `map()` function from the `purrr` package. This method is similar to what was done for creating [many single country graphs](#plot-many-graphs-single-country), [many single country demographic graphs](plot-many-graphs-single-country-demographic), [many comparative graphs](#plot-many-comparative), and [many comparative demographic graphs](#plot-many-comparative-demographic).
-
-As a quick review, in earlier chapters the first step was identify the variables to plot. We did that by creating a named list of of the variables we wanted to plot.
-
-The second step was creating a list of summaries by give the summarize function the named variable list. 
-
-The third and final step was mapping that list of summaries to the related plot function. In the mapping function, we would hold the caption constant since we wanted the same caption to appear on every graph.
-
-The `plot_trend_comp()` function creates summaries internally, so we can "skip" the second step. Once we identify our variables, we go right to the mapping step. We map a named list of variables to the `plot_trend_comp()` function. We want to create a graph for all countries over the same time period, just using different variable, so we hold the data frame list, survey dates, *and* caption constant.
-
-### Identify the Variables {#chapter-7-2-1}
-
-We are creating trend graphs for the variables `Q1COVID19`, `Q101`, and `Q609`. 
-
-```{r 07.11-Many-Graphs-Example2, fig.dim=c(13,12)}
-
-variables_2_plot <- list("Q1COVID19",
-                         "Q101",
-                         "Q609")
-
-names(variables_2_plot) <- c("Q1COVID19",
-                             "Q101",
-                             "Q609")
-
-```
-
-Now you have a names list of variables. Let's plot them.
-
-### Plot the Variables {#chapter-7-2-2}
-
-Recall we want to hold constant the `data_frames`, `svry_dates`, and `.caption` parameters because those will be the same for every graph. The only parameter we want to vary is `.var`.
-
-```{r 07.12-Many-Graphs-Example2, fig.dim=c(13,12)}
-
-plots <- map(
-  variables_2_plot, # Vector of variables to plot
-  plot_trend_comp, # Map to function `plot_trend_comp()`
-  
-  data_frames    = df_list,  # Hold constant the `data_frames` parameter
-  svry_dates     = survey_dates, # Hold constant the `svry_dates` parameter
-  .caption       = "Arab Barometer Wave VI"
-  )
-
-```
-
-Excellent!
-
-The plots have been saved to a named list called `plots`. To access the plots for each variable, you can use the `$` and variable name.
-
-```{r 07.13-Many-Graphs-Example2, fig.dim=c(13,12)}
-
-# Trend graph for Q1COVID19
-plots$Q1COVID19
-
-# Trend graph for Q101
-plots$Q101
-
-# Trend graph for Q609
-plots$Q609
-
-```
-
-You've done it! You have created many trend plots at once!
 
 ## Extras
 
+### Human Readable
+
+If you just want to look at the summaries and not necessarily create a plot, the output of `calculate_comp_trend()` might not be the easiest to understand from a glance. There is a parameter called `human_readable` that is designed to help with that.
+
+By default, `human_readable` is set to `FALSE` and each row is unique to the survey-country. If `human_readable` is set to `TRUE`, each is unique to a country and there are columns for each wave.
+
+```{r 07.11-human-readable-f, eval=FALSE}
+
+calculate_comp_trend(
+  .var           = "Q1COVID19",    
+  data_frames    = df_list,        
+  survey_dates   = survey_dates,   
+  human_readable = FALSE       # This is the default
+  )
+
+
+```
+
+```{r 07.12-human-readable-f, echo=FALSE}
+comparative_trend_summary_f <- calculate_comp_trend(
+  "Q1COVID19",    
+  df_list,        
+  survey_dates  
+  )
+
+knitr::kable(
+  comparative_trend_summary_f,
+  booktabs = TRUE,
+  label = NA,
+  caption = "Default setting with `human_readable = FALSE`."
+)
+
+```
+
+
+```{r 07.13-human-readable-3, eval=FALSE}
+
+calculate_comp_trend(
+  .var           = "Q1COVID19",    
+  data_frames    = df_list,        
+  survey_dates   = survey_dates,   
+  human_readable = TRUE       # This is NOT the default
+  )
+
+
+```
+
+```{r 07.14-human-readable-t, echo=FALSE}
+comparative_trend_summary_t <- calculate_comp_trend(
+  "Q1COVID19",  
+  df_list,        
+  survey_dates,
+  human_readable = T
+  )
+
+knitr::kable(
+  comparative_trend_summary_t,
+  booktabs = TRUE,
+  label = NA,
+  caption = "Default setting with `human_readable = TRUE`."
+)
+
+```
+
+
+The default is set to `FALSE` because that is the structure `plot_comp_trend()` expects. If you set `human_readable` to `TRUE` and use that output in `plot_comp_trend()`, you will get an error.
+
+
+### Country Wrap
+
+Sometimes you may want to compare all the countries in one graph, but not have all the lines on top of each other. To create a graph with all the countries in their own facet, you can use the parameter `.country_wrap`. By default this parameter is set to `FALSE`, but if the user sets it to `TRUE` the graph will display each country's trend individual. Example code and graph is below.
+
+```{r 07.15-country-wrap,,collapse=TRUE,fig.dim=c(13,12)}
+
+calculate_comp_trend("Q1COVID19",
+                df_list,
+                survey_dates) |> 
+  plot_comp_trend(.caption = "Arab Barometer Wave VI",
+                  .country_wrap = TRUE)
+
+
+```
+
 ### Select Countries
 
-By default, `plot_trend_comp()` plots data for all the countries in the data. To learn how to plot data from select countries, see [the chapter on selecting countries](#select-countries-no-calculate).
+By default, `calculate_comp_trend()` plots data for all the countries in the data. To learn how to plot data from select countries, see [the chapter on selecting countries](#select-countries-no-calculate).
 
 ### Font Size
 

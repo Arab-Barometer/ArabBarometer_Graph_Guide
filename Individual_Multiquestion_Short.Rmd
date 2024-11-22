@@ -8,9 +8,9 @@ These types of graphs are especially useful for plotting **grid** questions. Gri
 **All questions are required to be the same type when using this function.** Comparing the responses to different question types is not advised, so the function does not allow for it.
 
 
-## TL;DR {-}
+### TL;DR {-}
 
-### "Short" Summary {- #tldr-short-smry-multiq}
+#### "Short" Summary {- #tldr-short-smry-multiq}
 
 At the end, your code will look like the following:
 
@@ -51,7 +51,7 @@ calculate_ind_multiq_smry_short(survey1,
                              .caption = "Arab Barometer Wave VI, Survey 1, Algeria")
 ```
 
-### "Long" Summary {- #tldr-long-smry-multiq}
+#### "Long" Summary {- #tldr-long-smry-multiq}
 
 At the end, your code will look like the following:
 
@@ -94,11 +94,11 @@ calculate_ind_multiq_smry_long(survey1,
 
 Let's go!
 
-## Prep Work {#chapter-9-1}
+## Prep Work {#new-chapter-9-1}
 
 It is useful to do some prep work to keep everything clear.
 
-### Question Vector {#chapter-9-1-1}
+### Question Vector {#new-chapter-9-1-1}
 
 First create a vector of questions you want to include on your graph. For the example in this chapter we are comparing questions `Q210` and `Q211`. We put the names of those variables in a vector and save that vector as an object.
 
@@ -113,7 +113,7 @@ questions_2_compare <- c(
 
 Now the variables we want to graph as saved to the object `questions_2_compare` in a vector.
 
-### Question Labels {#chapter-9-1-2}
+### Question Labels {#new-chapter-9-1-2}
 
 The next step is to create a vector of labels for the questions. This is the text that will display on the y-axis. The labels should appear in the same order as they variables they are referring to.
 
@@ -193,7 +193,7 @@ ind_multiq_smry_long <- calculate_ind_multiq_smry_long(survey1,
 ```
 
 
-## Plot a Multiquestion Graph for a Single Country {#chapter-9-2}
+## Plot the Summary {#new-chapter-9-2}
 
 We are now ready to create our graphs.
 
@@ -293,9 +293,9 @@ calculate_ind_multiq_smry_long(survey1,
 
 
 
-## Extras {#chapter-9-3}
+## Extras {#new-chapter-9-3}
 
-### Explict Grid Example {#chapter-9-3-3}
+### Explict Grid Example {#new-chapter-9-3-3}
 
 Remember: plotting a set of grid questions requires exactly the same steps as outlined throughout this chapter. There is **no difference** between plotting 2 (or n) questions that belong to a grid, and 2 (or n) questions that do not.
 
@@ -348,16 +348,16 @@ calculate_ind_multiq_smry_long(survey1,
 
 ```
 
-### Setting Colors {#chapter-9-3-1}
+### Setting Colors {#new-chapter-9-3-1}
 
 By default, the colors for the graph are randomly selected from `ArabBarometer_clr`. To set the colors of the graph, supply a vector of hex codes or named Arab Barometer brand colors to the parameter `.color_choice`.
 
 **Order matters.** If you want certain questions to have certain colors, you must put the colors you want in the same order of the questions. For example, if you want `Q210` to be `"AB purple"` (`#796391`) and `Q211` to be `"AB yellow"` (`#FBA950`), you must provide the color vector as `c("AB purple","AB yellow")`, since the questions are in the order `c("Q210","Q211")`.
 
-### Warnings {#chapter-9-warnings}
+### Warnings {#new-chapter-9-warnings}
 
 There are several points in this code when warnings or messages will appear **even if you are using the code correctly.** No need to panic. You can read about all of the messages and warnings that may appear *even when the code is correct* in the section [How do I Understand (some) Messages, Warnings, and Errors](#standard-warnings).
 
-The function `plot_demographic_smry_individual()` will produce a `position_dodge()` warning. You can read a bit about that [here](#warning-dodge).
+The functions `calculate_ind_multiq_smry_short()` and `calculate_ind_multiq_smry_long()` will produce a `position_dodge()` warning. You can read a bit about that [here](#warning-dodge).
 
 If you do not supply a title or subtitle, a plot will still be created but you will receive a missing title and/or subtitle warning. You can read more about this [here](#warning-title).

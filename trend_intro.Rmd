@@ -1,10 +1,9 @@
-# (Part) Trend Graphs {-}
-
+# (PART) Trend Graphs {-}
 # Introducing Trend Graphs {-}
 
 This section will cover how to create trend graphs. Prior to this, we have only used a single data set, `survey1`. We will now also use the data sets `survey2` and `survey3`. Refer to the assumed [header code](#headercode) to see where `survey1`, `survey2`, and `survey3` came from. Each of these surveys were done at a different point during the overall sixth wave, so they can be used as an example for a trend graph.
 
-# `Wave8TrendData` package
+## `Wave8TrendData` package {-}
 
 This section will also discuss how to use the `Wave8TrendData` package in conjuction with the functions provided in the `ArabBarometR` package, but not right away.
 
@@ -18,7 +17,7 @@ Hopefully, learning how to use the `calculate_` and `plot_` functions associated
   
 The `Wave8TrendData` package has many helpful features, but it is highly recommended that `ArabBarometR` package users understand how to make trend graphs without `Wave8TrendData`.
 
-## `Wave8TrendData` Provisions
+### `Wave8TrendData` Provisions {-}
 
 The `Wave8TrendData` package does not create trend plots on its own. Rather, it provides data structures that allows the users to skip some of the grunt-work necessary for creating trend plots. 
 
@@ -26,7 +25,7 @@ Just as in the chapters on creating multivariable graphs, there is a certain amo
 
 The `Wave8TrendData` package provides lists of data frames, survey date vectors, and a few functions.
 
-### `Wave8TrendData` List of Data Frames
+### `Wave8TrendData` List of Data Frames {-}
 
 The `Wave8TrendData` list provides two named lists of data frames:
 
@@ -43,5 +42,57 @@ When we call an element in either `trend_data_arabic_list` or `trend_data_englis
 
 Remember in Chapter \@ref(#plot-many-graphs-single-country), when we saved our plots in a list, and then called them by name to look at each one? We also did this in Chapters \@ref(#plot-many-graphs-single-country-demographic), \@ref(#plot-many-comparative), and \@ref(#plot-many-comparative-demographic). The point is, we've worked with (and created!) our own named lists before, and they are nothing to be afraid of.
 
-### `Wave8TrendData` Survey Data Vectors
+### `Wave8TrendData` Survey Data Vectors {-}
 
+The `Wave8TrendData` package has **26** date vectors. Every country asked in Wave VII (Algeria, Egypt, Iraq, Jordan, Kuwait, Lebanon, Libya, Mauritania, Morocco, Palestine, Sudan, and Tunisia) has a date vector in both English and Arabic. There is also an English and Arabic comparative date vector.
+
+The vectors are all named according to the convention `{country_name}_dates_{ar|en}`. For example, the English Tunisia date vector is `tunisia_dates_en`, while the Arabic Algeria date vector is `algeria_dates_ar`. For the comparative dates, `comparative` is used instead of the country name; i.e., `comparative_dates_en` and `comparative_dates_ar`.
+
+The dates come from the years according the the technical reports for each country in each wave.
+
+**The date vectors are eight values long.** The last value is the date for Wave VIII.
+
+When using the `calculate_` functions for trend graphs, the list of data frames and the date vector **must be the same length**. Right out of the packaging, the data frame lists and date vectors from `Wave8TrendData` are **not** the same length, since the data frame lists do not have the Wave VIII data. If you do not add the Wave VIII data to the data frame list, and try to use a date vector, you will get an error.
+
+How do you add the Wave VIII data to the data frame list? I'm glad you asked...
+
+#### `Wave8TrendData` Functions {-}
+
+The `Wave8TrendData` package contains only two functions you need to worry about: (1) `add_wave8()` and (2) `trend_dummy_all()`.
+
+##### `add_wave8()` {-}
+
+The function `add_wave8()` does exactly what its name suggests: add the Wave VIII data to the data frame list.
+
+The function takes two inputs: (1) the Wave VIII data and (2) the trend list you want to add the data too. The output is a new data frame list that includes the Wave VIII data.
+
+```{r add-wave8,eval=FALSE}
+
+new_english_trend_list <- add_wave8(
+  Wave8_English_Data,     # Wave VIII English data
+  trend_data_english_list # English Data Frame Trend List
+  )
+
+new_arabic_trend_list <- add_wave8(
+  Wave8_Arabic_Data,     # Wave VIII Arabic data
+  trend_data_arabic_list # Arabic Data Frame Trend List
+  )
+
+```
+
+Once you add the Wave VIII data to your data frame list, you can use the date vectors and the trend functions with ease.
+
+##### `trend_dummy_all()` {-}
+
+Remember in Chapter \@ref(#dummy-all) when the `dummy_all()` function was introduced? The function `trend_dummy_all()` is an analogous function that works with the data frame list we use for trends. Instead of creating dummies for all the levels of a variable in one data frame, `trend_dummy_all()` creates dummies for all levels of a variable in every data frame in the data frame list.
+
+The function `trend_dummy_all()` takes two variables: (1) the data frame list you want to modify and (2) the variable you want to dummy. The function outputs a list of data frames with the variable dummied out in each data frame.
+
+```{r trend_dummy_all,eval=FALSE}
+
+new_english_trend_list <- trend_dummy_all(
+  trend_data_english_list,
+  "Q101"
+  )
+
+```

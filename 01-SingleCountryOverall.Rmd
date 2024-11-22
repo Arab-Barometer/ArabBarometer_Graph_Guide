@@ -5,7 +5,7 @@ This chapter will cover how to make an overall frequency graph for a single coun
 
 ## Create a Single Graph {#chapter-1-1}
 
-### TL;DR {#tldr-chapter1-single -}
+### TL;DR {- #tldr-chapter1-single}
 
 This section will go over how to make a one-off frequency graph for a single country.
 

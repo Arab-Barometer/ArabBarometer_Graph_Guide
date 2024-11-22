@@ -1,8 +1,10 @@
-# Show only certain countries? {#select-countries-chp}
+# Show Only Certain Countries? {#select-countries-chp}
 
 To choose only certain countries to plot, use the parameter `select_countries`. If you are creating a plot with a `calculate_` function, this parameter is in `calculate_` function. If the plot only uses the `plot_` function, this parameter is in the `plot_` function. The parameters is called `select_countries` in both cases.
 
-## Plots that go with `calculate_` functions {#select-countries-calculate}
+## In Comparative Graphs
+
+### Plots that go with `calculate_` functions {#select-countries-calculate}
 
 
 ```{r How.5.6.1-SelectCountries, fig.dim=c(13,12)}
@@ -16,9 +18,9 @@ survey1 %>%
 
 ```
 
-## Plots with no `calculate_` functions {#select-countries-no-calculate}
+### Plots with no `calculate_` functions {#select-countries-no-calculate}
 
-```{r How.5.7.1-SelectCountries, fig.dim=c(13,12)}
+```{r How.5.7.1-SelectCountries, fig.dim=c(13,12),eval=FALSE}
 
 df_list <- list(
   survey1,
@@ -38,3 +40,8 @@ plot_trend_comp("Q1COVID19",
                                      "Lebanon"))
 
 ```
+
+
+## In Single Country Graphs
+
+Instead of subsetting the Arab Barometer data by country to create individual country data frames, most users tend to want to use the whole data frame but only show results for one country. Most of the chapters in this book offer instruction based on this premise. When creating a single country graph with data that contains more than one country, use the parameter `.select_country`.
